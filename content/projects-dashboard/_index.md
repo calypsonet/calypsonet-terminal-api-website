@@ -1,5 +1,5 @@
 ---
-title: Overall projects dashboard
+title: Overall APIs dashboard
 subtitle: 
 summary: 
 ---
@@ -7,7 +7,7 @@ summary:
 {{% alert note %}}
 Last project status update: **<span id="projects-dashboard-datetime"></span>**
 
-When displayed, icons in columns **Doc** and **Status** are clickable and lead respectively to the **API documentation** and the **Jenkins CI status page**.
+When displayed, icons in columns **Doc** and **Status** are clickable and lead respectively to the **API documentation** and the **GitHub Action status page**.
 {{% /alert %}}
 
 <table id="projects-dashboard-table" class="table table-striped" data-sort-name="updated" data-sort-order="desc">
