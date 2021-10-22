@@ -48,7 +48,7 @@ local_business_type = ""
 org_name = "Calypso Networks Association"
 
 # Description for social sharing and search engines. If undefined, superuser role is used in place.
-description = "The APIs made available by the Calypso Networks Association facilitate standardization and certification of ticketing applications."
+description = "Made available by the Calypso Networks Association, the Terminal APIs facilitate the standardization and the certification of ticketing applications."
 
 ############################
 ## Site Features

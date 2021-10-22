@@ -17,8 +17,8 @@ hero_media = "hero-image.svg"
 
 +++
 
-These APIs, made available by the<br>
-Calypso Networks Association<br>
-facilitate standardization and certification<br>
+Made available by the<br>
+Calypso Networks Association,<br>
+the Terminal APIs facilitate<br>
+the standardization and the certification<br>
 of ticketing applications.
-

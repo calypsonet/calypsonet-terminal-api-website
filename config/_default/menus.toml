@@ -21,18 +21,23 @@
   weight = 20
 
 [[main]]
-  name = "Community"
-  url = "/community/"
-  weight = 40
-
-[[main]]
-  parent = "Community"
-  name = "Projects dashboard"
+  name = "Dashboard"
   url = "/projects-dashboard/"
   weight = 10
 
-[[main]]
-  parent = "Community"
-  name = "Calypso Networks Association website"
-  url = "https://calypsonet.org"
-  weight = 20
+#[[main]]
+#  name = "Community"
+#  url = "/community/"
+#  weight = 40
+#
+#[[main]]
+#  parent = "Community"
+#  name = "Projects dashboard"
+#  url = "/projects-dashboard/"
+#  weight = 10
+#
+#[[main]]
+#  parent = "Community"
+#  name = "Calypso Networks Association website"
+#  url = "https://calypsonet.org"
+#  weight = 20
