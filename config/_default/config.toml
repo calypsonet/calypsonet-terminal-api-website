@@ -1,6 +1,7 @@
 title = "Calypso Networks Association Terminal APIs"
 
-baseurl = "https://calypsonet.github.io/"
+#baseurl = "https://calypsonet.github.io/"
+baseurl = ""
 relativeURLs = true
 
 # Enter a copyright notice to display in the site footer.
