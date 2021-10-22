@@ -1,0 +1,38 @@
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
+
+[[main]]
+  name = "APIs"
+  url = "/apis/"
+  weight = 10
+
+[[main]]
+  parent = "APIs"
+  name = "Java"
+  url = "/apis-java/overview/"
+  weight = 10
+
+[[main]]
+  parent = "APIs"
+  name = "C++"
+  url = "/apis-cpp/overview/"
+  weight = 20
+
+[[main]]
+  name = "Community"
+  url = "/community/"
+  weight = 40
+
+[[main]]
+  parent = "Community"
+  name = "Projects dashboard"
+  url = "/projects-dashboard/"
+  weight = 10
+
+[[main]]
+  parent = "Community"
+  name = "Calypso Networks Association website"
+  url = "https://calypsonet.org"
+  weight = 20
