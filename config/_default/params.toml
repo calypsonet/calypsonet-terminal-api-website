@@ -45,7 +45,7 @@ local_business_type = ""
 
 # Organization name (optional)
 # Enter an organization or project name. Defaults to the site title from `config.toml`.
-org_name = "Eclipse"
+org_name = "Calypso Networks Association"
 
 # Description for social sharing and search engines. If undefined, superuser role is used in place.
 description = "The APIs made available by the Calypso Networks Association facilitate standardization and certification of ticketing applications."
@@ -85,7 +85,7 @@ show_related = {docs = true, page = true, post = true, project = true, publicati
 
 # Contact links
 contact_links = [
-  {icon = "comments", icon_pack = "fas", name = "Discuss on Forum", link = "https://www.eclipse.org/forums/index.php/f/446/"},
+  {icon = "comments", icon_pack = "fas", name = "Contact Calypso Networks Association", link = "https://calypsonet.org/contact-us/"},
   ]
 
 ############################

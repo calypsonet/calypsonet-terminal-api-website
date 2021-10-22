@@ -148,7 +148,7 @@ async function loadProjectsDashboard() {
     let rootUrl = window.location.href + "../";
 
     if (rootUrl.includes("localhost")) {
-        rootUrl = "https://keyple.org/";
+        rootUrl = "https://calypsonet.github.io/calypsonet-terminal-api-website/";
     }
 
     async function getJson(fileName) {

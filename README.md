@@ -1,6 +1,6 @@
 # Calypsonet Terminal API website  
 
-Repository to the www.keyple.org website of the 'Calypsonet Terminal API' project.
+Repository of the **Calypsonet Terminal APIs** website project.
 
 The Calypsonet Terminal API website is generated with Hugo.
 

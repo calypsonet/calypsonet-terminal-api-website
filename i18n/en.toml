@@ -1,9 +1,6 @@
 [navbar-manage-cookies-label]
   other = "Manage Cookies"
 
-[footer-legal-section-text]
-  other = "ECLIPSE LEGAL"
-
 [footer-legal-privacy-policy-text]
   other = "Privacy Policy"
 
@@ -13,9 +10,6 @@
 [footer-legal-copyright-agent-text]
   other = "Copyright Agent"
 
-[footer-legal-epl-text]
-  other = "Eclipse Public License"
-
 [footer-legal-resources-text]
   other = "Legal Resources"
 
@@ -23,7 +17,7 @@
   other = "Report a Vulnerability"
 
 [cookie_message]
-  other = "Some Eclipse Foundation pages use cookies to better serve you when you return to the site. You can set your browser to notify you before you receive a cookie or turn off cookies. If you do so, however, some areas of some sites may not function properly. To read Eclipse Foundation Privacy Policy "
+  other = "Some Calypso Networks Association pages use cookies to better serve you when you return to the site. You can set your browser to notify you before you receive a cookie or turn off cookies. If you do so, however, some areas of some sites may not function properly. To read Calypso Networks Association Privacy Policy "
 
 [cookie_allow]
   other = "Allow cookies"

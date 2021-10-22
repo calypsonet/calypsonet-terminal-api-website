@@ -1,4 +1,4 @@
-module github.com/calypsonet/keyple-website
+module github.com/calypsonet/calypsonet-terminal-api-website
 
 go 1.14
 
