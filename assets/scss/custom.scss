@@ -1,13 +1,14 @@
 footer {
-  background-color: #00a0ff;
+  //background-color: #00a0ff;
+  font-weight: bold;
 }
 
 footer a {
-  color: #FFF;
+  color: #000;
 }
 
 footer a:hover {
-  color: #FFF;
+  color: #000;
 }
 
 footer ul {
@@ -217,6 +218,7 @@ pre, code {
 
 // Powered by on footer section
 .site-footer #template-info {
+  color: #000;
   font-size: 0.5rem;
 }
 

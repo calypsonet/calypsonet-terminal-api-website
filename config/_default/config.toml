@@ -6,7 +6,7 @@ relativeURLs = true
 
 # Enter a copyright notice to display in the site footer.
 # To display a copyright symbol, type `&copy;`. For current year, type `{year}`.
-copyright = "&copy; {year} <a href='https://calypsonet.org'>Calypso Networks Association</a>. All Rights Reserved."
+copyright = "&copy; {year} Calypso Networks Association. All Rights Reserved."
 
 # Get last modified date for content from Git?
 enableGitInfo = true
