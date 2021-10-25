@@ -5,7 +5,7 @@ name = "calypsonet_theme"
 light = true
 
 # Primary
-primary = "#00a0ff"
+primary = "#1d87bb"
 
 # Menu
 menu_primary = "#FFFFFF"

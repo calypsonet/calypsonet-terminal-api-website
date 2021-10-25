@@ -1,0 +1,26 @@
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
+
+main:
+  - name: APIs
+    url: '/apis/'
+    weight: 10
+  - name: Java
+    parent: APIs
+    url: '/apis-java/overview/'
+    weight: 10
+  - name: C++
+    parent: APIs
+    url: '/apis-cpp/overview/'
+    weight: 20
+  - name: Dashboard
+    url: '/projects-dashboard/'
+    weight: 20
+
+# Link to a PDF of your resume/CV from the menu.
+# To enable, copy your resume/CV to `static/uploads/resume.pdf` and uncomment the lines below.
+#  - name: CV
+#    url: uploads/resume.pdf
+#    weight: 70
