@@ -1,5 +1,5 @@
 ---
-title: Java - Components overview
+title: Java - APIs overview
 linktitle: Overview
 type: book
 weight: 1

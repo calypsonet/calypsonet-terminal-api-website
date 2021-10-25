@@ -1,3 +1,9 @@
+@media screen and (min-width: 58em) {
+  html {
+    font-size: 18px;
+  }
+}
+
 footer {
   background-color: #1d87bb;
   padding: 2rem 0;
@@ -124,10 +130,15 @@ a:hover {
   padding: 0 1rem;
 }
 
-// color of right TOC and padding
+// color of right TOC, padding and margin
 #TableOfContents li a, .toc-top li a {
   color: rgba(0,0,0,.65);
   padding: 0 1rem;
+  font-size: .7rem;
+  line-height: inherit;
+}
+#TableOfContents li {
+  margin-bottom: 0;
 }
 
 // increase left side menu max width

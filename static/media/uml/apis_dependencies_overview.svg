@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="465px" preserveAspectRatio="none" style="width:888px;height:465px;background:#FFFFFF;" version="1.1" viewBox="0 0 888 465" width="888px" zoomAndPan="magnify"><defs/><g><!--MD5=[57463d4f0d656587f620adfbe8cee83d]
+cluster packCalypsonetPublic--><polygon fill="#F8F9F9" points="183.5,6,330.5,6,337.5,29.6094,871.5,29.6094,871.5,122,183.5,122,183.5,6" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="183.5" x2="337.5" y1="29.6094" y2="29.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="141" x="187.5" y="22.5332">Terminal public APIs</text><!--MD5=[29d756ef8ff9dbccebdbf9c7abb33baf]
+cluster packCalypsonetPrivate--><polygon fill="#D7DBDD" points="337.5,358,729.5,358,736.5,381.6094,739.5,381.6094,739.5,458,337.5,458,337.5,358" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="337.5" x2="736.5" y1="381.6094" y2="381.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="386" x="341.5" y="374.5332">Terminal internal API  (hidden for the client application)</text><!--MD5=[fa748c0050d71d88d66b284603ec55cc]
+cluster packMain--><polygon fill="#F8F9F9" points="271.5,162,519.5,162,526.5,185.6094,753.5,185.6094,753.5,326,271.5,326,271.5,162" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="271.5" x2="526.5" y1="185.6094" y2="185.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="242" x="275.5" y="178.5332">Certifiable framework components</text><!--MD5=[0fda63aba32982abbdb07b83db27d91d]
+entity readerApi--><rect fill="#FDF2E9" height="47.6094" style="stroke:#E67E22;stroke-width:1.5;" width="290" x="557.5" y="50"/><rect fill="#FDF2E9" height="10" style="stroke:#E67E22;stroke-width:1.5;" width="15" x="827.5" y="55"/><rect fill="#FDF2E9" height="2" style="stroke:#E67E22;stroke-width:1.5;" width="4" x="825.5" y="57"/><rect fill="#FDF2E9" height="2" style="stroke:#E67E22;stroke-width:1.5;" width="4" x="825.5" y="61"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="250" x="572.5" y="84.5332">calypsonet-terminal-reader-java-api</text><!--MD5=[1ca801befaff286e049057b0f9cc4296]
+entity calypsoApi--><rect fill="#FDF2E9" height="47.6094" style="stroke:#E67E22;stroke-width:1.5;" width="296" x="226.5" y="50"/><rect fill="#FDF2E9" height="10" style="stroke:#E67E22;stroke-width:1.5;" width="15" x="502.5" y="55"/><rect fill="#FDF2E9" height="2" style="stroke:#E67E22;stroke-width:1.5;" width="4" x="500.5" y="57"/><rect fill="#FDF2E9" height="2" style="stroke:#E67E22;stroke-width:1.5;" width="4" x="500.5" y="61"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="256" x="241.5" y="84.5332">calypsonet-terminal-calypso-java-api</text><!--MD5=[f74f7ef7641fa41957945dcfb119390e]
+entity cardApi--><rect fill="#FDF2E9" height="47.6094" style="stroke:#E67E22;stroke-width:1.5;" width="274" x="401.5" y="394"/><rect fill="#FDF2E9" height="10" style="stroke:#E67E22;stroke-width:1.5;" width="15" x="655.5" y="399"/><rect fill="#FDF2E9" height="2" style="stroke:#E67E22;stroke-width:1.5;" width="4" x="653.5" y="401"/><rect fill="#FDF2E9" height="2" style="stroke:#E67E22;stroke-width:1.5;" width="4" x="653.5" y="405"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="234" x="416.5" y="428.5332">calypsonet-terminal-card-java-api</text><!--MD5=[535f43d417660373b2263710d106a2e4]
+entity extension--><rect fill="#E9F7EF" height="47.6094" style="stroke:#27AE60;stroke-width:1.5;" width="215" x="328" y="230"/><rect fill="#E9F7EF" height="10" style="stroke:#27AE60;stroke-width:1.5;" width="15" x="523" y="235"/><rect fill="#E9F7EF" height="2" style="stroke:#27AE60;stroke-width:1.5;" width="4" x="521" y="237"/><rect fill="#E9F7EF" height="2" style="stroke:#27AE60;stroke-width:1.5;" width="4" x="521" y="241"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="343" y="264.5332">Card Layer (Calypso, etc...)</text><!--MD5=[38bfa9dc6018363cafe15f923a4b8db9]
+entity service--><rect fill="#FEFECE" height="47.6094" style="stroke:#D4AC0D;stroke-width:1.5;" width="127" x="578" y="230"/><rect fill="#FEFECE" height="10" style="stroke:#D4AC0D;stroke-width:1.5;" width="15" x="685" y="235"/><rect fill="#FEFECE" height="2" style="stroke:#D4AC0D;stroke-width:1.5;" width="4" x="683" y="237"/><rect fill="#FEFECE" height="2" style="stroke:#D4AC0D;stroke-width:1.5;" width="4" x="683" y="241"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="593" y="264.5332">Reader Layer</text><!--MD5=[37c33c71ce9550fe283f62c54b59719b]
+entity application--><rect fill="#EBF5FB" height="47.6094" style="stroke:#3498DB;stroke-width:1.5;" width="149" x="7" y="50"/><rect fill="#EBF5FB" height="10" style="stroke:#3498DB;stroke-width:1.5;" width="15" x="136" y="55"/><rect fill="#EBF5FB" height="2" style="stroke:#3498DB;stroke-width:1.5;" width="4" x="134" y="57"/><rect fill="#EBF5FB" height="2" style="stroke:#3498DB;stroke-width:1.5;" width="4" x="134" y="61"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="22" y="84.5332">Client Application</text><!--MD5=[ff5ebf69d7e821c0dbbf77d5fe3170c5]
+link application to packCalypsonetPublic--><path d="M156.266,74 C162.0465,74 167.827,74 173.6075,74 C176.4978,74 179.388,74 182.2783,74 C182.6395,74 183.0008,74 183.3621,74 C183.4073,74 183.4524,74 183.4976,74 " fill="none" id="application-to-packCalypsonetPublic" style="stroke:#3498DB;stroke-width:1.0;"/><polygon fill="#3498DB" points="183.4976,74,174.4976,70,178.4976,74,174.4976,78,183.4976,74" style="stroke:#3498DB;stroke-width:1.0;"/><!--MD5=[1488bd814bfce1c270d10cdde1d74a4f]
+link application to packMain--><path d="M107.385,98.27 C133.801,122.018 175.9083,159.8723 211.8615,192.194 C229.8381,208.3549 246.2763,223.1326 258.4452,234.0724 C261.4875,236.8074 264.2629,239.3024 266.7288,241.5193 C267.9618,242.6277 269.1174,243.6666 270.1903,244.6311 C270.4585,244.8722 270.7215,245.1087 270.9793,245.3404 C271.1082,245.4563 271.2358,245.571 271.3621,245.6845 " fill="none" id="application-to-packMain" style="stroke:#3498DB;stroke-width:1.0;"/><polygon fill="#3498DB" points="271.3621,245.6845,267.3433,236.6929,267.6437,242.3418,261.9949,242.6423,271.3621,245.6845" style="stroke:#3498DB;stroke-width:1.0;"/><!--MD5=[f3e8fc8d2e795f19f51e601c66efb1b9]
+link calypsoApi to readerApi--><path d="M522.805,74 C532.568,74 542.331,74 552.094,74 " fill="none" id="calypsoApi-to-readerApi" style="stroke:#E67E22;stroke-width:1.0;"/><polygon fill="#E67E22" points="557.199,74,548.199,70,552.199,74,548.199,78,557.199,74" style="stroke:#E67E22;stroke-width:1.0;"/><!--MD5=[b84145f68a9638efe3b1cde23adb3c4f]
+link extension to cardApi--><path d="M450.257,278.211 C468.92,307.563 501.014,358.042 520.924,389.3561 " fill="none" id="extension-to-cardApi" style="stroke:#27AE60;stroke-width:1.0;"/><polygon fill="#27AE60" points="523.77,393.8324,522.3173,384.0913,521.0876,389.6129,515.566,388.3832,523.77,393.8324" style="stroke:#27AE60;stroke-width:1.0;"/><!--MD5=[39b1edf8889298d7473da6cfa063b6c7]
+reverse link readerApi to extension--><path d="M644.331,100.141 C617.914,112.541 586.77,128.57 560.5,146 C522.415,171.27 483.108,206.749 458.984,229.805 " fill="none" id="readerApi-backto-extension" style="stroke:#27AE60;stroke-width:1.0;"/><polygon fill="#27AE60" points="648.866,98.026,639.0188,98.204,644.3344,100.1389,642.3995,105.4546,648.866,98.026" style="stroke:#27AE60;stroke-width:1.0;"/><!--MD5=[4b7e4247c0bcddb93fd1479137d7111a]
+reverse link calypsoApi to extension--><path d="M384.182,103.253 C396.175,138.247 416.38,197.206 427.523,229.724 " fill="none" id="calypsoApi-backto-extension" style="stroke:#27AE60;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#27AE60" points="382.475,98.27,381.6096,108.0808,384.0964,102.9998,389.1773,105.4866,382.475,98.27" style="stroke:#27AE60;stroke-width:1.0;"/><!--MD5=[3bb137f5d2fdf2eddbf56d075b4f5976]
+reverse link readerApi to service--><path d="M692.818,103.253 C680.825,138.247 660.62,197.206 649.477,229.724 " fill="none" id="readerApi-backto-service" style="stroke:#D4AC0D;stroke-width:1.0;"/><polygon fill="#D4AC0D" points="694.525,98.27,687.8227,105.4866,692.9036,102.9998,695.3904,108.0808,694.525,98.27" style="stroke:#D4AC0D;stroke-width:1.0;"/><!--MD5=[2523936cee4f99c1b1f73b34e1a6b0f7]
+link service to cardApi--><path d="M626.743,278.211 C608.08,307.563 575.986,358.042 556.076,389.3561 " fill="none" id="service-to-cardApi" style="stroke:#D4AC0D;stroke-width:1.0;"/><polygon fill="#D4AC0D" points="553.23,393.8324,561.434,388.3832,555.9124,389.6129,554.6827,384.0913,553.23,393.8324" style="stroke:#D4AC0D;stroke-width:1.0;"/><!--MD5=[abe2fee5ea0a89ad5b2197a73f004e16]
+@startuml
+
+' == THEME ==
+
+'Couleurs issues de : https://htmlcolorcodes.com/fr/tableau-de-couleur/tableau-de-couleur-design-plat/
+!define C_GREY1 F8F9F9
+!define C_GREY2 F2F3F4
+!define C_GREY3 E5E7E9
+!define C_GREY4 D7DBDD
+!define COLOR_YELLOW D4AC0D
+!define COLOR_RED E74C3C
+!define COLOR_PURPLE 8E44AD
+!define COLOR_BLUE 3498DB
+!define COLOR_GREEN 27AE60
+!define COLOR_ORANGE E67E22
+!define COLOR_GREY 2C3E50
+skinparam Shadowing false
+skinparam component {
+    BorderColor #D4AC0D
+    ' Red
+    BackgroundColor<<red>> #FDEDEC
+    BorderColor<<red>> #E74C3C
+    ' Purple
+    BackgroundColor<<purple>> #F4ECF7
+    BorderColor<<purple>> #8E44AD
+    ' blue
+    BackgroundColor<<blue>> #EBF5FB
+    BorderColor<<blue>> #3498DB
+    ' Green
+    BackgroundColor<<green>> #E9F7EF
+    BorderColor<<green>> #27AE60
+    ' Orange
+    BackgroundColor<<orange>> #FDF2E9
+    BorderColor<<orange>> #E67E22
+    ' Grey
+    BackgroundColor<<grey>> #EAECEE
+    BorderColor<<grey>> #2C3E50
+}
+skinparam interface {
+    BorderColor #D4AC0D
+    ' Red
+    BackgroundColor<<red>> #FDEDEC
+    BorderColor<<red>> #E74C3C
+    ' Purple
+    BackgroundColor<<purple>> #F4ECF7
+    BorderColor<<purple>> #8E44AD
+    ' blue
+    BackgroundColor<<blue>> #EBF5FB
+    BorderColor<<blue>> #3498DB
+    ' Green
+    BackgroundColor<<green>> #E9F7EF
+    BorderColor<<green>> #27AE60
+    ' Orange
+    BackgroundColor<<orange>> #FDF2E9
+    BorderColor<<orange>> #E67E22
+    ' Grey
+    BackgroundColor<<grey>> #EAECEE
+    BorderColor<<grey>> #2C3E50
+}
+hide <<red>> stereotype
+hide <<purple>> stereotype
+hide <<blue>> stereotype
+hide <<green>> stereotype
+hide <<orange>> stereotype
+hide <<grey>> stereotype
+
+' == COMPONENTS ==
+
+[Client Application] as application <<blue>>
+
+package "Terminal public APIs" as packCalypsonetPublic #C_GREY1 {
+    [**calypsonet-terminal-reader-java-api**] as readerApi <<orange>>
+    [**calypsonet-terminal-calypso-java-api**] as calypsoApi <<orange>>
+}
+package "Terminal internal API  (hidden for the client application)" as packCalypsonetPrivate #C_GREY4 {
+    [**calypsonet-terminal-card-java-api**] as cardApi <<orange>>
+}
+package "Certifiable framework components" as packMain #C_GREY1 {
+    together {
+        [Card Layer (Calypso, etc...)] as extension <<green>>
+        [Reader Layer] as service
+    }
+}
+
+' == ASSOCIATIONS ==
+
+application -right-> packCalypsonetPublic #COLOR_BLUE
+application - -> packMain #COLOR_BLUE
+
+calypsoApi -right-> readerApi #COLOR_ORANGE
+
+extension - -> cardApi #COLOR_GREEN
+extension -up-> readerApi #COLOR_GREEN
+extension .up.> calypsoApi #COLOR_GREEN
+
+service -up-> readerApi #COLOR_YELLOW
+service - -> cardApi #COLOR_YELLOW
+
+' == LAYOUT ==
+
+@enduml
+
+@startuml
+
+
+skinparam Shadowing false
+skinparam component {
+    BorderColor #D4AC0D
+    BackgroundColor<<red>> #FDEDEC
+    BorderColor<<red>> #E74C3C
+    BackgroundColor<<purple>> #F4ECF7
+    BorderColor<<purple>> #8E44AD
+    BackgroundColor<<blue>> #EBF5FB
+    BorderColor<<blue>> #3498DB
+    BackgroundColor<<green>> #E9F7EF
+    BorderColor<<green>> #27AE60
+    BackgroundColor<<orange>> #FDF2E9
+    BorderColor<<orange>> #E67E22
+    BackgroundColor<<grey>> #EAECEE
+    BorderColor<<grey>> #2C3E50
+}
+skinparam interface {
+    BorderColor #D4AC0D
+    BackgroundColor<<red>> #FDEDEC
+    BorderColor<<red>> #E74C3C
+    BackgroundColor<<purple>> #F4ECF7
+    BorderColor<<purple>> #8E44AD
+    BackgroundColor<<blue>> #EBF5FB
+    BorderColor<<blue>> #3498DB
+    BackgroundColor<<green>> #E9F7EF
+    BorderColor<<green>> #27AE60
+    BackgroundColor<<orange>> #FDF2E9
+    BorderColor<<orange>> #E67E22
+    BackgroundColor<<grey>> #EAECEE
+    BorderColor<<grey>> #2C3E50
+}
+hide <<red>> stereotype
+hide <<purple>> stereotype
+hide <<blue>> stereotype
+hide <<green>> stereotype
+hide <<orange>> stereotype
+hide <<grey>> stereotype
+
+
+[Client Application] as application <<blue>>
+
+package "Terminal public APIs" as packCalypsonetPublic #F8F9F9 {
+    [**calypsonet-terminal-reader-java-api**] as readerApi <<orange>>
+    [**calypsonet-terminal-calypso-java-api**] as calypsoApi <<orange>>
+}
+package "Terminal internal API  (hidden for the client application)" as packCalypsonetPrivate #D7DBDD {
+    [**calypsonet-terminal-card-java-api**] as cardApi <<orange>>
+}
+package "Certifiable framework components" as packMain #F8F9F9 {
+    together {
+        [Card Layer (Calypso, etc...)] as extension <<green>>
+        [Reader Layer] as service
+    }
+}
+
+
+application -right-> packCalypsonetPublic #3498DB
+application - -> packMain #3498DB
+
+calypsoApi -right-> readerApi #E67E22
+
+extension - -> cardApi #27AE60
+extension -up-> readerApi #27AE60
+extension .up.> calypsoApi #27AE60
+
+service -up-> readerApi #D4AC0D
+service - -> cardApi #D4AC0D
+
+
+@enduml
+
+PlantUML version 1.2021.11(Sat Oct 02 15:26:11 CEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: fr
+Country: FR
+--></g></svg>

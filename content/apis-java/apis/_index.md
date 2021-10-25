@@ -1,6 +1,6 @@
 ---
-title: Java - Core components
-linktitle: Core
+title: Java - APIs
+linktitle: APIs
 type: book
 weight: 20
 toc: false
