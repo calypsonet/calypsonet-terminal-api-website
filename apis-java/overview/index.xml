@@ -1,15 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java - Components overview | Calypso Networks Association Terminal APIs</title><link>/apis-java/overview/</link><atom:link href="/apis-java/overview/index.xml" rel="self" type="application/rss+xml"/><description>Java - Components overview</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© 2021 Calypso Networks Association. All Rights Reserved.</copyright><image><url>/images/logo_hu4030ba24eb2d8f183925ab533e624c63_7524_300x300_fit_lanczos_3.png</url><title>Java - Components overview</title><link>/apis-java/overview/</link></image><item><title>Java - Configuration wizard</title><link>/apis-java/overview/configuration-wizard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/apis-java/overview/configuration-wizard/</guid><description>&lt;hr>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Java - Components overview | Calypso Networks Association Terminal APIs</title><link>/apis-java/overview/</link><atom:link href="/apis-java/overview/index.xml" rel="self" type="application/rss+xml"/><description>Java - Components overview</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021 Calypso Networks Association. All Rights Reserved.</copyright><image><url>/media/logo.svg</url><title>Java - Components overview</title><link>/apis-java/overview/</link></image><item><title>Java - Configuration wizard</title><link>/apis-java/overview/configuration-wizard/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/apis-java/overview/configuration-wizard/</guid><description>&lt;hr>
 &lt;p>This online tool generates for you the &lt;code>dependencies&lt;/code> section of Gradle or Maven configuration files.&lt;/p>
 &lt;p>Choose your project profile and copy/paste the generated result into your project dependency manager.&lt;/p>
-&lt;div class="spoiler " >
-&lt;p>
-&lt;a class="btn btn-primary" data-toggle="collapse" href="#spoiler-0" role="button" aria-expanded="false" aria-controls="spoiler-0">
-Custom Keyple card extension
-&lt;/a>
-&lt;/p>
-&lt;div class="collapse card " id="spoiler-0">
-&lt;div class="card-body">
-&lt;p>Please find below the configuration to use when developing a specific Keyple card extension not already available:&lt;/p>
+&lt;details class="spoiler " id="spoiler-0">
+&lt;summary>Custom Keyple card extension&lt;/summary>
+&lt;p>&lt;p>Please find below the configuration to use when developing a specific Keyple card extension not already available:&lt;/p>
 &lt;hr>
 &lt;p>&lt;strong>Do you need additional services?&lt;/strong>&lt;/p>
 &lt;div>
@@ -50,18 +44,11 @@ id="tabs-2-2" role="tabpanel" aria-labelled-by="tabs-2-2-tab">
 &lt;pre>&lt;code class="language-xml">&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;div class="spoiler " >
-&lt;p>
-&lt;a class="btn btn-primary" data-toggle="collapse" href="#spoiler-1" role="button" aria-expanded="false" aria-controls="spoiler-1">
-Reader Layer
-&lt;/a>
 &lt;/p>
-&lt;div class="collapse card " id="spoiler-1">
-&lt;div class="card-body">
-&lt;p>Please find below the configuration to use when developing a specific reader layer not already available:&lt;/p>
+&lt;/details>
+&lt;details class="spoiler " id="spoiler-1">
+&lt;summary>Reader Layer&lt;/summary>
+&lt;p>&lt;p>Please find below the configuration to use when developing a specific reader layer not already available:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-3" role="tablist">&lt;li class="nav-item">
 &lt;a class="nav-link active tab-Gradle-Groovy"
 id="tabs-3-0-tab" data-toggle="tab" href="#tabs-3-0" role="tab" onclick="handleClick(&amp;#34;Gradle-Groovy&amp;#34;);"
@@ -106,9 +93,8 @@ id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &amp;lt;/dependency&amp;gt;&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;/div>
+&lt;/p>
+&lt;/details>
 &lt;!-- All groovy dependencies -->
 &lt;code id="all-groovy-dependencies" style="display:none">
 &lt;span id="calypsonet-terminal-reader-java-api">implementation &lt;span class="hljs-string">'org.calypsonet.terminal:calypsonet-terminal-reader-java-api:1.0.0'&lt;/span>&lt;/span>
