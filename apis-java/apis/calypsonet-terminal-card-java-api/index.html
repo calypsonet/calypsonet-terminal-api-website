@@ -5,29 +5,29 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=generator content="Wowchemy 5.3.0 for Hugo">
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
-<link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap">
-<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" media=print onload="this.media='all'">
-<meta name=description content="Public API which defines the elements shared between all Keyple libraries.">
-<link rel=alternate hreflang=en-us href=/apis-java/core/keyple-common-java-api/>
+<link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+<link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" media=print onload="this.media='all'">
+<meta name=description content="Internal API which defines the elements shared between the reader layer and the card layer.">
+<link rel=alternate hreflang=en-us href=/apis-java/apis/calypsonet-terminal-card-java-api/>
 <meta name=theme-color content="#1d87bb">
 <link rel=stylesheet href=/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin=anonymous media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/darcula.min.css crossorigin=anonymous title=hl-light media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/darcula.min.css crossorigin=anonymous title=hl-dark media=print onload="this.media='all'" disabled>
-<link rel=stylesheet href=/css/wowchemy.221f2b8b40680c274ab01fdcfdf8a90a.css>
+<link rel=stylesheet href=/css/wowchemy.8d138e061b19a5cba07f19d7e80cbe44.css>
 <link rel=manifest href=/manifest.webmanifest>
 <link rel=icon type=image/png href=/media/icon_huceb5ed780c823eaac47da25fabbbc8be_2207_32x32_fill_lanczos_center_3.png>
 <link rel=apple-touch-icon type=image/png href=/media/icon_huceb5ed780c823eaac47da25fabbbc8be_2207_180x180_fill_lanczos_center_3.png>
-<link rel=canonical href=/apis-java/core/keyple-common-java-api/>
+<link rel=canonical href=/apis-java/apis/calypsonet-terminal-card-java-api/>
 <meta property="twitter:card" content="summary">
 <meta property="og:site_name" content="Calypso Networks Association Terminal APIs">
-<meta property="og:url" content="/apis-java/core/keyple-common-java-api/">
-<meta property="og:title" content="Keyple Common Java API | Calypso Networks Association Terminal APIs">
-<meta property="og:description" content="Public API which defines the elements shared between all Keyple libraries."><meta property="og:image" content="/media/logo.svg">
+<meta property="og:url" content="/apis-java/apis/calypsonet-terminal-card-java-api/">
+<meta property="og:title" content="Calypsonet Terminal Card Java API | Calypso Networks Association Terminal APIs">
+<meta property="og:description" content="Internal API which defines the elements shared between the reader layer and the card layer."><meta property="og:image" content="/media/logo.svg">
 <meta property="twitter:image" content="/media/logo.svg"><meta property="og:locale" content="en-us">
-<title>Keyple Common Java API | Calypso Networks Association Terminal APIs</title>
+<title>Calypsonet Terminal Card Java API | Calypso Networks Association Terminal APIs</title>
 </head>
-<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=de5bc676c72362f0b932ff27f097d431>
+<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=e12cd59a3e52ba6bece7e91ac29faeab>
 <script src=/js/wowchemy-init.min.da42964e270e05a6063fbca894d7ccff.js></script>
 <aside class=search-modal id=search>
 <div class=container>
@@ -93,7 +93,7 @@
 <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type=button data-toggle=collapse data-target=#docs-nav aria-controls=docs-nav aria-expanded=false aria-label="Toggle section navigation">
 <div class=d-flex>
 <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
-Core
+APIs
 </span>
 <span><i class="fas fa-chevron-down"></i></span>
 </div>
@@ -110,14 +110,15 @@ Core
 <div class=docs-toc-item>
 <a class=docs-toc-link href=/apis-java/overview/>Overview</a>
 <ul class="nav docs-sidenav">
-<li><a href=/apis-java/overview/configuration-wizard/>Configuration wizard</a></li>
-<li><a href=/apis-java/overview/dependency-check/>Dependency check</a></li>
+<li><a href=/apis-java/overview/components-map/>APIs map</a></li>
 </ul>
 </div>
 <div class=docs-toc-item>
-<a class=docs-toc-link href=/apis-java/core/>Core</a>
+<a class=docs-toc-link href=/apis-java/apis/>APIs</a>
 <ul class="nav docs-sidenav">
-<li class=active><a href=/apis-java/core/keyple-common-java-api/>Common API</a></li>
+<li><a href=/apis-java/apis/calypsonet-terminal-calypso-java-api/>Calypso API</a></li>
+<li class=active><a href=/apis-java/apis/calypsonet-terminal-card-java-api/>Card API</a></li>
+<li><a href=/apis-java/apis/calypsonet-terminal-reader-java-api/>Reader API</a></li>
 </ul>
 </div>
 </ul>
@@ -150,16 +151,16 @@ Home
 </a>
 </li>
 <li class=breadcrumb-item>
-<a href=/apis-java/core/>
-Core
+<a href=/apis-java/apis/>
+APIs
 </a>
 </li>
 <li class="breadcrumb-item active" aria-current=page>
-Common API
+Card API
 </li>
 </ol>
 </nav>
-<h1>Keyple Common Java API</h1>
+<h1>Calypsonet Terminal Card Java API</h1>
 <div class=article-style>
 <div class="alert alert-note">
 <div>
@@ -167,20 +168,19 @@ Common API
 <span class=component-metadata>
 <i class="fas fa-download pr-1 fa-fw"></i> <a href=#download>Download</a></span>
 <span class=component-metadata>
-<i class="fab fa-github pr-1 fa-fw"></i> <a href=https://github.com/eclipse/keyple-common-java-api/>GitHub</a></span>
+<i class="fab fa-github pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-card-java-api/>GitHub</a></span>
 <span class=component-metadata>
-<i class="fas fa-exchange-alt pr-1 fa-fw"></i> <a href=https://github.com/eclipse/keyple-common-java-api/blob/main/CHANGELOG.md>Changelog</a></span>
+<i class="fas fa-exchange-alt pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-card-java-api/blob/main/CHANGELOG.md>Changelog</a></span>
 </div>
 </div>
 <h2 id=overview>Overview</h2>
-<p>The <strong>Keyple Common Java API</strong> defines the public elements shared between all Keyple libraries.</p>
-<p>Therefore, it must be used by all developers.</p>
+<p>The <strong>Calypsonet Terminal Card Java API</strong> defines the internal elements shared between the reader layer and the card layer.</p>
 <h2 id=documentation>Documentation</h2>
 <ul>
-<li><a href=https://calypsonet.github.io/keyple-common-java-api target=_blank rel=noopener>API documentation</a></li>
+<li><a href=https://calypsonet.github.io/calypsonet-terminal-card-java-api target=_blank rel=noopener>API documentation</a></li>
 </ul>
 <h2 id=download>Download</h2>
-<p>All deliverables are available directly from the <a href="https://search.maven.org/search?q=a:keyple-common-java-api" target=_blank rel=noopener>Maven Central Repository</a> or by using one of the project resource managers below:</p>
+<p>All deliverables are available directly from the <a href="https://search.maven.org/search?q=a:calypsonet-terminal-card-java-api" target=_blank rel=noopener>Maven Central Repository</a> or by using one of the project resource managers below:</p>
 <ul class="nav nav-tabs" id=tabs-1 role=tablist><li class=nav-item>
 <a class="nav-link active tab-Gradle-Groovy" id=tabs-1-0-tab data-toggle=tab href=#tabs-1-0 role=tab onclick='handleClick("Gradle-Groovy")' aria-controls=tabs-1-0 aria-selected=true>
 Gradle Groovy
@@ -196,16 +196,16 @@ Maven
 </li></ul>
 <div class=bd-clipboard><button type=button class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onclick="copyTabContentToClipboard('tabs-1',this)">Copy</button></div>
 <div class=tab-content id=tabs-1-content><div class="tab-pane fade show active" id=tabs-1-0 role=tabpanel aria-labelled-by=tabs-1-0-tab>
-<pre><code class=language-gradle>implementation &#39;org.calypsonet.terminal:calypsonet-terminal-reader-java-api:1.0.0&#39;</code></pre>
+<pre><code class=language-gradle>implementation &#39;org.calypsonet.terminal:calypsonet-terminal-card-java-api:1.0.&#43;&#39;</code></pre>
 </div>
 <div class="tab-pane fade" id=tabs-1-1 role=tabpanel aria-labelled-by=tabs-1-1-tab>
-<pre><code class=language-kotlin>implementation(&#34;org.calypsonet.terminal:calypsonet-terminal-reader-java-api:1.0.0&#34;)</code></pre>
+<pre><code class=language-kotlin>implementation(&#34;org.calypsonet.terminal:calypsonet-terminal-card-java-api:1.0.&#43;&#34;)</code></pre>
 </div>
 <div class="tab-pane fade" id=tabs-1-2 role=tabpanel aria-labelled-by=tabs-1-2-tab>
 <pre><code class=language-xml>&lt;dependency&gt;
   &lt;groupId&gt;org.calypsonet.terminal&lt;/groupId&gt;
-  &lt;artifactId&gt;calypsonet-terminal-reader-java-api&lt;/artifactId&gt;
-  &lt;version&gt;1.0.0&lt;/version&gt;
+  &lt;artifactId&gt;calypsonet-terminal-card-java-api&lt;/artifactId&gt;
+  &lt;version&gt;[1.0.0,1.1.0)&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
@@ -218,6 +218,14 @@ Therefore, it is recommended to always perform a <strong>dynamic import</strong>
 </div>
 <div class=article-widget>
 <div class=post-nav>
+<div class=post-nav-item>
+<div class=meta-nav>Previous</div>
+<a href=/apis-java/apis/calypsonet-terminal-calypso-java-api/ rel=next>Calypsonet Terminal Calypso Java API</a>
+</div>
+<div class=post-nav-item>
+<div class=meta-nav>Next</div>
+<a href=/apis-java/apis/calypsonet-terminal-reader-java-api/ rel=prev>Calypsonet Terminal Reader Java API</a>
+</div>
 </div>
 </div>
 </div>
