@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Calypso Networks Association Terminal APIs</title><link>/</link><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><description>Calypso Networks Association Terminal APIs</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021 Calypso Networks Association. All Rights Reserved.</copyright><image><url>/media/logo.svg</url><title>Calypso Networks Association Terminal APIs</title><link>/</link></image><item><title>Java - APIs map</title><link>/apis-java/overview/components-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/apis-java/overview/components-map/</guid><description>&lt;hr>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Calypso Networks Association Terminal APIs</title><link>https://calypsonet.github.io/calypsonet-terminal-api-website/</link><atom:link href="https://calypsonet.github.io/calypsonet-terminal-api-website/index.xml" rel="self" type="application/rss+xml"/><description>Calypso Networks Association Terminal APIs</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021 Calypso Networks Association. All Rights Reserved.</copyright><image><url>https://calypsonet.github.io/calypsonet-terminal-api-website/media/logo.svg</url><title>Calypso Networks Association Terminal APIs</title><link>https://calypsonet.github.io/calypsonet-terminal-api-website/</link></image><item><title>Java - APIs map</title><link>https://calypsonet.github.io/calypsonet-terminal-api-website/apis-java/overview/components-map/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://calypsonet.github.io/calypsonet-terminal-api-website/apis-java/overview/components-map/</guid><description>&lt;hr>
 &lt;p>The dependencies between the Keyple components are shown in the diagram below:&lt;/p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
@@ -15,7 +15,7 @@
 &lt;li>All libraries are &lt;strong>public&lt;/strong>.&lt;/li>
 &lt;li>All &lt;strong>libraries&lt;/strong> and &lt;strong>public APIs&lt;/strong> can be used by the developer of the client application.&lt;/li>
 &lt;li>The &lt;strong>internal APIs&lt;/strong> are intended for the developer of Keyple add-ons only (e.g. custom reader plugin, custom card extension or custom distributed solution).&lt;/li>
-&lt;/ul></description></item><item><title>Calypsonet Terminal Calypso Java API</title><link>/apis-java/apis/calypsonet-terminal-calypso-java-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/apis-java/apis/calypsonet-terminal-calypso-java-api/</guid><description>&lt;div class="alert alert-note">
+&lt;/ul></description></item><item><title>Calypsonet Terminal Calypso Java API</title><link>https://calypsonet.github.io/calypsonet-terminal-api-website/apis-java/apis/calypsonet-terminal-calypso-java-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://calypsonet.github.io/calypsonet-terminal-api-website/apis-java/apis/calypsonet-terminal-calypso-java-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
 &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
@@ -76,7 +76,7 @@ id="tabs-1-2" role="tabpanel" aria-labelled-by="tabs-1-2-tab">
 The third version number (x.y.&lt;strong>z&lt;/strong>) only concerns updates of the javadoc because this component does not contain any implementation, but only an API.
 Therefore, it is recommended to always perform a &lt;strong>dynamic import&lt;/strong> as described above in order to have the most up-to-date documentation.
 &lt;/div>
-&lt;/div></description></item><item><title>Calypsonet Terminal Card Java API</title><link>/apis-java/apis/calypsonet-terminal-card-java-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/apis-java/apis/calypsonet-terminal-card-java-api/</guid><description>&lt;div class="alert alert-note">
+&lt;/div></description></item><item><title>Calypsonet Terminal Card Java API</title><link>https://calypsonet.github.io/calypsonet-terminal-api-website/apis-java/apis/calypsonet-terminal-card-java-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://calypsonet.github.io/calypsonet-terminal-api-website/apis-java/apis/calypsonet-terminal-card-java-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
 &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
@@ -137,7 +137,7 @@ id="tabs-1-2" role="tabpanel" aria-labelled-by="tabs-1-2-tab">
 The third version number (x.y.&lt;strong>z&lt;/strong>) only concerns updates of the javadoc because this component does not contain any implementation, but only an API.
 Therefore, it is recommended to always perform a &lt;strong>dynamic import&lt;/strong> as described above in order to have the most up-to-date documentation.
 &lt;/div>
-&lt;/div></description></item><item><title>Calypsonet Terminal Reader Java API</title><link>/apis-java/apis/calypsonet-terminal-reader-java-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/apis-java/apis/calypsonet-terminal-reader-java-api/</guid><description>&lt;div class="alert alert-note">
+&lt;/div></description></item><item><title>Calypsonet Terminal Reader Java API</title><link>https://calypsonet.github.io/calypsonet-terminal-api-website/apis-java/apis/calypsonet-terminal-reader-java-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://calypsonet.github.io/calypsonet-terminal-api-website/apis-java/apis/calypsonet-terminal-reader-java-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
 &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
