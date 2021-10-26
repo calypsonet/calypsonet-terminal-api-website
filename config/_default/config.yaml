@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: Calypso Networks Association Terminal APIs # Website name
-baseurl: 'https://calypsonet.github.io/calypsonet-terminal-api-website/' # Website URL
+baseurl: 'https://terminal-api.calypsonet.org/' # Website URL
 copyright: '&copy; {year} Calypso Networks Association. All Rights Reserved.'
 relativeURLs: true
 canonifyURLs: true
