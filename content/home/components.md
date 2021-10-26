@@ -29,10 +29,10 @@ subtitle = ""
   <div class="row" style="text-align: center">
     <div class="col-sm-3"></div>
     <div class="col-sm-3">
-      <a href="/apis-java"><img src ="/media/icon-java.svg" style="height: 60px; margin-left: auto; margin-right: auto"/><br>APIs for Java</a>
+      <a href="/apis-java"><img src ="media/icon-java.svg" style="height: 60px; margin-left: auto; margin-right: auto"/><br>APIs for Java</a>
     </div>
     <div class="col-sm-3">
-      <a href="/apis-cpp"><img src ="/media/icon-cpp.svg" style="height: 60px; margin-left: auto; margin-right: auto"/><br>APIs for C++</a>
+      <a href="/apis-cpp"><img src ="media/icon-cpp.svg" style="height: 60px; margin-left: auto; margin-right: auto"/><br>APIs for C++</a>
     </div>
     <div class="col-sm-3"></div>
   </div>
