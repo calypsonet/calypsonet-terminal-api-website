@@ -8,7 +8,7 @@
 theme: calypsonet-theme
 day_night: false
 font: 'calypsonet-font'
-font_size: L
+font_size: M
 
 # SEO
 
@@ -59,7 +59,7 @@ contact_links:
 
 main_menu:
   enable: true
-  align: l
+  align: c
   show_logo: true
   show_language: false
   show_day_night: true
