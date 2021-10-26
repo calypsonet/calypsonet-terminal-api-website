@@ -3,7 +3,7 @@ title: Calypsonet Terminal Calypso Java API
 linktitle: Calypso API
 summary: Public high-level API which standardizes the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, etc...).
 type: book
-weight: 2
+weight: 3
 toc: true
 ---
 
