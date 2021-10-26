@@ -7,7 +7,7 @@
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
 <link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" media=print onload="this.media='all'">
-<meta name=description content>
+<meta name=description content="General presentation of the dependencies between the different Terminal APIs.">
 <link rel=alternate hreflang=en-us href=https://calypsonet.github.io/calypsonet-terminal-api-website/apis-java/>
 <meta name=theme-color content="#1d87bb">
 <link rel=stylesheet href=../css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css media=print onload="this.media='all'">
@@ -23,10 +23,10 @@
 <meta property="twitter:card" content="summary">
 <meta property="og:site_name" content="Calypso Networks Association Terminal APIs">
 <meta property="og:url" content="https://calypsonet.github.io/calypsonet-terminal-api-website/apis-java/">
-<meta property="og:title" content="APIs for Java language | Calypso Networks Association Terminal APIs">
-<meta property="og:description" content><meta property="og:image" content="https://calypsonet.github.io/calypsonet-terminal-api-website/media/logo.svg">
+<meta property="og:title" content="Java - APIs overview | Calypso Networks Association Terminal APIs">
+<meta property="og:description" content="General presentation of the dependencies between the different Terminal APIs."><meta property="og:image" content="https://calypsonet.github.io/calypsonet-terminal-api-website/media/logo.svg">
 <meta property="twitter:image" content="https://calypsonet.github.io/calypsonet-terminal-api-website/media/logo.svg"><meta property="og:locale" content="en-us">
-<title>APIs for Java language | Calypso Networks Association Terminal APIs</title>
+<title>Java - APIs overview | Calypso Networks Association Terminal APIs</title>
 </head>
 <body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=8e17041b198aae83e85c44fd4a0e1aa1>
 <script src=../js/wowchemy-init.min.da42964e270e05a6063fbca894d7ccff.js></script>
@@ -69,8 +69,8 @@
 <a href=# class="nav-link dropdown-toggle" data-toggle=dropdown aria-haspopup=true><span>APIs</span><span class=caret></span>
 </a>
 <div class=dropdown-menu>
-<a class=dropdown-item href=../apis-java/overview/><span>Java</span></a>
-<a class=dropdown-item href=../apis-cpp/overview/><span>C++</span></a>
+<a class=dropdown-item href=../apis-java/><span>Java</span></a>
+<a class=dropdown-item href=../apis-cpp/><span>C++</span></a>
 </div>
 </li>
 <li class=nav-item>
@@ -94,6 +94,7 @@
 <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type=button data-toggle=collapse data-target=#docs-nav aria-controls=docs-nav aria-expanded=false aria-label="Toggle section navigation">
 <div class=d-flex>
 <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+Overview
 </span>
 <span><i class="fas fa-chevron-down"></i></span>
 </div>
@@ -106,42 +107,36 @@
 </form>
 <nav class="collapse docs-links" id=docs-nav>
 <ul class="nav docs-sidenav">
-<li class=active><a href=../apis-java/> </a></li>
-<div class=docs-toc-item>
-<a class=docs-toc-link href=../apis-java/overview/>Overview</a>
-<ul class="nav docs-sidenav">
-<li><a href=../apis-java/overview/components-map/>APIs map</a></li>
-</ul>
-</div>
-<div class=docs-toc-item>
-<a class=docs-toc-link href=../apis-java/apis/>APIs</a>
-<ul class="nav docs-sidenav">
-<li><a href=../apis-java/apis/calypsonet-terminal-calypso-java-api/>Calypso API</a></li>
-<li><a href=../apis-java/apis/calypsonet-terminal-card-java-api/>Card API</a></li>
-<li><a href=../apis-java/apis/calypsonet-terminal-reader-java-api/>Reader API</a></li>
-</ul>
-</div>
+<li class=active><a href=../apis-java/>Overview</a></li>
+<li><a href=../apis-java/calypsonet-terminal-reader-java-api/>Reader API</a></li>
+<li><a href=../apis-java/calypsonet-terminal-calypso-java-api/>Calypso API</a></li>
+<li><a href=../apis-java/calypsonet-terminal-card-java-api/>Card API</a></li>
 </ul>
 </nav>
 </div>
 <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role=main>
 <article class=article>
 <div class=docs-article-container>
-<nav class="d-none d-md-flex" aria-label=breadcrumb>
-<ol class=breadcrumb>
-<li class=breadcrumb-item>
-<a href=../>
-Home
-</a>
-</li>
-<li class="breadcrumb-item active" aria-current=page>
-</li>
-</ol>
-</nav>
-<h1>APIs for Java language</h1>
+<h1>Java - APIs overview</h1>
 <div class=article-style>
 <hr>
-<p>This section lists the APIs that can be used to develop Java and Android Calypso® certifiable frameworks.</p>
+<p>The dependencies between the Keyple components are shown in the diagram below:</p>
+<figure>
+<div class="d-flex justify-content-center">
+<div class=w-100><img src=../media/uml/apis_dependencies_overview.svg alt loading=lazy data-zoomable></div>
+</div></figure>
+<p>Here are the most important things to remember:</p>
+<ul>
+<li>Each component has its <strong>own life cycle</strong>.</li>
+<li>There are two types of Keyple components: <strong>APIs</strong> and <strong>libraries</strong>.</li>
+<li>Some APIs are provided by Calypso Networks Association.</li>
+<li>APIs contain <strong>only interfaces</strong>.</li>
+<li>Libraries contain <strong>interfaces and their implementation</strong>.</li>
+<li>Some APIs are <strong>public</strong> while others are <strong>internal</strong>.</li>
+<li>All libraries are <strong>public</strong>.</li>
+<li>All <strong>libraries</strong> and <strong>public APIs</strong> can be used by the developer of the client application.</li>
+<li>The <strong>internal APIs</strong> are intended for the developer of Keyple add-ons only (e.g. custom reader plugin, custom card extension or custom distributed solution).</li>
+</ul>
 </div>
 <div class=article-widget>
 <div class=post-nav>

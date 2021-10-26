@@ -66,35 +66,34 @@ hide <<grey>> stereotype
 
 ' == COMPONENTS ==
 
-[Client Application] as application <<blue>>
-
+[Client Application] as application
 package "Terminal public APIs" as packCalypsonetPublic #C_GREY1 {
-    [**calypsonet-terminal-reader-java-api**] as readerApi <<orange>>
-    [**calypsonet-terminal-calypso-java-api**] as calypsoApi <<orange>>
+    [**calypsonet-terminal-reader-java-api**] as readerApi <<blue>>
+    [**calypsonet-terminal-calypso-java-api**] as calypsoApi <<blue>>
 }
-package "Terminal internal API  (hidden for the client application)" as packCalypsonetPrivate #C_GREY4 {
-    [**calypsonet-terminal-card-java-api**] as cardApi <<orange>>
-}
-package "Certifiable framework components" as packMain #C_GREY1 {
+package "Certifiable framework" as packMain #C_GREY1 {
     together {
-        [Card Layer (Calypso, etc...)] as extension <<green>>
-        [Reader Layer] as service
+        [Calypso Card Layer] as cardLayer <<green>>
+        [Reader Layer] as readerLayer <<red>>
     }
+}
+package "Terminal internal API  (hidden for the client application)" as packCalypsonetPrivate #C_GREY1 {
+    [**calypsonet-terminal-card-java-api**] as cardApi <<blue>>
 }
 
 ' == ASSOCIATIONS ==
 
-application -right-> packCalypsonetPublic #COLOR_BLUE
-application --> packMain #COLOR_BLUE
+application -right-> packCalypsonetPublic #COLOR_YELLOW
+application --> packMain #COLOR_YELLOW
 
-calypsoApi -right-> readerApi #COLOR_ORANGE
+calypsoApi -left-> readerApi #COLOR_BLUE
 
-extension --> cardApi #COLOR_GREEN
-extension -up-> readerApi #COLOR_GREEN
-extension .up.> calypsoApi #COLOR_GREEN
+cardLayer --> cardApi #COLOR_GREEN
+cardLayer -up-> readerApi #COLOR_GREEN
+cardLayer -up-> calypsoApi #COLOR_GREEN
 
-service -up-> readerApi #COLOR_YELLOW
-service --> cardApi #COLOR_YELLOW
+readerLayer -up-> readerApi #COLOR_RED
+readerLayer --> cardApi #COLOR_RED
 
 ' == LAYOUT ==
 
