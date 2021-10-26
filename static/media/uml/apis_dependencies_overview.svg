@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="465px" preserveAspectRatio="none" style="width:888px;height:465px;background:#FFFFFF;" version="1.1" viewBox="0 0 888 465" width="888px" zoomAndPan="magnify"><defs/><g><!--MD5=[57463d4f0d656587f620adfbe8cee83d]
-cluster packCalypsonetPublic--><polygon fill="#F8F9F9" points="183.5,6,330.5,6,337.5,29.6094,871.5,29.6094,871.5,122,183.5,122,183.5,6" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="183.5" x2="337.5" y1="29.6094" y2="29.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="141" x="187.5" y="22.5332">Terminal public APIs</text><!--MD5=[29d756ef8ff9dbccebdbf9c7abb33baf]
-cluster packCalypsonetPrivate--><polygon fill="#D7DBDD" points="337.5,358,729.5,358,736.5,381.6094,739.5,381.6094,739.5,458,337.5,458,337.5,358" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="337.5" x2="736.5" y1="381.6094" y2="381.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="386" x="341.5" y="374.5332">Terminal internal API  (hidden for the client application)</text><!--MD5=[fa748c0050d71d88d66b284603ec55cc]
-cluster packMain--><polygon fill="#F8F9F9" points="271.5,162,519.5,162,526.5,185.6094,753.5,185.6094,753.5,326,271.5,326,271.5,162" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="271.5" x2="526.5" y1="185.6094" y2="185.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="242" x="275.5" y="178.5332">Certifiable framework components</text><!--MD5=[0fda63aba32982abbdb07b83db27d91d]
-entity readerApi--><rect fill="#FDF2E9" height="47.6094" style="stroke:#E67E22;stroke-width:1.5;" width="290" x="557.5" y="50"/><rect fill="#FDF2E9" height="10" style="stroke:#E67E22;stroke-width:1.5;" width="15" x="827.5" y="55"/><rect fill="#FDF2E9" height="2" style="stroke:#E67E22;stroke-width:1.5;" width="4" x="825.5" y="57"/><rect fill="#FDF2E9" height="2" style="stroke:#E67E22;stroke-width:1.5;" width="4" x="825.5" y="61"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="250" x="572.5" y="84.5332">calypsonet-terminal-reader-java-api</text><!--MD5=[1ca801befaff286e049057b0f9cc4296]
-entity calypsoApi--><rect fill="#FDF2E9" height="47.6094" style="stroke:#E67E22;stroke-width:1.5;" width="296" x="226.5" y="50"/><rect fill="#FDF2E9" height="10" style="stroke:#E67E22;stroke-width:1.5;" width="15" x="502.5" y="55"/><rect fill="#FDF2E9" height="2" style="stroke:#E67E22;stroke-width:1.5;" width="4" x="500.5" y="57"/><rect fill="#FDF2E9" height="2" style="stroke:#E67E22;stroke-width:1.5;" width="4" x="500.5" y="61"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="256" x="241.5" y="84.5332">calypsonet-terminal-calypso-java-api</text><!--MD5=[f74f7ef7641fa41957945dcfb119390e]
-entity cardApi--><rect fill="#FDF2E9" height="47.6094" style="stroke:#E67E22;stroke-width:1.5;" width="274" x="401.5" y="394"/><rect fill="#FDF2E9" height="10" style="stroke:#E67E22;stroke-width:1.5;" width="15" x="655.5" y="399"/><rect fill="#FDF2E9" height="2" style="stroke:#E67E22;stroke-width:1.5;" width="4" x="653.5" y="401"/><rect fill="#FDF2E9" height="2" style="stroke:#E67E22;stroke-width:1.5;" width="4" x="653.5" y="405"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="234" x="416.5" y="428.5332">calypsonet-terminal-card-java-api</text><!--MD5=[535f43d417660373b2263710d106a2e4]
-entity extension--><rect fill="#E9F7EF" height="47.6094" style="stroke:#27AE60;stroke-width:1.5;" width="215" x="328" y="230"/><rect fill="#E9F7EF" height="10" style="stroke:#27AE60;stroke-width:1.5;" width="15" x="523" y="235"/><rect fill="#E9F7EF" height="2" style="stroke:#27AE60;stroke-width:1.5;" width="4" x="521" y="237"/><rect fill="#E9F7EF" height="2" style="stroke:#27AE60;stroke-width:1.5;" width="4" x="521" y="241"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="175" x="343" y="264.5332">Card Layer (Calypso, etc...)</text><!--MD5=[38bfa9dc6018363cafe15f923a4b8db9]
-entity service--><rect fill="#FEFECE" height="47.6094" style="stroke:#D4AC0D;stroke-width:1.5;" width="127" x="578" y="230"/><rect fill="#FEFECE" height="10" style="stroke:#D4AC0D;stroke-width:1.5;" width="15" x="685" y="235"/><rect fill="#FEFECE" height="2" style="stroke:#D4AC0D;stroke-width:1.5;" width="4" x="683" y="237"/><rect fill="#FEFECE" height="2" style="stroke:#D4AC0D;stroke-width:1.5;" width="4" x="683" y="241"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="593" y="264.5332">Reader Layer</text><!--MD5=[37c33c71ce9550fe283f62c54b59719b]
-entity application--><rect fill="#EBF5FB" height="47.6094" style="stroke:#3498DB;stroke-width:1.5;" width="149" x="7" y="50"/><rect fill="#EBF5FB" height="10" style="stroke:#3498DB;stroke-width:1.5;" width="15" x="136" y="55"/><rect fill="#EBF5FB" height="2" style="stroke:#3498DB;stroke-width:1.5;" width="4" x="134" y="57"/><rect fill="#EBF5FB" height="2" style="stroke:#3498DB;stroke-width:1.5;" width="4" x="134" y="61"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="22" y="84.5332">Client Application</text><!--MD5=[ff5ebf69d7e821c0dbbf77d5fe3170c5]
-link application to packCalypsonetPublic--><path d="M156.266,74 C162.0465,74 167.827,74 173.6075,74 C176.4978,74 179.388,74 182.2783,74 C182.6395,74 183.0008,74 183.3621,74 C183.4073,74 183.4524,74 183.4976,74 " fill="none" id="application-to-packCalypsonetPublic" style="stroke:#3498DB;stroke-width:1.0;"/><polygon fill="#3498DB" points="183.4976,74,174.4976,70,178.4976,74,174.4976,78,183.4976,74" style="stroke:#3498DB;stroke-width:1.0;"/><!--MD5=[1488bd814bfce1c270d10cdde1d74a4f]
-link application to packMain--><path d="M107.385,98.27 C133.801,122.018 175.9083,159.8723 211.8615,192.194 C229.8381,208.3549 246.2763,223.1326 258.4452,234.0724 C261.4875,236.8074 264.2629,239.3024 266.7288,241.5193 C267.9618,242.6277 269.1174,243.6666 270.1903,244.6311 C270.4585,244.8722 270.7215,245.1087 270.9793,245.3404 C271.1082,245.4563 271.2358,245.571 271.3621,245.6845 " fill="none" id="application-to-packMain" style="stroke:#3498DB;stroke-width:1.0;"/><polygon fill="#3498DB" points="271.3621,245.6845,267.3433,236.6929,267.6437,242.3418,261.9949,242.6423,271.3621,245.6845" style="stroke:#3498DB;stroke-width:1.0;"/><!--MD5=[f3e8fc8d2e795f19f51e601c66efb1b9]
-link calypsoApi to readerApi--><path d="M522.805,74 C532.568,74 542.331,74 552.094,74 " fill="none" id="calypsoApi-to-readerApi" style="stroke:#E67E22;stroke-width:1.0;"/><polygon fill="#E67E22" points="557.199,74,548.199,70,552.199,74,548.199,78,557.199,74" style="stroke:#E67E22;stroke-width:1.0;"/><!--MD5=[b84145f68a9638efe3b1cde23adb3c4f]
-link extension to cardApi--><path d="M450.257,278.211 C468.92,307.563 501.014,358.042 520.924,389.3561 " fill="none" id="extension-to-cardApi" style="stroke:#27AE60;stroke-width:1.0;"/><polygon fill="#27AE60" points="523.77,393.8324,522.3173,384.0913,521.0876,389.6129,515.566,388.3832,523.77,393.8324" style="stroke:#27AE60;stroke-width:1.0;"/><!--MD5=[39b1edf8889298d7473da6cfa063b6c7]
-reverse link readerApi to extension--><path d="M644.331,100.141 C617.914,112.541 586.77,128.57 560.5,146 C522.415,171.27 483.108,206.749 458.984,229.805 " fill="none" id="readerApi-backto-extension" style="stroke:#27AE60;stroke-width:1.0;"/><polygon fill="#27AE60" points="648.866,98.026,639.0188,98.204,644.3344,100.1389,642.3995,105.4546,648.866,98.026" style="stroke:#27AE60;stroke-width:1.0;"/><!--MD5=[4b7e4247c0bcddb93fd1479137d7111a]
-reverse link calypsoApi to extension--><path d="M384.182,103.253 C396.175,138.247 416.38,197.206 427.523,229.724 " fill="none" id="calypsoApi-backto-extension" style="stroke:#27AE60;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#27AE60" points="382.475,98.27,381.6096,108.0808,384.0964,102.9998,389.1773,105.4866,382.475,98.27" style="stroke:#27AE60;stroke-width:1.0;"/><!--MD5=[3bb137f5d2fdf2eddbf56d075b4f5976]
-reverse link readerApi to service--><path d="M692.818,103.253 C680.825,138.247 660.62,197.206 649.477,229.724 " fill="none" id="readerApi-backto-service" style="stroke:#D4AC0D;stroke-width:1.0;"/><polygon fill="#D4AC0D" points="694.525,98.27,687.8227,105.4866,692.9036,102.9998,695.3904,108.0808,694.525,98.27" style="stroke:#D4AC0D;stroke-width:1.0;"/><!--MD5=[2523936cee4f99c1b1f73b34e1a6b0f7]
-link service to cardApi--><path d="M626.743,278.211 C608.08,307.563 575.986,358.042 556.076,389.3561 " fill="none" id="service-to-cardApi" style="stroke:#D4AC0D;stroke-width:1.0;"/><polygon fill="#D4AC0D" points="553.23,393.8324,561.434,388.3832,555.9124,389.6129,554.6827,384.0913,553.23,393.8324" style="stroke:#D4AC0D;stroke-width:1.0;"/><!--MD5=[abe2fee5ea0a89ad5b2197a73f004e16]
+cluster packCalypsonetPublic--><polygon fill="#F8F9F9" points="183.5,6,330.5,6,337.5,29.6094,871.5,29.6094,871.5,122,183.5,122,183.5,6" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="183.5" x2="337.5" y1="29.6094" y2="29.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="141" x="187.5" y="22.5332">Terminal public APIs</text><!--MD5=[fa748c0050d71d88d66b284603ec55cc]
+cluster packMain--><polygon fill="#F8F9F9" points="128.5,162,285.5,162,292.5,185.6094,561.5,185.6094,561.5,326,128.5,326,128.5,162" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="128.5" x2="292.5" y1="185.6094" y2="185.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="151" x="132.5" y="178.5332">Certifiable framework</text><!--MD5=[29d756ef8ff9dbccebdbf9c7abb33baf]
+cluster packCalypsonetPrivate--><polygon fill="#F8F9F9" points="192.5,358,584.5,358,591.5,381.6094,594.5,381.6094,594.5,458,192.5,458,192.5,358" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="192.5" x2="591.5" y1="381.6094" y2="381.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="386" x="196.5" y="374.5332">Terminal internal API  (hidden for the client application)</text><!--MD5=[0fda63aba32982abbdb07b83db27d91d]
+entity readerApi--><rect fill="#EBF5FB" height="47.6094" style="stroke:#3498DB;stroke-width:1.5;" width="290" x="226.5" y="50"/><rect fill="#EBF5FB" height="10" style="stroke:#3498DB;stroke-width:1.5;" width="15" x="496.5" y="55"/><rect fill="#EBF5FB" height="2" style="stroke:#3498DB;stroke-width:1.5;" width="4" x="494.5" y="57"/><rect fill="#EBF5FB" height="2" style="stroke:#3498DB;stroke-width:1.5;" width="4" x="494.5" y="61"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="250" x="241.5" y="84.5332">calypsonet-terminal-reader-java-api</text><!--MD5=[1ca801befaff286e049057b0f9cc4296]
+entity calypsoApi--><rect fill="#EBF5FB" height="47.6094" style="stroke:#3498DB;stroke-width:1.5;" width="296" x="551.5" y="50"/><rect fill="#EBF5FB" height="10" style="stroke:#3498DB;stroke-width:1.5;" width="15" x="827.5" y="55"/><rect fill="#EBF5FB" height="2" style="stroke:#3498DB;stroke-width:1.5;" width="4" x="825.5" y="57"/><rect fill="#EBF5FB" height="2" style="stroke:#3498DB;stroke-width:1.5;" width="4" x="825.5" y="61"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="256" x="566.5" y="84.5332">calypsonet-terminal-calypso-java-api</text><!--MD5=[901342be69ba32ee86d18dc896cc3995]
+entity cardLayer--><rect fill="#E9F7EF" height="47.6094" style="stroke:#27AE60;stroke-width:1.5;" width="166" x="347.5" y="230"/><rect fill="#E9F7EF" height="10" style="stroke:#27AE60;stroke-width:1.5;" width="15" x="493.5" y="235"/><rect fill="#E9F7EF" height="2" style="stroke:#27AE60;stroke-width:1.5;" width="4" x="491.5" y="237"/><rect fill="#E9F7EF" height="2" style="stroke:#27AE60;stroke-width:1.5;" width="4" x="491.5" y="241"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="362.5" y="264.5332">Calypso Card Layer</text><!--MD5=[f74b1a442023b6505c909249a2fe10a1]
+entity readerLayer--><rect fill="#FDEDEC" height="47.6094" style="stroke:#E74C3C;stroke-width:1.5;" width="127" x="185" y="230"/><rect fill="#FDEDEC" height="10" style="stroke:#E74C3C;stroke-width:1.5;" width="15" x="292" y="235"/><rect fill="#FDEDEC" height="2" style="stroke:#E74C3C;stroke-width:1.5;" width="4" x="290" y="237"/><rect fill="#FDEDEC" height="2" style="stroke:#E74C3C;stroke-width:1.5;" width="4" x="290" y="241"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="200" y="264.5332">Reader Layer</text><!--MD5=[f74f7ef7641fa41957945dcfb119390e]
+entity cardApi--><rect fill="#EBF5FB" height="47.6094" style="stroke:#3498DB;stroke-width:1.5;" width="274" x="250.5" y="394"/><rect fill="#EBF5FB" height="10" style="stroke:#3498DB;stroke-width:1.5;" width="15" x="504.5" y="399"/><rect fill="#EBF5FB" height="2" style="stroke:#3498DB;stroke-width:1.5;" width="4" x="502.5" y="401"/><rect fill="#EBF5FB" height="2" style="stroke:#3498DB;stroke-width:1.5;" width="4" x="502.5" y="405"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="234" x="265.5" y="428.5332">calypsonet-terminal-card-java-api</text><!--MD5=[37c33c71ce9550fe283f62c54b59719b]
+entity application--><rect fill="#FEFECE" height="47.6094" style="stroke:#D4AC0D;stroke-width:1.5;" width="149" x="7" y="50"/><rect fill="#FEFECE" height="10" style="stroke:#D4AC0D;stroke-width:1.5;" width="15" x="136" y="55"/><rect fill="#FEFECE" height="2" style="stroke:#D4AC0D;stroke-width:1.5;" width="4" x="134" y="57"/><rect fill="#FEFECE" height="2" style="stroke:#D4AC0D;stroke-width:1.5;" width="4" x="134" y="61"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="22" y="84.5332">Client Application</text><!--MD5=[ff5ebf69d7e821c0dbbf77d5fe3170c5]
+link application to packCalypsonetPublic--><path d="M156.266,74 C162.0465,74 167.827,74 173.6075,74 C176.4978,74 179.388,74 182.2783,74 C182.6395,74 183.0008,74 183.3621,74 C183.4073,74 183.4524,74 183.4976,74 " fill="none" id="application-to-packCalypsonetPublic" style="stroke:#D4AC0D;stroke-width:1.0;"/><polygon fill="#D4AC0D" points="183.4976,74,174.4976,70,178.4976,74,174.4976,78,183.4976,74" style="stroke:#D4AC0D;stroke-width:1.0;"/><!--MD5=[1488bd814bfce1c270d10cdde1d74a4f]
+link application to packMain--><path d="M88.6903,98.27 C96.0281,122.018 107.7245,159.8723 117.7115,192.194 C120.2082,200.2744 122.5981,208.0091 124.7864,215.0911 C125.8805,218.6321 126.9242,222.01 127.9057,225.1863 C128.0283,225.5833 128.15,225.9772 128.2708,226.3679 C128.3311,226.5632 128.3912,226.7578 128.4511,226.9515 " fill="none" id="application-to-packMain" style="stroke:#D4AC0D;stroke-width:1.0;"/><polygon fill="#D4AC0D" points="128.4511,226.9515,129.6159,217.1718,126.975,222.1743,121.9724,219.5335,128.4511,226.9515" style="stroke:#D4AC0D;stroke-width:1.0;"/><!--MD5=[a08aff7535dca6bf72dea2cf827cb92a]
+reverse link readerApi to calypsoApi--><path d="M521.745,74 C531.581,74 541.417,74 551.252,74 " fill="none" id="readerApi-backto-calypsoApi" style="stroke:#3498DB;stroke-width:1.0;"/><polygon fill="#3498DB" points="516.602,74,525.602,78,521.602,74,525.602,70,516.602,74" style="stroke:#3498DB;stroke-width:1.0;"/><!--MD5=[1bcf969c5812968dbfcae3f05e881424]
+link cardLayer to cardApi--><path d="M424.339,278.211 C416.58,307.443 403.259,357.628 394.94,388.9701 " fill="none" id="cardLayer-to-cardApi" style="stroke:#27AE60;stroke-width:1.0;"/><polygon fill="#27AE60" points="393.649,393.8324,399.8239,386.1597,394.9317,388.9997,392.0917,384.1074,393.649,393.8324" style="stroke:#27AE60;stroke-width:1.0;"/><!--MD5=[9b1f8b0a2b6c25635bc1fcfd47431c0d]
+reverse link readerApi to cardLayer--><path d="M380.865,103.253 C392.464,138.247 412.007,197.206 422.785,229.724 " fill="none" id="readerApi-backto-cardLayer" style="stroke:#27AE60;stroke-width:1.0;"/><polygon fill="#27AE60" points="379.213,98.27,378.2466,108.0713,380.7856,103.0163,385.8406,105.5552,379.213,98.27" style="stroke:#27AE60;stroke-width:1.0;"/><!--MD5=[0fdeed5ed41e149f16cbb29ed2e2518a]
+reverse link calypsoApi to cardLayer--><path d="M660.278,100.954 C607.783,135.69 515.487,196.763 465.329,229.953 " fill="none" id="calypsoApi-backto-cardLayer" style="stroke:#27AE60;stroke-width:1.0;"/><polygon fill="#27AE60" points="664.609,98.088,654.8963,99.7198,660.4395,100.8476,659.3117,106.3909,664.609,98.088" style="stroke:#27AE60;stroke-width:1.0;"/><!--MD5=[f29669ca13d0c4ce7989d0227c0dcd24]
+reverse link readerApi to readerLayer--><path d="M352.568,102.398 C328.465,137.279 287.238,196.94 264.584,229.724 " fill="none" id="readerApi-backto-readerLayer" style="stroke:#E74C3C;stroke-width:1.0;"/><polygon fill="#E74C3C" points="355.42,98.27,347.0121,103.3991,352.577,102.3831,353.593,107.9479,355.42,98.27" style="stroke:#E74C3C;stroke-width:1.0;"/><!--MD5=[ae7e5d72eec5294e0cc92bbe7dc7c995]
+link readerLayer to cardApi--><path d="M268.415,278.211 C293.704,307.684 337.268,358.456 364.11,389.7401 " fill="none" id="readerLayer-to-cardApi" style="stroke:#E74C3C;stroke-width:1.0;"/><polygon fill="#E74C3C" points="367.622,393.8324,364.7967,384.3975,364.366,390.0379,358.7255,389.6071,367.622,393.8324" style="stroke:#E74C3C;stroke-width:1.0;"/><!--MD5=[ece7a7d422556d8d9d657f88aa90c54b]
 @startuml
 
 ' == THEME ==
@@ -84,35 +84,34 @@ hide <<grey>> stereotype
 
 ' == COMPONENTS ==
 
-[Client Application] as application <<blue>>
-
+[Client Application] as application
 package "Terminal public APIs" as packCalypsonetPublic #C_GREY1 {
-    [**calypsonet-terminal-reader-java-api**] as readerApi <<orange>>
-    [**calypsonet-terminal-calypso-java-api**] as calypsoApi <<orange>>
+    [**calypsonet-terminal-reader-java-api**] as readerApi <<blue>>
+    [**calypsonet-terminal-calypso-java-api**] as calypsoApi <<blue>>
 }
-package "Terminal internal API  (hidden for the client application)" as packCalypsonetPrivate #C_GREY4 {
-    [**calypsonet-terminal-card-java-api**] as cardApi <<orange>>
-}
-package "Certifiable framework components" as packMain #C_GREY1 {
+package "Certifiable framework" as packMain #C_GREY1 {
     together {
-        [Card Layer (Calypso, etc...)] as extension <<green>>
-        [Reader Layer] as service
+        [Calypso Card Layer] as cardLayer <<green>>
+        [Reader Layer] as readerLayer <<red>>
     }
+}
+package "Terminal internal API  (hidden for the client application)" as packCalypsonetPrivate #C_GREY1 {
+    [**calypsonet-terminal-card-java-api**] as cardApi <<blue>>
 }
 
 ' == ASSOCIATIONS ==
 
-application -right-> packCalypsonetPublic #COLOR_BLUE
-application - -> packMain #COLOR_BLUE
+application -right-> packCalypsonetPublic #COLOR_YELLOW
+application - -> packMain #COLOR_YELLOW
 
-calypsoApi -right-> readerApi #COLOR_ORANGE
+calypsoApi -left-> readerApi #COLOR_BLUE
 
-extension - -> cardApi #COLOR_GREEN
-extension -up-> readerApi #COLOR_GREEN
-extension .up.> calypsoApi #COLOR_GREEN
+cardLayer - -> cardApi #COLOR_GREEN
+cardLayer -up-> readerApi #COLOR_GREEN
+cardLayer -up-> calypsoApi #COLOR_GREEN
 
-service -up-> readerApi #COLOR_YELLOW
-service - -> cardApi #COLOR_YELLOW
+readerLayer -up-> readerApi #COLOR_RED
+readerLayer - -> cardApi #COLOR_RED
 
 ' == LAYOUT ==
 
@@ -160,34 +159,33 @@ hide <<orange>> stereotype
 hide <<grey>> stereotype
 
 
-[Client Application] as application <<blue>>
-
+[Client Application] as application
 package "Terminal public APIs" as packCalypsonetPublic #F8F9F9 {
-    [**calypsonet-terminal-reader-java-api**] as readerApi <<orange>>
-    [**calypsonet-terminal-calypso-java-api**] as calypsoApi <<orange>>
+    [**calypsonet-terminal-reader-java-api**] as readerApi <<blue>>
+    [**calypsonet-terminal-calypso-java-api**] as calypsoApi <<blue>>
 }
-package "Terminal internal API  (hidden for the client application)" as packCalypsonetPrivate #D7DBDD {
-    [**calypsonet-terminal-card-java-api**] as cardApi <<orange>>
-}
-package "Certifiable framework components" as packMain #F8F9F9 {
+package "Certifiable framework" as packMain #F8F9F9 {
     together {
-        [Card Layer (Calypso, etc...)] as extension <<green>>
-        [Reader Layer] as service
+        [Calypso Card Layer] as cardLayer <<green>>
+        [Reader Layer] as readerLayer <<red>>
     }
 }
+package "Terminal internal API  (hidden for the client application)" as packCalypsonetPrivate #F8F9F9 {
+    [**calypsonet-terminal-card-java-api**] as cardApi <<blue>>
+}
 
 
-application -right-> packCalypsonetPublic #3498DB
-application - -> packMain #3498DB
+application -right-> packCalypsonetPublic #D4AC0D
+application - -> packMain #D4AC0D
 
-calypsoApi -right-> readerApi #E67E22
+calypsoApi -left-> readerApi #3498DB
 
-extension - -> cardApi #27AE60
-extension -up-> readerApi #27AE60
-extension .up.> calypsoApi #27AE60
+cardLayer - -> cardApi #27AE60
+cardLayer -up-> readerApi #27AE60
+cardLayer -up-> calypsoApi #27AE60
 
-service -up-> readerApi #D4AC0D
-service - -> cardApi #D4AC0D
+readerLayer -up-> readerApi #E74C3C
+readerLayer - -> cardApi #E74C3C
 
 
 @enduml

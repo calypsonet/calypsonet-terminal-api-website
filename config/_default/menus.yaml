@@ -9,11 +9,11 @@ main:
     weight: 10
   - name: Java
     parent: APIs
-    url: '/apis-java/overview/'
+    url: '/apis-java/'
     weight: 10
   - name: C++
     parent: APIs
-    url: '/apis-cpp/overview/'
+    url: '/apis-cpp/'
     weight: 20
   - name: Dashboard
     url: '/projects-dashboard/'

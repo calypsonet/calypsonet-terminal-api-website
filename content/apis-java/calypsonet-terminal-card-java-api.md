@@ -3,6 +3,7 @@ title: Calypsonet Terminal Card Java API
 linktitle: Card API
 summary: Internal API which defines the elements shared between the reader layer and the card layer.
 type: book
+weight: 3
 toc: true
 ---
 
