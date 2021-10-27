@@ -109,7 +109,29 @@
         ]
       },
       "pull_requests": [
-
+        {
+          "url": "https://api.github.com/repos/jeanpierrefortune/calypsonet-terminal-calypso-java-api/pulls/1",
+          "id": 767464718,
+          "number": 1,
+          "head": {
+            "ref": "main",
+            "sha": "081ca7017cadd8ab13b435b45658e4a9de24cf03",
+            "repo": {
+              "id": 369493184,
+              "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api",
+              "name": "calypsonet-terminal-calypso-java-api"
+            }
+          },
+          "base": {
+            "ref": "main",
+            "sha": "772152d34fe52a67b46a75f317150dd9f23cda50",
+            "repo": {
+              "id": 387826693,
+              "url": "https://api.github.com/repos/jeanpierrefortune/calypsonet-terminal-calypso-java-api",
+              "name": "calypsonet-terminal-calypso-java-api"
+            }
+          }
+        }
       ]
     }
   ]
