@@ -7,28 +7,28 @@
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
 <link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" media=print onload="this.media='all'">
-<meta name=description content>
-<link rel=alternate hreflang=en-us href=https://terminal-api.calypsonet.org/apis-cpp/overview/>
+<meta name=description content="Public API which defines the elements shared between the reader layer and the card layer.">
+<link rel=alternate hreflang=en-us href=https://terminal-api.calypsonet.org/apis-cpp/calypsonet-terminal-reader-cpp-api/>
 <meta name=theme-color content="#1d87bb">
 <link rel=stylesheet href=../../css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin=anonymous media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/darcula.min.css crossorigin=anonymous title=hl-light media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/darcula.min.css crossorigin=anonymous title=hl-dark media=print onload="this.media='all'" disabled>
 <link rel=stylesheet href=../../css/wowchemy.79e0f35d55bc2ef7251705d581fe3a59.css>
-<link rel=alternate href=../../apis-cpp/overview/index.xml type=application/rss+xml title="Calypso Networks Association Terminal APIs">
 <link rel=manifest href=../../manifest.webmanifest>
 <link rel=icon type=image/png href=../../media/icon_huceb5ed780c823eaac47da25fabbbc8be_2207_32x32_fill_lanczos_center_3.png>
 <link rel=apple-touch-icon type=image/png href=../../media/icon_huceb5ed780c823eaac47da25fabbbc8be_2207_180x180_fill_lanczos_center_3.png>
-<link rel=canonical href=https://terminal-api.calypsonet.org/apis-cpp/overview/>
+<link rel=canonical href=https://terminal-api.calypsonet.org/apis-cpp/calypsonet-terminal-reader-cpp-api/>
 <meta property="twitter:card" content="summary">
 <meta property="og:site_name" content="Calypso Networks Association Terminal APIs">
-<meta property="og:url" content="https://terminal-api.calypsonet.org/apis-cpp/overview/">
-<meta property="og:title" content="C++ - APIs overview | Calypso Networks Association Terminal APIs">
-<meta property="og:description" content><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
+<meta property="og:url" content="https://terminal-api.calypsonet.org/apis-cpp/calypsonet-terminal-reader-cpp-api/">
+<meta property="og:title" content="Calypsonet Terminal Reader C++ API | Calypso Networks Association Terminal APIs">
+<meta property="og:description" content="Public API which defines the elements shared between the reader layer and the card layer."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
 <meta property="twitter:image" content="https://terminal-api.calypsonet.org/media/logo.svg"><meta property="og:locale" content="en-us">
-<title>C++ - APIs overview | Calypso Networks Association Terminal APIs</title>
+<meta property="article:modified_time" content="2021-10-27T11:37:15+02:00">
+<title>Calypsonet Terminal Reader C++ API | Calypso Networks Association Terminal APIs</title>
 </head>
-<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=1640b2a3755d9990a9e003fe6508a3ec>
+<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=0f9a65deeb7531326d168dd979cdcf21>
 <script src=../../js/wowchemy-init.min.da42964e270e05a6063fbca894d7ccff.js></script>
 <aside class=search-modal id=search>
 <div class=container>
@@ -94,6 +94,7 @@
 <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type=button data-toggle=collapse data-target=#docs-nav aria-controls=docs-nav aria-expanded=false aria-label="Toggle section navigation">
 <div class=d-flex>
 <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+Overview
 </span>
 <span><i class="fas fa-chevron-down"></i></span>
 </div>
@@ -106,33 +107,56 @@
 </form>
 <nav class="collapse docs-links" id=docs-nav>
 <ul class="nav docs-sidenav">
-<li><a href=../../apis-cpp/> </a></li>
-<div class=docs-toc-item>
-<a class="docs-toc-link active" href=../../apis-cpp/overview/>Overview</a>
+<li><a href=../../apis-cpp/>Overview</a></li>
+<li class=active><a href=../../apis-cpp/calypsonet-terminal-reader-cpp-api/>Reader API</a></li>
+<li><a href=../../apis-cpp/calypsonet-terminal-card-cpp-api/>Card API</a></li>
+<li><a href=../../apis-cpp/calypsonet-terminal-calypso-cpp-api/>Calypso API</a></li>
+</ul>
+</nav>
 </div>
+<div class="d-none d-xl-block col-xl-2 docs-toc">
+<ul class="nav toc-top">
+<li><a href=# id=back_to_top class=docs-toc-title>Contents</a></li>
+</ul>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#overview>Overview</a></li>
 </ul>
 </nav>
 </div>
 <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role=main>
 <article class=article>
 <div class=docs-article-container>
-<h1>C++ - APIs overview</h1>
+<h1>Calypsonet Terminal Reader C++ API</h1>
 <div class=article-style>
-<hr>
 <div class="alert alert-note">
 <div>
-Coming soon
+<strong><code>1.0.0</code></strong>
+<span class=component-metadata>
+<i class="fab fa-github pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/>GitHub</a></span>
+<span class=component-metadata>
+<i class="fas fa-exchange-alt pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/blob/main/CHANGELOG.md>Changelog</a></span>
 </div>
 </div>
-<hr>
+<h2 id=overview>Overview</h2>
+<p>The <strong>Calypsonet Terminal Reader C++ API</strong> defines the public elements shared between the reader layer and the card layer.</p>
+<div class="alert alert-note">
+<div>
+The third version number (x.y.<strong>z</strong>) only concerns updates of the documentation because this component does not contain any implementation, but only file headers.
+</div>
+</div>
 </div>
 <div class=article-widget>
 <div class=post-nav>
+<div class=post-nav-item>
+<div class=meta-nav>Next</div>
+<a href=../../apis-cpp/calypsonet-terminal-card-cpp-api/ rel=prev>Calypsonet Terminal Card C++ API</a>
+</div>
 </div>
 </div>
 </div>
 <div class=body-footer>
-<p>Last updated on Oct 25, 2021</p>
+<p>Last updated on Oct 27, 2021</p>
 </div>
 </article>
 <footer class=site-footer>

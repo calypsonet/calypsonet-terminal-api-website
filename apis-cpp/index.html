@@ -94,6 +94,7 @@
 <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type=button data-toggle=collapse data-target=#docs-nav aria-controls=docs-nav aria-expanded=false aria-label="Toggle section navigation">
 <div class=d-flex>
 <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+Overview
 </span>
 <span><i class="fas fa-chevron-down"></i></span>
 </div>
@@ -106,10 +107,10 @@
 </form>
 <nav class="collapse docs-links" id=docs-nav>
 <ul class="nav docs-sidenav">
-<li class=active><a href=../apis-cpp/> </a></li>
-<div class=docs-toc-item>
-<a class=docs-toc-link href=../apis-cpp/overview/>Overview</a>
-</div>
+<li class=active><a href=../apis-cpp/>Overview</a></li>
+<li><a href=../apis-cpp/calypsonet-terminal-reader-cpp-api/>Reader API</a></li>
+<li><a href=../apis-cpp/calypsonet-terminal-card-cpp-api/>Card API</a></li>
+<li><a href=../apis-cpp/calypsonet-terminal-calypso-cpp-api/>Calypso API</a></li>
 </ul>
 </nav>
 </div>
@@ -120,11 +121,21 @@
 <div class=article-style>
 <hr>
 <p>This section lists the APIs that can be used to develop C++ Calypso® certifiable frameworks.</p>
-<div class="alert alert-note">
-<div>
-Coming soon
-</div>
-</div>
+<hr>
+<ul class=list-unstyled>
+<li>
+<h5><a href=../apis-cpp/calypsonet-terminal-reader-cpp-api/>Reader API</a></h5>
+<p>Public API which defines the elements shared between the reader layer and the card layer.</p>
+</li>
+<li>
+<h5><a href=../apis-cpp/calypsonet-terminal-card-cpp-api/>Card API</a></h5>
+<p>Internal API which defines the elements shared between the reader layer and the card layer.</p>
+</li>
+<li>
+<h5><a href=../apis-cpp/calypsonet-terminal-calypso-cpp-api/>Calypso API</a></h5>
+<p>Public high-level API which standardizes the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, etc&mldr;).</p>
+</li>
+</ul>
 </div>
 <div class=article-widget>
 <div class=post-nav>
@@ -132,7 +143,7 @@ Coming soon
 </div>
 </div>
 <div class=body-footer>
-<p>Last updated on Oct 25, 2021</p>
+<p>Last updated on Oct 27, 2021</p>
 </div>
 </article>
 <footer class=site-footer>
