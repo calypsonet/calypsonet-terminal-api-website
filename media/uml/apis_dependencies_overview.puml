@@ -68,8 +68,8 @@ hide <<grey>> stereotype
 
 [Client Application] as application
 package "Terminal public APIs" as packCalypsonetPublic #C_GREY1 {
-    [**calypsonet-terminal-reader-java-api**] as readerApi <<blue>>
-    [**calypsonet-terminal-calypso-java-api**] as calypsoApi <<blue>>
+    [**Reader API**] as readerApi <<blue>>
+    [**Calypso API**] as calypsoApi <<blue>>
 }
 package "Certifiable framework" as packMain #C_GREY1 {
     together {
@@ -77,8 +77,8 @@ package "Certifiable framework" as packMain #C_GREY1 {
         [Reader Layer] as readerLayer <<red>>
     }
 }
-package "Terminal internal API  (hidden for the client application)" as packCalypsonetPrivate #C_GREY1 {
-    [**calypsonet-terminal-card-java-api**] as cardApi <<blue>>
+package "Terminal internal API" as packCalypsonetPrivate #C_GREY1 {
+    [**Card API**] as cardApi <<blue>>
 }
 
 ' == ASSOCIATIONS ==

@@ -120,22 +120,18 @@ Overview
 <h1>Java - APIs overview</h1>
 <div class=article-style>
 <hr>
-<p>The dependencies between the Keyple components are shown in the diagram below:</p>
+<p>The diagram below shows the dependencies between the client application, the certifiable framework components and the terminal APIs:</p>
 <figure>
 <div class="d-flex justify-content-center">
 <div class=w-100><img src=../media/uml/apis_dependencies_overview.svg alt loading=lazy data-zoomable></div>
 </div></figure>
 <p>Here are the most important things to remember:</p>
 <ul>
-<li>Each component has its <strong>own life cycle</strong>.</li>
-<li>There are two types of Keyple components: <strong>APIs</strong> and <strong>libraries</strong>.</li>
-<li>Some APIs are provided by Calypso Networks Association.</li>
-<li>APIs contain <strong>only interfaces</strong>.</li>
-<li>Libraries contain <strong>interfaces and their implementation</strong>.</li>
-<li>Some APIs are <strong>public</strong> while others are <strong>internal</strong>.</li>
-<li>All libraries are <strong>public</strong>.</li>
-<li>All <strong>libraries</strong> and <strong>public APIs</strong> can be used by the developer of the client application.</li>
-<li>The <strong>internal APIs</strong> are intended for the developer of Keyple add-ons only (e.g. custom reader plugin, custom card extension or custom distributed solution).</li>
+<li>Each API has its <strong>own life cycle</strong>.</li>
+<li>The APIs contain <strong>only interfaces</strong>.</li>
+<li>The &ldquo;Reader API&rdquo; and the &ldquo;Calypso API&rdquo; are <strong>public</strong> while the &ldquo;Card API&rdquo; is <strong>internal</strong>.</li>
+<li>The <strong>public APIs</strong> can be used by the developer of the client application.</li>
+<li>The <strong>internal API</strong> is intended for the developer of the certifiable framework components only.</li>
 </ul>
 </div>
 <div class=article-widget>
@@ -144,7 +140,7 @@ Overview
 </div>
 </div>
 <div class=body-footer>
-<p>Last updated on Oct 26, 2021</p>
+<p>Last updated on 2021-10-28</p>
 </div>
 </article>
 <footer class=site-footer>
@@ -211,7 +207,7 @@ Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target=_bl
       </script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin=anonymous></script>
-<script src=../en/js/wowchemy.min.cf6ff109b7333754a06888714cd9ef3d.js></script>
+<script src=../en/js/wowchemy.min.b4cc415ce57ed8d0409dff9f30a16edc.js></script>
 <link rel=stylesheet href=https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css>
 <script src=https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js></script>
 <script src=https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js></script>
