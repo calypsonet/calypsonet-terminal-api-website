@@ -41,7 +41,7 @@ loadProjectsDashboard = async function() {
     let rootUrl = window.location.href + "../";
 
     if (rootUrl.includes("localhost")) {
-        rootUrl = "https://calypsonet.github.io/calypsonet-terminal-api-website/";
+        rootUrl = "https://terminal-api.calypsonet.org/";
     }
 
     async function getJson(fileName) {
@@ -259,9 +259,14 @@ loadProjectsDashboard = async function() {
 
     let owner = "calypsonet";
 
-    let lastUpdate = await getJson('datetime');
-    let dateOptions = {weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute:'2-digit', timeZoneName:'short'};
-    $("#projects-dashboard-datetime")[0].innerHTML = new Date(lastUpdate.datetime).toLocaleDateString('en-EN', dateOptions);
+    const lastUpdate = await getJson('datetime');
+    const date = new Date(lastUpdate.datetime);
+
+    const offset = date.getTimezoneOffset();
+    const isoLocalDate = new Date(date.getTime() - (offset*60*1000));
+
+    const dateOptions = {hour: '2-digit', minute:'2-digit', hour12: false, timeZoneName: 'short'};
+    $("#projects-dashboard-datetime")[0].innerHTML = isoLocalDate.toISOString().split('T')[0] + ", " + date.toLocaleTimeString('en-EN', dateOptions);
 
     let projects = await getJson('repository_list');
 
