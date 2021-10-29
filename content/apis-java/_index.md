@@ -14,6 +14,5 @@ The diagram below shows the dependencies between the client application, the cer
 Here are the most important things to remember:
 * Each API has its **own life cycle**.
 * The APIs contain **only interfaces**.
-* The "Reader API" and the "Calypso API" are **public** while the "Card API" is **internal**.
-* The **public APIs** can be used by the developer of the client application.
-* The **internal API** is intended for the developer of the certifiable framework components only. 
+* The "Reader API" and the "Calypso API" are **public** and can be used by the developer of the client application.
+* The "Card API" is **internal** and is intended for the developer of the certifiable framework components only.
