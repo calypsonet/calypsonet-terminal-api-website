@@ -17,5 +17,9 @@ fi
 if [ $? -eq 0 ]; then
   exit 0
 fi
+./.github/scripts/update_ci_dashboard_data_check_repos_status.sh $token calypsonet-terminal-api-website
+if [ $? -eq 0 ]; then
+  exit 0
+fi
 
 exit 1
