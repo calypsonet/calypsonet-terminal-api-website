@@ -1,0 +1,42 @@
+[
+  {
+    "name": "1.0.0",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/zipball/refs/tags/1.0.0",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/tarball/refs/tags/1.0.0",
+    "commit": {
+      "sha": "01585205355dce32d3c6b21ead2d42d40c04552c",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/01585205355dce32d3c6b21ead2d42d40c04552c"
+    },
+    "node_id": "MDM6UmVmMzY5NDkzMTg0OnJlZnMvdGFncy8xLjAuMA=="
+  },
+  {
+    "name": "1.0.0-rc3",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/zipball/refs/tags/1.0.0-rc3",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/tarball/refs/tags/1.0.0-rc3",
+    "commit": {
+      "sha": "01d156b4865a68c53c11d171da6dbeb0af0acd87",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/01d156b4865a68c53c11d171da6dbeb0af0acd87"
+    },
+    "node_id": "MDM6UmVmMzY5NDkzMTg0OnJlZnMvdGFncy8xLjAuMC1yYzM="
+  },
+  {
+    "name": "1.0.0-rc2",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/zipball/refs/tags/1.0.0-rc2",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/tarball/refs/tags/1.0.0-rc2",
+    "commit": {
+      "sha": "180bf7b10f79093f9bf09ac00b284b812047de48",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/180bf7b10f79093f9bf09ac00b284b812047de48"
+    },
+    "node_id": "MDM6UmVmMzY5NDkzMTg0OnJlZnMvdGFncy8xLjAuMC1yYzI="
+  },
+  {
+    "name": "1.0-rc1",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/zipball/refs/tags/1.0-rc1",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/tarball/refs/tags/1.0-rc1",
+    "commit": {
+      "sha": "1de03daab0513bedb772673a7822f52da8ab91e8",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/1de03daab0513bedb772673a7822f52da8ab91e8"
+    },
+    "node_id": "MDM6UmVmMzY5NDkzMTg0OnJlZnMvdGFncy8xLjAtcmMx"
+  }
+]
