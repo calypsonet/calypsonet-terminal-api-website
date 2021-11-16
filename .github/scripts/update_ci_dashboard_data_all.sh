@@ -47,7 +47,7 @@ echo "," >> dashboard/repository_list.json
 ../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-reader-java-api main true true
 echo "," >> dashboard/repository_list.json
 ../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-calypso-java-api main true true
-echo "" >> dashboard/repository_list.json
+echo "," >> dashboard/repository_list.json
 ../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-api-website main false false
 echo "" >> dashboard/repository_list.json
 echo "]" >> dashboard/repository_list.json
