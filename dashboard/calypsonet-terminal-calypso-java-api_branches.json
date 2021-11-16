@@ -1,0 +1,26 @@
+[
+  {
+    "name": "doc/review",
+    "commit": {
+      "sha": "fd239c2012ef8cdfdbcc00df999f0e776be2c0f5",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/fd239c2012ef8cdfdbcc00df999f0e776be2c0f5"
+    },
+    "protected": false
+  },
+  {
+    "name": "gh-pages",
+    "commit": {
+      "sha": "39597bf5a8faa0d370b7f5678c73d737c50f2272",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/39597bf5a8faa0d370b7f5678c73d737c50f2272"
+    },
+    "protected": true
+  },
+  {
+    "name": "main",
+    "commit": {
+      "sha": "081ca7017cadd8ab13b435b45658e4a9de24cf03",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/081ca7017cadd8ab13b435b45658e4a9de24cf03"
+    },
+    "protected": false
+  }
+]
