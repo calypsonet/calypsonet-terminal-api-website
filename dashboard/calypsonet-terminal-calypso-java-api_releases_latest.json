@@ -1,9 +1,9 @@
 {
-  "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/releases/53842581",
-  "assets_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/releases/53842581/assets",
-  "upload_url": "https://uploads.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/releases/53842581/assets{?name,label}",
-  "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/releases/tag/1.0.1",
-  "id": 53842581,
+  "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/releases/53847116",
+  "assets_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/releases/53847116/assets",
+  "upload_url": "https://uploads.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/releases/53847116/assets{?name,label}",
+  "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/releases/tag/1.0.2",
+  "id": 53847116,
   "author": {
     "login": "andrei-cristea",
     "id": 26622621,
@@ -24,18 +24,18 @@
     "type": "User",
     "site_admin": false
   },
-  "node_id": "RE_kwDOFgYEwM4DNZKV",
-  "tag_name": "1.0.1",
+  "node_id": "RE_kwDOFgYEwM4DNaRM",
+  "tag_name": "1.0.2",
   "target_commitish": "main",
-  "name": "1.0.1",
+  "name": "1.0.2",
   "draft": false,
   "prerelease": false,
-  "created_at": "2021-11-22T13:52:20Z",
-  "published_at": "2021-11-22T14:04:15Z",
+  "created_at": "2021-11-22T15:00:43Z",
+  "published_at": "2021-11-22T15:01:50Z",
   "assets": [
 
   ],
-  "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/tarball/1.0.1",
-  "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/zipball/1.0.1",
-  "body": "### Added\r\n- \"CHANGELOG.md\" file (issue [#9]).\r\n- CI: Forbid the publication of a version already released (issue [#7]).\r\n### Changed\r\n- Description of the management of invalidated cards in \"CalypsoCard (issue [#6])."
+  "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/tarball/1.0.2",
+  "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/zipball/1.0.2",
+  "body": "### Deprecated\r\n- `addSuccessfulStatusWord` method (issue [#11])."
 }
