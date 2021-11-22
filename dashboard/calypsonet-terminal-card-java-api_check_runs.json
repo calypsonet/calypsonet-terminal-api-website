@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 3953464490,
+      "id": 4287540495,
       "name": "java-publish",
-      "node_id": "CR_kwDOFgFuCs7rpRSq",
-      "head_sha": "8332f2cc6047522fc477f6bfaccd64120ac2711b",
+      "node_id": "CR_kwDOFgFuCs7_jq0P",
+      "head_sha": "a3b8f6010e376e80e5f5fc1430c01ba6aca32959",
       "external_id": "9141701c-365f-53eb-8d3b-fc99b1ea338d",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/check-runs/3953464490",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-java-api/runs/3953464490?check_suite_focus=true",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-java-api/runs/3953464490?check_suite_focus=true",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/check-runs/4287540495",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-java-api/runs/4287540495?check_suite_focus=true",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-java-api/runs/4287540495?check_suite_focus=true",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2021-10-20T15:20:39Z",
-      "completed_at": "2021-10-20T15:21:54Z",
+      "started_at": "2021-11-22T14:12:32Z",
+      "completed_at": "2021-11-22T14:14:00Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/check-runs/3953464490/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/check-runs/4287540495/annotations"
       },
       "check_suite": {
-        "id": 4110066858
+        "id": 4429611502
       },
       "app": {
         "id": 15368,
