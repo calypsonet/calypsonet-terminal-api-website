@@ -11,11 +11,11 @@ echo "Checking repository "$repository_name"..."
 github_hash=`curl --request GET \
           --url https://api.github.com/repos/calypsonet/$repository_name \
           --header "authorization: Bearer $token" \
-          --header "content-type: application/json" | md5sum | cut -d ' ' -f 1`
+          --header "content-type: application/json" | grep -v "pushed_at" | md5sum | cut -d ' ' -f 1`
 
 dashboard_hash=`curl --request GET \
           --url https://terminal-api.calypsonet.org/dashboard/$repository_name"_.json" \
-          --header "content-type: application/json" | md5sum | cut -d ' ' -f 1`
+          --header "content-type: application/json" | grep -v "pushed_at" | md5sum | cut -d ' ' -f 1`
 
 echo "github_hash="$github_hash
 echo "dashboard_hash="$dashboard_hash
