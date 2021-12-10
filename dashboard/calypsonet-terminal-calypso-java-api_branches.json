@@ -22,5 +22,13 @@
       "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/a4fd4cff7591dcb06762d4dbf6800803d6695ea4"
     },
     "protected": false
+  },
+  {
+    "name": "#13_update_doc",
+    "commit": {
+      "sha": "998ba39aacd09e7f8b92f4bdf79e8de0e750da4c",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/998ba39aacd09e7f8b92f4bdf79e8de0e750da4c"
+    },
+    "protected": false
   }
 ]
