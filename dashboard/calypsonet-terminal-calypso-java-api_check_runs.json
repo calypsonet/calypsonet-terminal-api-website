@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 4712451075,
+      "id": 4713533648,
       "name": "java-publish",
-      "node_id": "CR_kwDOFgYEwM8AAAABGOJMAw",
-      "head_sha": "01dbf493cb4a3021ad7d11bbe232ff79f5846b81",
+      "node_id": "CR_kwDOFgYEwM8AAAABGPLQ0A",
+      "head_sha": "63d4684a2020552d3190836aac583f70e8daf699",
       "external_id": "9141701c-365f-53eb-8d3b-fc99b1ea338d",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/check-runs/4712451075",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/runs/4712451075?check_suite_focus=true",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/runs/4712451075?check_suite_focus=true",
-      "status": "in_progress",
-      "conclusion": null,
-      "started_at": "2022-01-05T09:01:35Z",
-      "completed_at": null,
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/check-runs/4713533648",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/runs/4713533648?check_suite_focus=true",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/runs/4713533648?check_suite_focus=true",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2022-01-05T10:46:14Z",
+      "completed_at": "2022-01-05T10:47:35Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/check-runs/4712451075/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/check-runs/4713533648/annotations"
       },
       "check_suite": {
-        "id": 4836843705
+        "id": 4837870302
       },
       "app": {
         "id": 15368,
@@ -115,7 +115,7 @@
           "number": 1,
           "head": {
             "ref": "main",
-            "sha": "01dbf493cb4a3021ad7d11bbe232ff79f5846b81",
+            "sha": "63d4684a2020552d3190836aac583f70e8daf699",
             "repo": {
               "id": 369493184,
               "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api",
