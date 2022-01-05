@@ -10,16 +10,16 @@
   {
     "name": "gh-pages",
     "commit": {
-      "sha": "dbe7c9dff845fb9941306a742b2ad244519c9618",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/dbe7c9dff845fb9941306a742b2ad244519c9618"
+      "sha": "7267934efea24ea47deaa07d24dc51c46eca7430",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/7267934efea24ea47deaa07d24dc51c46eca7430"
     },
     "protected": true
   },
   {
     "name": "main",
     "commit": {
-      "sha": "63d4684a2020552d3190836aac583f70e8daf699",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/63d4684a2020552d3190836aac583f70e8daf699"
+      "sha": "83f9037b00928471e7ed4c383382009d3c47fa5d",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/83f9037b00928471e7ed4c383382009d3c47fa5d"
     },
     "protected": false
   }
