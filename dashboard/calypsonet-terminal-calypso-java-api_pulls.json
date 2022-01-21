@@ -10,7 +10,7 @@
     "number": 41,
     "state": "open",
     "locked": false,
-    "title": "feat: manage card applications having multiple DFs",
+    "title": "feat: manage EFs with no SFI",
     "user": {
       "login": "andrei-cristea",
       "id": 26622621,
@@ -33,35 +33,15 @@
     },
     "body": "Closes #40",
     "created_at": "2022-01-20T15:48:39Z",
-    "updated_at": "2022-01-20T15:48:55Z",
+    "updated_at": "2022-01-21T14:56:00Z",
     "closed_at": null,
     "merged_at": null,
-    "merge_commit_sha": "f100a76df1fc8920e8ddbd290833fe4d417db0b9",
+    "merge_commit_sha": "0de74efee11eb57c27a3f5840519026aec158833",
     "assignee": null,
     "assignees": [
 
     ],
     "requested_reviewers": [
-      {
-        "login": "jeanpierrefortune",
-        "id": 1011563,
-        "node_id": "MDQ6VXNlcjEwMTE1NjM=",
-        "avatar_url": "https://avatars.githubusercontent.com/u/1011563?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/jeanpierrefortune",
-        "html_url": "https://github.com/jeanpierrefortune",
-        "followers_url": "https://api.github.com/users/jeanpierrefortune/followers",
-        "following_url": "https://api.github.com/users/jeanpierrefortune/following{/other_user}",
-        "gists_url": "https://api.github.com/users/jeanpierrefortune/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/jeanpierrefortune/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/jeanpierrefortune/subscriptions",
-        "organizations_url": "https://api.github.com/users/jeanpierrefortune/orgs",
-        "repos_url": "https://api.github.com/users/jeanpierrefortune/repos",
-        "events_url": "https://api.github.com/users/jeanpierrefortune/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/jeanpierrefortune/received_events",
-        "type": "User",
-        "site_admin": false
-      },
       {
         "login": "pterr",
         "id": 36192444,
@@ -115,11 +95,11 @@
     "review_comments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/pulls/41/comments",
     "review_comment_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/pulls/comments{/number}",
     "comments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/issues/41/comments",
-    "statuses_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/statuses/49ac823b0f6487952d89fe7ea578aeaa3413f866",
+    "statuses_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/statuses/a786e460625ae48d7c08bcb3e1c09ff26b1c614d",
     "head": {
       "label": "calypsonet:#40_multiple_df",
       "ref": "#40_multiple_df",
-      "sha": "49ac823b0f6487952d89fe7ea578aeaa3413f866",
+      "sha": "a786e460625ae48d7c08bcb3e1c09ff26b1c614d",
       "user": {
         "login": "calypsonet",
         "id": 36229037,
@@ -207,16 +187,16 @@
         "releases_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/releases{/id}",
         "deployments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/deployments",
         "created_at": "2021-05-21T10:05:58Z",
-        "updated_at": "2022-01-07T11:44:26Z",
-        "pushed_at": "2022-01-20T15:48:40Z",
+        "updated_at": "2022-01-21T14:51:54Z",
+        "pushed_at": "2022-01-21T14:28:22Z",
         "git_url": "git://github.com/calypsonet/calypsonet-terminal-calypso-java-api.git",
         "ssh_url": "git@github.com:calypsonet/calypsonet-terminal-calypso-java-api.git",
         "clone_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-java-api.git",
         "svn_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-java-api",
         "homepage": "",
-        "size": 2925,
-        "stargazers_count": 2,
-        "watchers_count": 2,
+        "size": 2954,
+        "stargazers_count": 3,
+        "watchers_count": 3,
         "language": "Java",
         "has_issues": true,
         "has_projects": true,
@@ -246,7 +226,7 @@
         "visibility": "public",
         "forks": 2,
         "open_issues": 7,
-        "watchers": 2,
+        "watchers": 3,
         "default_branch": "main"
       }
     },
@@ -341,16 +321,16 @@
         "releases_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/releases{/id}",
         "deployments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/deployments",
         "created_at": "2021-05-21T10:05:58Z",
-        "updated_at": "2022-01-07T11:44:26Z",
-        "pushed_at": "2022-01-20T15:48:40Z",
+        "updated_at": "2022-01-21T14:51:54Z",
+        "pushed_at": "2022-01-21T14:28:22Z",
         "git_url": "git://github.com/calypsonet/calypsonet-terminal-calypso-java-api.git",
         "ssh_url": "git@github.com:calypsonet/calypsonet-terminal-calypso-java-api.git",
         "clone_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-java-api.git",
         "svn_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-java-api",
         "homepage": "",
-        "size": 2925,
-        "stargazers_count": 2,
-        "watchers_count": 2,
+        "size": 2954,
+        "stargazers_count": 3,
+        "watchers_count": 3,
         "language": "Java",
         "has_issues": true,
         "has_projects": true,
@@ -380,7 +360,7 @@
         "visibility": "public",
         "forks": 2,
         "open_issues": 7,
-        "watchers": 2,
+        "watchers": 3,
         "default_branch": "main"
       }
     },
@@ -407,7 +387,7 @@
         "href": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/pulls/41/commits"
       },
       "statuses": {
-        "href": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/statuses/49ac823b0f6487952d89fe7ea578aeaa3413f866"
+        "href": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/statuses/a786e460625ae48d7c08bcb3e1c09ff26b1c614d"
       }
     },
     "author_association": "COLLABORATOR",
