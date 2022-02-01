@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Calypso Networks Association Terminal APIs</title><link>https://terminal-api.calypsonet.org/</link><atom:link href="https://terminal-api.calypsonet.org/index.xml" rel="self" type="application/rss+xml"/><description>Calypso Networks Association Terminal APIs</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021 Calypso Networks Association. All Rights Reserved.</copyright><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Calypso Networks Association Terminal APIs</title><link>https://terminal-api.calypsonet.org/</link></image><item><title>Calypsonet Terminal Reader C++ API</title><link>https://terminal-api.calypsonet.org/apis-cpp/calypsonet-terminal-reader-cpp-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/apis-cpp/calypsonet-terminal-reader-cpp-api/</guid><description>&lt;div class="alert alert-note">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Calypso Networks Association Terminal APIs</title><link>https://terminal-api.calypsonet.org/</link><atom:link href="https://terminal-api.calypsonet.org/index.xml" rel="self" type="application/rss+xml"/><description>Calypso Networks Association Terminal APIs</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Calypso Networks Association. All Rights Reserved.</copyright><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Calypso Networks Association Terminal APIs</title><link>https://terminal-api.calypsonet.org/</link></image><item><title>Calypsonet Terminal Reader C++ API</title><link>https://terminal-api.calypsonet.org/apis-cpp/calypsonet-terminal-reader-cpp-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/apis-cpp/calypsonet-terminal-reader-cpp-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
 &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
@@ -167,7 +167,7 @@ The third version number (x.y.&lt;strong>z&lt;/strong>) only concerns updates of
 &lt;/div>
 &lt;/div></description></item><item><title>Calypsonet Terminal Calypso Java API</title><link>https://terminal-api.calypsonet.org/apis-java/calypsonet-terminal-calypso-java-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/apis-java/calypsonet-terminal-calypso-java-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
-&lt;strong>&lt;code>1.0.5&lt;/code>&lt;/strong>
+&lt;strong>&lt;code>1.1.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-download pr-1 fa-fw">&lt;/i> &lt;a href="#download">Download&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -206,18 +206,18 @@ Maven
 &lt;div class="bd-clipboard">&lt;button type="button" class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onClick="javascript:copyTabContentToClipboard('tabs-1', this);">Copy&lt;/button>&lt;/div>
 &lt;div class="tab-content" id="tabs-1-content">&lt;div class="tab-pane fade show active"
 id="tabs-1-0" role="tabpanel" aria-labelled-by="tabs-1-0-tab">
-&lt;pre>&lt;code class="language-gradle">implementation &amp;#39;org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:1.0.&amp;#43;&amp;#39;&lt;/code>&lt;/pre>
+&lt;pre>&lt;code class="language-gradle">implementation &amp;#39;org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:1.1.&amp;#43;&amp;#39;&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;div class="tab-pane fade"
 id="tabs-1-1" role="tabpanel" aria-labelled-by="tabs-1-1-tab">
-&lt;pre>&lt;code class="language-kotlin">implementation(&amp;#34;org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:1.0.&amp;#43;&amp;#34;)&lt;/code>&lt;/pre>
+&lt;pre>&lt;code class="language-kotlin">implementation(&amp;#34;org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:1.1.&amp;#43;&amp;#34;)&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;div class="tab-pane fade"
 id="tabs-1-2" role="tabpanel" aria-labelled-by="tabs-1-2-tab">
 &lt;pre>&lt;code class="language-xml">&amp;lt;dependency&amp;gt;
 &amp;lt;groupId&amp;gt;org.calypsonet.terminal&amp;lt;/groupId&amp;gt;
 &amp;lt;artifactId&amp;gt;calypsonet-terminal-calypso-java-api&amp;lt;/artifactId&amp;gt;
-&amp;lt;version&amp;gt;[1.0.0,1.1.0)&amp;lt;/version&amp;gt;
+&amp;lt;version&amp;gt;[1.1.0,1.2.0)&amp;lt;/version&amp;gt;
 &amp;lt;/dependency&amp;gt;&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;/div>
