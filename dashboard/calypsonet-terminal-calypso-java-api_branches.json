@@ -22,5 +22,13 @@
       "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/f2d1ac83387b873f840ead654ab089533acc7642"
     },
     "protected": false
+  },
+  {
+    "name": "#42_CL-CSS-INFOTCNT.1",
+    "commit": {
+      "sha": "eff8e5005ddae65c9111cd5f15ec82d355421d79",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/eff8e5005ddae65c9111cd5f15ec82d355421d79"
+    },
+    "protected": false
   }
 ]
