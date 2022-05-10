@@ -7,16 +7,15 @@ main:
   - name: APIs
     url: '/apis/'
     weight: 10
-  - name: Java
-    parent: APIs
-    url: '/apis-java/'
-    weight: 10
-  - name: C++
-    parent: APIs
-    url: '/apis-cpp/'
+  - name: Community
     weight: 20
   - name: Dashboard
+    parent: Community
     url: '/projects-dashboard/'
+    weight: 10
+  - name: Roadmap
+    parent: Community
+#    url: '/projects-dashboard/'
     weight: 20
 
 # Link to a PDF of your resume/CV from the menu.
