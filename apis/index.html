@@ -7,28 +7,28 @@
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
 <link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" media=print onload="this.media='all'">
-<meta name=description content>
-<link rel=alternate hreflang=en-us href=https://terminal-api.calypsonet.org/apis-cpp/>
+<meta name=description content="General presentation of the dependencies between the different Terminal APIs.">
+<link rel=alternate hreflang=en-us href=https://terminal-api.calypsonet.org/apis/>
 <meta name=theme-color content="#1d87bb">
 <link rel=stylesheet href=../css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin=anonymous media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/darcula.min.css crossorigin=anonymous title=hl-light media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/darcula.min.css crossorigin=anonymous title=hl-dark media=print onload="this.media='all'" disabled>
 <link rel=stylesheet href=../css/wowchemy.f61eee4caed37d9fc646a60ac588051f.css>
-<link rel=alternate href=../apis-cpp/index.xml type=application/rss+xml title="Calypso Networks Association Terminal APIs">
+<link rel=alternate href=../apis/index.xml type=application/rss+xml title="Calypso Networks Association Terminal APIs">
 <link rel=manifest href=../manifest.webmanifest>
 <link rel=icon type=image/png href=../media/icon_huceb5ed780c823eaac47da25fabbbc8be_2207_32x32_fill_lanczos_center_3.png>
 <link rel=apple-touch-icon type=image/png href=../media/icon_huceb5ed780c823eaac47da25fabbbc8be_2207_180x180_fill_lanczos_center_3.png>
-<link rel=canonical href=https://terminal-api.calypsonet.org/apis-cpp/>
+<link rel=canonical href=https://terminal-api.calypsonet.org/apis/>
 <meta property="twitter:card" content="summary">
 <meta property="og:site_name" content="Calypso Networks Association Terminal APIs">
-<meta property="og:url" content="https://terminal-api.calypsonet.org/apis-cpp/">
-<meta property="og:title" content="APIs for C++ language | Calypso Networks Association Terminal APIs">
-<meta property="og:description" content><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
+<meta property="og:url" content="https://terminal-api.calypsonet.org/apis/">
+<meta property="og:title" content="Terminal architecture - APIs & software layers | Calypso Networks Association Terminal APIs">
+<meta property="og:description" content="General presentation of the dependencies between the different Terminal APIs."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
 <meta property="twitter:image" content="https://terminal-api.calypsonet.org/media/logo.svg"><meta property="og:locale" content="en-us">
-<title>APIs for C++ language | Calypso Networks Association Terminal APIs</title>
+<title>Terminal architecture - APIs & software layers | Calypso Networks Association Terminal APIs</title>
 </head>
-<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=23a357e51d5c68c358a1a0a13c5925a1>
+<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=43c0c4121ee50066f7d192a6504d86bf>
 <script src=../js/wowchemy-init.min.da42964e270e05a6063fbca894d7ccff.js></script>
 <aside class=search-modal id=search>
 <div class=container>
@@ -65,16 +65,16 @@
 </div>
 <div class="navbar-collapse main-menu-item collapse justify-content-center" id=navbar-content>
 <ul class="navbar-nav d-md-inline-flex">
+<li class=nav-item>
+<a class="nav-link active" href=../apis/><span>APIs</span></a>
+</li>
 <li class="nav-item dropdown">
-<a href=# class="nav-link dropdown-toggle" data-toggle=dropdown aria-haspopup=true><span>APIs</span><span class=caret></span>
+<a href=# class="nav-link dropdown-toggle" data-toggle=dropdown aria-haspopup=true><span>Community</span><span class=caret></span>
 </a>
 <div class=dropdown-menu>
-<a class=dropdown-item href=../apis-java/><span>Java</span></a>
-<a class=dropdown-item href=../apis-cpp/><span>C++</span></a>
+<a class=dropdown-item href=../projects-dashboard/><span>Dashboard</span></a>
+<a class=dropdown-item href=../><span>Roadmap</span></a>
 </div>
-</li>
-<li class=nav-item>
-<a class=nav-link href=../projects-dashboard/><span>Dashboard</span></a>
 </li>
 </ul>
 </div>
@@ -107,34 +107,30 @@ Overview
 </form>
 <nav class="collapse docs-links" id=docs-nav>
 <ul class="nav docs-sidenav">
-<li class=active><a href=../apis-cpp/>Overview</a></li>
-<li><a href=../apis-cpp/calypsonet-terminal-reader-cpp-api/>Reader API</a></li>
-<li><a href=../apis-cpp/calypsonet-terminal-card-cpp-api/>Card API</a></li>
-<li><a href=../apis-cpp/calypsonet-terminal-calypso-cpp-api/>Calypso API</a></li>
+<li class=active><a href=../apis/>Overview</a></li>
+<li><a href=../apis/calypsonet-terminal-reader-api/>Reader API</a></li>
+<li><a href=../apis/calypsonet-terminal-card-api/>Card API</a></li>
+<li><a href=../apis/calypsonet-terminal-calypso-api/>Calypso API</a></li>
 </ul>
 </nav>
 </div>
 <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role=main>
 <article class=article>
 <div class=docs-article-container>
-<h1>APIs for C++ language</h1>
+<h1>Terminal architecture - APIs & software layers</h1>
 <div class=article-style>
 <hr>
-<p>This section lists the APIs that can be used to develop C++ Calypso® certifiable frameworks.</p>
-<hr>
-<ul class=list-unstyled>
-<li>
-<h5><a href=../apis-cpp/calypsonet-terminal-reader-cpp-api/>Reader API</a></h5>
-<p>Public API which defines the elements shared between the reader layer and the card layer.</p>
-</li>
-<li>
-<h5><a href=../apis-cpp/calypsonet-terminal-card-cpp-api/>Card API</a></h5>
-<p>Internal API which defines the elements shared between the reader layer and the card layer.</p>
-</li>
-<li>
-<h5><a href=../apis-cpp/calypsonet-terminal-calypso-cpp-api/>Calypso API</a></h5>
-<p>Public high-level API which standardizes the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, etc&mldr;).</p>
-</li>
+<p>The diagram below shows the dependencies between the client application, the certifiable framework components and the terminal APIs:</p>
+<figure>
+<div class="d-flex justify-content-center">
+<div class=w-100><img src=../media/uml/apis_dependencies_overview.svg alt loading=lazy data-zoomable></div>
+</div></figure>
+<p>Here are the most important things to remember:</p>
+<ul>
+<li>Each API has its <strong>own life cycle</strong>.</li>
+<li>The APIs contain <strong>only interfaces</strong>.</li>
+<li>The &ldquo;Reader API&rdquo; and the &ldquo;Calypso API&rdquo; are <strong>public</strong> and can be used by the developer of the client application.</li>
+<li>The &ldquo;Card API&rdquo; is <strong>internal</strong> and is intended for the developer of the certifiable framework components only.</li>
 </ul>
 </div>
 <div class=article-widget>
@@ -143,7 +139,7 @@ Overview
 </div>
 </div>
 <div class=body-footer>
-<p>Last updated on 2021-10-27</p>
+<p>Last updated on 2022-05-10</p>
 </div>
 </article>
 <footer class=site-footer>

@@ -7,8 +7,8 @@
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
 <link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" media=print onload="this.media='all'">
-<meta name=description content="Public API which defines the elements shared between the reader layer and the card layer.">
-<link rel=alternate hreflang=en-us href=https://terminal-api.calypsonet.org/apis-cpp/calypsonet-terminal-reader-cpp-api/>
+<meta name=description content="Internal API which defines the elements shared between the reader layer and the card layer.">
+<link rel=alternate hreflang=en-us href=https://terminal-api.calypsonet.org/apis/calypsonet-terminal-card-api/>
 <meta name=theme-color content="#1d87bb">
 <link rel=stylesheet href=../../css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin=anonymous media=print onload="this.media='all'">
@@ -18,17 +18,17 @@
 <link rel=manifest href=../../manifest.webmanifest>
 <link rel=icon type=image/png href=../../media/icon_huceb5ed780c823eaac47da25fabbbc8be_2207_32x32_fill_lanczos_center_3.png>
 <link rel=apple-touch-icon type=image/png href=../../media/icon_huceb5ed780c823eaac47da25fabbbc8be_2207_180x180_fill_lanczos_center_3.png>
-<link rel=canonical href=https://terminal-api.calypsonet.org/apis-cpp/calypsonet-terminal-reader-cpp-api/>
+<link rel=canonical href=https://terminal-api.calypsonet.org/apis/calypsonet-terminal-card-api/>
 <meta property="twitter:card" content="summary">
 <meta property="og:site_name" content="Calypso Networks Association Terminal APIs">
-<meta property="og:url" content="https://terminal-api.calypsonet.org/apis-cpp/calypsonet-terminal-reader-cpp-api/">
-<meta property="og:title" content="Calypsonet Terminal Reader C++ API | Calypso Networks Association Terminal APIs">
-<meta property="og:description" content="Public API which defines the elements shared between the reader layer and the card layer."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
+<meta property="og:url" content="https://terminal-api.calypsonet.org/apis/calypsonet-terminal-card-api/">
+<meta property="og:title" content="Calypsonet Terminal Card API | Calypso Networks Association Terminal APIs">
+<meta property="og:description" content="Internal API which defines the elements shared between the reader layer and the card layer."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
 <meta property="twitter:image" content="https://terminal-api.calypsonet.org/media/logo.svg"><meta property="og:locale" content="en-us">
-<meta property="article:modified_time" content="2021-10-27T11:37:15+02:00">
-<title>Calypsonet Terminal Reader C++ API | Calypso Networks Association Terminal APIs</title>
+<meta property="article:modified_time" content="2022-05-10T11:44:43+04:00">
+<title>Calypsonet Terminal Card API | Calypso Networks Association Terminal APIs</title>
 </head>
-<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=0f9a65deeb7531326d168dd979cdcf21>
+<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=586d1349891225248c7134e777120f95>
 <script src=../../js/wowchemy-init.min.da42964e270e05a6063fbca894d7ccff.js></script>
 <aside class=search-modal id=search>
 <div class=container>
@@ -65,16 +65,16 @@
 </div>
 <div class="navbar-collapse main-menu-item collapse justify-content-center" id=navbar-content>
 <ul class="navbar-nav d-md-inline-flex">
+<li class=nav-item>
+<a class="nav-link active" href=../../apis/><span>APIs</span></a>
+</li>
 <li class="nav-item dropdown">
-<a href=# class="nav-link dropdown-toggle" data-toggle=dropdown aria-haspopup=true><span>APIs</span><span class=caret></span>
+<a href=# class="nav-link dropdown-toggle" data-toggle=dropdown aria-haspopup=true><span>Community</span><span class=caret></span>
 </a>
 <div class=dropdown-menu>
-<a class=dropdown-item href=../../apis-java/><span>Java</span></a>
-<a class=dropdown-item href=../../apis-cpp/><span>C++</span></a>
+<a class=dropdown-item href=../../projects-dashboard/><span>Dashboard</span></a>
+<a class=dropdown-item href=../../><span>Roadmap</span></a>
 </div>
-</li>
-<li class=nav-item>
-<a class=nav-link href=../../projects-dashboard/><span>Dashboard</span></a>
 </li>
 </ul>
 </div>
@@ -107,10 +107,10 @@ Overview
 </form>
 <nav class="collapse docs-links" id=docs-nav>
 <ul class="nav docs-sidenav">
-<li><a href=../../apis-cpp/>Overview</a></li>
-<li class=active><a href=../../apis-cpp/calypsonet-terminal-reader-cpp-api/>Reader API</a></li>
-<li><a href=../../apis-cpp/calypsonet-terminal-card-cpp-api/>Card API</a></li>
-<li><a href=../../apis-cpp/calypsonet-terminal-calypso-cpp-api/>Calypso API</a></li>
+<li><a href=../../apis/>Overview</a></li>
+<li><a href=../../apis/calypsonet-terminal-reader-api/>Reader API</a></li>
+<li class=active><a href=../../apis/calypsonet-terminal-card-api/>Card API</a></li>
+<li><a href=../../apis/calypsonet-terminal-calypso-api/>Calypso API</a></li>
 </ul>
 </nav>
 </div>
@@ -120,43 +120,111 @@ Overview
 </ul>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#overview>Overview</a></li>
+<li><a href=#interfaces>Interfaces</a></li>
+<li><a href=#limitations--constraints>Limitations & constraints</a></li>
+</ul>
+<ul>
+<li><a href=#implementations--api-documentation>Implementations & API Documentation</a>
+<ul>
+<li><a href=#card-api-in-java>Card API in Java</a></li>
+<li><a href=#card-api-in-c>Card API in C++</a></li>
+</ul>
+</li>
 </ul>
 </nav>
 </div>
 <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role=main>
 <article class=article>
 <div class=docs-article-container>
-<h1>Calypsonet Terminal Reader C++ API</h1>
+<h1>Calypsonet Terminal Card API</h1>
 <div class=article-style>
+<p>The <strong>Calypsonet Terminal Card API</strong> defines the internal elements shared between the reader layer and the card layer.</p>
+<h2 id=interfaces>Interfaces</h2>
+<p>
+<figure>
+<div class="d-flex justify-content-center">
+<div class=w-100><img src=https://calypsonet.github.io/calypsonet-terminal-card-java-api/1.0.1-SNAPSHOT/api_class_diagram.svg alt="Card API - class diagram" loading=lazy data-zoomable></div>
+</div></figure>
+</p>
+<h2 id=limitations--constraints>Limitations & constraints</h2>
+<p>The Card API doesn&rsquo;t allow to request the transmssion to a card of the APDU commands &ldquo;Select Application by DF Name&rdquo; or &ldquo;Get Response&rdquo;:</p>
+<ul>
+<li>the selection of a specific card application could be managed only through a Card Selection Request.</li>
+<li>the APDU response status words 61XYh & 6CXYh are automatically handled by the reader layer library by issuing a Get Response or by re-issuing the previous command with the rigth &lsquo;Le&rsquo; field.</li>
+</ul>
+<h1 id=heading></h1>
+<h2 id=implementations--api-documentation>Implementations & API Documentation</h2>
+<div class="alert alert-note">
+<div>
+The third version number (x.y.<strong>z</strong>) only concerns updates of the javadoc because this component does not contain any implementation, but only an API.
+Therefore, it is recommended to always perform a <strong>dynamic import</strong> as described above in order to have the most up-to-date documentation.
+</div>
+</div>
+<h3 id=card-api-in-java>Card API in Java</h3>
 <div class="alert alert-note">
 <div>
 <strong><code>1.0.0</code></strong>
 <span class=component-metadata>
-<i class="fab fa-github pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/>GitHub</a></span>
+<i class="fas fa-doc pr-1 fa-fw"></i> <a href=https://calypsonet.github.io/calypsonet-terminal-card-java-api/>Java Doc</a></span>
 <span class=component-metadata>
-<i class="fas fa-exchange-alt pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/blob/main/CHANGELOG.md>Changelog</a></span>
+<i class="fab fa-github pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-card-java-api/>GitHub repository</a></span>
+<span class=component-metadata>
+<i class="fas fa-exchange-alt pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-card-java-api/blob/main/CHANGELOG.md>Changelog</a></span>
 </div>
 </div>
-<h2 id=overview>Overview</h2>
-<p>The <strong>Calypsonet Terminal Reader C++ API</strong> defines the public elements shared between the reader layer and the card layer.</p>
+<p>All deliverables are available directly from the <a href="https://search.maven.org/search?q=a:calypsonet-terminal-card-java-api" target=_blank rel=noopener>Maven Central Repository</a> or by using one of the project resource managers below:</p>
+<ul class="nav nav-tabs" id=tabs-2 role=tablist><li class=nav-item>
+<a class="nav-link active tab-Gradle-Groovy" id=tabs-2-0-tab data-toggle=tab href=#tabs-2-0 role=tab onclick='handleClick("Gradle-Groovy")' aria-controls=tabs-2-0 aria-selected=true>
+Gradle Groovy
+</a>
+</li><li class=nav-item>
+<a class="nav-link tab-Gradle-Kotlin" id=tabs-2-1-tab data-toggle=tab href=#tabs-2-1 role=tab onclick='handleClick("Gradle-Kotlin")' aria-controls=tabs-2-1 aria-selected=false>
+Gradle Kotlin
+</a>
+</li><li class=nav-item>
+<a class="nav-link tab-Maven" id=tabs-2-2-tab data-toggle=tab href=#tabs-2-2 role=tab onclick='handleClick("Maven")' aria-controls=tabs-2-2 aria-selected=false>
+Maven
+</a>
+</li></ul>
+<div class=bd-clipboard><button type=button class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onclick="copyTabContentToClipboard('tabs-2',this)">Copy</button></div>
+<div class=tab-content id=tabs-2-content><div class="tab-pane fade show active" id=tabs-2-0 role=tabpanel aria-labelled-by=tabs-2-0-tab>
+<pre><code class=language-gradle>implementation &#39;org.calypsonet.terminal:calypsonet-terminal-card-java-api:1.0.&#43;&#39;</code></pre>
+</div>
+<div class="tab-pane fade" id=tabs-2-1 role=tabpanel aria-labelled-by=tabs-2-1-tab>
+<pre><code class=language-kotlin>implementation(&#34;org.calypsonet.terminal:calypsonet-terminal-card-java-api:1.0.&#43;&#34;)</code></pre>
+</div>
+<div class="tab-pane fade" id=tabs-2-2 role=tabpanel aria-labelled-by=tabs-2-2-tab>
+<pre><code class=language-xml>&lt;dependency&gt;
+&lt;groupId&gt;org.calypsonet.terminal&lt;/groupId&gt;
+&lt;artifactId&gt;calypsonet-terminal-card-java-api&lt;/artifactId&gt;
+&lt;version&gt;[1.0.0,1.1.0)&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+</div>
+</div>
+<h3 id=card-api-in-c>Card API in C++</h3>
 <div class="alert alert-note">
 <div>
-The third version number (x.y.<strong>z</strong>) only concerns updates of the documentation because this component does not contain any implementation, but only file headers.
+<strong><code>1.0.0</code></strong>
+<span class=component-metadata>
+<i class="fab fa-github pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-card-cpp-api/>GitHub repository</a></span>
 </div>
 </div>
 </div>
 <div class=article-widget>
 <div class=post-nav>
 <div class=post-nav-item>
+<div class=meta-nav>Previous</div>
+<a href=../../apis/calypsonet-terminal-reader-api/ rel=next>Calypsonet Terminal Reader API</a>
+</div>
+<div class=post-nav-item>
 <div class=meta-nav>Next</div>
-<a href=../../apis-cpp/calypsonet-terminal-card-cpp-api/ rel=prev>Calypsonet Terminal Card C++ API</a>
+<a href=../../apis/calypsonet-terminal-calypso-api/ rel=prev>Calypsonet Terminal Calypso API</a>
 </div>
 </div>
 </div>
 </div>
 <div class=body-footer>
-<p>Last updated on 2021-10-27</p>
+<p>Last updated on 2022-05-10</p>
 </div>
 </article>
 <footer class=site-footer>
