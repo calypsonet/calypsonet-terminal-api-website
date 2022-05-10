@@ -1,0 +1,106 @@
+---
+title: Calypsonet Terminal Calypso API
+linktitle: Calypso API
+summary: Public high-level API which standardizes the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, etc...).
+type: book
+weight: 4
+toc: true
+---
+
+The **Calypsonet Terminal Calypso API** is an extension of the **Calypsonet Terminal Reader API** which provides a high-level API standardizing the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, etc...).
+
+## Interfaces
+
+The Calypso API  provides the means to select a target card or SAM and then perform a transaction with the selected target.
+- The result of a card selection is a smartcard image whose file structure and data records can be browsed.
+- The result of a SAM selection is a smartcard image whose keys' parameters can be read.
+- A transaction with a target card or SAM may involve a master SAM in order to secure the operations.
+
+The CalypsoCard & CalypsoSam interfaces provide ‘**getters**’ in order to recover the information of the selected smartcard.
+
+To optimize the number of exchanges with a card reader of a SAM reader, the Calypso API allows to group the commands. A set of command could be first '**prepare**d', and then be '**process**ed' by a selected target at the selection or during the transaction.
+A transaction with a Calypso PO is fully managed through the PoTransaction object:
+
+![Calypso API - class diagram](https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/1.2.0-SNAPSHOT/api_class_diagram.svg)
+
+### Selection of a Calypso card
+A Calypso card selection could be defined to accept or not invalidated card.
+
+Through the selection only basic Select File (without changing DF) or Read Records commands could joined: the goal is to recover in the selection result some file status or record data of elements present in all cards of a ticketing networks.
+The type of card product has not yet been identified, the commands are prepared to be supported by all types of card products: Prime, Ligth, or Regular.
+
+Then if a Calypso card has matched the selection request, a Calypso card image is returned, some file headers or file records could be filled depending on the information recovered in the responses of the Select File or Read Records processed.
+
+### Transaction with a Calypso card
+
+Except the operations involving secure processing on "data" (data signature computation / verification, data ciphering / unciphering), only commands for the card need to be prepared though the Card Transaction Manager interface.
+Depending on the operation, if necessary the security involving the master SAM must be controlled internally by the Calypso library.
+
+#### Simple operation outside a session
+
+#### PIN verification outside a session
+
+#### Data secure processing outside a session
+
+#### Key update outside a session
+
+#### Stored Value operation outside a session
+
+#### Simple secure session
+In most of the cases, it should be possible to handle a secure session with a Calypso card, using only:
+- 3 exchanges with the card reader (selection processing, session opening processing, and session closing processing),
+- and 3 exchanges with the SAM reader (terminal session challenge recovery, session MAC computation, and card authentication).
+
+![Calypso API - Simple Secure Session - Sequence Diagram](https://keyple.org/media/learn/keyple-in-depth/calypso_secure_transaction_sequence_diagram.svg)
+
+#### PIN verification inside a session
+
+#### Data secure processing inside a session
+
+#### Stored Value operation inside a session
+
+#### Multiple secure sessions
+
+### Selection of a Calypso SAM
+
+### Transaction with a Calypso SAM
+
+#
+## Implementations & API Documentation
+
+{{% callout note %}}
+The third version number (x.y.**z**) only concerns updates of the javadoc because this component does not contain any implementation, but only an API.
+Therefore, it is recommended to always perform a **dynamic import** as described above in order to have the most up-to-date documentation.
+{{% /callout %}}
+
+### Calypso API in Java
+{{% callout note %}}
+**`{{% calypsonet-terminal-calypso-java-api-version %}}`**
+<span class="component-metadata">{{< icon name="doc" pack="fas" >}} [Java Doc](https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/)</span>
+<span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/)</span>
+<span class="component-metadata">{{< icon name="exchange-alt" pack="fas" >}} [Changelog](https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/blob/main/CHANGELOG.md)</span>
+{{% /callout %}}
+
+All deliverables are available directly from the [Maven Central Repository](https://search.maven.org/search?q=a:calypsonet-terminal-calypso-java-api) or by using one of the project resource managers below:
+
+{{< tabpane >}}
+{{< tab header="Gradle Groovy" lang="gradle" >}}
+implementation 'org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:{{% calypsonet-terminal-calypso-java-api-dynamic-gradle-version %}}'
+{{< /tab >}}
+{{< tab header="Gradle Kotlin" lang="kotlin" >}}
+implementation("org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:{{% calypsonet-terminal-calypso-java-api-dynamic-gradle-version %}}")
+{{< /tab >}}
+{{< tab header="Maven" lang="xml" >}}
+<dependency>
+<groupId>org.calypsonet.terminal</groupId>
+<artifactId>calypsonet-terminal-calypso-java-api</artifactId>
+<version>{{% calypsonet-terminal-calypso-java-api-dynamic-maven-version %}}</version>
+</dependency>
+{{< /tab >}}
+{{< /tabpane >}}
+
+### Calypso API in C++
+{{% callout note %}}
+**`{{% calypsonet-terminal-calypso-cpp-api-version %}}`**
+<span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api/)</span>
+{{% /callout %}}

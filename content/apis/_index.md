@@ -1,5 +1,5 @@
 ---
-title: Java - APIs overview
+title: Terminal architecture - APIs & software layers
 linktitle: Overview
 summary: General presentation of the dependencies between the different Terminal APIs.
 type: book
