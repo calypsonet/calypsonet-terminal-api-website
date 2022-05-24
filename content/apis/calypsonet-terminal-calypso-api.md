@@ -42,6 +42,8 @@ Depending on the operation, if necessary the security involving the master SAM m
 
 #### Data secure processing outside a session
 
+{{< figure src="/media/apis/calypso_transaction_DSP_outside_session_sequence_diagram.svg" caption="Calypso API - Data secure processing outside a session - Sequence Diagram" >}}
+
 #### Key update outside a session
 
 #### Stored Value operation outside a session
@@ -51,11 +53,13 @@ In most of the cases, it should be possible to handle a secure session with a Ca
 - 3 exchanges with the card reader (selection processing, session opening processing, and session closing processing),
 - and 3 exchanges with the SAM reader (terminal session challenge recovery, session MAC computation, and card authentication).
 
-![Calypso API - Simple Secure Session - Sequence Diagram](https://keyple.org/media/learn/keyple-in-depth/calypso_secure_transaction_sequence_diagram.svg)
+{{< figure src="/media/apis/calypso_transaction_simple_secure_session_sequence_diagram.svg" caption="Calypso API - Simple Secure Session - Sequence Diagram" >}}
 
 #### PIN verification inside a session
 
 #### Data secure processing inside a session
+
+{{< figure src="/media/apis/calypso_transaction_DSP_inside_session_sequence_diagram.svg" caption="Calypso API - Data secure processing inside a session - Sequence Diagram" >}}
 
 #### Stored Value operation inside a session
 
