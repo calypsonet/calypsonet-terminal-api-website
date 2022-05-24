@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="3061px" preserveAspectRatio="none" style="width:1461px;height:3061px;background:#FFFFFF;" version="1.1" viewBox="0 0 1461 3061" width="1461px" zoomAndPan="magnify"><defs/><g><rect fill="#FFD700" height="2879.5391" style="stroke:#181818;stroke-width:1.0;" width="10" x="75.5" y="91.4883"/><rect fill="#FFC0CB" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="338.5" y="237.3516"/><rect fill="#FFC0CB" height="75.2422" style="stroke:#181818;stroke-width:1.0;" width="10" x="338.5" y="736.6309"/><rect fill="#FFC0CB" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="338.5" y="1038.668"/><rect fill="#FFC0CB" height="659.3848" style="stroke:#181818;stroke-width:1.0;" width="10" x="338.5" y="1081.9785"/><rect fill="#FFC0CB" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="338.5" y="1816.6055"/><rect fill="#FFC0CB" height="1102.1113" style="stroke:#181818;stroke-width:1.0;" width="10" x="338.5" y="1859.916"/><rect fill="#FFC0CB" height="426.6582" style="stroke:#181818;stroke-width:1.0;" width="10" x="596.5" y="280.6621"/><rect fill="#ADD8E6" height="322.1055" style="stroke:#181818;stroke-width:1.0;" width="10" x="796.5" y="355.9043"/><rect fill="#ADD8E6" height="302.416" style="stroke:#181818;stroke-width:1.0;" width="10" x="796.5" y="1333.084"/><rect fill="#ADD8E6" height="307.7949" style="stroke:#181818;stroke-width:1.0;" width="10" x="796.5" y="2369.8848"/><rect fill="#ADD8E6" height="2263.1543" style="stroke:#181818;stroke-width:1.0;" width="10" x="1066.5" y="385.2148"/><rect fill="#90EE90" height="131.2422" style="stroke:#181818;stroke-width:1.0;" width="10" x="1152" y="1141.9102"/><rect fill="#90EE90" height="347.7949" style="stroke:#181818;stroke-width:1.0;" width="10" x="1152" y="1962.1582"/><rect fill="#90EE90" height="87.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="1152" y="2737.6113"/><rect fill="#90EE90" height="2879.5391" style="stroke:#181818;stroke-width:1.0;" width="10" x="1413" y="91.4883"/><rect height="134.5527" style="stroke:#000000;stroke-width:1.5;fill:none;" width="367" x="739" y="515.1465"/><rect height="259.1055" style="stroke:#000000;stroke-width:1.5;fill:none;" width="532" x="574" y="1348.084"/><rect height="119.2422" style="stroke:#000000;stroke-width:1.5;fill:none;" width="367" x="739" y="2384.8848"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="80" x2="80" y1="81.4883" y2="2980.0273"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="343.5" x2="343.5" y1="81.4883" y2="2980.0273"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="601.5" x2="601.5" y1="81.4883" y2="2980.0273"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="801" x2="801" y1="81.4883" y2="2980.0273"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="1071" x2="1071" y1="81.4883" y2="2980.0273"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="1157" x2="1157" y1="81.4883" y2="2980.0273"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="1418" x2="1418" y1="81.4883" y2="2980.0273"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="5" y="78.5352">Ticketing Application</text><ellipse cx="80.5" cy="13.5" fill="#FFD700" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M80.5,21.5 L80.5,48.5 M67.5,29.5 L93.5,29.5 M80.5,48.5 L67.5,63.5 M80.5,48.5 L93.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="5" y="2992.5625">Ticketing Application</text><ellipse cx="80.5" cy="3004.0156" fill="#FFD700" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M80.5,3012.0156 L80.5,3039.0156 M67.5,3020.0156 L93.5,3020.0156 M80.5,3039.0156 L67.5,3054.0156 M80.5,3039.0156 L93.5,3054.0156 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#FFC0CB" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="94" x="296.5" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="303.5" y="70.5352">Calypso API</text><rect fill="#FFC0CB" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="94" x="296.5" y="2979.0273"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="303.5" y="2999.5625">Calypso API</text><rect fill="#FFC0CB" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="88" x="557.5" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="564.5" y="70.5352">Reader API</text><rect fill="#FFC0CB" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="88" x="557.5" y="2979.0273"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="564.5" y="2999.5625">Reader API</text><rect fill="#ADD8E6" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="749" y="33.5117"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="756" y="54.0469">Calypso Card</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="777.5" y="70.5352">Reader</text><rect fill="#ADD8E6" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="749" y="2979.0273"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="756" y="2999.5625">Calypso Card</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="777.5" y="3016.0508">Reader</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="33" x="1052" y="78.5352">Card</text><path d="M1051,37 L1051,61 M1051,49 L1068,49 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="1080" cy="49" fill="#ADD8E6" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="33" x="1052" y="2992.5625">Card</text><path d="M1051,2999.5156 L1051,3023.5156 M1051,3011.5156 L1068,3011.5156 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="1080" cy="3011.5156" fill="#ADD8E6" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#90EE90" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="102" x="1106" y="33.5117"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="1113" y="54.0469">Calypso SAM</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="1133" y="70.5352">Reader</text><rect fill="#90EE90" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="102" x="1106" y="2979.0273"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="1113" y="2999.5625">Calypso SAM</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="1133" y="3016.0508">Reader</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="1387" y="62.0469">selected</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="31" x="1399.5" y="78.5352">SAM</text><path d="M1397.5,20.5117 L1397.5,44.5117 M1397.5,32.5117 L1414.5,32.5117 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="1426.5" cy="32.5117" fill="#90EE90" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="1387" y="2992.5625">selected</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="31" x="1399.5" y="3009.0508">SAM</text><path d="M1397.5,3016.0039 L1397.5,3040.0039 M1397.5,3028.0039 L1414.5,3028.0039 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="1426.5" cy="3028.0039" fill="#90EE90" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#FFD700" height="2879.5391" style="stroke:#181818;stroke-width:1.0;" width="10" x="75.5" y="91.4883"/><rect fill="#FFC0CB" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="338.5" y="237.3516"/><rect fill="#FFC0CB" height="75.2422" style="stroke:#181818;stroke-width:1.0;" width="10" x="338.5" y="736.6309"/><rect fill="#FFC0CB" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="338.5" y="1038.668"/><rect fill="#FFC0CB" height="659.3848" style="stroke:#181818;stroke-width:1.0;" width="10" x="338.5" y="1081.9785"/><rect fill="#FFC0CB" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="338.5" y="1816.6055"/><rect fill="#FFC0CB" height="1102.1113" style="stroke:#181818;stroke-width:1.0;" width="10" x="338.5" y="1859.916"/><rect fill="#FFC0CB" height="426.6582" style="stroke:#181818;stroke-width:1.0;" width="10" x="596.5" y="280.6621"/><rect fill="#ADD8E6" height="322.1055" style="stroke:#181818;stroke-width:1.0;" width="10" x="796.5" y="355.9043"/><rect fill="#ADD8E6" height="302.416" style="stroke:#181818;stroke-width:1.0;" width="10" x="796.5" y="1333.084"/><rect fill="#ADD8E6" height="307.7949" style="stroke:#181818;stroke-width:1.0;" width="10" x="796.5" y="2369.8848"/><rect fill="#ADD8E6" height="2263.1543" style="stroke:#181818;stroke-width:1.0;" width="10" x="1066.5" y="385.2148"/><rect fill="#90EE90" height="131.2422" style="stroke:#181818;stroke-width:1.0;" width="10" x="1152" y="1141.9102"/><rect fill="#90EE90" height="347.7949" style="stroke:#181818;stroke-width:1.0;" width="10" x="1152" y="1962.1582"/><rect fill="#90EE90" height="87.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="1152" y="2737.6113"/><rect fill="#90EE90" height="2879.5391" style="stroke:#181818;stroke-width:1.0;" width="10" x="1413" y="91.4883"/><rect fill="#EEEEEE" height="3" style="stroke:#EEEEEE;stroke-width:1.0;" width="1454" x="0" y="112.1436"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="1454" y1="112.1436" y2="112.1436"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="1454" y1="115.1436" y2="115.1436"/><rect fill="#EEEEEE" height="23.3105" style="stroke:#000000;stroke-width:2.0;" width="221" x="616.5" y="101.4883"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="203" x="622.5" y="118.0566">Card selection &amp; identification</text><path d="M100,139.7988 L100,164.7988 L587,164.7988 L587,149.7988 L577,139.7988 L100,139.7988 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M577,139.7988 L577,149.7988 L587,149.7988 L577,139.7988 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="466" x="106" y="157.3672">Reads the environment data present in all the cards targeted for selection.</text><polygon fill="#181818" points="326.5,233.3516,336.5,237.3516,326.5,241.3516,330.5,237.3516" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="332.5" y1="237.3516" y2="237.3516"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="92.5" y="186.6777">prepare</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="149" x="150.5" y="186.6777">card selection scenario:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="141" x="124.5" y="201.9883">- filter by specific AID</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="146" x="124.5" y="217.2988">- read environment file</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="150" x="124.5" y="232.6094">- read contracts list file</text><polygon fill="#181818" points="96.5,247.3516,86.5,251.3516,96.5,255.3516,92.5,251.3516" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="342.5" y1="251.3516" y2="251.3516"/><polygon fill="#181818" points="584.5,276.6621,594.5,280.6621,584.5,284.6621,588.5,280.6621" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="590.5" y1="280.6621" y2="280.6621"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="52" x="92.5" y="275.9199">process</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="196" x="148.5" y="275.9199">explicit card selection scenario</text><polygon fill="#0000FF" points="784.5,351.9043,794.5,355.9043,784.5,359.9043,788.5,355.9043" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;" x1="606.5" x2="790.5" y1="355.9043" y2="355.9043"/><text fill="#0000FF" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="613.5" y="305.2305">Card #1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="165" x="613.5" y="320.541">transmit selection request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="93" x="645.5" y="335.8516">- card selector</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="645.5" y="351.1621">- APDU list</text><polygon fill="#181818" points="1054.5,381.2148,1064.5,385.2148,1054.5,389.2148,1058.5,385.2148" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="806.5" x2="1060.5" y1="385.2148" y2="385.2148"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="813.5" y="380.4727">open card channel</text><polygon fill="#181818" points="817.5,395.2148,807.5,399.2148,817.5,403.2148,813.5,399.2148" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="811.5" x2="1065.5" y1="399.2148" y2="399.2148"/><polygon fill="#181818" points="1054.5,424.5254,1064.5,428.5254,1054.5,432.5254,1058.5,428.5254" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="806.5" x2="1060.5" y1="428.5254" y2="428.5254"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="142" x="813.5" y="423.7832">select application (aid)</text><polygon fill="#181818" points="817.5,453.8359,807.5,457.8359,817.5,461.8359,813.5,457.8359" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="811.5" x2="1065.5" y1="457.8359" y2="457.8359"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="823.5" y="453.0938">[card FCI]</text><line style="stroke:#181818;stroke-width:1.0;" x1="806.5" x2="848.5" y1="487.1465" y2="487.1465"/><line style="stroke:#181818;stroke-width:1.0;" x1="848.5" x2="848.5" y1="487.1465" y2="500.1465"/><line style="stroke:#181818;stroke-width:1.0;" x1="807.5" x2="848.5" y1="500.1465" y2="500.1465"/><polygon fill="#181818" points="817.5,496.1465,807.5,500.1465,817.5,504.1465,813.5,500.1465" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="165" x="813.5" y="482.4043">checks invalidation status</text><path d="M739,515.1465 L1093,515.1465 L1093,522.457 L1083,532.457 L739,532.457 L739,515.1465 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="134.5527" style="stroke:#000000;stroke-width:1.5;" width="367" x="739" y="515.1465"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="309" x="754" y="528.7148">Card APDU commands outside secure session</text><polygon fill="#181818" points="1054.5,549.7676,1064.5,553.7676,1054.5,557.7676,1058.5,553.7676" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="806.5" x2="1060.5" y1="553.7676" y2="553.7676"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="162" x="813.5" y="549.0254">read record (environment)</text><polygon fill="#181818" points="817.5,579.0781,807.5,583.0781,817.5,587.0781,813.5,583.0781" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="811.5" x2="1065.5" y1="583.0781" y2="583.0781"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="118" x="823.5" y="578.3359">[environment data]</text><polygon fill="#181818" points="1054.5,608.3887,1064.5,612.3887,1054.5,616.3887,1058.5,612.3887" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="806.5" x2="1060.5" y1="612.3887" y2="612.3887"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="159" x="813.5" y="607.6465">read record (contract list)</text><polygon fill="#181818" points="817.5,637.6992,807.5,641.6992,817.5,645.6992,813.5,641.6992" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="811.5" x2="1065.5" y1="641.6992" y2="641.6992"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="823.5" y="636.957">[contract list data]</text><polygon fill="#0000FF" points="617.5,674.0098,607.5,678.0098,617.5,682.0098,613.5,678.0098" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="611.5" x2="800.5" y1="678.0098" y2="678.0098"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="166" x="623.5" y="673.2676">receive selection response</text><polygon fill="#181818" points="96.5,703.3203,86.5,707.3203,96.5,711.3203,92.5,707.3203" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="600.5" y1="707.3203" y2="707.3203"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="204" x="102.5" y="702.5781">selected active SmartCard image</text><polygon fill="#181818" points="326.5,732.6309,336.5,736.6309,326.5,740.6309,330.5,736.6309" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="332.5" y1="736.6309" y2="736.6309"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="27" x="92.5" y="731.8887">cast</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="123.5" y="731.8887">Calypso card</text><polygon fill="#181818" points="96.5,807.873,86.5,811.873,96.5,815.873,92.5,811.873" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="342.5" y1="811.873" y2="811.873"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="102.5" y="761.1992">[Calypso card image:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180" x="134.5" y="776.5098">- support identification data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="134.5" y="791.8203">- environment data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123" x="134.5" y="807.1309">- contract list data]</text><rect fill="#EEEEEE" height="3" style="stroke:#EEEEEE;stroke-width:1.0;" width="1454" x="0" y="840.5283"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="1454" y1="840.5283" y2="840.5283"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="1454" y1="843.5283" y2="843.5283"/><rect fill="#EEEEEE" height="23.3105" style="stroke:#000000;stroke-width:2.0;" width="179" x="637.5" y="829.873"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="161" x="643.5" y="846.4414">Card secure transaction</text><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="127.5" y1="915.1152" y2="915.1152"/><line style="stroke:#181818;stroke-width:1.0;" x1="127.5" x2="127.5" y1="915.1152" y2="928.1152"/><line style="stroke:#181818;stroke-width:1.0;" x1="86.5" x2="127.5" y1="928.1152" y2="928.1152"/><polygon fill="#181818" points="96.5,924.1152,86.5,928.1152,96.5,932.1152,92.5,928.1152" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="72" x="92.5" y="879.752">instantiate</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160" x="168.5" y="879.752">Calypso card transaction:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="124.5" y="895.0625">- Calypso card resource</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="124.5" y="910.373">- Calypso SAM resource</text><path d="M98,941.1152 L98,966.1152 L589,966.1152 L589,951.1152 L579,941.1152 L98,941.1152 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M579,941.1152 L579,951.1152 L589,951.1152 L579,941.1152 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="470" x="104" y="958.6836">Reads again the environment data inside the session to authenticate them.</text><polygon fill="#181818" points="326.5,1034.668,336.5,1038.668,326.5,1042.668,330.5,1038.668" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="332.5" y1="1038.668" y2="1038.668"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="92.5" y="987.9941">prepare</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="106" x="150.5" y="987.9941">card transaction:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="146" x="124.5" y="1003.3047">- read environment file</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="124.5" y="1018.6152">- read contract #1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123" x="124.5" y="1033.9258">- reader counter #1</text><polygon fill="#181818" points="96.5,1048.668,86.5,1052.668,96.5,1056.668,92.5,1052.668" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="342.5" y1="1052.668" y2="1052.668"/><polygon fill="#181818" points="326.5,1077.9785,336.5,1081.9785,326.5,1085.9785,330.5,1081.9785" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="332.5" y1="1081.9785" y2="1081.9785"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="52" x="92.5" y="1077.2363">process</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="178" x="148.5" y="1077.2363">opening (DEBIT access level)</text><polygon fill="#00FF00" points="1140,1137.9102,1150,1141.9102,1140,1145.9102,1144,1141.9102" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;" x1="348.5" x2="1146" y1="1141.9102" y2="1141.9102"/><text fill="#008000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="51" x="355.5" y="1106.5469">SAM #1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="355.5" y="1121.8574">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="387.5" y="1137.168">- APDU list</text><polygon fill="#181818" points="1401,1167.2207,1411,1171.2207,1401,1175.2207,1405,1171.2207" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1162" x2="1407" y1="1171.2207" y2="1171.2207"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="181" x="1169" y="1166.4785">select diversifier (card serial)</text><polygon fill="#181818" points="1173,1181.2207,1163,1185.2207,1173,1189.2207,1169,1185.2207" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1167" x2="1412" y1="1185.2207" y2="1185.2207"/><polygon fill="#181818" points="1401,1210.5313,1411,1214.5313,1401,1218.5313,1405,1214.5313" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1162" x2="1407" y1="1214.5313" y2="1214.5313"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="1169" y="1209.7891">get challenge</text><polygon fill="#181818" points="1173,1239.8418,1163,1243.8418,1173,1247.8418,1169,1243.8418" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1167" x2="1412" y1="1243.8418" y2="1243.8418"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="99" x="1179" y="1239.0996">[SAM challenge]</text><polygon fill="#00FF00" points="359.5,1269.1523,349.5,1273.1523,359.5,1277.1523,355.5,1273.1523" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="353.5" x2="1156" y1="1273.1523" y2="1273.1523"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="99" x="365.5" y="1268.4102">[SAM challenge]</text><polygon fill="#0000FF" points="784.5,1329.084,794.5,1333.084,784.5,1337.084,788.5,1333.084" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;" x1="348.5" x2="790.5" y1="1333.084" y2="1333.084"/><text fill="#0000FF" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="355.5" y="1297.7207">Card #2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="355.5" y="1313.0313">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="387.5" y="1328.3418">- APDU list</text><path d="M574,1348.084 L870,1348.084 L870,1355.3945 L860,1365.3945 L574,1365.3945 L574,1348.084 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="259.1055" style="stroke:#000000;stroke-width:1.5;" width="532" x="574" y="1348.084"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="251" x="589" y="1361.6523">Card APDU commands inside session</text><path d="M584,1370.3945 L584,1395.3945 L1018,1395.3945 L1018,1380.3945 L1008,1370.3945 L584,1370.3945 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M1008,1370.3945 L1008,1380.3945 L1018,1380.3945 L1008,1370.3945 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="413" x="590" y="1387.9629">Optimization: environment file read through the session opening.</text><polygon fill="#181818" points="1054.5,1448.6367,1064.5,1452.6367,1054.5,1456.6367,1058.5,1452.6367" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="806.5" x2="1060.5" y1="1452.6367" y2="1452.6367"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="229" x="813.5" y="1417.2734">open secure session (card debit key,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="95" x="845.5" y="1432.584">SAM challenge,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="153" x="845.5" y="1447.8945">SFI environment to read)</text><polygon fill="#181818" points="817.5,1477.9473,807.5,1481.9473,817.5,1485.9473,813.5,1481.9473" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="811.5" x2="1065.5" y1="1481.9473" y2="1481.9473"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="226" x="823.5" y="1477.2051">[card challenge &amp; environment data]</text><polygon fill="#181818" points="1054.5,1507.2578,1064.5,1511.2578,1054.5,1515.2578,1058.5,1511.2578" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="806.5" x2="1060.5" y1="1511.2578" y2="1511.2578"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="155" x="813.5" y="1506.5156">read record (contract #1)</text><polygon fill="#181818" points="817.5,1536.5684,807.5,1540.5684,817.5,1544.5684,813.5,1540.5684" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="811.5" x2="1065.5" y1="1540.5684" y2="1540.5684"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111" x="823.5" y="1535.8262">[contract #1 data]</text><polygon fill="#181818" points="1054.5,1565.8789,1064.5,1569.8789,1054.5,1573.8789,1058.5,1569.8789" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="806.5" x2="1060.5" y1="1569.8789" y2="1569.8789"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="813.5" y="1565.1367">read record (counter #1)</text><polygon fill="#181818" points="817.5,1595.1895,807.5,1599.1895,817.5,1603.1895,813.5,1599.1895" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="811.5" x2="1065.5" y1="1599.1895" y2="1599.1895"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="107" x="823.5" y="1594.4473">[counter #1 data]</text><polygon fill="#0000FF" points="359.5,1631.5,349.5,1635.5,359.5,1639.5,355.5,1635.5" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="353.5" x2="800.5" y1="1635.5" y2="1635.5"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="99" x="365.5" y="1630.7578">[card challenge]</text><polygon fill="#181818" points="96.5,1737.3633,86.5,1741.3633,96.5,1745.3633,92.5,1741.3633" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="342.5" y1="1741.3633" y2="1741.3633"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="102.5" y="1660.0684">[Calypso card image:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180" x="134.5" y="1675.3789">- support identification data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="185" x="134.5" y="1690.6895">- environment data (updated)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="119" x="134.5" y="1706">- contract list data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="134.5" y="1721.3105">- contract #1 data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="134.5" y="1736.6211">- counter #1 data]</text><polygon fill="#181818" points="326.5,1812.6055,336.5,1816.6055,326.5,1820.6055,330.5,1816.6055" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="332.5" y1="1816.6055" y2="1816.6055"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="92.5" y="1765.9316">prepare</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="146.5" y="1765.9316">:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="176" x="124.5" y="1781.2422">- update event record (data)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="184" x="124.5" y="1796.5527">- decrease counter #1 (value)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="109" x="124.5" y="1811.8633">- release channel</text><polygon fill="#181818" points="96.5,1826.6055,86.5,1830.6055,96.5,1834.6055,92.5,1830.6055" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="342.5" y1="1830.6055" y2="1830.6055"/><polygon fill="#181818" points="326.5,1855.916,336.5,1859.916,326.5,1863.916,330.5,1859.916" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="332.5" y1="1859.916" y2="1859.916"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="52" x="92.5" y="1855.1738">process</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="128" x="148.5" y="1855.1738">closing (not ratified)</text><line style="stroke:#181818;stroke-width:1.0;" x1="348.5" x2="390.5" y1="1889.2266" y2="1889.2266"/><line style="stroke:#181818;stroke-width:1.0;" x1="390.5" x2="390.5" y1="1889.2266" y2="1902.2266"/><line style="stroke:#181818;stroke-width:1.0;" x1="349.5" x2="390.5" y1="1902.2266" y2="1902.2266"/><polygon fill="#181818" points="359.5,1898.2266,349.5,1902.2266,359.5,1906.2266,355.5,1902.2266" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="234" x="355.5" y="1884.4844">anticipates the future card responses</text><polygon fill="#00FF00" points="1140,1958.1582,1150,1962.1582,1140,1966.1582,1144,1962.1582" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;" x1="348.5" x2="1146" y1="1962.1582" y2="1962.1582"/><text fill="#008000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="51" x="355.5" y="1926.7949">SAM #2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="355.5" y="1942.1055">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="387.5" y="1957.416">- APDU list</text><polygon fill="#181818" points="1401,1987.4688,1411,1991.4688,1401,1995.4688,1405,1991.4688" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1162" x2="1407" y1="1991.4688" y2="1991.4688"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="158" x="1169" y="1986.7266">digest init (opening data)</text><polygon fill="#181818" points="1173,2001.4688,1163,2005.4688,1173,2009.4688,1169,2005.4688" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1167" x2="1412" y1="2005.4688" y2="2005.4688"/><polygon fill="#181818" points="1401,2030.7793,1411,2034.7793,1401,2038.7793,1405,2034.7793" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1162" x2="1407" y1="2034.7793" y2="2034.7793"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="208" x="1169" y="2030.0371">digest update (read environment)</text><polygon fill="#181818" points="1173,2044.7793,1163,2048.7793,1173,2052.7793,1169,2048.7793" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1167" x2="1412" y1="2048.7793" y2="2048.7793"/><polygon fill="#181818" points="1401,2074.0898,1411,2078.0898,1401,2082.0898,1405,2078.0898" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1162" x2="1407" y1="2078.0898" y2="2078.0898"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="181" x="1169" y="2073.3477">digest update (read contract)</text><polygon fill="#181818" points="1173,2088.0898,1163,2092.0898,1173,2096.0898,1169,2092.0898" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1167" x2="1412" y1="2092.0898" y2="2092.0898"/><polygon fill="#181818" points="1401,2117.4004,1411,2121.4004,1401,2125.4004,1405,2121.4004" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1162" x2="1407" y1="2121.4004" y2="2121.4004"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="177" x="1169" y="2116.6582">digest update (read counter)</text><polygon fill="#181818" points="1173,2131.4004,1163,2135.4004,1173,2139.4004,1169,2135.4004" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1167" x2="1412" y1="2135.4004" y2="2135.4004"/><polygon fill="#181818" points="1401,2160.7109,1411,2164.7109,1401,2168.7109,1405,2164.7109" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1162" x2="1407" y1="2164.7109" y2="2164.7109"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="223" x="1169" y="2159.9688">digest update (update event record)</text><polygon fill="#181818" points="1173,2174.7109,1163,2178.7109,1173,2182.7109,1169,2178.7109" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1167" x2="1412" y1="2178.7109" y2="2178.7109"/><polygon fill="#181818" points="1401,2204.0215,1411,2208.0215,1401,2212.0215,1405,2208.0215" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1162" x2="1407" y1="2208.0215" y2="2208.0215"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="205" x="1169" y="2203.2793">digest update (decrease counter)</text><polygon fill="#181818" points="1173,2218.0215,1163,2222.0215,1173,2226.0215,1169,2222.0215" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1167" x2="1412" y1="2222.0215" y2="2222.0215"/><polygon fill="#181818" points="1401,2247.332,1411,2251.332,1401,2255.332,1405,2251.332" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1162" x2="1407" y1="2251.332" y2="2251.332"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="76" x="1169" y="2246.5898">digest close</text><polygon fill="#181818" points="1173,2276.6426,1163,2280.6426,1173,2284.6426,1169,2280.6426" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1167" x2="1412" y1="2280.6426" y2="2280.6426"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="102" x="1179" y="2275.9004">[SAM certificate]</text><polygon fill="#00FF00" points="359.5,2305.9531,349.5,2309.9531,359.5,2313.9531,355.5,2309.9531" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="353.5" x2="1156" y1="2309.9531" y2="2309.9531"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="102" x="365.5" y="2305.2109">[SAM certificate]</text><polygon fill="#0000FF" points="784.5,2365.8848,794.5,2369.8848,784.5,2373.8848,788.5,2369.8848" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;" x1="348.5" x2="790.5" y1="2369.8848" y2="2369.8848"/><text fill="#0000FF" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="355.5" y="2334.5215">Card #3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="355.5" y="2349.832">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="387.5" y="2365.1426">- APDU list</text><path d="M739,2384.8848 L1035,2384.8848 L1035,2392.1953 L1025,2402.1953 L739,2402.1953 L739,2384.8848 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="119.2422" style="stroke:#000000;stroke-width:1.5;" width="367" x="739" y="2384.8848"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="251" x="754" y="2398.4531">Card APDU commands inside session</text><polygon fill="#181818" points="1054.5,2419.5059,1064.5,2423.5059,1054.5,2427.5059,1058.5,2423.5059" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="806.5" x2="1060.5" y1="2423.5059" y2="2423.5059"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="168" x="813.5" y="2418.7637">update record (event, data)</text><polygon fill="#181818" points="817.5,2433.5059,807.5,2437.5059,817.5,2441.5059,813.5,2437.5059" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="811.5" x2="1065.5" y1="2437.5059" y2="2437.5059"/><polygon fill="#181818" points="1054.5,2462.8164,1064.5,2466.8164,1054.5,2470.8164,1058.5,2466.8164" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="806.5" x2="1060.5" y1="2466.8164" y2="2466.8164"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="228" x="813.5" y="2462.0742">decrease counter (counter #1, value)</text><polygon fill="#181818" points="817.5,2492.127,807.5,2496.127,817.5,2500.127,813.5,2496.127" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="811.5" x2="1065.5" y1="2496.127" y2="2496.127"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="823.5" y="2491.3848">[new counter value]</text><polygon fill="#181818" points="1054.5,2528.4375,1064.5,2532.4375,1054.5,2536.4375,1058.5,2532.4375" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="806.5" x2="1060.5" y1="2532.4375" y2="2532.4375"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="236" x="813.5" y="2527.6953">close secure session (SAM certificate)</text><polygon fill="#181818" points="817.5,2557.748,807.5,2561.748,817.5,2565.748,813.5,2561.748" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="811.5" x2="1065.5" y1="2561.748" y2="2561.748"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="102" x="823.5" y="2557.0059">[card certificate]</text><polygon fill="#181818" points="1054.5,2587.0586,1064.5,2591.0586,1054.5,2595.0586,1058.5,2591.0586" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="806.5" x2="1060.5" y1="2591.0586" y2="2591.0586"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="813.5" y="2586.3164">ratification command</text><polygon fill="#181818" points="817.5,2601.0586,807.5,2605.0586,817.5,2609.0586,813.5,2605.0586" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="811.5" x2="1065.5" y1="2605.0586" y2="2605.0586"/><polygon fill="#181818" points="1054.5,2630.3691,1064.5,2634.3691,1054.5,2638.3691,1058.5,2634.3691" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="806.5" x2="1060.5" y1="2634.3691" y2="2634.3691"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117" x="813.5" y="2629.627">close card channel</text><polygon fill="#181818" points="817.5,2644.3691,807.5,2648.3691,817.5,2652.3691,813.5,2648.3691" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="811.5" x2="1070.5" y1="2648.3691" y2="2648.3691"/><polygon fill="#0000FF" points="359.5,2673.6797,349.5,2677.6797,359.5,2681.6797,355.5,2677.6797" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="353.5" x2="800.5" y1="2677.6797" y2="2677.6797"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="102" x="365.5" y="2672.9375">[card certificate]</text><polygon fill="#00FF00" points="1140,2733.6113,1150,2737.6113,1140,2741.6113,1144,2737.6113" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;" x1="348.5" x2="1146" y1="2737.6113" y2="2737.6113"/><text fill="#008000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="51" x="355.5" y="2702.248">SAM #3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="355.5" y="2717.5586">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="387.5" y="2732.8691">- APDU list</text><polygon fill="#181818" points="1401,2762.9219,1411,2766.9219,1401,2770.9219,1405,2766.9219" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1162" x2="1407" y1="2766.9219" y2="2766.9219"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="227" x="1169" y="2762.1797">digest authenticate (card certificate)</text><polygon fill="#181818" points="1173,2792.2324,1163,2796.2324,1173,2800.2324,1169,2796.2324" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1167" x2="1412" y1="2796.2324" y2="2796.2324"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="142" x="1179" y="2791.4902">[authentication status]</text><polygon fill="#00FF00" points="359.5,2821.543,349.5,2825.543,359.5,2829.543,355.5,2825.543" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="353.5" x2="1156" y1="2825.543" y2="2825.543"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="365.5" y="2820.8008">[authentification status]</text><polygon fill="#181818" points="96.5,2958.0273,86.5,2962.0273,96.5,2966.0273,92.5,2962.0273" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="342.5" y1="2962.0273" y2="2962.0273"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="102.5" y="2850.1113">[Calypso card image:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180" x="134.5" y="2865.4219">- support identification data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="134.5" y="2880.7324">- environment data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="119" x="134.5" y="2896.043">- contract list data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="134.5" y="2911.3535">- contract #1 data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="174" x="134.5" y="2926.6641">- counter #1 data (updated)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="134.5" y="2941.9746">- event #1 (updated)]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="143" x="102.5" y="2957.2852">authentification status</text><!--MD5=[7aef812f1c25cca3e36e7e341623ff7d]
+@startuml
+
+'skinparam ClassBorderColor #F1C40F
+skinparam ClassBorderColor #D4AC0D
+skinparam stereotypeABorderColor #A9DCDF
+skinparam stereotypeIBorderColor #B4A7E5
+skinparam stereotypeCBorderColor #ADD1B2
+skinparam stereotypeEBorderColor #EB93DF
+skinparam shadowing false
+
+skinparam StateBorderColor #D4AC0D
+skinparam ActivityBorderColor #D4AC0D
+
+' Red
+skinparam ClassBackgroundColor<<red>> #FDEDEC
+skinparam ClassBorderColor<<red>> #E74C3C
+hide <<red>> stereotype
+' Purple
+skinparam ClassBackgroundColor<<purple>> #F4ECF7
+skinparam ClassBorderColor<<purple>> #8E44AD
+hide <<purple>> stereotype
+' blue
+skinparam ClassBackgroundColor<<blue>> #EBF5FB
+skinparam ClassBorderColor<<blue>> #3498DB
+hide <<blue>> stereotype
+' Green
+skinparam ClassBackgroundColor<<green>> #EAFAF1
+skinparam ClassBorderColor<<green>> #2ECC71
+hide <<green>> stereotype
+
+' Orange
+skinparam ClassBackgroundColor<<orange>> #FDF2E9
+skinparam ClassBorderColor<<orange>> #E67E22
+hide <<orange>> stereotype
+
+' Grey
+skinparam ClassBackgroundColor<<grey>> #EAECEE
+skinparam ClassBorderColor<<grey>> #2C3E50
+hide <<grey>> stereotype
+
+actor "Ticketing Application" as app #gold
+participant "Calypso API" as capi #pink
+participant "Reader API" as rapi #pink
+participant "Calypso Card\nReader" as cardReader #lightBlue
+boundary "**Card**" as card #lightBlue
+participant "Calypso SAM\nReader" as samReader #lightGreen
+boundary "selected\n**SAM**" as sam #lightGreen
+
+activate app #gold
+activate sam #lightGreen
+
+== Card selection & identification ==
+
+note over capi
+    Reads the environment data present in all the cards targeted for selection.
+end note
+
+app->capi: <font color=red>**prepare**</font> card selection scenario:\n\t- filter by specific AID\n\t- read environment file\n\t- read contracts list file
+activate capi  #pink
+capi- ->app
+deactivate capi
+
+app->rapi: <font color=red>**process**</font> explicit card selection scenario
+activate rapi  #pink
+rapi-[#0000FF]>cardReader: <font color=blue>**Card #1**</font>\ntransmit selection request\n\t- card selector\n\t- APDU list
+activate cardReader #lightBlue
+
+cardReader->card: open card channel
+activate card #lightBlue
+card- ->cardReader
+cardReader->card: select application (aid)
+card- ->cardReader: [card FCI]
+cardReader->cardReader: checks invalidation status
+
+group Card APDU commands outside secure session
+    cardReader->card: read record (environment)
+    card- ->cardReader: [environment data]
+    cardReader->card: read record (contract list)
+    card- ->cardReader: [contract list data]
+end
+
+cardReader- -[#0000FF]>rapi: receive selection response
+deactivate cardReader
+
+rapi- ->app: selected active SmartCard image
+deactivate rapi
+
+app->capi: **cast** Calypso card
+activate capi  #pink
+capi- ->app: [Calypso card image:\n\t- support identification data\n\t- environment data\n\t- contract list data]
+
+deactivate capi
+
+== Card secure transaction ==
+
+app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
+
+note over capi
+    Reads again the environment data inside the session to authenticate them.
+end note
+
+app->capi: <font color=red>**prepare**</font> card transaction:\n\t- read environment file\n\t- read contract #1\n\t- reader counter #1
+activate capi  #pink
+capi- ->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> opening (DEBIT access level)
+activate capi  #pink
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+samReader->sam: select diversifier (card serial)
+sam- ->samReader
+samReader->sam: get challenge
+sam- ->samReader: [SAM challenge]
+samReader-[#00FF00]->capi: [SAM challenge]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+group Card APDU commands inside session
+note over cardReader
+    Optimization: environment file read through the session opening.
+end note
+
+    cardReader->card: open secure session (card debit key,\n\tSAM challenge,\n\tSFI environment to read)
+    card- ->cardReader: [card challenge & environment data]
+    cardReader->card: read record (contract #1)
+    card- ->cardReader: [contract #1 data]
+    cardReader->card: read record (counter #1)
+    card- ->cardReader: [counter #1 data]
+end
+
+cardReader- -[#0000FF]>capi: [card challenge]
+deactivate cardReader
+
+capi- ->app: [Calypso card image:\n\t- support identification data\n\t- environment data (updated)\n\t- contract list data\n\t- contract #1 data\n\t- counter #1 data]
+deactivate capi
+
+app->capi: <font color=red>**prepare**</font>:\n\t- update event record (data)\n\t- decrease counter #1 (value)\n\t- release channel
+activate capi  #pink
+capi- ->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> closing (not ratified)
+activate capi  #pink
+capi->capi: anticipates the future card responses
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #2**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+samReader->sam: digest init (opening data)
+sam- ->samReader
+samReader->sam: digest update (read environment)
+sam- ->samReader
+samReader->sam: digest update (read contract)
+sam- ->samReader
+samReader->sam: digest update (read counter)
+sam- ->samReader
+samReader->sam: digest update (update event record)
+sam- ->samReader
+samReader->sam: digest update (decrease counter)
+sam- ->samReader
+samReader->sam: digest close
+sam- ->samReader: [SAM certificate]
+
+samReader-[#00FF00]->capi: [SAM certificate]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #3**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+group Card APDU commands inside session
+    cardReader->card: update record (event, data)
+    card- ->cardReader
+    cardReader->card: decrease counter (counter #1, value)
+    card- ->cardReader: [new counter value]
+end
+
+cardReader->card: close secure session (SAM certificate)
+card- ->cardReader: [card certificate]
+cardReader->card: ratification command
+card- ->cardReader
+cardReader->card: close card channel
+card- ->cardReader
+deactivate card
+
+cardReader-[#0000FF]->capi: [card certificate]
+deactivate cardReader
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #3**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+samReader->sam: digest authenticate (card certificate)
+sam- ->samReader: [authentication status]
+
+samReader-[#00FF00]->capi: [authentification status]
+deactivate samReader
+
+capi- ->app: [Calypso card image:\n\t- support identification data\n\t- environment data\n\t- contract list data\n\t- contract #1 data\n\t- counter #1 data (updated)\n\t- event #1 (updated)]\nauthentification status
+deactivate capi
+@enduml
+
+@startuml
+
+skinparam ClassBorderColor #D4AC0D
+skinparam stereotypeABorderColor #A9DCDF
+skinparam stereotypeIBorderColor #B4A7E5
+skinparam stereotypeCBorderColor #ADD1B2
+skinparam stereotypeEBorderColor #EB93DF
+skinparam shadowing false
+
+skinparam StateBorderColor #D4AC0D
+skinparam ActivityBorderColor #D4AC0D
+
+skinparam ClassBackgroundColor<<red>> #FDEDEC
+skinparam ClassBorderColor<<red>> #E74C3C
+hide <<red>> stereotype
+skinparam ClassBackgroundColor<<purple>> #F4ECF7
+skinparam ClassBorderColor<<purple>> #8E44AD
+hide <<purple>> stereotype
+skinparam ClassBackgroundColor<<blue>> #EBF5FB
+skinparam ClassBorderColor<<blue>> #3498DB
+hide <<blue>> stereotype
+skinparam ClassBackgroundColor<<green>> #EAFAF1
+skinparam ClassBorderColor<<green>> #2ECC71
+hide <<green>> stereotype
+
+skinparam ClassBackgroundColor<<orange>> #FDF2E9
+skinparam ClassBorderColor<<orange>> #E67E22
+hide <<orange>> stereotype
+
+skinparam ClassBackgroundColor<<grey>> #EAECEE
+skinparam ClassBorderColor<<grey>> #2C3E50
+hide <<grey>> stereotype
+
+actor "Ticketing Application" as app #gold
+participant "Calypso API" as capi #pink
+participant "Reader API" as rapi #pink
+participant "Calypso Card\nReader" as cardReader #lightBlue
+boundary "**Card**" as card #lightBlue
+participant "Calypso SAM\nReader" as samReader #lightGreen
+boundary "selected\n**SAM**" as sam #lightGreen
+
+activate app #gold
+activate sam #lightGreen
+
+== Card selection & identification ==
+
+note over capi
+    Reads the environment data present in all the cards targeted for selection.
+end note
+
+app->capi: <font color=red>**prepare**</font> card selection scenario:\n\t- filter by specific AID\n\t- read environment file\n\t- read contracts list file
+activate capi  #pink
+capi- ->app
+deactivate capi
+
+app->rapi: <font color=red>**process**</font> explicit card selection scenario
+activate rapi  #pink
+rapi-[#0000FF]>cardReader: <font color=blue>**Card #1**</font>\ntransmit selection request\n\t- card selector\n\t- APDU list
+activate cardReader #lightBlue
+
+cardReader->card: open card channel
+activate card #lightBlue
+card- ->cardReader
+cardReader->card: select application (aid)
+card- ->cardReader: [card FCI]
+cardReader->cardReader: checks invalidation status
+
+group Card APDU commands outside secure session
+    cardReader->card: read record (environment)
+    card- ->cardReader: [environment data]
+    cardReader->card: read record (contract list)
+    card- ->cardReader: [contract list data]
+end
+
+cardReader- -[#0000FF]>rapi: receive selection response
+deactivate cardReader
+
+rapi- ->app: selected active SmartCard image
+deactivate rapi
+
+app->capi: **cast** Calypso card
+activate capi  #pink
+capi- ->app: [Calypso card image:\n\t- support identification data\n\t- environment data\n\t- contract list data]
+
+deactivate capi
+
+== Card secure transaction ==
+
+app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
+
+note over capi
+    Reads again the environment data inside the session to authenticate them.
+end note
+
+app->capi: <font color=red>**prepare**</font> card transaction:\n\t- read environment file\n\t- read contract #1\n\t- reader counter #1
+activate capi  #pink
+capi- ->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> opening (DEBIT access level)
+activate capi  #pink
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+samReader->sam: select diversifier (card serial)
+sam- ->samReader
+samReader->sam: get challenge
+sam- ->samReader: [SAM challenge]
+samReader-[#00FF00]->capi: [SAM challenge]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+group Card APDU commands inside session
+note over cardReader
+    Optimization: environment file read through the session opening.
+end note
+
+    cardReader->card: open secure session (card debit key,\n\tSAM challenge,\n\tSFI environment to read)
+    card- ->cardReader: [card challenge & environment data]
+    cardReader->card: read record (contract #1)
+    card- ->cardReader: [contract #1 data]
+    cardReader->card: read record (counter #1)
+    card- ->cardReader: [counter #1 data]
+end
+
+cardReader- -[#0000FF]>capi: [card challenge]
+deactivate cardReader
+
+capi- ->app: [Calypso card image:\n\t- support identification data\n\t- environment data (updated)\n\t- contract list data\n\t- contract #1 data\n\t- counter #1 data]
+deactivate capi
+
+app->capi: <font color=red>**prepare**</font>:\n\t- update event record (data)\n\t- decrease counter #1 (value)\n\t- release channel
+activate capi  #pink
+capi- ->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> closing (not ratified)
+activate capi  #pink
+capi->capi: anticipates the future card responses
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #2**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+samReader->sam: digest init (opening data)
+sam- ->samReader
+samReader->sam: digest update (read environment)
+sam- ->samReader
+samReader->sam: digest update (read contract)
+sam- ->samReader
+samReader->sam: digest update (read counter)
+sam- ->samReader
+samReader->sam: digest update (update event record)
+sam- ->samReader
+samReader->sam: digest update (decrease counter)
+sam- ->samReader
+samReader->sam: digest close
+sam- ->samReader: [SAM certificate]
+
+samReader-[#00FF00]->capi: [SAM certificate]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #3**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+group Card APDU commands inside session
+    cardReader->card: update record (event, data)
+    card- ->cardReader
+    cardReader->card: decrease counter (counter #1, value)
+    card- ->cardReader: [new counter value]
+end
+
+cardReader->card: close secure session (SAM certificate)
+card- ->cardReader: [card certificate]
+cardReader->card: ratification command
+card- ->cardReader
+cardReader->card: close card channel
+card- ->cardReader
+deactivate card
+
+cardReader-[#0000FF]->capi: [card certificate]
+deactivate cardReader
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #3**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+samReader->sam: digest authenticate (card certificate)
+sam- ->samReader: [authentication status]
+
+samReader-[#00FF00]->capi: [authentification status]
+deactivate samReader
+
+capi- ->app: [Calypso card image:\n\t- support identification data\n\t- environment data\n\t- contract list data\n\t- contract #1 data\n\t- counter #1 data (updated)\n\t- event #1 (updated)]\nauthentification status
+deactivate capi
+@enduml
+
+PlantUML version 1.2022.4(Sat Apr 09 17:29:17 RET 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>
