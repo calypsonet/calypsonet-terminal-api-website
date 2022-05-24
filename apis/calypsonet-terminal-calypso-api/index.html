@@ -25,7 +25,7 @@
 <meta property="og:title" content="Calypsonet Terminal Calypso API | Calypso Networks Association Terminal APIs">
 <meta property="og:description" content="Public high-level API which standardizes the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, etc...)."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
 <meta property="twitter:image" content="https://terminal-api.calypsonet.org/media/logo.svg"><meta property="og:locale" content="en-us">
-<meta property="article:modified_time" content="2022-05-10T11:44:43+04:00">
+<meta property="article:modified_time" content="2022-05-24T11:54:48+04:00">
 <title>Calypsonet Terminal Calypso API | Calypso Networks Association Terminal APIs</title>
 </head>
 <body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=ef1732cfaa5d8574698c03d053085d43>
@@ -172,6 +172,12 @@ Depending on the operation, if necessary the security involving the master SAM m
 <h4 id=simple-operation-outside-a-session>Simple operation outside a session</h4>
 <h4 id=pin-verification-outside-a-session>PIN verification outside a session</h4>
 <h4 id=data-secure-processing-outside-a-session>Data secure processing outside a session</h4>
+<figure id=figure-calypso-api---data-secure-processing-outside-a-session---sequence-diagram>
+<div class="d-flex justify-content-center">
+<div class=w-100><img src=../../media/apis/calypso_transaction_DSP_outside_session_sequence_diagram.svg alt="Calypso API - Data secure processing outside a session - Sequence Diagram" loading=lazy data-zoomable></div>
+</div><figcaption>
+Calypso API - Data secure processing outside a session - Sequence Diagram
+</figcaption></figure>
 <h4 id=key-update-outside-a-session>Key update outside a session</h4>
 <h4 id=stored-value-operation-outside-a-session>Stored Value operation outside a session</h4>
 <h4 id=simple-secure-session>Simple secure session</h4>
@@ -180,14 +186,20 @@ Depending on the operation, if necessary the security involving the master SAM m
 <li>3 exchanges with the card reader (selection processing, session opening processing, and session closing processing),</li>
 <li>and 3 exchanges with the SAM reader (terminal session challenge recovery, session MAC computation, and card authentication).</li>
 </ul>
-<p>
-<figure>
+<figure id=figure-calypso-api---simple-secure-session---sequence-diagram>
 <div class="d-flex justify-content-center">
-<div class=w-100><img src=https://keyple.org/media/learn/keyple-in-depth/calypso_secure_transaction_sequence_diagram.svg alt="Calypso API - Simple Secure Session - Sequence Diagram" loading=lazy data-zoomable></div>
-</div></figure>
-</p>
+<div class=w-100><img src=../../media/apis/calypso_transaction_simple_secure_session_sequence_diagram.svg alt="Calypso API - Simple Secure Session - Sequence Diagram" loading=lazy data-zoomable></div>
+</div><figcaption>
+Calypso API - Simple Secure Session - Sequence Diagram
+</figcaption></figure>
 <h4 id=pin-verification-inside-a-session>PIN verification inside a session</h4>
 <h4 id=data-secure-processing-inside-a-session>Data secure processing inside a session</h4>
+<figure id=figure-calypso-api---data-secure-processing-inside-a-session---sequence-diagram>
+<div class="d-flex justify-content-center">
+<div class=w-100><img src=../../media/apis/calypso_transaction_DSP_inside_session_sequence_diagram.svg alt="Calypso API - Data secure processing inside a session - Sequence Diagram" loading=lazy data-zoomable></div>
+</div><figcaption>
+Calypso API - Data secure processing inside a session - Sequence Diagram
+</figcaption></figure>
 <h4 id=stored-value-operation-inside-a-session>Stored Value operation inside a session</h4>
 <h4 id=multiple-secure-sessions>Multiple secure sessions</h4>
 <h3 id=selection-of-a-calypso-sam>Selection of a Calypso SAM</h3>
@@ -213,27 +225,27 @@ Therefore, it is recommended to always perform a <strong>dynamic import</strong>
 </div>
 </div>
 <p>All deliverables are available directly from the <a href="https://search.maven.org/search?q=a:calypsonet-terminal-calypso-java-api" target=_blank rel=noopener>Maven Central Repository</a> or by using one of the project resource managers below:</p>
-<ul class="nav nav-tabs" id=tabs-2 role=tablist><li class=nav-item>
-<a class="nav-link active tab-Gradle-Groovy" id=tabs-2-0-tab data-toggle=tab href=#tabs-2-0 role=tab onclick='handleClick("Gradle-Groovy")' aria-controls=tabs-2-0 aria-selected=true>
+<ul class="nav nav-tabs" id=tabs-5 role=tablist><li class=nav-item>
+<a class="nav-link active tab-Gradle-Groovy" id=tabs-5-0-tab data-toggle=tab href=#tabs-5-0 role=tab onclick='handleClick("Gradle-Groovy")' aria-controls=tabs-5-0 aria-selected=true>
 Gradle Groovy
 </a>
 </li><li class=nav-item>
-<a class="nav-link tab-Gradle-Kotlin" id=tabs-2-1-tab data-toggle=tab href=#tabs-2-1 role=tab onclick='handleClick("Gradle-Kotlin")' aria-controls=tabs-2-1 aria-selected=false>
+<a class="nav-link tab-Gradle-Kotlin" id=tabs-5-1-tab data-toggle=tab href=#tabs-5-1 role=tab onclick='handleClick("Gradle-Kotlin")' aria-controls=tabs-5-1 aria-selected=false>
 Gradle Kotlin
 </a>
 </li><li class=nav-item>
-<a class="nav-link tab-Maven" id=tabs-2-2-tab data-toggle=tab href=#tabs-2-2 role=tab onclick='handleClick("Maven")' aria-controls=tabs-2-2 aria-selected=false>
+<a class="nav-link tab-Maven" id=tabs-5-2-tab data-toggle=tab href=#tabs-5-2 role=tab onclick='handleClick("Maven")' aria-controls=tabs-5-2 aria-selected=false>
 Maven
 </a>
 </li></ul>
-<div class=bd-clipboard><button type=button class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onclick="copyTabContentToClipboard('tabs-2',this)">Copy</button></div>
-<div class=tab-content id=tabs-2-content><div class="tab-pane fade show active" id=tabs-2-0 role=tabpanel aria-labelled-by=tabs-2-0-tab>
+<div class=bd-clipboard><button type=button class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onclick="copyTabContentToClipboard('tabs-5',this)">Copy</button></div>
+<div class=tab-content id=tabs-5-content><div class="tab-pane fade show active" id=tabs-5-0 role=tabpanel aria-labelled-by=tabs-5-0-tab>
 <pre><code class=language-gradle>implementation &#39;org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:1.1.&#43;&#39;</code></pre>
 </div>
-<div class="tab-pane fade" id=tabs-2-1 role=tabpanel aria-labelled-by=tabs-2-1-tab>
+<div class="tab-pane fade" id=tabs-5-1 role=tabpanel aria-labelled-by=tabs-5-1-tab>
 <pre><code class=language-kotlin>implementation(&#34;org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:1.1.&#43;&#34;)</code></pre>
 </div>
-<div class="tab-pane fade" id=tabs-2-2 role=tabpanel aria-labelled-by=tabs-2-2-tab>
+<div class="tab-pane fade" id=tabs-5-2 role=tabpanel aria-labelled-by=tabs-5-2-tab>
 <pre><code class=language-xml>&lt;dependency&gt;
 &lt;groupId&gt;org.calypsonet.terminal&lt;/groupId&gt;
 &lt;artifactId&gt;calypsonet-terminal-calypso-java-api&lt;/artifactId&gt;
@@ -260,7 +272,7 @@ Maven
 </div>
 </div>
 <div class=body-footer>
-<p>Last updated on 2022-05-10</p>
+<p>Last updated on 2022-05-24</p>
 </div>
 </article>
 <footer class=site-footer>
