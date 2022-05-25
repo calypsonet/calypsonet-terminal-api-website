@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="2698px" preserveAspectRatio="none" style="width:1557px;height:2698px;background:#FFFFFF;" version="1.1" viewBox="0 0 1557 2698" width="1557px" zoomAndPan="magnify"><defs/><g><rect fill="#FFD700" height="2517.502" style="stroke:#181818;stroke-width:1.0;" width="10" x="75.5" y="91.4883"/><rect fill="#FFC0CB" height="49.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="371.5" y="266.9727"/><rect fill="#FFC0CB" height="674.6953" style="stroke:#181818;stroke-width:1.0;" width="10" x="371.5" y="345.5938"/><rect fill="#FFC0CB" height="49.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="371.5" y="1095.5313"/><rect fill="#FFC0CB" height="1390.5273" style="stroke:#181818;stroke-width:1.0;" width="10" x="371.5" y="1209.4629"/><rect fill="#ADD8E6" height="267.1055" style="stroke:#181818;stroke-width:1.0;" width="10" x="684.5" y="632.0098"/><rect fill="#ADD8E6" height="343.1055" style="stroke:#181818;stroke-width:1.0;" width="10" x="684.5" y="1913.916"/><rect fill="#ADD8E6" height="2136.2227" style="stroke:#181818;stroke-width:1.0;" width="10" x="1070.5" y="91.4883"/><rect fill="#90EE90" height="166.5527" style="stroke:#181818;stroke-width:1.0;" width="10" x="1162.5" y="405.5254"/><rect fill="#90EE90" height="261.1738" style="stroke:#181818;stroke-width:1.0;" width="10" x="1162.5" y="1269.3945"/><rect fill="#90EE90" height="221.1738" style="stroke:#181818;stroke-width:1.0;" width="10" x="1162.5" y="1632.8105"/><rect fill="#90EE90" height="146.5527" style="stroke:#181818;stroke-width:1.0;" width="10" x="1162.5" y="2316.9531"/><rect fill="#90EE90" height="2517.502" style="stroke:#181818;stroke-width:1.0;" width="10" x="1505.5" y="91.4883"/><rect height="223.7949" style="stroke:#000000;stroke-width:1.5;fill:none;" width="489.5" x="627" y="647.0098"/><rect height="119.2422" style="stroke:#000000;stroke-width:1.5;fill:none;" width="445" x="1106.5" y="1647.8105"/><rect height="154.5527" style="stroke:#000000;stroke-width:1.5;fill:none;" width="711.5" x="405" y="1928.916"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="80" x2="80" y1="81.4883" y2="2617.9902"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="376.5" x2="376.5" y1="81.4883" y2="2617.9902"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="689" x2="689" y1="81.4883" y2="2617.9902"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="1075.5" x2="1075.5" y1="81.4883" y2="2617.9902"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="1167.5" x2="1167.5" y1="81.4883" y2="2617.9902"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="1510.5" x2="1510.5" y1="81.4883" y2="2617.9902"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="5" y="78.5352">Ticketing Application</text><ellipse cx="80.5" cy="13.5" fill="#FFD700" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M80.5,21.5 L80.5,48.5 M67.5,29.5 L93.5,29.5 M80.5,48.5 L67.5,63.5 M80.5,48.5 L93.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="5" y="2630.5254">Ticketing Application</text><ellipse cx="80.5" cy="2641.9785" fill="#FFD700" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M80.5,2649.9785 L80.5,2676.9785 M67.5,2657.9785 L93.5,2657.9785 M80.5,2676.9785 L67.5,2691.9785 M80.5,2676.9785 L93.5,2691.9785 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#FFC0CB" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="94" x="329.5" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="336.5" y="70.5352">Calypso API</text><rect fill="#FFC0CB" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="94" x="329.5" y="2616.9902"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="336.5" y="2637.5254">Calypso API</text><rect fill="#ADD8E6" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="637" y="33.5117"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="644" y="54.0469">Calypso Card</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="665.5" y="70.5352">Reader</text><rect fill="#ADD8E6" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="637" y="2616.9902"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="644" y="2637.5254">Calypso Card</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="665.5" y="2654.0137">Reader</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="1044.5" y="62.0469">selected</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="33" x="1056" y="78.5352">Card</text><path d="M1055,20.5117 L1055,44.5117 M1055,32.5117 L1072,32.5117 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="1084" cy="32.5117" fill="#ADD8E6" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="1044.5" y="2630.5254">selected</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="33" x="1056" y="2647.0137">Card</text><path d="M1055,2653.9668 L1055,2677.9668 M1055,2665.9668 L1072,2665.9668 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="1084" cy="2665.9668" fill="#ADD8E6" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#90EE90" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="102" x="1116.5" y="33.5117"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="1123.5" y="54.0469">Calypso SAM</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="1143.5" y="70.5352">Reader</text><rect fill="#90EE90" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="102" x="1116.5" y="2616.9902"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="1123.5" y="2637.5254">Calypso SAM</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="1143.5" y="2654.0137">Reader</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="1479.5" y="62.0469">selected</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="31" x="1492" y="78.5352">SAM</text><path d="M1490,20.5117 L1490,44.5117 M1490,32.5117 L1507,32.5117 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="1519" cy="32.5117" fill="#90EE90" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="1479.5" y="2630.5254">selected</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="31" x="1492" y="2647.0137">SAM</text><path d="M1490,2653.9668 L1490,2677.9668 M1490,2665.9668 L1507,2665.9668 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="1519" cy="2665.9668" fill="#90EE90" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#FFD700" height="2517.502" style="stroke:#181818;stroke-width:1.0;" width="10" x="75.5" y="91.4883"/><rect fill="#FFC0CB" height="49.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="371.5" y="266.9727"/><rect fill="#FFC0CB" height="674.6953" style="stroke:#181818;stroke-width:1.0;" width="10" x="371.5" y="345.5938"/><rect fill="#FFC0CB" height="49.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="371.5" y="1095.5313"/><rect fill="#FFC0CB" height="1390.5273" style="stroke:#181818;stroke-width:1.0;" width="10" x="371.5" y="1209.4629"/><rect fill="#ADD8E6" height="267.1055" style="stroke:#181818;stroke-width:1.0;" width="10" x="684.5" y="632.0098"/><rect fill="#ADD8E6" height="343.1055" style="stroke:#181818;stroke-width:1.0;" width="10" x="684.5" y="1913.916"/><rect fill="#ADD8E6" height="2136.2227" style="stroke:#181818;stroke-width:1.0;" width="10" x="1070.5" y="91.4883"/><rect fill="#90EE90" height="166.5527" style="stroke:#181818;stroke-width:1.0;" width="10" x="1162.5" y="405.5254"/><rect fill="#90EE90" height="261.1738" style="stroke:#181818;stroke-width:1.0;" width="10" x="1162.5" y="1269.3945"/><rect fill="#90EE90" height="221.1738" style="stroke:#181818;stroke-width:1.0;" width="10" x="1162.5" y="1632.8105"/><rect fill="#90EE90" height="146.5527" style="stroke:#181818;stroke-width:1.0;" width="10" x="1162.5" y="2316.9531"/><rect fill="#90EE90" height="2517.502" style="stroke:#181818;stroke-width:1.0;" width="10" x="1505.5" y="91.4883"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="127.5" y1="143.4199" y2="143.4199"/><line style="stroke:#181818;stroke-width:1.0;" x1="127.5" x2="127.5" y1="143.4199" y2="156.4199"/><line style="stroke:#181818;stroke-width:1.0;" x1="86.5" x2="127.5" y1="156.4199" y2="156.4199"/><polygon fill="#181818" points="96.5,152.4199,86.5,156.4199,96.5,160.4199,92.5,156.4199" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="72" x="92.5" y="108.0566">instantiate</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160" x="168.5" y="108.0566">Calypso card transaction:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="124.5" y="123.3672">- Calypso card resource</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="124.5" y="138.6777">- Calypso SAM resource</text><path d="M214,169.4199 L214,194.4199 L539,194.4199 L539,179.4199 L529,169.4199 L214,169.4199 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M529,169.4199 L529,179.4199 L539,179.4199 L529,169.4199 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="304" x="220" y="186.9883">SV balance already read when selecting the card.</text><polygon fill="#181818" points="359.5,262.9727,369.5,266.9727,359.5,270.9727,363.5,266.9727" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="365.5" y1="266.9727" y2="266.9727"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="92.5" y="216.2988">prepare</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="106" x="150.5" y="216.2988">card transaction:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="146" x="124.5" y="231.6094">- read environment file</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="124.5" y="246.9199">- read contract #1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="8" x="124.5" y="262.2305">-</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="106" x="136.5" y="262.2305">SV Get for Debit</text><path d="M125,279.9727 L125,304.9727 L627,304.9727 L627,289.9727 L617,279.9727 L125,279.9727 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M617,279.9727 L617,289.9727 L627,289.9727 L617,279.9727 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="175" x="131" y="297.541">SV Get for Debit prepared in</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="24" x="310" y="297.541">last</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="274" x="338" y="297.541">position of a card command set to process.</text><polygon fill="#181818" points="96.5,312.2832,86.5,316.2832,96.5,320.2832,92.5,316.2832" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="375.5" y1="316.2832" y2="316.2832"/><polygon fill="#181818" points="359.5,341.5938,369.5,345.5938,359.5,349.5938,363.5,345.5938" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="365.5" y1="345.5938" y2="345.5938"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="52" x="92.5" y="340.8516">process</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="178" x="148.5" y="340.8516">opening (DEBIT access level)</text><polygon fill="#00FF00" points="1150.5,401.5254,1160.5,405.5254,1150.5,409.5254,1154.5,405.5254" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;" x1="381.5" x2="1156.5" y1="405.5254" y2="405.5254"/><text fill="#008000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="51" x="388.5" y="370.1621">SAM #1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="388.5" y="385.4727">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="420.5" y="400.7832">- APDU list</text><path d="M925,418.5254 L925,443.5254 L1410,443.5254 L1410,428.5254 L1400,418.5254 L925,418.5254 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M1400,418.5254 L1400,428.5254 L1410,428.5254 L1400,418.5254 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="109" x="931" y="436.0938">Same diversifier</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="351" x="1044" y="436.0938">for the Stored Value transaction and the Secure Session.</text><polygon fill="#181818" points="1493.5,466.1465,1503.5,470.1465,1493.5,474.1465,1497.5,470.1465" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1172.5" x2="1499.5" y1="470.1465" y2="470.1465"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="181" x="1179.5" y="465.4043">select diversifier (card serial)</text><polygon fill="#181818" points="1183.5,480.1465,1173.5,484.1465,1183.5,488.1465,1179.5,484.1465" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1177.5" x2="1504.5" y1="484.1465" y2="484.1465"/><polygon fill="#181818" points="1493.5,509.457,1503.5,513.457,1493.5,517.457,1497.5,513.457" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1172.5" x2="1499.5" y1="513.457" y2="513.457"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="1179.5" y="508.7148">get challenge</text><polygon fill="#181818" points="1183.5,538.7676,1173.5,542.7676,1183.5,546.7676,1179.5,542.7676" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1177.5" x2="1504.5" y1="542.7676" y2="542.7676"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="1189.5" y="538.0254">[Session SAM challenge]</text><polygon fill="#00FF00" points="392.5,568.0781,382.5,572.0781,392.5,576.0781,388.5,572.0781" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="386.5" x2="1166.5" y1="572.0781" y2="572.0781"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="398.5" y="567.3359">[Session SAM challenge]</text><polygon fill="#0000FF" points="672.5,628.0098,682.5,632.0098,672.5,636.0098,676.5,632.0098" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;" x1="381.5" x2="678.5" y1="632.0098" y2="632.0098"/><text fill="#0000FF" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="388.5" y="596.6465">Card #2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="388.5" y="611.957">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="420.5" y="627.2676">- APDU list</text><path d="M627,647.0098 L923,647.0098 L923,654.3203 L913,664.3203 L627,664.3203 L627,647.0098 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="223.7949" style="stroke:#000000;stroke-width:1.5;" width="489.5" x="627" y="647.0098"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="251" x="642" y="660.5781">Card APDU commands inside session</text><polygon fill="#181818" points="1058.5,712.252,1068.5,716.252,1058.5,720.252,1062.5,716.252" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="694.5" x2="1064.5" y1="716.252" y2="716.252"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="229" x="701.5" y="680.8887">open secure session (card debit key,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="147" x="733.5" y="696.1992">Session SAM challenge,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="153" x="733.5" y="711.5098">SFI environment to read)</text><polygon fill="#181818" points="705.5,741.5625,695.5,745.5625,705.5,749.5625,701.5,745.5625" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="699.5" x2="1069.5" y1="745.5625" y2="745.5625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="226" x="711.5" y="740.8203">[card challenge &amp; environment data]</text><polygon fill="#181818" points="1058.5,770.873,1068.5,774.873,1058.5,778.873,1062.5,774.873" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="694.5" x2="1064.5" y1="774.873" y2="774.873"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="155" x="701.5" y="770.1309">read record (contract #1)</text><polygon fill="#181818" points="705.5,800.1836,695.5,804.1836,705.5,808.1836,701.5,804.1836" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="699.5" x2="1069.5" y1="804.1836" y2="804.1836"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="111" x="711.5" y="799.4414">[contract #1 data]</text><polygon fill="#181818" points="1058.5,829.4941,1068.5,833.4941,1058.5,837.4941,1062.5,833.4941" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="694.5" x2="1064.5" y1="833.4941" y2="833.4941"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="701.5" y="828.752">SV Get (for Debit)</text><polygon fill="#181818" points="705.5,858.8047,695.5,862.8047,705.5,866.8047,701.5,862.8047" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="699.5" x2="1069.5" y1="862.8047" y2="862.8047"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="118" x="711.5" y="858.0625">[SV card challenge]</text><polygon fill="#0000FF" points="392.5,895.1152,382.5,899.1152,392.5,903.1152,388.5,899.1152" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="386.5" x2="688.5" y1="899.1152" y2="899.1152"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="118" x="398.5" y="894.373">[SV card challenge]</text><polygon fill="#181818" points="96.5,1016.2891,86.5,1020.2891,96.5,1024.2891,92.5,1020.2891" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="375.5" y1="1020.2891" y2="1020.2891"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="102.5" y="923.6836">[Calypso card image:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="230" x="134.5" y="938.9941">- identification data with SV support</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="185" x="134.5" y="954.3047">- environment data (updated)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="119" x="134.5" y="969.6152">- contract list data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="134.5" y="984.9258">- contract #1 data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="96" x="134.5" y="1000.2363">- SV Debit data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="87" x="134.5" y="1015.5469">- SV balance]]</text><polygon fill="#181818" points="359.5,1091.5313,369.5,1095.5313,359.5,1099.5313,363.5,1095.5313" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="365.5" y1="1095.5313" y2="1095.5313"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="92.5" y="1044.8574">prepare</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="146.5" y="1044.8574">:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="178" x="124.5" y="1060.168">- SV Debit (specific amount)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="124.5" y="1075.4785">- append event record (data)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="109" x="124.5" y="1090.7891">- release channel</text><path d="M147,1108.5313 L147,1133.5313 L605,1133.5313 L605,1118.5313 L595,1108.5313 L147,1108.5313 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M595,1108.5313 L595,1118.5313 L605,1118.5313 L595,1108.5313 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="128" x="153" y="1126.0996">SV Debit prepared in</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="27" x="285" y="1126.0996">first</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="274" x="316" y="1126.0996">position of a card command set to process.</text><polygon fill="#181818" points="96.5,1140.8418,86.5,1144.8418,96.5,1148.8418,92.5,1144.8418" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="375.5" y1="1144.8418" y2="1144.8418"/><path d="M130,1157.8418 L130,1182.8418 L622,1182.8418 L622,1167.8418 L612,1157.8418 L130,1157.8418 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M612,1157.8418 L612,1167.8418 L622,1167.8418 L612,1157.8418 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="471" x="136" y="1175.4102">At the session closure, any data secure processing should be unnecessary.</text><polygon fill="#181818" points="359.5,1205.4629,369.5,1209.4629,359.5,1213.4629,363.5,1209.4629" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="365.5" y1="1209.4629" y2="1209.4629"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="52" x="92.5" y="1204.7207">process</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="128" x="148.5" y="1204.7207">closing (not ratified)</text><polygon fill="#00FF00" points="1150.5,1265.3945,1160.5,1269.3945,1150.5,1273.3945,1154.5,1269.3945" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;" x1="381.5" x2="1156.5" y1="1269.3945" y2="1269.3945"/><text fill="#008000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="51" x="388.5" y="1234.0313">SAM #2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="388.5" y="1249.3418">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="420.5" y="1264.6523">- APDU list</text><polygon fill="#181818" points="1493.5,1294.7051,1503.5,1298.7051,1493.5,1302.7051,1497.5,1298.7051" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1172.5" x2="1499.5" y1="1298.7051" y2="1298.7051"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="158" x="1179.5" y="1293.9629">digest init (opening data)</text><polygon fill="#181818" points="1183.5,1308.7051,1173.5,1312.7051,1183.5,1316.7051,1179.5,1312.7051" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1177.5" x2="1504.5" y1="1312.7051" y2="1312.7051"/><polygon fill="#181818" points="1493.5,1338.0156,1503.5,1342.0156,1493.5,1346.0156,1497.5,1342.0156" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1172.5" x2="1499.5" y1="1342.0156" y2="1342.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="208" x="1179.5" y="1337.2734">digest update (read environment)</text><polygon fill="#181818" points="1183.5,1352.0156,1173.5,1356.0156,1183.5,1360.0156,1179.5,1356.0156" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1177.5" x2="1504.5" y1="1356.0156" y2="1356.0156"/><polygon fill="#181818" points="1493.5,1381.3262,1503.5,1385.3262,1493.5,1389.3262,1497.5,1385.3262" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1172.5" x2="1499.5" y1="1385.3262" y2="1385.3262"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="181" x="1179.5" y="1380.584">digest update (read contract)</text><polygon fill="#181818" points="1183.5,1395.3262,1173.5,1399.3262,1183.5,1403.3262,1179.5,1399.3262" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1177.5" x2="1504.5" y1="1399.3262" y2="1399.3262"/><polygon fill="#181818" points="1493.5,1424.6367,1503.5,1428.6367,1493.5,1432.6367,1497.5,1428.6367" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1172.5" x2="1499.5" y1="1428.6367" y2="1428.6367"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="198" x="1179.5" y="1423.8945">digest update (SV Get for Debit)</text><polygon fill="#181818" points="1183.5,1438.6367,1173.5,1442.6367,1183.5,1446.6367,1179.5,1442.6367" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1177.5" x2="1504.5" y1="1442.6367" y2="1442.6367"/><polygon fill="#181818" points="1493.5,1467.9473,1503.5,1471.9473,1493.5,1475.9473,1497.5,1471.9473" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1172.5" x2="1499.5" y1="1471.9473" y2="1471.9473"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="309" x="1179.5" y="1467.2051">SV prepare Load (SV card challenge, load amount)</text><polygon fill="#181818" points="1183.5,1497.2578,1173.5,1501.2578,1183.5,1505.2578,1179.5,1501.2578" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1177.5" x2="1504.5" y1="1501.2578" y2="1501.2578"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="239" x="1189.5" y="1496.5156">[SV SAM challenge, SV SAM certificate]</text><polygon fill="#00FF00" points="392.5,1526.5684,382.5,1530.5684,392.5,1534.5684,388.5,1530.5684" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="386.5" x2="1166.5" y1="1530.5684" y2="1530.5684"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="121" x="398.5" y="1525.8262">[SV SAM certificate]</text><line style="stroke:#181818;stroke-width:1.0;" x1="381.5" x2="423.5" y1="1559.8789" y2="1559.8789"/><line style="stroke:#181818;stroke-width:1.0;" x1="423.5" x2="423.5" y1="1559.8789" y2="1572.8789"/><line style="stroke:#181818;stroke-width:1.0;" x1="382.5" x2="423.5" y1="1572.8789" y2="1572.8789"/><polygon fill="#181818" points="392.5,1568.8789,382.5,1572.8789,392.5,1576.8789,388.5,1572.8789" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="234" x="388.5" y="1555.1367">anticipates the future card responses</text><polygon fill="#00FF00" points="1150.5,1628.8105,1160.5,1632.8105,1150.5,1636.8105,1154.5,1632.8105" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;" x1="381.5" x2="1156.5" y1="1632.8105" y2="1632.8105"/><text fill="#008000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="51" x="388.5" y="1597.4473">SAM #3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="388.5" y="1612.7578">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="420.5" y="1628.0684">- APDU list</text><path d="M1106.5,1647.8105 L1378.5,1647.8105 L1378.5,1655.1211 L1368.5,1665.1211 L1106.5,1665.1211 L1106.5,1647.8105 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="119.2422" style="stroke:#000000;stroke-width:1.5;" width="445" x="1106.5" y="1647.8105"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="76" x="1121.5" y="1661.3789">anticipated</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="147" x="1201.5" y="1661.3789">Card APDU responses</text><polygon fill="#181818" points="1493.5,1697.7422,1503.5,1701.7422,1493.5,1705.7422,1497.5,1701.7422" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1172.5" x2="1499.5" y1="1701.7422" y2="1701.7422"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="252" x="1179.5" y="1681.6895">digest update (SV Debit specific amount</text><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="127" x="1179.5" y="1697">without postponed</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117" x="1310.5" y="1697">SV card certificate)</text><polygon fill="#181818" points="1183.5,1711.7422,1173.5,1715.7422,1183.5,1719.7422,1179.5,1715.7422" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1177.5" x2="1504.5" y1="1715.7422" y2="1715.7422"/><polygon fill="#181818" points="1493.5,1741.0527,1503.5,1745.0527,1493.5,1749.0527,1497.5,1745.0527" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1172.5" x2="1499.5" y1="1745.0527" y2="1745.0527"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="223" x="1179.5" y="1740.3105">digest update (update event record)</text><polygon fill="#181818" points="1183.5,1755.0527,1173.5,1759.0527,1183.5,1763.0527,1179.5,1759.0527" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1177.5" x2="1504.5" y1="1759.0527" y2="1759.0527"/><polygon fill="#181818" points="1493.5,1791.3633,1503.5,1795.3633,1493.5,1799.3633,1497.5,1795.3633" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1172.5" x2="1499.5" y1="1795.3633" y2="1795.3633"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="76" x="1179.5" y="1790.6211">digest close</text><polygon fill="#181818" points="1183.5,1820.6738,1173.5,1824.6738,1183.5,1828.6738,1179.5,1824.6738" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1177.5" x2="1504.5" y1="1824.6738" y2="1824.6738"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="154" x="1189.5" y="1819.9316">[Session SAM certificate]</text><polygon fill="#00FF00" points="392.5,1849.9844,382.5,1853.9844,392.5,1857.9844,388.5,1853.9844" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="386.5" x2="1166.5" y1="1853.9844" y2="1853.9844"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="154" x="398.5" y="1849.2422">[Session SAM certificate]</text><polygon fill="#0000FF" points="672.5,1909.916,682.5,1913.916,672.5,1917.916,676.5,1913.916" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;" x1="381.5" x2="678.5" y1="1913.916" y2="1913.916"/><text fill="#0000FF" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="388.5" y="1878.5527">Card #3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="388.5" y="1893.8633">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="420.5" y="1909.1738">- APDU list</text><path d="M405,1928.916 L701,1928.916 L701,1936.2266 L691,1946.2266 L405,1946.2266 L405,1928.916 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="154.5527" style="stroke:#000000;stroke-width:1.5;" width="711.5" x="405" y="1928.916"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="251" x="420" y="1942.4844">Card APDU commands inside session</text><path d="M415,1951.2266 L415,1976.2266 L964,1976.2266 L964,1961.2266 L954,1951.2266 L415,1951.2266 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M954,1951.2266 L954,1961.2266 L964,1961.2266 L954,1951.2266 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="103" x="421" y="1968.7949">SV Debit follows</text><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="59" x="528" y="1968.7949">directely</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="358" x="591" y="1968.7949">a previously transmitted SV Get for Debit card command.</text><polygon fill="#181818" points="1058.5,1998.8477,1068.5,2002.8477,1058.5,2006.8477,1062.5,2002.8477" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="694.5" x2="1064.5" y1="2002.8477" y2="2002.8477"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="352" x="701.5" y="1998.1055">SV Debit (amount, SV SAM challenge, SV SAM certificate)</text><polygon fill="#181818" points="705.5,2028.1582,695.5,2032.1582,705.5,2036.1582,701.5,2032.1582" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="699.5" x2="1069.5" y1="2032.1582" y2="2032.1582"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="711.5" y="2027.416">[</text><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="53" x="715.5" y="2027.416">missing</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117" x="772.5" y="2027.416">SV card certificate]</text><polygon fill="#181818" points="1058.5,2057.4688,1068.5,2061.4688,1058.5,2065.4688,1062.5,2061.4688" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="694.5" x2="1064.5" y1="2061.4688" y2="2061.4688"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="168" x="701.5" y="2056.7266">update record (event, data)</text><polygon fill="#181818" points="705.5,2071.4688,695.5,2075.4688,705.5,2079.4688,701.5,2075.4688" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="699.5" x2="1069.5" y1="2075.4688" y2="2075.4688"/><polygon fill="#181818" points="1058.5,2107.7793,1068.5,2111.7793,1058.5,2115.7793,1062.5,2111.7793" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="694.5" x2="1064.5" y1="2111.7793" y2="2111.7793"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="288" x="701.5" y="2107.0371">close secure session (Session SAM certificate)</text><polygon fill="#181818" points="705.5,2137.0898,695.5,2141.0898,705.5,2145.0898,701.5,2141.0898" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="699.5" x2="1069.5" y1="2141.0898" y2="2141.0898"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="279" x="711.5" y="2136.3477">[Session Card certificate, SV Card certificate]</text><polygon fill="#181818" points="1058.5,2166.4004,1068.5,2170.4004,1058.5,2174.4004,1062.5,2170.4004" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="694.5" x2="1064.5" y1="2170.4004" y2="2170.4004"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="701.5" y="2165.6582">ratification command</text><polygon fill="#181818" points="705.5,2180.4004,695.5,2184.4004,705.5,2188.4004,701.5,2184.4004" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="699.5" x2="1069.5" y1="2184.4004" y2="2184.4004"/><polygon fill="#181818" points="1058.5,2209.7109,1068.5,2213.7109,1058.5,2217.7109,1062.5,2213.7109" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="694.5" x2="1064.5" y1="2213.7109" y2="2213.7109"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117" x="701.5" y="2208.9688">close card channel</text><polygon fill="#181818" points="705.5,2223.7109,695.5,2227.7109,705.5,2231.7109,701.5,2227.7109" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="699.5" x2="1074.5" y1="2227.7109" y2="2227.7109"/><polygon fill="#0000FF" points="392.5,2253.0215,382.5,2257.0215,392.5,2261.0215,388.5,2257.0215" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="386.5" x2="688.5" y1="2257.0215" y2="2257.0215"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="279" x="398.5" y="2252.2793">[Session Card certificate, SV Card certificate]</text><polygon fill="#00FF00" points="1150.5,2312.9531,1160.5,2316.9531,1150.5,2320.9531,1154.5,2316.9531" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;" x1="381.5" x2="1156.5" y1="2316.9531" y2="2316.9531"/><text fill="#008000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="51" x="388.5" y="2281.5898">SAM #4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="388.5" y="2296.9004">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="420.5" y="2312.2109">- APDU list</text><polygon fill="#181818" points="1493.5,2342.2637,1503.5,2346.2637,1493.5,2350.2637,1497.5,2346.2637" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1172.5" x2="1499.5" y1="2346.2637" y2="2346.2637"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="281" x="1179.5" y="2341.5215">digest authenticate (Session Card certificate)</text><polygon fill="#181818" points="1183.5,2371.5742,1173.5,2375.5742,1183.5,2379.5742,1179.5,2375.5742" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1177.5" x2="1504.5" y1="2375.5742" y2="2375.5742"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="194" x="1189.5" y="2370.832">[session authentication status]</text><polygon fill="#181818" points="1493.5,2400.8848,1503.5,2404.8848,1493.5,2408.8848,1497.5,2404.8848" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1172.5" x2="1499.5" y1="2404.8848" y2="2404.8848"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="185" x="1179.5" y="2400.1426">SV Check (SV Card certificate)</text><polygon fill="#181818" points="1183.5,2430.1953,1173.5,2434.1953,1183.5,2438.1953,1179.5,2434.1953" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1177.5" x2="1504.5" y1="2434.1953" y2="2434.1953"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="161" x="1189.5" y="2429.4531">[SV authentication status]</text><polygon fill="#00FF00" points="392.5,2459.5059,382.5,2463.5059,392.5,2467.5059,388.5,2463.5059" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="386.5" x2="1166.5" y1="2463.5059" y2="2463.5059"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="398.5" y="2458.7637">[authentification status]</text><polygon fill="#181818" points="96.5,2595.9902,86.5,2599.9902,96.5,2603.9902,92.5,2599.9902" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="375.5" y1="2599.9902" y2="2599.9902"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="102.5" y="2488.0742">[Calypso card image:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="230" x="134.5" y="2503.3848">- identification data with SV support</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="122" x="134.5" y="2518.6953">- environment data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="119" x="134.5" y="2534.0059">- contract list data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="134.5" y="2549.3164">- contract #1 data</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="174" x="134.5" y="2564.627">- counter #1 data (updated)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="134.5" y="2579.9375">- event #1 (updated)]</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="143" x="102.5" y="2595.248">authentification status</text><!--MD5=[f3dc3eeb3c3aca44f7259c5c0a6ed65e]
+@startuml
+
+'skinparam ClassBorderColor #F1C40F
+skinparam ClassBorderColor #D4AC0D
+skinparam stereotypeABorderColor #A9DCDF
+skinparam stereotypeIBorderColor #B4A7E5
+skinparam stereotypeCBorderColor #ADD1B2
+skinparam stereotypeEBorderColor #EB93DF
+skinparam shadowing false
+
+skinparam StateBorderColor #D4AC0D
+skinparam ActivityBorderColor #D4AC0D
+
+' Red
+skinparam ClassBackgroundColor<<red>> #FDEDEC
+skinparam ClassBorderColor<<red>> #E74C3C
+hide <<red>> stereotype
+' Purple
+skinparam ClassBackgroundColor<<purple>> #F4ECF7
+skinparam ClassBorderColor<<purple>> #8E44AD
+hide <<purple>> stereotype
+' blue
+skinparam ClassBackgroundColor<<blue>> #EBF5FB
+skinparam ClassBorderColor<<blue>> #3498DB
+hide <<blue>> stereotype
+' Green
+skinparam ClassBackgroundColor<<green>> #EAFAF1
+skinparam ClassBorderColor<<green>> #2ECC71
+hide <<green>> stereotype
+
+' Orange
+skinparam ClassBackgroundColor<<orange>> #FDF2E9
+skinparam ClassBorderColor<<orange>> #E67E22
+hide <<orange>> stereotype
+
+' Grey
+skinparam ClassBackgroundColor<<grey>> #EAECEE
+skinparam ClassBorderColor<<grey>> #2C3E50
+hide <<grey>> stereotype
+
+actor "Ticketing Application" as app #gold
+participant "Calypso API" as capi #pink
+participant "Calypso Card\nReader" as cardReader #lightBlue
+boundary "selected\n**Card**" as card #lightBlue
+participant "Calypso SAM\nReader" as samReader #lightGreen
+boundary "selected\n**SAM**" as sam #lightGreen
+
+activate app #gold
+activate card #lightBlue
+activate sam #lightGreen
+
+app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
+
+note over capi
+    SV balance already read when selecting the card.
+end note
+
+app->capi: <font color=red>**prepare**</font> card transaction:\n\t- read environment file\n\t- read contract #1\n\t- **SV Get for Debit**
+activate capi  #pink
+note over capi
+    SV Get for Debit prepared in **last** position of a card command set to process.
+end note
+capi- ->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> opening (DEBIT access level)
+activate capi  #pink
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+note over samReader
+    **Same diversifier** for the Stored Value transaction and the Secure Session.
+end note
+
+samReader->sam: select diversifier (card serial)
+sam- ->samReader
+samReader->sam: get challenge
+sam- ->samReader: [Session SAM challenge]
+samReader-[#00FF00]->capi: [Session SAM challenge]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+group Card APDU commands inside session
+    cardReader->card: open secure session (card debit key,\n\tSession SAM challenge,\n\tSFI environment to read)
+    card- ->cardReader: [card challenge & environment data]
+    cardReader->card: read record (contract #1)
+    card- ->cardReader: [contract #1 data]
+    cardReader->card: SV Get (for Debit)
+    card- ->cardReader: [SV card challenge]
+end
+
+cardReader- -[#0000FF]>capi: [SV card challenge]
+deactivate cardReader
+
+capi- ->app: [Calypso card image:\n\t- identification data with SV support\n\t- environment data (updated)\n\t- contract list data\n\t- contract #1 data\n\t- SV Debit data\n\t- SV balance]]
+deactivate capi
+
+app->capi: <font color=red>**prepare**</font>:\n\t- SV Debit (specific amount)\n\t- append event record (data)\n\t- release channel
+activate capi  #pink
+note over capi
+    SV Debit prepared in **first** position of a card command set to process.
+end note
+capi- ->app
+deactivate capi
+
+note over capi
+    At the session closure, any data secure processing should be unnecessary.
+end note
+
+app->capi: <font color=red>**process**</font> closing (not ratified)
+activate capi  #pink
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #2**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+samReader->sam: digest init (opening data)
+sam- ->samReader
+samReader->sam: digest update (read environment)
+sam- ->samReader
+samReader->sam: digest update (read contract)
+sam- ->samReader
+samReader->sam: digest update (SV Get for Debit)
+sam- ->samReader
+samReader->sam: SV prepare Load (SV card challenge, load amount)
+sam- ->samReader: [SV SAM challenge, SV SAM certificate]
+
+samReader-[#00FF00]->capi: [SV SAM certificate]
+deactivate samReader
+
+capi->capi: anticipates the future card responses
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #3**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+group <font color=red>**anticipated**</font> Card APDU responses
+    samReader->sam: digest update (SV Debit specific amount\n<font color=red>**without postponed**</font> SV card certificate)
+    sam- ->samReader
+    samReader->sam: digest update (update event record)
+    sam- ->samReader
+end
+samReader->sam: digest close
+sam- ->samReader: [Session SAM certificate]
+
+samReader-[#00FF00]->capi: [Session SAM certificate]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #3**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+group Card APDU commands inside session
+note over cardReader
+    SV Debit follows **directely** a previously transmitted SV Get for Debit card command.
+end note
+    cardReader->card: SV Debit (amount, SV SAM challenge, SV SAM certificate)
+    card- ->cardReader: [<font color=red>**missing**</font> SV card certificate]
+    cardReader->card: update record (event, data)
+    card- ->cardReader
+end
+
+cardReader->card: close secure session (Session SAM certificate)
+card- ->cardReader: [Session Card certificate, SV Card certificate]
+cardReader->card: ratification command
+card- ->cardReader
+cardReader->card: close card channel
+card- ->cardReader
+deactivate card
+
+cardReader-[#0000FF]->capi: [Session Card certificate, SV Card certificate]
+deactivate cardReader
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #4**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+samReader->sam: digest authenticate (Session Card certificate)
+sam- ->samReader: [session authentication status]
+samReader->sam: SV Check (SV Card certificate)
+sam- ->samReader: [SV authentication status]
+
+samReader-[#00FF00]->capi: [authentification status]
+deactivate samReader
+
+capi- ->app: [Calypso card image:\n\t- identification data with SV support\n\t- environment data\n\t- contract list data\n\t- contract #1 data\n\t- counter #1 data (updated)\n\t- event #1 (updated)]\nauthentification status
+deactivate capi
+@enduml
+
+@startuml
+
+skinparam ClassBorderColor #D4AC0D
+skinparam stereotypeABorderColor #A9DCDF
+skinparam stereotypeIBorderColor #B4A7E5
+skinparam stereotypeCBorderColor #ADD1B2
+skinparam stereotypeEBorderColor #EB93DF
+skinparam shadowing false
+
+skinparam StateBorderColor #D4AC0D
+skinparam ActivityBorderColor #D4AC0D
+
+skinparam ClassBackgroundColor<<red>> #FDEDEC
+skinparam ClassBorderColor<<red>> #E74C3C
+hide <<red>> stereotype
+skinparam ClassBackgroundColor<<purple>> #F4ECF7
+skinparam ClassBorderColor<<purple>> #8E44AD
+hide <<purple>> stereotype
+skinparam ClassBackgroundColor<<blue>> #EBF5FB
+skinparam ClassBorderColor<<blue>> #3498DB
+hide <<blue>> stereotype
+skinparam ClassBackgroundColor<<green>> #EAFAF1
+skinparam ClassBorderColor<<green>> #2ECC71
+hide <<green>> stereotype
+
+skinparam ClassBackgroundColor<<orange>> #FDF2E9
+skinparam ClassBorderColor<<orange>> #E67E22
+hide <<orange>> stereotype
+
+skinparam ClassBackgroundColor<<grey>> #EAECEE
+skinparam ClassBorderColor<<grey>> #2C3E50
+hide <<grey>> stereotype
+
+actor "Ticketing Application" as app #gold
+participant "Calypso API" as capi #pink
+participant "Calypso Card\nReader" as cardReader #lightBlue
+boundary "selected\n**Card**" as card #lightBlue
+participant "Calypso SAM\nReader" as samReader #lightGreen
+boundary "selected\n**SAM**" as sam #lightGreen
+
+activate app #gold
+activate card #lightBlue
+activate sam #lightGreen
+
+app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
+
+note over capi
+    SV balance already read when selecting the card.
+end note
+
+app->capi: <font color=red>**prepare**</font> card transaction:\n\t- read environment file\n\t- read contract #1\n\t- **SV Get for Debit**
+activate capi  #pink
+note over capi
+    SV Get for Debit prepared in **last** position of a card command set to process.
+end note
+capi- ->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> opening (DEBIT access level)
+activate capi  #pink
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+note over samReader
+    **Same diversifier** for the Stored Value transaction and the Secure Session.
+end note
+
+samReader->sam: select diversifier (card serial)
+sam- ->samReader
+samReader->sam: get challenge
+sam- ->samReader: [Session SAM challenge]
+samReader-[#00FF00]->capi: [Session SAM challenge]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+group Card APDU commands inside session
+    cardReader->card: open secure session (card debit key,\n\tSession SAM challenge,\n\tSFI environment to read)
+    card- ->cardReader: [card challenge & environment data]
+    cardReader->card: read record (contract #1)
+    card- ->cardReader: [contract #1 data]
+    cardReader->card: SV Get (for Debit)
+    card- ->cardReader: [SV card challenge]
+end
+
+cardReader- -[#0000FF]>capi: [SV card challenge]
+deactivate cardReader
+
+capi- ->app: [Calypso card image:\n\t- identification data with SV support\n\t- environment data (updated)\n\t- contract list data\n\t- contract #1 data\n\t- SV Debit data\n\t- SV balance]]
+deactivate capi
+
+app->capi: <font color=red>**prepare**</font>:\n\t- SV Debit (specific amount)\n\t- append event record (data)\n\t- release channel
+activate capi  #pink
+note over capi
+    SV Debit prepared in **first** position of a card command set to process.
+end note
+capi- ->app
+deactivate capi
+
+note over capi
+    At the session closure, any data secure processing should be unnecessary.
+end note
+
+app->capi: <font color=red>**process**</font> closing (not ratified)
+activate capi  #pink
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #2**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+samReader->sam: digest init (opening data)
+sam- ->samReader
+samReader->sam: digest update (read environment)
+sam- ->samReader
+samReader->sam: digest update (read contract)
+sam- ->samReader
+samReader->sam: digest update (SV Get for Debit)
+sam- ->samReader
+samReader->sam: SV prepare Load (SV card challenge, load amount)
+sam- ->samReader: [SV SAM challenge, SV SAM certificate]
+
+samReader-[#00FF00]->capi: [SV SAM certificate]
+deactivate samReader
+
+capi->capi: anticipates the future card responses
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #3**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+group <font color=red>**anticipated**</font> Card APDU responses
+    samReader->sam: digest update (SV Debit specific amount\n<font color=red>**without postponed**</font> SV card certificate)
+    sam- ->samReader
+    samReader->sam: digest update (update event record)
+    sam- ->samReader
+end
+samReader->sam: digest close
+sam- ->samReader: [Session SAM certificate]
+
+samReader-[#00FF00]->capi: [Session SAM certificate]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #3**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+group Card APDU commands inside session
+note over cardReader
+    SV Debit follows **directely** a previously transmitted SV Get for Debit card command.
+end note
+    cardReader->card: SV Debit (amount, SV SAM challenge, SV SAM certificate)
+    card- ->cardReader: [<font color=red>**missing**</font> SV card certificate]
+    cardReader->card: update record (event, data)
+    card- ->cardReader
+end
+
+cardReader->card: close secure session (Session SAM certificate)
+card- ->cardReader: [Session Card certificate, SV Card certificate]
+cardReader->card: ratification command
+card- ->cardReader
+cardReader->card: close card channel
+card- ->cardReader
+deactivate card
+
+cardReader-[#0000FF]->capi: [Session Card certificate, SV Card certificate]
+deactivate cardReader
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #4**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+samReader->sam: digest authenticate (Session Card certificate)
+sam- ->samReader: [session authentication status]
+samReader->sam: SV Check (SV Card certificate)
+sam- ->samReader: [SV authentication status]
+
+samReader-[#00FF00]->capi: [authentification status]
+deactivate samReader
+
+capi- ->app: [Calypso card image:\n\t- identification data with SV support\n\t- environment data\n\t- contract list data\n\t- contract #1 data\n\t- counter #1 data (updated)\n\t- event #1 (updated)]\nauthentification status
+deactivate capi
+@enduml
+
+PlantUML version 1.2022.4(Sat Apr 09 17:29:17 RET 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>

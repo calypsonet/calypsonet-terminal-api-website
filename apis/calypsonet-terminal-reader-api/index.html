@@ -7,7 +7,7 @@
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
 <link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" media=print onload="this.media='all'">
-<meta name=description content="Public API which defines the elements shared between the reader layer and the card layer.">
+<meta name=description content="Public API which defines the elements shared by the reader.">
 <link rel=alternate hreflang=en-us href=https://terminal-api.calypsonet.org/apis/calypsonet-terminal-reader-api/>
 <meta name=theme-color content="#1d87bb">
 <link rel=stylesheet href=../../css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css media=print onload="this.media='all'">
@@ -23,9 +23,9 @@
 <meta property="og:site_name" content="Calypso Networks Association Terminal APIs">
 <meta property="og:url" content="https://terminal-api.calypsonet.org/apis/calypsonet-terminal-reader-api/">
 <meta property="og:title" content="Calypsonet Terminal Reader API | Calypso Networks Association Terminal APIs">
-<meta property="og:description" content="Public API which defines the elements shared between the reader layer and the card layer."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
+<meta property="og:description" content="Public API which defines the elements shared by the reader."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
 <meta property="twitter:image" content="https://terminal-api.calypsonet.org/media/logo.svg"><meta property="og:locale" content="en-us">
-<meta property="article:modified_time" content="2022-05-10T11:44:43+04:00">
+<meta property="article:modified_time" content="2022-05-25T10:04:31+04:00">
 <title>Calypsonet Terminal Reader API | Calypso Networks Association Terminal APIs</title>
 </head>
 <body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=b11839ed0888d32a0cc4fe9885a359ec>
@@ -147,7 +147,7 @@ Overview
 <div class=docs-article-container>
 <h1>Calypsonet Terminal Reader API</h1>
 <div class=article-style>
-<p>The <strong>Calypsonet Terminal Reader API</strong> defines the public elements shared between the reader layer and the card layer.</p>
+<p>The <strong>Calypsonet Terminal Reader API</strong> defines the public elements shared by the reader.</p>
 <h2 id=interfaces>Interfaces</h2>
 <p>The reader API is a high-level interface used by terminal applications to operate smart card readers, it:</p>
 <ul>
@@ -239,12 +239,12 @@ However, some observable readers may additionally have the ability to notify rem
 <li>Either on a simple reader, a selection could be operated directly by transmitting the card selection scenario. In this case the same entity manages both the card selection and the card processing.</li>
 <li>Otherwise, on an observable reader, a scheduled card selection could be defined. In this case the card selection is operated automatically at the insertion of the card. In this case, the card selection is next managed by the observable reader, but the card processing is managed by a reader observer.</li>
 </ul>
-<p>
-<figure>
+<figure id=figure-reader-api---card-selection-modes---activity-diagram>
 <div class="d-flex justify-content-center">
-<div class=w-100><img src=https://keyple.org/media/learn/keyple-in-depth/card_selection_modes_activity_diagram.svg alt="Card selection modes - sequence diagram" loading=lazy data-zoomable></div>
-</div></figure>
-</p>
+<div class=w-100><img src=../../media/apis/reader_management_card_selection_modes_activity_diagram.svg alt="Reader API - Card Selection Modes - Activity Diagram" loading=lazy data-zoomable></div>
+</div><figcaption>
+Reader API - Card Selection Modes - Activity Diagram
+</figcaption></figure>
 <h2 id=limitations--constraints>Limitations & constraints</h2>
 <p>On a specific card reader, the Reader API allows to address only a <strong>single logical channel</strong>.</p>
 <h1 id=heading></h1>
@@ -268,27 +268,27 @@ Therefore, it is recommended to always perform a <strong>dynamic import</strong>
 </div>
 </div>
 <p>All deliverables are available directly from the <a href="https://search.maven.org/search?q=a:calypsonet-terminal-reader-java-api" target=_blank rel=noopener>Maven Central Repository</a> or by using one of the project resource managers below:</p>
-<ul class="nav nav-tabs" id=tabs-2 role=tablist><li class=nav-item>
-<a class="nav-link active tab-Gradle-Groovy" id=tabs-2-0-tab data-toggle=tab href=#tabs-2-0 role=tab onclick='handleClick("Gradle-Groovy")' aria-controls=tabs-2-0 aria-selected=true>
+<ul class="nav nav-tabs" id=tabs-3 role=tablist><li class=nav-item>
+<a class="nav-link active tab-Gradle-Groovy" id=tabs-3-0-tab data-toggle=tab href=#tabs-3-0 role=tab onclick='handleClick("Gradle-Groovy")' aria-controls=tabs-3-0 aria-selected=true>
 Gradle Groovy
 </a>
 </li><li class=nav-item>
-<a class="nav-link tab-Gradle-Kotlin" id=tabs-2-1-tab data-toggle=tab href=#tabs-2-1 role=tab onclick='handleClick("Gradle-Kotlin")' aria-controls=tabs-2-1 aria-selected=false>
+<a class="nav-link tab-Gradle-Kotlin" id=tabs-3-1-tab data-toggle=tab href=#tabs-3-1 role=tab onclick='handleClick("Gradle-Kotlin")' aria-controls=tabs-3-1 aria-selected=false>
 Gradle Kotlin
 </a>
 </li><li class=nav-item>
-<a class="nav-link tab-Maven" id=tabs-2-2-tab data-toggle=tab href=#tabs-2-2 role=tab onclick='handleClick("Maven")' aria-controls=tabs-2-2 aria-selected=false>
+<a class="nav-link tab-Maven" id=tabs-3-2-tab data-toggle=tab href=#tabs-3-2 role=tab onclick='handleClick("Maven")' aria-controls=tabs-3-2 aria-selected=false>
 Maven
 </a>
 </li></ul>
-<div class=bd-clipboard><button type=button class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onclick="copyTabContentToClipboard('tabs-2',this)">Copy</button></div>
-<div class=tab-content id=tabs-2-content><div class="tab-pane fade show active" id=tabs-2-0 role=tabpanel aria-labelled-by=tabs-2-0-tab>
+<div class=bd-clipboard><button type=button class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onclick="copyTabContentToClipboard('tabs-3',this)">Copy</button></div>
+<div class=tab-content id=tabs-3-content><div class="tab-pane fade show active" id=tabs-3-0 role=tabpanel aria-labelled-by=tabs-3-0-tab>
 <pre><code class=language-gradle>implementation &#39;org.calypsonet.terminal:calypsonet-terminal-reader-java-api:1.0.&#43;&#39;</code></pre>
 </div>
-<div class="tab-pane fade" id=tabs-2-1 role=tabpanel aria-labelled-by=tabs-2-1-tab>
+<div class="tab-pane fade" id=tabs-3-1 role=tabpanel aria-labelled-by=tabs-3-1-tab>
 <pre><code class=language-kotlin>implementation(&#34;org.calypsonet.terminal:calypsonet-terminal-reader-java-api:1.0.&#43;&#34;)</code></pre>
 </div>
-<div class="tab-pane fade" id=tabs-2-2 role=tabpanel aria-labelled-by=tabs-2-2-tab>
+<div class="tab-pane fade" id=tabs-3-2 role=tabpanel aria-labelled-by=tabs-3-2-tab>
 <pre><code class=language-xml>&lt;dependency&gt;
   &lt;groupId&gt;org.calypsonet.terminal&lt;/groupId&gt;
   &lt;artifactId&gt;calypsonet-terminal-reader-java-api&lt;/artifactId&gt;
@@ -315,7 +315,7 @@ Maven
 </div>
 </div>
 <div class=body-footer>
-<p>Last updated on 2022-05-10</p>
+<p>Last updated on 2022-05-25</p>
 </div>
 </article>
 <footer class=site-footer>

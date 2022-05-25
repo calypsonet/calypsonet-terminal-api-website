@@ -25,7 +25,7 @@
 <meta property="og:title" content="Calypsonet Terminal Card API | Calypso Networks Association Terminal APIs">
 <meta property="og:description" content="Internal API which defines the elements shared between the reader layer and the card layer."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
 <meta property="twitter:image" content="https://terminal-api.calypsonet.org/media/logo.svg"><meta property="og:locale" content="en-us">
-<meta property="article:modified_time" content="2022-05-10T11:44:43+04:00">
+<meta property="article:modified_time" content="2022-05-25T10:04:31+04:00">
 <title>Calypsonet Terminal Card API | Calypso Networks Association Terminal APIs</title>
 </head>
 <body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=586d1349891225248c7134e777120f95>
@@ -138,7 +138,7 @@ Overview
 <div class=docs-article-container>
 <h1>Calypsonet Terminal Card API</h1>
 <div class=article-style>
-<p>The <strong>Calypsonet Terminal Card API</strong> defines the internal elements shared between the reader layer and the card layer.</p>
+<p>The <strong>Calypsonet Terminal Card API</strong> defines the internal elements shared by the reader layer to implement specific card layers (like the Calypso Card layer).</p>
 <h2 id=interfaces>Interfaces</h2>
 <p>
 <figure>
@@ -147,7 +147,7 @@ Overview
 </div></figure>
 </p>
 <h2 id=limitations--constraints>Limitations & constraints</h2>
-<p>The Card API doesn&rsquo;t allow to request the transmssion to a card of the APDU commands &ldquo;Select Application by DF Name&rdquo; or &ldquo;Get Response&rdquo;:</p>
+<p>The Card API doesn&rsquo;t allow to request the transmission to a card of the APDU commands &ldquo;Select Application by DF Name&rdquo; or &ldquo;Get Response&rdquo;:</p>
 <ul>
 <li>the selection of a specific card application could be managed only through a Card Selection Request.</li>
 <li>the APDU response status words 61XYh & 6CXYh are automatically handled by the reader layer library by issuing a Get Response or by re-issuing the previous command with the rigth &lsquo;Le&rsquo; field.</li>
@@ -224,7 +224,7 @@ Maven
 </div>
 </div>
 <div class=body-footer>
-<p>Last updated on 2022-05-10</p>
+<p>Last updated on 2022-05-25</p>
 </div>
 </article>
 <footer class=site-footer>
