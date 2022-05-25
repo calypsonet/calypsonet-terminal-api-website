@@ -136,11 +136,6 @@ deactivate cardReader
 capi-->app: [Calypso card image:\n\t- identification data with PIN support\n\t- key #1 reference (updated)\n\t- key #2 reference\n\t- key #3 reference]
 deactivate capi
 
-app->capi: prepare: release channel
-activate capi  #pink
-capi-->app
-deactivate capi
-
 app->capi: <font color=red>**prepare**</font>:\n\t- release channel
 activate capi  #pink
 capi-->app

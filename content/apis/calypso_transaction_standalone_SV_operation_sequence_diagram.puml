@@ -102,7 +102,7 @@ end note
 app->capi: <font color=red>**prepare**</font> card transaction:\n\t- SV Get for Load
 activate capi  #pink
 note over capi
-    SV Get for Debit prepared in **last** position of a card command set to process.
+    SV Get for Load prepared in **last** position of a card command set to process.
 end note
 capi-->app
 deactivate capi
@@ -127,7 +127,7 @@ deactivate capi
 app->capi: <font color=red>**prepare**</font> card transaction:\n\t- SV Load (specific amount)\n\t- release channel
 activate capi  #pink
 note over capi
-    SV Debit prepared in **first** position of a card command set to process.
+    SV Load prepared in **first** position of a card command set to process.
 end note
 capi-->app
 deactivate capi
@@ -151,7 +151,7 @@ activate cardReader #lightBlue
 
 'group Card APDU commands inside session
 note over cardReader
-    SV Debit follows **directely** a previously transmitted SV Get for Debit card command.
+    SV Load follows **directely** a previously transmitted SV Get for Load card command.
 end note
     cardReader->card: SV Load (amount, SAM challenge, SAM certificate)
     card-->cardReader: [new balance, SV Card certificate]
