@@ -7,7 +7,7 @@ weight: 2
 toc: true
 ---
 
-The **Calypsonet Terminal Card API** defines the internal elements shared between the reader layer and the card layer.
+The **Calypsonet Terminal Card API** defines the internal elements shared by the reader layer to implement specific card layers (like the Calypso Card layer).
 
 ## Interfaces
 
@@ -15,7 +15,7 @@ The **Calypsonet Terminal Card API** defines the internal elements shared betwee
 
 
 ## Limitations & constraints
-The Card API doesn't allow to request the transmssion to a card of the APDU commands "Select Application by DF Name" or "Get Response":
+The Card API doesn't allow to request the transmission to a card of the APDU commands "Select Application by DF Name" or "Get Response":
 - the selection of a specific card application could be managed only through a Card Selection Request.
 - the APDU response status words 61XYh & 6CXYh are automatically handled by the reader layer library by issuing a Get Response or by re-issuing the previous command with the rigth 'Le' field.
 

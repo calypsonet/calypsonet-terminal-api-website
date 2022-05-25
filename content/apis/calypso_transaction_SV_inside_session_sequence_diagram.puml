@@ -52,11 +52,14 @@ activate sam #lightGreen
 app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
 
 note over capi
-    Checks a signature of previously read data when selecting the card.
+    SV balance already read when selecting the card.
 end note
 
-app->capi: <font color=red>**prepare**</font> card transaction:\n\t- read environment file\n\t- **verify** environment data **signature**\n\t- read contract #1\n\t- reader counter #1
+app->capi: <font color=red>**prepare**</font> card transaction:\n\t- read environment file\n\t- read contract #1\n\t- **SV Get for Debit**
 activate capi  #pink
+note over capi
+    SV Get for Debit prepared in **last** position of a card command set to process.
+end note
 capi-->app
 deactivate capi
 
@@ -65,89 +68,41 @@ activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
 activate samReader #lightGreen
-note over samReader
-    A specific signature key diversification could be required before the signature processing.
-end note
-
-samReader->sam: **verify signature** (environment data signature)
-sam-->samReader: signature status
 
 note over samReader
-    A session key diversification is operated, if the diversifier is different than for the previous data secure processing operation.
+    **Same diversifier** for the Stored Value transaction and the Secure Session.
 end note
 
 samReader->sam: select diversifier (card serial)
 sam-->samReader
 samReader->sam: get challenge
-sam-->samReader: [SAM challenge]
-samReader-[#00FF00]->capi: [environment data signature,\nSAM challenge]
+sam-->samReader: [Session SAM challenge]
+samReader-[#00FF00]->capi: [Session SAM challenge]
 deactivate samReader
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
 activate cardReader #lightBlue
 
 group Card APDU commands inside session
-    cardReader->card: open secure session (card debit key,\n\tSAM challenge,\n\tSFI environment to read)
+    cardReader->card: open secure session (card debit key,\n\tSession SAM challenge,\n\tSFI environment to read)
     card-->cardReader: [card challenge & environment data]
     cardReader->card: read record (contract #1)
     card-->cardReader: [contract #1 data]
-    cardReader->card: read record (counter #1)
-    card-->cardReader: [counter #1 data]
+    cardReader->card: SV Get (for Debit)
+    card-->cardReader: [SV card challenge]
 end
 
-cardReader--[#0000FF]>capi: [card challenge]
+cardReader--[#0000FF]>capi: [SV card challenge]
 deactivate cardReader
 
-capi-->app: [Calypso card image:\n\t- identification data\n\t- environment data (updated)\n\t- contract list data\n\t- contract #1 data\n\t- counter #1 data]\n[Data secure processing:\n\t- environment data signature status]
+capi-->app: [Calypso card image:\n\t- identification data with SV support\n\t- environment data (updated)\n\t- contract list data\n\t- contract #1 data\n\t- SV Debit data\n\t- SV balance]]
 deactivate capi
 
-app->capi: <font color=red>**prepare**</font> secured card transaction:\n\t- **verify** contract #1 data **signature**\n\t- **compute** event data **signature**
+app->capi: <font color=red>**prepare**</font>:\n\t- SV Debit (specific amount)\n\t- append event record (data)\n\t- release channel
 activate capi  #pink
-capi-->app
-deactivate capi
-
-app->capi: <font color=red>**process**</font> commands
-activate capi  #pink
-
-capi-[#00FF00]>samReader: <font color=green>**SAM #2**<font color=red>\ntransmit card request\n\t- APDU list
-activate samReader #lightGreen
-
-note over samReader
-    When data secure processing requested, processes all pending SAM commands.
+note over capi
+    SV Debit prepared in **first** position of a card command set to process.
 end note
-
-samReader->sam: digest init (opening data)
-sam-->samReader
-samReader->sam: digest update (read environment)
-sam-->samReader
-samReader->sam: digest update (read contract)
-sam-->samReader
-samReader->sam: digest update (read counter)
-sam-->samReader
-
-note over samReader
-    If necessary, a specific contract signature key diversification could be operated before the signature processing.
-end note
-
-samReader->sam: **verify signature** (contract #1 data signature)
-sam-->samReader: signature status
-
-note over samReader
-    If necessary, a specific event signature key diversification could be operated before the signature processing.
-end note
-
-samReader->sam: **compute signature** (event data)
-sam-->samReader: event data signature
-
-samReader-[#00FF00]->capi: [contract #1 data signature status,\nevent data signature]
-deactivate samReader
-
-capi-->app: [Data secure processing:\n\t- contract #1 data signature status\n\t- event data signature]
-deactivate capi
-
-
-app->capi: <font color=red>**prepare**</font>:\n\t- decrease counter #1 (value)\n\t- append event record (data)\n\t- release channel
-activate capi  #pink
 capi-->app
 deactivate capi
 
@@ -157,52 +112,75 @@ end note
 
 app->capi: <font color=red>**process**</font> closing (not ratified)
 activate capi  #pink
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #2**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+samReader->sam: digest init (opening data)
+sam-->samReader
+samReader->sam: digest update (read environment)
+sam-->samReader
+samReader->sam: digest update (read contract)
+sam-->samReader
+samReader->sam: digest update (SV Get for Debit)
+sam-->samReader
+samReader->sam: SV prepare Load (SV card challenge, load amount)
+sam-->samReader: [SV SAM challenge, SV SAM certificate]
+
+samReader-[#00FF00]->capi: [SV SAM certificate]
+deactivate samReader
+
 capi->capi: anticipates the future card responses
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #3**</font>\ntransmit card request\n\t- APDU list
 activate samReader #lightGreen
 
 group <font color=red>**anticipated**</font> Card APDU responses
-    samReader->sam: digest update (decrease counter)
+    samReader->sam: digest update (SV Debit specific amount\n<font color=red>**without postponed**</font> SV card certificate)
     sam-->samReader
-    samReader->sam: digest update (append event record)
+    samReader->sam: digest update (update event record)
     sam-->samReader
 end
 samReader->sam: digest close
-sam-->samReader: [SAM certificate]
+sam-->samReader: [Session SAM certificate]
 
-samReader-[#00FF00]->capi: [SAM certificate]
+samReader-[#00FF00]->capi: [Session SAM certificate]
 deactivate samReader
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #3**</font>\ntransmit card request\n\t- APDU list
 activate cardReader #lightBlue
 
 group Card APDU commands inside session
+note over cardReader
+    SV Debit follows **directely** a previously transmitted SV Get for Debit card command.
+end note
+    cardReader->card: SV Debit (amount, SV SAM challenge, SV SAM certificate)
+    card-->cardReader: [<font color=red>**missing**</font> SV card certificate]
     cardReader->card: update record (event, data)
     card-->cardReader
-    cardReader->card: decrease counter (counter #1, value)
-    card-->cardReader: [new counter value]
 end
 
-cardReader->card: close secure session (SAM certificate)
-card-->cardReader: [card certificate]
+cardReader->card: close secure session (Session SAM certificate)
+card-->cardReader: [Session Card certificate, SV Card certificate]
 cardReader->card: ratification command
 card-->cardReader
 cardReader->card: close card channel
 card-->cardReader
 deactivate card
 
-cardReader-[#0000FF]->capi: [card certificate]
+cardReader-[#0000FF]->capi: [Session Card certificate, SV Card certificate]
 deactivate cardReader
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #4**</font>\ntransmit card request\n\t- APDU list
 activate samReader #lightGreen
-samReader->sam: digest authenticate (card certificate)
-sam-->samReader: [authentication status]
+samReader->sam: digest authenticate (Session Card certificate)
+sam-->samReader: [session authentication status]
+samReader->sam: SV Check (SV Card certificate)
+sam-->samReader: [SV authentication status]
 
 samReader-[#00FF00]->capi: [authentification status]
 deactivate samReader
 
-capi-->app: [Calypso card image:\n\t- identification data\n\t- environment data\n\t- contract list data\n\t- contract #1 data\n\t- counter #1 data (updated)\n\t- event #1 (updated)]\nauthentification status
+capi-->app: [Calypso card image:\n\t- identification data with SV support\n\t- environment data\n\t- contract list data\n\t- contract #1 data\n\t- counter #1 data (updated)\n\t- event #1 (updated)]\nauthentification status
 deactivate capi
 @enduml
