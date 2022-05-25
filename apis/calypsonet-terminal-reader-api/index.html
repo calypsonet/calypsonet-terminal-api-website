@@ -25,7 +25,7 @@
 <meta property="og:title" content="Calypsonet Terminal Reader API | Calypso Networks Association Terminal APIs">
 <meta property="og:description" content="Public API which defines the elements shared by the reader."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
 <meta property="twitter:image" content="https://terminal-api.calypsonet.org/media/logo.svg"><meta property="og:locale" content="en-us">
-<meta property="article:modified_time" content="2022-05-25T10:04:31+04:00">
+<meta property="article:modified_time" content="2022-05-25T12:17:02+04:00">
 <title>Calypsonet Terminal Reader API | Calypso Networks Association Terminal APIs</title>
 </head>
 <body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=b11839ed0888d32a0cc4fe9885a359ec>
@@ -128,8 +128,8 @@ Overview
 <li><a href=#card-selection>Card Selection</a></li>
 </ul>
 </li>
-<li><a href=#observable-reader-states>Observable reader states</a></li>
 <li><a href=#card-selection-modes>Card selection modes</a></li>
+<li><a href=#observable-reader-states>Observable reader states</a></li>
 <li><a href=#limitations--constraints>Limitations & constraints</a></li>
 </ul>
 <ul>
@@ -195,6 +195,18 @@ Overview
 <p>during the card selection preparation, it could also be explicitly requested to to close the logical channel after the card selection.</p>
 </li>
 </ul>
+<h2 id=card-selection-modes>Card selection modes</h2>
+<p>Depending on the card transaction use case, or on the reader capability, there are two ways to manage the selection of a card:</p>
+<ul>
+<li>Either on a simple reader, a selection could be operated directly by transmitting the card selection scenario. In this case the same entity manages both the card selection and the card processing.</li>
+<li>Otherwise, on an observable reader, a scheduled card selection could be defined. In this case the card selection is operated automatically at the insertion of the card. In this case, the card selection is next managed by the observable reader, but the card processing is managed by a reader observer.</li>
+</ul>
+<figure id=figure-reader-api---card-selection-modes---activity-diagram>
+<div class="d-flex justify-content-center">
+<div class=w-100><img src=../../media/apis/reader_management_card_selection_modes_activity_diagram.svg alt="Reader API - Card Selection Modes - Activity Diagram" loading=lazy data-zoomable></div>
+</div><figcaption>
+Reader API - Card Selection Modes - Activity Diagram
+</figcaption></figure>
 <h2 id=observable-reader-states>Observable reader states</h2>
 <p>An observable reader is active only when at least one reader observer is registered, and if the start of the detection has been requested.
 When active, an observable reader could switch between three internal states:</p>
@@ -205,12 +217,13 @@ When active, an observable reader could switch between three internal states:</p
 </ul>
 <p>In the nominal case, a reader observer indicates to the observable reader that the processing of the card is finished by releasing the card channel.
 To manage a failure of the reader observer process, the observable reader interface provides also a method to finalize the card processing.</p>
-<p>
-<figure>
+<figure id=figure-reader-api---observable-reader-states---activity-diagram>
 <div class="d-flex justify-content-center">
-<div class=w-100><img src=https://keyple.org/media/learn/keyple-in-depth/reader_observation_state_machine.svg alt="Observable Reader - states diagram" loading=lazy data-zoomable></div>
-</div></figure>
-The states could be switched:</p>
+<div class=w-100><img src=../../media/apis/reader_management_reader_observation_state_diagram.svg alt="Reader API - Observable Reader States - Activity Diagram" loading=lazy data-zoomable></div>
+</div><figcaption>
+Reader API - Observable Reader States - Activity Diagram
+</figcaption></figure>
+<p>The states could be switched:</p>
 <ul>
 <li>due to an explicit API request (blue arrows):
 <ul>
@@ -233,18 +246,6 @@ The states could be switched:</p>
 <p>If a card detection is started with the <code>REPEATING</code> detection mode, then later when the card is removed, the reader starts again the detection of a new card.</p>
 <p>Notification of card removal during the card removal wait state is a feature of any observable reader.
 However, some observable readers may additionally have the ability to notify removal during the card processing state.</p>
-<h2 id=card-selection-modes>Card selection modes</h2>
-<p>Depending on the card transaction use case, or on the reader capability, there are two ways to manage the selection of a card:</p>
-<ul>
-<li>Either on a simple reader, a selection could be operated directly by transmitting the card selection scenario. In this case the same entity manages both the card selection and the card processing.</li>
-<li>Otherwise, on an observable reader, a scheduled card selection could be defined. In this case the card selection is operated automatically at the insertion of the card. In this case, the card selection is next managed by the observable reader, but the card processing is managed by a reader observer.</li>
-</ul>
-<figure id=figure-reader-api---card-selection-modes---activity-diagram>
-<div class="d-flex justify-content-center">
-<div class=w-100><img src=../../media/apis/reader_management_card_selection_modes_activity_diagram.svg alt="Reader API - Card Selection Modes - Activity Diagram" loading=lazy data-zoomable></div>
-</div><figcaption>
-Reader API - Card Selection Modes - Activity Diagram
-</figcaption></figure>
 <h2 id=limitations--constraints>Limitations & constraints</h2>
 <p>On a specific card reader, the Reader API allows to address only a <strong>single logical channel</strong>.</p>
 <h1 id=heading></h1>
@@ -268,27 +269,27 @@ Therefore, it is recommended to always perform a <strong>dynamic import</strong>
 </div>
 </div>
 <p>All deliverables are available directly from the <a href="https://search.maven.org/search?q=a:calypsonet-terminal-reader-java-api" target=_blank rel=noopener>Maven Central Repository</a> or by using one of the project resource managers below:</p>
-<ul class="nav nav-tabs" id=tabs-3 role=tablist><li class=nav-item>
-<a class="nav-link active tab-Gradle-Groovy" id=tabs-3-0-tab data-toggle=tab href=#tabs-3-0 role=tab onclick='handleClick("Gradle-Groovy")' aria-controls=tabs-3-0 aria-selected=true>
+<ul class="nav nav-tabs" id=tabs-4 role=tablist><li class=nav-item>
+<a class="nav-link active tab-Gradle-Groovy" id=tabs-4-0-tab data-toggle=tab href=#tabs-4-0 role=tab onclick='handleClick("Gradle-Groovy")' aria-controls=tabs-4-0 aria-selected=true>
 Gradle Groovy
 </a>
 </li><li class=nav-item>
-<a class="nav-link tab-Gradle-Kotlin" id=tabs-3-1-tab data-toggle=tab href=#tabs-3-1 role=tab onclick='handleClick("Gradle-Kotlin")' aria-controls=tabs-3-1 aria-selected=false>
+<a class="nav-link tab-Gradle-Kotlin" id=tabs-4-1-tab data-toggle=tab href=#tabs-4-1 role=tab onclick='handleClick("Gradle-Kotlin")' aria-controls=tabs-4-1 aria-selected=false>
 Gradle Kotlin
 </a>
 </li><li class=nav-item>
-<a class="nav-link tab-Maven" id=tabs-3-2-tab data-toggle=tab href=#tabs-3-2 role=tab onclick='handleClick("Maven")' aria-controls=tabs-3-2 aria-selected=false>
+<a class="nav-link tab-Maven" id=tabs-4-2-tab data-toggle=tab href=#tabs-4-2 role=tab onclick='handleClick("Maven")' aria-controls=tabs-4-2 aria-selected=false>
 Maven
 </a>
 </li></ul>
-<div class=bd-clipboard><button type=button class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onclick="copyTabContentToClipboard('tabs-3',this)">Copy</button></div>
-<div class=tab-content id=tabs-3-content><div class="tab-pane fade show active" id=tabs-3-0 role=tabpanel aria-labelled-by=tabs-3-0-tab>
+<div class=bd-clipboard><button type=button class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onclick="copyTabContentToClipboard('tabs-4',this)">Copy</button></div>
+<div class=tab-content id=tabs-4-content><div class="tab-pane fade show active" id=tabs-4-0 role=tabpanel aria-labelled-by=tabs-4-0-tab>
 <pre><code class=language-gradle>implementation &#39;org.calypsonet.terminal:calypsonet-terminal-reader-java-api:1.0.&#43;&#39;</code></pre>
 </div>
-<div class="tab-pane fade" id=tabs-3-1 role=tabpanel aria-labelled-by=tabs-3-1-tab>
+<div class="tab-pane fade" id=tabs-4-1 role=tabpanel aria-labelled-by=tabs-4-1-tab>
 <pre><code class=language-kotlin>implementation(&#34;org.calypsonet.terminal:calypsonet-terminal-reader-java-api:1.0.&#43;&#34;)</code></pre>
 </div>
-<div class="tab-pane fade" id=tabs-3-2 role=tabpanel aria-labelled-by=tabs-3-2-tab>
+<div class="tab-pane fade" id=tabs-4-2 role=tabpanel aria-labelled-by=tabs-4-2-tab>
 <pre><code class=language-xml>&lt;dependency&gt;
   &lt;groupId&gt;org.calypsonet.terminal&lt;/groupId&gt;
   &lt;artifactId&gt;calypsonet-terminal-reader-java-api&lt;/artifactId&gt;
