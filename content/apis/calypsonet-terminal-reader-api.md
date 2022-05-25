@@ -54,6 +54,18 @@ If several card selections are prepared, the card selection manager operate the 
 
 - during the card selection preparation, it could also be explicitly requested to to close the logical channel after the card selection.
 
+## Card selection modes
+
+Depending on the card transaction use case, or on the reader capability, there are two ways to manage the selection of a card:
+- Either on a simple reader, a selection could be operated directly by transmitting the card selection scenario. In this case the same entity manages both the card selection and the card processing.
+- Otherwise, on an observable reader, a scheduled card selection could be defined. In this case the card selection is operated automatically at the insertion of the card. In this case, the card selection is next managed by the observable reader, but the card processing is managed by a reader observer.
+
+<!--
+![Card selection modes - sequence diagram](https://keyple.org/media/learn/keyple-in-depth/card_selection_modes_activity_diagram.svg)
+-->
+
+{{< figure src="/media/apis/reader_management_card_selection_modes_activity_diagram.svg" caption="Reader API - Card Selection Modes - Activity Diagram" >}}
+
 ## Observable reader states
 
 An observable reader is active only when at least one reader observer is registered, and if the start of the detection has been requested.
@@ -65,7 +77,11 @@ When active, an observable reader could switch between three internal states:
 In the nominal case, a reader observer indicates to the observable reader that the processing of the card is finished by releasing the card channel.
 To manage a failure of the reader observer process, the observable reader interface provides also a method to finalize the card processing.
 
+<!--
 ![Observable Reader - states diagram](https://keyple.org/media/learn/keyple-in-depth/reader_observation_state_machine.svg)
+-->
+{{< figure src="/media/apis/reader_management_reader_observation_state_diagram.svg" caption="Reader API - Observable Reader States - Activity Diagram" >}}
+
 The states could be switched:
 - due to an explicit API request (blue arrows):
   - the release of the card channel,
@@ -80,19 +96,6 @@ If a card detection is started with the `REPEATING` detection mode, then later w
 
 Notification of card removal during the card removal wait state is a feature of any observable reader.
 However, some observable readers may additionally have the ability to notify removal during the card processing state.
-
-
-## Card selection modes
-
-Depending on the card transaction use case, or on the reader capability, there are two ways to manage the selection of a card:
-- Either on a simple reader, a selection could be operated directly by transmitting the card selection scenario. In this case the same entity manages both the card selection and the card processing.
-- Otherwise, on an observable reader, a scheduled card selection could be defined. In this case the card selection is operated automatically at the insertion of the card. In this case, the card selection is next managed by the observable reader, but the card processing is managed by a reader observer.
-
-<!--
-![Card selection modes - sequence diagram](https://keyple.org/media/learn/keyple-in-depth/card_selection_modes_activity_diagram.svg)
--->
-
-{{< figure src="/media/apis/reader_management_card_selection_modes_activity_diagram.svg" caption="Reader API - Card Selection Modes - Activity Diagram" >}}
 
 ## Limitations & constraints
 On a specific card reader, the Reader API allows to address only a **single logical channel**.
