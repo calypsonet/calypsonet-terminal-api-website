@@ -1,13 +1,13 @@
 ---
 title: Calypsonet Terminal Reader API
 linktitle: Reader API
-summary: Public API which defines the elements shared between the reader layer and the card layer.
+summary: Public API which defines the elements shared by the reader.
 type: book
 weight: 1
 toc: true
 ---
 
-The **Calypsonet Terminal Reader API** defines the public elements shared between the reader layer and the card layer.
+The **Calypsonet Terminal Reader API** defines the public elements shared by the reader.
 
 ## Interfaces
 
@@ -88,7 +88,11 @@ Depending on the card transaction use case, or on the reader capability, there a
 - Either on a simple reader, a selection could be operated directly by transmitting the card selection scenario. In this case the same entity manages both the card selection and the card processing.
 - Otherwise, on an observable reader, a scheduled card selection could be defined. In this case the card selection is operated automatically at the insertion of the card. In this case, the card selection is next managed by the observable reader, but the card processing is managed by a reader observer.
 
+<!--
 ![Card selection modes - sequence diagram](https://keyple.org/media/learn/keyple-in-depth/card_selection_modes_activity_diagram.svg)
+-->
+
+{{< figure src="/media/apis/reader_management_card_selection_modes_activity_diagram.svg" caption="Reader API - Card Selection Modes - Activity Diagram" >}}
 
 ## Limitations & constraints
 On a specific card reader, the Reader API allows to address only a **single logical channel**.

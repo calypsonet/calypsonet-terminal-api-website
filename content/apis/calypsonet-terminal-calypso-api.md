@@ -23,7 +23,7 @@ A transaction with a Calypso PO is fully managed through the PoTransaction objec
 
 ![Calypso API - class diagram](https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/1.2.0-SNAPSHOT/api_class_diagram.svg)
 
-### Selection of a Calypso card
+## Selection of a Calypso card
 A Calypso card selection could be defined to accept or not invalidated card.
 
 Through the selection only basic Select File (without changing DF) or Read Records commands could joined: the goal is to recover in the selection result some file status or record data of elements present in all cards of a ticketing networks.
@@ -31,43 +31,55 @@ The type of card product has not yet been identified, the commands are prepared 
 
 Then if a Calypso card has matched the selection request, a Calypso card image is returned, some file headers or file records could be filled depending on the information recovered in the responses of the Select File or Read Records processed.
 
-### Transaction with a Calypso card
+## Transaction with a Calypso card
 
 Except the operations involving secure processing on "data" (data signature computation / verification, data ciphering / unciphering), only commands for the card need to be prepared though the Card Transaction Manager interface.
 Depending on the operation, if necessary the security involving the master SAM must be controlled internally by the Calypso library.
 
-#### Simple operation outside a session
+### Simple operation outside a session
 
-#### PIN verification outside a session
+### PIN plain verification / change outside a session
 
-#### Data secure processing outside a session
+{{< figure src="/media/apis/calypso_transaction_Verify_Change_Plain_PIN_sequence_diagram.svg" caption="Calypso API - Verify / Change Plain PIN - Sequence Diagram" >}}
+
+### Data secure processing outside a session
 
 {{< figure src="/media/apis/calypso_transaction_DSP_outside_session_sequence_diagram.svg" caption="Calypso API - Data secure processing outside a session - Sequence Diagram" >}}
 
-#### Key update outside a session
+### Key / PIN ciphered update outside a session
 
-#### Stored Value operation outside a session
+{{< figure src="/media/apis/calypso_transaction_Change_Key_Ciphered_PIN_sequence_diagram.svg" caption="Calypso API - Change Key / Ciphered PIN outside a session - Sequence Diagram" >}}
 
-#### Simple secure session
+### Stored Value operation outside a session
+
+{{< figure src="/media/apis/calypso_transaction_standalone_SV_operation_sequence_diagram.svg" caption="Calypso API - standalone Stored Value transaction - Sequence Diagram" >}}
+
+### Simple secure session
 In most of the cases, it should be possible to handle a secure session with a Calypso card, using only:
 - 3 exchanges with the card reader (selection processing, session opening processing, and session closing processing),
 - and 3 exchanges with the SAM reader (terminal session challenge recovery, session MAC computation, and card authentication).
 
 {{< figure src="/media/apis/calypso_transaction_simple_secure_session_sequence_diagram.svg" caption="Calypso API - Simple Secure Session - Sequence Diagram" >}}
 
-#### PIN verification inside a session
+### PIN ciphered verification inside a session
 
-#### Data secure processing inside a session
+{{< figure src="/media/apis/calypso_transaction_Verify_Ciphered_PIN_inside_session_sequence_diagram.svg" caption="Calypso API - Verify Ciphered PIN inside a session - Sequence Diagram" >}}
+
+### Data secure processing inside a session
 
 {{< figure src="/media/apis/calypso_transaction_DSP_inside_session_sequence_diagram.svg" caption="Calypso API - Data secure processing inside a session - Sequence Diagram" >}}
 
-#### Stored Value operation inside a session
+### Stored Value operation inside a session
 
-#### Multiple secure sessions
+{{< figure src="/media/apis/calypso_transaction_SV_inside_session_sequence_diagram.svg" caption="Calypso API - Stored Value transaction inside a secure session - Sequence Diagram" >}}
 
-### Selection of a Calypso SAM
+### Multiple secure sessions
 
-### Transaction with a Calypso SAM
+{{< figure src="/media/apis/calypso_transaction_multiple_secure_session_sequence_diagram.svg" caption="Calypso API - Multiple secure session - Sequence Diagram" >}}
+
+## Selection of a Calypso SAM
+
+## Transaction with a Calypso SAM
 
 #
 ## Implementations & API Documentation

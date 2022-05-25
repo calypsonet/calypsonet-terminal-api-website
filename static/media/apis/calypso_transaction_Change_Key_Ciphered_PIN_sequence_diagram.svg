@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="2428px" preserveAspectRatio="none" style="width:1504px;height:2428px;background:#FFFFFF;" version="1.1" viewBox="0 0 1504 2428" width="1504px" zoomAndPan="magnify"><defs/><g><rect fill="#FFD700" height="2247.0176" style="stroke:#181818;stroke-width:1.0;" width="10" x="75.5" y="91.4883"/><rect fill="#FFC0CB" height="49.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="398.5" y="186.7305"/><rect fill="#FFC0CB" height="90.5527" style="stroke:#181818;stroke-width:1.0;" width="10" x="398.5" y="631.3887"/><rect fill="#FFC0CB" height="636.0742" style="stroke:#181818;stroke-width:1.0;" width="10" x="398.5" y="882.8047"/><rect fill="#FFC0CB" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="398.5" y="1548.1895"/><rect fill="#FFC0CB" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="398.5" y="1606.8105"/><rect fill="#FFC0CB" height="679.3848" style="stroke:#181818;stroke-width:1.0;" width="10" x="398.5" y="1650.1211"/><rect fill="#FFC0CB" height="336.7266" style="stroke:#181818;stroke-width:1.0;" width="10" x="499.5" y="265.3516"/><rect fill="#ADD8E6" height="232.1738" style="stroke:#181818;stroke-width:1.0;" width="10" x="699.5" y="340.5938"/><rect fill="#ADD8E6" height="87.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="699.5" y="942.7363"/><rect fill="#ADD8E6" height="87.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="699.5" y="1340.3945"/><rect fill="#ADD8E6" height="87.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="699.5" y="1710.0527"/><rect fill="#ADD8E6" height="131.2422" style="stroke:#181818;stroke-width:1.0;" width="10" x="699.5" y="2107.7109"/><rect fill="#ADD8E6" height="1839.7383" style="stroke:#181818;stroke-width:1.0;" width="10" x="918.5" y="369.9043"/><rect fill="#90EE90" height="189.8633" style="stroke:#181818;stroke-width:1.0;" width="10" x="1004" y="1090.5996"/><rect fill="#90EE90" height="189.8633" style="stroke:#181818;stroke-width:1.0;" width="10" x="1004" y="1857.916"/><rect fill="#90EE90" height="2247.0176" style="stroke:#181818;stroke-width:1.0;" width="10" x="1456" y="91.4883"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="80" x2="80" y1="81.4883" y2="2347.5059"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="403.5" x2="403.5" y1="81.4883" y2="2347.5059"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="504.5" x2="504.5" y1="81.4883" y2="2347.5059"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="704" x2="704" y1="81.4883" y2="2347.5059"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="923" x2="923" y1="81.4883" y2="2347.5059"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1009" x2="1009" y1="81.4883" y2="2347.5059"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1461" x2="1461" y1="81.4883" y2="2347.5059"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="5" y="78.5352">Ticketing Application</text><ellipse cx="80.5" cy="13.5" fill="#FFD700" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M80.5,21.5 L80.5,48.5 M67.5,29.5 L93.5,29.5 M80.5,48.5 L67.5,63.5 M80.5,48.5 L93.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="145" x="5" y="2360.041">Ticketing Application</text><ellipse cx="80.5" cy="2371.4941" fill="#FFD700" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M80.5,2379.4941 L80.5,2406.4941 M67.5,2387.4941 L93.5,2387.4941 M80.5,2406.4941 L67.5,2421.4941 M80.5,2406.4941 L93.5,2421.4941 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#FFC0CB" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="94" x="356.5" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="363.5" y="70.5352">Calypso API</text><rect fill="#FFC0CB" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="94" x="356.5" y="2346.5059"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="363.5" y="2367.041">Calypso API</text><rect fill="#FFC0CB" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="88" x="460.5" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="467.5" y="70.5352">Reader API</text><rect fill="#FFC0CB" height="30.4883" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="88" x="460.5" y="2346.5059"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="74" x="467.5" y="2367.041">Reader API</text><rect fill="#ADD8E6" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="652" y="33.5117"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="659" y="54.0469">Calypso Card</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="680.5" y="70.5352">Reader</text><rect fill="#ADD8E6" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="105" x="652" y="2346.5059"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="91" x="659" y="2367.041">Calypso Card</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="680.5" y="2383.5293">Reader</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="33" x="904" y="78.5352">Card</text><path d="M903,37 L903,61 M903,49 L920,49 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="932" cy="49" fill="#ADD8E6" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="33" x="904" y="2360.041">Card</text><path d="M903,2366.9941 L903,2390.9941 M903,2378.9941 L920,2378.9941 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="932" cy="2378.9941" fill="#ADD8E6" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#90EE90" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="102" x="958" y="33.5117"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="965" y="54.0469">Calypso SAM</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="985" y="70.5352">Reader</text><rect fill="#90EE90" height="46.9766" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="102" x="958" y="2346.5059"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="88" x="965" y="2367.041">Calypso SAM</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="985" y="2383.5293">Reader</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="1430" y="62.0469">selected</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="31" x="1442.5" y="78.5352">SAM</text><path d="M1440.5,20.5117 L1440.5,44.5117 M1440.5,32.5117 L1457.5,32.5117 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="1469.5" cy="32.5117" fill="#90EE90" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="1430" y="2360.041">selected</text><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="31" x="1442.5" y="2376.5293">SAM</text><path d="M1440.5,2383.4824 L1440.5,2407.4824 M1440.5,2395.4824 L1457.5,2395.4824 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><ellipse cx="1469.5" cy="2395.4824" fill="#90EE90" rx="12" ry="12" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#FFD700" height="2247.0176" style="stroke:#181818;stroke-width:1.0;" width="10" x="75.5" y="91.4883"/><rect fill="#FFC0CB" height="49.3105" style="stroke:#181818;stroke-width:1.0;" width="10" x="398.5" y="186.7305"/><rect fill="#FFC0CB" height="90.5527" style="stroke:#181818;stroke-width:1.0;" width="10" x="398.5" y="631.3887"/><rect fill="#FFC0CB" height="636.0742" style="stroke:#181818;stroke-width:1.0;" width="10" x="398.5" y="882.8047"/><rect fill="#FFC0CB" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="398.5" y="1548.1895"/><rect fill="#FFC0CB" height="14" style="stroke:#181818;stroke-width:1.0;" width="10" x="398.5" y="1606.8105"/><rect fill="#FFC0CB" height="679.3848" style="stroke:#181818;stroke-width:1.0;" width="10" x="398.5" y="1650.1211"/><rect fill="#FFC0CB" height="336.7266" style="stroke:#181818;stroke-width:1.0;" width="10" x="499.5" y="265.3516"/><rect fill="#ADD8E6" height="232.1738" style="stroke:#181818;stroke-width:1.0;" width="10" x="699.5" y="340.5938"/><rect fill="#ADD8E6" height="87.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="699.5" y="942.7363"/><rect fill="#ADD8E6" height="87.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="699.5" y="1340.3945"/><rect fill="#ADD8E6" height="87.9316" style="stroke:#181818;stroke-width:1.0;" width="10" x="699.5" y="1710.0527"/><rect fill="#ADD8E6" height="131.2422" style="stroke:#181818;stroke-width:1.0;" width="10" x="699.5" y="2107.7109"/><rect fill="#ADD8E6" height="1839.7383" style="stroke:#181818;stroke-width:1.0;" width="10" x="918.5" y="369.9043"/><rect fill="#90EE90" height="189.8633" style="stroke:#181818;stroke-width:1.0;" width="10" x="1004" y="1090.5996"/><rect fill="#90EE90" height="189.8633" style="stroke:#181818;stroke-width:1.0;" width="10" x="1004" y="1857.916"/><rect fill="#90EE90" height="2247.0176" style="stroke:#181818;stroke-width:1.0;" width="10" x="1456" y="91.4883"/><rect fill="#EEEEEE" height="3" style="stroke:#EEEEEE;stroke-width:1.0;" width="1497" x="0" y="112.1436"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="1497" y1="112.1436" y2="112.1436"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="1497" y1="115.1436" y2="115.1436"/><rect fill="#EEEEEE" height="23.3105" style="stroke:#000000;stroke-width:2.0;" width="221" x="638" y="101.4883"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="203" x="644" y="118.0566">Card selection &amp; identification</text><polygon fill="#181818" points="386.5,182.7305,396.5,186.7305,386.5,190.7305,390.5,186.7305" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="392.5" y1="186.7305" y2="186.7305"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="92.5" y="151.3672">prepare</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="149" x="150.5" y="151.3672">card selection scenario:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="141" x="124.5" y="166.6777">- filter by specific AID</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="145" x="124.5" y="181.9883">- Select File current DF</text><path d="M197,199.7305 L197,224.7305 L609,224.7305 L609,209.7305 L599,199.7305 L197,199.7305 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M599,199.7305 L599,209.7305 L609,209.7305 L599,199.7305 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="391" x="203" y="217.2988">Recover the card keyset information through the DF selection.</text><polygon fill="#181818" points="96.5,232.041,86.5,236.041,96.5,240.041,92.5,236.041" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="402.5" y1="236.041" y2="236.041"/><polygon fill="#181818" points="487.5,261.3516,497.5,265.3516,487.5,269.3516,491.5,265.3516" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="493.5" y1="265.3516" y2="265.3516"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="52" x="92.5" y="260.6094">process</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="196" x="148.5" y="260.6094">explicit card selection scenario</text><polygon fill="#0000FF" points="687.5,336.5938,697.5,340.5938,687.5,344.5938,691.5,340.5938" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;" x1="509.5" x2="693.5" y1="340.5938" y2="340.5938"/><text fill="#0000FF" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="516.5" y="289.9199">Card #1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="165" x="516.5" y="305.2305">transmit selection request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="93" x="548.5" y="320.541">- card selector</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="548.5" y="335.8516">- APDU list</text><polygon fill="#181818" points="906.5,365.9043,916.5,369.9043,906.5,373.9043,910.5,369.9043" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="709.5" x2="912.5" y1="369.9043" y2="369.9043"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="716.5" y="365.1621">open card channel</text><polygon fill="#181818" points="720.5,379.9043,710.5,383.9043,720.5,387.9043,716.5,383.9043" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="714.5" x2="917.5" y1="383.9043" y2="383.9043"/><polygon fill="#181818" points="906.5,409.2148,916.5,413.2148,906.5,417.2148,910.5,413.2148" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="709.5" x2="912.5" y1="413.2148" y2="413.2148"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="142" x="716.5" y="408.4727">select application (aid)</text><polygon fill="#181818" points="720.5,438.5254,710.5,442.5254,720.5,446.5254,716.5,442.5254" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="714.5" x2="917.5" y1="442.5254" y2="442.5254"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="59" x="726.5" y="437.7832">[card FCI]</text><line style="stroke:#181818;stroke-width:1.0;" x1="709.5" x2="751.5" y1="471.8359" y2="471.8359"/><line style="stroke:#181818;stroke-width:1.0;" x1="751.5" x2="751.5" y1="471.8359" y2="484.8359"/><line style="stroke:#181818;stroke-width:1.0;" x1="710.5" x2="751.5" y1="484.8359" y2="484.8359"/><polygon fill="#181818" points="720.5,480.8359,710.5,484.8359,720.5,488.8359,716.5,484.8359" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="165" x="716.5" y="467.0938">checks invalidation status</text><polygon fill="#181818" points="906.5,510.1465,916.5,514.1465,906.5,518.1465,910.5,514.1465" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="709.5" x2="912.5" y1="514.1465" y2="514.1465"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="141" x="716.5" y="509.4043">Select File (current DF)</text><polygon fill="#181818" points="720.5,539.457,710.5,543.457,720.5,547.457,716.5,543.457" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="714.5" x2="917.5" y1="543.457" y2="543.457"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="167" x="726.5" y="538.7148">[KIF/KVC for key #1 #2 #3]</text><polygon fill="#0000FF" points="520.5,568.7676,510.5,572.7676,520.5,576.7676,516.5,572.7676" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="514.5" x2="703.5" y1="572.7676" y2="572.7676"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="166" x="526.5" y="568.0254">receive selection response</text><polygon fill="#181818" points="96.5,598.0781,86.5,602.0781,96.5,606.0781,92.5,602.0781" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="503.5" y1="602.0781" y2="602.0781"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="204" x="102.5" y="597.3359">selected active SmartCard image</text><polygon fill="#181818" points="386.5,627.3887,396.5,631.3887,386.5,635.3887,390.5,631.3887" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="392.5" y1="631.3887" y2="631.3887"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="27" x="92.5" y="626.6465">cast</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="123.5" y="626.6465">Calypso card</text><polygon fill="#181818" points="96.5,717.9414,86.5,721.9414,96.5,725.9414,92.5,721.9414" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="402.5" y1="721.9414" y2="721.9414"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="102.5" y="655.957">[Calypso card image:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="236" x="134.5" y="671.2676">- identification data with PIN support</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="134.5" y="686.5781">- key #1 reference</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="134.5" y="701.8887">- key #2 reference</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="120" x="134.5" y="717.1992">- key #3 reference]</text><rect fill="#EEEEEE" height="3" style="stroke:#EEEEEE;stroke-width:1.0;" width="1497" x="0" y="750.5967"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="1497" y1="750.5967" y2="750.5967"/><line style="stroke:#000000;stroke-width:1.0;" x1="0" x2="1497" y1="753.5967" y2="753.5967"/><rect fill="#EEEEEE" height="23.3105" style="stroke:#000000;stroke-width:2.0;" width="179" x="659" y="739.9414"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="161" x="665" y="756.5098">Card secure transaction</text><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="127.5" y1="825.1836" y2="825.1836"/><line style="stroke:#181818;stroke-width:1.0;" x1="127.5" x2="127.5" y1="825.1836" y2="838.1836"/><line style="stroke:#181818;stroke-width:1.0;" x1="86.5" x2="127.5" y1="838.1836" y2="838.1836"/><polygon fill="#181818" points="96.5,834.1836,86.5,838.1836,96.5,842.1836,92.5,838.1836" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="72" x="92.5" y="789.8203">instantiate</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="160" x="168.5" y="789.8203">Calypso card transaction:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="124.5" y="805.1309">- Calypso card resource</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="124.5" y="820.4414">- Calypso SAM resource</text><polygon fill="#181818" points="386.5,878.8047,396.5,882.8047,386.5,886.8047,390.5,882.8047" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="392.5" y1="882.8047" y2="882.8047"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="52" x="92.5" y="862.752">process</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="238" x="148.5" y="862.752">Change Key (current key #x reference,</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="137" x="220.5" y="878.0625">new key #x reference)</text><polygon fill="#0000FF" points="687.5,938.7363,697.5,942.7363,687.5,946.7363,691.5,942.7363" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;" x1="408.5" x2="693.5" y1="942.7363" y2="942.7363"/><text fill="#0000FF" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="415.5" y="907.373">Card #2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="415.5" y="922.6836">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="447.5" y="937.9941">- APDU list</text><polygon fill="#181818" points="906.5,968.0469,916.5,972.0469,906.5,976.0469,910.5,972.0469" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="709.5" x2="912.5" y1="972.0469" y2="972.0469"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="87" x="716.5" y="967.3047">Get Challenge</text><polygon fill="#181818" points="720.5,997.3574,710.5,1001.3574,720.5,1005.3574,716.5,1001.3574" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="714.5" x2="917.5" y1="1001.3574" y2="1001.3574"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="101" x="726.5" y="996.6152">[Card challenge]</text><polygon fill="#0000FF" points="419.5,1026.668,409.5,1030.668,419.5,1034.668,415.5,1030.668" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413.5" x2="703.5" y1="1030.668" y2="1030.668"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="101" x="425.5" y="1025.9258">[Card challenge]</text><polygon fill="#00FF00" points="992,1086.5996,1002,1090.5996,992,1094.5996,996,1090.5996" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;" x1="408.5" x2="998" y1="1090.5996" y2="1090.5996"/><text fill="#008000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="51" x="415.5" y="1055.2363">SAM #1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="415.5" y="1070.5469">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="447.5" y="1085.8574">- APDU list</text><polygon fill="#181818" points="1444,1115.9102,1454,1119.9102,1444,1123.9102,1448,1119.9102" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1014" x2="1450" y1="1119.9102" y2="1119.9102"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="181" x="1021" y="1115.168">select diversifier (card serial)</text><polygon fill="#181818" points="1025,1129.9102,1015,1133.9102,1025,1137.9102,1021,1133.9102" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1019" x2="1455" y1="1133.9102" y2="1133.9102"/><polygon fill="#181818" points="1444,1159.2207,1454,1163.2207,1444,1167.2207,1448,1163.2207" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1014" x2="1450" y1="1163.2207" y2="1163.2207"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="185" x="1021" y="1158.4785">Give Random (card challenge)</text><polygon fill="#181818" points="1025,1188.5313,1015,1192.5313,1025,1196.5313,1021,1192.5313" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1019" x2="1455" y1="1192.5313" y2="1192.5313"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="22" x="1031" y="1187.7891">ack</text><polygon fill="#181818" points="1444,1217.8418,1454,1221.8418,1444,1225.8418,1448,1221.8418" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1014" x2="1450" y1="1221.8418" y2="1221.8418"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="418" x="1021" y="1217.0996">Card Generate Key (new key reference, old ciphering key reference)</text><polygon fill="#181818" points="1025,1247.1523,1015,1251.1523,1025,1255.1523,1021,1251.1523" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1019" x2="1455" y1="1251.1523" y2="1251.1523"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="1031" y="1246.4102">[ciphered key #x]</text><polygon fill="#00FF00" points="419.5,1276.4629,409.5,1280.4629,419.5,1284.4629,415.5,1280.4629" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413.5" x2="1008" y1="1280.4629" y2="1280.4629"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="425.5" y="1275.7207">[ciphered key #x]</text><polygon fill="#0000FF" points="687.5,1336.3945,697.5,1340.3945,687.5,1344.3945,691.5,1340.3945" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;" x1="408.5" x2="693.5" y1="1340.3945" y2="1340.3945"/><text fill="#0000FF" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="415.5" y="1305.0313">Card #3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="415.5" y="1320.3418">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="447.5" y="1335.6523">- APDU list</text><polygon fill="#181818" points="906.5,1365.7051,916.5,1369.7051,906.5,1373.7051,910.5,1369.7051" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="709.5" x2="912.5" y1="1369.7051" y2="1369.7051"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="185" x="716.5" y="1364.9629">Change Key (ciphered key #x)</text><polygon fill="#181818" points="720.5,1395.0156,710.5,1399.0156,720.5,1403.0156,716.5,1399.0156" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="714.5" x2="917.5" y1="1399.0156" y2="1399.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="22" x="726.5" y="1394.2734">ack</text><polygon fill="#0000FF" points="419.5,1424.3262,409.5,1428.3262,419.5,1432.3262,415.5,1428.3262" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413.5" x2="703.5" y1="1428.3262" y2="1428.3262"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="22" x="425.5" y="1423.584">ack</text><polygon fill="#181818" points="96.5,1514.8789,86.5,1518.8789,96.5,1522.8789,92.5,1518.8789" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="402.5" y1="1518.8789" y2="1518.8789"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="102.5" y="1452.8945">[Calypso card image:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="236" x="134.5" y="1468.2051">- identification data with PIN support</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="134.5" y="1483.5156">- key #1 reference (updated)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="134.5" y="1498.8262">- key #2 reference</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="120" x="134.5" y="1514.1367">- key #3 reference]</text><polygon fill="#181818" points="386.5,1544.1895,396.5,1548.1895,386.5,1552.1895,390.5,1548.1895" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="392.5" y1="1548.1895" y2="1548.1895"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152" x="92.5" y="1543.4473">prepare: release channel</text><polygon fill="#181818" points="96.5,1558.1895,86.5,1562.1895,96.5,1566.1895,92.5,1562.1895" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="402.5" y1="1562.1895" y2="1562.1895"/><polygon fill="#181818" points="386.5,1602.8105,396.5,1606.8105,386.5,1610.8105,390.5,1606.8105" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="392.5" y1="1606.8105" y2="1606.8105"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="92.5" y="1586.7578">prepare</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="4" x="146.5" y="1586.7578">:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="109" x="124.5" y="1602.0684">- release channel</text><polygon fill="#181818" points="96.5,1616.8105,86.5,1620.8105,96.5,1624.8105,92.5,1620.8105" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="402.5" y1="1620.8105" y2="1620.8105"/><polygon fill="#181818" points="386.5,1646.1211,396.5,1650.1211,386.5,1654.1211,390.5,1650.1211" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="85.5" x2="392.5" y1="1650.1211" y2="1650.1211"/><text fill="#FF0000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="52" x="92.5" y="1645.3789">process</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="171" x="148.5" y="1645.3789">Change PIN (new PIN value)</text><polygon fill="#0000FF" points="687.5,1706.0527,697.5,1710.0527,687.5,1714.0527,691.5,1710.0527" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;" x1="408.5" x2="693.5" y1="1710.0527" y2="1710.0527"/><text fill="#0000FF" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="415.5" y="1674.6895">Card #4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="415.5" y="1690">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="447.5" y="1705.3105">- APDU list</text><polygon fill="#181818" points="906.5,1735.3633,916.5,1739.3633,906.5,1743.3633,910.5,1739.3633" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="709.5" x2="912.5" y1="1739.3633" y2="1739.3633"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="87" x="716.5" y="1734.6211">Get Challenge</text><polygon fill="#181818" points="720.5,1764.6738,710.5,1768.6738,720.5,1772.6738,716.5,1768.6738" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="714.5" x2="917.5" y1="1768.6738" y2="1768.6738"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="101" x="726.5" y="1763.9316">[Card challenge]</text><polygon fill="#0000FF" points="419.5,1793.9844,409.5,1797.9844,419.5,1801.9844,415.5,1797.9844" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413.5" x2="703.5" y1="1797.9844" y2="1797.9844"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="101" x="425.5" y="1793.2422">[Card challenge]</text><polygon fill="#00FF00" points="992,1853.916,1002,1857.916,992,1861.916,996,1857.916" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;" x1="408.5" x2="998" y1="1857.916" y2="1857.916"/><text fill="#008000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="51" x="415.5" y="1822.5527">SAM #2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="415.5" y="1837.8633">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="447.5" y="1853.1738">- APDU list</text><polygon fill="#181818" points="1444,1883.2266,1454,1887.2266,1444,1891.2266,1448,1887.2266" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1014" x2="1450" y1="1887.2266" y2="1887.2266"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="181" x="1021" y="1882.4844">select diversifier (card serial)</text><polygon fill="#181818" points="1025,1897.2266,1015,1901.2266,1025,1905.2266,1021,1901.2266" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1019" x2="1455" y1="1901.2266" y2="1901.2266"/><polygon fill="#181818" points="1444,1926.5371,1454,1930.5371,1444,1934.5371,1448,1930.5371" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1014" x2="1450" y1="1930.5371" y2="1930.5371"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="185" x="1021" y="1925.7949">Give Random (card challenge)</text><polygon fill="#181818" points="1025,1955.8477,1015,1959.8477,1025,1963.8477,1021,1959.8477" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1019" x2="1455" y1="1959.8477" y2="1959.8477"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="22" x="1031" y="1955.1055">ack</text><polygon fill="#181818" points="1444,1985.1582,1454,1989.1582,1444,1993.1582,1448,1989.1582" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="1014" x2="1450" y1="1989.1582" y2="1989.1582"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="351" x="1021" y="1984.416">Card Cipher PIN (new plain PIN, ciphering key reference)</text><polygon fill="#181818" points="1025,2014.4688,1015,2018.4688,1025,2022.4688,1021,2018.4688" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="1019" x2="1455" y1="2018.4688" y2="2018.4688"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="87" x="1031" y="2013.7266">[ciphered PIN]</text><polygon fill="#00FF00" points="419.5,2043.7793,409.5,2047.7793,419.5,2051.7793,415.5,2047.7793" style="stroke:#00FF00;stroke-width:1.0;"/><line style="stroke:#00FF00;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413.5" x2="1008" y1="2047.7793" y2="2047.7793"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="87" x="425.5" y="2043.0371">[ciphered PIN]</text><polygon fill="#0000FF" points="687.5,2103.7109,697.5,2107.7109,687.5,2111.7109,691.5,2107.7109" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;" x1="408.5" x2="693.5" y1="2107.7109" y2="2107.7109"/><text fill="#0000FF" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="54" x="415.5" y="2072.3477">Card #5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="415.5" y="2087.6582">transmit card request</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="71" x="447.5" y="2102.9688">- APDU list</text><polygon fill="#181818" points="906.5,2133.0215,916.5,2137.0215,906.5,2141.0215,910.5,2137.0215" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="709.5" x2="912.5" y1="2137.0215" y2="2137.0215"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="163" x="716.5" y="2132.2793">Change PIN (ciphered PIN)</text><polygon fill="#181818" points="720.5,2162.332,710.5,2166.332,720.5,2170.332,716.5,2166.332" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="714.5" x2="917.5" y1="2166.332" y2="2166.332"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="22" x="726.5" y="2161.5898">ack</text><polygon fill="#181818" points="906.5,2191.6426,916.5,2195.6426,906.5,2199.6426,910.5,2195.6426" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="709.5" x2="912.5" y1="2195.6426" y2="2195.6426"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117" x="716.5" y="2190.9004">close card channel</text><polygon fill="#181818" points="720.5,2205.6426,710.5,2209.6426,720.5,2213.6426,716.5,2209.6426" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="714.5" x2="922.5" y1="2209.6426" y2="2209.6426"/><polygon fill="#0000FF" points="419.5,2234.9531,409.5,2238.9531,419.5,2242.9531,415.5,2238.9531" style="stroke:#0000FF;stroke-width:1.0;"/><line style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="413.5" x2="703.5" y1="2238.9531" y2="2238.9531"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="22" x="425.5" y="2234.2109">ack</text><polygon fill="#181818" points="96.5,2325.5059,86.5,2329.5059,96.5,2333.5059,92.5,2329.5059" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="90.5" x2="402.5" y1="2329.5059" y2="2329.5059"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="131" x="102.5" y="2263.5215">[Calypso card image:</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="236" x="134.5" y="2278.832">- identification data with PIN support</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="134.5" y="2294.1426">- key #1 reference (updated)</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="134.5" y="2309.4531">- key #2 reference</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="120" x="134.5" y="2324.7637">- key #3 reference]</text><!--MD5=[ab1347586b2f0a5df009ea5b5d609d09]
+@startuml
+
+'skinparam ClassBorderColor #F1C40F
+skinparam ClassBorderColor #D4AC0D
+skinparam stereotypeABorderColor #A9DCDF
+skinparam stereotypeIBorderColor #B4A7E5
+skinparam stereotypeCBorderColor #ADD1B2
+skinparam stereotypeEBorderColor #EB93DF
+skinparam shadowing false
+
+skinparam StateBorderColor #D4AC0D
+skinparam ActivityBorderColor #D4AC0D
+
+' Red
+skinparam ClassBackgroundColor<<red>> #FDEDEC
+skinparam ClassBorderColor<<red>> #E74C3C
+hide <<red>> stereotype
+' Purple
+skinparam ClassBackgroundColor<<purple>> #F4ECF7
+skinparam ClassBorderColor<<purple>> #8E44AD
+hide <<purple>> stereotype
+' blue
+skinparam ClassBackgroundColor<<blue>> #EBF5FB
+skinparam ClassBorderColor<<blue>> #3498DB
+hide <<blue>> stereotype
+' Green
+skinparam ClassBackgroundColor<<green>> #EAFAF1
+skinparam ClassBorderColor<<green>> #2ECC71
+hide <<green>> stereotype
+
+' Orange
+skinparam ClassBackgroundColor<<orange>> #FDF2E9
+skinparam ClassBorderColor<<orange>> #E67E22
+hide <<orange>> stereotype
+
+' Grey
+skinparam ClassBackgroundColor<<grey>> #EAECEE
+skinparam ClassBorderColor<<grey>> #2C3E50
+hide <<grey>> stereotype
+
+actor "Ticketing Application" as app #gold
+participant "Calypso API" as capi #pink
+participant "Reader API" as rapi #pink
+participant "Calypso Card\nReader" as cardReader #lightBlue
+boundary "**Card**" as card #lightBlue
+participant "Calypso SAM\nReader" as samReader #lightGreen
+boundary "selected\n**SAM**" as sam #lightGreen
+
+activate app #gold
+activate sam #lightGreen
+
+== Card selection & identification ==
+
+app->capi: <font color=red>**prepare**</font> card selection scenario:\n\t- filter by specific AID\n\t- Select File current DF
+activate capi  #pink
+note over capi
+    Recover the card keyset information through the DF selection.
+end note
+
+capi- ->app
+deactivate capi
+
+app->rapi: <font color=red>**process**</font> explicit card selection scenario
+activate rapi  #pink
+rapi-[#0000FF]>cardReader: <font color=blue>**Card #1**</font>\ntransmit selection request\n\t- card selector\n\t- APDU list
+activate cardReader #lightBlue
+
+cardReader->card: open card channel
+activate card #lightBlue
+card- ->cardReader
+cardReader->card: select application (aid)
+card- ->cardReader: [card FCI]
+cardReader->cardReader: checks invalidation status
+
+'group Card APDU commands outside secure session
+    cardReader->card: Select File (current DF)
+    card- ->cardReader: [KIF/KVC for key #1 #2 #3]
+'end
+
+cardReader- -[#0000FF]>rapi: receive selection response
+deactivate cardReader
+
+rapi- ->app: selected active SmartCard image
+deactivate rapi
+
+app->capi: **cast** Calypso card
+activate capi  #pink
+capi- ->app: [Calypso card image:\n\t- identification data with PIN support\n\t- key #1 reference\n\t- key #2 reference\n\t- key #3 reference]
+
+deactivate capi
+
+== Card secure transaction ==
+
+app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
+
+
+app->capi: <font color=red>**process**</font> Change Key (current key #x reference,\n\t\t\t\tnew key #x reference)
+activate capi  #pink
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+'group Card APDU commands inside session
+    cardReader->card: Get Challenge
+    card- ->cardReader: [Card challenge]
+'end
+
+cardReader- -[#0000FF]>capi: [Card challenge]
+deactivate cardReader
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #1**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+samReader->sam: select diversifier (card serial)
+sam- ->samReader
+samReader->sam: Give Random (card challenge)
+sam- ->samReader: ack
+samReader->sam: Card Generate Key (new key reference, old ciphering key reference)
+sam- ->samReader: [ciphered key #x]
+
+samReader-[#00FF00]->capi: [ciphered key #x]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #3**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+'group Card APDU commands inside session
+    cardReader->card: Change Key (ciphered key #x)
+    card- ->cardReader: ack
+'end
+
+
+cardReader-[#0000FF]->capi: ack
+deactivate cardReader
+
+capi- ->app: [Calypso card image:\n\t- identification data with PIN support\n\t- key #1 reference (updated)\n\t- key #2 reference\n\t- key #3 reference]
+deactivate capi
+
+app->capi: prepare: release channel
+activate capi  #pink
+capi- ->app
+deactivate capi
+
+app->capi: <font color=red>**prepare**</font>:\n\t- release channel
+activate capi  #pink
+capi- ->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> Change PIN (new PIN value)
+activate capi  #pink
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #4**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+'group Card APDU commands inside session
+    cardReader->card: Get Challenge
+    card- ->cardReader: [Card challenge]
+'end
+
+cardReader- -[#0000FF]>capi: [Card challenge]
+deactivate cardReader
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #2**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+samReader->sam: select diversifier (card serial)
+sam- ->samReader
+samReader->sam: Give Random (card challenge)
+sam- ->samReader: ack
+samReader->sam: Card Cipher PIN (new plain PIN, ciphering key reference)
+sam- ->samReader: [ciphered PIN]
+
+samReader-[#00FF00]->capi: [ciphered PIN]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #5**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+'group Card APDU commands inside session
+    cardReader->card: Change PIN (ciphered PIN)
+    card- ->cardReader: ack
+'end
+
+cardReader->card: close card channel
+card- ->cardReader
+deactivate card
+
+cardReader-[#0000FF]->capi: ack
+deactivate cardReader
+
+capi- ->app: [Calypso card image:\n\t- identification data with PIN support\n\t- key #1 reference (updated)\n\t- key #2 reference\n\t- key #3 reference]
+deactivate capi
+
+deactivate capi
+@enduml
+
+@startuml
+
+skinparam ClassBorderColor #D4AC0D
+skinparam stereotypeABorderColor #A9DCDF
+skinparam stereotypeIBorderColor #B4A7E5
+skinparam stereotypeCBorderColor #ADD1B2
+skinparam stereotypeEBorderColor #EB93DF
+skinparam shadowing false
+
+skinparam StateBorderColor #D4AC0D
+skinparam ActivityBorderColor #D4AC0D
+
+skinparam ClassBackgroundColor<<red>> #FDEDEC
+skinparam ClassBorderColor<<red>> #E74C3C
+hide <<red>> stereotype
+skinparam ClassBackgroundColor<<purple>> #F4ECF7
+skinparam ClassBorderColor<<purple>> #8E44AD
+hide <<purple>> stereotype
+skinparam ClassBackgroundColor<<blue>> #EBF5FB
+skinparam ClassBorderColor<<blue>> #3498DB
+hide <<blue>> stereotype
+skinparam ClassBackgroundColor<<green>> #EAFAF1
+skinparam ClassBorderColor<<green>> #2ECC71
+hide <<green>> stereotype
+
+skinparam ClassBackgroundColor<<orange>> #FDF2E9
+skinparam ClassBorderColor<<orange>> #E67E22
+hide <<orange>> stereotype
+
+skinparam ClassBackgroundColor<<grey>> #EAECEE
+skinparam ClassBorderColor<<grey>> #2C3E50
+hide <<grey>> stereotype
+
+actor "Ticketing Application" as app #gold
+participant "Calypso API" as capi #pink
+participant "Reader API" as rapi #pink
+participant "Calypso Card\nReader" as cardReader #lightBlue
+boundary "**Card**" as card #lightBlue
+participant "Calypso SAM\nReader" as samReader #lightGreen
+boundary "selected\n**SAM**" as sam #lightGreen
+
+activate app #gold
+activate sam #lightGreen
+
+== Card selection & identification ==
+
+app->capi: <font color=red>**prepare**</font> card selection scenario:\n\t- filter by specific AID\n\t- Select File current DF
+activate capi  #pink
+note over capi
+    Recover the card keyset information through the DF selection.
+end note
+
+capi- ->app
+deactivate capi
+
+app->rapi: <font color=red>**process**</font> explicit card selection scenario
+activate rapi  #pink
+rapi-[#0000FF]>cardReader: <font color=blue>**Card #1**</font>\ntransmit selection request\n\t- card selector\n\t- APDU list
+activate cardReader #lightBlue
+
+cardReader->card: open card channel
+activate card #lightBlue
+card- ->cardReader
+cardReader->card: select application (aid)
+card- ->cardReader: [card FCI]
+cardReader->cardReader: checks invalidation status
+
+    cardReader->card: Select File (current DF)
+    card- ->cardReader: [KIF/KVC for key #1 #2 #3]
+
+cardReader- -[#0000FF]>rapi: receive selection response
+deactivate cardReader
+
+rapi- ->app: selected active SmartCard image
+deactivate rapi
+
+app->capi: **cast** Calypso card
+activate capi  #pink
+capi- ->app: [Calypso card image:\n\t- identification data with PIN support\n\t- key #1 reference\n\t- key #2 reference\n\t- key #3 reference]
+
+deactivate capi
+
+== Card secure transaction ==
+
+app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
+
+
+app->capi: <font color=red>**process**</font> Change Key (current key #x reference,\n\t\t\t\tnew key #x reference)
+activate capi  #pink
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+    cardReader->card: Get Challenge
+    card- ->cardReader: [Card challenge]
+
+cardReader- -[#0000FF]>capi: [Card challenge]
+deactivate cardReader
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #1**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+samReader->sam: select diversifier (card serial)
+sam- ->samReader
+samReader->sam: Give Random (card challenge)
+sam- ->samReader: ack
+samReader->sam: Card Generate Key (new key reference, old ciphering key reference)
+sam- ->samReader: [ciphered key #x]
+
+samReader-[#00FF00]->capi: [ciphered key #x]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #3**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+    cardReader->card: Change Key (ciphered key #x)
+    card- ->cardReader: ack
+
+
+cardReader-[#0000FF]->capi: ack
+deactivate cardReader
+
+capi- ->app: [Calypso card image:\n\t- identification data with PIN support\n\t- key #1 reference (updated)\n\t- key #2 reference\n\t- key #3 reference]
+deactivate capi
+
+app->capi: prepare: release channel
+activate capi  #pink
+capi- ->app
+deactivate capi
+
+app->capi: <font color=red>**prepare**</font>:\n\t- release channel
+activate capi  #pink
+capi- ->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> Change PIN (new PIN value)
+activate capi  #pink
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #4**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+    cardReader->card: Get Challenge
+    card- ->cardReader: [Card challenge]
+
+cardReader- -[#0000FF]>capi: [Card challenge]
+deactivate cardReader
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #2**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+samReader->sam: select diversifier (card serial)
+sam- ->samReader
+samReader->sam: Give Random (card challenge)
+sam- ->samReader: ack
+samReader->sam: Card Cipher PIN (new plain PIN, ciphering key reference)
+sam- ->samReader: [ciphered PIN]
+
+samReader-[#00FF00]->capi: [ciphered PIN]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #5**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+    cardReader->card: Change PIN (ciphered PIN)
+    card- ->cardReader: ack
+
+cardReader->card: close card channel
+card- ->cardReader
+deactivate card
+
+cardReader-[#0000FF]->capi: ack
+deactivate cardReader
+
+capi- ->app: [Calypso card image:\n\t- identification data with PIN support\n\t- key #1 reference (updated)\n\t- key #2 reference\n\t- key #3 reference]
+deactivate capi
+
+deactivate capi
+@enduml
+
+PlantUML version 1.2022.4(Sat Apr 09 17:29:17 RET 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: fr
+Country: FR
+--></g></svg>
