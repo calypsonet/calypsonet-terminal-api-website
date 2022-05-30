@@ -14,7 +14,7 @@
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin=anonymous media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/darcula.min.css crossorigin=anonymous title=hl-light media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/darcula.min.css crossorigin=anonymous title=hl-dark media=print onload="this.media='all'" disabled>
-<link rel=stylesheet href=../../css/wowchemy.f61eee4caed37d9fc646a60ac588051f.css>
+<link rel=stylesheet href=../../css/wowchemy.b034eb98a6aa0a7c0324c16ef2ef2848.css>
 <link rel=manifest href=../../manifest.webmanifest>
 <link rel=icon type=image/png href=../../media/icon_huceb5ed780c823eaac47da25fabbbc8be_2207_32x32_fill_lanczos_center_3.png>
 <link rel=apple-touch-icon type=image/png href=../../media/icon_huceb5ed780c823eaac47da25fabbbc8be_2207_180x180_fill_lanczos_center_3.png>
@@ -25,7 +25,7 @@
 <meta property="og:title" content="Calypsonet Terminal Reader API | Calypso Networks Association Terminal APIs">
 <meta property="og:description" content="Public API which defines the elements shared by the reader."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
 <meta property="twitter:image" content="https://terminal-api.calypsonet.org/media/logo.svg"><meta property="og:locale" content="en-us">
-<meta property="article:modified_time" content="2022-05-25T12:17:02+04:00">
+<meta property="article:modified_time" content="2022-05-30T15:03:34+02:00">
 <title>Calypsonet Terminal Reader API | Calypso Networks Association Terminal APIs</title>
 </head>
 <body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=b11839ed0888d32a0cc4fe9885a359ec>
@@ -147,7 +147,9 @@ Overview
 <div class=docs-article-container>
 <h1>Calypsonet Terminal Reader API</h1>
 <div class=article-style>
+<hr>
 <p>The <strong>Calypsonet Terminal Reader API</strong> defines the public elements shared by the reader.</p>
+<hr>
 <h2 id=interfaces>Interfaces</h2>
 <p>The reader API is a high-level interface used by terminal applications to operate smart card readers, it:</p>
 <ul>
@@ -195,6 +197,7 @@ Overview
 <p>during the card selection preparation, it could also be explicitly requested to to close the logical channel after the card selection.</p>
 </li>
 </ul>
+<hr>
 <h2 id=card-selection-modes>Card selection modes</h2>
 <p>Depending on the card transaction use case, or on the reader capability, there are two ways to manage the selection of a card:</p>
 <ul>
@@ -207,6 +210,7 @@ Overview
 </div><figcaption>
 Reader API - Card Selection Modes - Activity Diagram
 </figcaption></figure>
+<hr>
 <h2 id=observable-reader-states>Observable reader states</h2>
 <p>An observable reader is active only when at least one reader observer is registered, and if the start of the detection has been requested.
 When active, an observable reader could switch between three internal states:</p>
@@ -246,8 +250,10 @@ Reader API - Observable Reader States - Activity Diagram
 <p>If a card detection is started with the <code>REPEATING</code> detection mode, then later when the card is removed, the reader starts again the detection of a new card.</p>
 <p>Notification of card removal during the card removal wait state is a feature of any observable reader.
 However, some observable readers may additionally have the ability to notify removal during the card processing state.</p>
+<hr>
 <h2 id=limitations--constraints>Limitations & constraints</h2>
 <p>On a specific card reader, the Reader API allows to address only a <strong>single logical channel</strong>.</p>
+<hr>
 <h1 id=heading></h1>
 <h2 id=implementations--api-documentation>Implementations & API Documentation</h2>
 <div class="alert alert-note">
@@ -261,7 +267,7 @@ Therefore, it is recommended to always perform a <strong>dynamic import</strong>
 <div>
 <strong><code>1.0.0</code></strong>
 <span class=component-metadata>
-<i class="fas fa-doc pr-1 fa-fw"></i> <a href=https://calypsonet.github.io/calypsonet-terminal-reader-java-api/>Java Doc</a></span>
+<i class="fas fa-book pr-1 fa-fw"></i> <a href=https://calypsonet.github.io/calypsonet-terminal-reader-java-api/>API documentation</a></span>
 <span class=component-metadata>
 <i class="fab fa-github pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-reader-java-api/>GitHub repository</a></span>
 <span class=component-metadata>
@@ -302,6 +308,8 @@ Maven
 <div>
 <strong><code>1.0.0</code></strong>
 <span class=component-metadata>
+<i class="fas fa-book pr-1 fa-fw"></i> <a href=https://calypsonet.github.io/calypsonet-terminal-reader-cpp-api/>API documentation</a></span>
+<span class=component-metadata>
 <i class="fab fa-github pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/>GitHub repository</a></span>
 </div>
 </div>
@@ -316,7 +324,7 @@ Maven
 </div>
 </div>
 <div class=body-footer>
-<p>Last updated on 2022-05-25</p>
+<p>Last updated on 2022-05-30</p>
 </div>
 </article>
 <footer class=site-footer>

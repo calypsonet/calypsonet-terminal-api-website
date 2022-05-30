@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Terminal architecture - APIs &amp; software layers | Calypso Networks Association Terminal APIs</title><link>https://terminal-api.calypsonet.org/apis/</link><atom:link href="https://terminal-api.calypsonet.org/apis/index.xml" rel="self" type="application/rss+xml"/><description>Terminal architecture - APIs &amp; software layers</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Calypso Networks Association. All Rights Reserved.</copyright><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Terminal architecture - APIs &amp; software layers</title><link>https://terminal-api.calypsonet.org/apis/</link></image><item><title>Calypsonet Terminal Reader API</title><link>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-reader-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-reader-api/</guid><description>&lt;p>The &lt;strong>Calypsonet Terminal Reader API&lt;/strong> defines the public elements shared by the reader.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Terminal architecture - APIs &amp; software layers | Calypso Networks Association Terminal APIs</title><link>https://terminal-api.calypsonet.org/apis/</link><atom:link href="https://terminal-api.calypsonet.org/apis/index.xml" rel="self" type="application/rss+xml"/><description>Terminal architecture - APIs &amp; software layers</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2022 Calypso Networks Association. All Rights Reserved.</copyright><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Terminal architecture - APIs &amp; software layers</title><link>https://terminal-api.calypsonet.org/apis/</link></image><item><title>Calypsonet Terminal Reader API</title><link>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-reader-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-reader-api/</guid><description>&lt;hr>
+&lt;p>The &lt;strong>Calypsonet Terminal Reader API&lt;/strong> defines the public elements shared by the reader.&lt;/p>
+&lt;hr>
 &lt;h2 id="interfaces">Interfaces&lt;/h2>
 &lt;p>The reader API is a high-level interface used by terminal applications to operate smart card readers, it:&lt;/p>
 &lt;ul>
@@ -46,6 +48,7 @@
 &lt;p>during the card selection preparation, it could also be explicitly requested to to close the logical channel after the card selection.&lt;/p>
 &lt;/li>
 &lt;/ul>
+&lt;hr>
 &lt;h2 id="card-selection-modes">Card selection modes&lt;/h2>
 &lt;p>Depending on the card transaction use case, or on the reader capability, there are two ways to manage the selection of a card:&lt;/p>
 &lt;ul>
@@ -61,6 +64,7 @@
 &lt;/div>&lt;figcaption>
 Reader API - Card Selection Modes - Activity Diagram
 &lt;/figcaption>&lt;/figure>
+&lt;hr>
 &lt;h2 id="observable-reader-states">Observable reader states&lt;/h2>
 &lt;p>An observable reader is active only when at least one reader observer is registered, and if the start of the detection has been requested.
 When active, an observable reader could switch between three internal states:&lt;/p>
@@ -103,8 +107,10 @@ Reader API - Observable Reader States - Activity Diagram
 &lt;p>If a card detection is started with the &lt;code>REPEATING&lt;/code> detection mode, then later when the card is removed, the reader starts again the detection of a new card.&lt;/p>
 &lt;p>Notification of card removal during the card removal wait state is a feature of any observable reader.
 However, some observable readers may additionally have the ability to notify removal during the card processing state.&lt;/p>
+&lt;hr>
 &lt;h2 id="limitations--constraints">Limitations &amp;amp; constraints&lt;/h2>
 &lt;p>On a specific card reader, the Reader API allows to address only a &lt;strong>single logical channel&lt;/strong>.&lt;/p>
+&lt;hr>
 &lt;h1 id="heading">&lt;/h1>
 &lt;h2 id="implementations--api-documentation">Implementations &amp;amp; API Documentation&lt;/h2>
 &lt;div class="alert alert-note">
@@ -118,7 +124,7 @@ Therefore, it is recommended to always perform a &lt;strong>dynamic import&lt;/s
 &lt;div>
 &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-doc pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-reader-java-api/">Java Doc&lt;/a>&lt;/span>
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-reader-java-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-java-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -168,9 +174,13 @@ id="tabs-4-2" role="tabpanel" aria-labelled-by="tabs-4-2-tab">
 &lt;div>
 &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-reader-cpp-api/">API documentation&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
-&lt;/div></description></item><item><title>Calypsonet Terminal Card API</title><link>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-card-api/</guid><description>&lt;p>The &lt;strong>Calypsonet Terminal Card API&lt;/strong> defines the internal elements shared by the reader layer to implement specific card layers (like the Calypso Card layer).&lt;/p>
+&lt;/div></description></item><item><title>Calypsonet Terminal Card API</title><link>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-card-api/</guid><description>&lt;hr>
+&lt;p>The &lt;strong>Calypsonet Terminal Card API&lt;/strong> defines the internal elements shared by the reader layer to implement specific card layers (like the Calypso Card layer).&lt;/p>
+&lt;hr>
 &lt;h2 id="interfaces">Interfaces&lt;/h2>
 &lt;p>
 &lt;figure >
@@ -178,12 +188,14 @@ id="tabs-4-2" role="tabpanel" aria-labelled-by="tabs-4-2-tab">
 &lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-card-java-api/1.0.1-SNAPSHOT/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
+&lt;hr>
 &lt;h2 id="limitations--constraints">Limitations &amp;amp; constraints&lt;/h2>
 &lt;p>The Card API doesn&amp;rsquo;t allow to request the transmission to a card of the APDU commands &amp;ldquo;Select Application by DF Name&amp;rdquo; or &amp;ldquo;Get Response&amp;rdquo;:&lt;/p>
 &lt;ul>
 &lt;li>the selection of a specific card application could be managed only through a Card Selection Request.&lt;/li>
 &lt;li>the APDU response status words 61XYh &amp;amp; 6CXYh are automatically handled by the reader layer library by issuing a Get Response or by re-issuing the previous command with the rigth &amp;lsquo;Le&amp;rsquo; field.&lt;/li>
 &lt;/ul>
+&lt;hr>
 &lt;h1 id="heading">&lt;/h1>
 &lt;h2 id="implementations--api-documentation">Implementations &amp;amp; API Documentation&lt;/h2>
 &lt;div class="alert alert-note">
@@ -197,7 +209,7 @@ Therefore, it is recommended to always perform a &lt;strong>dynamic import&lt;/s
 &lt;div>
 &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-doc pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-card-java-api/">Java Doc&lt;/a>&lt;/span>
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-card-java-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-java-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -247,9 +259,13 @@ id="tabs-2-2" role="tabpanel" aria-labelled-by="tabs-2-2-tab">
 &lt;div>
 &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-card-cpp-api/">API documentation&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-cpp-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
-&lt;/div></description></item><item><title>Calypsonet Terminal Calypso API</title><link>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-calypso-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-calypso-api/</guid><description>&lt;p>The &lt;strong>Calypsonet Terminal Calypso API&lt;/strong> is an extension of the &lt;strong>Calypsonet Terminal Reader API&lt;/strong> which provides a high-level API standardizing the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, etc&amp;hellip;).&lt;/p>
+&lt;/div></description></item><item><title>Calypsonet Terminal Calypso API</title><link>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-calypso-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-calypso-api/</guid><description>&lt;hr>
+&lt;p>The &lt;strong>Calypsonet Terminal Calypso API&lt;/strong> is an extension of the &lt;strong>Calypsonet Terminal Reader API&lt;/strong> which provides a high-level API standardizing the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, etc&amp;hellip;).&lt;/p>
+&lt;hr>
 &lt;h2 id="interfaces">Interfaces&lt;/h2>
 &lt;p>The Calypso API provides the means to select a target card or SAM and then perform a transaction with the selected target.&lt;/p>
 &lt;ul>
@@ -263,14 +279,16 @@ A transaction with a Calypso PO is fully managed through the PoTransaction objec
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/1.2.0-SNAPSHOT/api_class_diagram.svg" alt="Calypso API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/1.2.0/api_class_diagram.svg" alt="Calypso API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
+&lt;hr>
 &lt;h2 id="selection-of-a-calypso-card">Selection of a Calypso card&lt;/h2>
 &lt;p>A Calypso card selection could be defined to accept or not invalidated card.&lt;/p>
 &lt;p>Through the selection only basic Select File (without changing DF) or Read Records commands could joined: the goal is to recover in the selection result some file status or record data of elements present in all cards of a ticketing networks.
 The type of card product has not yet been identified, the commands are prepared to be supported by all types of card products: Prime, Ligth, or Regular.&lt;/p>
 &lt;p>Then if a Calypso card has matched the selection request, a Calypso card image is returned, some file headers or file records could be filled depending on the information recovered in the responses of the Select File or Read Records processed.&lt;/p>
+&lt;hr>
 &lt;h2 id="transaction-with-a-calypso-card">Transaction with a Calypso card&lt;/h2>
 &lt;p>Except the operations involving secure processing on &amp;ldquo;data&amp;rdquo; (data signature computation / verification, data ciphering / unciphering), only commands for the card need to be prepared though the Card Transaction Manager interface.
 Depending on the operation, if necessary the security involving the master SAM must be controlled internally by the Calypso library.&lt;/p>
@@ -343,8 +361,11 @@ Calypso API - Stored Value transaction inside a secure session - Sequence Diagra
 &lt;/div>&lt;figcaption>
 Calypso API - Multiple secure session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
+&lt;hr>
 &lt;h2 id="selection-of-a-calypso-sam">Selection of a Calypso SAM&lt;/h2>
+&lt;hr>
 &lt;h2 id="transaction-with-a-calypso-sam">Transaction with a Calypso SAM&lt;/h2>
+&lt;hr>
 &lt;h1 id="heading">&lt;/h1>
 &lt;h2 id="implementations--api-documentation">Implementations &amp;amp; API Documentation&lt;/h2>
 &lt;div class="alert alert-note">
@@ -356,9 +377,9 @@ Therefore, it is recommended to always perform a &lt;strong>dynamic import&lt;/s
 &lt;h3 id="calypso-api-in-java">Calypso API in Java&lt;/h3>
 &lt;div class="alert alert-note">
 &lt;div>
-&lt;strong>&lt;code>1.1.0&lt;/code>&lt;/strong>
+&lt;strong>&lt;code>1.2.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-doc pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/">Java Doc&lt;/a>&lt;/span>
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -388,25 +409,27 @@ Maven
 &lt;div class="bd-clipboard">&lt;button type="button" class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onClick="javascript:copyTabContentToClipboard('tabs-11', this);">Copy&lt;/button>&lt;/div>
 &lt;div class="tab-content" id="tabs-11-content">&lt;div class="tab-pane fade show active"
 id="tabs-11-0" role="tabpanel" aria-labelled-by="tabs-11-0-tab">
-&lt;pre>&lt;code class="language-gradle">implementation &amp;#39;org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:1.1.&amp;#43;&amp;#39;&lt;/code>&lt;/pre>
+&lt;pre>&lt;code class="language-gradle">implementation &amp;#39;org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:1.2.&amp;#43;&amp;#39;&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;div class="tab-pane fade"
 id="tabs-11-1" role="tabpanel" aria-labelled-by="tabs-11-1-tab">
-&lt;pre>&lt;code class="language-kotlin">implementation(&amp;#34;org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:1.1.&amp;#43;&amp;#34;)&lt;/code>&lt;/pre>
+&lt;pre>&lt;code class="language-kotlin">implementation(&amp;#34;org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:1.2.&amp;#43;&amp;#34;)&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;div class="tab-pane fade"
 id="tabs-11-2" role="tabpanel" aria-labelled-by="tabs-11-2-tab">
 &lt;pre>&lt;code class="language-xml">&amp;lt;dependency&amp;gt;
 &amp;lt;groupId&amp;gt;org.calypsonet.terminal&amp;lt;/groupId&amp;gt;
 &amp;lt;artifactId&amp;gt;calypsonet-terminal-calypso-java-api&amp;lt;/artifactId&amp;gt;
-&amp;lt;version&amp;gt;[1.1.0,1.2.0)&amp;lt;/version&amp;gt;
+&amp;lt;version&amp;gt;[1.2.0,1.3.0)&amp;lt;/version&amp;gt;
 &amp;lt;/dependency&amp;gt;&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;/div>
 &lt;h3 id="calypso-api-in-c">Calypso API in C++&lt;/h3>
 &lt;div class="alert alert-note">
 &lt;div>
-&lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
+&lt;strong>&lt;code>1.1.0&lt;/code>&lt;/strong>
+&lt;span class="component-metadata">
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-cpp-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
