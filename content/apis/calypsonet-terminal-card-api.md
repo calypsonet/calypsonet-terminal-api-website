@@ -7,18 +7,21 @@ weight: 2
 toc: true
 ---
 
+---
 The **Calypsonet Terminal Card API** defines the internal elements shared by the reader layer to implement specific card layers (like the Calypso Card layer).
 
+---
 ## Interfaces
 
 ![Card API - class diagram](https://calypsonet.github.io/calypsonet-terminal-card-java-api/1.0.1-SNAPSHOT/api_class_diagram.svg)
 
-
+---
 ## Limitations & constraints
 The Card API doesn't allow to request the transmission to a card of the APDU commands "Select Application by DF Name" or "Get Response":
 - the selection of a specific card application could be managed only through a Card Selection Request.
 - the APDU response status words 61XYh & 6CXYh are automatically handled by the reader layer library by issuing a Get Response or by re-issuing the previous command with the rigth 'Le' field.
 
+---
 #
 ## Implementations & API Documentation
 
@@ -30,7 +33,7 @@ Therefore, it is recommended to always perform a **dynamic import** as described
 ### Card API in Java
 {{% callout note %}}
 **`{{% calypsonet-terminal-card-java-api-version %}}`**
-<span class="component-metadata">{{< icon name="doc" pack="fas" >}} [Java Doc](https://calypsonet.github.io/calypsonet-terminal-card-java-api/)</span>
+<span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-card-java-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-card-java-api/)</span>
 <span class="component-metadata">{{< icon name="exchange-alt" pack="fas" >}} [Changelog](https://github.com/calypsonet/calypsonet-terminal-card-java-api/blob/main/CHANGELOG.md)</span>
 {{% /callout %}}
@@ -56,5 +59,6 @@ implementation("org.calypsonet.terminal:calypsonet-terminal-card-java-api:{{% ca
 ### Card API in C++
 {{% callout note %}}
 **`{{% calypsonet-terminal-card-cpp-api-version %}}`**
+<span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-card-cpp-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-card-cpp-api/)</span>
 {{% /callout %}}

@@ -7,8 +7,10 @@ weight: 4
 toc: true
 ---
 
+---
 The **Calypsonet Terminal Calypso API** is an extension of the **Calypsonet Terminal Reader API** which provides a high-level API standardizing the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, etc...).
 
+---
 ## Interfaces
 
 The Calypso API  provides the means to select a target card or SAM and then perform a transaction with the selected target.
@@ -21,8 +23,9 @@ The CalypsoCard & CalypsoSam interfaces provide ‘**getters**’ in order to re
 To optimize the number of exchanges with a card reader of a SAM reader, the Calypso API allows to group the commands. A set of command could be first '**prepare**d', and then be '**process**ed' by a selected target at the selection or during the transaction.
 A transaction with a Calypso PO is fully managed through the PoTransaction object:
 
-![Calypso API - class diagram](https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/1.2.0-SNAPSHOT/api_class_diagram.svg)
+![Calypso API - class diagram](https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/1.2.0/api_class_diagram.svg)
 
+---
 ## Selection of a Calypso card
 A Calypso card selection could be defined to accept or not invalidated card.
 
@@ -31,6 +34,7 @@ The type of card product has not yet been identified, the commands are prepared 
 
 Then if a Calypso card has matched the selection request, a Calypso card image is returned, some file headers or file records could be filled depending on the information recovered in the responses of the Select File or Read Records processed.
 
+---
 ## Transaction with a Calypso card
 
 Except the operations involving secure processing on "data" (data signature computation / verification, data ciphering / unciphering), only commands for the card need to be prepared though the Card Transaction Manager interface.
@@ -77,10 +81,13 @@ In most of the cases, it should be possible to handle a secure session with a Ca
 
 {{< figure src="/media/apis/calypso_transaction_multiple_secure_session_sequence_diagram.svg" caption="Calypso API - Multiple secure session - Sequence Diagram" >}}
 
+---
 ## Selection of a Calypso SAM
 
+---
 ## Transaction with a Calypso SAM
 
+---
 #
 ## Implementations & API Documentation
 
@@ -92,7 +99,7 @@ Therefore, it is recommended to always perform a **dynamic import** as described
 ### Calypso API in Java
 {{% callout note %}}
 **`{{% calypsonet-terminal-calypso-java-api-version %}}`**
-<span class="component-metadata">{{< icon name="doc" pack="fas" >}} [Java Doc](https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/)</span>
+<span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/)</span>
 <span class="component-metadata">{{< icon name="exchange-alt" pack="fas" >}} [Changelog](https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/blob/main/CHANGELOG.md)</span>
 {{% /callout %}}
@@ -118,5 +125,6 @@ implementation("org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:{{%
 ### Calypso API in C++
 {{% callout note %}}
 **`{{% calypsonet-terminal-calypso-cpp-api-version %}}`**
+<span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-calypso-cpp-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api/)</span>
 {{% /callout %}}

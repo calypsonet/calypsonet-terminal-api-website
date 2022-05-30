@@ -7,8 +7,10 @@ weight: 1
 toc: true
 ---
 
+---
 The **Calypsonet Terminal Reader API** defines the public elements shared by the reader.
 
+---
 ## Interfaces
 
 The reader API is a high-level interface used by terminal applications to operate smart card readers, it:
@@ -20,7 +22,6 @@ The reader API is a high-level interface used by terminal applications to operat
 - is the entry point to manage the selection of a smart card in a specific reader.
 
 ![Reader API - class diagram](https://calypsonet.github.io/calypsonet-terminal-reader-java-api/1.0.1-SNAPSHOT/api_class_diagram.svg)
-
 
 ### Reader identification
 
@@ -54,6 +55,7 @@ If several card selections are prepared, the card selection manager operate the 
 
 - during the card selection preparation, it could also be explicitly requested to to close the logical channel after the card selection.
 
+---
 ## Card selection modes
 
 Depending on the card transaction use case, or on the reader capability, there are two ways to manage the selection of a card:
@@ -66,6 +68,7 @@ Depending on the card transaction use case, or on the reader capability, there a
 
 {{< figure src="/media/apis/reader_management_card_selection_modes_activity_diagram.svg" caption="Reader API - Card Selection Modes - Activity Diagram" >}}
 
+---
 ## Observable reader states
 
 An observable reader is active only when at least one reader observer is registered, and if the start of the detection has been requested.
@@ -97,9 +100,11 @@ If a card detection is started with the `REPEATING` detection mode, then later w
 Notification of card removal during the card removal wait state is a feature of any observable reader.
 However, some observable readers may additionally have the ability to notify removal during the card processing state.
 
+---
 ## Limitations & constraints
 On a specific card reader, the Reader API allows to address only a **single logical channel**.
 
+---
 #
 ## Implementations & API Documentation
 
@@ -111,7 +116,7 @@ Therefore, it is recommended to always perform a **dynamic import** as described
 ### Reader API in Java
 {{% callout note %}}
 **`{{% calypsonet-terminal-reader-java-api-version %}}`**
-<span class="component-metadata">{{< icon name="doc" pack="fas" >}} [Java Doc](https://calypsonet.github.io/calypsonet-terminal-reader-java-api/)</span>
+<span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-reader-java-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-reader-java-api/)</span>
 <span class="component-metadata">{{< icon name="exchange-alt" pack="fas" >}} [Changelog](https://github.com/calypsonet/calypsonet-terminal-reader-java-api/blob/main/CHANGELOG.md)</span>
 {{% /callout %}}
@@ -137,6 +142,7 @@ implementation("org.calypsonet.terminal:calypsonet-terminal-reader-java-api:{{% 
 ### Reader API in C++
 {{% callout note %}}
 **`{{% calypsonet-terminal-reader-cpp-api-version %}}`**
+<span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-reader-cpp-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/)</span>
 {{% /callout %}}
 
