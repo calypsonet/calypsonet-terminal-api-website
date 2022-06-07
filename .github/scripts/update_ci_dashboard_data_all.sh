@@ -41,13 +41,13 @@ mkdir dashboard/
 
 echo "{ \"datetime\":\"`date --utc --iso-8601=seconds`\"}" > dashboard/datetime.json
 
-echo "," >> dashboard/repository_list.json
-../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-card-uml-api main true true
-echo "," >> dashboard/repository_list.json
-../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-reader-uml-api main true true
-echo "," >> dashboard/repository_list.json
-../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-calypso-uml-api main true true
 echo "[" >> dashboard/repository_list.json
+../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-card-uml-api main false false
+echo "," >> dashboard/repository_list.json
+../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-reader-uml-api main false false
+echo "," >> dashboard/repository_list.json
+../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-calypso-uml-api main false false
+echo "," >> dashboard/repository_list.json
 ../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-card-java-api main true true
 echo "," >> dashboard/repository_list.json
 ../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-reader-java-api main true true
