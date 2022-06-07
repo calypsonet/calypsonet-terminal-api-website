@@ -1,0 +1,12 @@
+[
+["calypsonet-terminal-card-uml-api",false,false],
+["calypsonet-terminal-reader-uml-api",false,false],
+["calypsonet-terminal-calypso-uml-api",false,false],
+["calypsonet-terminal-card-java-api",true,true],
+["calypsonet-terminal-reader-java-api",true,true],
+["calypsonet-terminal-calypso-java-api",true,true],
+["calypsonet-terminal-card-cpp-api",true,true],
+["calypsonet-terminal-reader-cpp-api",true,true],
+["calypsonet-terminal-calypso-cpp-api",true,true],
+["calypsonet-terminal-api-website",false,false]
+]
