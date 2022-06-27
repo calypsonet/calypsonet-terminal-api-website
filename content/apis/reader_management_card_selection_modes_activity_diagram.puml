@@ -46,7 +46,7 @@ partition "Reader initialization" {
 	:prepare card selection scenario;
 }
 
-if (card selection mode?) then (**explicit selection**)
+if (card selection mode?) then (**synchronous**)
 
 
     if (test card presence?) then (present)
@@ -58,7 +58,7 @@ if (card selection mode?) then (**explicit selection**)
     endif
 
 
-else (**scheduled selection**)
+else (**asynchronous**)
     :schedule selection scenario;
     :start reader observation;
     :start card detection;
@@ -71,12 +71,12 @@ else (**scheduled selection**)
             endwhile (present)
 
             #palegreen:**process** scheduled selection scenario;
-            :notifies card inserted & selected;
+            :notifies reader observer about\ncard inserted & selected;
 		}
 	end fork
 	detach
 	:receive selection notification;
-	:parse selection result;
+	#palegreen:**parse** selection result;
 endif
 	:get selected card;
 -[#green,dashed]-> Then specific operations could
