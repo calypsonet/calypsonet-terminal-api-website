@@ -25,7 +25,7 @@
 <meta property="og:title" content="Calypsonet Terminal Reader API | Calypso Networks Association Terminal APIs">
 <meta property="og:description" content="Public API which defines the elements shared by the reader."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
 <meta property="twitter:image" content="https://terminal-api.calypsonet.org/media/logo.svg"><meta property="og:locale" content="en-us">
-<meta property="article:modified_time" content="2022-05-30T15:03:34+02:00">
+<meta property="article:modified_time" content="2022-06-27T18:16:31+04:00">
 <title>Calypsonet Terminal Reader API | Calypso Networks Association Terminal APIs</title>
 </head>
 <body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=b11839ed0888d32a0cc4fe9885a359ec>
@@ -179,13 +179,13 @@ Overview
 <h3 id=card-selection>Card Selection</h3>
 <p>The CardSelectionManager provides the possibility to « prepare a request that could contain one or several card application selections.</p>
 <p>The CardSelection SPI interface could be extended by the API of a specific smart card solution to improve the selection request with settings specific to the smart card solution.</p>
-<p>Through the card selection manager, the prepared card selections could be</p>
+<p>Through the card selection manager, the prepared card selections could be managed in</p>
 <ul>
 <li>
-<p>processed directly on a specific card reader on which a card is already present,</p>
+<p><strong>synchronously</strong>: processed directly on a specific card reader on which a card is already present,</p>
 </li>
 <li>
-<p>scheduled on a specific observable reader in order to be operated dynamically in case of card insertion detection.</p>
+<p>or <strong>asynchronously</strong>: scheduled on a specific observable reader in order to be operated dynamically in case of card insertion detection.</p>
 </li>
 </ul>
 <p>If several card selections are prepared, the card selection manager operate the card selection in the order of preparation. By default, the card selection manager stops the card selection processing on the first successful card selection, and the logical channel is kept open.</p>
@@ -201,8 +201,8 @@ Overview
 <h2 id=card-selection-modes>Card selection modes</h2>
 <p>Depending on the card transaction use case, or on the reader capability, there are two ways to manage the selection of a card:</p>
 <ul>
-<li>Either on a simple reader, a selection could be operated directly by transmitting the card selection scenario. In this case the same entity manages both the card selection and the card processing.</li>
-<li>Otherwise, on an observable reader, a scheduled card selection could be defined. In this case the card selection is operated automatically at the insertion of the card. In this case, the card selection is next managed by the observable reader, but the card processing is managed by a reader observer.</li>
+<li>Either synchronously on a simple reader, a selection could be operated directly by transmitting the card selection scenario. In this case the same entity manages both the card selection and the card processing.</li>
+<li>Otherwise asynchronously on an observable reader, a scheduled card selection could be defined. In this case the card selection is operated automatically at the insertion of the card. In this case, the card selection is next managed by the observable reader, but the card processing is managed by a reader observer.</li>
 </ul>
 <figure id=figure-reader-api---card-selection-modes---activity-diagram>
 <div class="d-flex justify-content-center">
@@ -324,7 +324,7 @@ Maven
 </div>
 </div>
 <div class=body-footer>
-<p>Last updated on 2022-05-30</p>
+<p>Last updated on 2022-06-27</p>
 </div>
 </article>
 <footer class=site-footer>
