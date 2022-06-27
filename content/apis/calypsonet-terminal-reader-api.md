@@ -43,11 +43,11 @@ The CardSelectionManager provides the possibility to « prepare a request that c
 
 The CardSelection SPI interface could be extended by the API of a specific smart card solution to improve the selection request with settings specific to the smart card solution.
 
-Through the card selection manager, the prepared card selections could be
+Through the card selection manager, the prepared card selections could be managed in
 
-- processed directly on a specific card reader on which a card is already present,
+- **synchronously**: processed directly on a specific card reader on which a card is already present,
 
-- scheduled on a specific observable reader in order to be operated dynamically in case of card insertion detection.
+- or **asynchronously**: scheduled on a specific observable reader in order to be operated dynamically in case of card insertion detection.
 
 If several card selections are prepared, the card selection manager operate the card selection in the order of preparation. By default, the card selection manager stops the card selection processing on the first successful card selection, and the logical channel is kept open.
 
@@ -59,8 +59,8 @@ If several card selections are prepared, the card selection manager operate the 
 ## Card selection modes
 
 Depending on the card transaction use case, or on the reader capability, there are two ways to manage the selection of a card:
-- Either on a simple reader, a selection could be operated directly by transmitting the card selection scenario. In this case the same entity manages both the card selection and the card processing.
-- Otherwise, on an observable reader, a scheduled card selection could be defined. In this case the card selection is operated automatically at the insertion of the card. In this case, the card selection is next managed by the observable reader, but the card processing is managed by a reader observer.
+- Either synchronously on a simple reader, a selection could be operated directly by transmitting the card selection scenario. In this case the same entity manages both the card selection and the card processing.
+- Otherwise asynchronously on an observable reader, a scheduled card selection could be defined. In this case the card selection is operated automatically at the insertion of the card. In this case, the card selection is next managed by the observable reader, but the card processing is managed by a reader observer.
 
 <!--
 ![Card selection modes - sequence diagram](https://keyple.org/media/learn/keyple-in-depth/card_selection_modes_activity_diagram.svg)
