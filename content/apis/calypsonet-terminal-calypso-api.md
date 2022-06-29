@@ -60,7 +60,8 @@ Depending on the operation, if necessary the security involving the master SAM m
 
 ### Simple secure session for fast embedded performance
 
-This example illustrates the ticketing processing of a validation: only necessary data are read from the card.
+This example illustrates the ticketing processing of a validation: only the necessary data is read from the card.
+
 In case of communication failure with the card, to support a recovery transaction on another terminal: the ratification status and the last event are checked at the session opening, and the session is closed as not ratified directly followed by a ratification command.
 
 {{< figure src="/media/apis/calypso_transaction_simple_secure_session_embedded_sequence_diagram.svg" caption="Calypso API - Simple Secure Session - Sequence Diagram" >}}
@@ -71,6 +72,7 @@ In most of the cases, it should be possible to handle a secure session with a Ca
 - and 3 exchanges with the SAM reader (terminal session challenge recovery, session MAC computation, and card authentication).
 
 This example shows the loading of a contract during a sale, to speed up the identification of the card content while limiting the exchange of messages with the card reader, some data can be read out of session during the selection, then read again during the session.
+
 In case of communication failure with the card, if the recovery transaction is supported only on the same terminal, then the checking of the ratification status is not necessary at the session opening, and the session could be closed as ratified.
 
 {{< figure src="/media/apis/calypso_transaction_simple_secure_session_distributed_sequence_diagram.svg" caption="Calypso API - Simple Secure Session - Sequence Diagram" >}}
