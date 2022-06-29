@@ -78,12 +78,12 @@ deactivate samReader
 capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
 activate cardReader #lightBlue
 
-group Card APDU commands inside session
+'group Card APDU commands inside session
     cardReader->card: read record (environment)
     card-->cardReader: [environment data]
     cardReader->card: read record (contract #1)
     card-->cardReader: [contract #1 data]
-end
+'end
 
 cardReader--[#0000FF]>capi: [card challenge]
 deactivate cardReader
