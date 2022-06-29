@@ -58,12 +58,23 @@ Depending on the operation, if necessary the security involving the master SAM m
 
 {{< figure src="/media/apis/calypso_transaction_standalone_SV_operation_sequence_diagram.svg" caption="Calypso API - standalone Stored Value transaction - Sequence Diagram" >}}
 
-### Simple secure session
+### Simple secure session for fast embedded performance
+
+This example illustrates the ticketing processing of a validation: only necessary data are read from the card.
+In case of communication failure with the card, to support a recovery transaction on another terminal: the ratification status and the last event are checked at the session opening, and the session is closed as not ratified directly followed by a ratification command.
+
+{{< figure src="/media/apis/calypso_transaction_simple_secure_session_embedded_sequence_diagram.svg" caption="Calypso API - Simple Secure Session - Sequence Diagram" >}}
+
+### Simple secure session for an efficient distributed system
 In most of the cases, it should be possible to handle a secure session with a Calypso card, using only:
 - 3 exchanges with the card reader (selection processing, session opening processing, and session closing processing),
 - and 3 exchanges with the SAM reader (terminal session challenge recovery, session MAC computation, and card authentication).
 
-{{< figure src="/media/apis/calypso_transaction_simple_secure_session_sequence_diagram.svg" caption="Calypso API - Simple Secure Session - Sequence Diagram" >}}
+This example shows the loading of a contract during a sale, to speed up the identification of the card content while limiting the exchange of messages with the card reader, some data can be read out of session during the selection, then read again during the session.
+In case of communication failure with the card, if the recovery transaction is supported only on the same terminal, then the checking of the ratification status is not necessary at the session opening, and the session could be closed as ratified.
+
+{{< figure src="/media/apis/calypso_transaction_simple_secure_session_distributed_sequence_diagram.svg" caption="Calypso API - Simple Secure Session - Sequence Diagram" >}}
+
 
 ### PIN ciphered verification inside a session
 
