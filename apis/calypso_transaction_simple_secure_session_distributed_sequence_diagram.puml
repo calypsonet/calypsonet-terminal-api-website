@@ -41,9 +41,9 @@ hide <<grey>> stereotype
 actor "Ticketing Application" as app #gold
 participant "Calypso API" as capi #pink
 participant "Reader API" as rapi #pink
-participant "Calypso Card\nReader" as cardReader #lightBlue
+participant "(remote)\nCalypso Card\nReader" as cardReader #lightBlue
 boundary "**Card**" as card #lightBlue
-participant "Calypso SAM\nReader" as samReader #lightGreen
+participant "(remote)\nCalypso SAM\nReader" as samReader #lightGreen
 boundary "selected\n**SAM**" as sam #lightGreen
 
 activate app #gold
@@ -195,8 +195,6 @@ end
 
 cardReader->card: close secure session (SAM certificate)
 card-->cardReader: [card certificate]
-cardReader->card: ratification command
-card-->cardReader
 cardReader->card: close card channel
 card-->cardReader
 deactivate card

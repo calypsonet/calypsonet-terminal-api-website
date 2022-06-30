@@ -322,8 +322,8 @@ Calypso API - Change Key / Ciphered PIN outside a session - Sequence Diagram
 Calypso API - standalone Stored Value transaction - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="simple-secure-session-for-fast-embedded-performance">Simple secure session for fast embedded performance&lt;/h3>
-&lt;p>This example illustrates the ticketing processing of a validation: only necessary data are read from the card.
-In case of communication failure with the card, to support a recovery transaction on another terminal: the ratification status and the last event are checked at the session opening, and the session is closed as not ratified directly followed by a ratification command.&lt;/p>
+&lt;p>This example illustrates the ticketing processing of a validation: only the necessary data is read from the card.&lt;/p>
+&lt;p>In case of communication failure with the card, to support a recovery transaction on another terminal: the ratification status and the last event are checked at the session opening, and the session is closed as not ratified directly followed by a ratification command.&lt;/p>
 &lt;figure id="figure-calypso-api---simple-secure-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="../media/apis/calypso_transaction_simple_secure_session_embedded_sequence_diagram.svg" alt="Calypso API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
@@ -336,8 +336,8 @@ Calypso API - Simple Secure Session - Sequence Diagram
 &lt;li>3 exchanges with the card reader (selection processing, session opening processing, and session closing processing),&lt;/li>
 &lt;li>and 3 exchanges with the SAM reader (terminal session challenge recovery, session MAC computation, and card authentication).&lt;/li>
 &lt;/ul>
-&lt;p>This example shows the loading of a contract during a sale, to speed up the identification of the card content while limiting the exchange of messages with the card reader, some data can be read out of session during the selection, then read again during the session.
-In case of communication failure with the card, if the recovery transaction is supported only on the same terminal, then the checking of the ratification status is not necessary at the session opening, and the session could be closed as ratified.&lt;/p>
+&lt;p>This example shows the loading of a contract during a sale, to speed up the identification of the card content while limiting the exchange of messages with the card reader, some data can be read out of session during the selection, then read again during the session.&lt;/p>
+&lt;p>In case of communication failure with the card, if the recovery transaction is supported only on the same terminal, then the checking of the ratification status is not necessary at the session opening, and the session could be closed as ratified.&lt;/p>
 &lt;figure id="figure-calypso-api---simple-secure-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="../media/apis/calypso_transaction_simple_secure_session_distributed_sequence_diagram.svg" alt="Calypso API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
