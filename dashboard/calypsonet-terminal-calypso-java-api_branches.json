@@ -22,5 +22,13 @@
       "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/c4cc756973f6cf2a95381d2ba592487518279129"
     },
     "protected": false
+  },
+  {
+    "name": "sam_event_counter_ceiling_management",
+    "commit": {
+      "sha": "673a9b45090acaf49f889ca71c100050f75de48f",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/673a9b45090acaf49f889ca71c100050f75de48f"
+    },
+    "protected": false
   }
 ]
