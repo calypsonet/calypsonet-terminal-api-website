@@ -10,24 +10,16 @@
   {
     "name": "gh-pages",
     "commit": {
-      "sha": "ee90a4af5a5c4da6d3d5ec38d56b8694cf6689a8",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/ee90a4af5a5c4da6d3d5ec38d56b8694cf6689a8"
+      "sha": "7ea3b2a454d464d56da8026dab486c16b339329f",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/7ea3b2a454d464d56da8026dab486c16b339329f"
     },
     "protected": true
   },
   {
     "name": "main",
     "commit": {
-      "sha": "c4cc756973f6cf2a95381d2ba592487518279129",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/c4cc756973f6cf2a95381d2ba592487518279129"
-    },
-    "protected": false
-  },
-  {
-    "name": "sam_event_counter_ceiling_management",
-    "commit": {
-      "sha": "e7bf79832afca230324c96c056e5ada1d0f80c1b",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/e7bf79832afca230324c96c056e5ada1d0f80c1b"
+      "sha": "135e2deda8f53dfdb12261624d33c291c3fdd660",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/135e2deda8f53dfdb12261624d33c291c3fdd660"
     },
     "protected": false
   }
