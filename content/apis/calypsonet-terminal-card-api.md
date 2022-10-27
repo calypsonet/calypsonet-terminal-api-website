@@ -8,26 +8,32 @@ toc: true
 ---
 
 ---
-The **Calypsonet Terminal Card API** defines the internal elements shared by the reader layer to implement specific card layers (like the Calypso Card layer).
+The **Calypsonet Terminal Card API** defines the internal elements shared by the reader layer to implement specific card
+layers (like the Calypso Card layer).
 
 ---
 ## Interfaces
 
-![Card API - class diagram](https://calypsonet.github.io/calypsonet-terminal-card-java-api/1.0.1-SNAPSHOT/api_class_diagram.svg)
+![Card API - class diagram](https://raw.githubusercontent.com/calypsonet/calypsonet-terminal-card-uml-api/main/{{% calypsonet-terminal-card-java-api-version %}}/api_class_diagram.svg)
 
 ---
 ## Limitations & constraints
-The Card API doesn't allow to request the transmission to a card of the APDU commands "Select Application by DF Name" or "Get Response":
+
+The Card API doesn't allow to request the transmission to a card of the APDU commands "Select Application by DF Name" 
+or "Get Response":
 - the selection of a specific card application could be managed only through a Card Selection Request.
-- the APDU response status words 61XYh & 6CXYh are automatically handled by the reader layer library by issuing a Get Response or by re-issuing the previous command with the rigth 'Le' field.
+- the APDU response status words 61XYh & 6CXYh are automatically handled by the reader layer library by issuing a 
+  Get Response or by re-issuing the previous command with the expected 'Le' field.
 
 ---
 #
 ## Implementations & API Documentation
 
 {{% callout note %}}
-The third version number (x.y.**z**) only concerns updates of the javadoc because this component does not contain any implementation, but only an API.
-Therefore, it is recommended to always perform a **dynamic import** as described above in order to have the most up-to-date documentation.
+The third version number (x.y.**z**) only concerns updates of the javadoc because this component does not contain any 
+implementation, but only an API.
+Therefore, it is recommended to always perform a **dynamic import** as described above in order to have the most 
+up-to-date documentation.
 {{% /callout %}}
 
 ### Card API in Java
