@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 9146132173,
+      "id": 9158548453,
       "name": "java-publish",
-      "node_id": "CR_kwDOFgFtqM8AAAACISbmzQ",
-      "head_sha": "d363bc75d155c60272138f1aa0f7f14bedef90ad",
+      "node_id": "CR_kwDOFgFtqM8AAAACIeRb5Q",
+      "head_sha": "5e183d8c82ae6eb5cc59e6ec4b8096cc6893c9b3",
       "external_id": "9141701c-365f-53eb-8d3b-fc99b1ea338d",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/check-runs/9146132173",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-reader-java-api/actions/runs/3339111815/jobs/5527646681",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-reader-java-api/actions/runs/3339111815/jobs/5527646681",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/check-runs/9158548453",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-reader-java-api/actions/runs/3343582170/jobs/5536950705",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-reader-java-api/actions/runs/3343582170/jobs/5536950705",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2022-10-27T16:17:39Z",
-      "completed_at": "2022-10-27T16:19:13Z",
+      "started_at": "2022-10-28T07:21:36Z",
+      "completed_at": "2022-10-28T07:22:50Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/check-runs/9146132173/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/check-runs/9158548453/annotations"
       },
       "check_suite": {
-        "id": 8996758241
+        "id": 9007893003
       },
       "app": {
         "id": 15368,
