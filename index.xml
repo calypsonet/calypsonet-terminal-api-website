@@ -153,6 +153,8 @@ up-to-date documentation.
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-reader-java-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/">UML&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-java-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-java-api/blob/main/CHANGELOG.md">Changelog&lt;/a>&lt;/span>
@@ -203,6 +205,8 @@ id="tabs-5-2" role="tabpanel" aria-labelled-by="tabs-5-2-tab">
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-reader-cpp-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/">UML&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div></description></item><item><title>Calypsonet Terminal Card API</title><link>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-card-api/</guid><description>&lt;hr>
@@ -242,6 +246,8 @@ up-to-date documentation.
 &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-card-java-api/">API documentation&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-uml-api/">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-java-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -292,6 +298,8 @@ id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-card-cpp-api/">API documentation&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-uml-api/">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-cpp-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
@@ -441,6 +449,8 @@ up-to-date documentation.
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-uml-api/">UML&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/blob/main/CHANGELOG.md">Changelog&lt;/a>&lt;/span>
@@ -490,6 +500,8 @@ id="tabs-13-2" role="tabpanel" aria-labelled-by="tabs-13-2-tab">
 &lt;strong>&lt;code>1.1.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-cpp-api/">API documentation&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-uml-api/">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
