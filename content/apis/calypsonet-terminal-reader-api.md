@@ -146,6 +146,7 @@ up-to-date documentation.
 {{% callout note %}}
 **`{{% calypsonet-terminal-reader-java-api-version %}}`**
 <span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-reader-java-api/)</span>
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-reader-java-api/)</span>
 <span class="component-metadata">{{< icon name="exchange-alt" pack="fas" >}} [Changelog](https://github.com/calypsonet/calypsonet-terminal-reader-java-api/blob/main/CHANGELOG.md)</span>
 {{% /callout %}}
@@ -172,6 +173,7 @@ implementation("org.calypsonet.terminal:calypsonet-terminal-reader-java-api:{{% 
 {{% callout note %}}
 **`{{% calypsonet-terminal-reader-cpp-api-version %}}`**
 <span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-reader-cpp-api/)</span>
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/)</span>
 {{% /callout %}}
 

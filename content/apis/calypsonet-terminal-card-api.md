@@ -40,6 +40,7 @@ up-to-date documentation.
 {{% callout note %}}
 **`{{% calypsonet-terminal-card-java-api-version %}}`**
 <span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-card-java-api/)</span>
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://github.com/calypsonet/calypsonet-terminal-card-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-card-java-api/)</span>
 <span class="component-metadata">{{< icon name="exchange-alt" pack="fas" >}} [Changelog](https://github.com/calypsonet/calypsonet-terminal-card-java-api/blob/main/CHANGELOG.md)</span>
 {{% /callout %}}
@@ -66,5 +67,6 @@ implementation("org.calypsonet.terminal:calypsonet-terminal-card-java-api:{{% ca
 {{% callout note %}}
 **`{{% calypsonet-terminal-card-cpp-api-version %}}`**
 <span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-card-cpp-api/)</span>
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://github.com/calypsonet/calypsonet-terminal-card-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-card-cpp-api/)</span>
 {{% /callout %}}
