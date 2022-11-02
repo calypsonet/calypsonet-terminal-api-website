@@ -7,28 +7,28 @@
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
 <link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" media=print onload="this.media='all'">
-<meta name=description content>
-<link rel=alternate hreflang=en-us href=https://terminal-api.calypsonet.org/projects-dashboard/>
+<meta name=description content="possible evolutions of the Terminal APIs.">
+<link rel=alternate hreflang=en-us href=https://terminal-api.calypsonet.org/draft/>
 <meta name=theme-color content="#1d87bb">
 <link rel=stylesheet href=../css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin=anonymous media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/darcula.min.css crossorigin=anonymous title=hl-light media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/darcula.min.css crossorigin=anonymous title=hl-dark media=print onload="this.media='all'" disabled>
 <link rel=stylesheet href=../css/wowchemy.b034eb98a6aa0a7c0324c16ef2ef2848.css>
-<link rel=alternate href=../projects-dashboard/index.xml type=application/rss+xml title="Calypso Networks Association Terminal APIs">
+<link rel=alternate href=../draft/index.xml type=application/rss+xml title="Calypso Networks Association Terminal APIs">
 <link rel=manifest href=../manifest.webmanifest>
 <link rel=icon type=image/png href=../media/icon_huceb5ed780c823eaac47da25fabbbc8be_2207_32x32_fill_lanczos_center_3.png>
 <link rel=apple-touch-icon type=image/png href=../media/icon_huceb5ed780c823eaac47da25fabbbc8be_2207_180x180_fill_lanczos_center_3.png>
-<link rel=canonical href=https://terminal-api.calypsonet.org/projects-dashboard/>
+<link rel=canonical href=https://terminal-api.calypsonet.org/draft/>
 <meta property="twitter:card" content="summary">
 <meta property="og:site_name" content="Calypso Networks Association Terminal APIs">
-<meta property="og:url" content="https://terminal-api.calypsonet.org/projects-dashboard/">
-<meta property="og:title" content="Overall APIs dashboard | Calypso Networks Association Terminal APIs">
-<meta property="og:description" content><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
+<meta property="og:url" content="https://terminal-api.calypsonet.org/draft/">
+<meta property="og:title" content="Terminal APIs - draft discussion | Calypso Networks Association Terminal APIs">
+<meta property="og:description" content="possible evolutions of the Terminal APIs."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
 <meta property="twitter:image" content="https://terminal-api.calypsonet.org/media/logo.svg"><meta property="og:locale" content="en-us">
-<title>Overall APIs dashboard | Calypso Networks Association Terminal APIs</title>
+<title>Terminal APIs - draft discussion | Calypso Networks Association Terminal APIs</title>
 </head>
-<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=ccfe5f5f3ca77e9b12f75cc39cafb437>
+<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=54d87be8e00148f49d214c5c8a8b46ab>
 <script src=../js/wowchemy-init.min.da42964e270e05a6063fbca894d7ccff.js></script>
 <aside class=search-modal id=search>
 <div class=container>
@@ -88,43 +88,68 @@
 </nav>
 </div>
 <div class=page-body>
-<div class="universal-wrapper pt-3">
-<h1>Overall APIs dashboard</h1>
+<div class="container-fluid docs">
+<div class="row flex-xl-nowrap">
+<div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+<form class="docs-search d-flex align-items-center">
+<button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type=button data-toggle=collapse data-target=#docs-nav aria-controls=docs-nav aria-expanded=false aria-label="Toggle section navigation">
+<div class=d-flex>
+<span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+Overview
+</span>
+<span><i class="fas fa-chevron-down"></i></span>
 </div>
-<div class=universal-wrapper>
-<div class=article-style><div class="alert alert-note">
-<div>
-<p>The status of the projects is checked every hour, but the dashboard is only refreshed if the status of at least one of the projects has changed.</p>
-<p>Last dashboard refresh date: <strong><span id=projects-dashboard-datetime></span></strong></p>
-<p>When displayed, icons in columns <strong>Doc</strong> and <strong>Status</strong> are clickable and lead respectively to the <strong>API documentation</strong> and the <strong>GitHub Action status page</strong>.</p>
+</button>
+<button class="form-control sidebar-search js-search d-none d-md-flex">
+<i class="fas fa-search pr-2"></i>
+<span class=sidebar-search-text>Search...</span>
+<span class=sidebar-search-shortcut>/</span>
+</button>
+</form>
+<nav class="collapse docs-links" id=docs-nav>
+<ul class="nav docs-sidenav">
+<li class=active><a href=../draft/>Overview</a></li>
+</ul>
+</nav>
+</div>
+<main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role=main>
+<article class=article>
+<div class=docs-article-container>
+<h1>Terminal APIs - draft discussion</h1>
+<div class=article-style>
+<hr>
+<h2 id=rev32--rev33-transaction-mode>REV3.2 & REV3.3 transaction mode</h2>
+<h3 id=calypso-api-proposal>Calypso API proposal</h3>
+<figure>
+<div class="d-flex justify-content-center">
+<div class=w-100><img src=../media/draft/extended_calypso_api_class_diagram.svg alt loading=lazy data-zoomable></div>
+</div></figure>
+<h3 id=rev32-session-with-intermediate-authentication>REV3.2 session with intermediate authentication</h3>
+<figure>
+<div class="d-flex justify-content-center">
+<div class=w-100><img src=../media/draft/calypso_transaction_extended_authentication_secure_session_embedded_sequence_diagram-R32only.svg alt loading=lazy data-zoomable></div>
+</div></figure>
+<h3 id=rev32-session-with-encrypted-commands>REV3.2 session with encrypted commands</h3>
+<figure>
+<div class="d-flex justify-content-center">
+<div class=w-100><img src=../media/draft/calypso_transaction_extended_encryption_secure_session_embedded_sequence_diagram-R32only.svg alt loading=lazy data-zoomable></div>
+</div></figure>
+<h2 id=sam-extension>SAM extension</h2>
+<h3 id=sam-api-proposal>SAM API proposal</h3>
+<figure>
+<div class="d-flex justify-content-center">
+<div class=w-100><img src=../media/draft/calypso_SAM_API_class_diagram2.svg alt loading=lazy data-zoomable></div>
+</div></figure>
+</div>
+<div class=article-widget>
+<div class=post-nav>
 </div>
 </div>
-<table id=projects-dashboard-table class="table table-striped" data-sort-name=updated data-sort-order=desc>
-<thead>
-<tr>
-<th scope=col>Repository</th>
-<th scope=col class=text-center>Doc</th>
-<th scope=col class=text-center>Status</th>
-<th scope=col class=text-center>Latest release</th>
-<th scope=col class=text-center>Date</th>
-<th scope=col class=text-center>Issues</th>
-<th scope=col class=text-center>Branches</th>
-<th scope=col class=text-center>PRs</th>
-<th scope=col class=text-center>Forks</th>
-<th scope=col class=text-center>Stars</th>
-<th scope=col class=text-center data-field=updated>Last update</th>
-<th scope=col class=text-center>Created</th>
-</tr>
-</thead>
-<tbody id=projects-dashboard-content>
-</tbody>
-</table>
-<script type=text/javascript>document.body.onload=function(){loadProjectsDashboard()}</script>
 </div>
+<div class=body-footer>
+<p>Last updated on 2022-11-02</p>
 </div>
-</div>
-<div class=page-footer>
-<div class=container>
+</article>
 <footer class=site-footer>
 <p class=powered-by id=copyright>
 © 2022 Calypso Networks Association. All Rights Reserved.
@@ -133,7 +158,11 @@
 Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target=_blank rel=noopener>Wowchemy</a> — the free, <a href=https://github.com/wowchemy/wowchemy-hugo-themes target=_blank rel=noopener>open source</a> website builder that empowers creators.
 </p>
 </footer>
+</main>
 </div>
+</div>
+</div>
+<div class=page-footer>
 </div>
 <div id=modal class="modal fade" role=dialog>
 <div class=modal-dialog>
@@ -170,6 +199,8 @@ Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target=_bl
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/cpp.min.js crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/gradle.min.js crossorigin=anonymous></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/ini.min.js crossorigin=anonymous></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin=anonymous></script>
+<script>anchors.add()</script>
 <script id=search-hit-fuse-template type=text/x-template>
         <div class="search-hit" id="summary-{{key}}">
           <div class="search-hit-content">
