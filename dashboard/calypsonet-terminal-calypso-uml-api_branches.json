@@ -1,5 +1,13 @@
 [
   {
+    "name": "design_2_0_0",
+    "commit": {
+      "sha": "6457e18b699bb426043a0c1b0cf53d483e9303d4",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-uml-api/commits/6457e18b699bb426043a0c1b0cf53d483e9303d4"
+    },
+    "protected": false
+  },
+  {
     "name": "main",
     "commit": {
       "sha": "59dfc00a00cb029d0dfdc9d05f8a5ac4808423f1",
