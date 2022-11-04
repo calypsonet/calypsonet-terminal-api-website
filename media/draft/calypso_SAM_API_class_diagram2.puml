@@ -142,24 +142,25 @@ hide <<grey>> stereotype
         -- for each read in the target SAM, the control SAM checks the certificate
         }
 
-        +interface LegacyDynamicSecureWriteTransaction extends LegacySamTransactionManager {
+        +interface LegacySecureSynchronousWriteTransaction extends LegacySamTransactionManager {
 '            +prepareManageSecureWrite(flag dynamic/static)
 '            +prepareWriteCeiling()
 '            +prepareImportCipheredDataToStaticWrite(String ciphereData)
         -- processCommand of 'prepared' LegacyControlledWriteOperations
         }
 
-        +interface LegacyStaticSecureWriteTransaction extends LegacySamTransactionManager {
+        +interface LegacySecureAsynchronousWriteTransaction extends LegacySamTransactionManager {
         +prepareImportCipheredDataToStaticWrite(String cipheredSamOperations)
         -- processCommand of 'exported' cipheredSamOperations from a control SAM
         }
 
 
-        +interface LegacyControlStaticWriteTransaction extends LegacySamTransactionManager {
+        +interface LegacyControlAsynchronousWriteTransaction extends LegacySamTransactionManager {
+            -- with Pseudo Random OR without
             +prepareGiveTargetSamPseudoRandom(statisRandom)
 
-            -- of 'prepared' LegacyControlledWriteOperations
-            String +processExportSamCipheredDataToSamWrite()
+            -- of 'prepared' LegacyControlledWriteOperations --
+            +String processExportSamCipheredDataToSamWrite()
         }
 
         +interface OpenSamTransactionManager extends SamTransactionManager {
