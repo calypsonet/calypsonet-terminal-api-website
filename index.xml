@@ -323,7 +323,7 @@ A transaction with a Calypso card is fully managed through the &lt;code>CardTran
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-uml-api/1.4.0/api_class_diagram.svg" alt="Calypso API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-uml-api/1.4.1/api_class_diagram.svg" alt="Calypso API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;hr>
@@ -445,7 +445,7 @@ up-to-date documentation.
 &lt;h3 id="calypso-api-in-java">Calypso API in Java&lt;/h3>
 &lt;div class="alert alert-note">
 &lt;div>
-&lt;strong>&lt;code>1.4.0&lt;/code>&lt;/strong>
+&lt;strong>&lt;code>1.4.1&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
