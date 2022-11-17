@@ -1,5 +1,15 @@
 [
   {
+    "name": "1.4.1",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/zipball/refs/tags/1.4.1",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/tarball/refs/tags/1.4.1",
+    "commit": {
+      "sha": "c05ff669f1703a9432eaed3cef3fcb967d61f280",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/c05ff669f1703a9432eaed3cef3fcb967d61f280"
+    },
+    "node_id": "MDM6UmVmMzY5NDkzMTg0OnJlZnMvdGFncy8xLjQuMQ=="
+  },
+  {
     "name": "1.4.0",
     "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/zipball/refs/tags/1.4.0",
     "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/tarball/refs/tags/1.4.0",
