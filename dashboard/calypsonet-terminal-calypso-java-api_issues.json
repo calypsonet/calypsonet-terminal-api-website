@@ -1,3 +1,66 @@
 [
+  {
+    "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/issues/50",
+    "repository_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api",
+    "labels_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/issues/50/labels{/name}",
+    "comments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/issues/50/comments",
+    "events_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/issues/50/events",
+    "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/issues/50",
+    "id": 1460388122,
+    "node_id": "I_kwDOFgYEwM5XC8Ea",
+    "number": 50,
+    "title": "Amélioration de la gestion des KIF KVC par défaut et KVC autorisés",
+    "user": {
+      "login": "kfereira",
+      "id": 9805882,
+      "node_id": "MDQ6VXNlcjk4MDU4ODI=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9805882?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/kfereira",
+      "html_url": "https://github.com/kfereira",
+      "followers_url": "https://api.github.com/users/kfereira/followers",
+      "following_url": "https://api.github.com/users/kfereira/following{/other_user}",
+      "gists_url": "https://api.github.com/users/kfereira/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/kfereira/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/kfereira/subscriptions",
+      "organizations_url": "https://api.github.com/users/kfereira/orgs",
+      "repos_url": "https://api.github.com/users/kfereira/repos",
+      "events_url": "https://api.github.com/users/kfereira/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/kfereira/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
 
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2022-11-22T18:44:18Z",
+    "updated_at": "2022-11-22T18:44:18Z",
+    "closed_at": null,
+    "author_association": "NONE",
+    "active_lock_reason": null,
+    "body": "Actuellement lors de la création d'un objet CardSecuritySetting il est possible d'assigner des kif/kvc à utiliser par défaut ainsi qu'une liste de KVC autorisés.\r\n\r\nDans le cas où aucun KIF n'est remonté lors du OPEN SESSION le KIF par défaut est utilisé. \r\nLa façon de créer CardSecuritySetting actuellement ne permet de fournir un KIF par défaut en fonction du KVC récupéré de la carte. \r\n\r\nAussi concernant la liste de KVC autorisés, la détermination d'une telle liste n'est pas toujours statique et peut nécessiter de connaitre le KIF lu de la carte.\r\n\r\nLe but de ce ticket est fournir un autre moyen de fournir les KIF / KVC à utiliser par défaut ainsi que la liste des KVC autorisés. \r\n\r\nCa se traduirait  en la création de deux SPI: \r\n\r\n```java  \r\npublic interface DefaultKifKvcProviderSpi {\r\n    byte[] computeKifKvc(Byte cardKif, Byte cardKvc);\r\n}\r\n\r\npublic interface KifKvcAuthorizationServiceSpi {\r\n    boolean isAuthorizedKey(Byte kif, Byte kvc);\r\n}\r\n\r\n```\r\n\r\nCes SPI serait affectée au CardSecuritySetting via les méthodes: \r\n```java\r\n\r\n  CardSecuritySetting assignDefaultKifKvcProvider(WriteAccessLevel writeAccessLevel, DefaultKifKvcProviderSpi kifKvcProvider);\r\n\r\n  CardSecuritySetting setKifKvcAuthorizationService(KifKvcAuthorizationServiceSpi kifKvcAuthorizationServiceSpi);\r\n\r\n```\r\n\r\n### Les impactes sur la lib `keyple-card-calypso-java-lib`\r\n\r\nDans la classe `CardSecuritySettingAdapter` :\r\n\r\n```java\r\n    boolean isSessionKeyAuthorized(Byte kif, Byte kvc) {\r\n        if (kif == null || kvc == null) {\r\n            return false;\r\n        }\r\n        //👉 On utilise la nouvelle SPI si elle est valorisée \r\n        if(kifKvcAuthorizationServiceSpi != null) {\r\n            return kifKvcAuthorizationServiceSpi.isAuthorizedKey(kif, kvc);\r\n        }\r\n        if (authorizedSessionKeys.isEmpty()) {\r\n            return true;\r\n        }\r\n        return authorizedSessionKeys.contains(((kif << 8) & 0xff00) | (kvc & 0x00ff));\r\n    }\r\n\r\n``` \r\n\r\nDans la méthode `processAtomicOpenning` de la classe `CardTransactionManagerAdapter`:\r\n```java\r\n    byte[] kifKvc = controlSamTransactionManager.computeKifKvc(writeAccessLevel, cardKif, cardKvc);\r\n    Byte kif = kifKvc[0];\r\n    Byte kvc = kifKvc[1];\r\n\r\n```\r\n\r\nDans la classe `CardControlSamTransactionManagerAdapter`:\r\n```java \r\nbyte[] computeKifKvc(WriteAccessLevel writeAccessLevel, Byte cardKif, Byte cardKvc) {\r\n        DefaultKifKvcProviderSpi defaultKifKvcProviderSpi = cardSecuritySetting.getDefaultKifKvcProviderSpi();\r\n\r\n        if (defaultKifKvcProviderSpi != null) {\r\n           //👉 On utilise la nouvelle SPI si elle est valorisée \r\n            return defaultKifKvcProviderSpi.computeKifKvc(cardKif, cardKvc);\r\n        } else {\r\n            Byte kvc = computeKvc(writeAccessLevel, cardKvc);\r\n            Byte kif = computeKif(writeAccessLevel, cardKif, kvc);\r\n            return new byte[]{kif, kvc};\r\n        }\r\n    }\r\n```\r\n\r\n",
+    "reactions": {
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/issues/50/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "timeline_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/issues/50/timeline",
+    "performed_via_github_app": null,
+    "state_reason": null
+  }
 ]
