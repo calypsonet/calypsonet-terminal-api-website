@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 9823746270,
+      "id": 9875215013,
       "name": "publish-doc",
-      "node_id": "CR_kwDOFp1Bvs8AAAACSYp43g",
-      "head_sha": "9556104869f9674ce7e04648a375701d40ffb48d",
+      "node_id": "CR_kwDOFp1Bvs8AAAACTJvSpQ",
+      "head_sha": "1d79433df13e36fd8da4ae961482f0c1e94ae6aa",
       "external_id": "1d8a6f14-c23f-5d5f-0d4e-2f23529ad2a0",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/check-runs/9823746270",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api/actions/runs/3593391613/jobs/6050287740",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api/actions/runs/3593391613/jobs/6050287740",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/check-runs/9875215013",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api/actions/runs/3614521587/jobs/6091012443",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api/actions/runs/3614521587/jobs/6091012443",
       "status": "completed",
-      "conclusion": "failure",
-      "started_at": "2022-12-01T14:12:32Z",
-      "completed_at": "2022-12-01T14:12:40Z",
+      "conclusion": "success",
+      "started_at": "2022-12-04T18:25:37Z",
+      "completed_at": "2022-12-04T18:25:55Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
-        "annotations_count": 1,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/check-runs/9823746270/annotations"
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/check-runs/9875215013/annotations"
       },
       "check_suite": {
-        "id": 9610806164
+        "id": 9658565912
       },
       "app": {
         "id": 15368,
