@@ -7,8 +7,8 @@
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
 <link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" media=print onload="this.media='all'">
-<meta name=description content="Internal API which defines the elements shared between the reader layer and the card layer.">
-<link rel=alternate hreflang=en-us href=https://terminal-api.calypsonet.org/apis/calypsonet-terminal-card-api/>
+<meta name=description content="Public high-level API which standardizes the way to interact with a Calypso® legacy SAM product (SAM-C1, HSM-C1, etc...).">
+<link rel=alternate hreflang=en-us href=https://terminal-api.calypsonet.org/apis/calypsonet-terminal-calypso-crypto-legacysam-api/>
 <meta name=theme-color content="#1d87bb">
 <link rel=stylesheet href=../../css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css media=print onload="this.media='all'">
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin=anonymous media=print onload="this.media='all'">
@@ -18,17 +18,17 @@
 <link rel=manifest href=../../manifest.webmanifest>
 <link rel=icon type=image/png href=../../media/icon_huceb5ed780c823eaac47da25fabbbc8be_2207_32x32_fill_lanczos_center_3.png>
 <link rel=apple-touch-icon type=image/png href=../../media/icon_huceb5ed780c823eaac47da25fabbbc8be_2207_180x180_fill_lanczos_center_3.png>
-<link rel=canonical href=https://terminal-api.calypsonet.org/apis/calypsonet-terminal-card-api/>
+<link rel=canonical href=https://terminal-api.calypsonet.org/apis/calypsonet-terminal-calypso-crypto-legacysam-api/>
 <meta property="twitter:card" content="summary">
 <meta property="og:site_name" content="Calypso Networks Association Terminal APIs">
-<meta property="og:url" content="https://terminal-api.calypsonet.org/apis/calypsonet-terminal-card-api/">
-<meta property="og:title" content="Calypsonet Terminal Card API | Calypso Networks Association Terminal APIs">
-<meta property="og:description" content="Internal API which defines the elements shared between the reader layer and the card layer."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
+<meta property="og:url" content="https://terminal-api.calypsonet.org/apis/calypsonet-terminal-calypso-crypto-legacysam-api/">
+<meta property="og:title" content="Calypsonet Terminal Calypso Crypto Legacy SAM API | Calypso Networks Association Terminal APIs">
+<meta property="og:description" content="Public high-level API which standardizes the way to interact with a Calypso® legacy SAM product (SAM-C1, HSM-C1, etc...)."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
 <meta property="twitter:image" content="https://terminal-api.calypsonet.org/media/logo.svg"><meta property="og:locale" content="en-us">
-<meta property="article:modified_time" content="2022-11-08T14:21:14+01:00">
-<title>Calypsonet Terminal Card API | Calypso Networks Association Terminal APIs</title>
+<meta property="article:modified_time" content="2022-12-12T16:03:20+01:00">
+<title>Calypsonet Terminal Calypso Crypto Legacy SAM API | Calypso Networks Association Terminal APIs</title>
 </head>
-<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=586d1349891225248c7134e777120f95>
+<body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=19091674df2d212ca236c0957f53edad>
 <script src=../../js/wowchemy-init.min.da42964e270e05a6063fbca894d7ccff.js></script>
 <aside class=search-modal id=search>
 <div class=container>
@@ -110,9 +110,9 @@ Overview
 <ul class="nav docs-sidenav">
 <li><a href=../../apis/>Overview</a></li>
 <li><a href=../../apis/calypsonet-terminal-reader-api/>Reader API</a></li>
-<li class=active><a href=../../apis/calypsonet-terminal-card-api/>Card API</a></li>
+<li><a href=../../apis/calypsonet-terminal-card-api/>Card API</a></li>
 <li><a href=../../apis/calypsonet-terminal-calypso-api/>Calypso API</a></li>
-<li><a href=../../apis/calypsonet-terminal-calypso-crypto-legacysam-api/>Calypso Legacy SAM API</a></li>
+<li class=active><a href=../../apis/calypsonet-terminal-calypso-crypto-legacysam-api/>Calypso Legacy SAM API</a></li>
 </ul>
 </nav>
 </div>
@@ -123,13 +123,12 @@ Overview
 <nav id=TableOfContents>
 <ul>
 <li><a href=#interfaces>Interfaces</a></li>
-<li><a href=#limitations--constraints>Limitations & constraints</a></li>
 </ul>
 <ul>
 <li><a href=#implementations--api-documentation>Implementations & API Documentation</a>
 <ul>
-<li><a href=#card-api-in-java>Card API in Java</a></li>
-<li><a href=#card-api-in-c>Card API in C++</a></li>
+<li><a href=#calypso-legacy-sam-api-in-java>Calypso Legacy SAM API in Java</a></li>
+<li><a href=#calypso-legacy-sam-api-in-c>Calypso Legacy SAM API in C++</a></li>
 </ul>
 </li>
 </ul>
@@ -138,28 +137,29 @@ Overview
 <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role=main>
 <article class=article>
 <div class=docs-article-container>
-<h1>Calypsonet Terminal Card API</h1>
+<h1>Calypsonet Terminal Calypso Crypto Legacy SAM API</h1>
 <div class=article-style>
 <hr>
-<p>The <strong>Calypsonet Terminal Card API</strong> defines the internal elements shared by the reader layer to implement specific card
-layers (like the Calypso Card layer).</p>
+<p>The <strong>Calypsonet Terminal Calypso Crypto Legacy SAM API</strong> is an extension of the <strong>Calypsonet Terminal Reader API</strong> which provides a
+high-level API standardizing the way to interact with a Calypso® legacy SAM product (SAM-C1, HSM-C1, etc&mldr;).</p>
 <hr>
 <h2 id=interfaces>Interfaces</h2>
+<p>The Calypso API provides the means to select a target or control SAM and then perform a transaction with the selected target.</p>
+<ul>
+<li>The result of a SAM selection is a smartcard image whose keys' parameters can be read.</li>
+<li>A transaction with a target SAM may involve a control SAM in order to secure the operations.</li>
+</ul>
+<p>The <code>LegacySam</code> interface provide ‘<strong>getters</strong>’ in order to recover the information of the selected smartcard.</p>
+<p>To optimize the number of exchanges with a SAM reader, the Legacy SAM API allows to group the commands.
+A set of command could be first &lsquo;<strong>prepare</strong>d&rsquo;, and then be &lsquo;<strong>process</strong>ed&rsquo; by a selected target at the selection or
+during the transaction.
+A transaction with a Calypso card is fully managed through one of the <code>LSTransactionManager</code> interfaces:</p>
 <p>
 <figure>
 <div class="d-flex justify-content-center">
-<div class=w-100><img src=https://calypsonet.github.io/calypsonet-terminal-card-uml-api/1.0.0/api_class_diagram.svg alt="Card API - class diagram" loading=lazy data-zoomable></div>
+<div class=w-100><img src=https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-uml-api/0.1.0/api_class_diagram.svg alt="Calypso Crypto Legacy SAM API - class diagram" loading=lazy data-zoomable></div>
 </div></figure>
 </p>
-<hr>
-<h2 id=limitations--constraints>Limitations & constraints</h2>
-<p>The Card API doesn&rsquo;t allow to request the transmission to a card of the APDU commands &ldquo;Select Application by DF Name&rdquo;
-or &ldquo;Get Response&rdquo;:</p>
-<ul>
-<li>the selection of a specific card application could be managed only through a Card Selection Request.</li>
-<li>the APDU response status words 61XYh & 6CXYh are automatically handled by the reader layer library by issuing a
-Get Response or by re-issuing the previous command with the expected &lsquo;Le&rsquo; field.</li>
-</ul>
 <hr>
 <h1 id=heading></h1>
 <h2 id=implementations--api-documentation>Implementations & API Documentation</h2>
@@ -171,21 +171,21 @@ Therefore, it is recommended to always perform a <strong>dynamic import</strong>
 up-to-date documentation.
 </div>
 </div>
-<h3 id=card-api-in-java>Card API in Java</h3>
+<h3 id=calypso-legacy-sam-api-in-java>Calypso Legacy SAM API in Java</h3>
 <div class="alert alert-note">
 <div>
-<strong><code>1.0.0</code></strong>
+<strong><code>0.1.0</code></strong>
 <span class=component-metadata>
-<i class="fas fa-book pr-1 fa-fw"></i> <a href=https://calypsonet.github.io/calypsonet-terminal-card-java-api/>API documentation</a></span>
+<i class="fas fa-book pr-1 fa-fw"></i> <a href=https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-java-api/>API documentation</a></span>
 <span class=component-metadata>
-<i class="fas fa-project-diagram pr-1 fa-fw"></i> <a href=https://calypsonet.github.io/calypsonet-terminal-card-uml-api/>UML</a></span>
+<i class="fas fa-project-diagram pr-1 fa-fw"></i> <a href=https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-uml-api/>UML</a></span>
 <span class=component-metadata>
-<i class="fab fa-github pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-card-java-api/>GitHub repository</a></span>
+<i class="fab fa-github pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/>GitHub repository</a></span>
 <span class=component-metadata>
-<i class="fas fa-exchange-alt pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-card-java-api/blob/main/CHANGELOG.md>Changelog</a></span>
+<i class="fas fa-exchange-alt pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/blob/main/CHANGELOG.md>Changelog</a></span>
 </div>
 </div>
-<p>All deliverables are available directly from the <a href="https://search.maven.org/search?q=a:calypsonet-terminal-card-java-api" target=_blank rel=noopener>Maven Central Repository</a> or by using one of the project resource managers below:</p>
+<p>All deliverables are available directly from the <a href="https://search.maven.org/search?q=a:calypsonet-terminal-calypso-crypto-legacysam-java-api" target=_blank rel=noopener>Maven Central Repository</a> or by using one of the project resource managers below:</p>
 <ul class="nav nav-tabs" id=tabs-3 role=tablist><li class=nav-item>
 <a class="nav-link active tab-Gradle-Groovy" id=tabs-3-0-tab data-toggle=tab href=#tabs-3-0 role=tab onclick='handleClick("Gradle-Groovy")' aria-controls=tabs-3-0 aria-selected=true>
 Gradle Groovy
@@ -201,29 +201,23 @@ Maven
 </li></ul>
 <div class=bd-clipboard><button type=button class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onclick="copyTabContentToClipboard('tabs-3',this)">Copy</button></div>
 <div class=tab-content id=tabs-3-content><div class="tab-pane fade show active" id=tabs-3-0 role=tabpanel aria-labelled-by=tabs-3-0-tab>
-<pre><code class=language-gradle>implementation &#39;org.calypsonet.terminal:calypsonet-terminal-card-java-api:1.0.&#43;&#39;</code></pre>
+<pre><code class=language-gradle>implementation &#39;org.calypsonet.terminal:calypsonet-terminal-calypso-crypto-legacysam-java-api:0.1.&#43;&#39;</code></pre>
 </div>
 <div class="tab-pane fade" id=tabs-3-1 role=tabpanel aria-labelled-by=tabs-3-1-tab>
-<pre><code class=language-kotlin>implementation(&#34;org.calypsonet.terminal:calypsonet-terminal-card-java-api:1.0.&#43;&#34;)</code></pre>
+<pre><code class=language-kotlin>implementation(&#34;org.calypsonet.terminal:calypsonet-terminal-calypso-crypto-legacysam-java-api:0.1.&#43;&#34;)</code></pre>
 </div>
 <div class="tab-pane fade" id=tabs-3-2 role=tabpanel aria-labelled-by=tabs-3-2-tab>
 <pre><code class=language-xml>&lt;dependency&gt;
 &lt;groupId&gt;org.calypsonet.terminal&lt;/groupId&gt;
-&lt;artifactId&gt;calypsonet-terminal-card-java-api&lt;/artifactId&gt;
-&lt;version&gt;[1.0.0,1.1.0)&lt;/version&gt;
+&lt;artifactId&gt;calypsonet-terminal-calypso-crypto-legacysam-java-api&lt;/artifactId&gt;
+&lt;version&gt;[0.1.0,0.2.0)&lt;/version&gt;
 &lt;/dependency&gt;</code></pre>
 </div>
 </div>
-<h3 id=card-api-in-c>Card API in C++</h3>
+<h3 id=calypso-legacy-sam-api-in-c>Calypso Legacy SAM API in C++</h3>
 <div class="alert alert-note">
 <div>
-<strong><code>1.0.0</code></strong>
-<span class=component-metadata>
-<i class="fas fa-book pr-1 fa-fw"></i> <a href=https://calypsonet.github.io/calypsonet-terminal-card-cpp-api/>API documentation</a></span>
-<span class=component-metadata>
-<i class="fas fa-project-diagram pr-1 fa-fw"></i> <a href=https://calypsonet.github.io/calypsonet-terminal-card-uml-api/>UML</a></span>
-<span class=component-metadata>
-<i class="fab fa-github pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-card-cpp-api/>GitHub repository</a></span>
+work in progress&mldr;
 </div>
 </div>
 </div>
@@ -231,17 +225,13 @@ Maven
 <div class=post-nav>
 <div class=post-nav-item>
 <div class=meta-nav>Previous</div>
-<a href=../../apis/calypsonet-terminal-reader-api/ rel=next>Calypsonet Terminal Reader API</a>
-</div>
-<div class=post-nav-item>
-<div class=meta-nav>Next</div>
-<a href=../../apis/calypsonet-terminal-calypso-api/ rel=prev>Calypsonet Terminal Calypso API</a>
+<a href=../../apis/calypsonet-terminal-calypso-api/ rel=next>Calypsonet Terminal Calypso API</a>
 </div>
 </div>
 </div>
 </div>
 <div class=body-footer>
-<p>Last updated on 2022-11-08</p>
+<p>Last updated on 2022-12-12</p>
 </div>
 </article>
 <footer class=site-footer>
