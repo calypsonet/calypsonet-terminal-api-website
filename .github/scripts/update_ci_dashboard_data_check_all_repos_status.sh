@@ -17,6 +17,10 @@ fi
 if [ $? -eq 0 ]; then
   exit 0
 fi
+./.github/scripts/update_ci_dashboard_data_check_repos_status.sh $token calypsonet-terminal-calypso-crypto-legacysam-uml-api
+if [ $? -eq 0 ]; then
+  exit 0
+fi
 ./.github/scripts/update_ci_dashboard_data_check_repos_status.sh $token calypsonet-terminal-card-java-api
 if [ $? -eq 0 ]; then
   exit 0
@@ -26,6 +30,10 @@ if [ $? -eq 0 ]; then
   exit 0
 fi
 ./.github/scripts/update_ci_dashboard_data_check_repos_status.sh $token calypsonet-terminal-calypso-java-api
+if [ $? -eq 0 ]; then
+  exit 0
+fi
+./.github/scripts/update_ci_dashboard_data_check_repos_status.sh $token calypsonet-terminal-calypso-crypto-legacysam-java-api
 if [ $? -eq 0 ]; then
   exit 0
 fi

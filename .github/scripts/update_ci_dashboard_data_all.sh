@@ -48,11 +48,15 @@ echo "," >> dashboard/repository_list.json
 echo "," >> dashboard/repository_list.json
 ../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-calypso-uml-api main true false
 echo "," >> dashboard/repository_list.json
+../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-calypso-crypto-legacysam-uml-api main true false
+echo "," >> dashboard/repository_list.json
 ../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-card-java-api main true true
 echo "," >> dashboard/repository_list.json
 ../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-reader-java-api main true true
 echo "," >> dashboard/repository_list.json
 ../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-calypso-java-api main true true
+echo "," >> dashboard/repository_list.json
+../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-calypso-crypto-legacysam-java-api main true true
 echo "," >> dashboard/repository_list.json
 ../.github/scripts/update_ci_dashboard_data_repository.sh $token calypsonet-terminal-card-cpp-api main true false
 echo "," >> dashboard/repository_list.json
