@@ -160,7 +160,7 @@ up-to-date documentation.
 &lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-java-api/blob/main/CHANGELOG.md">Changelog&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
-&lt;p>All deliverables are available directly from the &lt;a href="https://search.maven.org/search?q=a:calypsonet-terminal-reader-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
+&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.dev/search?q=calypsonet-terminal-reader-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-5" role="tablist">&lt;li class="nav-item">
 &lt;a class="nav-link active tab-Gradle-Groovy"
 id="tabs-5-0-tab" data-toggle="tab" href="#tabs-5-0" role="tab" onclick="handleClick(&amp;#34;Gradle-Groovy&amp;#34;);"
@@ -254,7 +254,7 @@ up-to-date documentation.
 &lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-java-api/blob/main/CHANGELOG.md">Changelog&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
-&lt;p>All deliverables are available directly from the &lt;a href="https://search.maven.org/search?q=a:calypsonet-terminal-card-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
+&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.dev/search?q=calypsonet-terminal-card-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-3" role="tablist">&lt;li class="nav-item">
 &lt;a class="nav-link active tab-Gradle-Groovy"
 id="tabs-3-0-tab" data-toggle="tab" href="#tabs-3-0" role="tab" onclick="handleClick(&amp;#34;Gradle-Groovy&amp;#34;);"
@@ -315,9 +315,9 @@ etc&amp;hellip;).&lt;/p>
 &lt;li>The result of a SAM selection is a smartcard image whose keys' parameters can be read.&lt;/li>
 &lt;li>A transaction with a target card or SAM may involve a master SAM in order to secure the operations.&lt;/li>
 &lt;/ul>
-&lt;p>The CalypsoCard &amp;amp; CalypsoSam interfaces provide ‘&lt;strong>getters&lt;/strong>’ in order to recover the information of the selected smartcard.&lt;/p>
+&lt;p>The CalypsoCard &amp;amp; CalypsoSam interfaces provide &lt;strong>accessors&lt;/strong> in order to recover the information of the selected smartcard.&lt;/p>
 &lt;p>To optimize the number of exchanges with a card reader of a SAM reader, the Calypso API allows to group the commands.
-A set of command could be first &amp;lsquo;&lt;strong>prepare&lt;/strong>d&amp;rsquo;, and then be &amp;lsquo;&lt;strong>process&lt;/strong>ed&amp;rsquo; by a selected target at the selection or
+A set of command could be first &lt;strong>prepared&lt;/strong>, and then be &lt;strong>processed&lt;/strong> by a selected target at the selection or
 during the transaction.
 A transaction with a Calypso card is fully managed through the &lt;code>CardTransactionManager&lt;/code> interface:&lt;/p>
 &lt;p>
@@ -456,7 +456,7 @@ up-to-date documentation.
 &lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/blob/main/CHANGELOG.md">Changelog&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
-&lt;p>All deliverables are available directly from the &lt;a href="https://search.maven.org/search?q=a:calypsonet-terminal-calypso-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
+&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.dev/search?q=calypsonet-terminal-calypso-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-13" role="tablist">&lt;li class="nav-item">
 &lt;a class="nav-link active tab-Gradle-Groovy"
 id="tabs-13-0-tab" data-toggle="tab" href="#tabs-13-0" role="tab" onclick="handleClick(&amp;#34;Gradle-Groovy&amp;#34;);"
@@ -515,11 +515,11 @@ high-level API standardizing the way to interact with a Calypso® legacy SAM pro
 &lt;li>The result of a SAM selection is a smartcard image whose keys' parameters can be read.&lt;/li>
 &lt;li>A transaction with a target SAM may involve a control SAM in order to secure the operations.&lt;/li>
 &lt;/ul>
-&lt;p>The &lt;code>LegacySam&lt;/code> interface provide ‘&lt;strong>getters&lt;/strong>’ in order to recover the information of the selected smartcard.&lt;/p>
+&lt;p>The &lt;code>LegacySam&lt;/code> interface provide &lt;strong>accessors&lt;/strong> in order to recover the information of the selected smartcard.&lt;/p>
 &lt;p>To optimize the number of exchanges with a SAM reader, the Legacy SAM API allows to group the commands.
-A set of command could be first &amp;lsquo;&lt;strong>prepare&lt;/strong>d&amp;rsquo;, and then be &amp;lsquo;&lt;strong>process&lt;/strong>ed&amp;rsquo; by a selected target at the selection or
+A set of command could be first &lt;strong>prepared&lt;/strong>, and then be &lt;strong>processed&lt;/strong> by a selected target at the selection or
 during the transaction.
-A transaction with a Calypso card is fully managed through one of the &lt;code>LSTransactionManager&lt;/code> interfaces:&lt;/p>
+A transaction with a Calypso SAM is fully managed through one of the &lt;code>LSTransactionManager&lt;/code> interfaces:&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
@@ -551,7 +551,7 @@ up-to-date documentation.
 &lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/blob/main/CHANGELOG.md">Changelog&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
-&lt;p>All deliverables are available directly from the &lt;a href="https://search.maven.org/search?q=a:calypsonet-terminal-calypso-crypto-legacysam-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
+&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.dev/search?q=calypsonet-terminal-calypso-crypto-legacysam-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-3" role="tablist">&lt;li class="nav-item">
 &lt;a class="nav-link active tab-Gradle-Groovy"
 id="tabs-3-0-tab" data-toggle="tab" href="#tabs-3-0" role="tab" onclick="handleClick(&amp;#34;Gradle-Groovy&amp;#34;);"

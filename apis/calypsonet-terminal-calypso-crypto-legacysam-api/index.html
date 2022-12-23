@@ -25,7 +25,7 @@
 <meta property="og:title" content="Calypsonet Terminal Calypso Crypto Legacy SAM API | Calypso Networks Association Terminal APIs">
 <meta property="og:description" content="Public high-level API which standardizes the way to interact with a Calypso® legacy SAM product (SAM-C1, HSM-C1, etc...)."><meta property="og:image" content="https://terminal-api.calypsonet.org/media/logo.svg">
 <meta property="twitter:image" content="https://terminal-api.calypsonet.org/media/logo.svg"><meta property="og:locale" content="en-us">
-<meta property="article:modified_time" content="2022-12-12T16:03:20+01:00">
+<meta property="article:modified_time" content="2022-12-23T17:56:33+01:00">
 <title>Calypsonet Terminal Calypso Crypto Legacy SAM API | Calypso Networks Association Terminal APIs</title>
 </head>
 <body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=19091674df2d212ca236c0957f53edad>
@@ -149,11 +149,11 @@ high-level API standardizing the way to interact with a Calypso® legacy SAM pro
 <li>The result of a SAM selection is a smartcard image whose keys' parameters can be read.</li>
 <li>A transaction with a target SAM may involve a control SAM in order to secure the operations.</li>
 </ul>
-<p>The <code>LegacySam</code> interface provide ‘<strong>getters</strong>’ in order to recover the information of the selected smartcard.</p>
+<p>The <code>LegacySam</code> interface provide <strong>accessors</strong> in order to recover the information of the selected smartcard.</p>
 <p>To optimize the number of exchanges with a SAM reader, the Legacy SAM API allows to group the commands.
-A set of command could be first &lsquo;<strong>prepare</strong>d&rsquo;, and then be &lsquo;<strong>process</strong>ed&rsquo; by a selected target at the selection or
+A set of command could be first <strong>prepared</strong>, and then be <strong>processed</strong> by a selected target at the selection or
 during the transaction.
-A transaction with a Calypso card is fully managed through one of the <code>LSTransactionManager</code> interfaces:</p>
+A transaction with a Calypso SAM is fully managed through one of the <code>LSTransactionManager</code> interfaces:</p>
 <p>
 <figure>
 <div class="d-flex justify-content-center">
@@ -185,7 +185,7 @@ up-to-date documentation.
 <i class="fas fa-exchange-alt pr-1 fa-fw"></i> <a href=https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/blob/main/CHANGELOG.md>Changelog</a></span>
 </div>
 </div>
-<p>All deliverables are available directly from the <a href="https://search.maven.org/search?q=a:calypsonet-terminal-calypso-crypto-legacysam-java-api" target=_blank rel=noopener>Maven Central Repository</a> or by using one of the project resource managers below:</p>
+<p>All deliverables are available directly from the <a href="https://central.sonatype.dev/search?q=calypsonet-terminal-calypso-crypto-legacysam-java-api" target=_blank rel=noopener>Maven Central Repository</a> or by using one of the project resource managers below:</p>
 <ul class="nav nav-tabs" id=tabs-3 role=tablist><li class=nav-item>
 <a class="nav-link active tab-Gradle-Groovy" id=tabs-3-0-tab data-toggle=tab href=#tabs-3-0 role=tab onclick='handleClick("Gradle-Groovy")' aria-controls=tabs-3-0 aria-selected=true>
 Gradle Groovy
@@ -231,7 +231,7 @@ work in progress&mldr;
 </div>
 </div>
 <div class=body-footer>
-<p>Last updated on 2022-12-12</p>
+<p>Last updated on 2022-12-23</p>
 </div>
 </article>
 <footer class=site-footer>
