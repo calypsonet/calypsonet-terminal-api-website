@@ -3,12 +3,10 @@ title: Terminal APIs - draft discussion
 linktitle: Overview
 summary: possible evolutions of the Terminal APIs.
 type: book
-toc: false
+toc: true
 ---
 
 ---
-
-
 ## REV3.2 & REV3.3 transaction mode
 
 ### Calypso API proposal
@@ -23,7 +21,7 @@ toc: false
 ## SAM extension
 
 ### SAM API proposal
-{{< figure src="/media/draft/calypso_SAM_API_class_diagram2.svg" caption="" numbered="" >}}
+![Calypso Crypto Legacy SAM API - class diagram](https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-uml-api/{{% calypsonet-terminal-calypso-crypto-legacysam-java-api-version %}}/api_class_diagram.svg)
 
 
 

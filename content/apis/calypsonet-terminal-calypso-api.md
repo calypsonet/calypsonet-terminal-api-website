@@ -20,10 +20,10 @@ The Calypso API  provides the means to select a target card or SAM and then perf
 - The result of a SAM selection is a smartcard image whose keys' parameters can be read.
 - A transaction with a target card or SAM may involve a master SAM in order to secure the operations.
 
-The CalypsoCard & CalypsoSam interfaces provide ‘**getters**’ in order to recover the information of the selected smartcard.
+The CalypsoCard & CalypsoSam interfaces provide **accessors** in order to recover the information of the selected smartcard.
 
 To optimize the number of exchanges with a card reader of a SAM reader, the Calypso API allows to group the commands. 
-A set of command could be first '**prepare**d', and then be '**process**ed' by a selected target at the selection or 
+A set of command could be first **prepared**, and then be **processed** by a selected target at the selection or 
 during the transaction.
 A transaction with a Calypso card is fully managed through the `CardTransactionManager` interface:
 
@@ -136,7 +136,7 @@ up-to-date documentation.
 <span class="component-metadata">{{< icon name="exchange-alt" pack="fas" >}} [Changelog](https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/blob/main/CHANGELOG.md)</span>
 {{% /callout %}}
 
-All deliverables are available directly from the [Maven Central Repository](https://search.maven.org/search?q=a:calypsonet-terminal-calypso-java-api) or by using one of the project resource managers below:
+All deliverables are available directly from the [Maven Central Repository](https://central.sonatype.dev/search?q=calypsonet-terminal-calypso-java-api) or by using one of the project resource managers below:
 
 {{< tabpane >}}
 {{< tab header="Gradle Groovy" lang="gradle" >}}
