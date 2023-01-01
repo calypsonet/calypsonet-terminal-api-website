@@ -1,13 +1,5 @@
 [
   {
-    "name": "doxygen",
-    "commit": {
-      "sha": "570ea979f4391572d3906dc2306b39894f308951",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-cpp-api/commits/570ea979f4391572d3906dc2306b39894f308951"
-    },
-    "protected": false
-  },
-  {
     "name": "gh-pages",
     "commit": {
       "sha": "803c3e7ddcc240690834bd91060a4774168cdcdb",
