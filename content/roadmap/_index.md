@@ -30,6 +30,12 @@ toc: false
 </thead>
 <tbody>
   <tr>
+    <td>2023/01/10</td>
+    <td>Reader API 1.2</td>
+    <td><ul><li>Adds a way to retrieve the name of the protocol currently used by the reader to communicate with the card
+    </li></ul></td>
+  </tr>
+  <tr>
     <td>2022/12/22</td>
     <td>Calypso API 1.5</td>
     <td><ul><li>Completes the support of "Calypso Prime Extended" card products
