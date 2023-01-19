@@ -1,4 +1,72 @@
-{
-  "message": "API rate limit exceeded for installation ID 10195263.",
-  "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
-}
+[
+  {
+    "name": "1.2.0",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/zipball/refs/tags/1.2.0",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/tarball/refs/tags/1.2.0",
+    "commit": {
+      "sha": "bc64bfa5088948ac785917b03af15e7f69ca63b2",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/commits/bc64bfa5088948ac785917b03af15e7f69ca63b2"
+    },
+    "node_id": "MDM6UmVmMzY5MTkyMzYwOnJlZnMvdGFncy8xLjIuMA=="
+  },
+  {
+    "name": "1.1.0",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/zipball/refs/tags/1.1.0",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/tarball/refs/tags/1.1.0",
+    "commit": {
+      "sha": "af9c4bfe0558ee6f4a717fddc6ec8c86fd5081d9",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/commits/af9c4bfe0558ee6f4a717fddc6ec8c86fd5081d9"
+    },
+    "node_id": "MDM6UmVmMzY5MTkyMzYwOnJlZnMvdGFncy8xLjEuMA=="
+  },
+  {
+    "name": "1.0.0",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/zipball/refs/tags/1.0.0",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/tarball/refs/tags/1.0.0",
+    "commit": {
+      "sha": "3ac006d19a461812579ebd3f52a8ca8684aad257",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/commits/3ac006d19a461812579ebd3f52a8ca8684aad257"
+    },
+    "node_id": "MDM6UmVmMzY5MTkyMzYwOnJlZnMvdGFncy8xLjAuMA=="
+  },
+  {
+    "name": "1.0.0-rc4",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/zipball/refs/tags/1.0.0-rc4",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/tarball/refs/tags/1.0.0-rc4",
+    "commit": {
+      "sha": "d8f6923218fea6e06839c6f152743f9f68d25182",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/commits/d8f6923218fea6e06839c6f152743f9f68d25182"
+    },
+    "node_id": "MDM6UmVmMzY5MTkyMzYwOnJlZnMvdGFncy8xLjAuMC1yYzQ="
+  },
+  {
+    "name": "1.0.0-rc3",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/zipball/refs/tags/1.0.0-rc3",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/tarball/refs/tags/1.0.0-rc3",
+    "commit": {
+      "sha": "7230722d0d1aacca30f10caae4a291ef7709ce80",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/commits/7230722d0d1aacca30f10caae4a291ef7709ce80"
+    },
+    "node_id": "MDM6UmVmMzY5MTkyMzYwOnJlZnMvdGFncy8xLjAuMC1yYzM="
+  },
+  {
+    "name": "1.0-rc2",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/zipball/refs/tags/1.0-rc2",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/tarball/refs/tags/1.0-rc2",
+    "commit": {
+      "sha": "e1bd564e2d032daa009f3af5e60903cca4f1b79a",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/commits/e1bd564e2d032daa009f3af5e60903cca4f1b79a"
+    },
+    "node_id": "MDM6UmVmMzY5MTkyMzYwOnJlZnMvdGFncy8xLjAtcmMy"
+  },
+  {
+    "name": "1.0-rc1",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/zipball/refs/tags/1.0-rc1",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/tarball/refs/tags/1.0-rc1",
+    "commit": {
+      "sha": "1560c048b4e01209f25631e880f13b4d388a39cf",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/commits/1560c048b4e01209f25631e880f13b4d388a39cf"
+    },
+    "node_id": "MDM6UmVmMzY5MTkyMzYwOnJlZnMvdGFncy8xLjAtcmMx"
+  }
+]
