@@ -1,4 +1,18 @@
-{
-  "message": "API rate limit exceeded for installation ID 10195263.",
-  "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
-}
+[
+  {
+    "name": "gh-pages",
+    "commit": {
+      "sha": "01cfeb15b3eb19e702b67670491fdcc9a8a987bf",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/commits/01cfeb15b3eb19e702b67670491fdcc9a8a987bf"
+    },
+    "protected": false
+  },
+  {
+    "name": "main",
+    "commit": {
+      "sha": "5eecbb7d3d190517eefc30769e1e422659e30ae8",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/commits/5eecbb7d3d190517eefc30769e1e422659e30ae8"
+    },
+    "protected": false
+  }
+]

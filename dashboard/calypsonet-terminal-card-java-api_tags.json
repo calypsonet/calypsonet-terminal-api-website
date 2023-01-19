@@ -1,4 +1,42 @@
-{
-  "message": "API rate limit exceeded for installation ID 10195263.",
-  "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
-}
+[
+  {
+    "name": "1.0.0",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/zipball/refs/tags/1.0.0",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/tarball/refs/tags/1.0.0",
+    "commit": {
+      "sha": "404b37926be802344f71b4ae6ae9f4909a91cce9",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/commits/404b37926be802344f71b4ae6ae9f4909a91cce9"
+    },
+    "node_id": "MDM6UmVmMzY5MTkyNDU4OnJlZnMvdGFncy8xLjAuMA=="
+  },
+  {
+    "name": "1.0.0-rc3",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/zipball/refs/tags/1.0.0-rc3",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/tarball/refs/tags/1.0.0-rc3",
+    "commit": {
+      "sha": "b0e8cdcdf1478964713150b9631ffc2390da7dee",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/commits/b0e8cdcdf1478964713150b9631ffc2390da7dee"
+    },
+    "node_id": "MDM6UmVmMzY5MTkyNDU4OnJlZnMvdGFncy8xLjAuMC1yYzM="
+  },
+  {
+    "name": "1.0.0-rc2",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/zipball/refs/tags/1.0.0-rc2",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/tarball/refs/tags/1.0.0-rc2",
+    "commit": {
+      "sha": "a224cef8b054355fc59de76f9326a8e229f7141b",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/commits/a224cef8b054355fc59de76f9326a8e229f7141b"
+    },
+    "node_id": "MDM6UmVmMzY5MTkyNDU4OnJlZnMvdGFncy8xLjAuMC1yYzI="
+  },
+  {
+    "name": "1.0-rc1",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/zipball/refs/tags/1.0-rc1",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/tarball/refs/tags/1.0-rc1",
+    "commit": {
+      "sha": "ef876781a6580e2b0eeaa628c2a5b0024d1f8f18",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/commits/ef876781a6580e2b0eeaa628c2a5b0024d1f8f18"
+    },
+    "node_id": "MDM6UmVmMzY5MTkyNDU4OnJlZnMvdGFncy8xLjAtcmMx"
+  }
+]

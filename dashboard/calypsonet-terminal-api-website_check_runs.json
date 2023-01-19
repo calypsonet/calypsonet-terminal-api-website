@@ -122,10 +122,10 @@
       "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/10762398962",
       "html_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/3961947336/jobs/6787997740",
       "details_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/3961947336/jobs/6787997740",
-      "status": "in_progress",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "success",
       "started_at": "2023-01-19T20:03:26Z",
-      "completed_at": null,
+      "completed_at": "2023-01-19T20:04:05Z",
       "output": {
         "title": null,
         "summary": null,
