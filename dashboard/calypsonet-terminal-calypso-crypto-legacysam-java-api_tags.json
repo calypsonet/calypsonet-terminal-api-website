@@ -1,12 +1,4 @@
-[
-  {
-    "name": "0.1.0",
-    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/zipball/refs/tags/0.1.0",
-    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/tarball/refs/tags/0.1.0",
-    "commit": {
-      "sha": "666fcd0108f96e6ab2c38a5a15eef012684a55a0",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/commits/666fcd0108f96e6ab2c38a5a15eef012684a55a0"
-    },
-    "node_id": "REF_kwDOIRi5AK9yZWZzL3RhZ3MvMC4xLjA"
-  }
-]
+{
+  "message": "API rate limit exceeded for installation ID 10195263.",
+  "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
+}
