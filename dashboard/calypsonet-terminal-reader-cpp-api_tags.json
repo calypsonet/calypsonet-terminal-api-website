@@ -1,4 +1,12 @@
-{
-  "message": "API rate limit exceeded for installation ID 10195263.",
-  "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
-}
+[
+  {
+    "name": "1.0.0",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-cpp-api/zipball/refs/tags/1.0.0",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-cpp-api/tarball/refs/tags/1.0.0",
+    "commit": {
+      "sha": "8b63e55819f0698df52f585d9d1a6ad5b907b1b9",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-cpp-api/commits/8b63e55819f0698df52f585d9d1a6ad5b907b1b9"
+    },
+    "node_id": "MDM6UmVmMzc5MTgwODQyOnJlZnMvdGFncy8xLjAuMA=="
+  }
+]
