@@ -1,18 +1,4 @@
-[
-  {
-    "name": "gh-pages",
-    "commit": {
-      "sha": "fb625fa8852b831138227fac020ac9af2853961c",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/commits/fb625fa8852b831138227fac020ac9af2853961c"
-    },
-    "protected": true
-  },
-  {
-    "name": "main",
-    "commit": {
-      "sha": "9ca2f0848c4aabe64c9d6065955122b4503ab30a",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/commits/9ca2f0848c4aabe64c9d6065955122b4503ab30a"
-    },
-    "protected": false
-  }
-]
+{
+  "message": "API rate limit exceeded for installation ID 10195263.",
+  "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
+}

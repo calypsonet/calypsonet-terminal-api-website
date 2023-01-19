@@ -1,34 +1,4 @@
-[
-  {
-    "name": "doc/review",
-    "commit": {
-      "sha": "23fe0e5f15765cb2d900502af417e58fc242b234",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/23fe0e5f15765cb2d900502af417e58fc242b234"
-    },
-    "protected": false
-  },
-  {
-    "name": "gh-pages",
-    "commit": {
-      "sha": "d82ef3c92691a78c265e49fee6c47c258026901b",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/d82ef3c92691a78c265e49fee6c47c258026901b"
-    },
-    "protected": true
-  },
-  {
-    "name": "main",
-    "commit": {
-      "sha": "bf024161a2db46ea0730ffd68286867c02927804",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/bf024161a2db46ea0730ffd68286867c02927804"
-    },
-    "protected": false
-  },
-  {
-    "name": "pre-open-mode",
-    "commit": {
-      "sha": "965ff3b23768986ae4bd81b9259bfe1dbc9a6a71",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/965ff3b23768986ae4bd81b9259bfe1dbc9a6a71"
-    },
-    "protected": false
-  }
-]
+{
+  "message": "API rate limit exceeded for installation ID 10195263.",
+  "documentation_url": "https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting"
+}
