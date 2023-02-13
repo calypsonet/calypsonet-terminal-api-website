@@ -14,5 +14,13 @@
       "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/commits/a1eae00db4910fa068d55d4ba327add3be9b6f70"
     },
     "protected": false
+  },
+  {
+    "name": "version_0.2.0",
+    "commit": {
+      "sha": "26335792c0a235b8480c947399c8a9db3fb1816b",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/commits/26335792c0a235b8480c947399c8a9db3fb1816b"
+    },
+    "protected": false
   }
 ]
