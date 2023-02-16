@@ -10,10 +10,10 @@
       "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/check-runs/11395336231",
       "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/actions/runs/4196341589/jobs/7277182728",
       "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/actions/runs/4196341589/jobs/7277182728",
-      "status": "in_progress",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "success",
       "started_at": "2023-02-16T17:02:16Z",
-      "completed_at": null,
+      "completed_at": "2023-02-16T17:03:48Z",
       "output": {
         "title": null,
         "summary": null,
