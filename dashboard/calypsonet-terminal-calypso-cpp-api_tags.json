@@ -1,0 +1,62 @@
+[
+  {
+    "name": "1.4.0",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/zipball/refs/tags/1.4.0",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/tarball/refs/tags/1.4.0",
+    "commit": {
+      "sha": "3704e80ac728d60f965b7f6c3d3ef0a15ca4660c",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/3704e80ac728d60f965b7f6c3d3ef0a15ca4660c"
+    },
+    "node_id": "MDM6UmVmMzc5NDA0NzM0OnJlZnMvdGFncy8xLjQuMA=="
+  },
+  {
+    "name": "1.3.0",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/zipball/refs/tags/1.3.0",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/tarball/refs/tags/1.3.0",
+    "commit": {
+      "sha": "f2645139824d7d55fa347d0b801cd7650fed793e",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/f2645139824d7d55fa347d0b801cd7650fed793e"
+    },
+    "node_id": "MDM6UmVmMzc5NDA0NzM0OnJlZnMvdGFncy8xLjMuMA=="
+  },
+  {
+    "name": "1.2.0.1",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/zipball/refs/tags/1.2.0.1",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/tarball/refs/tags/1.2.0.1",
+    "commit": {
+      "sha": "1e421ce5581e9aea9565f9f76900fc5cdd316896",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/1e421ce5581e9aea9565f9f76900fc5cdd316896"
+    },
+    "node_id": "MDM6UmVmMzc5NDA0NzM0OnJlZnMvdGFncy8xLjIuMC4x"
+  },
+  {
+    "name": "1.2.0",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/zipball/refs/tags/1.2.0",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/tarball/refs/tags/1.2.0",
+    "commit": {
+      "sha": "5733ad3ae4294155ee8195b2c697d52b8909a668",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/5733ad3ae4294155ee8195b2c697d52b8909a668"
+    },
+    "node_id": "MDM6UmVmMzc5NDA0NzM0OnJlZnMvdGFncy8xLjIuMA=="
+  },
+  {
+    "name": "1.1.0",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/zipball/refs/tags/1.1.0",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/tarball/refs/tags/1.1.0",
+    "commit": {
+      "sha": "69e21f4fb3dfbd81575afac03fcfae7c2f3c2811",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/69e21f4fb3dfbd81575afac03fcfae7c2f3c2811"
+    },
+    "node_id": "MDM6UmVmMzc5NDA0NzM0OnJlZnMvdGFncy8xLjEuMA=="
+  },
+  {
+    "name": "1.0.0",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/zipball/refs/tags/1.0.0",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/tarball/refs/tags/1.0.0",
+    "commit": {
+      "sha": "f068847503f54a7eae9af1d84895df2e13566df9",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/f068847503f54a7eae9af1d84895df2e13566df9"
+    },
+    "node_id": "MDM6UmVmMzc5NDA0NzM0OnJlZnMvdGFncy8xLjAuMA=="
+  }
+]
