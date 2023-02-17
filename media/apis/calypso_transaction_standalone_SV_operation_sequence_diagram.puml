@@ -107,7 +107,7 @@ end note
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands
+app->capi: <font color=red>**process**</font> commands (keep channel open)
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
@@ -124,7 +124,7 @@ deactivate cardReader
 capi-->app: [Calypso card image:\n\t- identification data with SV support\n\t- SV Load data (updated)\n\t- SV Debit data\n\t- SV balance (updated)]
 deactivate capi
 
-app->capi: <font color=red>**prepare**</font> card transaction:\n\t- SV Load (specific amount)\n\t- release channel
+app->capi: <font color=red>**prepare**</font> card transaction:\n\t- SV Load (specific amount)
 activate capi  #pink
 note over capi
     SV Load prepared in **first** position of a card command set to process.
@@ -132,7 +132,7 @@ end note
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands
+app->capi: <font color=red>**process**</font> commands (close channel after)
 activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #1**</font>\ntransmit card request\n\t- APDU list

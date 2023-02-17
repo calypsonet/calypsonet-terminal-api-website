@@ -99,12 +99,12 @@ note over capi
     Reads again the environment file & the contract list inside the session to authenticate them.
 end note
 
-app->capi: <font color=red>**prepare**</font>\n\t- read environment file\n\t- read contract list\n\t- read contract #x\n\t- read contract #y\n\t- read counters
+app->capi: <font color=red>**prepare**</font>\n\t- open secure session (DEBIT access level)\n\t- read environment file\n\t- read contract list\n\t- read contract #x\n\t- read contract #y\n\t- read counters
 activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> opening (DEBIT access level)
+app->capi: <font color=red>**process**</font> commands (keep channel open)
 activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
@@ -142,13 +142,13 @@ deactivate cardReader
 capi-->app: [Calypso card image:\n\t- identification data\n\t- environment data (verified)\n\t- contract list data (verified)\n\t- contract #x data\n\t- contract #y data\n\t- counters data]
 deactivate capi
 
-app->capi: <font color=red>**prepare**</font>:\n\t- update contract list (data)\n\t- update contract #x (data)\n\t- update counters (value)\n\t- release channel
+app->capi: <font color=red>**prepare**</font>:\n\t- update contract list (data)\n\t- update contract #x (data)\n\t- update counters (value)\n\t- close secure session (as ratified)
 activate capi  #pink
 
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> closing (as ratified)
+app->capi: <font color=red>**process**</font> commands (close channel after)
 activate capi  #pink
 capi->capi: anticipates the future card responses
 

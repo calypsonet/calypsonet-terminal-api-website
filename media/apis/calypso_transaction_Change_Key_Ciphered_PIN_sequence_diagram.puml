@@ -94,7 +94,12 @@ deactivate capi
 app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
 
 
-app->capi: <font color=red>**process**</font> Change Key (current key #x reference,\n\t\t\t\tnew key #x reference)
+app->capi: <font color=red>**prepare**</font> Change Key (current key #x reference,\n\t\t\t\tnew key #x reference)
+activate capi  #pink
+capi-->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> commands (keep channel open)
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
@@ -136,12 +141,12 @@ deactivate cardReader
 capi-->app: [Calypso card image:\n\t- identification data with PIN support\n\t- key #1 reference (updated)\n\t- key #2 reference\n\t- key #3 reference]
 deactivate capi
 
-app->capi: <font color=red>**prepare**</font>:\n\t- release channel
+app->capi: <font color=red>**prepare**</font> Change PIN (new PIN value)
 activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> Change PIN (new PIN value)
+app->capi: <font color=red>**process**</font> commands (close channel after)
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #4**</font>\ntransmit card request\n\t- APDU list

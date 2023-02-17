@@ -60,7 +60,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands
+app->capi: <font color=red>**process**</font> commands (keep channel open)
 activate capi  #pink
 
 note over samReader
