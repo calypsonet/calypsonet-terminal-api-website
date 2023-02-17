@@ -88,12 +88,12 @@ deactivate capi
 
 app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
 
-app->capi: <font color=red>**prepare**</font> card transaction:\n\t- read environment file
+app->capi: <font color=red>**prepare**</font> card transaction:\n\t- open secure session (DEBIT access level)\n\t- read environment file
 activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> opening (DEBIT access level)
+app->capi: <font color=red>**process**</font> commands (keep channel open)
 activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
@@ -129,7 +129,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands
+app->capi: <font color=red>**process**</font> commands (keep channel open)
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #3**</font>\ntransmit card request\n\t- APDU list
@@ -153,7 +153,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands
+app->capi: <font color=red>**process**</font> commands (keep channel open)
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #4**</font>\ntransmit card request\n\t- APDU list
@@ -177,7 +177,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands
+app->capi: <font color=red>**process**</font> commands (keep channel open)
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #5**</font>\ntransmit card request\n\t- APDU list
@@ -201,7 +201,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands
+app->capi: <font color=red>**process**</font> commands (keep channel open)
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #6**</font>\ntransmit card request\n\t- APDU list
@@ -220,13 +220,13 @@ deactivate capi
 
 app->app: defines data to update
 
-app->capi: <font color=red>**prepare**</font>:\n\t- decrease counter #x (new value)\n\t- append event record (new event)\n\t- release channel
+app->capi: <font color=red>**prepare**</font>:\n\t- decrease counter #x (new value)\n\t- append event record (new event)\n\t- close secure session (not ratified)
 activate capi  #pink
 
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> closing (not ratified)
+app->capi: <font color=red>**process**</font> commands (close channel after)
 activate capi  #pink
 capi->capi: anticipates the future card responses
 note over capi

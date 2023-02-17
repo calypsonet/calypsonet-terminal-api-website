@@ -55,7 +55,7 @@ note over capi
     SV balance already read when selecting the card.
 end note
 
-app->capi: <font color=red>**prepare**</font> card transaction:\n\t- read environment file\n\t- read contract #1\n\t- **SV Get for Debit**
+app->capi: <font color=red>**prepare**</font> card transaction:\n\t- open secure session (DEBIT access level)\n\t- read environment file\n\t- read contract #1\n\t- **SV Get for Debit**
 activate capi  #pink
 note over capi
     SV Get for Debit prepared in **last** position of a card command set to process.
@@ -63,7 +63,7 @@ end note
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> opening (DEBIT access level)
+app->capi: <font color=red>**process**</font> commands (keep channel open)
 activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
@@ -98,7 +98,7 @@ deactivate cardReader
 capi-->app: [Calypso card image:\n\t- identification data with SV support\n\t- environment data (updated)\n\t- contract list data\n\t- contract #1 data\n\t- SV Debit data\n\t- SV balance]]
 deactivate capi
 
-app->capi: <font color=red>**prepare**</font>:\n\t- SV Debit (specific amount)\n\t- append event record (data)\n\t- release channel
+app->capi: <font color=red>**prepare**</font>:\n\t- SV Debit (specific amount)\n\t- append event record (data)\n\t- close secure session (not ratified)
 activate capi  #pink
 note over capi
     SV Debit prepared in **first** position of a card command set to process.
@@ -110,7 +110,7 @@ note over capi
     At the session closure, any data secure processing should be unnecessary.
 end note
 
-app->capi: <font color=red>**process**</font> closing (not ratified)
+app->capi: <font color=red>**process**</font> commands (close channel after)
 activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #2**</font>\ntransmit card request\n\t- APDU list

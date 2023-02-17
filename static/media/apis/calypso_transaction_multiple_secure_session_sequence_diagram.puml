@@ -65,12 +65,12 @@ note over capi
     Reads again the environment data inside the session to authenticate them.
 end note
 
-app->capi: <font color=red>**prepare**</font> card transaction:\n\t- update environment file\n\t- update contract list\n\t- update contract #1\n\t- update contract #2\n\t- update contract #3\n\t- update contract #4\n\t- update all counters\n\t- update event log #1\n\t- update event log #2\n\t- update event log #3
+app->capi: <font color=red>**prepare**</font> card transaction:\n\t- open secure session (\n\t\tLOAD access level,\n\t\tMULTIPLE mode)\n\t- update environment file\n\t- update contract list\n\t- update contract #1\n\t- update contract #2\n\t- update contract #3\n\t- update contract #4\n\t- update all counters\n\t- update event log #1\n\t- update event log #2\n\t- update event log #3\n\t- close secure session (as ratified)
 activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> opening (LOAD access level,\n\t\t\tMULTIPLE mode)
+app->capi: <font color=red>**process**</font> commands (close channel after)
 activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
@@ -189,19 +189,6 @@ end
 cardReader--[#0000FF]>capi: [card certificate 1]
 deactivate cardReader
 
-
-capi-->app: [Calypso card image:\n\t- identification data\n\t- environment data (updated)\n\t- contract list data\n\t- contract #1 data\n\t- counter #1 data]
-deactivate capi
-
-app->capi: <font color=red>**prepare**</font>:\n\t- release channel
-activate capi  #pink
-
-capi-->app
-deactivate capi
-
-app->capi: <font color=red>**process**</font> closing (as ratified)
-activate capi  #pink
-
 capi-[#00FF00]>samReader: <font color=green>**SAM #4**</font>\ntransmit card request\n\t- APDU list
 activate samReader #lightGreen
 
@@ -239,6 +226,6 @@ sam-->samReader: [authentication status]
 samReader-[#00FF00]->capi: [authentification status]
 deactivate samReader
 
-capi-->app: [Calypso card image:\n\t- identification data\n\t- environment data\n\t- contract list data\n\t- contract #1 data\n\t- counter #1 data (updated)\n\t- event #1 (updated)]\nauthentification status
+capi-->app: [Calypso card image:\n\t- environment file\n\t- contract list\n\t- contract #1\n\t- contract #2\n\t- contract #3\n\t- contract #4\n\t- all counters\n\t- event log #1\n\t- event log #2\n\t- event log #3]\nauthentification status
 deactivate capi
 @enduml

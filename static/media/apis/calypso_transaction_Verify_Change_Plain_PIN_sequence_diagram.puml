@@ -57,8 +57,12 @@ deactivate capi
 
 app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource
 
+app->capi: <font color=red>**prepare**</font> Verify PIN (current PIN)
+activate capi  #pink
+capi-->app
+deactivate capi
 
-app->capi: <font color=red>**process**</font> Verify PIN (current PIN)
+app->capi: <font color=red>**process**</font> commands (keep channel open)
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
@@ -79,12 +83,12 @@ note over capi
     The PIN could updated in plain after a successful verification.
 end note
 
-app->capi: prepare: release channel
+app->capi: <font color=red>**prepare**</font> Change PIN (new PIN)
 activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> Change PIN (new PIN)
+app->capi: <font color=red>**process**</font> commands (close channel after)
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #3**</font>\ntransmit card request\n\t- APDU list
