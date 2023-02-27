@@ -1,5 +1,15 @@
 [
   {
+    "name": "0.2.0",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/zipball/refs/tags/0.2.0",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/tarball/refs/tags/0.2.0",
+    "commit": {
+      "sha": "ca318de225c4bc45c6b62554a301e8fa1ed374bd",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/commits/ca318de225c4bc45c6b62554a301e8fa1ed374bd"
+    },
+    "node_id": "REF_kwDOIRi5AK9yZWZzL3RhZ3MvMC4yLjA"
+  },
+  {
     "name": "0.1.0",
     "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/zipball/refs/tags/0.1.0",
     "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/tarball/refs/tags/0.1.0",
