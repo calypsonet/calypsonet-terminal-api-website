@@ -30,6 +30,11 @@ toc: false
 </thead>
 <tbody>
   <tr>
+    <td>2023/02/27</td>
+    <td>Calypso Crypto Legacy SAM API 0.2</td>
+    <td><ul><li>adds "counters & ceilings" management commands in static mode</li></ul></td>
+  </tr>
+  <tr>
     <td>2023/02/17</td>
     <td>Calypso API 1.6</td>
     <td><ul><li>Simplifies the card transaction API by providing a single "process" method</li>
