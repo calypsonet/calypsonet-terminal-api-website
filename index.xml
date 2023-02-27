@@ -523,7 +523,7 @@ A transaction with a Calypso SAM is fully managed through one of the &lt;code>LS
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-uml-api/0.1.0/api_class_diagram.svg" alt="Calypso Crypto Legacy SAM API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-uml-api/0.2.0/api_class_diagram.svg" alt="Calypso Crypto Legacy SAM API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;hr>
@@ -540,7 +540,7 @@ up-to-date documentation.
 &lt;h3 id="calypso-legacy-sam-api-in-java">Calypso Legacy SAM API in Java&lt;/h3>
 &lt;div class="alert alert-note">
 &lt;div>
-&lt;strong>&lt;code>0.1.0&lt;/code>&lt;/strong>
+&lt;strong>&lt;code>0.2.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-java-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -574,18 +574,18 @@ Maven
 &lt;div class="bd-clipboard">&lt;button type="button" class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onClick="javascript:copyTabContentToClipboard('tabs-3', this);">Copy&lt;/button>&lt;/div>
 &lt;div class="tab-content" id="tabs-3-content">&lt;div class="tab-pane fade show active"
 id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
-&lt;pre>&lt;code class="language-gradle">implementation &amp;#39;org.calypsonet.terminal:calypsonet-terminal-calypso-crypto-legacysam-java-api:0.1.&amp;#43;&amp;#39;&lt;/code>&lt;/pre>
+&lt;pre>&lt;code class="language-gradle">implementation &amp;#39;org.calypsonet.terminal:calypsonet-terminal-calypso-crypto-legacysam-java-api:0.2.&amp;#43;&amp;#39;&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;div class="tab-pane fade"
 id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">
-&lt;pre>&lt;code class="language-kotlin">implementation(&amp;#34;org.calypsonet.terminal:calypsonet-terminal-calypso-crypto-legacysam-java-api:0.1.&amp;#43;&amp;#34;)&lt;/code>&lt;/pre>
+&lt;pre>&lt;code class="language-kotlin">implementation(&amp;#34;org.calypsonet.terminal:calypsonet-terminal-calypso-crypto-legacysam-java-api:0.2.&amp;#43;&amp;#34;)&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;div class="tab-pane fade"
 id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;pre>&lt;code class="language-xml">&amp;lt;dependency&amp;gt;
 &amp;lt;groupId&amp;gt;org.calypsonet.terminal&amp;lt;/groupId&amp;gt;
 &amp;lt;artifactId&amp;gt;calypsonet-terminal-calypso-crypto-legacysam-java-api&amp;lt;/artifactId&amp;gt;
-&amp;lt;version&amp;gt;[0.1.0,0.2.0)&amp;lt;/version&amp;gt;
+&amp;lt;version&amp;gt;[0.2.0,0.3.0)&amp;lt;/version&amp;gt;
 &amp;lt;/dependency&amp;gt;&lt;/code>&lt;/pre>
 &lt;/div>
 &lt;/div>
