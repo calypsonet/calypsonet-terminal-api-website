@@ -175,9 +175,9 @@ cna_api_version:
   calypsonet_terminal_card_java_api_dynamic_gradle: '1.0.+'
   calypsonet_terminal_card_java_api_dynamic_maven: '[1.0.0,1.1.0)'
 
-  calypsonet_terminal_calypso_java_api: '1.6.0'
-  calypsonet_terminal_calypso_java_api_dynamic_gradle: '1.6.+'
-  calypsonet_terminal_calypso_java_api_dynamic_maven: '[1.6.0,1.7.0)'
+  calypsonet_terminal_calypso_java_api: '1.7.0'
+  calypsonet_terminal_calypso_java_api_dynamic_gradle: '1.7.+'
+  calypsonet_terminal_calypso_java_api_dynamic_maven: '[1.7.0,1.8.0)'
 
   calypsonet_terminal_calypso_crypto_legacysam_java_api: '0.2.0'
   calypsonet_terminal_calypso_crypto_legacysam_java_api_dynamic_gradle: '0.2.+'
