@@ -1,5 +1,13 @@
 [
   {
+    "name": "challenge",
+    "commit": {
+      "sha": "7fad491453fc44c560f7a2129c44a7f3012230db",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/7fad491453fc44c560f7a2129c44a7f3012230db"
+    },
+    "protected": false
+  },
+  {
     "name": "doc/review",
     "commit": {
       "sha": "23fe0e5f15765cb2d900502af417e58fc242b234",
