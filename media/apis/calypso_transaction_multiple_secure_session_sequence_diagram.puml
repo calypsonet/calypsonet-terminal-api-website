@@ -75,8 +75,6 @@ activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
 activate samReader #lightGreen
-samReader->sam: select diversifier (card serial)
-sam-->samReader
 samReader->sam: get challenge
 sam-->samReader: [SAM challenge 1]
 samReader-[#00FF00]->capi: [SAM challenge 1]
@@ -113,6 +111,8 @@ deactivate cardReader
 capi-[#00FF00]>samReader: <font color=green>**SAM #2**</font>\ntransmit card request\n\t- APDU list
 activate samReader #lightGreen
 
+samReader->sam: select diversifier (card serial)
+sam-->samReader
 samReader->sam: digest init (opening data)
 sam-->samReader
 samReader->sam: digest update (update environment)
@@ -158,10 +158,6 @@ sam-->samReader: [authentication status 1]
 'capi-[#00FF00]>samReader: <font color=green>**SAM #4**</font>\ntransmit card request\n\t- APDU list
 'activate samReader #lightGreen
 
-note over samReader
-    Anticipate second session with the same diversifier.
-end note
-
 samReader->sam: get challenge
 sam-->samReader: [SAM challenge 2]
 samReader-[#00FF00]->capi: [authentication status 1, SAM challenge 2]
@@ -191,6 +187,10 @@ deactivate cardReader
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #4**</font>\ntransmit card request\n\t- APDU list
 activate samReader #lightGreen
+
+note over samReader
+    Anticipate second session with the same diversifier.
+end note
 
 samReader->sam: digest init (opening data)
 sam-->samReader
