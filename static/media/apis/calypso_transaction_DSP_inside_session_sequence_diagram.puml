@@ -72,12 +72,6 @@ end note
 samReader->sam: **verify signature** (environment data signature)
 sam-->samReader: signature status
 
-note over samReader
-    A session key diversification is operated, if the diversifier is different than for the previous data secure processing operation.
-end note
-
-samReader->sam: select diversifier (card serial)
-sam-->samReader
 samReader->sam: get challenge
 sam-->samReader: [SAM challenge]
 samReader-[#00FF00]->capi: [environment data signature,\nSAM challenge]
@@ -115,7 +109,12 @@ activate samReader #lightGreen
 note over samReader
     When data secure processing requested, processes all pending SAM commands.
 end note
+note over samReader
+    A session key diversification is operated, if the diversifier is different than for the previous data secure processing operation.
+end note
 
+samReader->sam: select diversifier (card serial)
+sam-->samReader
 samReader->sam: digest init (opening data)
 sam-->samReader
 samReader->sam: digest update (read environment)

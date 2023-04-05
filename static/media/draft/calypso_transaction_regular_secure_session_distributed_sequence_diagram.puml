@@ -109,8 +109,6 @@ activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
 activate samReader #lightGreen
-samReader->sam: select diversifier (card serial)
-sam-->samReader
 samReader->sam: get challenge
 sam-->samReader: [SAM challenge]
 samReader-[#00FF00]->capi: [SAM challenge]
@@ -155,6 +153,8 @@ capi->capi: anticipates the future card responses
 capi-[#00FF00]>samReader: <font color=green>**SAM #2**</font>\ntransmit card request\n\t- APDU list
 activate samReader #lightGreen
 
+samReader->sam: select diversifier (card serial)
+sam-->samReader
 samReader->sam: digest init (opening data)
 sam-->samReader
 samReader->sam: digest update (read environment) * 2
