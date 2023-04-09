@@ -1,5 +1,15 @@
 [
   {
+    "name": "1.4.1",
+    "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/zipball/refs/tags/1.4.1",
+    "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/tarball/refs/tags/1.4.1",
+    "commit": {
+      "sha": "f9aaa53ce40f9271f1dedc5e3e78c37f73ff0b4e",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/f9aaa53ce40f9271f1dedc5e3e78c37f73ff0b4e"
+    },
+    "node_id": "MDM6UmVmMzc5NDA0NzM0OnJlZnMvdGFncy8xLjQuMQ=="
+  },
+  {
     "name": "1.4.0.1",
     "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/zipball/refs/tags/1.4.0.1",
     "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/tarball/refs/tags/1.4.0.1",
