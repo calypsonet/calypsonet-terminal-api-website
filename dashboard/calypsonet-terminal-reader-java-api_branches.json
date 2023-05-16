@@ -8,6 +8,14 @@
     "protected": true
   },
   {
+    "name": "import_export",
+    "commit": {
+      "sha": "6db4293a95c56fcf02d0e2730d2a06bcdfacac9a",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/commits/6db4293a95c56fcf02d0e2730d2a06bcdfacac9a"
+    },
+    "protected": false
+  },
+  {
     "name": "main",
     "commit": {
       "sha": "9ca2f0848c4aabe64c9d6065955122b4503ab30a",
