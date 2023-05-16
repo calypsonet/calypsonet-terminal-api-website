@@ -33,10 +33,10 @@
     },
     "body": null,
     "created_at": "2023-05-16T09:23:30Z",
-    "updated_at": "2023-05-16T09:27:34Z",
+    "updated_at": "2023-05-16T12:57:14Z",
     "closed_at": null,
     "merged_at": null,
-    "merge_commit_sha": "e462c3931f37b10b248dc232a75b9b8bbdcfa31b",
+    "merge_commit_sha": "80b8ea9eda344a8d662838c6fb225f5579916943",
     "assignee": null,
     "assignees": [
 
@@ -56,11 +56,11 @@
     "review_comments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/pulls/12/comments",
     "review_comment_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/pulls/comments{/number}",
     "comments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/issues/12/comments",
-    "statuses_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/statuses/6db4293a95c56fcf02d0e2730d2a06bcdfacac9a",
+    "statuses_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/statuses/f29e26f020eb2cda242985c31b7d346ba810f42a",
     "head": {
       "label": "calypsonet:import_export",
       "ref": "import_export",
-      "sha": "6db4293a95c56fcf02d0e2730d2a06bcdfacac9a",
+      "sha": "f29e26f020eb2cda242985c31b7d346ba810f42a",
       "user": {
         "login": "calypsonet",
         "id": 36229037,
@@ -149,13 +149,13 @@
         "deployments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/deployments",
         "created_at": "2021-05-20T11:58:32Z",
         "updated_at": "2023-01-17T18:45:47Z",
-        "pushed_at": "2023-05-16T09:23:31Z",
+        "pushed_at": "2023-05-16T12:57:15Z",
         "git_url": "git://github.com/calypsonet/calypsonet-terminal-reader-java-api.git",
         "ssh_url": "git@github.com:calypsonet/calypsonet-terminal-reader-java-api.git",
         "clone_url": "https://github.com/calypsonet/calypsonet-terminal-reader-java-api.git",
         "svn_url": "https://github.com/calypsonet/calypsonet-terminal-reader-java-api",
         "homepage": "https://terminal-api.calypsonet.org/",
-        "size": 1156,
+        "size": 1161,
         "stargazers_count": 4,
         "watchers_count": 4,
         "language": "Java",
@@ -286,13 +286,13 @@
         "deployments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/deployments",
         "created_at": "2021-05-20T11:58:32Z",
         "updated_at": "2023-01-17T18:45:47Z",
-        "pushed_at": "2023-05-16T09:23:31Z",
+        "pushed_at": "2023-05-16T12:57:15Z",
         "git_url": "git://github.com/calypsonet/calypsonet-terminal-reader-java-api.git",
         "ssh_url": "git@github.com:calypsonet/calypsonet-terminal-reader-java-api.git",
         "clone_url": "https://github.com/calypsonet/calypsonet-terminal-reader-java-api.git",
         "svn_url": "https://github.com/calypsonet/calypsonet-terminal-reader-java-api",
         "homepage": "https://terminal-api.calypsonet.org/",
-        "size": 1156,
+        "size": 1161,
         "stargazers_count": 4,
         "watchers_count": 4,
         "language": "Java",
@@ -354,7 +354,7 @@
         "href": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/pulls/12/commits"
       },
       "statuses": {
-        "href": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/statuses/6db4293a95c56fcf02d0e2730d2a06bcdfacac9a"
+        "href": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/statuses/f29e26f020eb2cda242985c31b7d346ba810f42a"
       }
     },
     "author_association": "COLLABORATOR",
