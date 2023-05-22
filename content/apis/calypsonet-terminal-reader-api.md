@@ -155,16 +155,16 @@ All deliverables are available directly from the [Maven Central Repository](http
 
 {{< tabpane >}}
 {{< tab header="Gradle Groovy" lang="gradle" >}}
-implementation 'org.calypsonet.terminal:calypsonet-terminal-reader-java-api:{{% calypsonet-terminal-reader-java-api-dynamic-gradle-version %}}'
+implementation 'org.calypsonet.terminal:calypsonet-terminal-reader-java-api:{{% calypsonet-terminal-reader-java-api-version %}}'
 {{< /tab >}}
 {{< tab header="Gradle Kotlin" lang="kotlin" >}}
-implementation("org.calypsonet.terminal:calypsonet-terminal-reader-java-api:{{% calypsonet-terminal-reader-java-api-dynamic-gradle-version %}}")
+implementation("org.calypsonet.terminal:calypsonet-terminal-reader-java-api:{{% calypsonet-terminal-reader-java-api-version %}}")
 {{< /tab >}}
 {{< tab header="Maven" lang="xml" >}}
 <dependency>
   <groupId>org.calypsonet.terminal</groupId>
   <artifactId>calypsonet-terminal-reader-java-api</artifactId>
-  <version>{{% calypsonet-terminal-reader-java-api-dynamic-maven-version %}}</version>
+  <version>{{% calypsonet-terminal-reader-java-api-version %}}</version>
 </dependency>
 {{< /tab >}}
 {{< /tabpane >}}

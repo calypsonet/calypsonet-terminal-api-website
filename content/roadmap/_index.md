@@ -30,6 +30,13 @@ toc: false
 </thead>
 <tbody>
   <tr>
+    <td>2023/05/22</td>
+    <td>Reader API 1.3</td>
+    <td><ul><li>Introduced a new capability to export a locally processed card selection scenario to be imported and 
+         analyzed remotely by another card selection manager.</li>
+    </ul></td>
+  </tr>
+  <tr>
     <td>2023/04/04</td>
     <td>Calypso API 1.8</td>
     <td><ul><li>Adds the possibility to improve performance by anticipating the SAM context before the transaction is 
