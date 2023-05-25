@@ -22,5 +22,13 @@
       "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/be5a569aca4211eed802fb1ab9bc8b5d996de6c8"
     },
     "protected": true
+  },
+  {
+    "name": "win-fix",
+    "commit": {
+      "sha": "5669b13a79ca5d045f764265c2edda540789f183",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/5669b13a79ca5d045f764265c2edda540789f183"
+    },
+    "protected": false
   }
 ]
