@@ -10,25 +10,17 @@
   {
     "name": "gh-pages",
     "commit": {
-      "sha": "a4b19826b6f27a28e55ba5620ef89ade9d4ee4bd",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/a4b19826b6f27a28e55ba5620ef89ade9d4ee4bd"
+      "sha": "891910d0c9ba71f015a3335562073fa97f9b635c",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/891910d0c9ba71f015a3335562073fa97f9b635c"
     },
     "protected": false
   },
   {
     "name": "main",
     "commit": {
-      "sha": "be5a569aca4211eed802fb1ab9bc8b5d996de6c8",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/be5a569aca4211eed802fb1ab9bc8b5d996de6c8"
+      "sha": "5012881e1c9db88fbfd0175b3962ceb37ca4a3b7",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/5012881e1c9db88fbfd0175b3962ceb37ca4a3b7"
     },
     "protected": true
-  },
-  {
-    "name": "win-fix",
-    "commit": {
-      "sha": "5669b13a79ca5d045f764265c2edda540789f183",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/5669b13a79ca5d045f764265c2edda540789f183"
-    },
-    "protected": false
   }
 ]
