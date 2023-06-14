@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 14213196569,
+      "id": 14258524518,
       "name": "publish-diagrams",
-      "node_id": "CR_kwDOHZ2RGc8AAAADTywrGQ",
-      "head_sha": "e89fe1d423be3282f0171f9741f80ee3481dffd8",
+      "node_id": "CR_kwDOHZ2RGc8AAAADUd_RZg",
+      "head_sha": "f8e11a103a5a6f7d73e5b85ecdb91d6a7ec2b3af",
       "external_id": "3ad6d197-1c25-54cd-7a0c-953b3c809fb5",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-uml-api/check-runs/14213196569",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-uml-api/actions/runs/5252710174/jobs/9489100667",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-uml-api/actions/runs/5252710174/jobs/9489100667",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-uml-api/check-runs/14258524518",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-uml-api/actions/runs/5268195795/jobs/9524525388",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-uml-api/actions/runs/5268195795/jobs/9524525388",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2023-06-13T07:49:13Z",
-      "completed_at": "2023-06-13T07:49:31Z",
+      "started_at": "2023-06-14T14:07:10Z",
+      "completed_at": "2023-06-14T14:07:25Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-uml-api/check-runs/14213196569/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-uml-api/check-runs/14258524518/annotations"
       },
       "check_suite": {
-        "id": 13560919161
+        "id": 13601207013
       },
       "app": {
         "id": 15368,
