@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 17732864254,
+      "id": 17744338757,
       "name": "publish-diagrams",
-      "node_id": "CR_kwDOHZ2TmM8AAAAEIPYI_g",
-      "head_sha": "3b6d7956173302ce03eea39bed5f607aabdca429",
+      "node_id": "CR_kwDOHZ2TmM8AAAAEIaUfRQ",
+      "head_sha": "0e0a5df6226024a8dd996bb9f7dec3f9090e5584",
       "external_id": "3ad6d197-1c25-54cd-7a0c-953b3c809fb5",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/check-runs/17732864254",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/actions/runs/6531507683/job/17732864254",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/actions/runs/6531507683/job/17732864254",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/check-runs/17744338757",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/actions/runs/6535276476/job/17744338757",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/actions/runs/6535276476/job/17744338757",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2023-10-16T09:14:22Z",
-      "completed_at": "2023-10-16T09:14:34Z",
+      "started_at": "2023-10-16T14:44:22Z",
+      "completed_at": "2023-10-16T14:44:39Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/check-runs/17732864254/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/check-runs/17744338757/annotations"
       },
       "check_suite": {
-        "id": 17267372232
+        "id": 17279390341
       },
       "app": {
         "id": 15368,
