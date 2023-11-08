@@ -2,16 +2,16 @@
   {
     "name": "gh-pages",
     "commit": {
-      "sha": "1f03b1e0a86543c21b0ab82c2d772499ed1d3d33",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-uml-api/commits/1f03b1e0a86543c21b0ab82c2d772499ed1d3d33"
+      "sha": "7919df7dc95c80f16990fb59120a87965498f520",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-uml-api/commits/7919df7dc95c80f16990fb59120a87965498f520"
     },
     "protected": false
   },
   {
     "name": "main",
     "commit": {
-      "sha": "6556da91c0a36994baca3d39cf68e801107bf017",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-uml-api/commits/6556da91c0a36994baca3d39cf68e801107bf017"
+      "sha": "406be54a1b931db8ee1e6391df4677b32d19e8e4",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-uml-api/commits/406be54a1b931db8ee1e6391df4677b32d19e8e4"
     },
     "protected": false
   }
