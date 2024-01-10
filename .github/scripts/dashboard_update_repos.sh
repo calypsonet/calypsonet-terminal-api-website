@@ -14,7 +14,11 @@ echo "," >> dashboard/repository_list.json
 echo "," >> dashboard/repository_list.json
 ../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-calypso-uml-api main true false
 echo "," >> dashboard/repository_list.json
+../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-calypso-crypto-symmetric-uml-api main true false
+echo "," >> dashboard/repository_list.json
 ../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-calypso-crypto-legacysam-uml-api main true false
+echo "," >> dashboard/repository_list.json
+../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-calypso-crypto-asymmetric-uml-api main true false
 echo "," >> dashboard/repository_list.json
 ../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-card-java-api main true true
 echo "," >> dashboard/repository_list.json
