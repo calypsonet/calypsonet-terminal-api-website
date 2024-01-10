@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 20349449693,
-      "name": "deploy",
-      "node_id": "CR_kwDOGPbtzc8AAAAEvOv13Q",
-      "head_sha": "7236d4d1e4b5c0137bbef6336864ce93176044f0",
-      "external_id": "e07742bd-189a-5079-918b-43f8b2f94b89",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/20349449693",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/7477241451/job/20349449693",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/7477241451/job/20349449693",
-      "status": "in_progress",
-      "conclusion": null,
-      "started_at": "2024-01-10T15:36:45Z",
-      "completed_at": null,
+      "id": 19133734895,
+      "name": "publish-diagrams",
+      "node_id": "CR_kwDOIndD5c8AAAAEdHWf7w",
+      "head_sha": "a4311d0a61e0e012f37257acb29c7259e40f24c5",
+      "external_id": "3ad6d197-1c25-54cd-7a0c-953b3c809fb5",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/check-runs/19133734895",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/actions/runs/7031656333/job/19133734895",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/actions/runs/7031656333/job/19133734895",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2023-11-29T11:06:22Z",
+      "completed_at": "2023-11-29T11:06:32Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/20349449693/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/check-runs/19133734895/annotations"
       },
       "check_suite": {
-        "id": 19672898507
+        "id": 18593751210
       },
       "app": {
         "id": 15368,
