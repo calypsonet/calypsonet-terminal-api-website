@@ -113,6 +113,9 @@
     "pull": false
   },
   "temp_clone_token": "",
+  "custom_properties": {
+
+  },
   "organization": {
     "login": "calypsonet",
     "id": 36229037,

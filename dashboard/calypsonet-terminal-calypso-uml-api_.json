@@ -72,7 +72,7 @@
   "clone_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-uml-api.git",
   "svn_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-uml-api",
   "homepage": null,
-  "size": 847,
+  "size": 865,
   "stargazers_count": 1,
   "watchers_count": 1,
   "language": null,
@@ -113,6 +113,9 @@
     "pull": false
   },
   "temp_clone_token": "",
+  "custom_properties": {
+
+  },
   "organization": {
     "login": "calypsonet",
     "id": 36229037,
