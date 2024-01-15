@@ -1,13 +1,5 @@
 [
   {
-    "name": "doc/review",
-    "commit": {
-      "sha": "3c85eecaf10fbba372c94c350f78154ac5560b89",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/commits/3c85eecaf10fbba372c94c350f78154ac5560b89"
-    },
-    "protected": false
-  },
-  {
     "name": "gh-pages",
     "commit": {
       "sha": "0264f6557aecfc7ba71939a767b5be62c67efeae",

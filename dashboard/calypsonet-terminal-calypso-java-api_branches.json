@@ -1,13 +1,5 @@
 [
   {
-    "name": "doc/review",
-    "commit": {
-      "sha": "23fe0e5f15765cb2d900502af417e58fc242b234",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-java-api/commits/23fe0e5f15765cb2d900502af417e58fc242b234"
-    },
-    "protected": false
-  },
-  {
     "name": "gh-pages",
     "commit": {
       "sha": "f700607ccd5104904208693cbe0865e96f4c3212",
