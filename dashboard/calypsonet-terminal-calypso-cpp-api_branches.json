@@ -14,5 +14,13 @@
       "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/b70ad0134fdc0dc95ce8209f1b27a0d4b6ca5489"
     },
     "protected": true
+  },
+  {
+    "name": "pterr-patch-1",
+    "commit": {
+      "sha": "4e67301a08cc2bb231e66517ef03f14e73329ad1",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-cpp-api/commits/4e67301a08cc2bb231e66517ef03f14e73329ad1"
+    },
+    "protected": false
   }
 ]
