@@ -14,5 +14,13 @@
       "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/commits/75835531d974df4cd5f11e985795479b0f286659"
     },
     "protected": false
+  },
+  {
+    "name": "pki-commands",
+    "commit": {
+      "sha": "8ec1aa11d320989e142fe38f98719a771dd8ae07",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/commits/8ec1aa11d320989e142fe38f98719a771dd8ae07"
+    },
+    "protected": false
   }
 ]
