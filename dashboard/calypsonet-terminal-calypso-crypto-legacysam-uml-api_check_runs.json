@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 23699552804,
+      "id": 23759447735,
       "name": "publish-diagrams",
-      "node_id": "CR_kwDOIUjyd88AAAAFhJp6JA",
-      "head_sha": "75bd9ceb8a43d0707c6737d9f67af4bbf23b993a",
+      "node_id": "CR_kwDOIUjyd88AAAAFiCxmtw",
+      "head_sha": "9c0a7cb8cd16de97449136084c7fbd98146e401f",
       "external_id": "3ad6d197-1c25-54cd-7a0c-953b3c809fb5",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/check-runs/23699552804",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/actions/runs/8644435699/job/23699552804",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/actions/runs/8644435699/job/23699552804",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/check-runs/23759447735",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/actions/runs/8664016570/job/23759447735",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/actions/runs/8664016570/job/23759447735",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2024-04-11T09:20:25Z",
-      "completed_at": "2024-04-11T09:20:43Z",
+      "started_at": "2024-04-12T14:56:52Z",
+      "completed_at": "2024-04-12T14:56:57Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 1,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/check-runs/23699552804/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/check-runs/23759447735/annotations"
       },
       "check_suite": {
-        "id": 22651763597
+        "id": 22704399663
       },
       "app": {
         "id": 15368,
