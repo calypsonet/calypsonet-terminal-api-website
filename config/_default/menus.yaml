@@ -17,10 +17,6 @@ main:
     parent: Community
     url: '/roadmap/'
     weight: 20
-  - name: Draft
-    parent: Community
-    url: '/draft/'
-    weight: 30
 
 
 # Link to a PDF of your resume/CV from the menu.
