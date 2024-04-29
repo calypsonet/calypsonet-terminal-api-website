@@ -5,38 +5,8 @@ pageFooterContainer.removeClass("container");
 pageFooterContainer.css("padding-left", "0");
 pageFooterContainer.css("padding-right", "0");
 
-// Copy to clipboard
-updateClipboard = function(newClip, button) {
-    navigator.permissions.query({name: "clipboard-write"}).then(result => {
-        if (result.state == "granted" || result.state == "prompt") {
-            /* write to the clipboard now */
-            navigator.clipboard.writeText(newClip).then(function() {
-                /* clipboard successfully set */
-                button.innerHTML = "Copied";
-                setTimeout(function() {
-                    button.innerHTML = "Copy";
-                }, 2000);
-            }, function() {
-                /* clipboard write failed */
-                alert("Error during the copy to clipboard process!");
-            });
-        } else {
-            alert("Unable to copy to clipboard because your browser does not have the permissions to use the \"clipboard-write\" API!");
-        }
-    });
-}
-copyTabContentToClipboard = function(tabpaneId, button) {
-    let tabId = $("#"+tabpaneId+" a.active")[0].getAttribute("aria-controls");
-    let content = $("#"+tabId+" code")[0].innerText;
-    updateClipboard(content, button);
-}
-copyCodeContentToClipboard = function(codeId, button) {
-    let content = $("#code-"+codeId)[0].innerText;
-    updateClipboard(content, button);
-}
-
 // Load the projects dashboard table content
-loadProjectsDashboard = async function() {
+loadProjectDashboard = async function() {
 
     let rootUrl = window.location.href + "../";
 
@@ -107,6 +77,12 @@ loadProjectsDashboard = async function() {
         cell.setAttribute("class", "text-center");
         cell.appendChild(document.createTextNode(""));
 
+        // column latest tag
+        cell = row.insertCell(-1);
+        cell.setAttribute("id", "latest-tag-" + rowIndex);
+        cell.setAttribute("class", "text-center");
+        cell.appendChild(document.createTextNode(""));
+
         // column issues
         cell = row.insertCell(-1);
         cell.setAttribute("id", "issue-" + rowIndex);
@@ -153,6 +129,7 @@ loadProjectsDashboard = async function() {
         await getPullData(rowIndex, owner, project[0]);
         await getLatestRelease(rowIndex, owner, project[0]);
         await getReleaseDate(rowIndex, owner, project[0]);
+        await getLatestTag(rowIndex, owner, project[0]);
         if (project[2] === true) {
             await getStatus(rowIndex, owner, project[0]);
         }
@@ -201,13 +178,24 @@ loadProjectsDashboard = async function() {
         }
     }
 
+    async function getLatestTag(rowIndex, owner, repos) {
+        let cell = document.getElementById("latest-tag-" + rowIndex);
+        try {
+            const json = await getJsonRepositoryData(repos, "_tags");
+            cell.innerHTML = json[0].name;
+        } catch (err) {
+        }
+    }
+
     async function getStatus(rowIndex, owner, repos) {
 
         let cell = document.getElementById("repos-status-" + rowIndex);
         let json;
+        let branch;
 
         try {
-            json = await getJsonRepositoryData(repos, "_check_runs");
+            json = await getJsonRepositoryData(repos, "_commits_status");
+            branch = "main";
         } catch (err) {
         }
 
@@ -276,12 +264,12 @@ loadProjectsDashboard = async function() {
     const isoLocalDate = new Date(date.getTime() - (offset*60*1000));
 
     const dateOptions = {hour: '2-digit', minute:'2-digit', hour12: false, timeZoneName: 'short'};
-    $("#projects-dashboard-datetime")[0].innerHTML = isoLocalDate.toISOString().split('T')[0] + ", " + date.toLocaleTimeString('en-EN', dateOptions);
+    $("#project-dashboard-datetime")[0].innerHTML = isoLocalDate.toISOString().split('T')[0] + ", " + date.toLocaleTimeString('en-EN', dateOptions);
 
     let projects = await getJson('repository_list');
 
     // create promises
-    const body = document.getElementById("projects-dashboard-content");
+    const body = document.getElementById("project-dashboard-content");
     let promises = [];
     for (let i = 0; i < projects.length; i++) {
         let promise = getReposData((i + 1).toString(), owner, projects[i])
@@ -291,14 +279,15 @@ loadProjectsDashboard = async function() {
     await (async () => {
         await Promise.all(promises)
             .finally(function () {
-                $('#projects-dashboard-table').DataTable({
+                $('#project-dashboard-table').DataTable({
                     "lengthMenu": [25, 50, 75, 100],
-                    "order": [[10, 'desc']],
+                    "pageLength": 50,
+                    "order": [[11, 'desc']],
                     "oLanguage": {"sSearch": "Filter:"}
                 });
                 $('.dataTables_length').addClass('bs-select');
                 // update the container's width with the real table size
-                $('.universal-wrapper').width($('#projects-dashboard-table')[0].scrollWidth);
+                $('.universal-wrapper').width($('#project-dashboard-table')[0].scrollWidth);
             });
     })();
 }

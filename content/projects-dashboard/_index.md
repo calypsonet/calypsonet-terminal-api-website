@@ -34,6 +34,6 @@ When displayed, icons in columns **Doc** and **Status** are clickable and lead r
 </table>
 <script type="text/javascript">
 document.body.onload = function() {
-    loadProjectsDashboard();
+    loadProjectDashboard();
 };
 </script>

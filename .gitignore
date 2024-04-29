@@ -4,9 +4,8 @@
 # Hugo
 /resources/
 public/
-jsconfig.json
-node_modules/
-
+assets/jsconfig.json
 # Draw IO backups
 *.drawio.bkp
 *.drawio.dtmp
+/.hugo_build.lock

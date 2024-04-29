@@ -108,8 +108,9 @@ a, h3.article-title a:hover {
 // increase left padding for left side menu
 // decrease font size
 .docs-sidebar .nav > li > a {
-  padding: 0 1rem 0 1.8rem;
+  padding: .2rem 1rem .2rem 1.8rem;
   font-size: 0.8rem;
+  line-height: 0.9rem;
 }
 
 // color of left and right TOCs links
@@ -146,9 +147,22 @@ a:hover {
 }
 
 // Increase code font size and style
-pre, code {
-  font-size: .9rem;
+pre code {
+  font-size: .8rem !important;
   font-family: monospace;
+  white-space: pre-wrap !important;
+}
+
+// improve code boxing
+code {
+  font-size: 1rem !important;
+  font-family: monospace;
+  border-radius: 3px;
+  padding: .2em .4em;
+}
+
+table code {
+  font-size: .8rem !important;
 }
 
 // Color of tabpane headers
@@ -227,11 +241,9 @@ pre, code {
 }
 
 // Powered by on footer section
-.site-footer #copyright {
+.site-footer {
+  color: #333333;
   font-weight: bold;
-}
-.site-footer #template-info {
-  font-size: 0.5rem;
 }
 .site-footer #template-info a {
   color: rgba(0, 0, 0, 0.54);
@@ -241,7 +253,89 @@ pre, code {
   color: #FFF;
 }
 
-// Projects dashboard
-#projects-dashboard-table {
+// Project dashboard
+#project-dashboard-table {
   white-space: nowrap;
+}
+
+// Center figures
+.margin-auto, figure img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Fix color of news in homepage
+.btn-links a:hover {
+  color: white;
+}
+
+// Fix horizontal scroll on tables when useless
+table {
+  display: table;
+  overflow-x: auto;
+}
+
+// Fix "datatable-dependency-check" table
+table#datatable-dependency-check {
+  display: block;
+}
+
+// Changelog table
+#changelog-table th {
+  font-size: 1rem;
+}
+#changelog-table th:nth-child(1),
+#changelog-table td:nth-child(1) {
+  text-align: center;
+  font-size: 1rem;
+  width: 7.5rem;
+}
+#changelog-table span.component {
+  font-size: 1rem;
+  font-weight: bold;
+}
+#changelog-table span.version {
+  font-weight: bold;
+  padding-left: 1rem;
+}
+#changelog-table span.version code {
+  font-size: 1rem !important;
+}
+#changelog-table code {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: .8rem !important;
+}
+#changelog-table h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: .8rem;
+}
+#changelog-table ul {
+  margin-bottom: 0;
+}
+#changelog-table hr {
+  visibility: hidden;
+  margin-top: .75rem;
+  margin-bottom: 0;
+  background: #ddd;
+}
+// button color
+.btn-primary {
+  background-color: #eb6608;
+  border-color: #eb6608;
+}
+// alert links
+.article-style aside a, div.alert a {
+  color: #eb6608;
+}
+
+// remove padding
+code {
+  padding: 0
+}
+
+// Button alignment on navbar
+.navbar-light {
+  line-height: 2;
 }
