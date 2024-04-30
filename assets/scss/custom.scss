@@ -245,6 +245,9 @@ table code {
   color: #333333;
   font-weight: bold;
 }
+.site-footer #template-info {
+  font-size: 0.5rem;
+}
 .site-footer #template-info a {
   color: rgba(0, 0, 0, 0.54);
   font-weight: bold;
@@ -264,70 +267,10 @@ table code {
   margin-right: auto;
 }
 
-// Fix color of news in homepage
-.btn-links a:hover {
-  color: white;
-}
-
 // Fix horizontal scroll on tables when useless
 table {
   display: table;
   overflow-x: auto;
-}
-
-// Fix "datatable-dependency-check" table
-table#datatable-dependency-check {
-  display: block;
-}
-
-// Changelog table
-#changelog-table th {
-  font-size: 1rem;
-}
-#changelog-table th:nth-child(1),
-#changelog-table td:nth-child(1) {
-  text-align: center;
-  font-size: 1rem;
-  width: 7.5rem;
-}
-#changelog-table span.component {
-  font-size: 1rem;
-  font-weight: bold;
-}
-#changelog-table span.version {
-  font-weight: bold;
-  padding-left: 1rem;
-}
-#changelog-table span.version code {
-  font-size: 1rem !important;
-}
-#changelog-table code {
-  padding-top: 0;
-  padding-bottom: 0;
-  font-size: .8rem !important;
-}
-#changelog-table h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: .8rem;
-}
-#changelog-table ul {
-  margin-bottom: 0;
-}
-#changelog-table hr {
-  visibility: hidden;
-  margin-top: .75rem;
-  margin-bottom: 0;
-  background: #ddd;
-}
-// button color
-.btn-primary {
-  background-color: #eb6608;
-  border-color: #eb6608;
-}
-// alert links
-.article-style aside a, div.alert a {
-  color: #eb6608;
 }
 
 // remove padding
