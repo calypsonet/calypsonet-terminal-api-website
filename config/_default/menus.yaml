@@ -11,7 +11,7 @@ main:
     weight: 20
   - name: Dashboard
     parent: Community
-    url: '/projects-dashboard/'
+    url: '/project-dashboard/'
     weight: 10
   - name: Roadmap
     parent: Community
