@@ -2,24 +2,16 @@
   {
     "name": "gh-pages",
     "commit": {
-      "sha": "61ccf5f952015fe48b95ba294c13228a2f97e2b1",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/commits/61ccf5f952015fe48b95ba294c13228a2f97e2b1"
+      "sha": "5e558175534bd246a2867e10e9edc1026db14e4d",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/commits/5e558175534bd246a2867e10e9edc1026db14e4d"
     },
     "protected": false
   },
   {
     "name": "main",
     "commit": {
-      "sha": "3cea418421d0306151ec4aefe5a60e57368dfeba",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/commits/3cea418421d0306151ec4aefe5a60e57368dfeba"
-    },
-    "protected": false
-  },
-  {
-    "name": "upgrade-hugo-template",
-    "commit": {
-      "sha": "4c761e82eb6415c88e73a8c53b80ef423c5d61fd",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/commits/4c761e82eb6415c88e73a8c53b80ef423c5d61fd"
+      "sha": "6b6104d4669bb16333b23a16e66f41b61b7f8dea",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/commits/6b6104d4669bb16333b23a16e66f41b61b7f8dea"
     },
     "protected": false
   }
