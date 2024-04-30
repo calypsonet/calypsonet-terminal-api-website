@@ -50,18 +50,24 @@ up-to-date documentation.
 All deliverables are available directly from the [Maven Central Repository](https://central.sonatype.dev/search?q=calypsonet-terminal-calypso-crypto-legacysam-java-api) or by using one of the project resource managers below:
 
 {{< tabpane >}}
-{{< tab header="Gradle Groovy" lang="gradle" >}}
+{{< tab header="Gradle Groovy" >}}
+{{< code lang="gradle" copy="true">}}
 implementation 'org.calypsonet.terminal:calypsonet-terminal-calypso-crypto-legacysam-java-api:{{% calypsonet-terminal-calypso-crypto-legacysam-java-api-version %}}'
+{{< /code>}}
 {{< /tab >}}
-{{< tab header="Gradle Kotlin" lang="kotlin" >}}
+{{< tab header="Gradle Kotlin" >}}
+{{< code lang="kotlin" copy="true">}}
 implementation("org.calypsonet.terminal:calypsonet-terminal-calypso-crypto-legacysam-java-api:{{% calypsonet-terminal-calypso-crypto-legacysam-java-api-version %}}")
+{{< /code>}}
 {{< /tab >}}
-{{< tab header="Maven" lang="xml" >}}
+{{< tab header="Maven" >}}
+{{< code lang="xml" copy="true">}}
 <dependency>
 <groupId>org.calypsonet.terminal</groupId>
 <artifactId>calypsonet-terminal-calypso-crypto-legacysam-java-api</artifactId>
 <version>{{% calypsonet-terminal-calypso-crypto-legacysam-java-api-version %}}</version>
 </dependency>
+{{< /code>}}
 {{< /tab >}}
 {{< /tabpane >}}
 

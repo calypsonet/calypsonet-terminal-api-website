@@ -2,10 +2,11 @@
 name = "calypsonet_theme"
 
 # Is theme light or dark?
-light = true
+[light]
 
 # Primary
 primary = "#1d87bb"
+btn-primary = "#1d87bb"
 
 # Menu
 menu_primary = "#FFFFFF"
