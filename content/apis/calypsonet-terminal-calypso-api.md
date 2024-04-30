@@ -144,7 +144,7 @@ All deliverables are available directly from the [Maven Central Repository](http
 implementation 'org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:{{% calypsonet-terminal-calypso-java-api-version %}}'
 {{< /code>}}
 {{< /tab >}}
-{{< tab header="Gradle Kotlin" lang="kotlin" >}}
+{{< tab header="Gradle Kotlin" >}}
 {{< code lang="kotlin" copy="true">}}
 implementation("org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:{{% calypsonet-terminal-calypso-java-api-version %}}")
 {{< /code>}}
