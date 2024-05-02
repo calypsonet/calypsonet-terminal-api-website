@@ -7,12 +7,20 @@ weight: 4
 toc: true
 ---
 
----
+{{% callout warning %}}
+Version 1.0 of the documentation is no longer actively maintained.
+The site that you are currently viewing is an archived snapshot.
+For up-to-date documentation, see the latest version.
+{{% /callout %}}
+
+<br>
+
 The **Calypsonet Terminal Calypso API** is an extension of the **Calypsonet Terminal Reader API** which provides a 
 high-level API standardizing the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, 
 etc...).
 
----
+<br>
+
 ## Interfaces
 
 The Calypso API  provides the means to select a target card or SAM and then perform a transaction with the selected target.
@@ -27,9 +35,10 @@ A set of command could be first **prepared**, and then be **processed** by a sel
 during the transaction.
 A transaction with a Calypso card is fully managed through the `CardTransactionManager` interface:
 
-![Calypso API - class diagram](https://calypsonet.github.io/calypsonet-terminal-calypso-uml-api/{{% calypsonet-terminal-calypso-java-api-version %}}/api_class_diagram.svg)
+![Calypso API - class diagram](https://calypsonet.github.io/calypsonet-terminal-calypso-uml-api/1.8.0/api_class_diagram.svg)
 
----
+<br>
+
 ## Selection of a Calypso card
 
 A Calypso card selection could be defined to accept or not invalidated card.
@@ -43,7 +52,8 @@ Then, if a Calypso card has matched the selection request, a Calypso card image 
 records could be filled depending on the information recovered in the responses of the Select File or Read Records 
 processed.
 
----
+<br>
+
 ## Transaction with a Calypso card
 
 Except the operations involving secure processing on "data" (data signature computation / verification, data ciphering /
@@ -55,19 +65,19 @@ Calypso library.
 
 ### PIN plain verification / change outside a session
 
-{{< figure src="/media/apis/calypso_transaction_Verify_Change_Plain_PIN_sequence_diagram.svg" caption="Calypso API - Verify / Change Plain PIN - Sequence Diagram" >}}
+{{< figure src="/media/archives/apis/calypso_transaction_Verify_Change_Plain_PIN_sequence_diagram.svg" caption="Calypso API - Verify / Change Plain PIN - Sequence Diagram" >}}
 
 ### Data secure processing outside a session
 
-{{< figure src="/media/apis/calypso_transaction_DSP_outside_session_sequence_diagram.svg" caption="Calypso API - Data secure processing outside a session - Sequence Diagram" >}}
+{{< figure src="/media/archives/apis/calypso_transaction_DSP_outside_session_sequence_diagram.svg" caption="Calypso API - Data secure processing outside a session - Sequence Diagram" >}}
 
 ### Key / PIN ciphered update outside a session
 
-{{< figure src="/media/apis/calypso_transaction_Change_Key_Ciphered_PIN_sequence_diagram.svg" caption="Calypso API - Change Key / Ciphered PIN outside a session - Sequence Diagram" >}}
+{{< figure src="/media/archives/apis/calypso_transaction_Change_Key_Ciphered_PIN_sequence_diagram.svg" caption="Calypso API - Change Key / Ciphered PIN outside a session - Sequence Diagram" >}}
 
 ### Stored Value operation outside a session
 
-{{< figure src="/media/apis/calypso_transaction_standalone_SV_operation_sequence_diagram.svg" caption="Calypso API - standalone Stored Value transaction - Sequence Diagram" >}}
+{{< figure src="/media/archives/apis/calypso_transaction_standalone_SV_operation_sequence_diagram.svg" caption="Calypso API - standalone Stored Value transaction - Sequence Diagram" >}}
 
 ### Simple secure session for fast embedded performance
 
@@ -77,7 +87,7 @@ In case of communication failure with the card, to support a recovery transactio
 status and the last event are checked at the session opening, and the session is closed as not ratified directly 
 followed by a ratification command.
 
-{{< figure src="/media/apis/calypso_transaction_simple_secure_session_embedded_sequence_diagram.svg" caption="Calypso API - Simple Secure Session - Sequence Diagram" >}}
+{{< figure src="/media/archives/apis/calypso_transaction_simple_secure_session_embedded_sequence_diagram.svg" caption="Calypso API - Simple Secure Session - Sequence Diagram" >}}
 
 ### Simple secure session for an efficient distributed system
 
@@ -92,31 +102,26 @@ then read again during the session.
 In case of communication failure with the card, if the recovery transaction is supported only on the same terminal, 
 then the checking of the ratification status is not necessary at the session opening, and the session could be closed as ratified.
 
-{{< figure src="/media/apis/calypso_transaction_simple_secure_session_distributed_sequence_diagram.svg" caption="Calypso API - Simple Secure Session - Sequence Diagram" >}}
+{{< figure src="/media/archives/apis/calypso_transaction_simple_secure_session_distributed_sequence_diagram.svg" caption="Calypso API - Simple Secure Session - Sequence Diagram" >}}
 
 ### PIN ciphered verification inside a session
 
-{{< figure src="/media/apis/calypso_transaction_Verify_Ciphered_PIN_inside_session_sequence_diagram.svg" caption="Calypso API - Verify Ciphered PIN inside a session - Sequence Diagram" >}}
+{{< figure src="/media/archives/apis/calypso_transaction_Verify_Ciphered_PIN_inside_session_sequence_diagram.svg" caption="Calypso API - Verify Ciphered PIN inside a session - Sequence Diagram" >}}
 
 ### Data secure processing inside a session
 
-{{< figure src="/media/apis/calypso_transaction_DSP_inside_session_sequence_diagram.svg" caption="Calypso API - Data secure processing inside a session - Sequence Diagram" >}}
+{{< figure src="/media/archives/apis/calypso_transaction_DSP_inside_session_sequence_diagram.svg" caption="Calypso API - Data secure processing inside a session - Sequence Diagram" >}}
 
 ### Stored Value operation inside a session
 
-{{< figure src="/media/apis/calypso_transaction_SV_inside_session_sequence_diagram.svg" caption="Calypso API - Stored Value transaction inside a secure session - Sequence Diagram" >}}
+{{< figure src="/media/archives/apis/calypso_transaction_SV_inside_session_sequence_diagram.svg" caption="Calypso API - Stored Value transaction inside a secure session - Sequence Diagram" >}}
 
 ### Multiple secure sessions
 
-{{< figure src="/media/apis/calypso_transaction_multiple_secure_session_sequence_diagram.svg" caption="Calypso API - Multiple secure session - Sequence Diagram" >}}
+{{< figure src="/media/archives/apis/calypso_transaction_multiple_secure_session_sequence_diagram.svg" caption="Calypso API - Multiple secure session - Sequence Diagram" >}}
 
----
-## Selection of a Calypso SAM
+<br>
 
----
-## Transaction with a Calypso SAM
-
----
 #
 ## Implementations & API Documentation
 
@@ -129,32 +134,32 @@ up-to-date documentation.
 
 ### Calypso API in Java
 {{% callout note %}}
-**`{{% calypsonet-terminal-calypso-java-api-version %}}`**
+**`1.8.0`**
 <span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/)</span>
 <span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://calypsonet.github.io/calypsonet-terminal-calypso-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/)</span>
 <span class="component-metadata">{{< icon name="exchange-alt" pack="fas" >}} [Changelog](https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/blob/main/CHANGELOG.md)</span>
 {{% /callout %}}
 
-All deliverables are available directly from the [Maven Central Repository](https://central.sonatype.dev/search?q=calypsonet-terminal-calypso-java-api) or by using one of the project resource managers below:
+All deliverables are available directly from the [Maven Central Repository](https://central.sonatype.com/search?q=calypsonet-terminal-calypso-java-api) or by using one of the project resource managers below:
 
 {{< tabpane >}}
 {{< tab header="Gradle Groovy" >}}
 {{< code lang="gradle" copy="true">}}
-implementation 'org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:{{% calypsonet-terminal-calypso-java-api-version %}}'
+implementation 'org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:1.8.0'
 {{< /code>}}
 {{< /tab >}}
 {{< tab header="Gradle Kotlin" >}}
 {{< code lang="kotlin" copy="true">}}
-implementation("org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:{{% calypsonet-terminal-calypso-java-api-version %}}")
+implementation("org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:1.8.0")
 {{< /code>}}
 {{< /tab >}}
 {{< tab header="Maven" >}}
 {{< code lang="xml" copy="true">}}
 <dependency>
-<groupId>org.calypsonet.terminal</groupId>
-<artifactId>calypsonet-terminal-calypso-java-api</artifactId>
-<version>{{% calypsonet-terminal-calypso-java-api-version %}}</version>
+  <groupId>org.calypsonet.terminal</groupId>
+  <artifactId>calypsonet-terminal-calypso-java-api</artifactId>
+  <version>1.8.0</version>
 </dependency>
 {{< /code>}}
 {{< /tab >}}
@@ -162,7 +167,7 @@ implementation("org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:{{%
 
 ### Calypso API in C++
 {{% callout note %}}
-**`{{% calypsonet-terminal-calypso-cpp-api-version %}}`**
+**`1.1.0`**
 <span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-calypso-cpp-api/)</span>
 <span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://calypsonet.github.io/calypsonet-terminal-calypso-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api/)</span>

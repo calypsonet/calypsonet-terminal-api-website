@@ -4,18 +4,20 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name: APIs
-    url: '/apis/'
+  - name: Specifications
+    url: '/specifications/'
     weight: 10
-  - name: Community
-    weight: 20
+
   - name: Dashboard
-    parent: Community
     url: '/project-dashboard/'
-    weight: 10
-  - name: Roadmap
-    parent: Community
-    url: '/roadmap/'
     weight: 20
+
+  - name: Roadmap
+    url: '/roadmap/'
+    weight: 30
+
+  - name: Archives
+    url: '/archives/'
+    weight: 40
 
 

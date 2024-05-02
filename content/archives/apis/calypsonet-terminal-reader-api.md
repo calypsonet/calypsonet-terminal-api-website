@@ -7,10 +7,18 @@ weight: 1
 toc: true
 ---
 
----
+{{% callout warning %}}
+Version 1.0 of the documentation is no longer actively maintained.
+The site that you are currently viewing is an archived snapshot.
+For up-to-date documentation, see the latest version.
+{{% /callout %}}
+
+<br>
+
 The **Calypsonet Terminal Reader API** defines the public elements shared by the reader.
 
----
+<br>
+
 ## Interfaces
 
 The reader API is a high-level interface used by terminal applications to operate smart card readers, it:
@@ -21,7 +29,7 @@ The reader API is a high-level interface used by terminal applications to operat
 
 - is the entry point to manage the selection of a smart card in a specific reader.
 
-![Reader API - class diagram](https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/{{% calypsonet-terminal-reader-java-api-version %}}/api_class_diagram.svg)
+![Reader API - class diagram](https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/1.3.0/api_class_diagram.svg)
 
 ### Reader identification
 
@@ -72,7 +80,8 @@ and the logical channel is kept open.
 
 Moreover, it is possible to export/import a selection scenario in JSON format.
 
----
+<br>
+
 ## Card selection modes
 
 Depending on the card transaction use case, or on the reader capability, there are two ways to manage the selection of a
@@ -88,9 +97,10 @@ card:
 ![Card selection modes - sequence diagram](https://keyple.org/media/learn/keyple-in-depth/card_selection_modes_activity_diagram.svg)
 -->
 
-{{< figure src="/media/apis/reader_management_card_selection_modes_activity_diagram.svg" caption="Reader API - Card Selection Modes - Activity Diagram" >}}
+{{< figure src="/media/archives/apis/reader_management_card_selection_modes_activity_diagram.svg" caption="Reader API - Card Selection Modes - Activity Diagram" >}}
 
----
+<br>
+
 ## Observable reader states
 
 An observable reader is active only when at least one reader observer is registered, and if the start of the detection 
@@ -108,7 +118,7 @@ the card processing.
 <!--
 ![Observable Reader - states diagram](https://keyple.org/media/learn/keyple-in-depth/reader_observation_state_machine.svg)
 -->
-{{< figure src="/media/apis/reader_management_reader_observation_state_diagram.svg" caption="Reader API - Observable Reader States - Activity Diagram" >}}
+{{< figure src="/media/archives/apis/reader_management_reader_observation_state_diagram.svg" caption="Reader API - Observable Reader States - Activity Diagram" >}}
 
 The states could be switched:
 - due to an explicit API request (blue arrows):
@@ -127,11 +137,13 @@ starts again the detection of a new card.
 Notification of card removal during the card removal wait state is a feature of any observable reader.
 However, some observable readers may additionally have the ability to notify removal during the card processing state.
 
----
+<br>
+
 ## Limitations & constraints
 On a specific card reader, the Reader API allows to address only a **single logical channel**.
 
----
+<br>
+
 #
 ## Implementations & API Documentation
 
@@ -144,24 +156,24 @@ up-to-date documentation.
 
 ### Reader API in Java
 {{% callout note %}}
-**`{{% calypsonet-terminal-reader-java-api-version %}}`**
+**`1.3.0`**
 <span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-reader-java-api/)</span>
 <span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-reader-java-api/)</span>
 <span class="component-metadata">{{< icon name="exchange-alt" pack="fas" >}} [Changelog](https://github.com/calypsonet/calypsonet-terminal-reader-java-api/blob/main/CHANGELOG.md)</span>
 {{% /callout %}}
 
-All deliverables are available directly from the [Maven Central Repository](https://central.sonatype.dev/search?q=calypsonet-terminal-reader-java-api) or by using one of the project resource managers below:
+All deliverables are available directly from the [Maven Central Repository](https://central.sonatype.com/search?q=calypsonet-terminal-reader-java-api) or by using one of the project resource managers below:
 
 {{< tabpane >}}
 {{< tab header="Gradle Groovy" >}}
 {{< code lang="gradle" copy="true">}}
-implementation 'org.calypsonet.terminal:calypsonet-terminal-reader-java-api:{{% calypsonet-terminal-reader-java-api-version %}}'
+implementation 'org.calypsonet.terminal:calypsonet-terminal-reader-java-api:1.3.0'
 {{< /code>}}
 {{< /tab >}}
 {{< tab header="Gradle Kotlin" >}}
 {{< code lang="kotlin" copy="true">}}
-implementation("org.calypsonet.terminal:calypsonet-terminal-reader-java-api:{{% calypsonet-terminal-reader-java-api-version %}}")
+implementation("org.calypsonet.terminal:calypsonet-terminal-reader-java-api:1.3.0")
 {{< /code>}}
 {{< /tab >}}
 {{< tab header="Maven" >}}
@@ -169,7 +181,7 @@ implementation("org.calypsonet.terminal:calypsonet-terminal-reader-java-api:{{% 
 <dependency>
   <groupId>org.calypsonet.terminal</groupId>
   <artifactId>calypsonet-terminal-reader-java-api</artifactId>
-  <version>{{% calypsonet-terminal-reader-java-api-version %}}</version>
+  <version>1.3.0</version>
 </dependency>
 {{< /code>}}
 {{< /tab >}}
@@ -177,7 +189,7 @@ implementation("org.calypsonet.terminal:calypsonet-terminal-reader-java-api:{{% 
 
 ### Reader API in C++
 {{% callout note %}}
-**`{{% calypsonet-terminal-reader-cpp-api-version %}}`**
+**`1.0.0`**
 <span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-reader-cpp-api/)</span>
 <span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/)</span>

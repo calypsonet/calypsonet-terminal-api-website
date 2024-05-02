@@ -1,16 +1,20 @@
 ---
-title: Terminal architecture - APIs & software layers
-linktitle: Overview
-summary: General presentation of the dependencies between the different Terminal APIs.
+title: == APIs 1.x ==
+linktitle: == APIs 1.x ==
 type: book
 toc: false
 ---
 
----
+{{% callout warning %}}
+Version 1.0 of the documentation is no longer actively maintained. 
+The site that you are currently viewing is an archived snapshot. 
+For up-to-date documentation, see the latest version.
+{{% /callout %}}
+
 The diagram below shows the dependencies between the client application, the certifiable framework components and the 
 terminal APIs:
 
-{{< figure src="/media/uml/apis_dependencies_overview.drawio.svg" caption="" numbered="" >}}
+{{< figure src="/media/archives/apis/apis_dependencies_overview.drawio.svg" caption="" numbered="" >}}
 
 Here are the most important things to remember:
 * Each API has its **own life cycle**.

@@ -1,0 +1,207 @@
+@startuml
+
+'skinparam ClassBorderColor #F1C40F
+skinparam ClassBorderColor #D4AC0D
+skinparam stereotypeABorderColor #A9DCDF
+skinparam stereotypeIBorderColor #B4A7E5
+skinparam stereotypeCBorderColor #ADD1B2
+skinparam stereotypeEBorderColor #EB93DF
+skinparam shadowing false
+
+skinparam StateBorderColor #D4AC0D
+skinparam ActivityBorderColor #D4AC0D
+
+' Red
+skinparam ClassBackgroundColor<<red>> #FDEDEC
+skinparam ClassBorderColor<<red>> #E74C3C
+hide <<red>> stereotype
+' Purple
+skinparam ClassBackgroundColor<<purple>> #F4ECF7
+skinparam ClassBorderColor<<purple>> #8E44AD
+hide <<purple>> stereotype
+' blue
+skinparam ClassBackgroundColor<<blue>> #EBF5FB
+skinparam ClassBorderColor<<blue>> #3498DB
+hide <<blue>> stereotype
+' Green
+skinparam ClassBackgroundColor<<green>> #EAFAF1
+skinparam ClassBorderColor<<green>> #2ECC71
+hide <<green>> stereotype
+
+' Orange
+skinparam ClassBackgroundColor<<orange>> #FDF2E9
+skinparam ClassBorderColor<<orange>> #E67E22
+hide <<orange>> stereotype
+
+' Grey
+skinparam ClassBackgroundColor<<grey>> #EAECEE
+skinparam ClassBorderColor<<grey>> #2C3E50
+hide <<grey>> stereotype
+
+actor "Ticketing Application" as app #gold
+participant "Calypso API" as capi #pink
+participant "Calypso Card\nReader" as cardReader #lightBlue
+boundary "selected\n**Card**" as card #lightBlue
+participant "Calypso SAM\nReader" as samReader #lightGreen
+boundary "selected\n**SAM**" as sam #lightGreen
+
+activate app #gold
+activate card #lightBlue
+activate sam #lightGreen
+
+app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
+
+note over capi
+    Checks a signature of previously read data when selecting the card.
+end note
+
+app->capi: <font color=red>**prepare**</font> card transaction:\n\t- open secure session (DEBIT access level)\n\t- read environment file\n\t- **verify** environment data **signature**\n\t- read contract #1\n\t- reader counter #1
+activate capi  #pink
+capi-->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> commands (keep channel open)
+activate capi  #pink
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+note over samReader
+    A specific signature key diversification could be required before the signature processing.
+end note
+
+samReader->sam: **verify signature** (environment data signature)
+sam-->samReader: signature status
+
+samReader->sam: get challenge
+sam-->samReader: [SAM challenge]
+samReader-[#00FF00]->capi: [environment data signature,\nSAM challenge]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+group Card APDU commands inside session
+    cardReader->card: open secure session (card debit key,\n\tSAM challenge,\n\tSFI environment to read)
+    card-->cardReader: [card challenge & environment data]
+    cardReader->card: read record (contract #1)
+    card-->cardReader: [contract #1 data]
+    cardReader->card: read record (counter #1)
+    card-->cardReader: [counter #1 data]
+end
+
+cardReader--[#0000FF]>capi: [card challenge]
+deactivate cardReader
+
+capi-->app: [Calypso card image:\n\t- identification data\n\t- environment data (updated)\n\t- contract list data\n\t- contract #1 data\n\t- counter #1 data]\n[Data secure processing:\n\t- environment data signature status]
+deactivate capi
+
+app->capi: <font color=red>**prepare**</font> secured card transaction:\n\t- **verify** contract #1 data **signature**\n\t- **compute** event data **signature**
+activate capi  #pink
+capi-->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> commands (keep channel open)
+activate capi  #pink
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #2**<font color=red>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+note over samReader
+    When data secure processing requested, processes all pending SAM commands.
+end note
+note over samReader
+    A session key diversification is operated, if the diversifier is different than for the previous data secure processing operation.
+end note
+
+samReader->sam: select diversifier (card serial)
+sam-->samReader
+samReader->sam: digest init (opening data)
+sam-->samReader
+samReader->sam: digest update (read environment)
+sam-->samReader
+samReader->sam: digest update (read contract)
+sam-->samReader
+samReader->sam: digest update (read counter)
+sam-->samReader
+
+note over samReader
+    If necessary, a specific contract signature key diversification could be operated before the signature processing.
+end note
+
+samReader->sam: **verify signature** (contract #1 data signature)
+sam-->samReader: signature status
+
+note over samReader
+    If necessary, a specific event signature key diversification could be operated before the signature processing.
+end note
+
+samReader->sam: **compute signature** (event data)
+sam-->samReader: event data signature
+
+samReader-[#00FF00]->capi: [contract #1 data signature status,\nevent data signature]
+deactivate samReader
+
+capi-->app: [Data secure processing:\n\t- contract #1 data signature status\n\t- event data signature]
+deactivate capi
+
+
+app->capi: <font color=red>**prepare**</font>:\n\t- decrease counter #1 (value)\n\t- append event record (data)\n\t- close secure session (not ratified)
+activate capi  #pink
+capi-->app
+deactivate capi
+
+note over capi
+    At the session closure, any data secure processing should be unnecessary.
+end note
+
+app->capi: <font color=red>**process**</font> commands (close channel after)
+activate capi  #pink
+capi->capi: anticipates the future card responses
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #3**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+group <font color=red>**anticipated**</font> Card APDU responses
+    samReader->sam: digest update (decrease counter)
+    sam-->samReader
+    samReader->sam: digest update (append event record)
+    sam-->samReader
+end
+samReader->sam: digest close
+sam-->samReader: [SAM certificate]
+
+samReader-[#00FF00]->capi: [SAM certificate]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #3**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+group Card APDU commands inside session
+    cardReader->card: update record (event, data)
+    card-->cardReader
+    cardReader->card: decrease counter (counter #1, value)
+    card-->cardReader: [new counter value]
+end
+
+cardReader->card: close secure session (SAM certificate)
+card-->cardReader: [card certificate]
+cardReader->card: ratification command
+card-->cardReader
+cardReader->card: close card channel
+card-->cardReader
+deactivate card
+
+cardReader-[#0000FF]->capi: [card certificate]
+deactivate cardReader
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #4**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+samReader->sam: digest authenticate (card certificate)
+sam-->samReader: [authentication status]
+
+samReader-[#00FF00]->capi: [authentification status]
+deactivate samReader
+
+capi-->app: [Calypso card image:\n\t- identification data\n\t- environment data\n\t- contract list data\n\t- contract #1 data\n\t- counter #1 data (updated)\n\t- event #1 (updated)]\nauthentification status
+deactivate capi
+@enduml

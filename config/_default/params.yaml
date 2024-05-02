@@ -39,7 +39,7 @@ header:
     show_language: false
     show_day_night: true
     show_search: true
-    highlight_active_link: false
+    highlight_active_link: true
 
 # Site footer
 
@@ -120,13 +120,12 @@ extensions:
 
 # Custom JS extension
 plugins_js: ['custom']
-# custom variables
-cna_api_version:
-  calypsonet_terminal_reader_java_api: '1.3.0'
-  calypsonet_terminal_card_java_api: '1.0.0'
-  calypsonet_terminal_calypso_java_api: '1.8.0'
-  calypsonet_terminal_calypso_crypto_legacysam_java_api: '0.2.0'
 
-  calypsonet_terminal_reader_cpp_api: '1.0.0'
-  calypsonet_terminal_card_cpp_api: '1.0.0'
-  calypsonet_terminal_calypso_cpp_api: '1.1.0'
+# custom variables
+terminal_api_version:
+  reader_api: '2.0.1'
+  card_api: '2.0.1'
+  calypso_card_api: '2.1.0'
+  calypso_legacysam_api: '0.6.0'
+  calypso_crypto_symmetric_api: '0.1.1'
+  calypso_crypto_asymmetric_api: '0.2.0'
