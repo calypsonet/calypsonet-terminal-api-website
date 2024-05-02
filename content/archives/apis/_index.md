@@ -3,6 +3,7 @@ title: == APIs 1.x ==
 linktitle: == APIs 1.x ==
 type: book
 toc: false
+private: true
 ---
 
 {{% callout warning %}}
@@ -14,7 +15,7 @@ For up-to-date documentation, see the latest version.
 The diagram below shows the dependencies between the client application, the certifiable framework components and the 
 terminal APIs:
 
-{{< figure src="/media/archives/apis/apis_dependencies_overview.drawio.svg" caption="" numbered="" >}}
+{{< figure src="/media/archives/specifications/apis_dependencies_overview.drawio.svg" caption="" numbered="" >}}
 
 Here are the most important things to remember:
 * Each API has its **own life cycle**.

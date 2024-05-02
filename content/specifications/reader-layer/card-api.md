@@ -1,5 +1,5 @@
 ---
-title: Terminal Card API
+title: Card API (internal)
 linktitle: 🔶 Card
 summary: Internal API which defines the elements shared between the reader layer and the card layer.
 type: book
@@ -7,7 +7,11 @@ weight: 2
 toc: true
 ---
 
-## Overview
+{{% callout note %}}
+Latest version **`{{% card-api-version %}}`**
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://calypsonet.github.io/calypsonet-terminal-card-uml-api/)</span>
+<span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-card-uml-api/)</span>
+{{% /callout %}}
 
 As part of the **Reader Layer**, the **Calypsonet Terminal Card API** defines the internal elements shared by the 
 reader layer to implement specific card layers (like the Calypso Card layer).

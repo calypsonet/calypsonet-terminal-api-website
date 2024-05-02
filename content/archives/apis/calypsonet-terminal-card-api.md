@@ -5,6 +5,7 @@ summary: Internal API which defines the elements shared between the reader layer
 type: book
 weight: 2
 toc: true
+private: true
 ---
 
 {{% callout warning %}}

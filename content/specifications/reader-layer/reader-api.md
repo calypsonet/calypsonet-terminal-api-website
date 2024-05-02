@@ -1,5 +1,5 @@
 ---
-title: Terminal Reader API
+title: Reader API (external)
 linktitle: 🟢 Reader
 icon_pack: fas
 icon: rocket
@@ -9,7 +9,11 @@ weight: 1
 toc: true
 ---
 
-## Overview
+{{% callout note %}}
+Latest version **`{{% reader-api-version %}}`**
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/)</span>
+<span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/)</span>
+{{% /callout %}}
 
 As part of the **Reader Layer**, the **Reader API** provides high-level functionality for identifying, monitoring, 
 configuring readers and process card selection scenarios.
@@ -90,7 +94,7 @@ card:
   In this case the card selection is operated automatically at the insertion of the card. In this case,
   the card selection is next managed by the observable reader, but the card processing is managed by a reader observer.
 
-{{< figure src="/media/apis/reader_management_card_selection_modes_activity_diagram.svg" caption="Reader API - Card Selection Modes - Activity Diagram" >}}
+{{< figure src="/media/specifications/reader_management_card_selection_modes_activity_diagram.svg" caption="Reader API - Card Selection Modes - Activity Diagram" >}}
 
 <br>
 
@@ -108,7 +112,7 @@ releasing the card channel.
 To manage a failure of the reader observer process, the observable reader interface provides also a method to finalize
 the card processing.
 
-{{< figure src="/media/apis/reader_management_reader_observation_state_diagram.svg" caption="Reader API - Observable Reader States - Activity Diagram" >}}
+{{< figure src="/media/specifications/reader_management_reader_observation_state_diagram.svg" caption="Reader API - Observable Reader States - Activity Diagram" >}}
 
 The states could be switched:
 - due to an explicit API request (blue arrows):

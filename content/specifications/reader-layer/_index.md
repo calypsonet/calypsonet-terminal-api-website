@@ -1,5 +1,5 @@
 ---
-title: Reader Layer Specifications
+title: Reader Layer Specification
 linktitle: Reader layer
 summary: General presentation of the dependencies between the different Terminal APIs.
 type: book
@@ -12,7 +12,7 @@ weight: 10
 The diagram below shows the dependencies between the client application, the certifiable framework components and the 
 terminal APIs:
 
-{{< figure src="/media/apis/reader_layer_apis_dependencies_overview.drawio.svg" caption="" numbered="" >}}
+{{< figure src="/media/specifications/reader_layer_apis_dependencies_overview.drawio.svg" caption="" numbered="" >}}
 
 Key points:
 * **Independent Lifecycle:** Each API follows its own distinct lifecycle.

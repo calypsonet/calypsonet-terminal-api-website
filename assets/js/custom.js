@@ -77,12 +77,6 @@ loadProjectDashboard = async function() {
         cell.setAttribute("class", "text-center");
         cell.appendChild(document.createTextNode(""));
 
-        // column latest tag
-        cell = row.insertCell(-1);
-        cell.setAttribute("id", "latest-tag-" + rowIndex);
-        cell.setAttribute("class", "text-center");
-        cell.appendChild(document.createTextNode(""));
-
         // column issues
         cell = row.insertCell(-1);
         cell.setAttribute("id", "issue-" + rowIndex);

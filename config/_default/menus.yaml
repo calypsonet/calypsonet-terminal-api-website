@@ -8,16 +8,20 @@ main:
     url: '/specifications/'
     weight: 10
 
-  - name: Dashboard
-    url: '/project-dashboard/'
-    weight: 20
-
   - name: Roadmap
     url: '/roadmap/'
+    weight: 20
+
+  - name: Implementations
+    url: '/implementations/'
     weight: 30
+
+  - name: Dashboard
+    url: '/project-dashboard/'
+    weight: 40
 
   - name: Archives
     url: '/archives/'
-    weight: 40
+    weight: 50
 
 

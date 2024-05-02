@@ -1,5 +1,5 @@
 ---
-title: Terminal Calypso Legacy SAM API
+title: Calypso Legacy SAM API (external)
 linktitle: 🟢 Legacy SAM
 summary: Public high-level API which standardizes the way to interact with a Calypso® legacy SAM product (SAM-C1, HSM-C1, etc...).
 type: book
@@ -7,7 +7,11 @@ weight: 2
 toc: true
 ---
 
-## Overview
+{{% callout note %}}
+Latest version **`{{% calypso-legacysam-api-version %}}`**
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-uml-api/)</span>
+<span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/)</span>
+{{% /callout %}}
 
 As part of the **Card Layer**, the **Calypso Crypto Legacy SAM API** provides high-level functionality for selecting 
 and performing transactions with Calypso Legacy SAMs and can also be coupled with the **Calypso Card API** to handle the 

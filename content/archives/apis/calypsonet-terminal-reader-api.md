@@ -5,6 +5,7 @@ summary: Public API which defines the elements shared by the reader.
 type: book
 weight: 1
 toc: true
+private: true
 ---
 
 {{% callout warning %}}
@@ -97,7 +98,7 @@ card:
 ![Card selection modes - sequence diagram](https://keyple.org/media/learn/keyple-in-depth/card_selection_modes_activity_diagram.svg)
 -->
 
-{{< figure src="/media/archives/apis/reader_management_card_selection_modes_activity_diagram.svg" caption="Reader API - Card Selection Modes - Activity Diagram" >}}
+{{< figure src="/media/archives/specifications/reader_management_card_selection_modes_activity_diagram.svg" caption="Reader API - Card Selection Modes - Activity Diagram" >}}
 
 <br>
 
@@ -118,7 +119,7 @@ the card processing.
 <!--
 ![Observable Reader - states diagram](https://keyple.org/media/learn/keyple-in-depth/reader_observation_state_machine.svg)
 -->
-{{< figure src="/media/archives/apis/reader_management_reader_observation_state_diagram.svg" caption="Reader API - Observable Reader States - Activity Diagram" >}}
+{{< figure src="/media/archives/specifications/reader_management_reader_observation_state_diagram.svg" caption="Reader API - Observable Reader States - Activity Diagram" >}}
 
 The states could be switched:
 - due to an explicit API request (blue arrows):
