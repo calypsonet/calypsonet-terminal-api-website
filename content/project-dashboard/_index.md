@@ -5,11 +5,12 @@ summary:
 ---
 
 {{% callout note %}}
-The status of the projects is checked every hour, but the dashboard is only refreshed if the status of at least one of the projects has changed.
+The status of the projects is checked every hour, but the dashboard is only refreshed if the status of at least one of 
+the projects has changed.
 
 Last dashboard refresh date: **<span id="project-dashboard-datetime"></span>**
 
-When displayed, icons in columns **Doc** and **Status** are clickable and lead respectively to the **API documentation** and the **GitHub Action status page**.
+When displayed, icon in column **Doc** is clickable and leads to the **API documentation**.
 {{% /callout %}}
 
 <table id="project-dashboard-table" class="table table-striped" data-sort-name="updated" data-sort-order="desc">

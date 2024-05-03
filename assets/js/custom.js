@@ -77,12 +77,6 @@ loadProjectDashboard = async function() {
         cell.setAttribute("class", "text-center");
         cell.appendChild(document.createTextNode(""));
 
-        // column latest tag
-        cell = row.insertCell(-1);
-        cell.setAttribute("id", "latest-tag-" + rowIndex);
-        cell.setAttribute("class", "text-center");
-        cell.appendChild(document.createTextNode(""));
-
         // column issues
         cell = row.insertCell(-1);
         cell.setAttribute("id", "issue-" + rowIndex);
@@ -130,9 +124,7 @@ loadProjectDashboard = async function() {
         await getLatestRelease(rowIndex, owner, project[0]);
         await getReleaseDate(rowIndex, owner, project[0]);
         await getLatestTag(rowIndex, owner, project[0]);
-        if (project[2] === true) {
-            await getStatus(rowIndex, owner, project[0]);
-        }
+        setStatus(rowIndex, owner, project[0]);
 
         // debug
         console.log(json.data);
@@ -187,45 +179,22 @@ loadProjectDashboard = async function() {
         }
     }
 
-    async function getStatus(rowIndex, owner, repos) {
-
+    function setStatus(rowIndex, owner, repos) {
         let cell = document.getElementById("repos-status-" + rowIndex);
-        let json;
-        let branch;
+        let htmlContent;
+        let tooltip = "";
 
-        try {
-            json = await getJsonRepositoryData(repos, "_commits_status");
-            branch = "main";
-        } catch (err) {
-        }
-
-        const a = document.createElement('a');
-        const linkText = document.createTextNode("\u2b24");
-        a.appendChild(linkText);
-        a.title = "CI status page";
-        a.href = "https://github.com/" + owner + "/" + repos + "/actions";
-        a.target = "_blank";
-
-        if(json.check_runs[0] != null && json.check_runs[0].status === "completed") {
-            switch (json.check_runs[0].conclusion) {
-                case "failure":
-                case "action_required":
-                case "cancelled":
-                case "skipped":
-                case "timed-out":
-                    a.style.color = "red";
-                    break;
-                case "neutral":
-                    a.style.color = "lightgreen";
-                    break;
-                case "success":
-                    a.style.color = "green";
-                    break;
-            }
+        if (repos.endsWith("java-api") || repos.endsWith("cpp-api")) {
+            htmlContent = "<i class='fas fa-archive' style='color: red;'></i> Archived";
+        } else if (repos.endsWith("uml-api")) {
+            htmlContent = "<span style='color: green;'>\u2b24</span>";
+            tooltip = "Active";
         } else {
-            a.style.color = "orange";
+            htmlContent = "";
         }
-        cell.appendChild(a);
+
+        cell.innerHTML = htmlContent;
+        cell.title = tooltip;
     }
 
     function formatDate(dateString) {
