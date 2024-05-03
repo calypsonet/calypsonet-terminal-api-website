@@ -1,0 +1,215 @@
+@startuml
+
+'skinparam ClassBorderColor #F1C40F
+skinparam ClassBorderColor #D4AC0D
+skinparam stereotypeABorderColor #A9DCDF
+skinparam stereotypeIBorderColor #B4A7E5
+skinparam stereotypeCBorderColor #ADD1B2
+skinparam stereotypeEBorderColor #EB93DF
+skinparam shadowing false
+
+skinparam StateBorderColor #D4AC0D
+skinparam ActivityBorderColor #D4AC0D
+
+' Red
+skinparam ClassBackgroundColor<<red>> #FDEDEC
+skinparam ClassBorderColor<<red>> #E74C3C
+hide <<red>> stereotype
+' Purple
+skinparam ClassBackgroundColor<<purple>> #F4ECF7
+skinparam ClassBorderColor<<purple>> #8E44AD
+hide <<purple>> stereotype
+' blue
+skinparam ClassBackgroundColor<<blue>> #EBF5FB
+skinparam ClassBorderColor<<blue>> #3498DB
+hide <<blue>> stereotype
+' Green
+skinparam ClassBackgroundColor<<green>> #EAFAF1
+skinparam ClassBorderColor<<green>> #2ECC71
+hide <<green>> stereotype
+
+' Orange
+skinparam ClassBackgroundColor<<orange>> #FDF2E9
+skinparam ClassBorderColor<<orange>> #E67E22
+hide <<orange>> stereotype
+
+' Grey
+skinparam ClassBackgroundColor<<grey>> #EAECEE
+skinparam ClassBorderColor<<grey>> #2C3E50
+hide <<grey>> stereotype
+
+actor "Ticketing Application" as app #gold
+participant "Calypso API" as capi #pink
+participant "Reader API" as rapi #pink
+participant "(remote)\nCalypso Card\nReader" as cardReader #lightBlue
+boundary "**Card**" as card #lightBlue
+participant "(remote)\nCalypso SAM\nReader" as samReader #lightGreen
+boundary "selected\n**SAM**" as sam #lightGreen
+
+activate app #gold
+activate sam #lightGreen
+
+== Card selection & identification ==
+
+note over capi
+    Reads the data present in all the cards targeted for the selection.
+end note
+
+app->capi: <font color=red>**prepare**</font> card selection scenario:\n\t- filter by specific AID\n\t- filter invalidated card status\n\t- read environment file\n\t- read contract list
+activate capi  #pink
+capi-->app
+deactivate capi
+
+app->rapi: <font color=red>**process**</font> explicit card selection scenario
+activate rapi  #pink
+rapi-[#0000FF]>cardReader: <font color=blue>**Card #1**</font>\ntransmit selection request\n\t- card selector\n\t- APDU list
+activate cardReader #lightBlue
+
+cardReader->card: open card channel
+activate card #lightBlue
+card-->cardReader
+cardReader->card: select application (aid)
+card-->cardReader: [card FCI]
+cardReader->cardReader: checks invalidation status
+
+group Card APDU commands outside secure session
+    cardReader->card: read record (environment)
+    card-->cardReader: [environment data]
+    cardReader->card: read record (contract list)
+    card-->cardReader: [contract list data]
+end
+
+cardReader--[#0000FF]>rapi: receive selection response
+deactivate cardReader
+
+rapi-->app: selected active SmartCard image
+deactivate rapi
+
+app->capi: **cast** Calypso card
+activate capi  #pink
+capi-->app: [Calypso card image:\n\t- identification data\n\t- invalidation status\n\t- environment data\n\t- contract list data]
+
+deactivate capi
+
+== Card secure transaction ==
+
+app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
+
+note over capi
+    Reads again the environment file & the contract list inside the session to authenticate them.
+end note
+
+app->capi: <font color=red>**prepare**</font>\n\t- open secure session (DEBIT access level)\n\t- read environment file\n\t- read contract list\n\t- read contract #x\n\t- read contract #y\n\t- read counters
+activate capi  #pink
+capi-->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> commands (keep channel open)
+activate capi  #pink
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+samReader->sam: get challenge
+sam-->samReader: [SAM challenge]
+samReader-[#00FF00]->capi: [SAM challenge]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+group Card APDU commands inside session
+note over cardReader
+    Optimization: environment file read through the session opening.
+end note
+
+    cardReader->card: open secure session (card debit key,\n\tSAM challenge,\n\tSFI environment to read)
+    card-->cardReader: [card challenge & environment data]
+    cardReader->card: read record (contract list)
+    card-->cardReader: [contract list data]
+    cardReader->card: read record (contract #x)
+    card-->cardReader: [contract #x data]
+    cardReader->card: read record (contract #y)
+    card-->cardReader: [contract #y data]
+    cardReader->card: read record (counters)
+    card-->cardReader: [counters data]
+end
+
+cardReader--[#0000FF]>capi: [card challenge]
+deactivate cardReader
+
+capi-->app: [Calypso card image:\n\t- identification data\n\t- environment data (verified)\n\t- contract list data (verified)\n\t- contract #x data\n\t- contract #y data\n\t- counters data]
+deactivate capi
+
+app->capi: <font color=red>**prepare**</font>:\n\t- update contract list (data)\n\t- update contract #x (data)\n\t- update counters (value)\n\t- close secure session (as ratified)
+activate capi  #pink
+
+capi-->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> commands (close channel after)
+activate capi  #pink
+capi->capi: anticipates the future card responses
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #2**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+
+samReader->sam: select diversifier (card serial)
+sam-->samReader
+samReader->sam: digest init (opening data)
+sam-->samReader
+samReader->sam: digest update (read environment)
+sam-->samReader
+samReader->sam: digest update (read contract list)
+sam-->samReader
+samReader->sam: digest update (read contract #x)
+sam-->samReader
+samReader->sam: digest update (read contract #y)
+sam-->samReader
+samReader->sam: digest update (read counters)
+sam-->samReader
+group <font color=red>**anticipated**</font> Card APDU responses
+    samReader->sam: digest update (update contract list)
+    sam-->samReader
+    samReader->sam: digest update (update contract #x)
+    sam-->samReader
+    samReader->sam: digest update (update counters)
+    sam-->samReader
+end
+samReader->sam: digest close
+sam-->samReader: [SAM certificate]
+
+samReader-[#00FF00]->capi: [SAM certificate]
+deactivate samReader
+
+capi-[#0000FF]>cardReader: <font color=blue>**Card #3**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+
+group Card APDU commands inside session
+    cardReader->card: update contract list (data)
+    card-->cardReader
+    cardReader->card: update contract #x (data)
+    card-->cardReader
+    cardReader->card: update counters (data)
+    card-->cardReader
+end
+
+cardReader->card: close secure session (SAM certificate)
+card-->cardReader: [card certificate]
+cardReader->card: close card channel
+card-->cardReader
+deactivate card
+
+cardReader-[#0000FF]->capi: [card certificate]
+deactivate cardReader
+
+capi-[#00FF00]>samReader: <font color=green>**SAM #3**</font>\ntransmit card request\n\t- APDU list
+activate samReader #lightGreen
+samReader->sam: digest authenticate (card certificate)
+sam-->samReader: [authentication status]
+
+samReader-[#00FF00]->capi: [authentification status]
+deactivate samReader
+
+capi-->app: [Calypso card image:\n\t- identification data\n\t- environment data\n\t- contract list data (updated)\n\t- contract #x data (updated)\n\t- contract #y data\n\t- counters data (#x updated)]\nauthentification status
+deactivate capi
+@enduml

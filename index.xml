@@ -1,6 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Calypso Networks Association Terminal APIs</title><link>https://terminal-api.calypsonet.org/</link><atom:link href="https://terminal-api.calypsonet.org/index.xml" rel="self" type="application/rss+xml"/><description>Calypso Networks Association Terminal APIs</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Calypso Networks Association Terminal APIs</title><link>https://terminal-api.calypsonet.org/</link></image><item><title>Calypsonet Terminal Reader API</title><link>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-reader-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-reader-api/</guid><description>&lt;hr>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Calypso Networks Association Terminal APIs</title><link>https://terminal-api.calypsonet.org/</link><atom:link href="https://terminal-api.calypsonet.org/index.xml" rel="self" type="application/rss+xml"/><description>Calypso Networks Association Terminal APIs</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Calypso Networks Association Terminal APIs</title><link>https://terminal-api.calypsonet.org/</link></image><item><title>Calypsonet Terminal Reader API</title><link>https://terminal-api.calypsonet.org/archives/apis/calypsonet-terminal-reader-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/archives/apis/calypsonet-terminal-reader-api/</guid><description>&lt;div class="alert alert-warning">
+&lt;div>
+Version 1.0 of the documentation is no longer actively maintained.
+The site that you are currently viewing is an archived snapshot.
+For up-to-date documentation, see the latest version.
+&lt;/div>
+&lt;/div>
+&lt;br>
 &lt;p>The &lt;strong>Calypsonet Terminal Reader API&lt;/strong> defines the public elements shared by the reader.&lt;/p>
-&lt;hr>
+&lt;br>
 &lt;h2 id="interfaces">Interfaces&lt;/h2>
 &lt;p>The reader API is a high-level interface used by terminal applications to operate smart card readers, it:&lt;/p>
 &lt;ul>
@@ -64,7 +71,7 @@ card selection.&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>Moreover, it is possible to export/import a selection scenario in JSON format.&lt;/p>
-&lt;hr>
+&lt;br>
 &lt;h2 id="card-selection-modes">Card selection modes&lt;/h2>
 &lt;p>Depending on the card transaction use case, or on the reader capability, there are two ways to manage the selection of a
 card:&lt;/p>
@@ -80,11 +87,11 @@ the card selection is next managed by the observable reader, but the card proces
 -->
 &lt;figure id="figure-reader-api---card-selection-modes---activity-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/apis/reader_management_card_selection_modes_activity_diagram.svg" alt="Reader API - Card Selection Modes - Activity Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/archives/specifications/reader_management_card_selection_modes_activity_diagram.svg" alt="Reader API - Card Selection Modes - Activity Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Reader API - Card Selection Modes - Activity Diagram
 &lt;/figcaption>&lt;/figure>
-&lt;hr>
+&lt;br>
 &lt;h2 id="observable-reader-states">Observable reader states&lt;/h2>
 &lt;p>An observable reader is active only when at least one reader observer is registered, and if the start of the detection
 has been requested.
@@ -103,7 +110,7 @@ the card processing.&lt;/p>
 -->
 &lt;figure id="figure-reader-api---observable-reader-states---activity-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/apis/reader_management_reader_observation_state_diagram.svg" alt="Reader API - Observable Reader States - Activity Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/archives/specifications/reader_management_reader_observation_state_diagram.svg" alt="Reader API - Observable Reader States - Activity Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Reader API - Observable Reader States - Activity Diagram
 &lt;/figcaption>&lt;/figure>
@@ -132,10 +139,10 @@ scheduled selection) or a &lt;code>CARD_INSERTED&lt;/code> reader event (notific
 starts again the detection of a new card.&lt;/p>
 &lt;p>Notification of card removal during the card removal wait state is a feature of any observable reader.
 However, some observable readers may additionally have the ability to notify removal during the card processing state.&lt;/p>
-&lt;hr>
+&lt;br>
 &lt;h2 id="limitations--constraints">Limitations &amp;amp; constraints&lt;/h2>
 &lt;p>On a specific card reader, the Reader API allows to address only a &lt;strong>single logical channel&lt;/strong>.&lt;/p>
-&lt;hr>
+&lt;br>
 &lt;h1 id="heading">&lt;/h1>
 &lt;h2 id="implementations--api-documentation">Implementations &amp;amp; API Documentation&lt;/h2>
 &lt;div class="alert alert-note">
@@ -160,7 +167,7 @@ up-to-date documentation.
 &lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-java-api/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
-&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.dev/search?q=calypsonet-terminal-reader-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
+&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.com/search?q=calypsonet-terminal-reader-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-5" role="tablist">&lt;li class="nav-item">
 &lt;a class="nav-link active tab-Gradle-Groovy"
 id="tabs-5-0-tab" data-toggle="tab" href="#tabs-5-0" role="tab" onclick="handleClick(&amp;#34;Gradle-Groovy&amp;#34;);"
@@ -218,10 +225,312 @@ id="tabs-5-2" role="tabpanel" aria-labelled-by="tabs-5-2-tab">
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
-&lt;/div></description></item><item><title>Calypsonet Terminal Card API</title><link>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-card-api/</guid><description>&lt;hr>
+&lt;/div></description></item><item><title>Calypso Card API (external)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-card-api/</guid><description>&lt;div class="alert alert-note">
+&lt;div>
+Latest version &lt;strong>&lt;code>2.1.0&lt;/code>&lt;/strong>
+&lt;span class="component-metadata">
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;p>As part of the &lt;strong>Card Layer&lt;/strong>, the &lt;strong>Calypso Card API&lt;/strong> provides high-level functionality for selecting and performing
+transactions with Calypso cards.&lt;/p>
+&lt;br>
+&lt;h2 id="interfaces">Interfaces&lt;/h2>
+&lt;p>The &lt;strong>Calypso Card API&lt;/strong> provides the means to select a target card and then perform a transaction with the selected card.&lt;/p>
+&lt;ul>
+&lt;li>The result of a card selection is a smartcard image whose file structure and data records can be browsed.&lt;/li>
+&lt;li>A transaction with a target card may involve a control SAM in order to secure the operations.&lt;/li>
+&lt;/ul>
+&lt;p>The &lt;code>CalypsoCard&lt;/code> interfaces provide &lt;strong>accessors&lt;/strong> in order to recover the information of the selected smart card.&lt;/p>
+&lt;p>To optimize the number of exchanges with a card reader, the &lt;strong>Calypso Card API&lt;/strong> allows to group the commands.
+A set of command could be first &lt;strong>prepared&lt;/strong>, and then be &lt;strong>processed&lt;/strong> by a selected target at the selection or
+during the transaction.
+A transaction with a Calypso card is fully managed through the &lt;code>CardTransactionManager&lt;/code> interface:&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-card-uml-api/2.1.0/api_class_diagram.svg" alt="Calypso Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;br>
+&lt;h2 id="selection-of-a-calypso-card">Selection of a Calypso card&lt;/h2>
+&lt;p>A Calypso card selection could be defined to accept or not invalidated card.&lt;/p>
+&lt;p>Through the selection only basic Select File (without changing DF) or Read Records commands could joined: the goal is to
+recover in the selection result some file status or record data of elements present in all cards of a ticketing networks.
+The type of card product has not yet been identified, the commands are prepared to be supported by all types of card
+products: Prime, Light, or Regular.&lt;/p>
+&lt;p>Then, if a Calypso card has matched the selection request, a Calypso card image is returned, some file headers or file
+records could be filled depending on the information recovered in the responses of the Select File or Read Records
+processed.&lt;/p>
+&lt;br>
+&lt;h2 id="transaction-with-a-calypso-card">Transaction with a Calypso card&lt;/h2>
+&lt;p>Except the operations involving secure processing on &amp;ldquo;data&amp;rdquo; (data signature computation / verification, data ciphering /
+un-ciphering), only commands for the card need to be prepared though the Card Transaction Manager interface.
+Depending on the operation, if necessary the security involving the master SAM must be controlled internally by the
+Calypso library.&lt;/p>
+&lt;h3 id="simple-operation-outside-a-session">Simple operation outside a session&lt;/h3>
+&lt;h3 id="pin-plain-verification--change-outside-a-session">PIN plain verification / change outside a session&lt;/h3>
+&lt;figure id="figure-calypso-card-api---verify--change-plain-pin---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_Verify_Change_Plain_PIN_sequence_diagram.svg" alt="Calypso Card API - Verify / Change Plain PIN - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - Verify / Change Plain PIN - Sequence Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="data-secure-processing-outside-a-session">Data secure processing outside a session&lt;/h3>
+&lt;figure id="figure-calypso-card-api---data-secure-processing-outside-a-session---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_DSP_outside_session_sequence_diagram.svg" alt="Calypso Card API - Data secure processing outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - Data secure processing outside a session - Sequence Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="key--pin-ciphered-update-outside-a-session">Key / PIN ciphered update outside a session&lt;/h3>
+&lt;figure id="figure-calypso-card-api---change-key--ciphered-pin-outside-a-session---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_Change_Key_Ciphered_PIN_sequence_diagram.svg" alt="Calypso Card API - Change Key / Ciphered PIN outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - Change Key / Ciphered PIN outside a session - Sequence Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="stored-value-operation-outside-a-session">Stored Value operation outside a session&lt;/h3>
+&lt;figure id="figure-calypso-card-api---standalone-stored-value-transaction---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_standalone_SV_operation_sequence_diagram.svg" alt="Calypso Card API - standalone Stored Value transaction - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - standalone Stored Value transaction - Sequence Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="simple-secure-session-for-fast-embedded-performance">Simple secure session for fast embedded performance&lt;/h3>
+&lt;p>This example illustrates the ticketing processing of a validation: only the necessary data is read from the card.&lt;/p>
+&lt;p>In case of communication failure with the card, to support a recovery transaction on another terminal: the ratification
+status and the last event are checked at the session opening, and the session is closed as not ratified directly
+followed by a ratification command.&lt;/p>
+&lt;figure id="figure-calypso-card-api---simple-secure-session---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_simple_secure_session_embedded_sequence_diagram.svg" alt="Calypso Card API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - Simple Secure Session - Sequence Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="simple-secure-session-for-an-efficient-distributed-system">Simple secure session for an efficient distributed system&lt;/h3>
+&lt;p>In most of the cases, it should be possible to handle a secure session with a Calypso card, using only:&lt;/p>
+&lt;ul>
+&lt;li>3 exchanges with the card reader (selection processing, session opening processing, and session closing processing),&lt;/li>
+&lt;li>and 3 exchanges with the SAM reader (terminal session challenge recovery, session MAC computation, and card authentication).&lt;/li>
+&lt;/ul>
+&lt;p>This example shows the loading of a contract during a sale, to speed up the identification of the card content while
+limiting the exchange of messages with the card reader, some data can be read out of session during the selection,
+then read again during the session.&lt;/p>
+&lt;p>In case of communication failure with the card, if the recovery transaction is supported only on the same terminal,
+then the checking of the ratification status is not necessary at the session opening, and the session could be closed as ratified.&lt;/p>
+&lt;figure id="figure-calypso-card-api---simple-secure-session---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_simple_secure_session_distributed_sequence_diagram.svg" alt="Calypso Card API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - Simple Secure Session - Sequence Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="pin-ciphered-verification-inside-a-session">PIN ciphered verification inside a session&lt;/h3>
+&lt;figure id="figure-calypso-card-api---verify-ciphered-pin-inside-a-session---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_Verify_Ciphered_PIN_inside_session_sequence_diagram.svg" alt="Calypso Card API - Verify Ciphered PIN inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - Verify Ciphered PIN inside a session - Sequence Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="data-secure-processing-inside-a-session">Data secure processing inside a session&lt;/h3>
+&lt;figure id="figure-calypso-card-api---data-secure-processing-inside-a-session---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_DSP_inside_session_sequence_diagram.svg" alt="Calypso Card API - Data secure processing inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - Data secure processing inside a session - Sequence Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="stored-value-operation-inside-a-session">Stored Value operation inside a session&lt;/h3>
+&lt;figure id="figure-calypso-card-api---stored-value-transaction-inside-a-secure-session---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_SV_inside_session_sequence_diagram.svg" alt="Calypso Card API - Stored Value transaction inside a secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - Stored Value transaction inside a secure session - Sequence Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="multiple-secure-sessions">Multiple secure sessions&lt;/h3>
+&lt;figure id="figure-calypso-card-api---multiple-secure-session---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_multiple_secure_session_sequence_diagram.svg" alt="Calypso Card API - Multiple secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - Multiple secure session - Sequence Diagram
+&lt;/figcaption>&lt;/figure></description></item><item><title>Reader API (external)</title><link>https://terminal-api.calypsonet.org/specifications/reader-layer/reader-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/reader-layer/reader-api/</guid><description>&lt;div class="alert alert-note">
+&lt;div>
+Latest version &lt;strong>&lt;code>2.0.1&lt;/code>&lt;/strong>
+&lt;span class="component-metadata">
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;p>As part of the &lt;strong>Reader Layer&lt;/strong>, the &lt;strong>Reader API&lt;/strong> provides high-level functionality for identifying, monitoring,
+configuring readers and process card selection scenarios.&lt;/p>
+&lt;br>
+&lt;h2 id="interfaces">Interfaces&lt;/h2>
+&lt;p>The &lt;strong>Reader API&lt;/strong> is a high-level interface used by terminal applications to operate smart card readers, it:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>provides the means to identify card readers and verify the presence of smart cards.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>offers the possibility to configure the observation of readers in order to be notified on card insertion or withdrawal.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>is the entry point to manage the selection of a smart card in a specific reader.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/2.0.1/api_class_diagram.svg" alt="Reader API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h3 id="reader-identification">Reader identification&lt;/h3>
+&lt;p>Any smart card reader entity should be accessible through an implementation of the &lt;code>CardReader&lt;/code> interface.
+Each is defined with a specific name.
+A reader could be designed to operate contactless card or a contact card.
+Finally, this interface can inform about the presence of a card in the reader.&lt;/p>
+&lt;h3 id="configurablecardreader">ConfigurableCardReader&lt;/h3>
+&lt;p>A reader with the capability to configure the communication protocols with smart card (contactless or contact) could
+implement the &lt;code>ConfigurableCardReader&lt;/code> interface to activate or deactivate some communication protocols.&lt;/p>
+&lt;h3 id="reader-observation">Reader observation&lt;/h3>
+&lt;p>If a reader has the ability to dynamically detect changes on the card presence, then it can also implement the interface
+&lt;code>ObservableCardReader&lt;/code>.&lt;/p>
+&lt;p>Observers implementing the &lt;code>CardReaderObserverSpi&lt;/code> could be declared to an observable card reader to be notified on
+specific &lt;code>CardReaderEvent&lt;/code>: card insertion, card selection (matched), or card removal.&lt;/p>
+&lt;h3 id="card-selection">Card Selection&lt;/h3>
+&lt;p>The &lt;code>CardSelectionManager&lt;/code> provides the possibility to prepare a request that could contain one or several card
+application selections.&lt;/p>
+&lt;p>The &lt;code>CardSelection&lt;/code> SPI interface could be extended by the API of a specific smart card solution to improve the
+selection request with settings specific to the smart card solution.&lt;/p>
+&lt;p>Through the card selection manager, the prepared card selections could be managed in&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>synchronously&lt;/strong>: processed directly on a specific card reader on which a card is already present,&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>or &lt;strong>asynchronously&lt;/strong>: scheduled on a specific observable reader in order to be operated dynamically in case of card
+insertion detection.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>If several card selections are prepared, the card selection manager operate the card selection in the order of
+preparation.
+By default, the card selection manager stops the card selection processing on the first successful card selection,
+and the logical channel is kept open.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>In case the multiple selection mode is activated during the preparation, the card selection manager tries to operate
+‘all’ the prepared selections, even if one or several of them are successful.
+If the last selection is successful, the logical channel could be kept open with the last selected application.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>during the card selection preparation, it could also be explicitly requested to close the logical channel after the
+card selection.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Moreover, it is possible to export/import a selection scenario in JSON format.&lt;/p>
+&lt;br>
+&lt;h2 id="card-selection-modes">Card selection modes&lt;/h2>
+&lt;p>Depending on the card transaction use case, or on the reader capability, there are two ways to manage the selection of a
+card:&lt;/p>
+&lt;ul>
+&lt;li>Either synchronously on a simple reader, a selection could be operated directly by transmitting the card selection
+scenario. In this case the same entity manages both the card selection and the card processing.&lt;/li>
+&lt;li>Otherwise asynchronously on an observable reader, a scheduled card selection could be defined.
+In this case the card selection is operated automatically at the insertion of the card. In this case,
+the card selection is next managed by the observable reader, but the card processing is managed by a reader observer.&lt;/li>
+&lt;/ul>
+&lt;figure id="figure-reader-api---card-selection-modes---activity-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/reader_management_card_selection_modes_activity_diagram.svg" alt="Reader API - Card Selection Modes - Activity Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Reader API - Card Selection Modes - Activity Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;br>
+&lt;h2 id="observable-reader-states">Observable reader states&lt;/h2>
+&lt;p>An observable reader is active only when at least one reader observer is registered, and if the start of the detection
+has been requested.
+When active, an observable reader could switch between three internal states:&lt;/p>
+&lt;ul>
+&lt;li>Wait for card insertion&lt;/li>
+&lt;li>Wait for card processing&lt;/li>
+&lt;li>Wait for card removal&lt;/li>
+&lt;/ul>
+&lt;p>In the nominal case, a reader observer indicates to the observable reader that the processing of the card is finished by
+releasing the card channel.
+To manage a failure of the reader observer process, the observable reader interface provides also a method to finalize
+the card processing.&lt;/p>
+&lt;figure id="figure-reader-api---observable-reader-states---activity-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/reader_management_reader_observation_state_diagram.svg" alt="Reader API - Observable Reader States - Activity Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Reader API - Observable Reader States - Activity Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;p>The states could be switched:&lt;/p>
+&lt;ul>
+&lt;li>due to an explicit API request (blue arrows):
+&lt;ul>
+&lt;li>the release of the card channel,&lt;/li>
+&lt;li>the call of an observable reader method:
+&lt;ul>
+&lt;li>the addition or the remove of an observable reader,&lt;/li>
+&lt;li>a request to start or stop the detection, to finalize the card processing.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Or because of an external event (red arrows), the insertion or the remove of a card.
+&lt;ul>
+&lt;li>the insertion of a card causing the observable reader to notify a &lt;code>CARD_MATCHED&lt;/code> reader event (in case of successful
+scheduled selection) or a &lt;code>CARD_INSERTED&lt;/code> reader event (notification mode defined as &lt;code>ALWAYS&lt;/code>).&lt;/li>
+&lt;li>the removal of a card causing the observable reader to notify a &lt;code>CARD_REMOVED&lt;/code> reader event.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>If a card detection is started with the &lt;code>REPEATING&lt;/code> detection mode, then later when the card is removed, the reader
+starts again the detection of a new card.&lt;/p>
+&lt;p>Notification of card removal during the card removal wait state is a feature of any observable reader.
+However, some observable readers may additionally have the ability to notify removal during the card processing state.&lt;/p>
+&lt;br>
+&lt;h2 id="limitations--constraints">Limitations &amp;amp; constraints&lt;/h2>
+&lt;p>On a specific card reader, the &lt;strong>Reader API&lt;/strong> allows to address only a &lt;strong>single logical channel&lt;/strong>.&lt;/p></description></item><item><title>Card API (internal)</title><link>https://terminal-api.calypsonet.org/specifications/reader-layer/card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/reader-layer/card-api/</guid><description>&lt;div class="alert alert-note">
+&lt;div>
+Latest version &lt;strong>&lt;code>2.0.1&lt;/code>&lt;/strong>
+&lt;span class="component-metadata">
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;p>As part of the &lt;strong>Reader Layer&lt;/strong>, the &lt;strong>Calypsonet Terminal Card API&lt;/strong> defines the internal elements shared by the
+reader layer to implement specific card layers (like the Calypso Card layer).&lt;/p>
+&lt;br>
+&lt;h2 id="interfaces">Interfaces&lt;/h2>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-card-uml-api/2.0.1/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;br>
+&lt;h2 id="limitations--constraints">Limitations &amp;amp; constraints&lt;/h2>
+&lt;p>The &lt;strong>Card API&lt;/strong> doesn&amp;rsquo;t allow to request the transmission to a card of the APDU commands &amp;ldquo;Select Application by DF Name&amp;rdquo;
+or &amp;ldquo;Get Response&amp;rdquo;:&lt;/p>
+&lt;ul>
+&lt;li>the selection of a specific card application could be managed only through a Card Selection Request.&lt;/li>
+&lt;li>the APDU response status words 61XYh &amp;amp; 6CXYh are automatically handled by the reader layer library by issuing a
+Get Response or by re-issuing the previous command with the expected &amp;lsquo;Le&amp;rsquo; field.&lt;/li>
+&lt;/ul></description></item><item><title>Calypsonet Terminal Card API</title><link>https://terminal-api.calypsonet.org/archives/apis/calypsonet-terminal-card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/archives/apis/calypsonet-terminal-card-api/</guid><description>&lt;div class="alert alert-warning">
+&lt;div>
+Version 1.0 of the documentation is no longer actively maintained.
+The site that you are currently viewing is an archived snapshot.
+For up-to-date documentation, see the latest version.
+&lt;/div>
+&lt;/div>
+&lt;br>
 &lt;p>The &lt;strong>Calypsonet Terminal Card API&lt;/strong> defines the internal elements shared by the reader layer to implement specific card
 layers (like the Calypso Card layer).&lt;/p>
-&lt;hr>
+&lt;br>
 &lt;h2 id="interfaces">Interfaces&lt;/h2>
 &lt;p>
 &lt;figure >
@@ -229,7 +538,7 @@ layers (like the Calypso Card layer).&lt;/p>
 &lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-card-uml-api/1.0.0/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
-&lt;hr>
+&lt;br>
 &lt;h2 id="limitations--constraints">Limitations &amp;amp; constraints&lt;/h2>
 &lt;p>The Card API doesn&amp;rsquo;t allow to request the transmission to a card of the APDU commands &amp;ldquo;Select Application by DF Name&amp;rdquo;
 or &amp;ldquo;Get Response&amp;rdquo;:&lt;/p>
@@ -238,7 +547,7 @@ or &amp;ldquo;Get Response&amp;rdquo;:&lt;/p>
 &lt;li>the APDU response status words 61XYh &amp;amp; 6CXYh are automatically handled by the reader layer library by issuing a
 Get Response or by re-issuing the previous command with the expected &amp;lsquo;Le&amp;rsquo; field.&lt;/li>
 &lt;/ul>
-&lt;hr>
+&lt;br>
 &lt;h1 id="heading">&lt;/h1>
 &lt;h2 id="implementations--api-documentation">Implementations &amp;amp; API Documentation&lt;/h2>
 &lt;div class="alert alert-note">
@@ -263,7 +572,7 @@ up-to-date documentation.
 &lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-java-api/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
-&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.dev/search?q=calypsonet-terminal-card-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
+&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.com/search?q=calypsonet-terminal-card-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-3" role="tablist">&lt;li class="nav-item">
 &lt;a class="nav-link active tab-Gradle-Groovy"
 id="tabs-3-0-tab" data-toggle="tab" href="#tabs-3-0" role="tab" onclick="handleClick(&amp;#34;Gradle-Groovy&amp;#34;);"
@@ -302,9 +611,9 @@ id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">
 id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;div class="code relative" id="">
 &lt;div class="code-copy-content nt3">&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>org.calypsonet.terminal&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>calypsonet-terminal-card-java-api&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>1.0.0&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>org.calypsonet.terminal&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>calypsonet-terminal-card-java-api&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>1.0.0&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;/div>
@@ -321,11 +630,83 @@ id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-cpp-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
-&lt;/div></description></item><item><title>Calypsonet Terminal Calypso API</title><link>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-calypso-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-calypso-api/</guid><description>&lt;hr>
+&lt;/div></description></item><item><title>Calypso Legacy SAM API (external)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-legacysam-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-legacysam-api/</guid><description>&lt;div class="alert alert-note">
+&lt;div>
+Latest version &lt;strong>&lt;code>0.6.0&lt;/code>&lt;/strong>
+&lt;span class="component-metadata">
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;p>As part of the &lt;strong>Card Layer&lt;/strong>, the &lt;strong>Calypso Crypto Legacy SAM API&lt;/strong> provides high-level functionality for selecting
+and performing transactions with Calypso Legacy SAMs and can also be coupled with the &lt;strong>Calypso Card API&lt;/strong> to handle the
+cryptographic calculations required for Calypso card transactions secured by symmetric keys.&lt;/p>
+&lt;br>
+&lt;h2 id="interfaces">Interfaces&lt;/h2>
+&lt;p>The &lt;strong>Calypso Crypto Legacy SAM API&lt;/strong> provides the means to select a target or control SAM and then perform a transaction with the selected target.&lt;/p>
+&lt;ul>
+&lt;li>The result of a SAM selection is a smartcard image whose keys&amp;rsquo; parameters can be read.&lt;/li>
+&lt;li>A transaction with a target SAM may involve a control SAM in order to secure the operations.&lt;/li>
+&lt;/ul>
+&lt;p>The &lt;code>LegacySam&lt;/code> interface provide &lt;strong>accessors&lt;/strong> in order to recover the information of the selected smartcard.&lt;/p>
+&lt;p>To optimize the number of exchanges with a SAM reader, the Legacy SAM API allows to group the commands.
+A set of command could be first &lt;strong>prepared&lt;/strong>, and then be &lt;strong>processed&lt;/strong> by a selected target at the selection or
+during the transaction.
+A transaction with a Calypso SAM is fully managed through one of the &lt;code>LSTransactionManager&lt;/code> interfaces:&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-uml-api/0.6.0/api_class_diagram.svg" alt="Calypso Crypto Legacy SAM API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p></description></item><item><title>Calypso Symmetric Crypto API (internal)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-symmetric-crypto-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-symmetric-crypto-api/</guid><description>&lt;div class="alert alert-note">
+&lt;div>
+Latest version &lt;strong>&lt;code>0.1.1&lt;/code>&lt;/strong>
+&lt;span class="component-metadata">
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-symmetric-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;p>The &lt;strong>Calypso Crypto Symmetric API&lt;/strong> is the communication interface between the &lt;strong>Calypso Card&lt;/strong> and the
+&lt;strong>Calypso Symmetric Crypto&lt;/strong> libraries (e.g. Legacy SAM, Open SAM).&lt;/p>
+&lt;br>
+&lt;h2 id="interfaces">Interfaces&lt;/h2>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-symmetric-uml-api/0.1.1/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p></description></item><item><title>Calypso Asymmetric Crypto API (internal)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-asymmetric-crypto-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-asymmetric-crypto-api/</guid><description>&lt;div class="alert alert-note">
+&lt;div>
+Latest version &lt;strong>&lt;code>0.2.0&lt;/code>&lt;/strong>
+&lt;span class="component-metadata">
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;p>The &lt;strong>Calypso Crypto Asymmetric API&lt;/strong> is the communication interface between the &lt;strong>Calypso Card&lt;/strong> and the
+&lt;strong>Calypso Asymmetric Crypto&lt;/strong> libraries.&lt;/p>
+&lt;br>
+&lt;h2 id="interfaces">Interfaces&lt;/h2>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/0.2.0/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p></description></item><item><title>Calypsonet Terminal Calypso API</title><link>https://terminal-api.calypsonet.org/archives/apis/calypsonet-terminal-calypso-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/archives/apis/calypsonet-terminal-calypso-api/</guid><description>&lt;div class="alert alert-warning">
+&lt;div>
+Version 1.0 of the documentation is no longer actively maintained.
+The site that you are currently viewing is an archived snapshot.
+For up-to-date documentation, see the latest version.
+&lt;/div>
+&lt;/div>
+&lt;br>
 &lt;p>The &lt;strong>Calypsonet Terminal Calypso API&lt;/strong> is an extension of the &lt;strong>Calypsonet Terminal Reader API&lt;/strong> which provides a
 high-level API standardizing the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM,
 etc&amp;hellip;).&lt;/p>
-&lt;hr>
+&lt;br>
 &lt;h2 id="interfaces">Interfaces&lt;/h2>
 &lt;p>The Calypso API provides the means to select a target card or SAM and then perform a transaction with the selected target.&lt;/p>
 &lt;ul>
@@ -341,10 +722,10 @@ A transaction with a Calypso card is fully managed through the &lt;code>CardTran
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-uml-api/1.8.0/api_class_diagram.svg" alt="Calypso API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-card-uml-api/1.8.0/api_class_diagram.svg" alt="Calypso API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
-&lt;hr>
+&lt;br>
 &lt;h2 id="selection-of-a-calypso-card">Selection of a Calypso card&lt;/h2>
 &lt;p>A Calypso card selection could be defined to accept or not invalidated card.&lt;/p>
 &lt;p>Through the selection only basic Select File (without changing DF) or Read Records commands could joined: the goal is to
@@ -354,7 +735,7 @@ products: Prime, Light, or Regular.&lt;/p>
 &lt;p>Then, if a Calypso card has matched the selection request, a Calypso card image is returned, some file headers or file
 records could be filled depending on the information recovered in the responses of the Select File or Read Records
 processed.&lt;/p>
-&lt;hr>
+&lt;br>
 &lt;h2 id="transaction-with-a-calypso-card">Transaction with a Calypso card&lt;/h2>
 &lt;p>Except the operations involving secure processing on &amp;ldquo;data&amp;rdquo; (data signature computation / verification, data ciphering /
 un-ciphering), only commands for the card need to be prepared though the Card Transaction Manager interface.
@@ -364,28 +745,28 @@ Calypso library.&lt;/p>
 &lt;h3 id="pin-plain-verification--change-outside-a-session">PIN plain verification / change outside a session&lt;/h3>
 &lt;figure id="figure-calypso-api---verify--change-plain-pin---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/apis/calypso_transaction_Verify_Change_Plain_PIN_sequence_diagram.svg" alt="Calypso API - Verify / Change Plain PIN - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/archives/specifications/calypso_transaction_Verify_Change_Plain_PIN_sequence_diagram.svg" alt="Calypso API - Verify / Change Plain PIN - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Verify / Change Plain PIN - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="data-secure-processing-outside-a-session">Data secure processing outside a session&lt;/h3>
 &lt;figure id="figure-calypso-api---data-secure-processing-outside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/apis/calypso_transaction_DSP_outside_session_sequence_diagram.svg" alt="Calypso API - Data secure processing outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/archives/specifications/calypso_transaction_DSP_outside_session_sequence_diagram.svg" alt="Calypso API - Data secure processing outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Data secure processing outside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="key--pin-ciphered-update-outside-a-session">Key / PIN ciphered update outside a session&lt;/h3>
 &lt;figure id="figure-calypso-api---change-key--ciphered-pin-outside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/apis/calypso_transaction_Change_Key_Ciphered_PIN_sequence_diagram.svg" alt="Calypso API - Change Key / Ciphered PIN outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/archives/specifications/calypso_transaction_Change_Key_Ciphered_PIN_sequence_diagram.svg" alt="Calypso API - Change Key / Ciphered PIN outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Change Key / Ciphered PIN outside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="stored-value-operation-outside-a-session">Stored Value operation outside a session&lt;/h3>
 &lt;figure id="figure-calypso-api---standalone-stored-value-transaction---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/apis/calypso_transaction_standalone_SV_operation_sequence_diagram.svg" alt="Calypso API - standalone Stored Value transaction - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/archives/specifications/calypso_transaction_standalone_SV_operation_sequence_diagram.svg" alt="Calypso API - standalone Stored Value transaction - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - standalone Stored Value transaction - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
@@ -396,7 +777,7 @@ status and the last event are checked at the session opening, and the session is
 followed by a ratification command.&lt;/p>
 &lt;figure id="figure-calypso-api---simple-secure-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/apis/calypso_transaction_simple_secure_session_embedded_sequence_diagram.svg" alt="Calypso API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/archives/specifications/calypso_transaction_simple_secure_session_embedded_sequence_diagram.svg" alt="Calypso API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Simple Secure Session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
@@ -413,43 +794,39 @@ then read again during the session.&lt;/p>
 then the checking of the ratification status is not necessary at the session opening, and the session could be closed as ratified.&lt;/p>
 &lt;figure id="figure-calypso-api---simple-secure-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/apis/calypso_transaction_simple_secure_session_distributed_sequence_diagram.svg" alt="Calypso API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/archives/specifications/calypso_transaction_simple_secure_session_distributed_sequence_diagram.svg" alt="Calypso API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Simple Secure Session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="pin-ciphered-verification-inside-a-session">PIN ciphered verification inside a session&lt;/h3>
 &lt;figure id="figure-calypso-api---verify-ciphered-pin-inside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/apis/calypso_transaction_Verify_Ciphered_PIN_inside_session_sequence_diagram.svg" alt="Calypso API - Verify Ciphered PIN inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/archives/specifications/calypso_transaction_Verify_Ciphered_PIN_inside_session_sequence_diagram.svg" alt="Calypso API - Verify Ciphered PIN inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Verify Ciphered PIN inside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="data-secure-processing-inside-a-session">Data secure processing inside a session&lt;/h3>
 &lt;figure id="figure-calypso-api---data-secure-processing-inside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/apis/calypso_transaction_DSP_inside_session_sequence_diagram.svg" alt="Calypso API - Data secure processing inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/archives/specifications/calypso_transaction_DSP_inside_session_sequence_diagram.svg" alt="Calypso API - Data secure processing inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Data secure processing inside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="stored-value-operation-inside-a-session">Stored Value operation inside a session&lt;/h3>
 &lt;figure id="figure-calypso-api---stored-value-transaction-inside-a-secure-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/apis/calypso_transaction_SV_inside_session_sequence_diagram.svg" alt="Calypso API - Stored Value transaction inside a secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/archives/specifications/calypso_transaction_SV_inside_session_sequence_diagram.svg" alt="Calypso API - Stored Value transaction inside a secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Stored Value transaction inside a secure session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="multiple-secure-sessions">Multiple secure sessions&lt;/h3>
 &lt;figure id="figure-calypso-api---multiple-secure-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/apis/calypso_transaction_multiple_secure_session_sequence_diagram.svg" alt="Calypso API - Multiple secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/archives/specifications/calypso_transaction_multiple_secure_session_sequence_diagram.svg" alt="Calypso API - Multiple secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Multiple secure session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
-&lt;hr>
-&lt;h2 id="selection-of-a-calypso-sam">Selection of a Calypso SAM&lt;/h2>
-&lt;hr>
-&lt;h2 id="transaction-with-a-calypso-sam">Transaction with a Calypso SAM&lt;/h2>
-&lt;hr>
+&lt;br>
 &lt;h1 id="heading">&lt;/h1>
 &lt;h2 id="implementations--api-documentation">Implementations &amp;amp; API Documentation&lt;/h2>
 &lt;div class="alert alert-note">
@@ -467,14 +844,14 @@ up-to-date documentation.
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
-&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.dev/search?q=calypsonet-terminal-calypso-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
+&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.com/search?q=calypsonet-terminal-calypso-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-13" role="tablist">&lt;li class="nav-item">
 &lt;a class="nav-link active tab-Gradle-Groovy"
 id="tabs-13-0-tab" data-toggle="tab" href="#tabs-13-0" role="tab" onclick="handleClick(&amp;#34;Gradle-Groovy&amp;#34;);"
@@ -513,9 +890,9 @@ id="tabs-13-1" role="tabpanel" aria-labelled-by="tabs-13-1-tab">
 id="tabs-13-2" role="tabpanel" aria-labelled-by="tabs-13-2-tab">
 &lt;div class="code relative" id="">
 &lt;div class="code-copy-content nt3">&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>org.calypsonet.terminal&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>calypsonet-terminal-calypso-java-api&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>1.8.0&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>org.calypsonet.terminal&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>calypsonet-terminal-calypso-java-api&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>1.8.0&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;/div>
@@ -528,106 +905,8 @@ id="tabs-13-2" role="tabpanel" aria-labelled-by="tabs-13-2-tab">
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-cpp-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
-&lt;/div>
-&lt;/div></description></item><item><title>Calypsonet Terminal Calypso Crypto Legacy SAM API</title><link>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-calypso-crypto-legacysam-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/apis/calypsonet-terminal-calypso-crypto-legacysam-api/</guid><description>&lt;hr>
-&lt;p>The &lt;strong>Calypsonet Terminal Calypso Crypto Legacy SAM API&lt;/strong> is an extension of the &lt;strong>Calypsonet Terminal Reader API&lt;/strong> which provides a
-high-level API standardizing the way to interact with a Calypso® legacy SAM product (SAM-C1, HSM-C1, etc&amp;hellip;).&lt;/p>
-&lt;hr>
-&lt;h2 id="interfaces">Interfaces&lt;/h2>
-&lt;p>The Calypso API provides the means to select a target or control SAM and then perform a transaction with the selected target.&lt;/p>
-&lt;ul>
-&lt;li>The result of a SAM selection is a smartcard image whose keys&amp;rsquo; parameters can be read.&lt;/li>
-&lt;li>A transaction with a target SAM may involve a control SAM in order to secure the operations.&lt;/li>
-&lt;/ul>
-&lt;p>The &lt;code>LegacySam&lt;/code> interface provide &lt;strong>accessors&lt;/strong> in order to recover the information of the selected smartcard.&lt;/p>
-&lt;p>To optimize the number of exchanges with a SAM reader, the Legacy SAM API allows to group the commands.
-A set of command could be first &lt;strong>prepared&lt;/strong>, and then be &lt;strong>processed&lt;/strong> by a selected target at the selection or
-during the transaction.
-A transaction with a Calypso SAM is fully managed through one of the &lt;code>LSTransactionManager&lt;/code> interfaces:&lt;/p>
-&lt;p>
-&lt;figure >
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-uml-api/0.2.0/api_class_diagram.svg" alt="Calypso Crypto Legacy SAM API - class diagram" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/p>
-&lt;hr>
-&lt;h1 id="heading">&lt;/h1>
-&lt;h2 id="implementations--api-documentation">Implementations &amp;amp; API Documentation&lt;/h2>
-&lt;div class="alert alert-note">
-&lt;div>
-The third version number (x.y.&lt;strong>z&lt;/strong>) only concerns updates of the javadoc because this component does not contain any
-implementation, but only an API.
-Therefore, it is recommended to always perform a &lt;strong>dynamic import&lt;/strong> as described above in order to have the most
-up-to-date documentation.
-&lt;/div>
-&lt;/div>
-&lt;h3 id="calypso-legacy-sam-api-in-java">Calypso Legacy SAM API in Java&lt;/h3>
-&lt;div class="alert alert-note">
-&lt;div>
-&lt;strong>&lt;code>0.2.0&lt;/code>&lt;/strong>
-&lt;span class="component-metadata">
-&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-java-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
-&lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
-&lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
-&lt;span class="component-metadata">
-&lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog&lt;/a>&lt;/span>
-&lt;/div>
-&lt;/div>
-&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.dev/search?q=calypsonet-terminal-calypso-crypto-legacysam-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
-&lt;ul class="nav nav-tabs" id="tabs-3" role="tablist">&lt;li class="nav-item">
-&lt;a class="nav-link active tab-Gradle-Groovy"
-id="tabs-3-0-tab" data-toggle="tab" href="#tabs-3-0" role="tab" onclick="handleClick(&amp;#34;Gradle-Groovy&amp;#34;);"
-aria-controls="tabs-3-0" aria-selected="true">
-Gradle Groovy
-&lt;/a>
-&lt;/li>&lt;li class="nav-item">
-&lt;a class="nav-link tab-Gradle-Kotlin"
-id="tabs-3-1-tab" data-toggle="tab" href="#tabs-3-1" role="tab" onclick="handleClick(&amp;#34;Gradle-Kotlin&amp;#34;);"
-aria-controls="tabs-3-1" aria-selected="false">
-Gradle Kotlin
-&lt;/a>
-&lt;/li>&lt;li class="nav-item">
-&lt;a class="nav-link tab-Maven"
-id="tabs-3-2-tab" data-toggle="tab" href="#tabs-3-2" role="tab" onclick="handleClick(&amp;#34;Maven&amp;#34;);"
-aria-controls="tabs-3-2" aria-selected="false">
-Maven
-&lt;/a>
-&lt;/li>&lt;/ul>
-&lt;div class="bd-clipboard">&lt;button type="button" class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onClick="javascript:copyTabContentToClipboard('tabs-3', this);">Copy&lt;/button>&lt;/div>
-&lt;div class="tab-content" id="tabs-3-content">&lt;div class="tab-pane fade show active"
-id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
-&lt;div class="code relative" id="">
-&lt;div class="code-copy-content nt3">&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gradle" data-lang="gradle">&lt;span class="line">&lt;span class="cl">&lt;span class="n">implementation&lt;/span> &lt;span class="s1">&amp;#39;org.calypsonet.terminal:calypsonet-terminal-calypso-crypto-legacysam-java-api:0.2.0&amp;#39;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;div class="tab-pane fade"
-id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab">
-&lt;div class="code relative" id="">
-&lt;div class="code-copy-content nt3">&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-kotlin" data-lang="kotlin">&lt;span class="line">&lt;span class="cl">&lt;span class="n">implementation&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;org.calypsonet.terminal:calypsonet-terminal-calypso-crypto-legacysam-java-api:0.2.0&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;div class="tab-pane fade"
-id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
-&lt;div class="code relative" id="">
-&lt;div class="code-copy-content nt3">&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-xml" data-lang="xml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;dependency&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;groupId&amp;gt;&lt;/span>org.calypsonet.terminal&lt;span class="nt">&amp;lt;/groupId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;artifactId&amp;gt;&lt;/span>calypsonet-terminal-calypso-crypto-legacysam-java-api&lt;span class="nt">&amp;lt;/artifactId&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;version&amp;gt;&lt;/span>0.2.0&lt;span class="nt">&amp;lt;/version&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nt">&amp;lt;/dependency&amp;gt;&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;/div>
-&lt;h3 id="calypso-legacy-sam-api-in-c">Calypso Legacy SAM API in C++&lt;/h3>
-&lt;div class="alert alert-note">
-&lt;div>
-work in progress&amp;hellip;
 &lt;/div>
 &lt;/div></description></item></channel></rss>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reader Layer Specification | Calypso Networks Association Terminal APIs</title><link>https://terminal-api.calypsonet.org/specifications/reader-layer/</link><atom:link href="https://terminal-api.calypsonet.org/specifications/reader-layer/index.xml" rel="self" type="application/rss+xml"/><description>Reader Layer Specification</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Reader Layer Specification</title><link>https://terminal-api.calypsonet.org/specifications/reader-layer/</link></image><item><title>Reader API (external)</title><link>https://terminal-api.calypsonet.org/specifications/reader-layer/reader-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/reader-layer/reader-api/</guid><description>&lt;div class="alert alert-note">
+&lt;div>
+Latest version &lt;strong>&lt;code>2.0.1&lt;/code>&lt;/strong>
+&lt;span class="component-metadata">
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;p>As part of the &lt;strong>Reader Layer&lt;/strong>, the &lt;strong>Reader API&lt;/strong> provides high-level functionality for identifying, monitoring,
+configuring readers and process card selection scenarios.&lt;/p>
+&lt;br>
+&lt;h2 id="interfaces">Interfaces&lt;/h2>
+&lt;p>The &lt;strong>Reader API&lt;/strong> is a high-level interface used by terminal applications to operate smart card readers, it:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>provides the means to identify card readers and verify the presence of smart cards.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>offers the possibility to configure the observation of readers in order to be notified on card insertion or withdrawal.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>is the entry point to manage the selection of a smart card in a specific reader.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/2.0.1/api_class_diagram.svg" alt="Reader API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h3 id="reader-identification">Reader identification&lt;/h3>
+&lt;p>Any smart card reader entity should be accessible through an implementation of the &lt;code>CardReader&lt;/code> interface.
+Each is defined with a specific name.
+A reader could be designed to operate contactless card or a contact card.
+Finally, this interface can inform about the presence of a card in the reader.&lt;/p>
+&lt;h3 id="configurablecardreader">ConfigurableCardReader&lt;/h3>
+&lt;p>A reader with the capability to configure the communication protocols with smart card (contactless or contact) could
+implement the &lt;code>ConfigurableCardReader&lt;/code> interface to activate or deactivate some communication protocols.&lt;/p>
+&lt;h3 id="reader-observation">Reader observation&lt;/h3>
+&lt;p>If a reader has the ability to dynamically detect changes on the card presence, then it can also implement the interface
+&lt;code>ObservableCardReader&lt;/code>.&lt;/p>
+&lt;p>Observers implementing the &lt;code>CardReaderObserverSpi&lt;/code> could be declared to an observable card reader to be notified on
+specific &lt;code>CardReaderEvent&lt;/code>: card insertion, card selection (matched), or card removal.&lt;/p>
+&lt;h3 id="card-selection">Card Selection&lt;/h3>
+&lt;p>The &lt;code>CardSelectionManager&lt;/code> provides the possibility to prepare a request that could contain one or several card
+application selections.&lt;/p>
+&lt;p>The &lt;code>CardSelection&lt;/code> SPI interface could be extended by the API of a specific smart card solution to improve the
+selection request with settings specific to the smart card solution.&lt;/p>
+&lt;p>Through the card selection manager, the prepared card selections could be managed in&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>synchronously&lt;/strong>: processed directly on a specific card reader on which a card is already present,&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>or &lt;strong>asynchronously&lt;/strong>: scheduled on a specific observable reader in order to be operated dynamically in case of card
+insertion detection.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>If several card selections are prepared, the card selection manager operate the card selection in the order of
+preparation.
+By default, the card selection manager stops the card selection processing on the first successful card selection,
+and the logical channel is kept open.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>In case the multiple selection mode is activated during the preparation, the card selection manager tries to operate
+‘all’ the prepared selections, even if one or several of them are successful.
+If the last selection is successful, the logical channel could be kept open with the last selected application.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>during the card selection preparation, it could also be explicitly requested to close the logical channel after the
+card selection.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Moreover, it is possible to export/import a selection scenario in JSON format.&lt;/p>
+&lt;br>
+&lt;h2 id="card-selection-modes">Card selection modes&lt;/h2>
+&lt;p>Depending on the card transaction use case, or on the reader capability, there are two ways to manage the selection of a
+card:&lt;/p>
+&lt;ul>
+&lt;li>Either synchronously on a simple reader, a selection could be operated directly by transmitting the card selection
+scenario. In this case the same entity manages both the card selection and the card processing.&lt;/li>
+&lt;li>Otherwise asynchronously on an observable reader, a scheduled card selection could be defined.
+In this case the card selection is operated automatically at the insertion of the card. In this case,
+the card selection is next managed by the observable reader, but the card processing is managed by a reader observer.&lt;/li>
+&lt;/ul>
+&lt;figure id="figure-reader-api---card-selection-modes---activity-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="../../media/specifications/reader_management_card_selection_modes_activity_diagram.svg" alt="Reader API - Card Selection Modes - Activity Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Reader API - Card Selection Modes - Activity Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;br>
+&lt;h2 id="observable-reader-states">Observable reader states&lt;/h2>
+&lt;p>An observable reader is active only when at least one reader observer is registered, and if the start of the detection
+has been requested.
+When active, an observable reader could switch between three internal states:&lt;/p>
+&lt;ul>
+&lt;li>Wait for card insertion&lt;/li>
+&lt;li>Wait for card processing&lt;/li>
+&lt;li>Wait for card removal&lt;/li>
+&lt;/ul>
+&lt;p>In the nominal case, a reader observer indicates to the observable reader that the processing of the card is finished by
+releasing the card channel.
+To manage a failure of the reader observer process, the observable reader interface provides also a method to finalize
+the card processing.&lt;/p>
+&lt;figure id="figure-reader-api---observable-reader-states---activity-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="../../media/specifications/reader_management_reader_observation_state_diagram.svg" alt="Reader API - Observable Reader States - Activity Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Reader API - Observable Reader States - Activity Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;p>The states could be switched:&lt;/p>
+&lt;ul>
+&lt;li>due to an explicit API request (blue arrows):
+&lt;ul>
+&lt;li>the release of the card channel,&lt;/li>
+&lt;li>the call of an observable reader method:
+&lt;ul>
+&lt;li>the addition or the remove of an observable reader,&lt;/li>
+&lt;li>a request to start or stop the detection, to finalize the card processing.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Or because of an external event (red arrows), the insertion or the remove of a card.
+&lt;ul>
+&lt;li>the insertion of a card causing the observable reader to notify a &lt;code>CARD_MATCHED&lt;/code> reader event (in case of successful
+scheduled selection) or a &lt;code>CARD_INSERTED&lt;/code> reader event (notification mode defined as &lt;code>ALWAYS&lt;/code>).&lt;/li>
+&lt;li>the removal of a card causing the observable reader to notify a &lt;code>CARD_REMOVED&lt;/code> reader event.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>If a card detection is started with the &lt;code>REPEATING&lt;/code> detection mode, then later when the card is removed, the reader
+starts again the detection of a new card.&lt;/p>
+&lt;p>Notification of card removal during the card removal wait state is a feature of any observable reader.
+However, some observable readers may additionally have the ability to notify removal during the card processing state.&lt;/p>
+&lt;br>
+&lt;h2 id="limitations--constraints">Limitations &amp;amp; constraints&lt;/h2>
+&lt;p>On a specific card reader, the &lt;strong>Reader API&lt;/strong> allows to address only a &lt;strong>single logical channel&lt;/strong>.&lt;/p></description></item><item><title>Card API (internal)</title><link>https://terminal-api.calypsonet.org/specifications/reader-layer/card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/reader-layer/card-api/</guid><description>&lt;div class="alert alert-note">
+&lt;div>
+Latest version &lt;strong>&lt;code>2.0.1&lt;/code>&lt;/strong>
+&lt;span class="component-metadata">
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;p>As part of the &lt;strong>Reader Layer&lt;/strong>, the &lt;strong>Calypsonet Terminal Card API&lt;/strong> defines the internal elements shared by the
+reader layer to implement specific card layers (like the Calypso Card layer).&lt;/p>
+&lt;br>
+&lt;h2 id="interfaces">Interfaces&lt;/h2>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-card-uml-api/2.0.1/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;br>
+&lt;h2 id="limitations--constraints">Limitations &amp;amp; constraints&lt;/h2>
+&lt;p>The &lt;strong>Card API&lt;/strong> doesn&amp;rsquo;t allow to request the transmission to a card of the APDU commands &amp;ldquo;Select Application by DF Name&amp;rdquo;
+or &amp;ldquo;Get Response&amp;rdquo;:&lt;/p>
+&lt;ul>
+&lt;li>the selection of a specific card application could be managed only through a Card Selection Request.&lt;/li>
+&lt;li>the APDU response status words 61XYh &amp;amp; 6CXYh are automatically handled by the reader layer library by issuing a
+Get Response or by re-issuing the previous command with the expected &amp;lsquo;Le&amp;rsquo; field.&lt;/li>
+&lt;/ul></description></item></channel></rss>
