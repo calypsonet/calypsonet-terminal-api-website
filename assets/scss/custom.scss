@@ -248,6 +248,7 @@ table>tbody>tr:nth-child(odd)>td, table>tbody>tr:nth-child(odd)>th {
 // Fix copy button visibility
 .btn-copy-code {
   display: block;
+  line-height: .5;
 }
 
 // Remove search form from left menu
