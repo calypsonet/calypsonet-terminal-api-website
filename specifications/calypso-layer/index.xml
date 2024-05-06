@@ -2,7 +2,7 @@
 &lt;div>
 Latest version &lt;strong>&lt;code>2.1.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
@@ -131,7 +131,7 @@ Calypso Card API - Multiple secure session - Sequence Diagram
 &lt;div>
 Latest version &lt;strong>&lt;code>0.6.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
@@ -160,7 +160,7 @@ A transaction with a Calypso SAM is fully managed through one of the &lt;code>LS
 &lt;div>
 Latest version &lt;strong>&lt;code>0.1.1&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-symmetric-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-symmetric-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
@@ -178,7 +178,7 @@ Latest version &lt;strong>&lt;code>0.1.1&lt;/code>&lt;/strong>
 &lt;div>
 Latest version &lt;strong>&lt;code>0.2.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
