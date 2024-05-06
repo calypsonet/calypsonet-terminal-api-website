@@ -4,7 +4,7 @@ title: Implementations
 
 {{% callout note %}}
 To reference your implementation please
-[create an issue](https://github.com/eclipse-keypop/keypop-website/issues/new?title=Add%20new%20Keypop%20implementation)
+[create an issue](https://github.com/calypsonet/calypsonet-terminal-api-website/issues/new?title=Add%20new%20Terminal%20APIs%20implementation)
 on GitHub.
 {{% /callout %}}
 
