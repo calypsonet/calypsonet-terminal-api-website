@@ -9,7 +9,7 @@ toc: true
 
 {{% callout note %}}
 Latest version **`{{% calypso-crypto-symmetric-api-version %}}`**
-<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-symmetric-uml-api/)</span>
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML class diagram](https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-symmetric-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/)</span>
 {{% /callout %}}
 

@@ -1,6 +1,6 @@
 ---
 title: Calypso Layer Specification
-linktitle: Calypso layer
+linktitle: Calypso layer specification
 summary: General presentation of the dependencies between the different Terminal APIs.
 type: book
 toc: false

@@ -249,3 +249,8 @@ table>tbody>tr:nth-child(odd)>td, table>tbody>tr:nth-child(odd)>th {
 .btn-copy-code {
   display: block;
 }
+
+// Remove search form from left menu
+.docs-search {
+  display: none !important;
+}

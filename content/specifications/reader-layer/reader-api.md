@@ -1,8 +1,6 @@
 ---
 title: Reader API (external)
 linktitle: 🟢 Reader
-icon_pack: fas
-icon: rocket
 summary: Public API which defines the elements shared by the reader.
 type: book
 weight: 1
@@ -11,7 +9,7 @@ toc: true
 
 {{% callout note %}}
 Latest version **`{{% reader-api-version %}}`**
-<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/)</span>
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML class diagram](https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/)</span>
 {{% /callout %}}
 

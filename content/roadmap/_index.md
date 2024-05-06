@@ -1,11 +1,5 @@
 ---
-title: Terminal APIs roadmap
-linktitle: Overview
-summary: possible evolutions of the Terminal APIs.
-type: book
-toc: false
----
-
+title: Roadmap
 ---
 
 ## current work and future developments
