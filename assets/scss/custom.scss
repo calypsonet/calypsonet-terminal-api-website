@@ -254,3 +254,7 @@ table>tbody>tr:nth-child(odd)>td, table>tbody>tr:nth-child(odd)>th {
 .docs-search {
   display: none !important;
 }
+.docs-links {
+  //max-height: calc(100vh - 5rem - 70px);
+  max-height: calc(100vh - 4rem);
+}
