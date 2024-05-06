@@ -1,7 +1,6 @@
 ---
 title: Reader Layer Specification
 linktitle: Reader layer specification
-summary: General presentation of the dependencies between the different Terminal APIs.
 type: book
 toc: false
 weight: 10
