@@ -1,5 +1,10 @@
 ---
-title: Roadmap
+title: Project roadmap
+linktitle: Roadmap
+summary: Overview of past and future API Releases.
+type: book
+toc: false
+weight: 2
 ---
 
 ## current work and future developments
