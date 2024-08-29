@@ -8,20 +8,28 @@ main:
     url: '/specifications/'
     weight: 10
 
-  - name: Roadmap
-    url: '/roadmap/'
+  - name: Community
+    url: '/community/'
     weight: 20
+  - name: Contributing
+    parent: Community
+    url: '/community/contributing/'
+    weight: 10
+  - name: Roadmap
+    parent: Community
+    url: '/community/roadmap/'
+    weight: 20
+  - name: Project dashboard
+    parent: Community
+    url: '/project-dashboard/'
+    weight: 30
+  - name: Archives
+    parent: Community
+    url: '/archives/'
+    weight: 40
 
   - name: Implementations
     url: '/implementations/'
     weight: 30
-
-  - name: Dashboard
-    url: '/project-dashboard/'
-    weight: 40
-
-  - name: Archives
-    url: '/archives/'
-    weight: 50
 
 
