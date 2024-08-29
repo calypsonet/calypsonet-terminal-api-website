@@ -1,4 +1,5 @@
 {
   "message": "No commit found for SHA: main",
-  "documentation_url": "https://docs.github.com/rest/checks/runs#list-check-runs-for-a-git-reference"
+  "documentation_url": "https://docs.github.com/rest/checks/runs#list-check-runs-for-a-git-reference",
+  "status": "422"
 }
