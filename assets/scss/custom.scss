@@ -11,13 +11,14 @@
 }
 
 footer {
-  background-color: #1d87bb;
+  background-color: #039efd;
+  color: #FFF;
   margin: 0;
   padding: 2rem 0 1rem 0;
 }
 
 footer a {
-  color: #FFF;
+  color: #FFF !important;
 }
 
 footer a:hover {
@@ -123,7 +124,7 @@ a, h3.article-title a:hover {
 
 // color of left and right TOCs links
 .docs-sidebar .nav > li > a:hover, a.docs-toc-link:hover {
-  color:#1d87bb;
+  color:#039efd;
 }
 
 // all links
@@ -206,6 +207,9 @@ table code {
 // Powered by on footer section
 .copyright-license-text {
   font-weight: bold;
+}
+.site-footer {
+  color: #FFF;
 }
 .site-footer #template-info {
   font-size: 0.5rem;

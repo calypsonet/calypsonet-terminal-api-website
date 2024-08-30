@@ -11,7 +11,7 @@ hero_media = "hero-image.svg"
 
 [design.background] 
   image = ""  
-  color = "#1d87bb"
+  color = "#039efd"
   #image_darken = 0.8 
   # caption = <a href="http://www.freepik.com">Designed by starline / Freepik</a>
   #text_color_light = true
