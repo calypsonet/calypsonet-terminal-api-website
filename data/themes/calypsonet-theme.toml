@@ -5,8 +5,8 @@ name = "calypsonet_theme"
 [light]
 
 # Primary
-primary = "#1d87bb"
-btn-primary = "#1d87bb"
+primary = "#039efd"
+btn-primary = "#039efd"
 
 # Menu
 menu_primary = "#FFFFFF"
