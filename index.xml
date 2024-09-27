@@ -513,6 +513,11 @@ reader layer to implement specific card layers (like the Calypso Card layer).&lt
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;br>
+&lt;h2 id="apdu-construction-rules">APDU construction rules&lt;/h2>
+&lt;p>APDU requests expected by the &lt;strong>Card API&lt;/strong> must strictly comply with &lt;strong>ISO/IEC 7816-3&lt;/strong>,
+requiring &lt;strong>Case 4&lt;/strong> commands, i.e containing ingoing and outgoing data, to include the &lt;strong>Le&lt;/strong> field.&lt;/p>
+&lt;p>We strongly recommend setting this field to &lt;strong>00h&lt;/strong>.&lt;/p>
+&lt;br>
 &lt;h2 id="limitations--constraints">Limitations &amp;amp; constraints&lt;/h2>
 &lt;p>The &lt;strong>Card API&lt;/strong> doesn&amp;rsquo;t allow to request the transmission to a card of the APDU commands &amp;ldquo;Select Application by DF Name&amp;rdquo;
 or &amp;ldquo;Get Response&amp;rdquo;:&lt;/p>
