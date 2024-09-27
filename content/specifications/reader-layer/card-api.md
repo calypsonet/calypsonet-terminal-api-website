@@ -24,6 +24,15 @@ reader layer to implement specific card layers (like the Calypso Card layer).
 
 <br>
 
+## APDU construction rules
+
+APDU requests expected by the **Card API** must strictly comply with **ISO/IEC 7816-3**, 
+requiring **Case 4** commands, i.e containing ingoing and outgoing data, to include the **Le** field.
+
+We strongly recommend setting this field to **00h**.
+
+<br>
+
 ## Limitations & constraints
 
 The **Card API** doesn't allow to request the transmission to a card of the APDU commands "Select Application by DF Name"
