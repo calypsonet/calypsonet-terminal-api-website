@@ -17,7 +17,7 @@ table td:nth-child(4) {
 }
 </style>
 
-| Project name    | URL                               | Supported languages |                      License                      | Comments                                                                                                                        |
-|-----------------|-----------------------------------|:-------------------:|:-------------------------------------------------:|---------------------------------------------------------------------------------------------------------------------------------|
-| Eclipse Keypop® | [keypop.org](https://keypop.org/) |      Java, C++      |    [MIT](https://opensource.org/licenses/MIT)     | Provides interfaces compliant with all Terminal APIs specifications                                                             |
-| Eclipse Keyple® | [keyple.org](https://keyple.org/) |      Java, C++      | [EPL-2-0](https://opensource.org/license/epl-2-0) | Provides libraries implementing all [Eclipse Keypop®](https://keypop.org/) interfaces based on the Terminal APIs specifications |
+| Project name    | URL                               | Supported languages |                                License                                | Comments                                                                                                                        |
+|-----------------|-----------------------------------|:-------------------:|:---------------------------------------------------------------------:|---------------------------------------------------------------------------------------------------------------------------------|
+| Eclipse Keypop® | [keypop.org](https://keypop.org/) |      Java, C++      |              [MIT](https://opensource.org/licenses/MIT)               | Provides interfaces compliant with all Terminal APIs specifications                                                             |
+| Eclipse Keyple® | [keyple.org](https://keyple.org/) |      Java, C++      | [Eclipse Public License v2.0](https://www.eclipse.org/legal/epl-2.0/) | Provides libraries implementing all [Eclipse Keypop®](https://keypop.org/) interfaces based on the Terminal APIs specifications |
