@@ -8,6 +8,13 @@ To reference your implementation please
 on GitHub.
 {{% /callout %}}
 
-|  Project name   |                URL                | Supported languages |                  License                   |                              Comments                               |
-|:---------------:|:---------------------------------:|:-------------------:|:------------------------------------------:|:-------------------------------------------------------------------:|
-| Eclipse Keypop® | [keypop.org](https://keypop.org/) |      Java, C++      | [MIT](https://opensource.org/licenses/MIT) | Provides interfaces compliant with all Terminal APIs specifications |
+<style>
+table td:first-child {
+    white-space: nowrap;
+}
+</style>
+
+| Project name    | URL                               | Supported languages |                      License                      | Comments                                                                                                                        |
+|-----------------|-----------------------------------|:-------------------:|:-------------------------------------------------:|---------------------------------------------------------------------------------------------------------------------------------|
+| Eclipse Keypop® | [keypop.org](https://keypop.org/) |      Java, C++      |    [MIT](https://opensource.org/licenses/MIT)     | Provides interfaces compliant with all Terminal APIs specifications                                                             |
+| Eclipse Keyple® | [keyple.org](https://keyple.org/) |      Java, C++      | [EPL-2-0](https://opensource.org/license/epl-2-0) | Provides libraries implementing all [Eclipse Keypop®](https://keypop.org/) interfaces based on the Terminal APIs specifications |
