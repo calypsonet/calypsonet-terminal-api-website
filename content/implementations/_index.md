@@ -9,7 +9,10 @@ on GitHub.
 {{% /callout %}}
 
 <style>
-table td:first-child {
+table td:nth-child(1),
+table td:nth-child(2),
+table td:nth-child(3),
+table td:nth-child(4) {
     white-space: nowrap;
 }
 </style>
