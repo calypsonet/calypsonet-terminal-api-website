@@ -8,6 +8,7 @@
 ["calypsonet-terminal-card-java-api",true,true],
 ["calypsonet-terminal-reader-java-api",true,true],
 ["calypsonet-terminal-calypso-java-api",true,true],
+["calypsonet-terminal-calypso-crypto-legacysam-java-api",true,true],
 ["calypsonet-terminal-card-cpp-api",true,false],
 ["calypsonet-terminal-reader-cpp-api",true,false],
 ["calypsonet-terminal-calypso-cpp-api",true,false],

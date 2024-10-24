@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 23834595450,
-      "name": "publish-diagrams",
-      "node_id": "CR_kwDOHZ2SgM8AAAAFjKcQeg",
-      "head_sha": "a5c88b23d31adabb328d3a894243c11e4a48ffbf",
-      "external_id": "3ad6d197-1c25-54cd-7a0c-953b3c809fb5",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-uml-api/check-runs/23834595450",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-uml-api/actions/runs/8691709442/job/23834595450",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-uml-api/actions/runs/8691709442/job/23834595450",
+      "id": 21477184951,
+      "name": "java-publish",
+      "node_id": "CR_kwDOIRi5AM8AAAAFACPVtw",
+      "head_sha": "75e6ff7a471995472c08fbdcac0252eb1e322991",
+      "external_id": "9141701c-365f-53eb-8d3b-fc99b1ea338d",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/check-runs/21477184951",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/actions/runs/7872289482/job/21477184951",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/actions/runs/7872289482/job/21477184951",
       "status": "completed",
-      "conclusion": "success",
-      "started_at": "2024-04-15T15:18:18Z",
-      "completed_at": "2024-04-15T15:18:25Z",
+      "conclusion": "cancelled",
+      "started_at": "2024-02-12T13:12:26Z",
+      "completed_at": "2024-02-12T13:12:40Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
-        "annotations_count": 1,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-uml-api/check-runs/23834595450/annotations"
+        "annotations_count": 2,
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-java-api/check-runs/21477184951/annotations"
       },
       "check_suite": {
-        "id": 22773494742
+        "id": 20672894852
       },
       "app": {
         "id": 15368,
