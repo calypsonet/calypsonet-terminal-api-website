@@ -251,12 +251,27 @@ loadProjectDashboard = async function() {
                 $('#project-dashboard-table').DataTable({
                     "lengthMenu": [25, 50, 75, 100],
                     "pageLength": 50,
-                    "order": [[11, 'desc']],
+                    "order": [[10, 'desc']], // Last Update
                     "oLanguage": {"sSearch": "Filter:"}
                 });
                 $('.dataTables_length').addClass('bs-select');
-                // update the container's width with the real table size
-                $('.universal-wrapper').width($('#project-dashboard-table')[0].scrollWidth);
+                // update the container's width with the real table size if possible
+                let dashboard = $('#project-dashboard-table')[0];
+                if (dashboard.scrollWidth < window.innerWidth) {
+                    $('.universal-wrapper').width(dashboard.scrollWidth);
+                } else {
+                    $('.universal-wrapper').width(window.innerWidth - 50);
+                    // Remove nowrap style for all cells of first row
+                    for (let i = 0; i < dashboard.rows[0].cells.length; i++) {
+                        dashboard.rows[0].cells[i].style.whiteSpace = 'normal';
+                    }
+                    if (dashboard.scrollWidth > window.innerWidth - 50) {
+                        // Remove nowrap style for first cell of all rows
+                        for (let i = 0; i < dashboard.rows.length; i++) {
+                          dashboard.rows[i].cells[0].style.whiteSpace = 'normal';
+                        }
+                    }
+                }
             });
     })();
 }
