@@ -38,32 +38,31 @@ products: Prime, Light, or Regular.&lt;/p>
 records could be filled depending on the information recovered in the responses of the Select File or Read Records
 processed.&lt;/p>
 &lt;br>
-&lt;h2 id="transaction-with-a-calypso-card">Transaction with a Calypso card&lt;/h2>
+&lt;h2 id="calypso-card-transaction-without-secure-session">Calypso card transaction without secure session&lt;/h2>
 &lt;p>Except the operations involving secure processing on &amp;ldquo;data&amp;rdquo; (data signature computation / verification, data ciphering /
 un-ciphering), only commands for the card need to be prepared though the Card Transaction Manager interface.
 Depending on the operation, if necessary the security involving the master SAM must be controlled internally by the
 Calypso library.&lt;/p>
-&lt;h3 id="simple-operation-outside-a-session">Simple operation outside a session&lt;/h3>
-&lt;h3 id="pin-plain-verification--change-outside-a-session">PIN plain verification / change outside a session&lt;/h3>
+&lt;h3 id="_plain_-pin-verification-or-update">&lt;em>Plain&lt;/em> PIN Verification or Update&lt;/h3>
 &lt;figure id="figure-calypso-card-api---verify--change-plain-pin---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="../../media/specifications/calypso_transaction_Verify_Change_Plain_PIN_sequence_diagram.svg" alt="Calypso Card API - Verify / Change Plain PIN - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso Card API - Verify / Change Plain PIN - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
-&lt;h3 id="data-secure-processing-outside-a-session">Data secure processing outside a session&lt;/h3>
-&lt;figure id="figure-calypso-card-api---data-secure-processing-outside-a-session---sequence-diagram">
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="../../media/specifications/calypso_transaction_DSP_outside_session_sequence_diagram.svg" alt="Calypso Card API - Data secure processing outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;figcaption>
-Calypso Card API - Data secure processing outside a session - Sequence Diagram
-&lt;/figcaption>&lt;/figure>
-&lt;h3 id="key--pin-ciphered-update-outside-a-session">Key / PIN ciphered update outside a session&lt;/h3>
+&lt;h3 id="_ciphered_-key--pin-update-outside-a-session">&lt;em>Ciphered&lt;/em> Key / PIN update outside a session&lt;/h3>
 &lt;figure id="figure-calypso-card-api---change-key--ciphered-pin-outside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="../../media/specifications/calypso_transaction_Change_Key_Ciphered_PIN_sequence_diagram.svg" alt="Calypso Card API - Change Key / Ciphered PIN outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso Card API - Change Key / Ciphered PIN outside a session - Sequence Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="data-secure-processing-data-pso-_signature_--_ciphering_-outside-a-session">Data secure processing (data PSO &lt;em>signature&lt;/em> / &lt;em>ciphering&lt;/em>) outside a session&lt;/h3>
+&lt;figure id="figure-calypso-card-api---data-secure-processing-outside-a-session---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="../../media/specifications/calypso_transaction_DSP_outside_session_sequence_diagram.svg" alt="Calypso Card API - Data secure processing outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - Data secure processing outside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="stored-value-operation-outside-a-session">Stored Value operation outside a session&lt;/h3>
 &lt;figure id="figure-calypso-card-api---standalone-stored-value-transaction---sequence-diagram">
@@ -72,7 +71,8 @@ Calypso Card API - Change Key / Ciphered PIN outside a session - Sequence Diagra
 &lt;/div>&lt;figcaption>
 Calypso Card API - standalone Stored Value transaction - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
-&lt;h3 id="simple-secure-session-for-fast-embedded-performance">Simple secure session for fast embedded performance&lt;/h3>
+&lt;h2 id="secure-session-with-a-calypso-card">Secure session with a Calypso card&lt;/h2>
+&lt;h3 id="_regular_-secure-session-span-stylecolor-redoptimized-for-fast-embedded-performancespan">&lt;em>Regular&lt;/em> secure session &lt;span style="color: red;">optimized for fast &lt;strong>embedded&lt;/strong> performance&lt;/span>&lt;/h3>
 &lt;p>This example illustrates the ticketing processing of a validation: only the necessary data is read from the card.&lt;/p>
 &lt;p>In case of communication failure with the card, to support a recovery transaction on another terminal: the ratification
 status and the last event are checked at the session opening, and the session is closed as not ratified directly
@@ -83,7 +83,7 @@ followed by a ratification command.&lt;/p>
 &lt;/div>&lt;figcaption>
 Calypso Card API - Simple Secure Session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
-&lt;h3 id="simple-secure-session-for-an-efficient-distributed-system">Simple secure session for an efficient distributed system&lt;/h3>
+&lt;h3 id="_regular_-secure-session-span-stylecolor-redoptimized-for-an-efficient-_distributed_-systemspan">&lt;em>Regular&lt;/em> secure session &lt;span style="color: red;">optimized for an efficient &lt;em>distributed&lt;/em> system&lt;/span>&lt;/h3>
 &lt;p>In most of the cases, it should be possible to handle a secure session with a Calypso card, using only:&lt;/p>
 &lt;ul>
 &lt;li>3 exchanges with the card reader (selection processing, session opening processing, and session closing processing),&lt;/li>
@@ -107,7 +107,7 @@ Calypso Card API - Simple Secure Session - Sequence Diagram
 &lt;/div>&lt;figcaption>
 Calypso Card API - Verify Ciphered PIN inside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
-&lt;h3 id="data-secure-processing-inside-a-session">Data secure processing inside a session&lt;/h3>
+&lt;h3 id="data-secure-processing-data-pso-_signature_--_ciphering_-inside-a-session">Data secure processing (data PSO &lt;em>signature&lt;/em> / &lt;em>ciphering&lt;/em>) inside a session&lt;/h3>
 &lt;figure id="figure-calypso-card-api---data-secure-processing-inside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="../../media/specifications/calypso_transaction_DSP_inside_session_sequence_diagram.svg" alt="Calypso Card API - Data secure processing inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
@@ -121,7 +121,7 @@ Calypso Card API - Data secure processing inside a session - Sequence Diagram
 &lt;/div>&lt;figcaption>
 Calypso Card API - Stored Value transaction inside a secure session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
-&lt;h3 id="multiple-secure-sessions">Multiple secure sessions&lt;/h3>
+&lt;h2 id="multiple-secure-sessions">Multiple secure sessions&lt;/h2>
 &lt;figure id="figure-calypso-card-api---multiple-secure-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="../../media/specifications/calypso_transaction_multiple_secure_session_sequence_diagram.svg" alt="Calypso Card API - Multiple secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
