@@ -7,11 +7,11 @@ toc: false
 weight: 2
 ---
 
-## current work and future developments
+## Current work and future developments
 
- - second quarter of 2024, extension of the Calypso API to add the support for Prime PKI transaction mode
-   - asymmetric card authentication without a SAM
- - end of 2024, addition of a dedicated interface to operate transactions with a Calypso OpenSAM
+For 2025, addition of an interface dedicated to the management of the new Calypso "OpenSAM" secure module.
+ - No impact on the secure card transaction thanks to the abstraction provided by the Calypso Symmetric Crypto interface.
+ - OpenSAM selection and personalization functions.
 
 ## History of developments
 
@@ -24,6 +24,22 @@ weight: 2
   </tr>
 </thead>
 <tbody>
+  <tr>
+    <td rowspan="2">2024/04/11</td>
+    <td>Calypso Card API 2.1.0</td>
+    <td>
+    Added management of PKI card functions
+    <ul><li>configuring a chain of trust on a terminal</li>
+    <li>asymmetric session signature verification</li>
+    <li>personalization and retrieval of card and CA certificates</li></ul>
+    </td>
+  </tr>
+  <tr>
+    <td>Calypso Legacy SAM API 0.5</td>
+    <td>
+    <ul><li>support for 'CardCert' card certificate personalization (the 'CACert' Certificate Authority feature is managed by the SAM)</li></ul>
+    </td>
+  </tr>
   <tr>
     <td>2024/01/10</td>
     <td>Calypso Legacy SAM API 0.4</td>
