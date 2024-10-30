@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Calypso Networks Association Terminal APIs</title><link>https://terminal-api.calypsonet.org/</link><atom:link href="https://terminal-api.calypsonet.org/index.xml" rel="self" type="application/rss+xml"/><description>Calypso Networks Association Terminal APIs</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Calypso Networks Association Terminal APIs</title><link>https://terminal-api.calypsonet.org/</link></image><item><title>Calypsonet Terminal Reader API</title><link>https://terminal-api.calypsonet.org/archives/apis/calypsonet-terminal-reader-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/archives/apis/calypsonet-terminal-reader-api/</guid><description>&lt;div class="alert alert-warning">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Smartcard-based Ticketing Terminal APIs by the Calypso Networks Association</title><link>https://terminal-api.calypsonet.org/</link><atom:link href="https://terminal-api.calypsonet.org/index.xml" rel="self" type="application/rss+xml"/><description>Smartcard-based Ticketing Terminal APIs by the Calypso Networks Association</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Smartcard-based Ticketing Terminal APIs by the Calypso Networks Association</title><link>https://terminal-api.calypsonet.org/</link></image><item><title>Calypsonet Terminal Reader API</title><link>https://terminal-api.calypsonet.org/archives/apis/calypsonet-terminal-reader-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/archives/apis/calypsonet-terminal-reader-api/</guid><description>&lt;div class="alert alert-warning">
 &lt;div>
 Version 1.0 of the documentation is no longer actively maintained.
 The site that you are currently viewing is an archived snapshot.
@@ -229,7 +229,7 @@ id="tabs-5-2" role="tabpanel" aria-labelled-by="tabs-5-2-tab">
 &lt;div>
 Latest version &lt;strong>&lt;code>2.1.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypso-card-uml.terminal-api.calypsonet.org/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
@@ -251,7 +251,7 @@ A transaction with a Calypso card is fully managed through the &lt;code>CardTran
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-card-uml-api/2.1.0/api_class_diagram.svg" alt="Calypso Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://calypso-card-uml.terminal-api.calypsonet.org/2.1.0/api_class_diagram.svg" alt="Calypso Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;br>
@@ -310,7 +310,7 @@ followed by a ratification command.&lt;/p>
 &lt;/div>&lt;figcaption>
 Calypso Card API - Simple Secure Session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
-&lt;h3 id="_regular_-secure-session-span-stylecolor-redoptimized-for-an-efficient-_distributed_-systemspan">&lt;em>Regular&lt;/em> secure session &lt;span style="color: red;">optimized for an efficient &lt;em>distributed&lt;/em> system&lt;/span>&lt;/h3>
+&lt;h3 id="_regular_-secure-session-span-stylecolor-redoptimized-for-an-efficient-distributed-systemspan">&lt;em>Regular&lt;/em> secure session &lt;span style="color: red;">optimized for an efficient &lt;strong>distributed&lt;/strong> system&lt;/span>&lt;/h3>
 &lt;p>In most of the cases, it should be possible to handle a secure session with a Calypso card, using only:&lt;/p>
 &lt;ul>
 &lt;li>3 exchanges with the card reader (selection processing, session opening processing, and session closing processing),&lt;/li>
@@ -358,7 +358,7 @@ Calypso Card API - Multiple secure session - Sequence Diagram
 &lt;div>
 Latest version &lt;strong>&lt;code>2.0.1&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://reader-uml.terminal-api.calypsonet.org/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
@@ -382,7 +382,7 @@ configuring readers and process card selection scenarios.&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/2.0.1/api_class_diagram.svg" alt="Reader API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://reader-uml.terminal-api.calypsonet.org/2.0.1/api_class_diagram.svg" alt="Reader API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h3 id="reader-identification">Reader identification&lt;/h3>
@@ -497,7 +497,7 @@ However, some observable readers may additionally have the ability to notify rem
 &lt;div>
 Latest version &lt;strong>&lt;code>2.0.1&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://card-uml.terminal-api.calypsonet.org/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
@@ -509,7 +509,7 @@ reader layer to implement specific card layers (like the Calypso Card layer).&lt
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-card-uml-api/2.0.1/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://card-uml.terminal-api.calypsonet.org/2.0.1/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;br>
@@ -639,7 +639,7 @@ id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;div>
 Latest version &lt;strong>&lt;code>0.6.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypso-crypto-legacysam-uml.terminal-api.calypsonet.org/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
@@ -662,13 +662,13 @@ A transaction with a Calypso SAM is fully managed through one of the &lt;code>LS
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-legacysam-uml-api/0.6.0/api_class_diagram.svg" alt="Calypso Crypto Legacy SAM API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://calypso-crypto-legacysam-uml.terminal-api.calypsonet.org/0.6.0/api_class_diagram.svg" alt="Calypso Crypto Legacy SAM API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p></description></item><item><title>Calypso Symmetric Crypto API (internal)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-symmetric-crypto-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-symmetric-crypto-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
 Latest version &lt;strong>&lt;code>0.1.1&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-symmetric-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypso-crypto-symmetric-uml.terminal-api.calypsonet.org/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
@@ -680,13 +680,13 @@ Latest version &lt;strong>&lt;code>0.1.1&lt;/code>&lt;/strong>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-symmetric-uml-api/0.1.1/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://calypso-crypto-symmetric-uml.terminal-api.calypsonet.org/0.1.1/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p></description></item><item><title>Calypso Asymmetric Crypto API (internal)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-asymmetric-crypto-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-asymmetric-crypto-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
 Latest version &lt;strong>&lt;code>0.2.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypso-crypto-asymmetric-uml.terminal-api.calypsonet.org/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
@@ -698,7 +698,7 @@ Latest version &lt;strong>&lt;code>0.2.0&lt;/code>&lt;/strong>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/0.2.0/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://calypso-crypto-asymmetric-uml.terminal-api.calypsonet.org/0.2.0/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p></description></item><item><title>Calypsonet Terminal Calypso API</title><link>https://terminal-api.calypsonet.org/archives/apis/calypsonet-terminal-calypso-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/archives/apis/calypsonet-terminal-calypso-api/</guid><description>&lt;div class="alert alert-warning">
 &lt;div>
