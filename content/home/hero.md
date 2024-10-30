@@ -4,20 +4,18 @@ headless = true
 active = true 
 weight = 10 
 
-title = "Terminal APIs"
+title = "APIs for Ticketing Terminal processing smartcard"
 
 hero_media = "hero-image.svg"
-# caption = <a href="http://www.freepik.com">Designed by macrovector_official / Freepik</a>
 
 [design.background] 
   image = ""  
   color = "#039efd"
   #image_darken = 0.8 
-  # caption = <a href="http://www.freepik.com">Designed by starline / Freepik</a>
   #text_color_light = true
 
 +++
-In order to facilitate the design of terminals processing smart card readers (user card, security module), CNA (the [Calypso Networks Association](https://calypsonet.org/)) has standardized [software interfaces for ticketing terminals](https://calypsonet.org/calypso-for-terminals/#section-interoperability-and-portability-of-ticketing-terminal-solutions).
+In order to facilitate the design of terminals processing smartcard readers (user card, security module), CNA (the [Calypso Networks Association](https://calypsonet.org/)) has standardized [software interfaces for ticketing terminals](https://calypsonet.org/calypso-for-terminals/#section-interoperability-and-portability-of-ticketing-terminal-solutions).
 This solution enables:
 - _any_ **smart card reader solution** to be operated _independently_ of the **terminal architecture**,
 - and _any_ **ticketing applications** to be ported _independently_ of the **terminal products** supplied by manufacturers.

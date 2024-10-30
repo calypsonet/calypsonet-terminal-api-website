@@ -1,8 +1,8 @@
-# Calypsonet Terminal API website  
+# Website of the Smartcard-based Ticketing Terminal APIs by the Calypso Networks Association  
 
-Repository of the **Calypsonet Terminal APIs** website project.
+Repository of the **Ticketing Terminal APIs** website project.
 
-The Calypsonet Terminal API website is generated with Hugo.
+The Ticketing Terminal API website is generated with Hugo.
 
 ## Getting started
 

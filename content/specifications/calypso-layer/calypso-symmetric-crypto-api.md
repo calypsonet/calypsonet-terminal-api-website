@@ -9,7 +9,7 @@ toc: true
 
 {{% callout note %}}
 Latest version **`{{% calypso-crypto-symmetric-api-version %}}`**
-<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML class diagram](https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-symmetric-uml-api/)</span>
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML class diagram](https://calypso-crypto-symmetric-uml.terminal-api.calypsonet.org/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/)</span>
 {{% /callout %}}
 
@@ -20,4 +20,4 @@ The **Calypso Crypto Symmetric API** is the communication interface between the 
 
 ## Interfaces
 
-![Card API - class diagram](https://calypsonet.github.io/calypsonet-terminal-calypso-crypto-symmetric-uml-api/{{% calypso-crypto-symmetric-api-version %}}/api_class_diagram.svg)
+![Card API - class diagram](https://calypso-crypto-symmetric-uml.terminal-api.calypsonet.org/{{% calypso-crypto-symmetric-api-version %}}/api_class_diagram.svg)

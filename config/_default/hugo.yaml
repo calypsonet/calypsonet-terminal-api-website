@@ -3,7 +3,7 @@
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: Calypso Networks Association Terminal APIs # Website name
+title: Smartcard-based Ticketing Terminal APIs by the Calypso Networks Association # Website name
 baseurl: 'https://terminal-api.calypsonet.org/' # Website URL
 relativeURLs: true
 canonifyURLs: true
