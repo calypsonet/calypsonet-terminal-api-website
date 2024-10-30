@@ -39,7 +39,7 @@ skinparam ClassBorderColor<<grey>> #2C3E50
 hide <<grey>> stereotype
 
 actor "Ticketing Application" as app #gold
-participant "Calypso API" as capi #pink
+participant "Calypso\nCard API" as capi #pink
 participant "Reader API" as rapi #pink
 participant "(remote)\nCalypso Card\nReader" as cardReader #lightBlue
 boundary "**Card**" as card #lightBlue
