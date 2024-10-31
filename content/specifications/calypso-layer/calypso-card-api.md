@@ -83,7 +83,7 @@ In case of communication failure with the card, to support a recovery transactio
 status and the last event are checked at the session opening, and the session is closed as not ratified directly
 followed by a ratification command.
 
-{{< figure src="/media/specifications/calypso_transaction_optimized_secure_session_embedded_sequence_diagram.svg" caption="Calypso Card API - Simple Secure Session - Sequence Diagram" >}}
+{{< figure src="/media/specifications/calypso_transaction_regular_secure_session_optimized_embedded_sequence_diagram.svg" caption="Calypso Card API - Simple Secure Session - Sequence Diagram" >}}
 
 ### _Regular_ secure session <span style="color: red;">optimized for an efficient **distributed** system</span>
 
