@@ -79,7 +79,7 @@ status and the last event are checked at the session opening, and the session is
 followed by a ratification command.&lt;/p>
 &lt;figure id="figure-calypso-card-api---simple-secure-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="../../media/specifications/calypso_transaction_optimized_secure_session_embedded_sequence_diagram.svg" alt="Calypso Card API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="../../media/specifications/calypso_transaction_regular_secure_session_optimized_embedded_sequence_diagram.svg" alt="Calypso Card API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso Card API - Simple Secure Session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>

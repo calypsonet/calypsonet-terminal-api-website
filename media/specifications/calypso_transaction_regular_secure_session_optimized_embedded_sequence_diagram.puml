@@ -45,12 +45,12 @@ participant "Calypso Card\nReader" as cardReader #lightBlue
 boundary "**Card**" as card #lightBlue
 participant "Calypso SAM\nAPI" as sapi #lightGreen
 participant "Calypso SAM\nReader" as samReader #lightGreen
-boundary "selected\n**SAM**" as sam #lightGreen
+boundary "**SAM**" as sam #lightGreen
 
 activate app #gold
 'activate sam #lightGreen
 
-== Access Control Terminal settings ==
+== Access Control embedded Terminal settings ==
 
 app->app: **set** Calypso SAM lib
 
