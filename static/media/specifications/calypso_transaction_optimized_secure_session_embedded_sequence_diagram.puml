@@ -431,6 +431,8 @@ deactivate samReader
 capi-->app
 deactivate capi
 
+app->app: **wait** for card removal
+
 deactivate card
 destroy card
 cardReader<[#Orange]-? : card **removal**  .  .  .  .  .
