@@ -79,9 +79,33 @@ Calypso library.
 
 This example illustrates the ticketing processing of a validation: only the necessary data is read from the card.
 
-In case of communication failure with the card, to support a recovery transaction on another terminal: the ratification
-status and the last event are checked at the session opening, and the session is closed as not ratified directly
-followed by a ratification command.
+For access control to a transit network or a building, using a contactless card to authenticate the holder's rights, ticketing terminals are generally automatic machines for which the rights verification transaction is automatically launched when the contactless card is detected in the RF field emitted by the terminal's reader. For transactions to run smoothly, without the need for error recovery, it is important that the contactless transaction with the card is very fast, and that the card presentation and withdrawal detection phases are reliably managed.
+
+The aim is to <u>save milliseconds</u> by minimizing the volume of data transmitted during contactless communication with the card to complete the ticketing transaction.<br>
+In order to limit the amount of data to be read from the card to the strict minimum, card reading operations cannot be grouped together. Each card response needs to be analyzed, to determine whether the next reading operation is necessary. Reducing the volume of data transmitted by the contactless card reader also reduces the amount of data to be transmitted to the SAM reader during the session, in order to update the session hash calculation.<br>
+On the SAM side, it is necessary to:
+- limit the number of operations to be performed during the contactless card transaction: SAM challenge recovery can be anticipated before a card transaction.
+- group as many SAM exchanges as possible to be processed during the session (to counteract contact reader latency, and to share an APDU command header with a maximum amount of data to be transmitted)
+
+It is therefore necessary to anticipate card responses to write commands (counter increment/decrement). Under these conditions, only one group of SAM commands is needed during the card transaction to generate the SAM session MAC. Card authenticity verification can be performed while waiting for card removal.
+
+The contactless reader of a configured and active ticketing terminal can switch between 3 states:
+- in '*standby mode*', the reader is waiting for a new card to be detected.
+- when a card is detected, the reader is in card '*processing mode*'.
+- when the card transaction is completed, the reader is '*waiting for the removal*' of the card.
+  Following a card transaction, a terminal must be sure that the card has indeed been removed from the RF field, before considering detecting a new one.
+
+For this reason, a terminal cannot be confident of a timeout at the transaction completion, as this timeout will either be too short (the previous card still present will be grabbed again) or too long (the terminal will remain unavailable for a long time). The contactless reader shall notify the withdrawal of the card.
+
+For a ticketing transaction during which card data is updated (right decrementation, memorization of an event), the “ratification” mechanism supported by the Calypso secure session guarantees that the cardholder will not lose any rights if the RF transmission with the card is interrupted.<br>
+When a session is opened, the verification of a last ticketing event makes it possible to identify whether a card has been presented twice in quick succession on an access control line.<br>
+In the case of very recent event, the card's “unratified” status can be used to determine whether
+- whether it is a recovery transaction, for which it may be necessary to re-authenticate the cardholder without debiting new rights;
+- or if it is an attempt to obtain a second access for another person (anti-passback).
+
+When a session is closed, the ratification command is immediately transmitted to the card, to minimize the need for transaction recovery.
+
+
 
 {{< figure src="/media/specifications/calypso_transaction_regular_secure_session_optimized_embedded_sequence_diagram.svg" caption="Calypso Card API - Simple Secure Session - Sequence Diagram" >}}
 
