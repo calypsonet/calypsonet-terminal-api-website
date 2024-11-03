@@ -139,7 +139,7 @@ deactivate rapi
 
 app->app: **wait** for card presence
 
-== Card selection & identification ==
+== Access Control operation start\nCard selection & identification ==
 
 cardReader<[#Orange]-? : card **insertion**  .  .  .  .  .
 
@@ -396,13 +396,15 @@ card in state:
 **ratified**
 endhnote
 
+cardReader-[#0000FF]->capi: [card certificate]
+deactivate cardReader
+
 hnote over cardReader #Orange
 reader in state:
 **Wait For Card Removal**
 endhnote
 
-cardReader-[#0000FF]->capi: [card certificate]
-deactivate cardReader
+== End of the contactless card transaction ==
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #2**</font>\ntransmit card request\n\t- APDU list
 activate samReader #lightGreen
@@ -417,6 +419,8 @@ deactivate capi
 
 app->app: card successfully authenticated <:champagne:>
 app->? : notification & <size:18>**access granting**</size>
+
+== End of the Access Control opertion ==
 
 app->capi: **init** crypto context for next transaction
 activate capi  #lightBlue
