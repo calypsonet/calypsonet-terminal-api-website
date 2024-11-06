@@ -8,9 +8,13 @@ main:
     url: '/specifications/'
     weight: 10
 
+  - name: Compliance
+    url: '/compliance/'
+    weight: 20
+
   - name: Community
     url: '/community/'
-    weight: 20
+    weight: 30
   - name: Contributing
     parent: Community
     url: '/community/contributing/'
@@ -30,6 +34,6 @@ main:
 
   - name: Implementations
     url: '/implementations/'
-    weight: 30
+    weight: 40
 
 
