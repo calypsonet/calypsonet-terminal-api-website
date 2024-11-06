@@ -23,8 +23,8 @@ The ticketing terminal APIs enable the implementation of libraries that uncondit
 
 ### Up to Reader API version 1.3 & Calypso Card API version 1.8
 
-The older ticketing terminal APIs can be implemented by libraries that can generally follow the terminal requirements of the reader and Calypso layers, but with a limitation on the localization of the card selection management.
-<br>On early versions of the Reader API and Calypso, the card selection was managed through the Calypso API instead of the Reader API.
+The older ticketing terminal APIs can be implemented by libraries that can "generally" follow the terminal requirements of the reader and Calypso layers, but with a limitation on the localization of the card selection management.
+<br>On early versions of the Reader and Calypso APIs, the card selection was managed through the Calypso API instead of the Reader API.
 
 
 
