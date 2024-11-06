@@ -8,6 +8,11 @@ weight: 1
 ---
 
 ---
+## Project governance
+
+[CNA](https://calypsonet.org/)'s obviously legitimate to lead the definition of software interfaces to manage [Calypso solutions](https://calypsonet.org/solutions-overview/).
+<br><span style="color: red;">Regarding the definition of generic interfaces for the smart card industry, CNA is open to share the driving of this work with any interested organization or manufacturer</span>.
+
 ## Definition of Calypso layer APIs
 
 The [**C**alypso **N**etworks **A**ssociation](https://calypsonet.org/about-calypso-networks-association-cna/)  is responsible for specifying, qualifying and promoting the Calypso ticketing standard. **Contributions to the definition of Calypso APIs for ticketing terminals are therefore reserved for CNA members** participating in the [“TC Terminal” technical working group](https://calypsonet.org/working-groups/).

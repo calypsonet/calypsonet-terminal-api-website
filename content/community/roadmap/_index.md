@@ -25,7 +25,7 @@ For 2025, addition of an interface dedicated to the management of the new Calyps
 </thead>
 <tbody>
   <tr>
-    <td rowspan="2">2024/04/11</td>
+    <td rowspan="3">2024/04/11</td>
     <td>Calypso Card API 2.1.0</td>
     <td>
     Added management of PKI card functions
@@ -33,6 +33,10 @@ For 2025, addition of an interface dedicated to the management of the new Calyps
     <li>asymmetric session signature verification</li>
     <li>personalization and retrieval of card and CA certificates</li></ul>
     </td>
+  </tr>
+  <tr>
+    <td>Calypso Crypto Asymmetric API 0.2</td>
+    <td>refactoring of the Calypso PKI interface</td>
   </tr>
   <tr>
     <td>Calypso Legacy SAM API 0.5</td>
@@ -49,7 +53,7 @@ For 2025, addition of an interface dedicated to the management of the new Calyps
     </td>
   </tr>
 <tr>
-  <td rowspan="6">2023/11/27</td>
+  <td rowspan="7">2023/11/27</td>
   <td colspan="2">Global refactoring to enable any implementation of terminal APIs and to allow the Eclipse Keypop project to continue to implement open source Java and C++ versions of the terminal APIs.
     <ul>
       <li>refactoring of the Calypso API to integrate different Calypso SAM solutions (legacy SAM & Open SAM)
@@ -78,8 +82,12 @@ For 2025, addition of an interface dedicated to the management of the new Calyps
     <li>refactoring to integrate in a Calypso card transaction different Calypso SAM solutions: initially the Calypso Legacy SAM, then later the Calypso OpenSAM</li></ul></td>
   </tr>
   <tr>
+    <td>Calypso Crypto Asymmetric API 0.1</td>
+    <td>New interface to manage the communication between a library implementing the Calypso Card API and another library processing the Calypso card PKI</td>
+  </tr>
+  <tr>
     <td>Calypso Crypto Symmetric API 0.1</td>
-    <td>New interface interface to manage the communication between a library implementing the Calypso Card API and another library processing a Calypso SAM solution</td>
+    <td>New interface to manage the communication between a library implementing the Calypso Card API and another library processing a Calypso SAM solution</td>
   </tr>
   <tr>
     <td>Calypso Legacy SAM API 0.3</td>
