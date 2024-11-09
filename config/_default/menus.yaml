@@ -27,6 +27,10 @@ main:
     parent: Community
     url: '/project-dashboard/'
     weight: 30
+  - name: Support
+    parent: Community
+    url: 'https://keyple-support.calypsonet.org/keyple-support/introduction/'
+    weight: 35
   - name: Archives
     parent: Community
     url: '/archives/'
