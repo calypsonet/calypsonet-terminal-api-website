@@ -19,5 +19,5 @@ search: false
 
 ## Dedicated interfaces according to development targets
 The ticketing terminal APIs are differentiated according to development objectives:
-- in “green”, high-level public reader and Calypso APIs dedicated to the design of applications on ticketing terminals.
-- in “orange”, internal APIs dedicated to the design of middleware for smart card solutions (Calypso or others).
+- in “green” 🟢, high-level public reader and Calypso APIs dedicated to the design of applications on ticketing terminals.
+- in “orange” 🔶, internal APIs dedicated to the design of middleware for smart card solutions (Calypso or others).
