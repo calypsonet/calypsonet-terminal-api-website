@@ -9,7 +9,7 @@ search: false
 
 ## Dedicated interfaces according to software layer
 2 levels of APIs are offered to address the Reader or the Calypso layers, from the lowest to the highest:
-- at the bottom the '[reader layer]({{< relref "reader-layer" >}}' _generic_ interfaces:
+- at the bottom the '[reader layer]({{< relref "reader-layer" >}})' _generic_ interfaces:
     - the [**Reader**]({{< relref "reader-layer/reader-api/" >}}) **API** to control any reader solution and manage the application selection on a smart card,
     - the [**Card**]({{< relref "reader-layer/card-api/" >}}) **API** for interfacing a card processing library specific to a smart card solution.
 - Just below 'smartcard solution layer' _specific_ interfaces:
