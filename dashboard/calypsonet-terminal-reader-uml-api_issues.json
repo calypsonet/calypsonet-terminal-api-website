@@ -1,3 +1,68 @@
 [
+  {
+    "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/issues/1",
+    "repository_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api",
+    "labels_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/issues/1/labels{/name}",
+    "comments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/issues/1/comments",
+    "events_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/issues/1/events",
+    "html_url": "https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/issues/1",
+    "id": 2670765254,
+    "node_id": "I_kwDOHZ2TmM6fMKTG",
+    "number": 1,
+    "title": "Lack of duration limit setting on card insertion detection",
+    "user": {
+      "login": "pterr",
+      "id": 36192444,
+      "node_id": "MDQ6VXNlcjM2MTkyNDQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/36192444?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pterr",
+      "html_url": "https://github.com/pterr",
+      "followers_url": "https://api.github.com/users/pterr/followers",
+      "following_url": "https://api.github.com/users/pterr/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pterr/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pterr/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pterr/subscriptions",
+      "organizations_url": "https://api.github.com/users/pterr/orgs",
+      "repos_url": "https://api.github.com/users/pterr/repos",
+      "events_url": "https://api.github.com/users/pterr/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pterr/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "labels": [
 
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2024-11-19T05:01:38Z",
+    "updated_at": "2024-11-19T05:12:17Z",
+    "closed_at": null,
+    "author_association": "MEMBER",
+    "active_lock_reason": null,
+    "body": "We got direct feedback from 3 companies that use the Reader API on ticket terminals and who have encountered the same issue with the reader.ObservableCardReader interface: the absence of the ability to set a time limit for card insertion detection.\r\n\r\n- Currently, the startCardDetection method can initiate a detection without a time limit, which means that terminals that need to limit the duration of a detection attempt have to manage this limit by adding a dedicated overlayer on top of the Reader API.\r\n\r\n- In some embedded devices, to save electrical energy, the reader solutions do not natively offer the possibility of detecting an insertion over an indefinite period (this is the case, for example, with the IOS NFC API).\r\n\r\n→ we therefore plan to add a parameter to limit the detection time of a card insertion in a future Reader API evolution.",
+    "closed_by": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/issues/1/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "timeline_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/issues/1/timeline",
+    "performed_via_github_app": null,
+    "state_reason": null
+  }
 ]

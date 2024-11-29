@@ -1,3 +1,68 @@
 [
+  {
+    "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/2",
+    "repository_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api",
+    "labels_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/2/labels{/name}",
+    "comments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/2/comments",
+    "events_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/2/events",
+    "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/2",
+    "id": 2670909027,
+    "node_id": "I_kwDOHZ2RGc6fMtZj",
+    "number": 2,
+    "title": "Lack of a direct high-level method for recovering the HCE token's vadity",
+    "user": {
+      "login": "pterr",
+      "id": 36192444,
+      "node_id": "MDQ6VXNlcjM2MTkyNDQ0",
+      "avatar_url": "https://avatars.githubusercontent.com/u/36192444?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/pterr",
+      "html_url": "https://github.com/pterr",
+      "followers_url": "https://api.github.com/users/pterr/followers",
+      "following_url": "https://api.github.com/users/pterr/following{/other_user}",
+      "gists_url": "https://api.github.com/users/pterr/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/pterr/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/pterr/subscriptions",
+      "organizations_url": "https://api.github.com/users/pterr/orgs",
+      "repos_url": "https://api.github.com/users/pterr/repos",
+      "events_url": "https://api.github.com/users/pterr/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/pterr/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "labels": [
 
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2024-11-19T06:19:03Z",
+    "updated_at": "2024-11-19T06:19:03Z",
+    "closed_at": null,
+    "author_association": "MEMBER",
+    "active_lock_reason": null,
+    "body": "The calypso.card.card.CalypsoCard interface can be used to check directly whether a card is a Prime HCE card (isHce() method).\r\n\r\n- In the general case, the getApplicationSerialNumber() method allows to retrieve the 8 bytes of a Calypso card serial, but in the case of an HCE application, this high-level interface only allows to recover the “SN Value” bytes, without the 2 bytes of SN Header data (HCE token validity data).\r\n\r\n- A temporary workaround for retrieving HCE validity data is to call the reader.selection.spi.IsoSmartCard.getSelectApplicationResponse() method.\r\n\r\n→ CNA thus plan to add in a future evolution of the Calypso Card API, a high-level method for directly recovering the validity information from an HCE token.",
+    "closed_by": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/2/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "timeline_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/2/timeline",
+    "performed_via_github_app": null,
+    "state_reason": null
+  }
 ]

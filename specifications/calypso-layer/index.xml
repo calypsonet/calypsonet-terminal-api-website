@@ -151,7 +151,7 @@ Calypso Card API - Stored Value transaction inside a secure session - Sequence D
 Calypso Card API - Multiple secure session - Sequence Diagram
 &lt;/figcaption>&lt;/figure></description></item><item><title>Calypso Legacy SAM API (external)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-legacysam-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-legacysam-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
-Latest version &lt;strong>&lt;code>0.6.0&lt;/code>&lt;/strong>
+Latest version &lt;strong>&lt;code>0.7.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypso-crypto-legacysam-uml.terminal-api.calypsonet.org/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -176,7 +176,7 @@ A transaction with a Calypso SAM is fully managed through one of the &lt;code>LS
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://calypso-crypto-legacysam-uml.terminal-api.calypsonet.org/0.6.0/api_class_diagram.svg" alt="Calypso Crypto Legacy SAM API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://calypso-crypto-legacysam-uml.terminal-api.calypsonet.org/0.7.0/api_class_diagram.svg" alt="Calypso Crypto Legacy SAM API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p></description></item><item><title>Calypso Symmetric Crypto API (internal)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-symmetric-crypto-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-symmetric-crypto-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
