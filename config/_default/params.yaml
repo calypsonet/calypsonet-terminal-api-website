@@ -126,6 +126,6 @@ terminal_api_version:
   reader_api: '2.0.1'
   card_api: '2.0.1'
   calypso_card_api: '2.1.0'
-  calypso_legacysam_api: '0.6.0'
+  calypso_legacysam_api: '0.7.0'
   calypso_crypto_symmetric_api: '0.1.1'
   calypso_crypto_asymmetric_api: '0.2.0'
