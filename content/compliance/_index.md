@@ -1,5 +1,7 @@
 ---
 title: Terminal Compliance
+type: book
+toc: false
 weight: 10
 ---
 
