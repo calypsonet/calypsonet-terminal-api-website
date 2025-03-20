@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 23834595450,
+      "id": 39112930413,
       "name": "publish-diagrams",
-      "node_id": "CR_kwDOHZ2SgM8AAAAFjKcQeg",
-      "head_sha": "a5c88b23d31adabb328d3a894243c11e4a48ffbf",
-      "external_id": "3ad6d197-1c25-54cd-7a0c-953b3c809fb5",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-uml-api/check-runs/23834595450",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-uml-api/actions/runs/8691709442/job/23834595450",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-uml-api/actions/runs/8691709442/job/23834595450",
+      "node_id": "CR_kwDOHZ2SgM8AAAAJG0_0bQ",
+      "head_sha": "9fa4502e7931d5e05db7ca20ce5e22406cd4c111",
+      "external_id": "8ca3c612-8e02-5825-bc1a-3bbf8578edcc",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-uml-api/check-runs/39112930413",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-uml-api/actions/runs/13971124432/job/39112930413",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-uml-api/actions/runs/13971124432/job/39112930413",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2024-04-15T15:18:18Z",
-      "completed_at": "2024-04-15T15:18:25Z",
+      "started_at": "2025-03-20T13:58:42Z",
+      "completed_at": "2025-03-20T13:58:47Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
-        "annotations_count": 1,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-uml-api/check-runs/23834595450/annotations"
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-uml-api/check-runs/39112930413/annotations"
       },
       "check_suite": {
-        "id": 22773494742
+        "id": 35972055968
       },
       "app": {
         "id": 15368,
@@ -55,7 +55,7 @@
         "external_url": "https://help.github.com/en/actions",
         "html_url": "https://github.com/apps/github-actions",
         "created_at": "2018-07-30T09:30:17Z",
-        "updated_at": "2024-04-10T20:33:16Z",
+        "updated_at": "2025-03-07T16:35:00Z",
         "permissions": {
           "actions": "write",
           "administration": "read",
@@ -67,6 +67,7 @@
           "issues": "write",
           "merge_queues": "write",
           "metadata": "read",
+          "models": "read",
           "packages": "write",
           "pages": "write",
           "pull_requests": "write",

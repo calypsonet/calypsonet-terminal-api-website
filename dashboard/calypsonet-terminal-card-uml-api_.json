@@ -66,14 +66,14 @@
   "releases_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-uml-api/releases{/id}",
   "deployments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-uml-api/deployments",
   "created_at": "2022-05-27T04:57:54Z",
-  "updated_at": "2024-09-03T07:44:16Z",
-  "pushed_at": "2024-04-15T15:18:21Z",
+  "updated_at": "2025-03-20T13:58:39Z",
+  "pushed_at": "2025-03-20T13:58:45Z",
   "git_url": "git://github.com/calypsonet/calypsonet-terminal-card-uml-api.git",
   "ssh_url": "git@github.com:calypsonet/calypsonet-terminal-card-uml-api.git",
   "clone_url": "https://github.com/calypsonet/calypsonet-terminal-card-uml-api.git",
   "svn_url": "https://github.com/calypsonet/calypsonet-terminal-card-uml-api",
   "homepage": null,
-  "size": 118,
+  "size": 120,
   "stargazers_count": 2,
   "watchers_count": 2,
   "language": null,
@@ -139,5 +139,5 @@
     "site_admin": false
   },
   "network_count": 0,
-  "subscribers_count": 3
+  "subscribers_count": 2
 }

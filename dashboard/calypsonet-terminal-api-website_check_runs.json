@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 37972069564,
+      "id": 39118687015,
       "name": "deploy",
-      "node_id": "CR_kwDOGPbtzc8AAAAI10_MvA",
-      "head_sha": "a2e503c03fc1aa672c3e352924a1e316f162a7f5",
-      "external_id": "e07742bd-189a-5079-918b-43f8b2f94b89",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/37972069564",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/13582943996/job/37972069564",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/13582943996/job/37972069564",
+      "node_id": "CR_kwDOGPbtzc8AAAAJG6fLJw",
+      "head_sha": "16ad49dc03dd29a5633e6039a26dbd41d5dd5e47",
+      "external_id": "4704b7ec-10f2-51f4-b679-c882f0578c05",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/39118687015",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/13972771875/job/39118687015",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/13972771875/job/39118687015",
       "status": "in_progress",
       "conclusion": null,
-      "started_at": "2025-02-28T06:53:15Z",
+      "started_at": "2025-03-20T15:12:28Z",
       "completed_at": null,
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/37972069564/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/39118687015/annotations"
       },
       "check_suite": {
-        "id": 35013451745
+        "id": 35976688383
       },
       "app": {
         "id": 15368,
@@ -55,7 +55,7 @@
         "external_url": "https://help.github.com/en/actions",
         "html_url": "https://github.com/apps/github-actions",
         "created_at": "2018-07-30T09:30:17Z",
-        "updated_at": "2024-04-10T20:33:16Z",
+        "updated_at": "2025-03-07T16:35:00Z",
         "permissions": {
           "actions": "write",
           "administration": "read",
@@ -67,6 +67,7 @@
           "issues": "write",
           "merge_queues": "write",
           "metadata": "read",
+          "models": "read",
           "packages": "write",
           "pages": "write",
           "pull_requests": "write",

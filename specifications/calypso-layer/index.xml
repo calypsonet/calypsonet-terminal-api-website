@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Calypso Layer Specification | Smartcard-based Ticketing Terminal APIs by the Calypso Networks Association</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/</link><atom:link href="https://terminal-api.calypsonet.org/specifications/calypso-layer/index.xml" rel="self" type="application/rss+xml"/><description>Calypso Layer Specification</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Calypso Layer Specification</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/</link></image><item><title>Calypso Card API (external)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-card-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
-Latest version &lt;strong>&lt;code>2.1.0&lt;/code>&lt;/strong>
+Latest version &lt;strong>&lt;code>2.1.2&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://calypso-card-uml.terminal-api.calypsonet.org/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -24,7 +24,7 @@ A transaction with a Calypso card is fully managed through the &lt;code>CardTran
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://calypso-card-uml.terminal-api.calypsonet.org/2.1.0/api_class_diagram.svg" alt="Calypso Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://calypso-card-uml.terminal-api.calypsonet.org/2.1.2/api_class_diagram.svg" alt="Calypso Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;br>

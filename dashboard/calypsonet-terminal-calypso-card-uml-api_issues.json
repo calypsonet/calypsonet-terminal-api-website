@@ -46,6 +46,7 @@
     "updated_at": "2024-12-03T09:05:44Z",
     "closed_at": null,
     "author_association": "MEMBER",
+    "type": null,
     "sub_issues_summary": {
       "total": 0,
       "completed": 0,
@@ -117,6 +118,7 @@
     "updated_at": "2024-11-19T06:19:03Z",
     "closed_at": null,
     "author_association": "MEMBER",
+    "type": null,
     "sub_issues_summary": {
       "total": 0,
       "completed": 0,
