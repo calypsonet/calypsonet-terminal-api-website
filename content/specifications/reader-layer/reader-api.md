@@ -9,7 +9,7 @@ toc: true
 
 {{% callout note %}}
 Latest version **`{{% reader-api-version %}}`**
-<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML class diagram](https://reader-uml.terminal-api.calypsonet.org/)</span>
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML class diagram](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/)</span>
 {{% /callout %}}
 
@@ -28,7 +28,7 @@ The **Reader API** is a high-level interface used by terminal applications to op
 
 - is the entry point to manage the selection of a smart card in a specific reader.
 
-![Reader API - class diagram](https://reader-uml.terminal-api.calypsonet.org/{{% reader-api-version %}}/api_class_diagram.svg)
+![Reader API - class diagram](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/{{% reader-api-version %}}/api_class_diagram.svg)
 
 ### Reader identification
 
