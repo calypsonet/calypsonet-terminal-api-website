@@ -9,7 +9,7 @@ toc: true
 
 {{% callout note %}}
 Latest version **`{{% card-api-version %}}`**
-<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML class diagram](https://card-uml.terminal-api.calypsonet.org/)</span>
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML class diagram](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-card-uml-api/)</span>
 {{% /callout %}}
 
@@ -20,7 +20,7 @@ reader layer to implement specific card layers (like the Calypso Card layer).
 
 ## Interfaces
 
-![Card API - class diagram](https://card-uml.terminal-api.calypsonet.org/{{% card-api-version %}}/api_class_diagram.svg)
+![Card API - class diagram](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/{{% card-api-version %}}/api_class_diagram.svg)
 
 <br>
 
