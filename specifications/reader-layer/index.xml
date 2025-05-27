@@ -2,7 +2,7 @@
 &lt;div>
 Latest version &lt;strong>&lt;code>2.0.1&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://reader-uml.terminal-api.calypsonet.org/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
@@ -26,7 +26,7 @@ configuring readers and process card selection scenarios.&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://reader-uml.terminal-api.calypsonet.org/2.0.1/api_class_diagram.svg" alt="Reader API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/2.0.1/api_class_diagram.svg" alt="Reader API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h3 id="reader-identification">Reader identification&lt;/h3>
@@ -141,7 +141,7 @@ However, some observable readers may additionally have the ability to notify rem
 &lt;div>
 Latest version &lt;strong>&lt;code>2.0.1&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://card-uml.terminal-api.calypsonet.org/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
@@ -153,7 +153,7 @@ reader layer to implement specific card layers (like the Calypso Card layer).&lt
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://card-uml.terminal-api.calypsonet.org/2.0.1/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/2.0.1/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;br>
