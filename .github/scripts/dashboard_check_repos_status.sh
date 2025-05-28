@@ -17,10 +17,6 @@ fi
 if [ $? -eq 0 ]; then
   exit 0
 fi
-./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-storagecard-uml-api
-if [ $? -eq 0 ]; then
-  exit 0
-fi
 ./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-calypso-crypto-symmetric-uml-api
 if [ $? -eq 0 ]; then
   exit 0
@@ -30,6 +26,10 @@ if [ $? -eq 0 ]; then
   exit 0
 fi
 ./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-calypso-crypto-asymmetric-uml-api
+if [ $? -eq 0 ]; then
+  exit 0
+fi
+./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-storagecard-uml-api
 if [ $? -eq 0 ]; then
   exit 0
 fi
