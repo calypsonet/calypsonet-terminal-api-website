@@ -36,7 +36,7 @@ A set of command could be first **prepared**, and then be **processed** by a sel
 during the transaction.
 A transaction with a Calypso card is fully managed through the `CardTransactionManager` interface:
 
-![Calypso API - class diagram](https://calypsonet.github.io/calypsonet-terminal-calypso-card-uml-api/1.8.0/api_class_diagram.svg)
+![Calypso API - class diagram](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/1.8.0/api_class_diagram.svg)
 
 <br>
 
@@ -136,8 +136,8 @@ up-to-date documentation.
 ### Calypso API in Java
 {{% callout note %}}
 **`1.8.0`**
-<span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-calypso-java-api/)</span>
-<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://calypsonet.github.io/calypsonet-terminal-calypso-card-uml-api/)</span>
+<span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-java-api/)</span>
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/)</span>
 <span class="component-metadata">{{< icon name="exchange-alt" pack="fas" >}} [Changelog](https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/blob/main/CHANGELOG.md)</span>
 {{% /callout %}}
@@ -169,7 +169,7 @@ implementation("org.calypsonet.terminal:calypsonet-terminal-calypso-java-api:1.8
 ### Calypso API in C++
 {{% callout note %}}
 **`1.1.0`**
-<span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-calypso-cpp-api/)</span>
-<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://calypsonet.github.io/calypsonet-terminal-calypso-card-uml-api/)</span>
+<span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-cpp-api/)</span>
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api/)</span>
 {{% /callout %}}
