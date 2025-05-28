@@ -57,6 +57,10 @@ fi
 if [ $? -eq 0 ]; then
   exit 0
 fi
+./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-api-docs
+if [ $? -eq 0 ]; then
+  exit 0
+fi
 ./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-api-website
 if [ $? -eq 0 ]; then
   exit 0

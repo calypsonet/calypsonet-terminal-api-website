@@ -30,7 +30,7 @@ The reader API is a high-level interface used by terminal applications to operat
 
 - is the entry point to manage the selection of a smart card in a specific reader.
 
-![Reader API - class diagram](https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/1.3.0/api_class_diagram.svg)
+![Reader API - class diagram](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/1.3.0/api_class_diagram.svg)
 
 ### Reader identification
 
@@ -158,8 +158,8 @@ up-to-date documentation.
 ### Reader API in Java
 {{% callout note %}}
 **`1.3.0`**
-<span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-reader-java-api/)</span>
-<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/)</span>
+<span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-java-api/)</span>
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-reader-java-api/)</span>
 <span class="component-metadata">{{< icon name="exchange-alt" pack="fas" >}} [Changelog](https://github.com/calypsonet/calypsonet-terminal-reader-java-api/blob/main/CHANGELOG.md)</span>
 {{% /callout %}}
@@ -191,8 +191,8 @@ implementation("org.calypsonet.terminal:calypsonet-terminal-reader-java-api:1.3.
 ### Reader API in C++
 {{% callout note %}}
 **`1.0.0`**
-<span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://calypsonet.github.io/calypsonet-terminal-reader-cpp-api/)</span>
-<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://calypsonet.github.io/calypsonet-terminal-reader-uml-api/)</span>
+<span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-cpp-api/)</span>
+<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/)</span>
 {{% /callout %}}
 
