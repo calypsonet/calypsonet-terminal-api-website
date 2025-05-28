@@ -129,3 +129,4 @@ terminal_api_version:
   calypso_legacysam_api: '0.7.0'
   calypso_crypto_symmetric_api: '0.1.1'
   calypso_crypto_asymmetric_api: '0.2.0'
+  storagecard_api: '0.1.0'

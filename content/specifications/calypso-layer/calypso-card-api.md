@@ -1,7 +1,7 @@
 ---
 title: Calypso Card API (external)
 linktitle: 🟢 Calypso Card
-summary: Public high-level API which standardizes the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, etc...).
+summary: Public high-level API which standardizes the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, etc.).
 type: book
 weight: 1
 toc: true
@@ -21,13 +21,13 @@ transactions with Calypso cards.
 ## Interfaces
 
 The **Calypso Card API** provides the means to select a target card and then perform a transaction with the selected card.
-- The result of a card selection is a smartcard image whose file structure and data records can be browsed.
-- A transaction with a target card may involve a control SAM in order to secure the operations.
+- The result of a card selection is a smart card image whose file structure and data records can be browsed.
+- A transaction with a target card may involve a control SAM to secure the operations.
 
-The `CalypsoCard` interfaces provide **accessors** in order to recover the information of the selected smart card.
+The `CalypsoCard` interface provide **accessors** to recover the information of the selected smart card.
 
-To optimize the number of exchanges with a card reader, the **Calypso Card API** allows to group the commands.
-A set of command could be first **prepared**, and then be **processed** by a selected target at the selection or
+To optimize the number of exchanges with a card reader, the **Calypso Card API** allows grouping the commands.
+A set of commands could be first **prepared**, and then be **processed** by a selected target at the selection or
 during the transaction.
 A transaction with a Calypso card is fully managed through the `CardTransactionManager` interface:
 

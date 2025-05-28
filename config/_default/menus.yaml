@@ -5,7 +5,7 @@
 
 main:
   - name: Specifications
-    url: '/specifications/'
+    url: '/specifications/overview/'
     weight: 10
 
   - name: Compliance

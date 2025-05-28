@@ -1,6 +1,6 @@
 ---
 title: Reader Layer Specification
-linktitle: Reader layer specification
+linktitle: Reader Layer
 type: book
 toc: false
 weight: 10
