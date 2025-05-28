@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Calypso Layer Specification | Smartcard-based Ticketing Terminal APIs by the Calypso Networks Association</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/</link><atom:link href="https://terminal-api.calypsonet.org/specifications/calypso-layer/index.xml" rel="self" type="application/rss+xml"/><description>Calypso Layer Specification</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Calypso Layer Specification</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/</link></image><item><title>Calypso Card API (external)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-card-api/</guid><description>&lt;div class="alert alert-note">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Card Layer - Calypso Specification | Smartcard-based Ticketing Terminal APIs by the Calypso Networks Association</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/</link><atom:link href="https://terminal-api.calypsonet.org/specifications/calypso-layer/index.xml" rel="self" type="application/rss+xml"/><description>Card Layer - Calypso Specification</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Card Layer - Calypso Specification</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/</link></image><item><title>Calypso Card API (external)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-card-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
 Latest version &lt;strong>&lt;code>2.1.2&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
@@ -13,12 +13,12 @@ transactions with Calypso cards.&lt;/p>
 &lt;h2 id="interfaces">Interfaces&lt;/h2>
 &lt;p>The &lt;strong>Calypso Card API&lt;/strong> provides the means to select a target card and then perform a transaction with the selected card.&lt;/p>
 &lt;ul>
-&lt;li>The result of a card selection is a smartcard image whose file structure and data records can be browsed.&lt;/li>
-&lt;li>A transaction with a target card may involve a control SAM in order to secure the operations.&lt;/li>
+&lt;li>The result of a card selection is a smart card image whose file structure and data records can be browsed.&lt;/li>
+&lt;li>A transaction with a target card may involve a control SAM to secure the operations.&lt;/li>
 &lt;/ul>
-&lt;p>The &lt;code>CalypsoCard&lt;/code> interfaces provide &lt;strong>accessors&lt;/strong> in order to recover the information of the selected smart card.&lt;/p>
-&lt;p>To optimize the number of exchanges with a card reader, the &lt;strong>Calypso Card API&lt;/strong> allows to group the commands.
-A set of command could be first &lt;strong>prepared&lt;/strong>, and then be &lt;strong>processed&lt;/strong> by a selected target at the selection or
+&lt;p>The &lt;code>CalypsoCard&lt;/code> interface provide &lt;strong>accessors&lt;/strong> to recover the information of the selected smart card.&lt;/p>
+&lt;p>To optimize the number of exchanges with a card reader, the &lt;strong>Calypso Card API&lt;/strong> allows grouping the commands.
+A set of commands could be first &lt;strong>prepared&lt;/strong>, and then be &lt;strong>processed&lt;/strong> by a selected target at the selection or
 during the transaction.
 A transaction with a Calypso card is fully managed through the &lt;code>CardTransactionManager&lt;/code> interface:&lt;/p>
 &lt;p>

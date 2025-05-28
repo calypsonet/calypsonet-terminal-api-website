@@ -345,7 +345,7 @@ For up-to-date documentation, see the latest version.
 &lt;br>
 &lt;p>The &lt;strong>Calypsonet Terminal Calypso API&lt;/strong> is an extension of the &lt;strong>Calypsonet Terminal Reader API&lt;/strong> which provides a
 high-level API standardizing the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM,
-etc&amp;hellip;).&lt;/p>
+etc.).&lt;/p>
 &lt;br>
 &lt;h2 id="interfaces">Interfaces&lt;/h2>
 &lt;p>The Calypso API provides the means to select a target card or SAM and then perform a transaction with the selected target.&lt;/p>
