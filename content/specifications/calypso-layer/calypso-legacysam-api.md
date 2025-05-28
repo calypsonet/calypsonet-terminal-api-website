@@ -1,7 +1,7 @@
 ---
 title: Calypso Legacy SAM API (external)
 linktitle: 🟢 Legacy SAM
-summary: Public high-level API which standardizes the way to interact with a Calypso® legacy SAM product (SAM-C1, HSM-C1, etc...).
+summary: Public high-level API which standardizes the way to interact with a Calypso® legacy SAM product (SAM-C1, HSM-C1, etc.).
 type: book
 weight: 2
 toc: true

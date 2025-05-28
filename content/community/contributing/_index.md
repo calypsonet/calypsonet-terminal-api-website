@@ -70,10 +70,10 @@ Therefore, all contributors to the project are asked to respect the structure of
 
 <footer(s)>
 ```
-Furthermore, it is requested to indicate in the `footer` section the associated issue(s) that will be closed (`Closes #xxx, closes #yyy, etc...`).
+Furthermore, it is requested to indicate in the `footer` section the associated issue(s) that will be closed (`Closes #xxx, closes #yyy, etc.`).
 This will automatically close the associated issue(s) when the pull request is validated (see [GitHub Docs](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) for more details).
 
-It is also required to indicate possible references to other associated issues (`Refs: #aaa, #bbbb, repository_owner/other_repository_name#ccc, etc...`).
+It is also required to indicate possible references to other associated issues (`Refs: #aaa, #bbbb, repository_owner/other_repository_name#ccc, etc.`).
 
 Here is fictive example:
 

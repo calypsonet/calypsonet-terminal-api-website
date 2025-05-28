@@ -1,7 +1,7 @@
 ---
 title: Calypsonet Terminal Calypso API
 linktitle: Calypso API
-summary: Public high-level API which standardizes the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, etc...).
+summary: Public high-level API which standardizes the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, etc.).
 type: book
 weight: 4
 toc: true
@@ -18,7 +18,7 @@ For up-to-date documentation, see the latest version.
 
 The **Calypsonet Terminal Calypso API** is an extension of the **Calypsonet Terminal Reader API** which provides a 
 high-level API standardizing the way to interact with a Calypso® product (card, NFC smartphone applet/application, SAM, 
-etc...).
+etc.).
 
 <br>
 
