@@ -1,9 +1,9 @@
 [
   {
-    "name": "gh-pages",
+    "name": "doc",
     "commit": {
-      "sha": "c3e7122bb471ae3bc553b145eb3a1cbcb5b30093",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/commits/c3e7122bb471ae3bc553b145eb3a1cbcb5b30093"
+      "sha": "4fca3cc0dbcb6ef3e152712b37c4f18f422c73aa",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-java-api/commits/4fca3cc0dbcb6ef3e152712b37c4f18f422c73aa"
     },
     "protected": true
   },

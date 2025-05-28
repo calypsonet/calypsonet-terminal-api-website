@@ -1,9 +1,9 @@
 [
   {
-    "name": "gh-pages",
+    "name": "doc",
     "commit": {
-      "sha": "c4287c7e2d9d3604e287f692daf8bae9d1ab693c",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-cpp-api/commits/c4287c7e2d9d3604e287f692daf8bae9d1ab693c"
+      "sha": "98e2045a0a2b9e72ad2362d6ab5bac2dd6c47700",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-cpp-api/commits/98e2045a0a2b9e72ad2362d6ab5bac2dd6c47700"
     },
     "protected": false
   },

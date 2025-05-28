@@ -1,9 +1,9 @@
 [
   {
-    "name": "gh-pages",
+    "name": "doc",
     "commit": {
-      "sha": "0264f6557aecfc7ba71939a767b5be62c67efeae",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/commits/0264f6557aecfc7ba71939a767b5be62c67efeae"
+      "sha": "5ccd605d817ac272da1f2d85e09c37e77200bf1c",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-java-api/commits/5ccd605d817ac272da1f2d85e09c37e77200bf1c"
     },
     "protected": true
   },

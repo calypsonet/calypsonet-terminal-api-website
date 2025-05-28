@@ -5,6 +5,7 @@
 ["calypsonet-terminal-calypso-crypto-symmetric-uml-api",true,false],
 ["calypsonet-terminal-calypso-crypto-legacysam-uml-api",true,false],
 ["calypsonet-terminal-calypso-crypto-asymmetric-uml-api",true,false],
+["calypsonet-terminal-storagecard-uml-api",true,false],
 ["calypsonet-terminal-card-java-api",true,true],
 ["calypsonet-terminal-reader-java-api",true,true],
 ["calypsonet-terminal-calypso-java-api",true,true],
@@ -12,5 +13,6 @@
 ["calypsonet-terminal-card-cpp-api",true,false],
 ["calypsonet-terminal-reader-cpp-api",true,false],
 ["calypsonet-terminal-calypso-cpp-api",true,false],
+["calypsonet-terminal-api-docs",false,false],
 ["calypsonet-terminal-api-website",false,false]
 ]

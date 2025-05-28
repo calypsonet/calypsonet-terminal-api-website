@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 43039460187,
-      "name": "deploy",
-      "node_id": "CR_kwDOGPbtzc8AAAAKBVoLWw",
-      "head_sha": "bcec959a57bfb83666a74b94178726f7f07aa745",
-      "external_id": "e7e08af2-f61e-5abc-aecf-0a7bb5c89cda",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/43039460187",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/15300454945/job/43039460187",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/15300454945/job/43039460187",
-      "status": "in_progress",
-      "conclusion": null,
-      "started_at": "2025-05-28T12:44:12Z",
-      "completed_at": null,
+      "id": 41779324948,
+      "name": "publish-diagrams",
+      "node_id": "CR_kwDOOlf9AM8AAAAJuj3oFA",
+      "head_sha": "77e1e0826d65768f62bd21240dec4d99074827a5",
+      "external_id": "dc5d5b38-1fab-5bf5-8b64-a7b2e7b22557",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/check-runs/41779324948",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/actions/runs/14878053175/job/41779324948",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/actions/runs/14878053175/job/41779324948",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2025-05-07T07:49:59Z",
+      "completed_at": "2025-05-07T07:50:03Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/43039460187/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/check-runs/41779324948/annotations"
       },
       "check_suite": {
-        "id": 39249346793
+        "id": 38203021616
       },
       "app": {
         "id": 15368,
