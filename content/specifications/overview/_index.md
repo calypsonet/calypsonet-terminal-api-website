@@ -28,6 +28,17 @@ highest:
 
 ## Dedicated interfaces according to development targets
 
-The ticketing terminal APIs are differentiated according to development objectives:
+The ticketing terminal APIs are differentiated according to development goals:
 - in **green** 🟢, high-level public reader and Calypso APIs dedicated to the design of applications on ticketing terminals.
 - in **orange** 🔶, internal APIs dedicated to the design of middleware for smart card solutions (Calypso or others).
+
+## API element visual status explanation
+
+- **Grayed-out elements** indicate features that are **not yet officially part of the API**. These are currently under
+  review and may either be formally added or removed in a future version.
+- On **minor or major API updates**, elements displayed in **blue** represent **newly introduced features** officially
+  added in the current version.
+- On **minor API versions**, elements displayed in **red** that are marked with **strikethrough** are those that have
+  been **deprecated** but are still present in the API.
+- **Actual removal of an element** can only occur in a **major version update**. In such cases, the element must have
+  been explicitly **deprecated in one or more previous minor versions**.
