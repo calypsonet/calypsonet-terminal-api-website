@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 43040028309,
+      "id": 43293530357,
       "name": "publish-diagrams",
-      "node_id": "CR_kwDOHZ2RGc8AAAAKBWK2lQ",
-      "head_sha": "44c9907cae240326015380bdf23f59ca6b8de1a2",
-      "external_id": "874eef61-c844-5cb5-bb0e-e24d112349f3",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/check-runs/43040028309",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/actions/runs/15300626552/job/43040028309",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/actions/runs/15300626552/job/43040028309",
+      "node_id": "CR_kwDOHZ2RGc8AAAAKFH7Y9Q",
+      "head_sha": "7f0c84c26db176594c65a9ff8ef87bd521ee9bb7",
+      "external_id": "3b154bfd-26af-57ee-957c-a650c42ea4b8",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/check-runs/43293530357",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/actions/runs/15388868554/job/43293530357",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/actions/runs/15388868554/job/43293530357",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2025-05-28T12:52:13Z",
-      "completed_at": "2025-05-28T12:52:21Z",
+      "started_at": "2025-06-02T09:33:39Z",
+      "completed_at": "2025-06-02T09:33:47Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/check-runs/43040028309/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/check-runs/43293530357/annotations"
       },
       "check_suite": {
-        "id": 39249808459
+        "id": 39463608123
       },
       "app": {
         "id": 15368,
