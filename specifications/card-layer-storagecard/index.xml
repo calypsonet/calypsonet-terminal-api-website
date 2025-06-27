@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Card Layer - Storage Card Specification | Smartcard-based Ticketing Terminal APIs by the Calypso Networks Association</title><link>https://terminal-api.calypsonet.org/specifications/card-layer-storagecard/</link><atom:link href="https://terminal-api.calypsonet.org/specifications/card-layer-storagecard/index.xml" rel="self" type="application/rss+xml"/><description>Card Layer - Storage Card Specification</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Card Layer - Storage Card Specification</title><link>https://terminal-api.calypsonet.org/specifications/card-layer-storagecard/</link></image><item><title>Storage Card API (external)</title><link>https://terminal-api.calypsonet.org/specifications/card-layer-storagecard/storagecard-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/card-layer-storagecard/storagecard-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
-Latest version &lt;strong>&lt;code>0.1.0&lt;/code>&lt;/strong>
+Latest version &lt;strong>&lt;code>0.2.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -23,6 +23,6 @@ A transaction with a storage card is fully managed through the &lt;code>StorageC
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/0.1.0/api_class_diagram.svg" alt="Storage Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/0.2.0/api_class_diagram.svg" alt="Storage Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p></description></item></channel></rss>

@@ -66,14 +66,14 @@
   "releases_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/releases{/id}",
   "deployments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/deployments",
   "created_at": "2025-05-06T15:39:53Z",
-  "updated_at": "2025-06-02T14:21:55Z",
-  "pushed_at": "2025-06-02T14:22:04Z",
+  "updated_at": "2025-06-27T08:27:09Z",
+  "pushed_at": "2025-06-27T08:27:16Z",
   "git_url": "git://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api.git",
   "ssh_url": "git@github.com:calypsonet/calypsonet-terminal-storagecard-uml-api.git",
   "clone_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api.git",
   "svn_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api",
   "homepage": null,
-  "size": 49,
+  "size": 61,
   "stargazers_count": 0,
   "watchers_count": 0,
   "language": null,
@@ -139,5 +139,5 @@
     "site_admin": false
   },
   "network_count": 0,
-  "subscribers_count": 1
+  "subscribers_count": 2
 }
