@@ -30,6 +30,7 @@
   "target_commitish": "main",
   "name": "1.0.0",
   "draft": false,
+  "immutable": false,
   "prerelease": false,
   "created_at": "2021-10-06T08:06:22Z",
   "published_at": "2021-10-06T09:11:03Z",

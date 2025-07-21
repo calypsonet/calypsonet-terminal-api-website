@@ -2,16 +2,16 @@
   {
     "name": "doc",
     "commit": {
-      "sha": "422f12acddfc36681b331c91d7bd090cd1743022",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/commits/422f12acddfc36681b331c91d7bd090cd1743022"
+      "sha": "b9a818e4d0dd74e9a721cb9003e49601359d3f2e",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/commits/b9a818e4d0dd74e9a721cb9003e49601359d3f2e"
     },
     "protected": false
   },
   {
     "name": "main",
     "commit": {
-      "sha": "7f0c84c26db176594c65a9ff8ef87bd521ee9bb7",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/commits/7f0c84c26db176594c65a9ff8ef87bd521ee9bb7"
+      "sha": "40811746704bb3941263bf556ad6d6422b4c7774",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/commits/40811746704bb3941263bf556ad6d6422b4c7774"
     },
     "protected": false
   }

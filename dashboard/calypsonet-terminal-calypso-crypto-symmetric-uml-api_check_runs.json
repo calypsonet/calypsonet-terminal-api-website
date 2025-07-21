@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 43293526408,
+      "id": 45031165501,
       "name": "publish-diagrams",
-      "node_id": "CR_kwDOIXzzjM8AAAAKFH7JiA",
-      "head_sha": "c1f2ff7f9183ff8f33f461d126816a019542f932",
-      "external_id": "dd439173-44d2-5139-935d-82cb9d6211de",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/check-runs/43293526408",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/actions/runs/15388867507/job/43293526408",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/actions/runs/15388867507/job/43293526408",
+      "node_id": "CR_kwDOIXzzjM8AAAAKfBEOPQ",
+      "head_sha": "03d00107a4fe0a6ebe2e84bd8d85a1a5f2f4cdc7",
+      "external_id": "ceb43456-7f08-5ce8-8931-070ebcac6c95",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/check-runs/45031165501",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/actions/runs/15967561127/job/45031165501",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/actions/runs/15967561127/job/45031165501",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2025-06-02T09:33:34Z",
-      "completed_at": "2025-06-02T09:33:42Z",
+      "started_at": "2025-06-30T08:14:39Z",
+      "completed_at": "2025-06-30T08:14:44Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/check-runs/43293526408/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/check-runs/45031165501/annotations"
       },
       "check_suite": {
-        "id": 39463605375
+        "id": 40912844388
       },
       "app": {
         "id": 15368,
