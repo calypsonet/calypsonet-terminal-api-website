@@ -1,12 +1,11 @@
 ---
 title: Terminal Compliance
 type: book
-toc: false
+toc: true
 weight: 10
 ---
 
 ## Ticketing Terminal Requirements
-
 To counteract the interoperability issues frequently encountered between ticketing terminal solutions and contactless smartcard products, [CNA](https://calypsonet.org/) has specified a set of requirements that need to be followed by the different software layers of ticketing terminals.
 These rules are specifically dedicated to 3 software layers, from the lowest to the highest level:
 - the [Reader Layer Requirements](https://calypsonet.org/reader-layer-requirements-200422/),
@@ -20,15 +19,14 @@ In the near future, CNA plans to offer a certification program for ticketing ter
 ## APIs compatibility with Terminal Requirements
 
 ### From Reader API version 2.0 & Calypso Card API version 2.0
-
 The ticketing terminal APIs enable the implementation of libraries that unconditionally fully comply with the ticketing terminal requirements of the reader and Calypso layers.
 
 ### Up to Reader API version 1.3 & Calypso Card API version 1.8
-
 The older ticketing terminal APIs can be implemented by libraries that can "generally" follow the terminal requirements of the reader and Calypso layers, but with a limitation on the localization of the card selection management.
 <br>On early versions of the Reader and Calypso APIs, the card selection was managed through the Calypso API instead of the Reader API.
 
-
+## Implementation compliance
+CNA offers a [guide to assist declarations of compliance](https://keyple-support.calypsonet.org/basics/compliance/) with terminal requirements for solutions based on [Eclipse Keyple](https://keyple.org/) libraries.
 
 
 
