@@ -25,6 +25,21 @@ For 2025, addition of an interface dedicated to the management of the new Calyps
 </thead>
 <tbody>
   <tr>
+    <td>2025/07/21</td>
+    <td>Storage Card API 0.3</td>
+    <td>
+    Initial version of API for reading and writing data blocks in a contactless memory ticket
+    </td>
+  </tr>
+  <tr>
+    <td>2024/11/29</td>
+    <td>Calypso Legacy SAM API 0.7</td>
+    <td>
+    <ul><li>Addition of secure write operations to personalize a legacy</li>
+    <li>New getters to retrieve SAM profile and work keys parameters</li></ul>
+    </td>
+  </tr>
+  <tr>
     <td rowspan="3">2024/04/11</td>
     <td>Calypso Card API 2.1.0</td>
     <td>
