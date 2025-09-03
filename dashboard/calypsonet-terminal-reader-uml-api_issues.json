@@ -53,6 +53,12 @@
       "completed": 0,
       "percent_completed": 0
     },
+    "issue_dependencies_summary": {
+      "blocked_by": 0,
+      "total_blocked_by": 0,
+      "blocking": 0,
+      "total_blocking": 0
+    },
     "body": "We got direct feedback from 3 companies that use the Reader API on ticket terminals and who have encountered the same issue with the reader.ObservableCardReader interface: the absence of the ability to set a time limit for card insertion detection.\r\n\r\n- Currently, the startCardDetection method can initiate a detection without a time limit, which means that terminals that need to limit the duration of a detection attempt have to manage this limit by adding a dedicated overlayer on top of the Reader API.\r\n\r\n- In some embedded devices, to save electrical energy, the reader solutions do not natively offer the possibility of detecting an insertion over an indefinite period (this is the case, for example, with the IOS NFC API).\r\n\r\n→ we therefore plan to add a parameter to limit the detection time of a card insertion in a future Reader API evolution.",
     "closed_by": null,
     "reactions": {

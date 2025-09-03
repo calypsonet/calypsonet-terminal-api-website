@@ -53,6 +53,12 @@
       "completed": 0,
       "percent_completed": 0
     },
+    "issue_dependencies_summary": {
+      "blocked_by": 0,
+      "total_blocked_by": 0,
+      "blocking": 0,
+      "total_blocking": 0
+    },
     "body": "The calypso.card.card.CalypsoCard interface doesn't offer a method for directly retrieving the current value of a card's transaction counter: this could be particularly useful for Basic-type products with a limited lifetime, in order to know the number of possible remaining transactions.\r\n\r\nCurrently, it is possible to retrieve the transaction counter value only if a secure session has just been closed, by parsing the audit data using calypso.card.transaction.TransactionManager.getTransactionAuditData()\r\n\r\n→ CNA thus plan to add in a future evolution of the Calypso Card API, a high-level method for directly recovering the transaction counter value.",
     "closed_by": null,
     "reactions": {
@@ -124,6 +130,12 @@
       "total": 0,
       "completed": 0,
       "percent_completed": 0
+    },
+    "issue_dependencies_summary": {
+      "blocked_by": 0,
+      "total_blocked_by": 0,
+      "blocking": 0,
+      "total_blocking": 0
     },
     "body": "The calypso.card.card.CalypsoCard interface can be used to check directly whether a card is a Prime HCE card (isHce() method).\r\n\r\n- In the general case, the getApplicationSerialNumber() method allows to retrieve the 8 bytes of a Calypso card serial, but in the case of an HCE application, this high-level interface only allows to recover the “SN Value” bytes, without the 2 bytes of SN Header data (HCE token validity data).\r\n\r\n- A temporary workaround for retrieving HCE validity data is to call the reader.selection.spi.IsoSmartCard.getSelectApplicationResponse() method.\r\n\r\n→ CNA thus plan to add in a future evolution of the Calypso Card API, a high-level method for directly recovering the validity information from an HCE token.",
     "closed_by": null,
