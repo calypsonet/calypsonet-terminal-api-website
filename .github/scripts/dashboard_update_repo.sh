@@ -15,5 +15,4 @@ echo -n "[\"$repository_name\","$doc_flag","$ci_status_flag"]" >> dashboard/repo
 ../.github/scripts/dashboard_update_repo_curl.sh $token $repository_name "/issues" "issues"
 ../.github/scripts/dashboard_update_repo_curl.sh $token $repository_name "/pulls" "pulls"
 ../.github/scripts/dashboard_update_repo_curl.sh $token $repository_name "/releases/latest" "releases_latest"
-../.github/scripts/dashboard_update_repo_curl.sh $token $repository_name "/tags" "tags"
 ../.github/scripts/dashboard_update_repo_curl.sh $token $repository_name "/commits/"$branch_name"/check-runs" "check_runs"

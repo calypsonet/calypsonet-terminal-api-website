@@ -127,7 +127,6 @@ loadProjectDashboard = async function() {
         await getPullData(rowIndex, owner, project[0]);
         await getLatestRelease(rowIndex, owner, project[0]);
         await getReleaseDate(rowIndex, owner, project[0]);
-        await getLatestTag(rowIndex, owner, project[0]);
         setStatus(rowIndex, owner, project[0]);
 
         // debug
@@ -170,15 +169,6 @@ loadProjectDashboard = async function() {
             if (json.tag_name !== undefined) {
                 cell.innerHTML = formatDate(json.published_at);
             }
-        } catch (err) {
-        }
-    }
-
-    async function getLatestTag(rowIndex, owner, repos) {
-        let cell = document.getElementById("latest-tag-" + rowIndex);
-        try {
-            const json = await getJsonRepositoryData(repos, "_tags");
-            cell.innerHTML = json[0].name;
         } catch (err) {
         }
     }
