@@ -1,5 +1,83 @@
 [
   {
+    "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/4",
+    "repository_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api",
+    "labels_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/4/labels{/name}",
+    "comments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/4/comments",
+    "events_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/4/events",
+    "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/4",
+    "id": 3425497227,
+    "node_id": "I_kwDOHZ2RGc7MLPCL",
+    "number": 4,
+    "title": "Feature Suggestion/Request: PKI session validation out of reader process",
+    "user": {
+      "login": "lbureau-billettiqueservices",
+      "id": 102300863,
+      "node_id": "U_kgDOBhj8vw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/102300863?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lbureau-billettiqueservices",
+      "html_url": "https://github.com/lbureau-billettiqueservices",
+      "followers_url": "https://api.github.com/users/lbureau-billettiqueservices/followers",
+      "following_url": "https://api.github.com/users/lbureau-billettiqueservices/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lbureau-billettiqueservices/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lbureau-billettiqueservices/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lbureau-billettiqueservices/subscriptions",
+      "organizations_url": "https://api.github.com/users/lbureau-billettiqueservices/orgs",
+      "repos_url": "https://api.github.com/users/lbureau-billettiqueservices/repos",
+      "events_url": "https://api.github.com/users/lbureau-billettiqueservices/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lbureau-billettiqueservices/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2025-09-17T09:39:21Z",
+    "updated_at": "2025-09-17T09:39:21Z",
+    "closed_at": null,
+    "author_association": "NONE",
+    "type": null,
+    "active_lock_reason": null,
+    "sub_issues_summary": {
+      "total": 0,
+      "completed": 0,
+      "percent_completed": 0
+    },
+    "issue_dependencies_summary": {
+      "blocked_by": 0,
+      "total_blocked_by": 0,
+      "blocking": 0,
+      "total_blocking": 0
+    },
+    "body": "Hello everyone.\n\nThe current PKI API can only ensure the validity of a PKI session while it is happening.\nI was wondering if it was possible to think of a PKI API that could ensure the validity of a PKI Session after it already happened.\n\nI have few use cases in mind, but i'll leave you guys judging on their value:\n \n* Missing certificates for analysis example: Card analysis tool didn't have all the necessary public certificates at the time to ensure the validity of the session. The tool saves the session ( open session, all apdus, close session ) as well as cardCert/ CACert. Later, the tool has new certificates to use, and replays the session to finally verify the session.\n  * This obviously does not work for ticketing devices themselves.\n* Low cost/low intelligence devices with async workflows: We have some low cost devices that runs a simple session context, read the content of the card, then sends the data to a \"master\" device for analysis. These devices might not have the memory to save the certificates and/or the processing power to validate the session in a reasonable time.\n* Improved trust for dump exchanges: when actors exchange card dump data, the pki session could be verified for an added layer of trust.\n* ABT context: i don't have a specific idea in mind, but i'm starting to think that the PKI session could serve as some kind of authenticator in the context of ABT messages from the Calypso for ABT in-progress specfication.\n\nWhat do you guys think about this?",
+    "closed_by": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/4/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "timeline_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/4/timeline",
+    "performed_via_github_app": null,
+    "state_reason": null
+  },
+  {
     "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/3",
     "repository_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api",
     "labels_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/issues/3/labels{/name}",
