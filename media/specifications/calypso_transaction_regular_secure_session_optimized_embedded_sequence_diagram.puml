@@ -41,10 +41,10 @@ hide <<grey>> stereotype
 actor "Ticketing Application" as app #gold
 participant "Reader API" as rapi #pink
 participant "Calypso\nCard API" as capi #lightBlue
-participant "Calypso Card\nReader" as cardReader #lightBlue
+participant "Calypso Card Reader\n\n**dynamic** presence" as cardReader #lightBlue
 boundary "**Card**" as card #lightBlue
 participant "Calypso SAM\nAPI" as sapi #lightGreen
-participant "Calypso SAM\nReader" as samReader #lightGreen
+participant "Calypso SAM Reader\n\n**static** presence" as samReader #lightGreen
 boundary "**SAM**" as sam #lightGreen
 
 activate app #gold
@@ -53,6 +53,11 @@ activate app #gold
 == Access Control embedded Terminal settings ==
 
 app->app: **set** Calypso SAM lib
+
+hnote over samReader #Orange
+reader in state:
+**Card Inserted**
+endhnote
 
 app->sapi: <font color=red>**prepare**</font> card selection:\n\t- filter by Power-On data
 activate sapi  #lightGreen
@@ -164,14 +169,18 @@ endhnote
 
 cardReader->card: select application (aid)
 card-->cardReader: [card FCI]
-cardReader->cardReader: checks invalidation status
 
 cardReader--[#0000FF]>rapi: receive selection response
 deactivate cardReader
 
+rapi->rapi: checks invalidation status
+rnote right rapi #Thistle
+️⚠️if (card invalidated) → app not notified of card selection
+close channel & wait for card removal from reader
+endrnote
+
 rapi-->app: **notify** scheduled card selections responsee
 deactivate rapi
-
 
 app->rapi: <font color=red>**parse**</font> scheduled card selections response
 activate rapi  #pink
@@ -181,15 +190,16 @@ deactivate rapi
 app->capi: **cast** Calypso card
 activate capi  #lightBlue
 capi-->app: [Calypso card image:\n\t- identification data\n\t- invalidation status]
-
 deactivate capi
+
+app->app: **get** card file structure reference\nfrom card image
 
 == Card secure transaction ==
 
 app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
 
 note over capi
-    Only reads data inside the session.
+    Only reads ticketing data inside the session.
 end note
 
 
@@ -222,6 +232,8 @@ deactivate cardReader
 capi-->app: [Calypso card image:\n\t- identification data\n\t- invalidation status\n\t- environment data\n\t- ratification status]
 deactivate capi
 
+app->app: **get** ticketing environment data\nfrom card image
+
 app->capi: <font color=red>**prepare**</font> card transaction:\n\t- read last event
 activate capi  #lightBlue
 capi-->app
@@ -244,11 +256,13 @@ deactivate cardReader
 capi-->app: [Calypso card image:\n\t- identification data\n\t- invalidation status\n\t- environment data\n\t- ratification status\n\t- last event data]
 deactivate capi
 
+app->app: **get** ticketing last event data\nfrom card image
 app->app: anti-passback management\n& communication failure recovery
 
 rnote right app #Thistle
 ️⚠️if (last event occurred shorter than the anti-pass delay)
-&& (card status is ratified) → decline card transaction
+&& (card status is ratified) → decline card transaction,
+close channel & wait for card removal from reader
 
 ️⚠️if (last event occurred shorter than the anti-pass delay)
 && (card status is none-ratified) → manage recovery transaction
