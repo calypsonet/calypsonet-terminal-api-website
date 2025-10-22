@@ -5,7 +5,7 @@ pageFooterContainer.removeClass("container");
 pageFooterContainer.css("padding-left", "0");
 pageFooterContainer.css("padding-right", "0");
 
-// Load the projects dashboard table content
+// Load the project dashboard table content
 loadProjectDashboard = async function() {
 
     let rootUrl = window.location.href + "../";
@@ -42,7 +42,6 @@ loadProjectDashboard = async function() {
         a.appendChild(linkText);
         a.title = json.name;
         a.href = json.html_url;
-        a.target = "_blank";
         cell.appendChild(a);
 
         // column doc
@@ -269,3 +268,14 @@ loadProjectDashboard = async function() {
             });
     })();
 }
+
+// Additional automations
+document.addEventListener("DOMContentLoaded", () => {
+    // Select all external links (http) except those pointing to terminal-api.calypsonet.org
+    // and add target="_blank" and rel="noopener noreferrer" for security and privacy
+    const externalLinks = document.querySelectorAll('a[href^="http"]:not([href*="//terminal-api.calypsonet.org"])');
+    externalLinks.forEach(link => {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+    });
+});

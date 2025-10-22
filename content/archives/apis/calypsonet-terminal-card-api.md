@@ -51,7 +51,7 @@ up-to-date documentation.
 {{% callout note %}}
 **`1.0.0`**
 <span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-java-api/)</span>
-<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/)</span>
+<span class="component-metadata">{{< icon name="sitemap" pack="fas" >}} [UML](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-card-java-api/)</span>
 <span class="component-metadata">{{< icon name="exchange-alt" pack="fas" >}} [Changelog](https://github.com/calypsonet/calypsonet-terminal-card-java-api/blob/main/CHANGELOG.md)</span>
 {{% /callout %}}
@@ -84,6 +84,6 @@ implementation("org.calypsonet.terminal:calypsonet-terminal-card-java-api:1.0.0"
 {{% callout note %}}
 **`1.0.0`**
 <span class="component-metadata">{{< icon name="book" pack="fas" >}} [API documentation](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-cpp-api/)</span>
-<span class="component-metadata">{{< icon name="project-diagram" pack="fas" >}} [UML](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/)</span>
+<span class="component-metadata">{{< icon name="sitemap" pack="fas" >}} [UML](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-card-cpp-api/)</span>
 {{% /callout %}}

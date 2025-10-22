@@ -10,7 +10,7 @@ weight: 2
 ## Current work and future developments
 
 For 2025, addition of an interface dedicated to the management of the new Calypso "OpenSAM" secure module.
- - No impact on the secure card transaction thanks to the abstraction provided by the Calypso Symmetric Crypto interface.
+ - No impact on the secure card transaction thanks to the abstraction provided by the Calypso Crypto Symmetric interface.
  - OpenSAM selection and personalization functions.
 
 ## History of developments
