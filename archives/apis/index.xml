@@ -160,7 +160,7 @@ up-to-date documentation.
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-java-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-java-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -187,7 +187,10 @@ aria-controls="tabs-5-2" aria-selected="false">
 Maven
 &lt;/a>
 &lt;/li>&lt;/ul>
-&lt;div class="bd-clipboard">&lt;button type="button" class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onClick="javascript:copyTabContentToClipboard('tabs-5', this);">Copy&lt;/button>&lt;/div>
+&lt;div class="bd-clipboard">
+&lt;button type="button" class="btn btn-clipboard btn-outline-light" title="Copy to clipboard"
+onClick="javascript:copyTabContentToClipboard('tabs-5', this);">Copy&lt;/button>
+&lt;/div>
 &lt;div class="tab-content" id="tabs-5-content">&lt;div class="tab-pane fade show active"
 id="tabs-5-0" role="tabpanel" aria-labelled-by="tabs-5-0-tab">
 &lt;div class="code relative" id="">
@@ -221,7 +224,7 @@ id="tabs-5-2" role="tabpanel" aria-labelled-by="tabs-5-2-tab">
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-cpp-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
@@ -270,7 +273,7 @@ up-to-date documentation.
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-java-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-java-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -297,7 +300,10 @@ aria-controls="tabs-3-2" aria-selected="false">
 Maven
 &lt;/a>
 &lt;/li>&lt;/ul>
-&lt;div class="bd-clipboard">&lt;button type="button" class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onClick="javascript:copyTabContentToClipboard('tabs-3', this);">Copy&lt;/button>&lt;/div>
+&lt;div class="bd-clipboard">
+&lt;button type="button" class="btn btn-clipboard btn-outline-light" title="Copy to clipboard"
+onClick="javascript:copyTabContentToClipboard('tabs-3', this);">Copy&lt;/button>
+&lt;/div>
 &lt;div class="tab-content" id="tabs-3-content">&lt;div class="tab-pane fade show active"
 id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab">
 &lt;div class="code relative" id="">
@@ -331,7 +337,7 @@ id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-cpp-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-cpp-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
@@ -484,7 +490,7 @@ up-to-date documentation.
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-java-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -511,7 +517,10 @@ aria-controls="tabs-13-2" aria-selected="false">
 Maven
 &lt;/a>
 &lt;/li>&lt;/ul>
-&lt;div class="bd-clipboard">&lt;button type="button" class="btn btn-clipboard btn-outline-light" title="Copy to clipboard" onClick="javascript:copyTabContentToClipboard('tabs-13', this);">Copy&lt;/button>&lt;/div>
+&lt;div class="bd-clipboard">
+&lt;button type="button" class="btn btn-clipboard btn-outline-light" title="Copy to clipboard"
+onClick="javascript:copyTabContentToClipboard('tabs-13', this);">Copy&lt;/button>
+&lt;/div>
 &lt;div class="tab-content" id="tabs-13-content">&lt;div class="tab-pane fade show active"
 id="tabs-13-0" role="tabpanel" aria-labelled-by="tabs-13-0-tab">
 &lt;div class="code relative" id="">
@@ -545,7 +554,7 @@ id="tabs-13-2" role="tabpanel" aria-labelled-by="tabs-13-2-tab">
 &lt;span class="component-metadata">
 &lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-cpp-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-project-diagram pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
