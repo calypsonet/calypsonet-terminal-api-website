@@ -42,6 +42,7 @@ loadProjectDashboard = async function() {
         a.appendChild(linkText);
         a.title = json.name;
         a.href = json.html_url;
+        a.target = "_blank";
         cell.appendChild(a);
 
         // column doc
