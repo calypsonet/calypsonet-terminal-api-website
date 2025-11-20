@@ -230,7 +230,7 @@ id="tabs-5-2" role="tabpanel" aria-labelled-by="tabs-5-2-tab">
 &lt;/div>
 &lt;/div></description></item><item><title>Calypso Card API (external)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-card-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
-Latest version &lt;strong>&lt;code>2.1.2&lt;/code>&lt;/strong>
+Latest version &lt;strong>&lt;code>2.2.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -254,7 +254,7 @@ A transaction with a Calypso card is fully managed through the &lt;code>CardTran
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/2.1.2/api_class_diagram.svg" alt="Calypso Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/2.2.0/api_class_diagram.svg" alt="Calypso Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;br>
@@ -381,7 +381,7 @@ Calypso Card API - Stored Value transaction inside a secure session - Sequence D
 Calypso Card API - Multiple secure session - Sequence Diagram
 &lt;/figcaption>&lt;/figure></description></item><item><title>Reader API (external)</title><link>https://terminal-api.calypsonet.org/specifications/reader-layer/reader-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/reader-layer/reader-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
-Latest version &lt;strong>&lt;code>2.0.1&lt;/code>&lt;/strong>
+Latest version &lt;strong>&lt;code>2.1.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -407,7 +407,7 @@ configuring readers and process card selection scenarios.&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/2.0.1/api_class_diagram.svg" alt="Reader API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/2.1.0/api_class_diagram.svg" alt="Reader API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h3 id="reader-identification">Reader identification&lt;/h3>
@@ -520,7 +520,7 @@ However, some observable readers may additionally have the ability to notify rem
 &lt;h2 id="limitations--constraints">Limitations &amp;amp; constraints&lt;/h2>
 &lt;p>On a specific card reader, the &lt;strong>Reader API&lt;/strong> allows to address only a &lt;strong>single logical channel&lt;/strong>.&lt;/p></description></item><item><title>Storage Card API (external)</title><link>https://terminal-api.calypsonet.org/specifications/card-layer-storagecard/storagecard-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/card-layer-storagecard/storagecard-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
-Latest version &lt;strong>&lt;code>0.3.0&lt;/code>&lt;/strong>
+Latest version &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -543,7 +543,7 @@ A transaction with a storage card is fully managed through the &lt;code>StorageC
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/0.3.0/api_class_diagram.svg" alt="Storage Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/1.0.0/api_class_diagram.svg" alt="Storage Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p></description></item><item><title>Card API (internal)</title><link>https://terminal-api.calypsonet.org/specifications/reader-layer/card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/reader-layer/card-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
@@ -692,7 +692,7 @@ id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;/div>
 &lt;/div></description></item><item><title>Calypso Legacy SAM API (external)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-legacysam-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-legacysam-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
-Latest version &lt;strong>&lt;code>0.7.0&lt;/code>&lt;/strong>
+Latest version &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -717,7 +717,7 @@ A transaction with a Calypso SAM is fully managed through one of the &lt;code>LS
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/0.7.0/api_class_diagram.svg" alt="Calypso Crypto Legacy SAM API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/1.0.0/api_class_diagram.svg" alt="Calypso Crypto Legacy SAM API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p></description></item><item><title>Calypso Crypto Symmetric API (internal)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-symmetric-crypto-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-symmetric-crypto-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>

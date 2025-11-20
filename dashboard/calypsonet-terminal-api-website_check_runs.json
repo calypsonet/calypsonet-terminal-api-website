@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 53567290677,
+      "id": 55915305192,
       "name": "deploy",
-      "node_id": "CR_kwDOGPbtzc8AAAAMeNv9NQ",
-      "head_sha": "d408561108eb445d87df1a3afab0d18ff03f51be",
-      "external_id": "fca2e0c3-729d-508f-bd7b-ccbf48621209",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/53567290677",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/18774921229/job/53567290677",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/18774921229/job/53567290677",
+      "node_id": "CR_kwDOGPbtzc8AAAANBM_Y6A",
+      "head_sha": "6c723d4af9ae6a4b399537966e61ff3635a5870e",
+      "external_id": "b119d7b1-7a61-516f-b2c6-472a375808fd",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/55915305192",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/19531489390/job/55915305192",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/19531489390/job/55915305192",
       "status": "in_progress",
       "conclusion": null,
-      "started_at": "2025-10-24T08:59:03Z",
+      "started_at": "2025-11-20T09:08:59Z",
       "completed_at": null,
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/53567290677/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/55915305192/annotations"
       },
       "check_suite": {
-        "id": 48330351087
+        "id": 50362054220
       },
       "app": {
         "id": 15368,
@@ -55,10 +55,11 @@
         "external_url": "https://help.github.com/en/actions",
         "html_url": "https://github.com/apps/github-actions",
         "created_at": "2018-07-30T09:30:17Z",
-        "updated_at": "2025-03-07T16:35:00Z",
+        "updated_at": "2025-11-12T15:38:39Z",
         "permissions": {
           "actions": "write",
           "administration": "read",
+          "artifact_metadata": "write",
           "attestations": "write",
           "checks": "write",
           "contents": "write",
@@ -95,9 +96,6 @@
           "merge_group",
           "milestone",
           "page_build",
-          "project",
-          "project_card",
-          "project_column",
           "public",
           "pull_request",
           "pull_request_review",

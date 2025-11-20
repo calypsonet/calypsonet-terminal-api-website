@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reader Layer Specification | Smartcard-based Ticketing Terminal APIs by the Calypso Networks Association</title><link>https://terminal-api.calypsonet.org/specifications/reader-layer/</link><atom:link href="https://terminal-api.calypsonet.org/specifications/reader-layer/index.xml" rel="self" type="application/rss+xml"/><description>Reader Layer Specification</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Reader Layer Specification</title><link>https://terminal-api.calypsonet.org/specifications/reader-layer/</link></image><item><title>Reader API (external)</title><link>https://terminal-api.calypsonet.org/specifications/reader-layer/reader-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/reader-layer/reader-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
-Latest version &lt;strong>&lt;code>2.0.1&lt;/code>&lt;/strong>
+Latest version &lt;strong>&lt;code>2.1.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -26,7 +26,7 @@ configuring readers and process card selection scenarios.&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/2.0.1/api_class_diagram.svg" alt="Reader API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/2.1.0/api_class_diagram.svg" alt="Reader API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h3 id="reader-identification">Reader identification&lt;/h3>
