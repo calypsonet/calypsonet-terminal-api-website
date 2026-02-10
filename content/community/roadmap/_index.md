@@ -9,7 +9,9 @@ weight: 2
 
 ## Current work and future developments
 
-For 2025, addition of an interface dedicated to the management of the new Calypso "OpenSAM" secure module.
+In order to support the personalization of the Calypso Prime applet and manage the initialization of OpenSAM solutions, we plan to offer high-level APIs to operate secure channels that comply with the ['GlobalPlatform'](https://globalplatform.org/specs-library/?filter-committee=se) standard.
+
+Possibly late 2026, addition of an interface dedicated to the management of the new Calypso "OpenSAM" secure module.
  - No impact on the secure card transaction thanks to the abstraction provided by the Calypso Crypto Symmetric interface.
  - OpenSAM selection and personalization functions.
 
@@ -25,10 +27,28 @@ For 2025, addition of an interface dedicated to the management of the new Calyps
 </thead>
 <tbody>
   <tr>
+    <td>2025/12/05</td>
+    <td>Storage Card API 1.1</td>
+    <td>
+    Added support for [‘Mifare Classic’](https://www.nxp.com/products/rfid-nfc/mifare-hf/mifare-classic:MC_41863) contactless tickets.
+    </td>
+  </tr>
+  <tr>
+    <td>2025/11/20</td>
+    <td><ul><li>Reader API 2.1</li>
+      <li>Calypso Card API 2.2</li>
+      <li>Calypso Crypto Legacy SAM API 1.0</li>
+      <li>Storage Card API 1.0</li></ul>
+    </td>
+    <td>
+    Refactoring to standardize the way that all “card” solutions request APDU command exchanges or close the communication channel at the end of a transaction: centralized ‘processCommands’ method at the Reader API level.
+    </td>
+  </tr>
+  <tr>
     <td>2025/07/21</td>
     <td>Storage Card API 0.3</td>
     <td>
-    Initial version of API for reading and writing data blocks in a contactless memory ticket
+    Initial version of API for reading and writing data blocks in a contactless memory tickets: support of the ['Mifare UltraLight'](https://www.nxp.com/products/rfid-nfc/mifare-hf/mifare-ultralight:MC_53452) from NXP, the ['ST25'](https://www.st.com/en/nfc/st25-nfc-rfid-tags-and-readers.html), CTS256 & CTM512 from STMicroelectronics.  
     </td>
   </tr>
   <tr>
