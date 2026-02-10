@@ -30,7 +30,7 @@ Possibly late 2026, addition of an interface dedicated to the management of the 
     <td>2025/12/05</td>
     <td>Storage Card API 1.1</td>
     <td>
-    Added support for [‘Mifare Classic’](https://www.nxp.com/products/rfid-nfc/mifare-hf/mifare-classic:MC_41863) contactless tickets.
+    Added support for <a href="https://www.nxp.com/products/rfid-nfc/mifare-hf/mifare-classic:MC_41863">‘Mifare Classic’</a> contactless tickets.
     </td>
   </tr>
   <tr>
@@ -48,7 +48,7 @@ Possibly late 2026, addition of an interface dedicated to the management of the 
     <td>2025/07/21</td>
     <td>Storage Card API 0.3</td>
     <td>
-    Initial version of API for reading and writing data blocks in a contactless memory tickets: support of the ['Mifare UltraLight'](https://www.nxp.com/products/rfid-nfc/mifare-hf/mifare-ultralight:MC_53452) from NXP, the ['ST25'](https://www.st.com/en/nfc/st25-nfc-rfid-tags-and-readers.html), CTS256 & CTM512 from STMicroelectronics.  
+    Initial version of API for reading and writing data blocks in a contactless memory tickets: support of the <a href="https://www.nxp.com/products/rfid-nfc/mifare-hf/mifare-ultralight:MC_53452">'Mifare UltraLight'</a> from NXP, the <a href="https://www.st.com/en/nfc/st25-nfc-rfid-tags-and-readers.html">'ST25'</a>, CTS256 & CTM512 from STMicroelectronics.  
     </td>
   </tr>
   <tr>
