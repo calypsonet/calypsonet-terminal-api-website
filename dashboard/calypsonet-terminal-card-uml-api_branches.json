@@ -14,5 +14,13 @@
       "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-uml-api/commits/49aa6c908fcd3245f665aa26f48bd79e41074298"
     },
     "protected": false
+  },
+  {
+    "name": "response_time",
+    "commit": {
+      "sha": "160ef489ff2e91014aad4950a721054068bd7e86",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-uml-api/commits/160ef489ff2e91014aad4950a721054068bd7e86"
+    },
+    "protected": false
   }
 ]

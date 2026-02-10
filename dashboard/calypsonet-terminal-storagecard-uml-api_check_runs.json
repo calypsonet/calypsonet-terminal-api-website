@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 55914675629,
+      "id": 62729804201,
       "name": "publish-diagrams",
-      "node_id": "CR_kwDOOlf9AM8AAAANBMY9rQ",
-      "head_sha": "62dbd9e9088d9ce4ae895dffaf43947f120f8d3e",
-      "external_id": "bdb66b32-7a90-553a-906f-095505c140f1",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/check-runs/55914675629",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/actions/runs/19531293113/job/55914675629",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/actions/runs/19531293113/job/55914675629",
+      "node_id": "CR_kwDOOlf9AM8AAAAOmvzZqQ",
+      "head_sha": "be8413c3453ffb182473c89046900db6f3199bef",
+      "external_id": "b3a1c9d1-c767-5c87-a984-99b9b4c92036",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/check-runs/62729804201",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/actions/runs/21745365404/job/62729804201",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/actions/runs/21745365404/job/62729804201",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2025-11-20T09:01:56Z",
-      "completed_at": "2025-11-20T09:02:05Z",
+      "started_at": "2026-02-06T09:21:21Z",
+      "completed_at": "2026-02-06T09:21:31Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/check-runs/55914675629/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/check-runs/62729804201/annotations"
       },
       "check_suite": {
-        "id": 50361515471
+        "id": 56597848952
       },
       "app": {
         "id": 15368,
@@ -55,7 +55,7 @@
         "external_url": "https://help.github.com/en/actions",
         "html_url": "https://github.com/apps/github-actions",
         "created_at": "2018-07-30T09:30:17Z",
-        "updated_at": "2025-11-12T15:38:39Z",
+        "updated_at": "2025-12-02T18:13:15Z",
         "permissions": {
           "actions": "write",
           "administration": "read",
@@ -63,6 +63,7 @@
           "attestations": "write",
           "checks": "write",
           "contents": "write",
+          "copilot_requests": "write",
           "deployments": "write",
           "discussions": "write",
           "issues": "write",
