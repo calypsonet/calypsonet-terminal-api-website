@@ -67,7 +67,7 @@
   "deployments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-docs/deployments",
   "created_at": "2025-04-18T08:34:47Z",
   "updated_at": "2025-05-27T10:58:02Z",
-  "pushed_at": "2026-02-06T09:21:46Z",
+  "pushed_at": "2026-02-20T17:10:30Z",
   "git_url": "git://github.com/calypsonet/calypsonet-terminal-api-docs.git",
   "ssh_url": "git@github.com:calypsonet/calypsonet-terminal-api-docs.git",
   "clone_url": "https://github.com/calypsonet/calypsonet-terminal-api-docs.git",
@@ -98,6 +98,8 @@
   "allow_forking": true,
   "is_template": false,
   "web_commit_signoff_required": false,
+  "has_pull_requests": true,
+  "pull_request_creation_policy": "all",
   "topics": [
 
   ],

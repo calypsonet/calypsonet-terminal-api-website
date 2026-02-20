@@ -520,7 +520,7 @@ However, some observable readers may additionally have the ability to notify rem
 &lt;h2 id="limitations--constraints">Limitations &amp;amp; constraints&lt;/h2>
 &lt;p>On a specific card reader, the &lt;strong>Reader API&lt;/strong> allows to address only a &lt;strong>single logical channel&lt;/strong>.&lt;/p></description></item><item><title>Storage Card API (external)</title><link>https://terminal-api.calypsonet.org/specifications/card-layer-storagecard/storagecard-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/card-layer-storagecard/storagecard-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
-Latest version &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
+Latest version &lt;strong>&lt;code>1.1.1&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
 &lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
@@ -543,7 +543,7 @@ A transaction with a storage card is fully managed through the &lt;code>StorageC
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/1.0.0/api_class_diagram.svg" alt="Storage Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/1.1.1/api_class_diagram.svg" alt="Storage Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p></description></item><item><title>Card API (internal)</title><link>https://terminal-api.calypsonet.org/specifications/reader-layer/card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/reader-layer/card-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
