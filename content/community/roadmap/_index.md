@@ -27,6 +27,13 @@ Possibly late 2026, addition of an interface dedicated to the management of the 
 </thead>
 <tbody>
   <tr>
+    <td>2026/03/05</td>
+    <td>Generic Card API 1.0</td>
+    <td>
+    
+    </td>
+  </tr>
+  <tr>
     <td>2025/12/05</td>
     <td>Storage Card API 1.1</td>
     <td>
