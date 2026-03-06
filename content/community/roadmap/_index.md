@@ -30,7 +30,7 @@ Possibly late 2026, addition of an interface dedicated to the management of the 
     <td>2026/03/05</td>
     <td>Generic Card API 1.0</td>
     <td>
-    Initial version. Move APIs from Keyple Card Generic to Keypop Generic Card API.
+    Added support for Generic card
     </td>
   </tr>
   <tr>
