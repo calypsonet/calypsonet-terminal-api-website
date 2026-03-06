@@ -30,7 +30,7 @@ Possibly late 2026, addition of an interface dedicated to the management of the 
     <td>2026/03/05</td>
     <td>Generic Card API 1.0</td>
     <td>
-    Added support for Generic card
+    Added support for generic cards.
     </td>
   </tr>
   <tr>
