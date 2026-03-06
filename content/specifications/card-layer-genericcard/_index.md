@@ -8,4 +8,13 @@ weight: 40
 
 <br>
 
+The diagram below shows the dependencies between the client application, the certifiable framework components and the
+terminal APIs:
+
 // TODO - add draw io diagram
+
+Key points:
+* **Independent Lifecycle:** Each API follows its own distinct lifecycle.
+* **Interface-Exclusive:** APIs exclusively consist of interfaces.
+* **Public APIs:** Some APIs are intended to be used by application developers.
+* **Internal Usage:** Some APIs are dedicated to internal use, and intended to developers of specific implementations.
