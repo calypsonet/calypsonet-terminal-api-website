@@ -33,6 +33,10 @@ fi
 if [ $? -eq 0 ]; then
   exit 0
 fi
+./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-genericcard-uml-api
+if [ $? -eq 0 ]; then
+  exit 0
+fi
 ./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-card-java-api
 if [ $? -eq 0 ]; then
   exit 0
