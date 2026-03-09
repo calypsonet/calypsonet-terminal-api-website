@@ -22,6 +22,8 @@ echo "," >> dashboard/repository_list.json
 echo "," >> dashboard/repository_list.json
 ../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-storagecard-uml-api main true false
 echo "," >> dashboard/repository_list.json
+../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-genericcard-uml-api main true false
+echo "," >> dashboard/repository_list.json
 ../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-card-java-api main true true
 echo "," >> dashboard/repository_list.json
 ../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-reader-java-api main true true

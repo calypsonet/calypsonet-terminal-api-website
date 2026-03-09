@@ -25,6 +25,9 @@ highest:
     - an interface to integrate [storage card processing]({{< ref "specifications/card-layer-storagecard" >}}) support:
       - [Storage Card API]({{< ref "specifications/card-layer-storagecard/storagecard-api" >}}): Performs transactions
           with storage cards.
+    - a low-level interface to integrate [generic card processing]({{< ref "specifications/card-layer-genericcard" >}}) support:
+      - [Generic Card API]({{< ref "specifications/card-layer-genericcard/genericcard-api" >}}): Performs transactions
+          with any type of card.
 
 ## Dedicated interfaces according to development targets
 
