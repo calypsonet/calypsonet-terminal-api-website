@@ -11,7 +11,7 @@ weight: 40
 The diagram below shows the dependencies between the client application, the certifiable framework components and the
 terminal APIs:
 
-{{< figure src="/media/specifications/Component_CardLayer_GenericCard_APIsDependenciesOverview.drawio.svg" caption="" numbered="" >}}
+{{< figure src="/media/specifications/Component_CardLayer_GenericCard_APIsDependenciesOverview.svg" caption="" numbered="" >}}
 
 Key points:
 * **Independent Lifecycle:** Each API follows its own distinct lifecycle.
