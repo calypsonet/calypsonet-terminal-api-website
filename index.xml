@@ -379,7 +379,29 @@ Calypso Card API - Stored Value transaction inside a secure session - Sequence D
 &lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_multiple_secure_session_sequence_diagram.svg" alt="Calypso Card API - Multiple secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso Card API - Multiple secure session - Sequence Diagram
-&lt;/figcaption>&lt;/figure></description></item><item><title>Reader API (external)</title><link>https://terminal-api.calypsonet.org/specifications/reader-layer/reader-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/reader-layer/reader-api/</guid><description>&lt;div class="alert alert-note">
+&lt;/figcaption>&lt;/figure></description></item><item><title>Generic Card API (external)</title><link>https://terminal-api.calypsonet.org/specifications/card-layer-genericcard/genericcard-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/card-layer-genericcard/genericcard-api/</guid><description>&lt;div class="alert alert-note">
+&lt;div>
+Latest version &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
+&lt;span class="component-metadata">
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-genericcard-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;span class="component-metadata">
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-genericcard-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;/div>
+&lt;/div>
+&lt;p>As part of the &lt;strong>Card Layer&lt;/strong>, the &lt;strong>Generic Card API&lt;/strong> provides low-level functionality for selecting and performing
+transactions with any type of card.&lt;/p>
+&lt;br>
+&lt;h2 id="interfaces">Interfaces&lt;/h2>
+&lt;p>The &lt;strong>Generic Card API&lt;/strong> provides the means to select a target card and then perform a transaction with the selected card.&lt;/p>
+&lt;p>To optimize the number of exchanges with a card reader, the &lt;strong>Generic Card API&lt;/strong> allows grouping the commands.
+A set of commands could be first &lt;strong>prepared&lt;/strong>, and then be &lt;strong>processed&lt;/strong> by a selected target during the transaction.
+A transaction with a generic card is fully managed through the &lt;code>CardTransactionManager&lt;/code> interface:&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-genericcard-uml-api/1.0.0/api_class_diagram.svg" alt="Generic Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p></description></item><item><title>Reader API (external)</title><link>https://terminal-api.calypsonet.org/specifications/reader-layer/reader-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/reader-layer/reader-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
 Latest version &lt;strong>&lt;code>2.1.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
