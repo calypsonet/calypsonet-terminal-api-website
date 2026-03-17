@@ -30,7 +30,7 @@ Possibly late 2026, addition of an interface dedicated to the management of the 
     <td>2026/03/17</td>
     <td>Storage Card API 1.2</td>
     <td>
-    Added method to read system block.
+    Added method to read ST25/SRT512 storage cards system block.
     </td>
   </tr>
   <tr>
