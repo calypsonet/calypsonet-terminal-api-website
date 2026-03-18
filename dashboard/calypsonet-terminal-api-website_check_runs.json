@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 66298444118,
+      "id": 67578660289,
       "name": "deploy",
-      "node_id": "CR_kwDOGPbtzc8AAAAPb7H5Vg",
-      "head_sha": "efea82a1231ec97f1e3a68649003f1c4e57c6627",
-      "external_id": "abf572af-be4a-5085-8bad-d40df534b4e9",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/66298444118",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/22856581017/job/66298444118",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/22856581017/job/66298444118",
+      "node_id": "CR_kwDOGPbtzc8AAAAPvACFwQ",
+      "head_sha": "70c56d0882f485473897b2f5e7d1f4f600fbbbba",
+      "external_id": "49abcd0d-2517-5fd9-8044-3e5124ecd287",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/67578660289",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/23247183039/job/67578660289",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-api-website/actions/runs/23247183039/job/67578660289",
       "status": "in_progress",
       "conclusion": null,
-      "started_at": "2026-03-09T13:48:51Z",
+      "started_at": "2026-03-18T13:31:23Z",
       "completed_at": null,
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/66298444118/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/check-runs/67578660289/annotations"
       },
       "check_suite": {
-        "id": 59882599870
+        "id": 61080572121
       },
       "app": {
         "id": 15368,

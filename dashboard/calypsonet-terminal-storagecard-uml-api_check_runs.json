@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 64319272324,
+      "id": 67577861512,
       "name": "publish-diagrams",
-      "node_id": "CR_kwDOOlf9AM8AAAAO-bo1hA",
-      "head_sha": "c6160aa79f2d96a0bd8407c5e3136faa79f83f93",
-      "external_id": "b2b74eef-01b4-56c3-ac74-40b199320a61",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/check-runs/64319272324",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/actions/runs/22233546809/job/64319272324",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/actions/runs/22233546809/job/64319272324",
+      "node_id": "CR_kwDOOlf9AM8AAAAPu_RViA",
+      "head_sha": "9673ff2a17404770f1e216127e6400d9f70527e5",
+      "external_id": "3ad94b3b-1b0c-5901-9e12-977da1cde301",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/check-runs/67577861512",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/actions/runs/23246961350/job/67577861512",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/actions/runs/23246961350/job/67577861512",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-02-20T17:10:06Z",
-      "completed_at": "2026-02-20T17:10:12Z",
+      "started_at": "2026-03-18T13:26:20Z",
+      "completed_at": "2026-03-18T13:26:27Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
-        "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/check-runs/64319272324/annotations"
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/check-runs/67577861512/annotations"
       },
       "check_suite": {
-        "id": 58048180515
+        "id": 61079697786
       },
       "app": {
         "id": 15368,
