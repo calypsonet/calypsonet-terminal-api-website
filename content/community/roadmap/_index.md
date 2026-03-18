@@ -26,6 +26,13 @@ Possibly late 2026, addition of an interface dedicated to the management of the 
   </tr>
 </thead>
 <tbody>
+<tr>
+    <td>2026/03/17</td>
+    <td>Storage Card API 1.2</td>
+    <td>
+    Added method to read ST25/SRT512 storage cards system block during selection.
+    </td>
+  </tr>
   <tr>
     <td>2026/03/05</td>
     <td>Generic Card API 1.0</td>
