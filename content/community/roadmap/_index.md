@@ -4,7 +4,7 @@ linktitle: Roadmap
 summary: Overview of past and future API Releases.
 type: book
 toc: false
-weight: 2
+weight: 20
 ---
 
 ## Current work and future developments
