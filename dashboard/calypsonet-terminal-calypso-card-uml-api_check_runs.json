@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 55914572450,
+      "id": 68736822117,
       "name": "publish-diagrams",
-      "node_id": "CR_kwDOHZ2RGc8AAAANBMSqog",
-      "head_sha": "7659934ba3dd02dee448a532277180329b3c9528",
-      "external_id": "51bace63-777d-59cf-aa32-c794829bf902",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/check-runs/55914572450",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/actions/runs/19531261012/job/55914572450",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/actions/runs/19531261012/job/55914572450",
+      "node_id": "CR_kwDOHZ2RGc8AAAAQAQirZQ",
+      "head_sha": "d53dd047fb239175a1a4dfa431e6be8da3058c1d",
+      "external_id": "bc53ea7a-4429-5127-9387-7cd5f90b3079",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/check-runs/68736822117",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/actions/runs/23602690786/job/68736822117",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/actions/runs/23602690786/job/68736822117",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2025-11-20T09:00:47Z",
-      "completed_at": "2025-11-20T09:00:55Z",
+      "started_at": "2026-03-26T15:26:24Z",
+      "completed_at": "2026-03-26T15:26:34Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
-        "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/check-runs/55914572450/annotations"
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/check-runs/68736822117/annotations"
       },
       "check_suite": {
-        "id": 50361425079
+        "id": 62171348525
       },
       "app": {
         "id": 15368,
@@ -55,13 +55,14 @@
         "external_url": "https://help.github.com/en/actions",
         "html_url": "https://github.com/apps/github-actions",
         "created_at": "2018-07-30T09:30:17Z",
-        "updated_at": "2025-12-02T18:13:15Z",
+        "updated_at": "2026-05-05T14:51:38Z",
         "permissions": {
           "actions": "write",
           "administration": "read",
           "artifact_metadata": "write",
           "attestations": "write",
           "checks": "write",
+          "code_quality": "write",
           "contents": "write",
           "copilot_requests": "write",
           "deployments": "write",

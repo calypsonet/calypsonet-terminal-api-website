@@ -1,5 +1,13 @@
 [
   {
+    "name": "develop",
+    "commit": {
+      "sha": "29a2c01c107e149db95064558e8abe3691a7c936",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/commits/29a2c01c107e149db95064558e8abe3691a7c936"
+    },
+    "protected": false
+  },
+  {
     "name": "doc",
     "commit": {
       "sha": "36fd5b6f665d9009787e91f29d9dd736787972dc",
