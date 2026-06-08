@@ -9,11 +9,9 @@ weight: 20
 
 ## Current work and future developments
 
-In order to support the personalization of the Calypso Prime applet and manage the initialization of OpenSAM solutions, we plan to offer high-level APIs to operate secure channels that comply with the ['GlobalPlatform'](https://globalplatform.org/specs-library/?filter-committee=se) standard.
+In preparation for the future integration of the Calypso OpenSAM solution, a major update to the Reader and Card APIs is required, specifically to add support for multiple logical channels; a proposal will be made in mid-2026.
 
-Possibly late 2026, addition of an interface dedicated to the management of the new Calypso "OpenSAM" secure module.
- - No impact on the secure card transaction thanks to the abstraction provided by the Calypso Crypto Symmetric interface.
- - OpenSAM selection and personalization functions.
+Next, starting in late 2026, we will work to provide high-level APIs for managing the secure channels required to personalize OpenSAM applications or GlobalPlatform-compatible Java Card applets.
 
 ## History of developments
 
@@ -26,7 +24,26 @@ Possibly late 2026, addition of an interface dedicated to the management of the 
   </tr>
 </thead>
 <tbody>
-<tr>
+  <tr>
+    <td rowspan="4"><mark>scheduled 2026/07</mark></td>
+    <td>Reader API 3.0</td>
+    <td rowspan="4">Wide refactoring to mainly provide
+    <ul>
+      <li>multiple logical channel support</li>
+      <li>and relay attack countermeasure</li>
+    </ul>
+    (More details on the <a href="https://terminal-api.calypsonet.org/community/terminal-3-0/#1-overview">evolution overview page</a>)</td>
+  </tr>
+  <tr>
+    <td>Card API 3.0</td>
+  </tr>
+  <tr>
+    <td>Calypso Card API 3.0</td>
+  </tr>
+  <tr>
+    <td>Calypso Definitions API 1.0</td>
+  </tr>
+  <tr>
     <td>2026/03/17</td>
     <td>Storage Card API 1.2</td>
     <td>
@@ -48,15 +65,20 @@ Possibly late 2026, addition of an interface dedicated to the management of the 
     </td>
   </tr>
   <tr>
-    <td>2025/11/20</td>
-    <td><ul><li>Reader API 2.1</li>
-      <li>Calypso Card API 2.2</li>
-      <li>Calypso Crypto Legacy SAM API 1.0</li>
-      <li>Storage Card API 1.0</li></ul>
-    </td>
-    <td>
+    <td rowspan="4">2025/11/20</td>
+    <td>Reader API 2.1</td>
+    <td rowspan="4">
     Refactoring to standardize the way that all “card” solutions request APDU command exchanges or close the communication channel at the end of a transaction: centralized ‘processCommands’ method at the Reader API level.
     </td>
+  </tr>
+  <tr>
+    <td>Calypso Card API 2.2</td>
+  </tr>
+  <tr>
+    <td>Calypso Crypto Legacy SAM API 1.0</td>
+  </tr>
+  <tr>
+    <td>Storage Card API 1.0</td>
   </tr>
   <tr>
     <td>2025/07/21</td>
