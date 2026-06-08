@@ -1,3 +1,84 @@
 [
+  {
+    "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/issues/5",
+    "repository_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api",
+    "labels_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/issues/5/labels{/name}",
+    "comments_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/issues/5/comments",
+    "events_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/issues/5/events",
+    "html_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/issues/5",
+    "id": 4569942672,
+    "node_id": "I_kwDOOlf9AM8AAAABEGPKkA",
+    "number": 5,
+    "title": "Improvement request: tagging writes with a string in case of failure.",
+    "user": {
+      "login": "lbureau-billettiqueservices",
+      "id": 102300863,
+      "node_id": "U_kgDOBhj8vw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/102300863?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/lbureau-billettiqueservices",
+      "html_url": "https://github.com/lbureau-billettiqueservices",
+      "followers_url": "https://api.github.com/users/lbureau-billettiqueservices/followers",
+      "following_url": "https://api.github.com/users/lbureau-billettiqueservices/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lbureau-billettiqueservices/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lbureau-billettiqueservices/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lbureau-billettiqueservices/subscriptions",
+      "organizations_url": "https://api.github.com/users/lbureau-billettiqueservices/orgs",
+      "repos_url": "https://api.github.com/users/lbureau-billettiqueservices/repos",
+      "events_url": "https://api.github.com/users/lbureau-billettiqueservices/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lbureau-billettiqueservices/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "labels": [
 
+    ],
+    "state": "open",
+    "locked": false,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2026-06-02T08:50:02Z",
+    "updated_at": "2026-06-02T08:50:02Z",
+    "closed_at": null,
+    "assignee": null,
+    "author_association": "NONE",
+    "issue_field_values": [
+
+    ],
+    "type": null,
+    "active_lock_reason": null,
+    "sub_issues_summary": {
+      "total": 0,
+      "completed": 0,
+      "percent_completed": 0
+    },
+    "issue_dependencies_summary": {
+      "blocked_by": 0,
+      "total_blocked_by": 0,
+      "blocking": 0,
+      "total_blocking": 0
+    },
+    "body": "This is very much related to #2 \n\nWhile going further on our implementation of the Intertic standard, we have realized that #2 did not answer entirely our needs. This is our own fault for not going far enough in our analysis, so in advance i want to say that we're sorry to ask for more changes related to this.\n\nIn the case of intertic, there are some operations, notably on an OTP section for SRT512 tickets, that are done successively on the ticket to ensure their atomicity. \n\nHere's an excerpt of the standard:\n\n<img width=\"787\" height=\"555\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/affcb6dc-da22-4625-b6ec-63362726afd3\" />\n\nIn the case of a SRT512 ticket, the 3 last steps are potentially on the OTP block, one bit at a time, to know which ones were actually set or not if there's a card tear off.\n\nWe previously asked for getting the block number of the ticket where the tear off was identified, but it's not enough for these cases.\n\nWe propose to add the possiblity, for each write operation, to add a \"tag\": a user-defined string that would be send back by the API in case of error, allowing the user to know which exact step failed if chained operations are related to the same block.\n\nWhat do you think of this? Is it clear enough? Is it a reasonable request ?",
+    "closed_by": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/issues/5/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "timeline_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-uml-api/issues/5/timeline",
+    "performed_via_github_app": null,
+    "state_reason": null,
+    "pinned_comment": null
+  }
 ]
