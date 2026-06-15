@@ -1,5 +1,13 @@
 [
   {
+    "name": "develop",
+    "commit": {
+      "sha": "9195f9f6a96cd42592550f77283b79a843e9172a",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-genericcard-uml-api/commits/9195f9f6a96cd42592550f77283b79a843e9172a"
+    },
+    "protected": false
+  },
+  {
     "name": "doc",
     "commit": {
       "sha": "77df4d246f10e6a25adfe7ae29aa01fccb8aa0e3",
