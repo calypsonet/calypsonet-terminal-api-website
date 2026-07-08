@@ -30,7 +30,7 @@ For each evolution theme, it describes:
 - the **detailed changes** in each of the APIs concerned;
 - the **design rationale** (the "why this choice rather than another").
 
-Alignment of the Keypop Java implementations with 3.0.0 and the writing of a **technical migration guide** for integrators will take place subsequently, after validation by the TC Terminal (see §9).
+Alignment of the Keypop Java implementations with 3.0.0 and the writing of a **technical migration guide** for integrators will take place subsequently, after validation by the TC Terminal (see §10).
 
 > **API visibility with respect to audiences**
 >
@@ -95,14 +95,15 @@ The links below point directly to the SVG files, which render visually in the Gi
 6. [Theme 5 — Semantic Improvements (Renamings and Concept Migration)](#6-theme-5--semantic-improvements-renamings-and-concept-migration)
 7. [Theme 6 — Strict Typing of RF Technologies and Card Types (ECP Support)](#7-theme-6--strict-typing-of-rf-technologies-and-card-types-ecp-support)
 8. [Theme 7 — Command Identification (`idCommand`)](#8-theme-7--command-identification-idcommand)
-9. [Migration Procedure](#9-migration-procedure)
-10. [Next Steps and TC Terminal Validation](#10-next-steps-and-tc-terminal-validation)
+9. [Theme 8 — Standardized Reader Discovery and Access (`CardReaderProvider`)](#9-theme-8--standardized-reader-discovery-and-access-cardreaderprovider)
+10. [Migration Procedure](#10-migration-procedure)
+11. [Next Steps and TC Terminal Validation](#11-next-steps-and-tc-terminal-validation)
 
 ---
 
 ## 1. Overview
 
-The 3.0.0 major version introduces compatibility breaks on the three existing Terminal APIs, **creates a new foundation API** (`Terminal Definitions API`), and triggers cascading major versions `2.0.0` on the three adjacent APIs (Legacy SAM, Generic Card, Storage Card). The changes are motivated by seven major work streams:
+The 3.0.0 major version introduces compatibility breaks on the three existing Terminal APIs, **creates a new foundation API** (`Terminal Definitions API`), and triggers cascading major versions `2.0.0` on the three adjacent APIs (Legacy SAM, Generic Card, Storage Card). The changes are motivated by eight major work streams:
 
 | # | Theme | Reader | Card | Calypso Card | Definitions | Legacy SAM | Generic Card | Storage Card |
 |---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -113,6 +114,7 @@ The 3.0.0 major version introduces compatibility breaks on the three existing Te
 | 5 | Semantic improvements | ● | ● | ● | — | ● | ● | ● |
 | 6 | RF / card type typing (ECP) | ● | — | — | ● (creation) | — | — | — |
 | 7 | Command identification (`idCommand`) | — | — | — | — | — | ● | ● |
+| 8 | Standardized reader discovery (`CardReaderProvider`) | ● | — | — | — | — | — | — |
 
 Cross-cutting consequences:
 
@@ -289,7 +291,7 @@ A relay attack introduces a significant and systematic delay on APDU exchanges; 
 
 The 2.x model exposed a complete **Observer pattern** (`addObserver`, `removeObserver`, `clearObservers`, `countObservers`, `setReaderObservationExceptionHandler`) augmented by two distinct SPIs (`CardReaderObserverSpi` for events and `CardReaderObservationExceptionHandlerSpi` for errors). In practice, in all real-world usage, **a single observer** is registered, and the separation between event handler and error handler did not bring value (the two were implemented together most of the time).
 
-### 4.2 Reader API — ObservableCardReader
+### 4.2 Reader API — `ObservableCardReader`
 
 **Removed methods**:
 
@@ -605,7 +607,7 @@ ReaderApiFactory.createCardDetectionSettings() : CardDetectionSettings
 
 The complete contract is documented in the Javadoc on the implementation side.
 
-### 7.5 Reader API — refactoring of ObservableCardReader
+### 7.5 Reader API — refactoring of `ObservableCardReader`
 
 `ObservableCardReader` is a **single** interface, valid for all reader types (contact, contactless, ECP). Its new detection start signature is:
 
@@ -638,7 +640,7 @@ This placement homogenizes the API surface: `CardSelectionResult` is the access 
 
 ---
 
-## 8. Theme 7 — Command Identification (idCommand)
+## 8. Theme 7 — Command Identification (`idCommand`)
 
 ### 8.1 Motivation
 
@@ -673,7 +675,38 @@ The 2.0.0 of these two APIs introduces a lightweight **command traceability** me
 
 ---
 
-## 9. Migration Procedure
+## 9. Theme 8 — Standardized Reader Discovery and Access (`CardReaderProvider`)
+
+### 9.1 Motivation
+
+Until 2.x, the Reader API did not expose any standardized way for the application to **discover** the readers available in its execution environment, nor to **obtain a reference to a specific reader**. In practice, an application had to rely on the plugin and reader-pool abstractions of the underlying Keyple framework — that is, on implementation-level concepts — to enumerate readers or fetch a `CardReader` instance. This coupling had two consequences:
+
+- the application had to know Keyple-specific mechanisms (plugin registration, pool management) even when it only needed a simple, agnostic access to a `CardReader`,
+- reader discovery was not portable across implementations, since each was free to expose it in its own way.
+
+Version 3.0.0 promotes reader discovery and access to a **first-class citizen** of the public Reader API by introducing a dedicated interface, `CardReaderProvider`, obtained from the `ReaderApiFactory`.
+
+### 9.2 Reader API
+
+- **New method** on the factory: `ReaderApiFactory.getCardReaderProvider() : CardReaderProvider` — accessor to the provider exposed by the implementation.
+- **New interface** `CardReaderProvider` — standardized reader discovery and access surface, exposing four operations:
+    - `getReaderNames() : Set<String>` — returns the names of all readers currently registered in the execution environment.
+    - `getReaders() : Set<CardReader>` — returns all readers currently registered as `CardReader` references.
+    - `getReader(String readerName) : CardReader` — returns the reader whose name **exactly matches** the supplied string.
+    - `findReader(String readerNameRegex) : CardReader` — returns the first reader whose name **matches the supplied regular expression**. This overload is particularly useful when reader names embed variable elements (serial numbers, USB port index, plugin prefixes, etc.) that the application does not want to hard-code.
+
+The implementation is responsible for aggregating the readers made available by all registered plugins and pools, and exposing them uniformly through this interface. Reader lifecycle (registration, un-registration) remains driven by the implementation; `CardReaderProvider` is a **read-only view** on the currently active readers at each call.
+
+### 9.3 Rationale
+
+- **Decoupling from Keyple implementation concepts**: prior to 3.0, an application had to know about plugins, pools and their registration mechanisms to obtain a `CardReader`. With `CardReaderProvider`, the application only knows the Reader API — plugin/pool orchestration is entirely an implementation concern.
+- **First-class citizen of the public API**: reader discovery is a universal need shared by every application using the Reader API. It deserves a stable, documented, implementation-agnostic entry point rather than being delegated to each implementation's private surface.
+- **Two complementary lookup modes**: exact-match by name for the deterministic case (the application knows the exact reader name from configuration), and regex-based lookup for the case where reader names carry variable elements the application cannot predict. Both are natural to expose side by side; picking only one would push the other into every application layer.
+- **Consistency with the rest of 3.0.0**: the pattern of a small, focused interface obtained from the `ReaderApiFactory` (already used for `CardSelectionManager`, `BasicCardSelector`, `IsoCardSelector`, `CardDetectionSettings`) is naturally extended here, making the API surface predictable for integrators.
+
+---
+
+## 10. Migration Procedure
 
 The migration of application code from versions 1.x or 2.x to 3.0.0 will be the subject of a **dedicated technical migration guide**, published separately after validation of 3.0.0 by the TC Terminal and after alignment of the associated Keypop Java implementations.
 
@@ -681,13 +714,13 @@ This guide will aim to **simplify the transition** to 3.0.0 as much as possible:
 
 ---
 
-## 10. Next Steps and TC Terminal Validation
+## 11. Next Steps and TC Terminal Validation
 
-### 10.1 Scope submitted for validation
+### 11.1 Scope submitted for validation
 
 This document submits the following elements to the validation of the **CNA TC Terminal**:
 
-1. **The principle** of the seven evolution themes exposed (§2 to §8) and the overall consistency of the work stream (versions 3.0.0 for Reader / Card / Calypso Card, 1.0.0 for Definitions, 2.0.0 for Legacy SAM / Generic Card / Storage Card).
+1. **The principle** of the eight evolution themes exposed (§2 to §9) and the overall consistency of the work stream (versions 3.0.0 for Reader / Card / Calypso Card, 1.0.0 for Definitions, 2.0.0 for Legacy SAM / Generic Card / Storage Card).
 2. **The design choices** documented in the "Rationale" sections of each theme — in particular:
     - the explicit multi-channel model relying on the `SmartCard(Spi)` as named target (§2.5);
     - the duration bounding carried both at the APDU level and at the Calypso session level, with filtering by `csnMin` threshold (§3.4);
@@ -698,13 +731,14 @@ This document submits the following elements to the validation of the **CNA TC T
     - the **`CardSelector.filterByCardType` filter** as the unique typed filtering criterion at selection (§7.3);
     - the **exposure of the detected `CardType` on `CardSelectionResult`** (§7.5);
     - the **three-tier hierarchy** `CardTransactionManager` / `IsoCardTransactionManager` / `MultichannelCardTransactionManager` (Reader API), with on-demand cast for ISO 7816-4 cards that are optionally multi-channel (Calypso, Generic Card) and direct stereotyping on multi-channel for intrinsically multi-channel cards (future OpenSAM) (§2.2, §2.6);
-    - the **command identification model** via `idCommand` on Generic Card and Storage Card (§8).
+    - the **command identification model** via `idCommand` on Generic Card and Storage Card (§8);
+    - the **standardized reader discovery** exposed by the `CardReaderProvider` interface obtained from the `ReaderApiFactory`, decoupling the application from Keyple-level plugin and pool concepts (§9.3).
 3. **The detailed content** of the seven UML diagrams (`3.0.0-SNAPSHOT` for Reader, Card and Calypso Card; `1.0.0-SNAPSHOT` for Definitions; `2.0.0-SNAPSHOT` for Legacy SAM, Generic Card and Storage Card), which materialize these choices — **accessible directly** via the links provided in the [Reference UML Diagrams](#reference-uml-diagrams) section at the top of the document, in two forms: final version and version with diff against the previous version.
 4. **The introduction** of the new Definitions foundation API (UML repository created, Java module `keypop-definitions-jvm-api` to be created).
 5. **The alignment** of the three adjacent APIs (Legacy SAM 2.0.0, Generic Card 2.0.0, Storage Card 2.0.0) on the new Reader API 3.0.0 foundation.
-6. **The principle** of a dedicated migration procedure to be provided subsequently to integrators (see §9).
+6. **The principle** of a dedicated migration procedure to be provided subsequently to integrators (see §10).
 
-### 10.2 Points of attention for the review
+### 11.2 Points of attention for the review
 
 A few points for which particular TC attention is sought:
 
@@ -714,13 +748,13 @@ A few points for which particular TC attention is sought:
 - the **`SmartCard` lifecycle contract** held by the `CardReader` (§2.3.2), which is documented in the Javadoc on the implementation side but does not appear in the UML diagram; the TC is invited to confirm that this prose description is sufficient, or to request additional formalization;
 - the **three-tier gradation** of the transaction managers (§2.2) — the TC is invited to confirm that the separation between ISO 7816-4 "optionally multi-channel" cards (which stereotype `IsoCardTransactionManager` and use the on-demand cast) and "intrinsically multi-channel" cards (which directly stereotype `MultichannelCardTransactionManager`, as the future Terminal OpenSAM API will) properly covers all anticipated card profiles.
 
-### 10.3 Next steps
+### 11.3 Next steps
 
 Once the versions are validated by the TC Terminal:
 
 1. **Finalization of the UML diagrams**: removal of struck-through (`<s>`) elements and grey (`<color:grey>`) elements that are not retained, generation of the definitive SVGs, transition of the repositories from their `…-SNAPSHOT` versions to their final versions (`3.0.0` for Reader / Card / Calypso Card, `1.0.0` for Definitions, `2.0.0` for Legacy SAM / Generic Card / Storage Card).
 2. **Creation of the new Java module** `keypop-definitions-jvm-api`, and **alignment of the existing Keypop Java modules** (`keypop-reader-java-api`, `keypop-card-java-api`, `keypop-calypso-card-java-api`, `keypop-calypso-crypto-legacysam-java-api`, `keypop-genericcard-java-api`, `keypop-storagecard-java-api`) on their respective new major versions.
-3. **Writing and publication of the technical migration guide** for the integrator (see §9).
+3. **Writing and publication of the technical migration guide** for the integrator (see §10).
 4. **Communication** of the availability of the new versions to the integrators and to the CNA working groups concerned.
 
 ---
