@@ -13,16 +13,25 @@ weight: 5
 
 ## Preamble
 
-The purpose of this document is to **present the evolutions of the Terminal APIs** introduced by the major version **3.0.0** of the Terminal Reader API and its repercussions on the entire set of CNA Terminal APIs — **for validation by the members of the TC Terminal** (Technical Committee Terminal) of the **Calypso Networks Association** (CNA).
+The purpose of this document is to **present all the evolutions of the Terminal APIs** between the **Keypop Java versions currently in production** and the **current specifications** of the CNA Terminal APIs — **for validation by the members of the TC Terminal** (Technical Committee Terminal) of the **Calypso Networks Association** (CNA).
 
-The following APIs are impacted by this major version:
+### Compared versions
 
-- the **three existing APIs** aligned on 3.0.0: `Reader API`, `Card API`, `Calypso Card API`;
-- the **new Terminal Definitions API** (`1.0.0-SNAPSHOT`) created on this occasion;
-- **three adjacent APIs** that align in parallel with the new common foundation, each with its own major version (`2.0.0-SNAPSHOT`):
-    - `Terminal Calypso Crypto Legacy SAM API`;
-    - `Terminal Generic Card API`;
-    - `Terminal Storage Card API`.
+The "before" reference consists of the **latest published versions** of the Keypop Java modules (production tags). The "after" reference consists of the **normative specifications** (`index.adoc`) and the associated class diagrams (`uml/class-diagram.puml`) of each `calypsonet-terminal-*-uml-api` repository.
+
+| API | Specification reference | Keypop Java version in production (before) | Specified version (after) |
+|---|---|---|---|
+| Terminal Reader API | CNA-TR-API | `keypop-reader-java-api` **2.1.0** | **3.0.0** |
+| Terminal Card API *(internal)* | CNA-TC-API | `keypop-card-java-api` **2.0.1** | **3.0.0** |
+| Terminal Calypso Card API | CNA-TCC-API | `keypop-calypso-card-java-api` **2.2.0** | **3.0.0** |
+| Terminal Definitions API *(new)* | CNA-TD-API | — | **1.0.0** |
+| Terminal Calypso Crypto Legacy SAM API | CNA-TCCL-API | `keypop-calypso-crypto-legacysam-java-api` **1.0.0** | **2.0.0** |
+| Terminal Calypso Crypto Symmetric API | CNA-TCCS-API | `keypop-calypso-crypto-symmetric-java-api` **0.1.1** | **0.2.0** |
+| Terminal Calypso Crypto Asymmetric API | CNA-TCCA-API | `keypop-calypso-crypto-asymmetric-java-api` **0.2.0** | **0.3.0** |
+| Terminal Generic Card API | CNA-TGC-API | `keypop-genericcard-jvm-api` **1.0.0** | **2.0.0** |
+| Terminal Storage Card API | CNA-TSC-API | `keypop-storagecard-java-api` **1.2.0** | **2.0.0** |
+
+All the specifications are currently in `…-SNAPSHOT` versions.
 
 For each evolution theme, it describes:
 
@@ -30,732 +39,1054 @@ For each evolution theme, it describes:
 - the **detailed changes** in each of the APIs concerned;
 - the **design rationale** (the "why this choice rather than another").
 
-Alignment of the Keypop Java implementations with 3.0.0 and the writing of a **technical migration guide** for integrators will take place subsequently, after validation by the TC Terminal (see §10).
+**Annex A** additionally provides an **exhaustive, API-by-API mapping** between each element of the Java versions in production and what becomes of it in the specifications.
+
+Alignment of the Keypop Java implementations with these versions and the writing of a **technical migration guide** for integrators will take place subsequently, after validation by the TC Terminal (see §18).
 
 > **API visibility with respect to audiences**
 >
 > - The **Reader API**, the **Calypso Card API**, the **Terminal Definitions API**, the **Legacy SAM API**, the **Generic Card API** and the **Storage Card API** are **public** APIs, directly manipulated by the **integrator** (application code).
 > - The **Card API** is an **internal** API: it serves as an integration contract between reader implementations and card extensions. **The integrator does not have access to it**.
+> - The **Crypto Symmetric API** and **Crypto Asymmetric API** define the contracts (SPI) between the Calypso Card API and the cryptographic modules; the integrator only uses them indirectly, through the crypto modules it instantiates (for example the Legacy SAM API).
 >
-> This document describes the evolutions of all impacted APIs because they are coupled at the design level (in particular for themes 1, 2 and 5). Since the **Card API is internal**, its evolutions (see §2.3, §3.2, §6.2) require **no action** from the integrator; they are absorbed by the Keypop implementations.
->
+> This document describes the evolutions of all impacted APIs because they are coupled at the design level. The evolutions of the internal and contract APIs require **no action** from the integrator; they are absorbed by the Keypop implementations.
+
 > **New API: Terminal Definitions API**
 >
-> Version 3.0.0 introduces a new **foundation API** dedicated to hosting **cross-cutting enumerated types** of the Terminal APIs. It is created on the occasion of Theme 6 to host `RfTechnology` and `CardType`, but its scope is broader: it is **intended to potentially host other enumerations** that constitute **global constants** shared by several Terminal APIs. The Terminal Reader API now **depends** on this new API; the other Terminal APIs may depend on it in turn according to future evolutions.
+> Version 3.0.0 introduces a new **foundation API** dedicated to hosting **cross-cutting enumerated types** of the Terminal APIs. It is created on the occasion of Theme 6 to host `RfTechnology` and `CardType`, but its scope is broader: it is **intended to potentially host other enumerations** that constitute **global constants** shared by several Terminal APIs. The Terminal Reader API now **depends** on this new API.
 >
 > Concretely, this translates into:
 >
-> - a **new UML repository**: `calypsonet-terminal-definitions-uml-api` (created, version `1.0.0-SNAPSHOT`);
+> - a **new repository**: `calypsonet-terminal-definitions-uml-api` (version `1.0.0-SNAPSHOT`);
 > - a **new Keypop Java module**: `keypop-definitions-jvm-api` (to be created, in accordance with the Keypop naming convention);
-> - a **dependency** declared from the `keypop-reader-java-api` module to this new module.
+> - a declared **dependency** of the `keypop-reader-java-api` module on this new module.
 
----
-
-## Reference UML Diagrams
-
-The UML diagrams are available on the **`develop`** branch of each of the CNA repositories hosted on [github.com/calypsonet](https://github.com/calypsonet/). For each repository (except the Terminal Definitions API which is new), **two variants** are provided:
-
-- **Final diagram** (`api_class_diagram.svg`) — version **cleaned** of all struck-through, red and grey elements; this is what will be published at the 3.0.0 release.
-- **Diff diagram** (`api_class_diagram_diff.svg`) — version **preserving** the struck-through, red and grey elements to enable **reading the delta** between the previous version and the new major version.
-
-The links below point directly to the SVG files, which render visually in the GitHub interface.
-
-| Module | Version | Final diagram | Diff diagram |
-|---|---|---|---|
-| **Terminal Reader API** | 3.0.0-SNAPSHOT | [Final SVG](https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/blob/develop/3.0.0-SNAPSHOT/api_class_diagram.svg) | [Diff SVG](https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/blob/develop/3.0.0-SNAPSHOT/api_class_diagram_diff.svg) |
-| **Terminal Card API** *(internal)* | 3.0.0-SNAPSHOT | [Final SVG](https://github.com/calypsonet/calypsonet-terminal-card-uml-api/blob/develop/3.0.0-SNAPSHOT/api_class_diagram.svg) | [Diff SVG](https://github.com/calypsonet/calypsonet-terminal-card-uml-api/blob/develop/3.0.0-SNAPSHOT/api_class_diagram_diff.svg) |
-| **Terminal Calypso Card API** | 3.0.0-SNAPSHOT | [Final SVG](https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/blob/develop/3.0.0-SNAPSHOT/api_class_diagram.svg) | [Diff SVG](https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/blob/develop/3.0.0-SNAPSHOT/api_class_diagram_diff.svg) |
-| **Terminal Definitions API** *(new)* | 1.0.0-SNAPSHOT | [Final SVG](https://github.com/calypsonet/calypsonet-terminal-definitions-uml-api/blob/develop/1.0.0-SNAPSHOT/api_class_diagram.svg) | — *(new API, no diff)* |
-| **Terminal Calypso Crypto Legacy SAM API** | 2.0.0-SNAPSHOT | [Final SVG](https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/blob/develop/2.0.0-SNAPSHOT/api_class_diagram.svg) | [Diff SVG](https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/blob/develop/2.0.0-SNAPSHOT/api_class_diagram_diff.svg) |
-| **Terminal Generic Card API** | 2.0.0-SNAPSHOT | [Final SVG](https://github.com/calypsonet/calypsonet-terminal-genericcard-uml-api/blob/develop/2.0.0-SNAPSHOT/api_class_diagram.svg) | [Diff SVG](https://github.com/calypsonet/calypsonet-terminal-genericcard-uml-api/blob/develop/2.0.0-SNAPSHOT/api_class_diagram_diff.svg) |
-| **Terminal Storage Card API** | 2.0.0-SNAPSHOT | [Final SVG](https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/blob/develop/2.0.0-SNAPSHOT/api_class_diagram.svg) | [Diff SVG](https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/blob/develop/2.0.0-SNAPSHOT/api_class_diagram_diff.svg) |
-
-> The PlantUML sources (`.puml`) are also available in the same folders of each repository, for those who wish to regenerate the rendering or inspect the annotations.
-
----
-
-> Scope: **Reader API**, **Card API** and **Calypso Card API** (versions `3.0.0-SNAPSHOT`) — to which are added the **Terminal Definitions API** (new, `1.0.0-SNAPSHOT`) and the three adjacent APIs **Legacy SAM**, **Generic Card** and **Storage Card** (versions `2.0.0-SNAPSHOT`) (see the preamble box).
+> **New form of the deliverables: language-independent normative specifications**
 >
-> **Diagram reading conventions**:
-> - **(diff only)** **Struck-through** elements (`<s>`) in the `_diff` diagrams are kept solely to facilitate reading the delta between the previous version and the new major version of each API. They **do not appear** in the final diagrams.
-> - **(diff only)** Elements in **blue** are additions of the new major version.
-> - **(diff only)** Elements in **grey** (`<color:grey>`) are **work-in-progress** items that were never implemented in Keypop Java. The 3.0.0 cleans up: these elements **do not appear** in the final diagrams. They are mentioned here when it helps to understand the trajectory of a notion (for example, the removal of the experimental `MultichannelCardSelector` in favor of the new multi-channel model carried by the `CardSelectionManager`).
-> - **(final and diff)** UML relations annotated `+-` (composition by aggregation) indicate that the pointed element is an **inner class** (nested type) of the container — for example `CardReaderEvent.Type` is an inner enumeration of `CardReaderEvent`, and `IsoCardSelector.FileOccurrence` / `IsoCardSelector.FileControlInformation` are inner enumerations of `IsoCardSelector`. This convention drives the imports and the Java naming.
+> Until now, the Terminal APIs were described by a UML diagram and by the Javadoc of the Keypop Java modules. Each API now has a **normative specification** (`index.adoc`), written in a **notation independent of the implementation language** (inspired by Kotlin), together with its class diagram. This new design proposal aims to **broaden the choice of implementation languages** for the Terminal APIs beyond Java, for example **Kotlin Multiplatform (KMP)**, **Rust**, **Swift** or **C#**. This change of form affects the way types and operations are expressed; the consequences are described in **Theme 10** (§11).
 
 ---
 
-## Table of Contents
+## Reference documents
 
-0. [Reference UML Diagrams](#reference-uml-diagrams)
+Each `calypsonet-terminal-*-uml-api` repository hosted on [github.com/calypsonet](https://github.com/calypsonet/) contains, at its root:
+
+- the **normative specification** `index.adoc`;
+- the **class diagram** `uml/class-diagram.puml`, whose content is strictly aligned with the specification.
+
+| Module | Repository | Version |
+|---|---|---|
+| **Terminal Reader API** | [calypsonet-terminal-reader-uml-api](https://github.com/calypsonet/calypsonet-terminal-reader-uml-api) | 3.0.0-SNAPSHOT |
+| **Terminal Card API** *(internal)* | [calypsonet-terminal-card-uml-api](https://github.com/calypsonet/calypsonet-terminal-card-uml-api) | 3.0.0-SNAPSHOT |
+| **Terminal Calypso Card API** | [calypsonet-terminal-calypso-card-uml-api](https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api) | 3.0.0-SNAPSHOT |
+| **Terminal Definitions API** *(new)* | [calypsonet-terminal-definitions-uml-api](https://github.com/calypsonet/calypsonet-terminal-definitions-uml-api) | 1.0.0-SNAPSHOT |
+| **Terminal Calypso Crypto Legacy SAM API** | [calypsonet-terminal-calypso-crypto-legacysam-uml-api](https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api) | 2.0.0-SNAPSHOT |
+| **Terminal Calypso Crypto Symmetric API** | [calypsonet-terminal-calypso-crypto-symmetric-uml-api](https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api) | 0.2.0-SNAPSHOT |
+| **Terminal Calypso Crypto Asymmetric API** | [calypsonet-terminal-calypso-crypto-asymmetric-uml-api](https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-uml-api) | 0.3.0-SNAPSHOT |
+| **Terminal Generic Card API** | [calypsonet-terminal-genericcard-uml-api](https://github.com/calypsonet/calypsonet-terminal-genericcard-uml-api) | 2.0.0-SNAPSHOT |
+| **Terminal Storage Card API** | [calypsonet-terminal-storagecard-uml-api](https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api) | 2.0.0-SNAPSHOT |
+
+> The former diagrams published in the `…-SNAPSHOT/` folders (`api_class_diagram.svg` and `api_class_diagram_diff.svg`) reflect an **intermediate state** of the work and are no longer up to date; the reference is now the `index.adoc` specification.
+
+**Diagram reading conventions**:
+
+- elements in **blue** are **additions or modifications** of the new version;
+- elements in **grey** are **under study** ("work in progress"): they have never been implemented and are not part of the normative scope (see §17);
+- green classes group **data, constants, enumerations and errors**;
+- signatures follow the language-independent notation described in Theme 10 (`→ Self`, `T?`, `val property: Type = default`, etc.).
+
+---
+
+## Table of contents
+
 1. [Overview](#1-overview)
-2. [Theme 1 — Multiple Logical Channel Support](#2-theme-1--multiple-logical-channel-support)
-3. [Theme 2 — Countermeasure Against Relay Attack Vulnerability](#3-theme-2--countermeasure-against-relay-attack-vulnerability)
-4. [Theme 3 — Simplified Observation Management](#4-theme-3--simplified-observation-management)
-5. [Theme 4 — Current Secure Session Status Awareness](#5-theme-4--current-secure-session-status-awareness)
-6. [Theme 5 — Semantic Improvements (Renamings and Concept Migration)](#6-theme-5--semantic-improvements-renamings-and-concept-migration)
-7. [Theme 6 — Strict Typing of RF Technologies and Card Types (ECP Support)](#7-theme-6--strict-typing-of-rf-technologies-and-card-types-ecp-support)
-8. [Theme 7 — Command Identification (`idCommand`)](#8-theme-7--command-identification-idcommand)
-9. [Theme 8 — Standardized Reader Discovery and Access (`CardReaderProvider`)](#9-theme-8--standardized-reader-discovery-and-access-cardreaderprovider)
-10. [Migration Procedure](#10-migration-procedure)
-11. [Next Steps and TC Terminal Validation](#11-next-steps-and-tc-terminal-validation)
+2. [Theme 1 — Support for multiple logical channels](#2-theme-1--support-for-multiple-logical-channels)
+3. [Theme 2 — Countermeasure against relay attacks](#3-theme-2--countermeasure-against-relay-attacks)
+4. [Theme 3 — Simplified observation management](#4-theme-3--simplified-observation-management)
+5. [Theme 4 — Knowledge of the current secure session state](#5-theme-4--knowledge-of-the-current-secure-session-state)
+6. [Theme 5 — Semantic improvements (renamings and removals)](#6-theme-5--semantic-improvements-renamings-and-removals)
+7. [Theme 6 — Strict typing of RF technologies and card types (ECP support)](#7-theme-6--strict-typing-of-rf-technologies-and-card-types-ecp-support)
+8. [Theme 7 — Command identification (`commandId`)](#8-theme-7--command-identification-commandid)
+9. [Theme 8 — Standardised reader discovery and access (`CardReaderProvider`)](#9-theme-8--standardised-reader-discovery-and-access-cardreaderprovider)
+10. [Theme 9 — Redesign of the card selection model](#10-theme-9--redesign-of-the-card-selection-model)
+11. [Theme 10 — Implementation-language-independent specification](#11-theme-10--implementation-language-independent-specification)
+12. [Theme 11 — Data exposed without computation and access to raw data](#12-theme-11--data-exposed-without-computation-and-access-to-raw-data)
+13. [Theme 12 — Stored Value (SV) operations](#13-theme-12--stored-value-sv-operations)
+14. [Theme 13 — Tolerance of a missing file (`6A82h`) in a secure session](#14-theme-13--tolerance-of-a-missing-file-6a82h-in-a-secure-session)
+15. [Theme 14 — Crypto extensions and command interleaving](#15-theme-14--crypto-extensions-and-command-interleaving)
+16. [Normative clarifications](#16-normative-clarifications)
+17. [Elements under study](#17-elements-under-study)
+18. [Migration procedure](#18-migration-procedure)
+19. [Next steps and validation by the TC Terminal](#19-next-steps-and-validation-by-the-tc-terminal)
+- [Annex A — Detailed mapping per API](#annex-a--detailed-mapping-per-api)
 
 ---
 
 ## 1. Overview
 
-The 3.0.0 major version introduces compatibility breaks on the three existing Terminal APIs, **creates a new foundation API** (`Terminal Definitions API`), and triggers cascading major versions `2.0.0` on the three adjacent APIs (Legacy SAM, Generic Card, Storage Card). The changes are motivated by eight major work streams:
+The new generation of the Terminal APIs introduces compatibility breaks on all existing APIs, **creates a new foundation API** (`Terminal Definitions API`), and comes with a **change of form** of the deliverables (language-independent normative specifications). The changes are grouped into fourteen themes:
 
-| # | Theme | Reader | Card | Calypso Card | Definitions | Legacy SAM | Generic Card | Storage Card |
-|---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 1 | Multiple logical channels | ● | ● | ● | — | — | ● | — |
-| 2 | Relay attack countermeasure | — | ● | ● | — | — | ● | — |
-| 3 | Observation simplification | ● | — | — | — | — | — | — |
-| 4 | Current secure session status | — | — | ● | — | — | — | — |
-| 5 | Semantic improvements | ● | ● | ● | — | ● | ● | ● |
-| 6 | RF / card type typing (ECP) | ● | — | — | ● (creation) | — | — | — |
-| 7 | Command identification (`idCommand`) | — | — | — | — | — | ● | ● |
-| 8 | Standardized reader discovery (`CardReaderProvider`) | ● | — | — | — | — | — | — |
+| # | Theme | Reader | Card | Calypso Card | Definitions | Legacy SAM | Crypto Sym. | Crypto Asym. | Generic Card | Storage Card |
+|---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 1 | Multiple logical channels | ● | ● | ● | — | — | — | — | ● | — |
+| 2 | Relay attack countermeasure | — | ● | ● | — | — | — | — | ● | — |
+| 3 | Simplified observation | ● | — | — | — | — | — | — | — | — |
+| 4 | Current secure session state | — | — | ● | — | — | — | — | — | — |
+| 5 | Semantic improvements | ● | ● | ● | — | ● | ● | ● | ● | ● |
+| 6 | RF / card type typing (ECP) | ● | — | — | ● (creation) | — | — | — | — | — |
+| 7 | Command identification (`commandId`) | — | — | ● | — | ● | — | — | ● | ● |
+| 8 | Standardised reader discovery | ● | — | — | — | — | — | — | — | — |
+| 9 | Redesign of the selection model | ● | — | — | — | — | — | — | — | — |
+| 10 | Language-independent specification | ● | ● | ● | ● | ● | ● | ● | ● | ● |
+| 11 | Data without computation, raw data | — | ● | ● | — | ● | ● | ● | — | ● |
+| 12 | Stored Value operations | — | — | ● | — | — | — | — | — | — |
+| 13 | Missing file tolerated in session | — | — | ● | — | — | — | — | — | — |
+| 14 | Crypto extensions and interleaving | — | — | ● | — | ● | — | — | — | — |
 
 Cross-cutting consequences:
 
-- **Removal of all deprecated legacy**: the major version 3.0.0 is the opportunity to clean up. All elements that had been marked `@Deprecated` in versions 1.x or 2.x — including those that had been deprecated only recently — are removed without a compatibility alternative. No deprecated element remains in 3.0.0.
-- **Removal of "work in progress" elements** (in grey, `<color:grey>`). They appeared in the diagrams only as prospective items. The following are concerned:
-    - **Reader API (grey in 2.x, removed in 3.0.0)**: `ReaderApiFactory.createMultichannelCardSelector()`, the `MultichannelCardSelector` interface and its `useDedicatedLogicalChannel()` method, as well as `CardSelectionResult.getCardReader()`. The notion they prefigured (multi-channel) is properly addressed by the new model described in §2.
-    - **Calypso Card API (still grey in the 3.0.0 snapshot)**: `AsymmetricCryptoSecuritySetting.authorizeAllTrustedCa()`, `authorizeOnlyConfiguredCa()` and `revokeCa(byte[])`. These fine-grained PKI revocation management methods are left in grey in the current diagram: they **will not appear in the final 3.0.0** published version.
-- Complete removal of the `ChannelControl` enum (Reader API and Card API). Channel closure is no longer driven by a parameter passed to commands, but becomes an **explicit operation** on the new dedicated methods (`closeChannel`, `transmitCardRequestAndCloseChannel`, `processCommandsAndCloseChannel`).
-- Removal of `prepareReleaseChannel()` on the Reader API side and `releaseChannel()` on the Card API side: channel release becomes a side effect of the new multi-channel model and no longer needs a dedicated API.
-- Removal of the `InvalidCardResponseException` exception from the `selection` package (still present as a "legacy" class in the diagram for information), in favor of the exception from the root `reader` package.
+- **Removal of the entire deprecated legacy**: all elements marked `@Deprecated` in the production versions are removed with no compatibility alternative (for example `ChannelControl` in the Calypso Card API, `TransactionManager.processCommands()` in the Legacy SAM API, `prepareReadSystemBlock()` in the Storage Card API).
+- **Removal of the "work in progress" elements** that appeared in the former diagrams for prospective purposes without ever being implemented: `ReaderApiFactory.createMultichannelCardSelector()`, `MultichannelCardSelector`, `CardSelectionResult.getCardReader()` (Reader API); `AsymmetricCryptoSecuritySetting.authorizeAllTrustedCa()`, `authorizeOnlyConfiguredCa()` and `revokeCa(byte[])` (Calypso Card API). The elements still under study in the Legacy SAM API are listed in §17.
+- **Complete disappearance of `ChannelControl`** (Reader API, Card API, Calypso Card API): closing the channel becomes an **explicit operation** (`closeChannel`, `transmitCardRequestAndCloseChannel`, `processCommandsAndCloseChannel`).
+- **Disappearance of duplicate errors**: the `InvalidCardResponseException` of the `reader.selection` package, as well as the communication and status errors specific to the Calypso Card API and the Legacy SAM API, disappear in favour of the Reader API errors.
+- **Recursive genericity dropped**: all interfaces of the form `T extends X<T>` (transaction managers, selectors, signature data) lose their type parameter; fluent chaining is expressed by the `Self` return type (see Theme 10).
 
 ---
 
-## 2. Theme 1 — Multiple Logical Channel Support
+## 2. Theme 1 — Support for multiple logical channels
 
 ### 2.1 Motivation
 
-Until 2.x, the API implicitly assumed that only one logical channel was open at a time between the terminal and the card. Version 3.0.0 explicitly introduces the notion of **multiple logical channels** (ISO cards supporting several simultaneous application selections on distinct logical channels), with two objectives:
+Until now, the API implicitly assumed that only one logical channel was open at a time between the terminal and the card. Version 3.0.0 explicitly introduces the notion of **multiple logical channels** (ISO cards supporting several simultaneous application selections on distinct logical channels), with two objectives:
 
-1. enable selection and manipulation of **several applications** of the same card in parallel;
-2. clearly distinguish, for each smart card, **on which channel** it is attached and **whether it is still active**.
+1. to allow **several applications** of the same card to be selected and handled in parallel;
+2. to clearly distinguish, for each smart card, **on which channel** it is attached and **whether it is still active**.
 
-The concrete trigger for this work stream is the arrival of a new CNA product, **OpenSAM**, whose usage model is based on the **simultaneous coexistence of several security applications** accessible in parallel on distinct logical channels. Without explicit multi-channel support in the API, integrating OpenSAM into Keypop would require an implementation-side workaround; 3.0.0 provides it with the idiomatic infrastructure. The detailed specifications of OpenSAM belong to the dedicated CNA documentation for this product.
+The concrete trigger for this work is the arrival of a new CNA product, **OpenSAM**, whose usage model relies on the **simultaneous coexistence of several security applications** accessible in parallel on distinct logical channels. The detailed specifications of OpenSAM are covered by the CNA documentation dedicated to this product.
 
 ### 2.2 Reader API
 
 #### Multi-channel selection
 
-- **New method** `CardSelectionManager.processMultichannelCardSelectionScenario(CardReader, ChannelSelectionPolicy)` — multi-channel equivalent of `processCardSelectionScenario`. **Prerequisite**: the presented card must support multi-channel; otherwise, an exception is thrown when the selection scenario is executed.
+- **New manager** `MultichannelCardSelectionManager`, obtained through `ReaderApiFactory.createMultichannelCardSelectionManager()`, whose operation `processCardSelectionScenario(reader: CardReader, channelSelectionPolicy: ChannelSelectionPolicy) → MultichannelCardSelectionResult` executes the scenario by placing **each successful selection on its own logical channel**. If the presented card does not support multi-channel, an `InvalidCardResponse` error is raised at scenario execution time. This manager is part of the overall redesign of the selection described in **Theme 9** (§10).
 - **New enumeration** `ChannelSelectionPolicy`:
-    - `ALLOW_BASIC_CHANNEL` — authorizes the use of the basic channel (channel 0) in addition to additional logical channels;
-    - `LOGICAL_CHANNEL_ONLY` — restricts selection to additional logical channels (channel 0 is not used).
+    - `ALLOW_BASIC_CHANNEL` — allows the use of the basic channel (channel 0) in addition to the additional logical channels;
+    - `LOGICAL_CHANNEL_ONLY` — restricts the selection to the additional logical channels (channel 0 is not used).
+- **New result** `MultichannelCardSelectionResult` (`cardType`, `smartCards`): all the cards it exposes are active in parallel, each on its own channel. The scheduled mode (selection on card insertion) is not offered in multi-channel mode.
 
-#### Fine-grained selection result handling
+#### Channel knowledge at card level
 
-- **New method** `CardSelectionResult.getActiveSelectionIndexes() : List<Integer>` — returns **all** active selection indexes (one per channel). The existing `getActiveSelectionIndex()` method is retained for compatibility with the single-channel case.
-- **Semantic clarification** on `getActiveSmartCard()` (noted in the diagram): in case of several active cards, the card active on **channel 0** is returned; `getActiveSelectionIndexes()` must now be used to obtain all active selections.
+- **New operation** `SmartCard.isActive() → Boolean` — the card knows whether it is still active on its channel.
+- **New operation** `IsoSmartCard.isBasicChannel() → Boolean` — indicates whether the card is attached to the basic channel or to an additional logical channel.
 
-#### Channel awareness at the card level
+#### Multi-channel transaction management
 
-- **New method** `SmartCard.isActive() : boolean` — the card knows whether it is still active on its channel.
-- **New method** `IsoSmartCard.isBasicChannel() : boolean` — indicates whether the card is attached to the basic channel or to an additional logical channel.
-
-#### Multi-channel transactional management
-
-The hierarchy of transaction managers (package `reader.transactionApi.spi`) is restructured into three levels:
+The hierarchy of transaction managers (namespace `reader.transaction.spi`) is restructured into three levels:
 
 ```text
 CardTransactionManager  (root interface, non-generic)
-  └─ IsoCardTransactionManager  (new, ISO 7816-4 — carries the gateway to multi-channel)
-       └─ MultichannelCardTransactionManager  (effective multi-channel)
+  ├─ IsoCardTransactionManager  (new, ISO 7816-4 — carries the conversion to multi-channel)
+  └─ MultichannelCardTransactionManager  (new, actual multi-channel)
 ```
 
-- **`CardTransactionManager`** (refactored) — no longer generic in 3.0.0; exposes `void processCommands()` (no parameter, return type `void` instead of the former `T`). This is the root interface common to all types of transaction managers, regardless of the standard or the channel model.
-- **`IsoCardTransactionManager`** — **new intermediate interface** dedicated to ISO 7816-4 cards. It exposes a single method `MultichannelCardTransactionManager asMultichannelCardTransactionManager()` that performs an **explicit cast** to multi-channel when the underlying card supports it. This interface is the stereotyped anchor for other Terminal APIs (Calypso Card, Generic Card) that target ISO cards but are not themselves intrinsically multi-channel.
+- **`CardTransactionManager`** (redesigned) — no longer generic; exposes `processCommands() → Unit` (without parameter). It is the common root interface of all transaction managers.
+- **`IsoCardTransactionManager`** — **new** intermediate **interface** dedicated to ISO 7816-4 cards. It exposes a single operation `asMultichannelCardTransactionManager() → MultichannelCardTransactionManager`, which returns a multi-channel view of the manager. **The conversion itself never fails**: if the underlying card does not support multi-channel, the `InvalidCardResponse` error is only raised **when the commands are processed** by the obtained manager (`processCommands`, `processCommandsAndCloseChannel`).
 - **`MultichannelCardTransactionManager`** — **new interface** extending `CardTransactionManager`; exposes:
-    - `void processCommandsAndCloseChannel()` — executes pending commands and **closes the channel** in the process;
-    - `void closeChannel()` — explicit channel closure.
+    - `processCommandsAndCloseChannel() → Unit` — processes the pending commands and, upon success, **closes the channel**;
+    - `closeChannel() → Unit` — explicit, idempotent closing of the channel.
 
-> **Expected stereotyping on consumer API side**:
+> **Expected anchoring on the consumer API side**:
 >
-> - APIs targeting ISO 7816-4 cards that are **not intrinsically multi-channel** (Calypso Card, Generic Card, etc.) stereotype their transaction manager on **`IsoCardTransactionManager`**. They access multi-channel **on demand**, when the underlying card supports it, via a call to `asMultichannelCardTransactionManager()`.
-> - APIs targeting **intrinsically multi-channel** cards (the **future Terminal OpenSAM API** in particular) stereotype their transaction manager **directly on `MultichannelCardTransactionManager`**. No casting is needed: the `processCommandsAndCloseChannel()` and `closeChannel()` methods are available from the outset on the exposed `TransactionManager`.
->
-> This three-tier gradation (`CardTransactionManager` / `IsoCardTransactionManager` / `MultichannelCardTransactionManager`) allows each consumer API to **anchor itself at the capability level that exactly matches its card model**, without forcing an unnecessary cast or masking a real capability.
+> - APIs targeting ISO 7816-4 cards that are **not intrinsically multi-channel** (Calypso Card, Generic Card) make their transaction manager extend **`IsoCardTransactionManager`** and access multi-channel **on demand** through `asMultichannelCardTransactionManager()`.
+> - APIs targeting **intrinsically multi-channel** cards (the **future Terminal OpenSAM API** in particular) make their transaction manager extend **`MultichannelCardTransactionManager` directly**.
 
 ### 2.3 Card API
 
-- **New method** `SmartCardSpi.deactivate()` — allows the `ProxyReaderApi` to **deactivate** the SmartCard on its side, so that the client application, if it holds a reference to the corresponding `SmartCard`, immediately sees its `isActive()` flip to `false`.
-- **New SPI interface** `MultichannelSmartCardSpi extends SmartCardSpi` with `int getChannel()` — the multi-channel SmartCard SPI exposes its attachment channel.
-- **Refactoring of `ProxyReaderApi`**:
-    - **Removed**: `transmitCardRequest(CardRequestSpi, ChannelControl)` and `releaseChannel()`.
-    - **Added**:
-        - `CardResponseApi transmitCardRequest(CardRequestSpi, SmartCardSpi)` — the APDU target is designated by the SmartCard (see §2.3.1 below);
-        - `CardResponseApi transmitCardRequestAndCloseChannel(CardRequestSpi, MultichannelSmartCardSpi)` — atomic "execute + close" variant;
-        - `void closeChannel(MultichannelSmartCardSpi)` — targeted closure of a given channel.
-- **Addition**: `CardSelectionResponseApi.getChannel() : int` — the selection response now carries the channel information.
-- **Removal**: `CardResponseApi.isLogicalChannelOpen()` — becomes redundant with the new model where the channel is a property of the SmartCard SPI.
+- **New operation** `SmartCardSpi.deactivate() → Unit` — allows the reader to **deactivate** the card, so that the application immediately sees `SmartCard.isActive()` switch to `false`.
+- **New SPI interface** `MultichannelSmartCardSpi` (extends `SmartCardSpi`) with `getChannel() → Int`.
+- **Redesign of `ProxyReaderApi`**:
+    - **removed**: `transmitCardRequest(CardRequestSpi, ChannelControl)` and `releaseChannel()`;
+    - **added**:
+        - `transmitCardRequest(cardRequest: CardRequest, smartCard: SmartCardSpi) → CardResponse`;
+        - `transmitCardRequestAndCloseChannel(cardRequest: CardRequest, multichannelSmartCard: MultichannelSmartCardSpi) → CardResponse`;
+        - `closeChannel(multichannelSmartCard: MultichannelSmartCardSpi) → Unit`.
+- **Addition** of the property `CardSelectionResponse.channel: Int` — the selection response carries the channel number (`0` in single-channel mode).
+- **Removal** of `CardResponseApi.isLogicalChannelOpen()` — made redundant by the new model.
 
-#### 2.3.1 Role of the SmartCard (S)PI passed to `ProxyReaderApi`
+#### 2.3.1 Role of the card passed to the `ProxyReaderApi`
 
-The three new methods of `ProxyReaderApi` receive a SmartCard (S)PI as parameter — `SmartCardSpi` for `transmitCardRequest(...)`, `MultichannelSmartCardSpi` for `transmitCardRequestAndCloseChannel(...)` and `closeChannel(...)`. This parameter is **not** a mere vehicle for the channel number. It plays up to three roles:
+The `SmartCardSpi` / `MultichannelSmartCardSpi` parameter is **not** a mere vehicle for the channel number. It plays up to three roles:
 
-1. **Carry the logical channel number** (only with `MultichannelSmartCardSpi`, via `getChannel()`) on which the APDU request or the closure must be addressed.
-2. **Carry the active/inactive state of the SmartCard** so that the `ProxyReaderApi` can **verify upfront** that the card is still active before emitting any request. This protects the application against the unintentional use of a SmartCard whose actual state no longer corresponds to what the calling code believes (card removed, channel closed by another path, prior communication exception, etc.).
-3. **Allow the `ProxyReaderApi` to deactivate the SmartCard** (`SmartCardSpi.deactivate()`) if the situation requires it — typically after a communication exception or at explicit channel closure — so that this deactivation is immediately visible on the application side via `SmartCard.isActive() == false`.
+1. **carrying the logical channel number** (with `MultichannelSmartCardSpi` only);
+2. **carrying the active state of the card**, so that the reader checks that it is still active before any transmission — an inactive card causes the `CardBrokenCommunication` error;
+3. **allowing the reader to deactivate the card** (`SmartCardSpi.deactivate()`), for example after a communication error or on explicit channel closure.
 
-Roles 2 and 3 are common to `SmartCardSpi` and `MultichannelSmartCardSpi`; role 1 is specific to the multi-channel variants.
+#### 2.3.2 `SmartCard` lifecycle
 
-#### 2.3.2 Lifecycle of `SmartCard` references held by the `CardReader`
+The reader **keeps the references to the `SmartCard` instances resulting from the last selection** and **deactivates** them in four cases:
 
-For this "actual state reflected" contract to work, the `CardReader` **temporarily holds references to the `SmartCard`s resulting from the last selection** (until the next step that invalidates their state). This holding allows the `CardReader` to **automatically deactivate** the relevant SmartCards in the following four cases:
+1. on a **new selection in single-channel mode**;
+2. on an **explicit channel closure request** (`closeChannel`, `processCommandsAndCloseChannel`);
+3. on the call to **`ObservableCardReader.endCardProcessing()`**;
+4. on an **error indicating that the card can no longer be reached** (`CardCommunication`, `ReaderCommunication`).
 
-1. on a **new selection in single-channel mode** (the old SmartCards become obsolete);
-2. on an **explicit channel closure request** (`closeChannel`, `transmitCardRequestAndCloseChannel`, `processCommandsAndCloseChannel`);
-3. on a call to **`ObservableCardReader.endCardProcessing()`** (end of processing of the current card);
-4. on an **exception indicating that the card is no longer contactable** (typically `CardCommunicationException` / `ReaderCommunicationException` at the Reader level, or `CardBrokenCommunicationException` / `ReaderBrokenCommunicationException` at the Card API level).
-
-The objective is that, in all these cases, **any subsequent attempt to use a now-invalid SmartCard in a transaction** (Calypso or other) can be intercepted by the `ProxyReaderApi` at the `isActive()` verification step — instead of producing a later error that is more difficult to diagnose.
-
-**Lifetime of the holding**: the `CardReader` keeps the references to the SmartCards from their creation (selection result) until one of the four events above. Concretely, on the call to `endCardProcessing()` (the most frequent case), the SmartCards are deactivated **and** their references are released by the `CardReader`; they can then be finalized by the Java garbage collector if the application does not keep its own reference.
-
-> This responsibility falls to the **implementation** of the `CardReader` and the `ProxyReaderApi`: the public API merely exposes `SmartCard.isActive()` and `SmartCardSpi.deactivate()`; the "holding + deactivation at the four points above" contract must be documented in the Javadoc of the Java module but does not appear explicitly in the UML diagram.
+This contract, which only appeared as prose in the previous version of this document, is now **normative**: it is defined in the Reader API specification (description of `SmartCard.isActive`, *SmartCard lifecycle* section).
 
 ### 2.4 Calypso Card API
 
-- The stereotype of the Calypso `TransactionManager` evolves from `<<CardTransactionManager>>` (Reader API) to `<<IsoCardTransactionManager>>` (Reader API). A Calypso card being intrinsically ISO 7816-4, it therefore inherits the `asMultichannelCardTransactionManager()` method introduced at the Reader API level (see §2.2).
-- Multi-channel access on the Calypso side is therefore performed **without a dedicated method** in the Calypso Card API: the integrator directly calls `transactionManager.asMultichannelCardTransactionManager()` and then uses the `processCommandsAndCloseChannel()` / `closeChannel()` methods of the `MultichannelCardTransactionManager` thus obtained.
+- The Calypso `TransactionManager` now extends **`IsoCardTransactionManager`** (instead of `CardTransactionManager`). Multi-channel access is performed **without a dedicated operation**: the integrator calls `asMultichannelCardTransactionManager()` and then uses `processCommandsAndCloseChannel()` / `closeChannel()`.
 
 ### 2.5 Generic Card API
 
-- The stereotype of the Generic Card `CardTransactionManager` evolves from `<<CardTransactionManager>>` (Reader API) to `<<IsoCardTransactionManager>>` (Reader API). A generic card being manipulated at the ISO 7816-4 level, it also benefits from the multi-channel cast via the inherited `asMultichannelCardTransactionManager()`.
+- The transaction manager (renamed `GenericCardTransactionManager`, see Theme 5) now extends **`IsoCardTransactionManager`**.
 
 ### 2.6 Rationale
 
-The "by parameter" control (`ChannelControl.KEEP_OPEN` / `CLOSE_AFTER`) relied on an implicit, global notion of "single current channel". In a multi-channel context, this model is ambiguous: which channel does `CLOSE_AFTER` apply to? Moving to a model where the target (the `SmartCard(Spi)`) is **explicitly named** in each call resolves this ambiguity and makes the API self-descriptive.
+"By parameter" control (`ChannelControl.KEEP_OPEN` / `CLOSE_AFTER`) relied on an implicit, global notion of a "single current channel". In a multi-channel context, this model is ambiguous: which channel does `CLOSE_AFTER` apply to? Moving to a model where the target (the `SmartCard(Spi)`) is **explicitly named** in each call removes this ambiguity.
 
-The three-tier hierarchy (`CardTransactionManager` / `IsoCardTransactionManager` / `MultichannelCardTransactionManager`) answers a simple principle: **each consumer API anchors itself at the capability level that exactly matches its card model**.
-
-- Placing the `asMultichannelCardTransactionManager()` cast on **`IsoCardTransactionManager`** avoids duplicating the multi-channel gateway and guarantees a homogeneous multi-channel access for all APIs targeting ISO 7816-4 cards for which multi-channel is only an **optional capability of the underlying card** (Calypso Card, Generic Card, and any future extension of the same nature).
-- The **direct stereotyping on `MultichannelCardTransactionManager`** is reserved for APIs whose target card is **intrinsically multi-channel** by design, such as the **future Terminal OpenSAM API**. For these APIs, exposing multi-channel without a cast step is semantically correct (there is no case where the capability would be absent) and improves ergonomics by removing a systematic intermediate call.
+The three-level hierarchy allows **each consumer API to anchor itself at the capability level that exactly matches its card model**: on-demand conversion for cards for which multi-channel is only an optional capability, direct anchoring for intrinsically multi-channel cards.
 
 ---
 
-## 3. Theme 2 — Countermeasure Against Relay Attack Vulnerability
+## 3. Theme 2 — Countermeasure against relay attacks
 
 ### 3.1 Motivation
 
-A **relay attack** consists in interposing an attacker between the card and the terminal and relaying the APDU exchanges to a remote card, which enables a fraudulent operation without the holder's knowledge. Version 3.0.0 introduces a mechanism for **measuring and bounding APDU exchange durations** and **bounding the duration of secure sessions**, which allows the framework to detect the abnormal lengthening of communication times characteristic of a relay.
+A **relay attack** consists in relaying the dialogue with a card to a remote location, which makes a fraudulent operation possible without the cardholder's knowledge. The relay adds a transmission delay: an abnormally long exchange can therefore reveal that the card is not actually present in front of the reader. The new versions introduce a mechanism for **measuring and bounding APDU exchange durations** and for **bounding the secure session duration**.
 
-#### Threat model adopted
+#### Threat model
 
-- **Targeted attack surface**: **application-level attack** (software relay of APDUs within the application environment), as opposed to attacks at the physical RF transport level, which fall under hardware countermeasures.
-- **Order of magnitude** of relevant bounds: the **millisecond** (`ms`). Effective exchange and session durations are measured in this unit, and the bounds defined by the integrator are expressed in the same unit.
-- **Place of measurement**: the **Terminal Reader API implementation** (Keypop framework layer on the terminal side). It is the layer that measures the effective duration of each APDU exchange and each secure session, and compares this measurement against the bounds declared by the application.
-- **Post-overrun behavior**: if a bound is exceeded, the **current session is automatically cancelled** by the implementation and an **`InvalidCardResponseException`** exception is thrown, with a detailed message indicating the exceeded bound and the measured duration. The application can thus distinguish this case from other communication errors and log/alert accordingly.
+- **Targeted attack surface**: **application-level attack** (software relay of APDUs), as opposed to attacks at the physical RF transport level, which are covered by hardware countermeasures.
+- **Order of magnitude** of the bounds: the **millisecond** (`ms`).
+- **Measurement location**: the **Terminal Reader API implementation** measures the effective duration of each APDU exchange and compares it with the bound declared on the request. The secure session and SV operation duration bounds are declared in the Calypso Card API; **how they are measured is not specified yet**.
+- **Behaviour after an overrun**: the Card API raises the **`ApduExchangeDurationExceeded`** error; its specification states that higher-level extensions (notably Calypso) **may** (MAY) intercept it, cancel any ongoing session and propagate the failure to the application as an **`InvalidCardResponse`**. This is a **possibility**: the Calypso Card API does not make this behaviour mandatory yet, and does not specify the consequence of exceeding the session and SV operation bounds (see §19.2). In the Generic Card API, an overrun raises `InvalidCardResponse`, whose message identifies the offending command.
 
 ### 3.2 Card API
 
-- **Request side**: `ApduRequestSpi.getApduExchangeMaxDuration() : Long` — maximum duration tolerated for the APDU exchange (in milliseconds). The return type is intentionally `Long` (boxed): the value `null` means **"no bound defined"** for this request.
-- **Response side**: `ApduResponseApi.getApduExchangeDuration() : Long` — effective duration of the exchange, as measured by the reader. The value `null` means **"duration not measured"** (the reader does not provide the measurement).
-- **New exception** `ApduExchangeDurationExceededException extends AbstractApduException` — thrown by `ProxyReaderApi.transmitCardRequest(...)` (Card API, internal level) when the effective duration of the exchange exceeds the `getApduExchangeMaxDuration()` bound declared on the request (no effect if the bound is `null`). On the **integrator** side, this exception is intercepted by the Terminal Reader API implementation, which **automatically cancels the current session** and propagates the event as an `InvalidCardResponseException` enriched with the detail (see §3.1, threat model).
+- **Request side**: `ApduRequest.apduExchangeMaxDuration: Long? = null` — maximum tolerated duration for the exchange (in milliseconds); `null` means "no bound".
+- **Response side**: `ApduResponse.apduExchangeDuration: Long?` — effective duration of the exchange; `null` means "duration not measured".
+- **New error** `ApduExchangeDurationExceeded` — raised by `ProxyReaderApi.transmitCardRequest(...)` when the effective duration exceeds the declared bound. Like the other APDU errors, it carries `cardResponse` and `isCardResponseComplete`.
+- The Card API specification now documents this mechanism as a **practical solution for implementing anti-relay countermeasures** (*APDU exchange execution-time control* chapter).
 
 ### 3.3 Calypso Card API
 
-All new methods take a `csnMin` parameter which is a **threshold** on the CSN (Card Serial Number): the rule applies to **any card whose CSN is greater than or equal to `csnMin`**. This mechanism enables introducing or progressively tightening duration bounds as new generations of cards (with higher CSNs) are issued, without penalizing older cards.
+All the new operations take a `csnMin` parameter which is a **threshold** on the CSN (Card Serial Number): the rule applies to **any card whose CSN is greater than or equal to `csnMin`**.
 
-> **Combination rule for `csnMin`**: when several calls to `assignOpenSecureSessionMaxDuration(...)` (or `assignSvOperationMaxDuration(...)`) are made with different `csnMin` values, each call defines a **range** bounded by its `csnMin` and the immediately higher declared `csnMin` (or +∞ for the declaration at the highest threshold). For a given card, it is the **range to which its CSN belongs** that determines the applied bound. Example: `assignOpenSecureSessionMaxDuration(100, …, 200)` then `assignOpenSecureSessionMaxDuration(500, …, 100)` defines two ranges — `[100, 499]` bounded at 200 ms, `[500, +∞[` bounded at 100 ms.
+> **`csnMin` combination rule**: when several calls are made with different `csnMin` values, each call defines a **range** bounded by its `csnMin` and the immediately higher declared `csnMin` (or +∞). For a given card, it is the **range to which its CSN belongs** that determines the applied bound.
 
-- **`SymmetricCryptoSecuritySetting`** — four new methods:
-    - `assignOpenSecureSessionMaxDuration(long csnMin, byte[] dfName, long maxDuration)` — maximum duration of a secure session for cards with CSN ≥ `csnMin` and a target DF;
-    - `assignOpenSecureSessionMaxDuration(long csnMin, long maxDuration)` — all-DF variant;
-    - `assignSvOperationMaxDuration(long csnMin, byte[] dfName, long maxDuration)` — bound dedicated to Stored Value (SV) operations;
-    - `assignSvOperationMaxDuration(long csnMin, long maxDuration)` — all-DF variant.
-- **`AsymmetricCryptoSecuritySetting`** — two new methods:
-    - `assignOpenSecureSessionMaxDuration(long csnMin, byte[] dfName, long maxDuration)`;
-    - `assignOpenSecureSessionMaxDuration(long csnMin, long maxDuration)`.
+- **`SymmetricCryptoSecuritySetting`** — two new operations:
+    - `assignOpenSecureSessionMaxDuration(maxDuration: Long, csnMin: Long, dfName: ByteArray? = null) → Self` — maximum duration of a secure session;
+    - `assignSvOperationMaxDuration(maxDuration: Long, csnMin: Long, dfName: ByteArray? = null) → Self` — maximum duration of a Stored Value operation.
+- **`AsymmetricCryptoSecuritySetting`** — one new operation:
+    - `assignOpenSecureSessionMaxDuration(maxDuration: Long, csnMin: Long, dfName: ByteArray? = null) → Self`.
+
+The `dfName` parameter is **optional**: when omitted (`null`), the setting applies to all DFs; when supplied, it restricts it to the designated DF. `maxDuration` comes first, as it is the value the operation assigns.
+
+> The specification does not yet define what is measured for these bounds (start and end of the measurement of the session or SV operation duration), nor the consequence of an overrun (see §3.1 and §19.2).
+
+> This form replaces the two overloads per operation (with and without `dfName`) of the previous working version of this document (see Theme 10, unique operation names).
 
 ### 3.4 Generic Card API
 
-- **`CardTransactionManager.prepareCommand(byte[] apdu, int idCommand, long maxDuration)`** — overload with explicit duration bound. The semantics of `maxDuration` are identical to those of `ApduRequestSpi.getApduExchangeMaxDuration()` on the Card API side (see §3.2): maximum duration tolerated in milliseconds for this specific APDU exchange. The `idCommand` (see Theme 7) allows precisely identifying the command whose duration was exceeded if an exception is thrown.
+- **`GenericCardTransactionManager.prepareCommandWithMaxDuration(commandId: Int, apdu: ByteArray, maxDuration: Long) → Self`** — prepares a command with an identifier (see Theme 7) and a duration bound. If the effective duration exceeds the bound, the `InvalidCardResponse` error identifies the offending command.
 
-> The Generic Card API thus exposes the relay countermeasure **at the individual command level** rather than at the session level: this is consistent with its usage model (APDU sequences without an explicit secure transaction).
+> The Generic Card API thus exposes the relay countermeasure **at the level of each individual command**, consistent with its usage model (APDU sequences without an explicit secure transaction).
 
 ### 3.5 Rationale
 
-A relay attack introduces a significant and systematic delay on APDU exchanges; monitoring this delay at the reader level (Card API), at the Calypso session level (Calypso Card API) and at the level of each generic command (Generic Card API) provides coverage across all Terminal API usage scenarios.
+A relay attack introduces a significant and systematic delay on APDU exchanges; monitoring this delay at the reader level (Card API), at the Calypso session level (Calypso Card API) and at the level of each generic command (Generic Card API) covers all the usage scenarios of the Terminal APIs.
 
 ---
 
-## 4. Theme 3 — Simplified Observation Management
+## 4. Theme 3 — Simplified observation management
 
 ### 4.1 Motivation
 
-The 2.x model exposed a complete **Observer pattern** (`addObserver`, `removeObserver`, `clearObservers`, `countObservers`, `setReaderObservationExceptionHandler`) augmented by two distinct SPIs (`CardReaderObserverSpi` for events and `CardReaderObservationExceptionHandlerSpi` for errors). In practice, in all real-world usage, **a single observer** is registered, and the separation between event handler and error handler did not bring value (the two were implemented together most of the time).
+The production model exposed a complete **Observer pattern** (`addObserver`, `removeObserver`, `clearObservers`, `countObservers`, `setReaderObservationExceptionHandler`) plus two distinct SPIs (`CardReaderObserverSpi` and `CardReaderObservationExceptionHandlerSpi`). In practice, **a single observer** is registered, and the separation between event handler and error handler brought no value.
 
 ### 4.2 Reader API — `ObservableCardReader`
 
-**Removed methods**:
+**Removed operations**:
 
 - `setReaderObservationExceptionHandler(CardReaderObservationExceptionHandlerSpi)`
-- `addObserver(CardReaderObserverSpi)`
-- `removeObserver(CardReaderObserverSpi)`
-- `clearObservers()`
-- `countObservers()`
+- `addObserver(CardReaderObserverSpi)`, `removeObserver(CardReaderObserverSpi)`, `clearObservers()`, `countObservers()`
 - `startCardDetection(DetectionMode)` (single-argument signature)
+- `finalizeCardProcessing()` (renamed, see below)
 
-**Added / refactored methods**:
+**Added / redesigned operations**:
 
-- `startCardDetection(CardDetectionSettings settings, CardReaderEventHandler eventHandler)` — observer registration (and its declaration) now happens **at the moment detection is started**, in a single operation. The first parameter is no longer a mere `DetectionMode` but a `CardDetectionSettings` object (single builder), which carries the detection mode **and** the other characteristics (targeted RF technologies, ECP frame, etc.). This refactoring is detailed in Theme 6 (see §7); we simply note here that observation and detection parameterization are now co-located in a single call.
+- `startCardDetection(settings: CardDetectionSettings, eventHandler: CardReaderEventHandler) → Unit` — the handler is registered **when detection starts**, in a single operation, together with the detection settings (see Theme 6).
+- `endCardProcessing() → Unit` — replaces `finalizeCardProcessing()`; idempotent; additionally releases the references to the `SmartCard` instances of the last selection (see §2.3.2).
+- `clearScheduledCardSelectionScenario() → Unit` — **new operation** that removes the card selection scenario scheduled on the reader. From the next insertion onwards, no scenario is executed and `CardReaderEvent.scheduledCardSelectionsResponse` is `null`. Idempotent.
 
-**Removed SPIs**:
+**Removed SPIs**: `CardReaderObserverSpi`, `CardReaderObservationExceptionHandlerSpi`.
 
-- `CardReaderObserverSpi`
-- `CardReaderObservationExceptionHandlerSpi`
+**Added SPI**: `CardReaderEventHandler`, which **merges** the two previous SPIs:
 
-**Added SPI**:
-
-- `CardReaderEventHandler` which **merges** the two previous SPIs:
-    - `void onReaderEvent(CardReaderEvent cardReaderEvent)`
-    - `void onReaderError(String context, String readerName, Throwable e)`
+- `onReaderEvent(cardReaderEvent: CardReaderEvent) → Unit`;
+- `onReaderError(context: String, readerName: String, error: Any) → Unit`.
 
 ### 4.3 Rationale
 
 This simplification:
 
-1. **Reduces the API surface** (5 methods and 2 SPIs become 1 method and 1 SPI);
-2. **Eliminates invalid states** (observer registered without error handler, detection started without observer, etc.);
-3. **Aligns the API** with the actual usage observed at integrators.
+1. **reduces the API surface** (5 operations and 2 SPIs become 1 operation and 1 SPI);
+2. **eliminates invalid states** (observer registered without an error handler, detection started without an observer, etc.);
+3. **aligns the API** with the actual usage observed among integrators.
 
 ---
 
-## 5. Theme 4 — Current Secure Session Status Awareness
+## 5. Theme 4 — Knowledge of the current secure session state
 
 ### 5.1 Motivation
 
-On the Calypso side, the client application had no direct way, at a given moment, to know **whether a secure session was open** nor to know its **nature** (symmetric / asymmetric) or the **write access level** requested at opening. This was useful information for business layers, in particular to decide whether or not to chain certain command preparations.
+On the Calypso side, the application had no direct means of knowing **whether a secure session was open**, nor its **nature** (symmetric / asymmetric) or its **write access level**.
 
 ### 5.2 Calypso Card API
 
-- **New method** `TransactionManager.getSecureSessionStatus() : SecureSessionStatus` — accessor of the current status. The returned object is an **immutable snapshot** captured at the moment of the call; it does not reflect subsequent changes to the session state. To obtain a refreshed state, the caller must re-invoke `getSecureSessionStatus()`.
-- **New interface** `SecureSessionStatus`:
-    - `boolean isOpen()` — is a secure session open at the snapshot moment?
-    - `SecureSessionType getType()` — cryptographic nature of the session;
-    - `WriteAccessLevel getWriteAccessLevel()` — write access level requested at opening. This method returns **`null` in PKI mode** (`SecureSessionType.ASYMMETRIC`), where session opening is done via `prepareOpenSecureSession()` without `WriteAccessLevel`.
-- **New enumeration** `SecureSessionType`:
-    - `SYMMETRIC` (PSO/SAM sessions, Regular and Extended modes);
-    - `ASYMMETRIC` (PKI mode).
+- **New operation** `TransactionManager.getSecureSessionState() → SecureSessionState` — returns the state of the secure session at the moment of the call.
+- **New enumeration** `SecureSessionState`:
+    - `NO_SESSION` — no secure session is open: none has been opened yet, or the last one has been closed or cancelled;
+    - `ASYMMETRIC` — PKI session;
+    - `SYMMETRIC_PERSONALIZATION`, `SYMMETRIC_LOAD`, `SYMMETRIC_DEBIT` — symmetric session opened with the corresponding write access level.
 
-> **Granularity adopted for `SecureSessionType`**: the enumeration reflects the **cryptographic nature** of the session (symmetric vs asymmetric) and not the **application mode** (Regular / Extended). These two modes on the symmetric side share the same underlying cryptography and only differ in their configuration at the `TransactionManager` level (see the `SecureRegularModeTransactionManager` / `SecureExtendedModeTransactionManager` subtypes). An integrator who needs to know the application mode obtains it directly via the subtype of the `TransactionManager` they instantiated; `SecureSessionStatus` focuses on the strategic "symmetric or asymmetric" information that conditions the scope of possible operations (keys, certificates, etc.).
+> **Change compared with the previous working version of this document**: the `SecureSessionStatus` object (with `isOpen`, `type`, `writeAccessLevel`) / `SecureSessionType` pair is replaced by a single enumeration. The former form left `type` and `writeAccessLevel` undefined when no session was open; the enumeration makes these combinations impossible. The name *State* (rather than *Status*) designates one state among mutually exclusive states and avoids any confusion with the status data returned by the card (status word, `dfStatus`, etc.).
+
+> **Chosen granularity**: the values reflect the **cryptographic nature** of the session and not the **application mode** (Regular / Extended); the latter is deduced from the sub-type of the instantiated `TransactionManager`.
 
 ### 5.3 Rationale
 
-The Calypso `TransactionManager` is now **introspectable** on its own secure session, which:
-
-- prevents the caller from having to maintain its own state tracking in parallel;
-- makes explicit information that was previously implicit (the session type is currently inferred from the instantiated subtype of `SecureTransactionManager` — which the caller loses grasp of as soon as it manipulates the `T extends TransactionManager<T>` generic).
+The Calypso `TransactionManager` can now be **introspected** about its own secure session, which spares the caller from maintaining its own state tracking.
 
 ---
 
-## 6. Theme 5 — Semantic Improvements (Renamings and Concept Migration)
+## 6. Theme 5 — Semantic improvements (renamings and removals)
+
+This theme groups the renamings and removals motivated by clarity or consistency. The changes resulting from the language-independent notation (`Exception`, `Spi`, `Api` suffixes, nested enumerations, overloads) are described in Theme 10; the exhaustive list is given in Annex A.
 
 ### 6.1 Reader API
 
-#### Enumeration and value renamings
-
-| Before (2.x) | After (3.0.0) | Rationale |
+| Before (Java 2.1.0) | After (3.0.0) | Rationale |
 |---|---|---|
-| `DetectionMode.SINGLESHOT` | `DetectionMode.SINGLE_SHOT` | Compliance with the `SCREAMING_SNAKE_CASE` naming convention (compound word). |
-| `CardReaderEvent.Type.UNAVAILABLE` | `CardReaderEvent.Type.READER_UNREGISTERED` | The name now describes the actual **cause** of the event (the reader has been unregistered) and no longer a vague consequence ("unavailable"). |
-| `NotificationMode` (package `reader`) | `CardPresenceNotificationPolicy` (package `reader.selection`) | The name describes what is notified (card presence); the package move reflects that this notion belongs to **selection** and not to the reader. |
-| `ObservableCardReader.finalizeCardProcessing()` | `ObservableCardReader.endCardProcessing()` | `finalize` is a charged reserved word in Java (method of `Object`, now deprecated by the JDK); `end` is more neutral and shorter. |
+| `ObservableCardReader.DetectionMode.SINGLESHOT` | `DetectionMode.SINGLE_SHOT` | `UPPER_SNAKE_CASE` convention (compound word). |
+| `CardReaderEvent.Type.UNAVAILABLE` | `CardReaderEventType.READER_UNREGISTERED` | The name describes the actual **cause** of the event. |
+| `ObservableCardReader.NotificationMode` | `CardPresenceNotificationPolicy` (namespace `reader.selection`) | The name describes what is notified; the notion belongs to **selection**. |
+| `ObservableCardReader.finalizeCardProcessing()` | `ObservableCardReader.endCardProcessing()` | `finalize` is loaded in Java (method of `Object`, deprecated by the JDK). |
 
-#### Migration of the "multiple selection mode" concept
+**Removals**:
 
-- **Removed**: `CardSelectionManager.setMultipleSelectionMode()` — a side-effecting method that silently modified the behavior of the next `process...`.
-- **Replaced** by an **explicit parameter** `SelectionExecutionPolicy` passed to `processCardSelectionScenario` and `scheduleCardSelectionScenario`:
-    - `STOP_ON_FIRST_MATCH` — historical default behavior;
-    - `PROCESS_ALL` — equivalent of the previous multiple mode.
-
-Impact on signatures:
-
-```text
-2.x : processCardSelectionScenario(CardReader)
-3.0 : processCardSelectionScenario(CardReader, SelectionExecutionPolicy)
-
-2.x : scheduleCardSelectionScenario(ObservableCardReader, NotificationMode)
-3.0 : scheduleCardSelectionScenario(ObservableCardReader,
-                                    CardPresenceNotificationPolicy,
-                                    SelectionExecutionPolicy)
-```
-
-#### Selector hierarchy simplifications
-
-- **Removal** of the intermediate interface `CommonIsoCardSelector<T>` (2.1.0).
-- `IsoCardSelector` now directly extends `CardSelector` and carries the methods `filterByDfName`, `setFileOccurrence`, `setFileControlInformation`.
-
-#### Removals tied to the channel model
-
-- **Removed**: `CardSelectionManager.prepareReleaseChannel()`.
-- **Removed**: `ChannelControl` (enumeration) — see Theme 1.
-- **Removed**: `CardTransactionManager.processCommands(ChannelControl)`, replaced by `processCommands()` without parameter.
-
-#### Simplifications of the transaction manager hierarchy
-
-- `CardTransactionManager` is **no longer generic** (`<T extends CardTransactionManager<T>>` disappears). The `processCommands()` method now returns `void` instead of `T`. Consequence: fluent chaining (`mgr.prepareXxx().prepareYyy().processCommands()`) is no longer supported at the root level; it remains possible at the subtype level (Calypso, Generic Card), which reintroduce it via their own return signature. This choice simplifies the hierarchy while preserving common usage.
-- **New interface** `IsoCardTransactionManager extends CardTransactionManager` introduced as the common anchor for all ISO 7816-4 cards (Calypso, Generic Card, etc.) — see Theme 1 §2.2 for details.
-
-#### Removal of obsolete exceptions
-
-- **Removed**: `ReaderProtocolNotSupportedException` — disappears with the removal of `ConfigurableCardReader.activateProtocol(...)`. This exception no longer has a valid throw point in 3.0.0.
-
-#### Removals tied to string-based protocol configuration
-
-These evolutions are **detailed in Theme 6** (see §7) and listed here as a summary:
-
-- **Removed**: `ConfigurableCardReader` interface (and its methods `activateProtocol`, `deactivateProtocol`, `getCurrentProtocol`). The string-based protocol activation mechanism disappears entirely.
-- **Removed**: `CardSelector.filterByCardProtocol(String logicalProtocolName)`, replaced by typed `filterByCardType(CardType)` (see §7.3).
+- `CardSelectionManager.setMultipleSelectionMode()` and `prepareReleaseChannel()` — see Themes 1 and 9;
+- `ChannelControl` and `CardTransactionManager.processCommands(ChannelControl)` — replaced by `processCommands()`;
+- `ReaderProtocolNotSupportedException` — disappears with `ConfigurableCardReader` (see Theme 6);
+- `reader.selection.InvalidCardResponseException` — duplicate of the error of the same name in the `reader` namespace.
 
 ### 6.2 Card API
 
-- **Removal**: `ChannelControl` (consistency with the Reader API).
-- **Removal**: `ProxyReaderApi.releaseChannel()`.
-- **Removal**: `CardResponseApi.isLogicalChannelOpen()`.
+- **Removal** of `ChannelControl`, of `ProxyReaderApi.releaseChannel()` and of `CardResponseApi.isLogicalChannelOpen()` (see Theme 1).
+- **Removal** of the abstract error `AbstractApduException`: its information (`cardResponse`, `isCardResponseComplete`) is carried directly by the four errors concerned (`ReaderBrokenCommunication`, `CardBrokenCommunication`, `UnexpectedStatusWord`, `ApduExchangeDurationExceeded`).
 
 ### 6.3 Calypso Card API
 
-#### Removals
+- **Removals**:
+    - `TransactionManager.processCommands(ChannelControl)` and `ChannelControl` (deprecated);
+    - the errors `UnexpectedCommandStatusException`, `ReaderIOException`, `CardIOException` (deprecated), covered by `InvalidCardResponse`, `ReaderCommunication` and `CardCommunication` of the Reader API;
+    - the `SelectFileException` error, which has become pointless (see Theme 13);
+    - `CalypsoCardApiFactory.createSearchCommandData()` (see Theme 11).
+- **Renaming** of overloaded operations (see Theme 10): `prepareSelectFile(short)` → `prepareSelectFileByLid`, `prepareSelectFile(SelectFileControl)` → `prepareSelectFileByControl` (parameter harmonised as `selectFileControl`), in `CalypsoCardSelectionExtension` and `TransactionManager`.
+- **Nested enumerations renamed**: `CalypsoCard.ProductType` → `CalypsoCardProductType`, `ElementaryFile.Type` → `ElementaryFileType`.
 
-- `TransactionManager.processCommands(ChannelControl)` — alignment with the Reader API and the Card API.
-- Removed exceptions:
-    - `UnexpectedCommandStatusException` — covered by `InvalidCardResponseException` at the Reader level;
-    - `ReaderIOException` — covered by `ReaderCommunicationException` at the Reader level;
-    - `CardIOException` — covered by `CardCommunicationException` at the Reader level.
+### 6.4 Legacy SAM API
 
-  Rationale: these three Calypso exceptions duplicated exceptions at the Reader / Card level. They are removed in favor of the lower-level exception hierarchy, which is already propagated naturally.
+- **Removals**:
+    - `TransactionManager.processCommands()` (deprecated) and `processCommands(ChannelControl)`: the manager now inherits `CardTransactionManager.processCommands()` from the Reader API;
+    - the errors `UnexpectedCommandStatusException`, `ReaderIOException`, `SamIOException`, covered by the Reader API errors;
+    - `LegacySamRevocationServiceSpi.isSamRevoked(serialNumber)` (variant without counter value): only `isSamRevoked(serialNumber: ByteArray, counterValue: Int) → Boolean` remains.
+- **Renaming** of overloaded operations (see Theme 10):
 
-#### Consistency with Reader API renamings
-
-- The Calypso `TransactionManager` sees its stereotype evolve from `<<CardTransactionManager>>` to `<<IsoCardTransactionManager>>` (Reader API), reflecting the anchoring of Calypso cards to the ISO 7816-4 standard and granting access to the multi-channel cast `asMultichannelCardTransactionManager()` (see Theme 1).
-
-### 6.4 Legacy SAM API (Terminal Calypso Crypto Legacy SAM API)
-
-#### Removals
-
-- `TransactionManager.processCommands()` — method removed. The Legacy SAM transaction manager now conforms to the new non-generic `CardTransactionManager` (Reader API) interface, where `processCommands()` is defined a single time at the root level.
-- `TransactionManager` is **no longer generic** (`<T extends TransactionManager<T>>` disappears), in consistency with the refactoring of `CardTransactionManager` on the Reader API side.
-- Removed exceptions:
-    - `UnexpectedCommandStatusException`;
-    - `ReaderIOException` (SAM reader communication);
-    - `SamIOException` (SAM communication).
-
-  Rationale: these three exceptions duplicated Reader API-level exceptions (`InvalidCardResponseException`, `ReaderCommunicationException`, `CardCommunicationException`) that are propagated naturally. Consistency with the equivalent removal on the Calypso Card API side (see §6.3).
+| Before (Java 1.0.0) | After (2.0.0) |
+|---|---|
+| `setUnlockData(String, LegacySam.ProductType)` | `setUnlockDataForProductType(unlockData, productType)` |
+| `setStaticUnlockDataProvider(provider)` | `setStaticUnlockDataProviderWithDeferredReader(provider)` |
+| `setStaticUnlockDataProvider(provider, targetSamReader)` | `setStaticUnlockDataProvider(provider, targetSamReader)` *(nominal case, name unchanged)* |
+| `setDynamicUnlockDataProvider(provider)` | `setDynamicUnlockDataProviderWithDeferredReader(provider)` |
+| `setDynamicUnlockDataProvider(provider, targetSamReader)` | `setDynamicUnlockDataProvider(provider, targetSamReader)` *(nominal case, name unchanged)* |
+| `prepareReadWorkKeyParameters(int)` / `(byte, byte)` | `prepareReadWorkKeyParametersByRecordNumber` / `prepareReadWorkKeyParametersByKifKvc` |
+| `getWorkKeyParameter(int)` / `(byte, byte)` | `getWorkKeyParameterByRecordNumber` / `getWorkKeyParameterByKifKvc` |
+| `prepareTransferWorkKeyDiversified(…, diversifier)` | `prepareTransferWorkKeyDiversifiedWithSpecificDiversifier(…, diversifier)` |
+| `LegacySam.ProductType` | `LegacySamProductType` |
 
 ### 6.5 Generic Card API
 
-#### Method renamings
-
-| Before (1.x) | After (2.0.0) | Rationale |
+| Before (Java 1.0.0) | After (2.0.0) | Rationale |
 |---|---|---|
-| `CardTransactionManager.prepareApdu(String apduCommand)` | `prepareCommand(byte[] apdu)` | Shorter name oriented toward "command" rather than "APDU" (term already clear in context). A single input type (`byte[]`) instead of three overloads (String, byte[], CLA/INS/P1/P2/data/Le fields) — the conversion from String is left to the application. |
-| `prepareApdu(byte[] apduCommand)` | `prepareCommand(byte[] apdu)` | (same as above) |
-| `prepareApdu(byte cla, byte ins, byte p1, byte p2, byte[] dataIn, Byte le)` | *(removed)* | APDU construction by fields is left to the application. |
-| `getResponsesAsByteArrays() : List<byte[]>` | `getLastExecutionResponses() : List<byte[]>` | The new name specifies the **temporal scope** (the responses of the last execution) and removes the ambiguity with possible previous executions. The hexadecimal representation is left to the application if needed. |
-| `getResponsesAsHexStrings() : List<String>` | *(removed)* | (same as above) |
+| `CardTransactionManager` | `GenericCardTransactionManager` | Name specific to the API, with no collision with the Reader API `CardTransactionManager` it inherits from. |
+| `GenericCardApiFactory.createCardTransaction(reader, card)` | `createGenericCardTransactionManager(reader, card)` | The name designates the created object. |
+| `prepareApdu(String)` | *(removed)* | Conversion from a string is left to the application. |
+| `prepareApdu(byte[])` | `prepareCommand(apdu: ByteArray)` | "Command"-oriented name. |
+| `prepareApdu(byte cla, byte ins, byte p1, byte p2, byte[] dataIn, Byte le)` | *(removed)* | Building APDUs field by field is left to the application. |
+| `getResponsesAsByteArrays()` | `getLastExecutionResponses() → List<ByteArray>` | Specifies the **time scope** (last execution). |
+| `getResponsesAsHexStrings()` | *(removed)* | The hexadecimal representation is left to the application. |
 
-#### New methods (related to Themes 2 and 7)
-
-- `prepareCommand(byte[] apdu, int idCommand)` — overload with command identifier (see Theme 7).
-- `prepareCommand(byte[] apdu, int idCommand, long maxDuration)` — overload with identifier **and** duration bound for the relay countermeasure (see Theme 2, §3.4).
-- `getLastExecutionResponse(int idCommand) : byte[]` — targeted access to the response of a specific command by its `idCommand`.
-
-#### Consistency with Reader API renamings
-
-- The Generic Card `CardTransactionManager` sees its stereotype evolve from `<<CardTransactionManager>>` to `<<IsoCardTransactionManager>>` (Reader API), granting access to the multi-channel cast `asMultichannelCardTransactionManager()` (see Theme 1).
+New operations related to Themes 2 and 7: `prepareCommandWithId`, `prepareCommandWithMaxDuration`, `getLastExecutionResponse` (see §8.2).
 
 ### 6.6 Storage Card API
 
-#### Historical renamings completed
+| Before (Java 1.2.0) | After (2.0.0) | Rationale |
+|---|---|---|
+| `ProductType` (namespace `storagecard.card`) | `StorageCardProductType` | Name specific to the API, unambiguous with respect to the other product types of the family. |
+| `ProductType.getBlockCount()`, `getBlockSize()`, `hasSystemBlock()`, `hasWriteAcknowledgment()`, `hasAuthentication()` | properties `blockCount`, `blockSize`, `hasSystemBlock`, `hasWriteAcknowledgment`, `hasAuthentication` of the enumeration | These are data specific to each product, exposed as such (see Theme 10). |
+| `StorageCard.getUID()` | `StorageCard.getUid()` | `lowerCamelCase` convention for acronyms. |
+| `prepareMifareClassicAuthenticate(…, byte[] key)` | `prepareMifareClassicAuthenticateWithKey(…, key)` | Unique operation names (see Theme 10). |
+| `prepareMifareClassicAuthenticate(…, int keyNumber)` | `prepareMifareClassicAuthenticateWithKeyNumber(…, keyNumber)` | (same) |
+| `StorageCardTransactionManager.prepareReadSystemBlock()`, `prepareWriteSystemBlock(byte[])` *(deprecated)* | *(removed)*; `prepareSt25ReadSystemBlock()` and `prepareSt25WriteSystemBlock(commandId, data)` remain | The `St25` prefix reflects the product-specific nature of the system block. |
+| `StorageCardException` interface (`getBlockAddress()`) | *(removed)*; the errors carry `blockAddress: Int?` and `commandId: Int?` | The information is carried directly by each error. |
+| `SCAuthenticationFailedException extends CardCommunicationException` | `SCAuthenticationFailed` *(no parent error)* | An authentication failure is not a communication error. |
 
-The following methods, which had been deprecated in a previous version of the Storage Card API in favor of their `St25`-prefixed equivalents, are **definitively removed** in 2.0.0:
+In addition, `StorageCard.getBlock`, `getBlocks` and `getSystemBlock` now explicitly return `ByteArray?` (`null` if the data has not been read).
 
-| Removed | Retained |
-|---|---|
-| `StorageCardTransactionManager.prepareReadSystemBlock()` | `prepareSt25ReadSystemBlock()` |
-| `StorageCardTransactionManager.prepareWriteSystemBlock(byte[] data)` | `prepareSt25WriteSystemBlock(byte[] data)` |
+### 6.7 Crypto Symmetric and Crypto Asymmetric APIs
 
-The `St25` prefix reflects the **product-specific** nature of these operations (the "System Block" notion is specific to ST25/SRT512 cards). Removing the generic names eliminates any risk of confusion with potentially analogous notions on other families of storage cards.
-
-#### New methods (related to Theme 7)
-
-- `prepareWriteBlocks(int fromBlockAddress, byte[] data, int idCommand)` — overload with command identifier.
-- `prepareSt25WriteSystemBlock(byte[] data, int idCommand)` — overload with command identifier.
-- `StorageCardException.getIdCommand() : Integer` — new method allowing the application to retrieve the identifier of the command responsible for the exception (see Theme 7).
+The evolutions of these two APIs relate to Themes 10 and 11 (data objects, removal of input/output objects); they are detailed in §11 and §12 and in Annex A.
 
 ---
 
-## 7. Theme 6 — Strict Typing of RF Technologies and Card Types (ECP Support)
+## 7. Theme 6 — Strict typing of RF technologies and card types (ECP support)
 
 ### 7.1 Motivation
 
-Two drivers converge and justify this work stream:
+Two drivers converge:
 
-1. **End of free-form strings for protocols**. Versions 1.x and 2.x configured protocol activation and selection filtering using **character strings** (`String physicalProtocolName`, `String logicalProtocolName`). This approach posed several problems: non-normalized values from one integrator to another, typos undetected at compile time, scattered documentation of the "right" values to use, inability for the IDE to assist the integrator, lack of discoverability of supported cases.
-2. **Arrival of ECP support** (Enhanced Contactless Polling). ECP is a mechanism defined by the **Apple ECP specification** enabling fast card detection (notably Calypso) in transit mode on iPhone, which requires sending a **specific polling frame** at the moment detection starts. The frame itself is treated as opaque binary data (`byte[]`) constructed by the application in accordance with the Apple specification, and transmitted as-is by the framework to the reader. This need had no proper representation in the 2.x API: `startCardDetection` took only a `DetectionMode`, with no way to carry an ECP frame or to target particular RF technologies.
+1. **End of free-form strings for protocols**. The production versions configured protocol activation and selection filtering with **character strings** (`physicalProtocolName`, `logicalProtocolName`): non-standardised values, undetected typos, scattered documentation.
+2. **Arrival of ECP support** (Enhanced Contactless Polling), a mechanism defined by the **Apple ECP specification** that allows fast detection of cards (notably Calypso) in transit mode on iPhone, and requires sending a **specific polling frame** when detection starts. The frame is handled as opaque binary data built by the application.
 
-The conjunction of the two has triggered the refactoring. ECP is the concrete occasion that justifies ending the free-form protocol string system now, by introducing both:
+### 7.2 New foundation API — Terminal Definitions API
 
-- **strongly typed enumerations** (`RfTechnology`, `CardType`) that replace strings;
-- a **detection parameters interface** (`CardDetectionSettings`) extensible in builder format, which makes ECP support possible without breaking the signature when other sophisticated polling mechanisms appear.
-
-### 7.2 New Foundation API — Terminal Definitions API
-
-The `RfTechnology` and `CardType` enumerations **are not defined in the Reader API**: they are placed in a **new foundation API** created on the occasion of 3.0.0, the **Terminal Definitions API**.
-
-#### Role and purpose
-
-The Terminal Definitions API exposes neither service interfaces, nor SPIs, nor state machines. Its sole purpose is to host the **cross-cutting enumerated types** that constitute **global constants** shared between several Terminal APIs. At its creation, it contains the two enumerations introduced by Theme 6; but it is **intended to progressively host** other cross-cutting enumerations as future evolutions occur (for instance, one can imagine migrating to it tomorrow notions currently scattered such as `FileOccurrence`, `FileControlInformation`, or future enumerations shared between Reader, Card and Calypso).
+The `RfTechnology` and `CardType` enumerations are placed in a **new foundation API**, the **Terminal Definitions API**, which exposes neither service interface nor SPI; its only purpose is to host the **cross-cutting enumerated types** shared between Terminal APIs.
 
 #### Structural consequences
 
-- **New UML repository**: `calypsonet-terminal-definitions-uml-api`, created on the same organizational model as the other `calypsonet-terminal-*-uml-api` repositories, with its own `api_class_diagram.puml` (version `1.0.0-SNAPSHOT`) and its independent versioning cycle.
+- **New repository**: `calypsonet-terminal-definitions-uml-api` (version `1.0.0-SNAPSHOT`).
 - **New Keypop Java module**: `keypop-definitions-jvm-api` (to be created).
-- **Dependency**: the Terminal Reader API 3.0.0 **depends** on the Terminal Definitions API. This dependency is:
-    - **public** (the enums appear in the public signatures of `CardSelector.filterByCardType`, `CardDetectionSettings.setRfTechnologies`, `CardSelectionResult.getCardType`, etc.);
-    - **transitive** on the Java side (consumers of the Reader API automatically obtain access to the enums without additional declaration).
-- The other Terminal APIs (Card, Calypso Card) **do not** depend on the Terminal Definitions API at this stage, but may do so in the future if a cross-cutting enumeration concerns them.
+- Public and transitive **dependency** of the Terminal Reader API on the Terminal Definitions API (the enumerations appear in the properties `BasicCardSelector.cardType`, `IsoCardSelector.cardType`, `CardDetectionSettings.rfTechnologies` and `…CardSelectionResult.cardType`).
 
-#### Rationale for a dedicated API rather than a sub-package of the Reader API
+#### Initial content
 
-Several reasons motivate the extraction into a separate module:
+- **`DefinitionsApiProperties`** — `VERSION` constant of the module;
+- **`RfTechnology`**: `ISO_14443_AB`, `INNOVATRON_B_PRIME`, `FELICA`, `ISO_15693`;
+- **`CardType`**: `ISO_7816_3`, `ISO_14443_4`, `ISO_14443_3A_MIFARE_CLASSIC_1K`, `ISO_14443_3A_MIFARE_CLASSIC_4K`, `ISO_14443_3A_MIFARE_ULTRALIGHT`, `ISO_14443_3B_ST25_SRT512`, `INNOVATRON_B_PRIME`, `FELICA`, `ISO_15693`, `UNKNOWN`.
 
-1. **Cross-cutting reusability**: `RfTechnology` and `CardType` (and future enums) are lower-level notions than the Reader API. Confining them to the Reader API would force any other Terminal API that wished to reference them to depend on the entire Reader API.
-2. **Stability**: global constants evolve at their own pace (generally very slow and backward-compatible). Isolating them in a dedicated module allows them to have their own versioning cycle, without carrying the noise of Reader API changes.
-3. **Readability**: the Terminal Definitions API acts as a single, documented entry point for global constants, rather than scattering these notions in `…/definitions` packages within each API.
-
-#### Initial content of the Terminal Definitions API
-
-The UML repository `calypsonet-terminal-definitions-uml-api` has been created and embeds, in its version `1.0.0-SNAPSHOT`, a diagram with:
-
-- **`DefinitionsApiProperties`** — class carrying the module's `VERSION` constant (on the same model as `ReaderApiProperties`, `CardApiProperties`, etc.);
-- **`RfTechnology`** — supported radio communication technologies:
-    - `ISO_14443_AB`
-    - `INNOVATRON_B_PRIME`
-    - `FELICA`
-    - `ISO_15693`
-- **`CardType`** — identifiable card types:
-    - `ISO_7816_3` (contact cards)
-    - `ISO_14443_4` (ISO 14443-4 contactless cards, without A/B distinction at the type level)
-    - `ISO_14443_3A_MIFARE_CLASSIC_1K`, `ISO_14443_3A_MIFARE_CLASSIC_4K`, `ISO_14443_3A_MIFARE_ULTRALIGHT`
-    - `ISO_14443_3B_ST25_SRT512`
-    - `INNOVATRON_B_PRIME`, `FELICA`, `ISO_15693`
-    - `UNKNOWN`
-
-> **Note on `CardType` granularity and the A/B asymmetry with `RfTechnology`**:
+> **`CardType` granularity and A/B asymmetry with `RfTechnology`**: `RfTechnology` is an **input** (polling) that merges A and B at the ISO 14443 level; `CardType` is an **output** that combines protocol level and product identity — a single `ISO_14443_4` value for the transport, but a product granularity (`ISO_14443_3A_…`, `ISO_14443_3B_…`) for proprietary products.
 >
-> - `RfTechnology` is an **input** datum (polling) at the RF sub-layer level: `ISO_14443_AB` merges A and B because, at the polling level, the integrator declares interrogating "the ISO 14443 family" without having to distinguish the variant.
-> - `CardType` is an **output** datum (detection result) that combines protocol level and product identity:
-    >   - for **transport** standards (ISO 14443-4, ISO 7816-3, ISO 15693), the RF sub-layer (3A or 3B) does not change the application behavior: a single value `ISO_14443_4` is sufficient.
->   - for **proprietary products** where the RF sub-layer is semantically tied to the product (MIFARE on 14443-3A, ST25 on 14443-3B), the product granularity naturally exposes the variant (`ISO_14443_3A_MIFARE_CLASSIC_1K`, `ISO_14443_3B_ST25_SRT512`, etc.).
->
-> This dual granularity (transport vs product) explains why A/B is merged on the input side (`RfTechnology`) and at the ISO 14443-4 transport level (`CardType`), while remaining distinguishable at the product type level.
->
-> Both enumerations are designed to evolve: adding a new value in the Terminal Definitions API is a **backward-compatible** evolution on its minor versions.
->
-> **Note on `CardType.UNKNOWN`**: this value is returned by `CardSelectionResult.getCardType()` when the framework **could not identify** the type of the detected card (card of a type not yet referenced in the enumeration, or partial detection). On the `CardSelector.filterByCardType(UNKNOWN)` side, this allows the integrator to **explicitly capture** these unidentified cards rather than ignoring them silently.
+> **`CardType.UNKNOWN`** is returned when the card type could not be identified; used as a selection filter, it allows these cards to be **captured explicitly**.
 
 ### 7.3 Reader API — strict typing
 
-#### `CardSelector` refactoring
+- **Removed**: `CardSelector.filterByCardProtocol(String logicalProtocolName)`.
+- **Added**: the `cardType: CardType? = null` property of the `BasicCardSelector` and `IsoCardSelector` selectors — filters by card type (`null` disables the filter).
+- **Removed entirely**: the `ConfigurableCardReader` interface and its operations `activateProtocol(String, String)`, `deactivateProtocol(String)`, `getCurrentProtocol()`.
 
-- **Removed**: `T filterByCardProtocol(String logicalProtocolName)`.
-- **New method**: `T filterByCardType(CardType cardType)` — filters by card type, using the `CardType` enumeration of the Terminal Definitions API.
+### 7.4 Reader API — detection settings
 
-`CardType` is the datum characterizing what was detected and is, as such, the natural filtering criterion at selection: we filter by **what the card is**. The associated RF technology is implicitly encoded by `CardType` (`ISO_14443_4` ⇒ ISO 14443-AB, `FELICA` ⇒ FELICA, etc.), which makes any additional filter on `RfTechnology` redundant.
+All detection information is grouped in the **data class** `CardDetectionSettings`, built directly by the application:
 
-#### Complete removal of `ConfigurableCardReader`
+| Property | Type | Default value | Role |
+|---|---|---|---|
+| `detectionMode` | `DetectionMode` | `DetectionMode.REPEATING` | whether detection resumes after each card processing |
+| `rfTechnologies` | `Set<RfTechnology>` | `setOf(RfTechnology.ISO_14443_AB)` | RF technologies activated during polling (no effect on a contact reader) |
+| `ecpFrame` | `ByteArray?` | `null` | ECP frame emitted when polling starts (ECP readers only) |
 
-The `ConfigurableCardReader` interface and its three methods `activateProtocol(String, String)`, `deactivateProtocol(String)`, `getCurrentProtocol()` are **entirely removed** in 3.0.0. The string-based mechanism no longer has a place in the model: protocol activation on the reader side now passes through the typed parameters transmitted at detection startup (see §7.4).
+- `DetectionMode` becomes a **top-level** enumeration of the `reader` namespace (it was nested in `ObservableCardReader`).
+- **Tolerance of unsupported settings**: a setting not supported by the reader (RF technology, ECP frame) is **silently ignored** and a `WARN`-level message is typically logged; **no error** is raised.
 
-### 7.4 Reader API — detection parameterization
+> **Change compared with the previous working version of this document**: `CardDetectionSettings` is no longer a "builder" interface obtained through `ReaderApiFactory.createCardDetectionSettings()`, but a data class with default values (see Theme 10).
 
-#### Single `CardDetectionSettings` interface (builder)
+### 7.5 Reader API — `ObservableCardReader` and selection result
 
-All detection information (mode, RF technologies, ECP frame) is carried by **a single interface** in builder format:
-
-```text
-CardDetectionSettings
-  ├── CardDetectionSettings setDetectionMode(DetectionMode detectionMode)
-  ├── CardDetectionSettings setRfTechnologies(Set<RfTechnology> rfTechnologies)
-  └── CardDetectionSettings setEcpFrame(byte[] ecpFrame)
-```
-
-- **`setDetectionMode`** — sets the detection mode (`REPEATING` or `SINGLE_SHOT`). `DetectionMode` is now the **inner enumeration** of `CardDetectionSettings`.
-- **`setRfTechnologies`** — declares the set of RF technologies to activate during polling. Not relevant for contact readers (accepted without effect).
-- **`setEcpFrame`** — provides the ECP frame to emit at polling startup. Relevant only on readers supporting ECP.
-
-The instance is created via the factory:
-
-```text
-ReaderApiFactory.createCardDetectionSettings() : CardDetectionSettings
-```
-
-#### Default values and tolerance of unsupported parameters
-
-- **Default values** applied if the corresponding setters are not invoked:
-    - `DetectionMode.REPEATING` for the detection mode;
-    - `{ RfTechnology.ISO_14443_AB }` for the set of RF technologies.
-- **Tolerance of unsupported parameters**: if a provided parameter is not supported by the reader (for example an `RfTechnology` that the reader cannot activate, or an ECP frame transmitted to a reader that does not support ECP), the parameter is **silently ignored** and a **`WARN`-level message** is logged by the implementation. **No exception** is thrown. This permissive behavior guarantees that a heterogeneous deployment (ECP terminals + non-ECP terminals, mixed fleet) can share the same application code.
-
-The complete contract is documented in the Javadoc on the implementation side.
-
-### 7.5 Reader API — refactoring of `ObservableCardReader`
-
-`ObservableCardReader` is a **single** interface, valid for all reader types (contact, contactless, ECP). Its new detection start signature is:
-
-```text
-2.x : void startCardDetection(DetectionMode detectionMode)
-3.0 : void startCardDetection(CardDetectionSettings settings, CardReaderEventHandler eventHandler)
-```
-
-The signature carries in a single call the **observer** (`CardReaderEventHandler`, see Theme 3) **and the detection configuration** (`CardDetectionSettings`, see §7.4), thereby eliminating the invalid intermediate states of the 2.x model. The nature of the reader is reflected at runtime by the setters used on `CardDetectionSettings` and by the internal consistency of the reader implementation.
-
-#### Exposure of the detected `CardType` on `CardSelectionResult`
-
-The "detected card type" information is carried by the **selection result** (`CardSelectionResult`). A new method is added to it:
-
-- `CardType getCardType()` — on `CardSelectionResult`, returns the card type (`CardType` of the Terminal Definitions API) effectively detected.
-
-This is the unique post-detection getter: `RfTechnology` is not the subject of a dedicated getter, since it is implicitly encoded by `CardType`.
-
-This placement homogenizes the API surface: `CardSelectionResult` is the access point to the information resulting from detection / selection (`getSmartCards()`, `getActiveSmartCard()`, `getActiveSelectionIndex…()`, `getCardType()`), and the validity lifetime of the `CardType` is intrinsically tied to the lifecycle of the selection result.
+- `startCardDetection(settings: CardDetectionSettings, eventHandler: CardReaderEventHandler) → Unit` carries the event handler and the detection configuration in a single call.
+- The detected card type is exposed by the **`cardType: CardType`** property of the selection results (`SingleCardSelectionResult`, `MultipleCardSelectionResult`, `MultichannelCardSelectionResult`, see Theme 9); `UNKNOWN` if the type could not be identified.
 
 ### 7.6 Rationale
 
-- **Compile-time safety on values**: moving from `String` (free-form protocols) to enums (`RfTechnology`, `CardType`) eliminates a whole class of bugs (typos, undocumented proprietary values) and makes the API self-describing (IDE auto-completion, Javadoc centralized on the enums).
-- **API simplicity**: a single `ObservableCardReader`, a single `CardDetectionSettings`. The API surface exposed to the integrator is minimal and homogeneous regardless of the targeted reader type.
-- **Extensibility**: `CardDetectionSettings` is open — adding tomorrow a new polling parameter (a new optimization technique for a new standard, etc.) will consist in adding a setter to the interface, **without touching** the signature of `startCardDetection` and without breaking binary compatibility (adding a `default` method to an interface is backward-compatible).
-- **Input / output separation**: `RfTechnology` is an **input** parameter (polling, via `CardDetectionSettings.setRfTechnologies`); `CardType` is the **output** datum (detection result, exposed by `CardSelectionResult.getCardType()` and usable in selection via `CardSelector.filterByCardType`).
-- **Consistent data localization**: the detected `CardType` is exposed on `CardSelectionResult`, which gathers all the information resulting from detection / selection.
-- **Single, typed protocol declaration**: in 2.x, the protocol had to be declared twice (once on the reader side via `activateProtocol`, once on the selector side via `filterByCardProtocol`). In 3.0.0, the declaration is unique and typed (`CardDetectionSettings.setRfTechnologies` for polling, `CardSelector.filterByCardType` for selection).
-- **Cross-cutting reusability**: the extraction of the enums into the **Terminal Definitions API** (see §7.2) guarantees that future Terminal APIs (or evolutions of current APIs) will be able to reference these global constants **without inducing a dependency to the Reader API**.
+- **Compile-time safety for values**: moving from strings to enumerations eliminates a class of bugs and makes the API self-describing.
+- **Simplicity**: a single `ObservableCardReader`, a single detection settings class.
+- **Extensibility**: adding a polling setting amounts to adding a property with a default value to `CardDetectionSettings`, without touching the `startCardDetection` signature.
+- **Input / output separation**: `RfTechnology` as input (polling), `CardType` as output (result) and as a selection criterion.
+- **Single, typed declaration**: in production, the protocol had to be declared twice (`activateProtocol` on the reader side, `filterByCardProtocol` on the selector side); it is now declared only once, in a typed way.
+- **Cross-cutting reusability** thanks to the extraction of the enumerations into the Terminal Definitions API.
 
 ---
 
-## 8. Theme 7 — Command Identification (`idCommand`)
+## 8. Theme 7 — Command identification (`commandId`)
 
 ### 8.1 Motivation
 
-The Generic Card and Storage Card APIs allow **preparing several commands** before executing them as a batch. In 1.x, when an exception was thrown during execution, the application had no direct way to identify **which specific command** in the sequence had caused the problem, nor to access the response of a specific command in the list of responses (retrieved in their original order, without a key).
+Several APIs allow **several commands to be prepared** before executing them as a batch. In production, the application had no direct means of identifying **which command** caused a problem, nor of accessing the **result of a specific command**; some APIs relied on mutable container objects for this purpose (`KeyPairContainer`, `SearchCommandData.getMatchingRecordNumbers()`, `SignatureComputationData.getSignature()`, etc.).
 
-The 2.0.0 of these two APIs introduces a lightweight **command traceability** mechanism based on an integer identifier (`int idCommand`) provided by the application at preparation time and retrievable:
+The new versions generalise a single mechanism: an **integer identifier `commandId` supplied by the application** when preparing the command, then used to retrieve the result of the command or to identify the failing command. The `commandId` parameter, **always placed first**, follows the same convention as `selectionId` in the Reader API (see Theme 9).
 
-- in **responses**: `getLastExecutionResponse(int idCommand) : byte[]`;
-- in **exceptions**: `StorageCardException.getIdCommand() : Integer`.
+> The name `commandId` replaces `idCommand` from the previous working version of this document, for consistency with `selectionId`.
 
 ### 8.2 Generic Card API
 
-- **New overloads** of `prepareCommand(...)` carrying the identifier:
-    - `prepareCommand(byte[] apdu, int idCommand)`;
-    - `prepareCommand(byte[] apdu, int idCommand, long maxDuration)` (combined with the relay countermeasure, see Theme 2).
-- **New targeted accessor method**: `getLastExecutionResponse(int idCommand) : byte[]` — returns the response of the command identified by `idCommand`, or `null` if no match.
-- The existing method `getLastExecutionResponses() : List<byte[]>` remains available for sequential access to all responses (without filtering).
+- `prepareCommandWithId(commandId: Int, apdu: ByteArray) → Self`;
+- `prepareCommandWithMaxDuration(commandId: Int, apdu: ByteArray, maxDuration: Long) → Self` (see Theme 2);
+- `getLastExecutionResponse(commandId: Int) → ByteArray?` — response of the identified command; if several commands share the same identifier, the most recently processed one is returned.
+- `prepareCommand(apdu: ByteArray) → Self` remains available for unidentified commands.
 
 ### 8.3 Storage Card API
 
-- **New overloads** of the write methods carrying the identifier:
-    - `prepareWriteBlocks(int fromBlockAddress, byte[] data, int idCommand)`;
-    - `prepareSt25WriteSystemBlock(byte[] data, int idCommand)`.
-- **New method**: `StorageCardException.getIdCommand() : Integer` — returns the identifier of the command responsible for the exception, or `null` if the exception is not attachable to a specific command.
+- `prepareWriteBlocks(commandId: Int, fromBlockAddress: Int, data: ByteArray) → Self`;
+- `prepareSt25WriteSystemBlock(commandId: Int, data: ByteArray) → Self`.
 
-### 8.4 Rationale
+For these two write operations, **`commandId` is mandatory** (non-nullable). It is returned by the `commandId: Int?` property of the Storage Card API errors when the identified command caused them (`null` for commands that carry none, such as reads).
 
-- **Application semantics**: the `idCommand` is an identifier **provided by the application** (and therefore meaningful to it), not an implicit index imposed by the framework. This allows the application to use identifiers aligned with its own business logic (step number, operation identifier, etc.).
-- **Minimal API cost**: a simple `int` added as an overload; no new interface, no wrapper object. The methods without `idCommand` remain available for simple uses that do not need traceability.
-- **Natural composition**: on Generic Card, the three-parameter overload (`apdu`, `idCommand`, `maxDuration`) cleanly composes Theme 2 (relay) and Theme 7 (traceability) on the same entry point.
-- **Cross-API consistency**: the same pattern (optional integer identifier, dedicated accessor) is applied uniformly on Generic Card and Storage Card, making the notion immediately transferable from one API to the other for an integrator.
+### 8.4 Calypso Card API
+
+- `prepareSearchRecords(commandId: Int, data: SearchCommandData) → Self`;
+- `CalypsoCard.getMatchingRecordNumbers(commandId: Int) → List<Int>?` — numbers of the records found by the identified search. This operation replaces `SearchCommandData.getMatchingRecordNumbers()` (see Theme 11).
+
+### 8.5 Legacy SAM API
+
+The results of the cryptographic commands are no longer read from container objects but from the `LegacySam`, by identifier:
+
+| Preparation | Reading the result |
+|---|---|
+| `FreeTransactionManager.prepareGenerateCardAsymmetricKeyPair(commandId: Int)` | `LegacySam.getKeyPair(commandId: Int) → ByteArray?` |
+| `FreeTransactionManager.prepareComputeCardCertificate(commandId: Int, data: LegacyCardCertificateComputationData)` | `LegacySam.getComputedCardCertificate(commandId: Int) → ByteArray?` |
+| `prepareComputeSignature(commandId: Int, data: SignatureComputationData)` (on `FreeTransactionManager` and `CardTransactionLegacySamExtension`) | `LegacySam.getSignature(commandId: Int) → ByteArray?` and, in traceable mode, `LegacySam.getSignedData(commandId: Int) → ByteArray?` |
+| `prepareVerifySignature(commandId: Int, data: SignatureVerificationData)` (same) | `LegacySam.isSignatureValid(commandId: Int) → Boolean?` |
+
+These reads replace `KeyPairContainer.getKeyPair()`, `LegacyCardCertificateComputationData.getCertificate()`, `SignatureComputationData.getSignature()`, `TraceableSignatureComputationData.getSignedData()` and `SignatureVerificationData.isSignatureValid()`.
+
+### 8.6 Rationale
+
+- **Application semantics**: the identifier is **chosen by the application**, which can align it with its own business logic.
+- **Immutable data objects**: the parameters of a command become pure data (see Theme 10); the result is carried by the live object that receives the responses (`CalypsoCard`, `LegacySam`, transaction manager), like all the other data coming from the card.
+- **Cross-API consistency**: the same pattern (identifier first, read by identifier) applies to all the APIs concerned.
 
 ---
 
-## 9. Theme 8 — Standardized Reader Discovery and Access (`CardReaderProvider`)
+## 9. Theme 8 — Standardised reader discovery and access (`CardReaderProvider`)
 
 ### 9.1 Motivation
 
-Until 2.x, the Reader API did not expose any standardized way for the application to **discover** the readers available in its execution environment, nor to **obtain a reference to a specific reader**. In practice, an application had to rely on the plugin and reader-pool abstractions of the underlying Keyple framework — that is, on implementation-level concepts — to enumerate readers or fetch a `CardReader` instance. This coupling had two consequences:
-
-- the application had to know Keyple-specific mechanisms (plugin registration, pool management) even when it only needed a simple, agnostic access to a `CardReader`,
-- reader discovery was not portable across implementations, since each was free to expose it in its own way.
-
-Version 3.0.0 promotes reader discovery and access to a **first-class citizen** of the public Reader API by introducing a dedicated interface, `CardReaderProvider`, obtained from the `ReaderApiFactory`.
+In production, the Reader API exposed no standard means of **discovering** the available readers or of **obtaining a reference to a reader**. The application had to rely on the plugin and pool abstractions of the underlying Keyple framework, which are implementation-specific and not portable.
 
 ### 9.2 Reader API
 
-- **New method** on the factory: `ReaderApiFactory.getCardReaderProvider() : CardReaderProvider` — accessor to the provider exposed by the implementation.
-- **New interface** `CardReaderProvider` — standardized reader discovery and access surface, exposing four operations:
-    - `getReaderNames() : Set<String>` — returns the names of all readers currently registered in the execution environment.
-    - `getReaders() : Set<CardReader>` — returns all readers currently registered as `CardReader` references.
-    - `getReader(String readerName) : CardReader` — returns the reader whose name **exactly matches** the supplied string.
-    - `findReader(String readerNameRegex) : CardReader` — returns the first reader whose name **matches the supplied regular expression**. This overload is particularly useful when reader names embed variable elements (serial numbers, USB port index, plugin prefixes, etc.) that the application does not want to hard-code.
+- **New operation** `ReaderApiFactory.getCardReaderProvider() → CardReaderProvider` — returns the `CardReaderProvider` of the execution environment; successive calls return the same instance.
+- **New interface** `CardReaderProvider`:
+    - `getReaderNames() → Set<String>`;
+    - `getReaders() → Set<CardReader>`;
+    - `getReader(readerName: String) → CardReader?` — exact name match, `null` if no reader matches;
+    - `findReader(readerNameRegex: String) → CardReader?` — first reader whose name matches the regular expression, `null` otherwise.
 
-The implementation is responsible for aggregating the readers made available by all registered plugins and pools, and exposing them uniformly through this interface. Reader lifecycle (registration, un-registration) remains driven by the implementation; `CardReaderProvider` is a **read-only view** on the currently active readers at each call.
+The reader lifecycle remains driven by the execution environment; `CardReaderProvider` is a **read-only view** of the readers active at each call.
 
 ### 9.3 Rationale
 
-- **Decoupling from Keyple implementation concepts**: prior to 3.0, an application had to know about plugins, pools and their registration mechanisms to obtain a `CardReader`. With `CardReaderProvider`, the application only knows the Reader API — plugin/pool orchestration is entirely an implementation concern.
-- **First-class citizen of the public API**: reader discovery is a universal need shared by every application using the Reader API. It deserves a stable, documented, implementation-agnostic entry point rather than being delegated to each implementation's private surface.
-- **Two complementary lookup modes**: exact-match by name for the deterministic case (the application knows the exact reader name from configuration), and regex-based lookup for the case where reader names carry variable elements the application cannot predict. Both are natural to expose side by side; picking only one would push the other into every application layer.
-- **Consistency with the rest of 3.0.0**: the pattern of a small, focused interface obtained from the `ReaderApiFactory` (already used for `CardSelectionManager`, `BasicCardSelector`, `IsoCardSelector`, `CardDetectionSettings`) is naturally extended here, making the API surface predictable for integrators.
+- **Decoupling from Keyple implementation concepts**: the application only knows the Reader API.
+- **First-class citizen of the public API** for a universal need.
+- **Two complementary search modes**: exact name and regular expression.
 
 ---
 
-## 10. Migration Procedure
+## 10. Theme 9 — Redesign of the card selection model
 
-The migration of application code from versions 1.x or 2.x to 3.0.0 will be the subject of a **dedicated technical migration guide**, published separately after validation of 3.0.0 by the TC Terminal and after alignment of the associated Keypop Java implementations.
+### 10.1 Motivation
 
-This guide will aim to **simplify the transition** to 3.0.0 as much as possible: 1:1 mapping of removed / renamed / refactored elements, rewriting patterns (`before` / `after`) for the most frequent use cases, progressive adoption rules and known pitfalls.
+In production, the `CardSelectionManager` gathered all selection modes, driven by a side effect (`setMultipleSelectionMode()`), and returned a single `CardSelectionResult` in which some properties could be deduced from others (`getActiveSmartCard()` and `getActiveSelectionIndex()` from `getSmartCards()`). Adding multi-channel made this single result ambiguous (which card is "the" active card when several are active?). The previous working version of this document proposed a `SelectionExecutionPolicy` parameter; this approach has been abandoned in favour of **one manager type per selection mode**.
+
+### 10.2 Reader API — one manager per mode
+
+The selection mode is no longer a parameter: it is carried by the **type of the manager**, each obtained through its own factory operation and producing its own result type.
+
+| Manager | Behaviour | Execution | Result |
+|---|---|---|---|
+| `SingleCardSelectionManager` | single-channel; stops at the first successful selection | explicit or scheduled | `SingleCardSelectionResult` |
+| `MultipleCardSelectionManager` | single-channel; processes every selection, whatever the intermediate successes | explicit or scheduled | `MultipleCardSelectionResult` |
+| `MultichannelCardSelectionManager` | multi-channel ISO 7816-4 cards; each successful selection occupies its own logical channel | explicit | `MultichannelCardSelectionResult` |
+
+- **Factory**: `createCardSelectionManager()` is replaced by `createSingleCardSelectionManager()`, `createMultipleCardSelectionManager()` and `createMultichannelCardSelectionManager()`.
+- **`CardSelectionManager`** becomes the common interface and only keeps the mode-independent operations:
+    - `prepareSelection(selectionId: Int, cardSelector: CardSelector, cardSelectionExtension: CardSelectionExtension) → Self` — the selection identifier is **chosen by the application** (instead of an index returned by the API); it must be unique within the scenario; selections are executed in preparation order;
+    - `exportCardSelectionScenario() → String`;
+    - `importCardSelectionScenario(cardSelectionScenario: String) → Self` — **replaces** the current scenario (instead of returning the index of the last imported selection);
+    - `exportProcessedCardSelectionScenario() → String`.
+- **Operations specific to each manager** (typed by their result): `processCardSelectionScenario`, `scheduleCardSelectionScenario` and `parseScheduledCardSelectionsResponse` (single-channel only), `importProcessedCardSelectionScenario` (the imported processed scenario must come from a manager of the same type).
+- `scheduleCardSelectionScenario(observableCardReader: ObservableCardReader, cardPresenceNotificationPolicy: CardPresenceNotificationPolicy) → Unit` no longer has an execution policy parameter.
+
+#### Selection results
+
+| Result | Properties |
+|---|---|
+| `SingleCardSelectionResult` | `cardType: CardType`, `selectionId: Int?`, `smartCard: SmartCard?` (both `null` if no selection succeeded) |
+| `MultipleCardSelectionResult` | `cardType: CardType`, `smartCards: Map<Int, SmartCard>`, `activeSelectionId: Int?` (only the card of the last successful selection remains active) |
+| `MultichannelCardSelectionResult` | `cardType: CardType`, `smartCards: Map<Int, SmartCard>` (all active, one per channel) |
+
+`CardSelectionResult` (with `getSmartCards()`, `getActiveSmartCard()`, `getActiveSelectionIndex()`) and `SelectionExecutionPolicy` disappear.
+
+#### Selectors
+
+- `BasicCardSelector` and `IsoCardSelector` become **data classes** built directly by the application (instead of "builder" interfaces created by `ReaderApiFactory.createBasicCardSelector()` / `createIsoCardSelector()`, which are removed):
+    - `BasicCardSelector`: `cardType: CardType? = null`, `powerOnDataRegex: String? = null`;
+    - `IsoCardSelector`: the same, plus `dfName: ByteArray? = null`, `fileOccurrence: FileOccurrence = FileOccurrence.FIRST`, `fileControlInformation: FileControlInformation = FileControlInformation.FCI`.
+- `CardSelector<T>` becomes a **sealed interface** without members, whose only implementations are these two selectors.
+- The intermediate interface `CommonIsoCardSelector<T>` is removed; its nested enumerations become `FileOccurrence` and `FileControlInformation` (namespace `reader.selection`).
+- `filterByDfName(String)` (AID in hexadecimal) is removed: `dfName` is a `ByteArray`.
+
+### 10.3 Rationale
+
+- **No side effect**: the selection mode is set when the manager is created.
+- **Unambiguous results**: each result only exposes what makes sense in its mode; deducible properties and the "channel 0 card" / "first active index" contradiction disappear.
+- **Identifiers chosen by the application**, consistent with `commandId` (Theme 7).
+- **Naming**: *Single* and *Multiple* designate the number of successful selections kept in the result, not a number of cards; all the selections of a scenario target the same card.
 
 ---
 
-## 11. Next Steps and TC Terminal Validation
+## 11. Theme 10 — Implementation-language-independent specification
 
-### 11.1 Scope submitted for validation
+### 11.1 Motivation
 
-This document submits the following elements to the validation of the **CNA TC Terminal**:
+The Terminal APIs were until now defined by Java interfaces. This model de facto tied the APIs to the JVM and hindered their implementation in other environments (native mobile applications, embedded systems, non-Java terminals). The new design proposal aims to **broaden the choice of implementation languages**: **Kotlin Multiplatform (KMP)**, **Rust**, **Swift**, **C#**, etc., in addition to Java. The new specifications are therefore written in a **language-independent notation**, inspired by Kotlin, so that each binding translates the contract into the most idiomatic form of its platform. This notation entails systematic changes of form, described below; **most of them do not affect behaviour**, but all of them affect the way calling code is written.
 
-1. **The principle** of the eight evolution themes exposed (§2 to §9) and the overall consistency of the work stream (versions 3.0.0 for Reader / Card / Calypso Card, 1.0.0 for Definitions, 2.0.0 for Legacy SAM / Generic Card / Storage Card).
-2. **The design choices** documented in the "Rationale" sections of each theme — in particular:
-    - the explicit multi-channel model relying on the `SmartCard(Spi)` as named target (§2.5);
-    - the duration bounding carried both at the APDU level and at the Calypso session level, with filtering by `csnMin` threshold (§3.4);
-    - the merging of the Observer pattern into a single `CardReaderEventHandler` SPI (§4.3);
-    - the introspection of the Calypso secure session via `SecureSessionStatus` and `SecureSessionType` (§5.3);
-    - the extraction of `RfTechnology` and `CardType` into a **new foundation API** (`Terminal Definitions API`) (§7.2, §7.6);
-    - the **`CardDetectionSettings` builder model** for detection parameterization (§7.4);
-    - the **`CardSelector.filterByCardType` filter** as the unique typed filtering criterion at selection (§7.3);
-    - the **exposure of the detected `CardType` on `CardSelectionResult`** (§7.5);
-    - the **three-tier hierarchy** `CardTransactionManager` / `IsoCardTransactionManager` / `MultichannelCardTransactionManager` (Reader API), with on-demand cast for ISO 7816-4 cards that are optionally multi-channel (Calypso, Generic Card) and direct stereotyping on multi-channel for intrinsically multi-channel cards (future OpenSAM) (§2.2, §2.6);
-    - the **command identification model** via `idCommand` on Generic Card and Storage Card (§8);
-    - the **standardized reader discovery** exposed by the `CardReaderProvider` interface obtained from the `ReaderApiFactory`, decoupling the application from Keyple-level plugin and pool concepts (§9.3).
-3. **The detailed content** of the seven UML diagrams (`3.0.0-SNAPSHOT` for Reader, Card and Calypso Card; `1.0.0-SNAPSHOT` for Definitions; `2.0.0-SNAPSHOT` for Legacy SAM, Generic Card and Storage Card), which materialize these choices — **accessible directly** via the links provided in the [Reference UML Diagrams](#reference-uml-diagrams) section at the top of the document, in two forms: final version and version with diff against the previous version.
-4. **The introduction** of the new Definitions foundation API (UML repository created, Java module `keypop-definitions-jvm-api` to be created).
-5. **The alignment** of the three adjacent APIs (Legacy SAM 2.0.0, Generic Card 2.0.0, Storage Card 2.0.0) on the new Reader API 3.0.0 foundation.
-6. **The principle** of a dedicated migration procedure to be provided subsequently to integrators (see §10).
+### 11.2 Notation principles
 
-### 11.2 Points of attention for the review
+| Principle | In production (Java) | In the specifications | Examples |
+|---|---|---|---|
+| **Basic types** | `byte`, `short`, `int`, `long`, `boolean`, `byte[]`, `Integer`… | `Byte`, `Short`, `Int`, `Long`, `Boolean`, `ByteArray`, `Int?`… (*Data types* table of each spec) | — |
+| **Explicit nullability** | `null` values documented in the Javadoc | `T?` type; otherwise the value is never `null` | `getFileBySfi(sfi: Byte) → ElementaryFile?` |
+| **Fluent chaining** | recursive genericity `T extends X<T>` | **`Self`** return type; no more recursive genericity | `TransactionManager.prepareReadRecords(...) → Self` |
+| **Data classes** | "builder" interfaces (setters) or read interfaces (getters), created by the factory | immutable **data classes** with properties (`val`) and default values, built directly by the application; the corresponding `create…` operations disappear from the factory | `SearchCommandData`, `BasicCardSelector`, `CardDetectionSettings`, `ApduRequest` |
+| **Enumerations** | enumerations nested in an interface | **top-level** enumerations, named autonomously | `CardReaderEvent.Type` → `CardReaderEventType` |
+| **Data specific to an enumeration value** | methods of the enumeration | **properties** of the enumeration | `StorageCardProductType.blockSize` |
+| **Closed types** | open generic interface | **sealed interface** | `CardSelector`, `SignatureComputationData`, `SignatureVerificationData` |
+| **Interfaces without operations** | empty interface | **marker interface** | `ScheduledCardSelectionsResponse`, `CardSelectionExtension` |
+| **Errors** | `…Exception` classes (checked or unchecked) | errors named **without suffix**, carrying `message: String` and `cause: Any?` | `CardCommunicationException` → `CardCommunication` |
+| **Technical suffixes** | `…Spi`, `…Api` on the data types of the Card API and the crypto APIs | removed for **data**; kept for contract interfaces | `ApduRequestSpi` → `ApduRequest`, `SvCommandSecurityDataApi` → `SvCommandSecurityData` |
+| **Unique operation names** | overloads (same name, different parameters) | **one unique name per operation** within an interface and its hierarchy; `By…`, `With…`, `For…` suffixes or parameters with a default value | `prepareSelectFile` → `prepareSelectFileByLid` / `prepareSelectFileByControl` |
+| **Optional parameters** | overloads | parameter at the end of the list with a **default value** `= null` | `assignOpenSecureSessionMaxDuration(maxDuration, csnMin, dfName: ByteArray? = null)` |
+| **Universal type** | `Object`, `Throwable` | `Any` | `onReaderError(context, readerName, error: Any)` |
+| **Reflection** | `Class<E>` | removed | `getCryptoExtension(Class<E>)` → `getCryptoExtension()` (see Theme 14) |
+| **Serialisation** | `extends Serializable` | removed from the notation | `ApduResponseApi`, `CardResponseApi` |
 
-A few points for which particular TC attention is sought:
+### 11.3 Normative contracts
 
-- the **stability of the initial content** of the `RfTechnology` and `CardType` enumerations (§7.2) — the future addition of values will be backward-compatible, but the removal of a value would not be; in particular, the choice to represent ISO 14443-4 by a single value `ISO_14443_4` without A/B distinction (see §7.2, note on `CardType`) deserves explicit TC confirmation;
-- the appropriateness of the **complete removal** of `ConfigurableCardReader` without a transitional deprecation phase (§7.3), justified by the major version context;
-- the **semantics of `csnMin`** as a threshold on the CSN for duration bounds (§3.3) — this mechanism must be usable by all targeted Calypso deployment profiles;
-- the **`SmartCard` lifecycle contract** held by the `CardReader` (§2.3.2), which is documented in the Javadoc on the implementation side but does not appear in the UML diagram; the TC is invited to confirm that this prose description is sufficient, or to request additional formalization;
-- the **three-tier gradation** of the transaction managers (§2.2) — the TC is invited to confirm that the separation between ISO 7816-4 "optionally multi-channel" cards (which stereotype `IsoCardTransactionManager` and use the on-demand cast) and "intrinsically multi-channel" cards (which directly stereotype `MultichannelCardTransactionManager`, as the future Terminal OpenSAM API will) properly covers all anticipated card profiles.
+Each operation is now described by a normative table that specifies:
 
-### 11.3 Next steps
+- its **signature**, its introduction version (*Since*) and its **description**;
+- its **pre-conditions**, each prefixed by its nature, which determines the error raised if it is not met: *Argument* (invalid argument, including a value outside the bounds of the card or SAM protocol), *Range* (position outside the bounds of a collection or memory image exposed by the API), *State* (illegal state), *Capability* (unsupported operation);
+- its **errors**, i.e. the situations a correct caller must handle;
+- **cross-references** to related operations and types.
 
-Once the versions are validated by the TC Terminal:
+The specifications also define common rules (non-`null` results unless stated otherwise, empty collections rather than `null`, instances not shared between threads, default parameter values) as well as, for the Card API and the crypto APIs, **conformance clauses** that establish the correspondence between their types and those of the Reader API or the Calypso Card API (for example, any object implementing `ProxyReaderApi` must also implement `CardReader`).
 
-1. **Finalization of the UML diagrams**: removal of struck-through (`<s>`) elements and grey (`<color:grey>`) elements that are not retained, generation of the definitive SVGs, transition of the repositories from their `…-SNAPSHOT` versions to their final versions (`3.0.0` for Reader / Card / Calypso Card, `1.0.0` for Definitions, `2.0.0` for Legacy SAM / Generic Card / Storage Card).
-2. **Creation of the new Java module** `keypop-definitions-jvm-api`, and **alignment of the existing Keypop Java modules** (`keypop-reader-java-api`, `keypop-card-java-api`, `keypop-calypso-card-java-api`, `keypop-calypso-crypto-legacysam-java-api`, `keypop-genericcard-java-api`, `keypop-storagecard-java-api`) on their respective new major versions.
-3. **Writing and publication of the technical migration guide** for the integrator (see §10).
-4. **Communication** of the availability of the new versions to the integrators and to the CNA working groups concerned.
+### 11.4 Rationale
+
+- **Portability**: the contract no longer imposes any Java-specific mechanism (reflection, recursive genericity, overloads); it can be transposed into any language, including those without overloading or class inheritance (Rust in particular), which paves the way for implementations in Kotlin Multiplatform, Rust, Swift or C#.
+- **Robustness**: explicit nullability and immutable data eliminate invalid states (incomplete "builder" object, unexpected `null` value).
+- **Precision**: typed pre-conditions and errors listed per operation make the contract verifiable.
+- **Java binding**: the way the Java binding will implement these principles (data classes, `Self`, default values) is part of the alignment of the Keypop modules (see §19.3) and of the migration guide.
+
+---
+
+## 12. Theme 11 — Data exposed without computation and access to raw data
+
+### 12.1 Motivation
+
+Several data types of the production versions mixed **data** and **computations** (decoding a counter from a record, selecting a parameter by number), exposed both a raw value and its decoded fields, or served both as input and output. The specifications apply three rules:
+
+1. **no computational operation** on a data type: such computations are performed by the live object that holds the data (`CalypsoCard`, `LegacySam`);
+2. **no field deducible** from other fields in a data class;
+3. **no input/output object**: inputs are parameters, outputs are returned values.
+
+### 12.2 Calypso Card API
+
+- **`FileData` is removed**, together with its operations `getContent()`, `getContent(numRecord)`, `getContent(numRecord, dataOffset, dataLength)`, `getAllRecordsContent()`, `getContentAsCounterValue(numCounter)` and `getAllCountersValue()`:
+    - the records are exposed directly by the `ElementaryFile.records: SortedMap<Int, ByteArray>` property (instead of `ElementaryFile.getData()`);
+    - counter values are obtained through `CalypsoCard.getCounterValuesBySfi(sfi: Byte) → SortedMap<Int, Int>?` and `CalypsoCard.getCounterValuesByLid(lid: Short) → SortedMap<Int, Int>?`.
+- **`DirectoryHeader`**: `getKif(WriteAccessLevel)` and `getKvc(WriteAccessLevel)` become the properties `kif: Map<WriteAccessLevel, Byte>` and `kvc: Map<WriteAccessLevel, Byte>`.
+- **`SearchCommandData`** becomes an input data class (`sfi`, `searchData`, `startAtRecord = 1`, `offset = 0`, `repeatedOffset = false`, `mask: ByteArray? = null`, `fetchFirstMatchingResult = false`); the result is read through `CalypsoCard.getMatchingRecordNumbers(commandId)` (see Theme 7); `CalypsoCardApiFactory.createSearchCommandData()` disappears.
+- **`SvLoadLogRecord` and `SvDebitLogRecord`** become data classes without the `rawData` property, which is redundant with the decoded fields. The raw values remain accessible through three new `CalypsoCard` operations: `getSvLoadLogRecordRawData() → ByteArray?`, `getSvDebitLogLastRecordRawData() → ByteArray?` and `getSvDebitLogAllRecordsRawData() → List<ByteArray>`; each returned decoded object is the decoding of the raw value at the moment of the call.
+- `DirectoryHeader`, `ElementaryFile` and `FileHeader` become data classes.
+
+### 12.3 Legacy SAM API
+
+- **`KeyParameter`** becomes a data class (`kif`, `kvc`, `algorithm`, `parameterValues: SortedMap<Int, Byte>`), without `rawData`; `getParameterValue(parameterNumber)` is replaced by the `parameterValues` property. The raw values are accessible through `LegacySam.getSystemKeyParameterRawData(systemKeyType)`, `getWorkKeyParameterRawDataByRecordNumber(recordNumber)` and `getWorkKeyParameterRawDataByKifKvc(kif, kvc)`.
+- **`SamParameters`** is removed: `LegacySam.getSamParameters()` directly returns `ByteArray?`.
+- **Counters**: `getCounter(counterNumber)` and `getCounterCeiling(counterNumber)` are removed (the `getCounters()` and `getCounterCeilings()` tables are sufficient); `getCounterIncrementAccess(counterNumber)` is replaced by `getCounterIncrementAccesses() → SortedMap<Int, CounterIncrementAccess>`.
+- **Command data**: `LegacyCardCertificateComputationData`, `BasicSignatureComputationData`, `TraceableSignatureComputationData`, `BasicSignatureVerificationData` and `TraceableSignatureVerificationData` become input data classes (properties and default values instead of setters; `withSamTraceabilityMode(offset, mode)` becomes `samTraceabilityMode` / `traceabilityOffset`, `withoutBusyMode()` becomes `busyMode = false`); their results are read from the `LegacySam` by `commandId` (see §8.5). `KeyPairContainer` is removed. The `create…Data()` and `createKeyPairContainer()` operations disappear from `LegacySamApiFactory`.
+- **`SecuritySetting`** becomes a data class (`samReader`, `controlSam`) instead of `setControlSamResource(samReader, controlSam)`; `LegacySamApiFactory.createSecuritySetting()` disappears.
+
+### 12.4 Card API
+
+- **`ApduResponse`** only keeps `apdu` (and `apduExchangeDuration`): `getDataOut()` and `getStatusWord()` are removed, as they can be deduced from `apdu`.
+- `ApduRequestSpi`, `CardRequestSpi`, `CardSelectionRequestSpi`, `ApduResponseApi`, `CardResponseApi` and `CardSelectionResponseApi` become the data classes `ApduRequest`, `CardRequest`, `CardSelectionRequest`, `ApduResponse`, `CardResponse` and `CardSelectionResponse`. Default values are explicit: `successfulStatusWords = setOf(0x9000)`, `successfulSelectionStatusWords = setOf(0x9000)`, `info = null`, `cardRequest = null`.
+
+### 12.5 Crypto Symmetric API
+
+- **`SvCommandSecurityDataApi`** (input/output object) is replaced:
+    - the inputs become parameters: `computeSvCommandSecurityData(svGetRequest: ByteArray, svGetResponse: ByteArray, svCommandPartialRequest: ByteArray) → SvCommandSecurityData`;
+    - the output is the `SvCommandSecurityData` data class (`serialNumber`, `transactionNumber`, `terminalChallenge`, `terminalSvMac`, non-nullable).
+- `createCardTransactionManager(..., transactionAuditData: MutableList<ByteArray>)`: the audit list is explicitly **mutable** (the crypto module appends its data to it).
+- `cipherPinForPresentation` and `cipherPinForModification` take non-nullable `kif: Byte` and `kvc: Byte` (instead of boxed `Byte`).
+
+### 12.6 Crypto Asymmetric API
+
+- **`CaCertificateContentSpi`** becomes the `CaCertificateContent` data class; the `isAidCheckRequested` property is removed, as it can be deduced from `aid` (`null` when the AID check is not requested).
+- **`CardPublicKeySpi`** is removed: the card public key is a `ByteArray` (`CardCertificateSpi.checkCertificateAndGetPublicKey(...) → ByteArray`, `AsymmetricCryptoCardTransactionManagerSpi.initTerminalPkiSession(cardPublicKey: ByteArray)`).
+- A **conformance clause** establishes the correspondence between the SPIs of this API and the marker interfaces of the Calypso Card API (`PcaCertificate`, `CaCertificate`, `CardCertificate`, the parsers and the factory).
+
+### 12.7 Rationale
+
+- **An API describes data and behaviours, not decoding algorithms**: computations on data remain the responsibility of the object that holds them.
+- **No double truth**: a deducible field can diverge from its source; removing it eliminates the risk.
+- **Raw access preserved** where it has a real use (transmission to the back office, re-injection of key parameters into transfer commands).
+
+---
+
+## 13. Theme 12 — Stored Value (SV) operations
+
+### 13.1 Motivation
+
+The Calypso card specification defines three SV commands — *Reload*, *Debit* and *Undebit* — preceded by an *SV Get* command, one parameter of which indicates the targeted operation: *Reload* or *Debit/Undebit*. The production model additionally introduced a DO/UNDO notion (`SvAction`) that does not exist for reloading and hid the undebit behind `prepareSvDebit`.
+
+### 13.2 Calypso Card API
+
+- **`SvAction` is removed**.
+- `prepareSvGet(svOperation: SvOperation) → Self` — only takes the operation.
+- **`SvOperation.DEBIT` is renamed `DEBIT_UNDEBIT`**, in accordance with the card specification; `RELOAD` is unchanged.
+- **New operation** `prepareSvUndebit(amount: Int, date: ByteArray, time: ByteArray) → Self` — cancels, totally or partially, a previous debit; amount in `0..32768`.
+- `prepareSvDebit(amount: Int, date: ByteArray, time: ByteArray) → Self` — now only performs the debit; amount in `0..32767`.
+- `prepareSvReload(amount: Int, date: ByteArray, time: ByteArray, free: ByteArray) → Self` — amount in `-8388608..8388607` (a negative reload is expressed directly by a negative amount).
+- **The overloads without data** `prepareSvDebit(int)` and `prepareSvReload(int)` are removed: all parameters are **mandatory and non-nullable**; the `date`, `time` and `free` fields (2 bytes each) are recorded in the SV log.
+- Each command requires a prior *SV Get* prepared with the corresponding operation (`DEBIT_UNDEBIT` for debit and undebit, `RELOAD` for reload).
+
+### 13.3 Rationale
+
+The model now follows the card specification exactly: three commands, two *SV Get* contexts. The `amount` range and the log data are explicit in each operation.
+
+---
+
+## 14. Theme 13 — Tolerance of a missing file (`6A82h`) in a secure session
+
+### 14.1 Motivation
+
+All Calypso cards now tolerate the `6A82h` status word (*File Not Found*) in a secure session for read commands (*Select File*, *Get Data*, *Read Binary*, *Read Records*, *Read Record Multiple*, *Search Record Multiple*).
+
+### 14.2 Calypso Card API
+
+- **Reads** (`prepareReadBinary`, `prepareReadCounter`, `prepareReadRecords`): processing no longer fails if the targeted file is missing, **inside a secure session as well as outside**; the `CalypsoCard` is simply not filled. The other anomalies (invalid offset, missing record or counter) keep the two modes *best-effort* (outside a session) and *strict* (inside a session).
+- **File selection** (`prepareSelectFileByLid`, `prepareSelectFileByControl`): a missing file no longer causes processing to fail, inside a session or not.
+- **The `SelectFileException` error is removed**.
+- The in-session usage restrictions of `prepareGetData`, `prepareReadRecord`, `prepareReadRecordsPartially` and `prepareSearchRecords` are **unchanged**.
+
+---
+
+## 15. Theme 14 — Crypto extensions and command interleaving
+
+### 15.1 Motivation
+
+During a card transaction, the application must be able to access the specific operations of the crypto module (for example signature computation by a SAM) in order to **interleave** card commands and crypto commands within the same transaction. The crypto extension is the instance created, for the current transaction, by the crypto module factory attached to the security setting.
+
+### 15.2 Calypso Card API
+
+- `<E extends CardTransactionCryptoExtension> E getCryptoExtension(Class<E> cryptoExtensionClass)` becomes **`getCryptoExtension() → CardTransactionCryptoExtension`**:
+    - the operation returns **the instance created for this transaction**; successive calls return the same instance;
+    - commands prepared through the extension join the **same queue** as the card commands, in call order, and are processed by the same `processCommands()`;
+    - the caller converts the instance to the concrete type defined by the crypto module in use (for example `CardTransactionLegacySamExtension`).
+
+### 15.3 Legacy SAM API
+
+- `CardTransactionLegacySamExtension.prepareComputeSignature(commandId, data)` and `prepareVerifySignature(commandId, data)` follow the `commandId` model (see §8.5).
+
+### 15.4 Rationale
+
+The `Class<E>` parameter only existed to work around the JVM's type erasure; it has no equivalent in other languages (Rust in particular). The chosen signature is **identical in all bindings**, and the identity clause guarantees that the obtained extension is indeed the one sharing the transaction's command queue.
+
+---
+
+## 16. Normative clarifications
+
+The specifications also bring clarifications that do not change signatures but specify the contract:
+
+- **Card API — APDU construction rules**: commands must strictly comply with ISO/IEC 7816-3; a case 4 command must include the `Le` field, for which the value `00h` is **recommended** (it was previously presented as mandatory).
+- **Card API — limitations**: the transmission of the *Select Application* by DF name command (reserved to the `CardSelectionRequest`) and of the *Get Response* command (status words `61XYh` and `6CXYh` are handled automatically by the reader implementation) cannot be requested.
+- **Card API — anti-relay**: the APDU exchange execution-time control mechanism is explicitly presented as an anti-relay countermeasure solution (see Theme 2).
+- **Reader API — `SmartCard` lifecycle**: now normative (see §2.3.2).
+- **All APIs — pre-condition natures**: an explicit criterion distinguishes *Range* (position in a collection or memory image exposed by the API) from *Argument* (any other invalid value, including values bounded by the card or SAM protocol).
+- **Storage Card API — scope**: the *Scope* section explicitly lists the supported products (MIFARE Ultralight, MIFARE Classic 1K, MIFARE Classic 4K, ST25 SRT512), identified by the values of `StorageCardProductType`.
+
+---
+
+## 17. Elements under study
+
+The following elements appear in grey in the Legacy SAM API diagram; they are **not** part of the normative scope submitted for validation:
+
+- `LegacySamApiFactory.createSecureReadTransactionManager(samReader, sam, securitySetting)` and the `SecureReadTransactionManager` interface;
+- `FreeTransactionManager.preparePlainLoadWorkKey(...)` and `preparePlainExportWorkKey(...)`;
+- `LegacySamSelectionExtension.prepareReadCaadRecord(...)` / `prepareReadCaadRecords(...)` and their equivalents on `ReadTransactionManager`;
+- `SecureWriteTransactionManager.prepareWriteCaadRecord(...)`.
+
+---
+
+## 18. Migration procedure
+
+Migrating application code from the production versions to the new versions will be covered by a **dedicated technical migration guide**, published separately after validation by the TC Terminal and after alignment of the associated Keypop Java implementations.
+
+This guide will aim to **simplify the transition as much as possible**: 1:1 mapping of removed / renamed / redesigned elements (of which Annex A is the basis), rewriting patterns (`before` / `after`) for the most common use cases, progressive adoption rules and known pitfalls. It will also describe the **Java implementation** of the notation principles of Theme 10 (data classes, `Self`, default values, nullability).
+
+---
+
+## 19. Next steps and validation by the TC Terminal
+
+### 19.1 Scope submitted for validation
+
+This document submits to the validation of the **CNA TC Terminal**:
+
+1. **The principle** of the fourteen evolution themes (§2 to §15) and the overall consistency of the work (versions 3.0.0 for Reader / Card / Calypso Card, 1.0.0 for Definitions, 2.0.0 for Legacy SAM / Generic Card / Storage Card, 0.2.0 for Crypto Symmetric, 0.3.0 for Crypto Asymmetric).
+2. **The design choices** documented in the "Rationale" sections, in particular:
+    - the explicit multi-channel model relying on the `SmartCard(Spi)` as the named target and the three-level hierarchy of transaction managers (§2);
+    - duration bounding at the APDU, Calypso session and generic command levels, with a `csnMin` threshold (§3);
+    - the merge of the Observer pattern into a single `CardReaderEventHandler` SPI (§4);
+    - the `SecureSessionState` enumeration (§5);
+    - the extraction of `RfTechnology` and `CardType` into the Terminal Definitions API and the `CardDetectionSettings` detection settings (§7);
+    - the generalised `commandId` model (§8);
+    - standardised reader discovery through `CardReaderProvider` (§9);
+    - the **hierarchy of selection managers per mode** and the three result types (§10);
+    - the **language-independent notation** and its principles, which aim to broaden the choice of implementation languages (KMP, Rust, Swift, etc.) (§11);
+    - **data without computation** and access to raw data (§12);
+    - the SV model aligned with the card specification (§13);
+    - the tolerance of a missing file in a session (§14);
+    - access to the crypto extension with an identity clause (§15).
+3. **The detailed content of the nine specifications** and their diagrams (see [Reference documents](#reference-documents)).
+4. **The introduction** of the new Definitions foundation API.
+5. **The principle** of a dedicated migration procedure (see §18).
+
+### 19.2 Points of attention for the review
+
+- the **stability of the initial content** of the `RfTechnology` and `CardType` enumerations (§7.2), in particular the representation of ISO 14443-4 by a single `ISO_14443_4` value;
+- the **complete removal** of `ConfigurableCardReader` without a deprecation phase (§7.3);
+- the **semantics of `csnMin`** as a CSN threshold for duration bounds (§3.3);
+- the **enforcement of the Calypso duration bounds** (§3.1, §3.3): the specification defines neither what is measured for the session and SV operation durations, nor the behaviour on overrun; cancelling the session is only a possibility offered by the Card API (MAY). The TC is invited to decide whether this behaviour should be made normative in the Calypso Card API;
+- the **three-level gradation** of transaction managers (§2.2);
+- the **replacement of overloads** by unique operation names and parameters with default values (§11.2), which changes many operation names for Java integrators;
+- the **replacement of "builder" interfaces** by data classes (§11.2, §12), whose Java implementation remains to be defined;
+- the **change from `SvOperation.DEBIT` to `DEBIT_UNDEBIT`** and the removal of the SV overloads without data (§13).
+
+### 19.3 Next steps
+
+Once the versions have been validated by the TC Terminal:
+
+1. **Finalisation of the specifications**: moving the repositories from their `…-SNAPSHOT` versions to their final versions; removal or specification of the elements under study (§17).
+2. **Creation of the new Java module** `keypop-definitions-jvm-api`, and **alignment of the existing Keypop Java modules** (`keypop-reader-java-api`, `keypop-card-java-api`, `keypop-calypso-card-java-api`, `keypop-calypso-crypto-legacysam-java-api`, `keypop-calypso-crypto-symmetric-java-api`, `keypop-calypso-crypto-asymmetric-java-api`, `keypop-genericcard-jvm-api`, `keypop-storagecard-java-api`) with their new versions.
+3. **Writing and publication of the technical migration guide** (see §18).
+4. **Communication** of the availability of the new versions to integrators and to the CNA working groups concerned.
+
+---
+
+## Annex A — Detailed mapping per API
+
+This annex lists, for each API, what becomes of each element of the Java versions in production. **Unchanged** elements (apart from the move to the Theme 10 notation: basic types, `Self`, explicit nullability) are not listed. The "after" signatures are expressed in the specification notation.
+
+### A.1 Terminal Reader API (Java 2.1.0 → 3.0.0)
+
+| Element in production | What it becomes |
+|---|---|
+| `ReaderApiFactory.createCardSelectionManager()` | Removed → `createSingleCardSelectionManager()`, `createMultipleCardSelectionManager()`, `createMultichannelCardSelectionManager()` |
+| `ReaderApiFactory.createBasicCardSelector()`, `createIsoCardSelector()` | Removed (selectors = data classes) |
+| — | Added: `ReaderApiFactory.getCardReaderProvider() → CardReaderProvider`; `CardReaderProvider` interface |
+| `ConfigurableCardReader` (`activateProtocol`, `deactivateProtocol`, `getCurrentProtocol`) | Removed |
+| `ObservableCardReader.setReaderObservationExceptionHandler`, `addObserver`, `removeObserver`, `clearObservers`, `countObservers` | Removed |
+| `ObservableCardReader.startCardDetection(DetectionMode)` | → `startCardDetection(settings: CardDetectionSettings, eventHandler: CardReaderEventHandler)` |
+| `ObservableCardReader.finalizeCardProcessing()` | → `endCardProcessing()` |
+| — | Added: `ObservableCardReader.clearScheduledCardSelectionScenario()` |
+| `ObservableCardReader.DetectionMode` (`REPEATING`, `SINGLESHOT`) | → `DetectionMode` (`REPEATING`, `SINGLE_SHOT`) |
+| `ObservableCardReader.NotificationMode` | → `CardPresenceNotificationPolicy` (namespace `reader.selection`) |
+| `CardReaderEvent` (interface) | → `CardReaderEvent` data class (`readerName`, `type`, `scheduledCardSelectionsResponse?`) |
+| `CardReaderEvent.Type` (`…`, `UNAVAILABLE`) | → `CardReaderEventType` (`…`, `READER_UNREGISTERED`) |
+| `ChannelControl` | Removed |
+| `CardCommunicationException`, `ReaderCommunicationException`, `InvalidCardResponseException` | → `CardCommunication`, `ReaderCommunication`, `InvalidCardResponse` |
+| `ReaderProtocolNotSupportedException` | Removed |
+| `reader.selection.InvalidCardResponseException` | Removed (duplicate) |
+| `CardSelectionManager.setMultipleSelectionMode()`, `prepareReleaseChannel()` | Removed |
+| `CardSelectionManager.prepareSelection(CardSelector<?>, CardSelectionExtension) → int` | → `prepareSelection(selectionId: Int, cardSelector: CardSelector, cardSelectionExtension: CardSelectionExtension) → Self` |
+| `CardSelectionManager.importCardSelectionScenario(String) → int` | → `importCardSelectionScenario(cardSelectionScenario: String) → Self` (replaces the scenario) |
+| `CardSelectionManager.processCardSelectionScenario(CardReader)` | → `processCardSelectionScenario(reader)` on `SingleCardSelectionManager` / `MultipleCardSelectionManager`; `processCardSelectionScenario(reader, channelSelectionPolicy)` on `MultichannelCardSelectionManager` |
+| `CardSelectionManager.scheduleCardSelectionScenario(ObservableCardReader, NotificationMode)` | → `scheduleCardSelectionScenario(observableCardReader, cardPresenceNotificationPolicy)` on the single-channel managers |
+| `CardSelectionManager.parseScheduledCardSelectionsResponse(...)` | → on the single-channel managers, returns the typed result |
+| `CardSelectionManager.importProcessedCardSelectionScenario(String)` | → on each manager, returns the typed result |
+| `CardSelectionResult` (`getSmartCards`, `getActiveSmartCard`, `getActiveSelectionIndex`) | Removed → `SingleCardSelectionResult`, `MultipleCardSelectionResult`, `MultichannelCardSelectionResult` |
+| — | Added: `ChannelSelectionPolicy` |
+| `CardSelector<T>` (`filterByCardProtocol`, `filterByPowerOnData`) | → sealed interface `CardSelector`; `filterByCardProtocol` removed; `filterByPowerOnData` → `powerOnDataRegex` property; `cardType` property added |
+| `BasicCardSelector` (interface) | → data class (`cardType?`, `powerOnDataRegex?`) |
+| `CommonIsoCardSelector<T>` (`filterByDfName(byte[])`, `filterByDfName(String)`, `setFileOccurrence`, `setFileControlInformation`) | Removed → `dfName: ByteArray?`, `fileOccurrence`, `fileControlInformation` properties of `IsoCardSelector`; `filterByDfName(String)` removed |
+| `CommonIsoCardSelector.FileOccurrence`, `.FileControlInformation` | → `FileOccurrence`, `FileControlInformation` |
+| `IsoCardSelector` (interface) | → data class |
+| `SmartCard.getPowerOnData()` | → `getPowerOnData() → String?`; `isActive() → Boolean` added |
+| `IsoSmartCard.getSelectApplicationResponse()` | → `getSelectApplicationResponse() → ByteArray?`; `isBasicChannel() → Boolean` added |
+| `CardReaderObserverSpi.onReaderEvent(CardReaderEvent)` | → `CardReaderEventHandler.onReaderEvent(cardReaderEvent: CardReaderEvent)` |
+| `CardReaderObservationExceptionHandlerSpi.onReaderObservationError(String contextInfo, String readerName, Throwable e)` | → `CardReaderEventHandler.onReaderError(context: String, readerName: String, error: Any)` |
+| `CardTransactionManager<T>.processCommands(ChannelControl) → T` | → `CardTransactionManager.processCommands() → Unit` (non-generic) |
+| — | Added: `IsoCardTransactionManager`, `MultichannelCardTransactionManager` |
+| — | Added: `CardDetectionSettings` data class |
+
+### A.2 Terminal Card API (Java 2.0.1 → 3.0.0)
+
+| Element in production | What it becomes |
+|---|---|
+| `ApduRequestSpi` (`getApdu`, `getSuccessfulStatusWords`, `getInfo`) | → `ApduRequest` data class (`apdu`, `successfulStatusWords = setOf(0x9000)`, `info: String? = null`) + `apduExchangeMaxDuration: Long? = null` |
+| `ApduResponseApi` (`getApdu`, `getDataOut`, `getStatusWord`, `Serializable`) | → `ApduResponse` data class (`apdu`) + `apduExchangeDuration: Long?`; `getDataOut`, `getStatusWord` removed |
+| `CardRequestSpi` (`getApduRequests`, `stopOnUnsuccessfulStatusWord`) | → `CardRequest` data class |
+| `CardResponseApi` (`getApduResponses`, `isLogicalChannelOpen`) | → `CardResponse` data class (`apduResponses`); `isLogicalChannelOpen` removed |
+| `CardSelectionRequestSpi` (`getSuccessfulSelectionStatusWords`, `getCardRequest`) | → `CardSelectionRequest` data class (`successfulSelectionStatusWords = setOf(0x9000)`, `cardRequest: CardRequest? = null`) |
+| `CardSelectionResponseApi` (`getPowerOnData`, `getSelectApplicationResponse`, `hasMatched`, `getCardResponse`) | → `CardSelectionResponse` data class (same information, explicit nullability) + `channel: Int` |
+| `CardSelectionExtensionSpi.getCardSelectionRequest()`, `parse(CardSelectionResponseApi)` | → `CardSelectionRequest` / `CardSelectionResponse` types |
+| `SmartCardSpi` | `deactivate() → Unit` added |
+| — | Added: `MultichannelSmartCardSpi` (`getChannel() → Int`) |
+| `ProxyReaderApi.transmitCardRequest(CardRequestSpi, ChannelControl)`, `releaseChannel()` | Removed → `transmitCardRequest(cardRequest, smartCard)`, `transmitCardRequestAndCloseChannel(cardRequest, multichannelSmartCard)`, `closeChannel(multichannelSmartCard)` |
+| `ChannelControl` | Removed |
+| `AbstractApduException` (`getCardResponse`, `isCardResponseComplete`) | Removed; `cardResponse: CardResponse?` and `isCardResponseComplete: Boolean` properties carried by the APDU errors |
+| `CardBrokenCommunicationException`, `ReaderBrokenCommunicationException`, `UnexpectedStatusWordException`, `ParseException` | → `CardBrokenCommunication` (also raised if the card is no longer active), `ReaderBrokenCommunication`, `UnexpectedStatusWord`, `Parse` |
+| — | Added: `ApduExchangeDurationExceeded` error |
+
+### A.3 Terminal Calypso Card API (Java 2.2.0 → 3.0.0)
+
+| Element in production | What it becomes |
+|---|---|
+| `CalypsoCardApiFactory.createSearchCommandData()` | Removed |
+| `CalypsoCard.getProductType() → CalypsoCard.ProductType` | → `getProductType() → CalypsoCardProductType` |
+| `CalypsoCard.getDirectoryHeader()`, `getFileBySfi`, `getFileByLid`, `getSvLoadLogRecord`, `getSvDebitLogLastRecord` | → explicit nullable returns |
+| — | Added: `CalypsoCard.getCounterValuesBySfi`, `getCounterValuesByLid`, `getMatchingRecordNumbers(commandId)`, `getSvLoadLogRecordRawData`, `getSvDebitLogLastRecordRawData`, `getSvDebitLogAllRecordsRawData` |
+| `CalypsoCard.ProductType` | → `CalypsoCardProductType` |
+| `CalypsoCardSelectionExtension.prepareSelectFile(short)` / `prepareSelectFile(SelectFileControl selectControl)` | → `prepareSelectFileByLid(lid)` / `prepareSelectFileByControl(selectFileControl)` |
+| `DirectoryHeader` (interface; `getKif(level)`, `getKvc(level)`) | → data class; `kif`, `kvc`: `Map<WriteAccessLevel, Byte>` |
+| `ElementaryFile` (interface; `getData()`) | → data class (`sfi`, `header?`, `records: SortedMap<Int, ByteArray>`) |
+| `ElementaryFile.Type` | → `ElementaryFileType` |
+| `FileData` (all operations) | Removed (see §12.2) |
+| `FileHeader` (interface) | → data class (`efType: ElementaryFileType`) |
+| `SvDebitLogRecord`, `SvLoadLogRecord` (interfaces, `getRawData`) | → data classes without `rawData` |
+| `SearchCommandData.setSfi`, `startAtRecord`, `setOffset`, `enableRepeatedOffset`, `setSearchData`, `setMask`, `fetchFirstMatchingResult` | → properties of the `SearchCommandData` data class: `sfi`, `startAtRecord = 1`, `offset = 0`, `repeatedOffset = false`, `searchData`, `mask: ByteArray? = null`, `fetchFirstMatchingResult = false` |
+| `SearchCommandData.getMatchingRecordNumbers()` | → `CalypsoCard.getMatchingRecordNumbers(commandId: Int) → List<Int>?` |
+| `TransactionManager<T>` and generic sub-interfaces | → non-generic, `Self` returns; `TransactionManager` extends `IsoCardTransactionManager` |
+| `TransactionManager.prepareSelectFile(short)` / `(SelectFileControl)` | → `prepareSelectFileByLid` / `prepareSelectFileByControl` |
+| `TransactionManager.prepareSearchRecords(SearchCommandData)` | → `prepareSearchRecords(commandId: Int, data: SearchCommandData)` |
+| `TransactionManager.processCommands(ChannelControl)` | Removed (inherited `CardTransactionManager.processCommands()`) |
+| — | Added: `TransactionManager.getSecureSessionState() → SecureSessionState`; `SecureSessionState` enumeration |
+| `SecureTransactionManager.getCryptoExtension(Class<E>) → E` | → `getCryptoExtension() → CardTransactionCryptoExtension` |
+| `SecureSymmetricCryptoTransactionManager.prepareSvGet(SvOperation, SvAction)` | → `prepareSvGet(svOperation: SvOperation)` |
+| `prepareSvReload(int)`, `prepareSvDebit(int)` | Removed |
+| — | Added: `prepareSvUndebit(amount, date, time)` |
+| `SvAction` | Removed |
+| `SvOperation.DEBIT` | → `SvOperation.DEBIT_UNDEBIT` |
+| — | Added: `SymmetricCryptoSecuritySetting.assignOpenSecureSessionMaxDuration(...)`, `assignSvOperationMaxDuration(...)`; `AsymmetricCryptoSecuritySetting.assignOpenSecureSessionMaxDuration(...)` |
+| `ChannelControl` | Removed |
+| `CardIOException`, `ReaderIOException`, `UnexpectedCommandStatusException`, `SelectFileException` | Removed |
+| `CardSignatureNotVerifiableException`, `CryptoException`, `CryptoIOException`, `InconsistentDataException`, `InvalidCardSignatureException`, `InvalidCertificateException`, `InvalidPinException`, `SessionBufferOverflowException`, `UnauthorizedKeyException` | → same names without the `Exception` suffix |
+
+### A.4 Terminal Calypso Crypto Legacy SAM API (Java 1.0.0 → 2.0.0)
+
+| Element in production | What it becomes |
+|---|---|
+| `LegacySamApiFactory.createSecuritySetting()`, `createKeyPairContainer()`, `createLegacyCardCertificateComputationData()`, `createBasicSignatureComputationData()`, `createTraceableSignatureComputationData()`, `createBasicSignatureVerificationData()`, `createTraceableSignatureVerificationData()` | Removed (data classes) |
+| `LegacySam.getProductType() → LegacySam.ProductType` | → `getProductType() → LegacySamProductType` |
+| `LegacySam.getCounter(int)`, `getCounterCeiling(int)` | Removed (use `getCounters()`, `getCounterCeilings()`) |
+| `LegacySam.getCounterIncrementAccess(int)` | → `getCounterIncrementAccesses() → SortedMap<Int, CounterIncrementAccess>` |
+| `LegacySam.getSamParameters() → SamParameters` | → `getSamParameters() → ByteArray?`; `SamParameters` removed |
+| `LegacySam.getWorkKeyParameter(int)` / `(byte, byte)` | → `getWorkKeyParameterByRecordNumber` / `getWorkKeyParameterByKifKvc` |
+| — | Added: `LegacySam.getSystemKeyParameterRawData`, `getWorkKeyParameterRawDataByRecordNumber`, `getWorkKeyParameterRawDataByKifKvc`, `getKeyPair(commandId)`, `getComputedCardCertificate(commandId)`, `getSignature(commandId)`, `getSignedData(commandId)`, `isSignatureValid(commandId)` |
+| `LegacySam.ProductType` | → `LegacySamProductType` |
+| `KeyParameter` (interface; `getRawData`, `getParameterValue(int)`) | → data class (`kif`, `kvc`, `algorithm`, `parameterValues`) |
+| `LegacySamSelectionExtension.setUnlockData(String, ProductType)` | → `setUnlockDataForProductType(unlockData, productType)` |
+| `LegacySamSelectionExtension.setStaticUnlockDataProvider(provider)` / `setDynamicUnlockDataProvider(provider)` | → `setStaticUnlockDataProviderWithDeferredReader(provider)` / `setDynamicUnlockDataProviderWithDeferredReader(provider)` |
+| `LegacySamSelectionExtension.prepareReadWorkKeyParameters(int)` / `(byte, byte)` | → `prepareReadWorkKeyParametersByRecordNumber` / `prepareReadWorkKeyParametersByKifKvc` |
+| `LegacySamRevocationServiceSpi.isSamRevoked(byte[])` | Removed (`isSamRevoked(serialNumber, counterValue: Int)` remains) |
+| `TransactionManager<T>` and generic sub-interfaces | → non-generic, `Self` returns |
+| `TransactionManager.processCommands()`, `processCommands(ChannelControl)` | Removed (inherited `CardTransactionManager.processCommands()`) |
+| `ReadTransactionManager.prepareReadWorkKeyParameters(int)` / `(byte, byte)` | → `…ByRecordNumber` / `…ByKifKvc` |
+| `FreeTransactionManager.prepareGenerateCardAsymmetricKeyPair(KeyPairContainer)` | → `prepareGenerateCardAsymmetricKeyPair(commandId: Int)` |
+| `FreeTransactionManager.prepareComputeCardCertificate(data)` | → `prepareComputeCardCertificate(commandId: Int, data)` |
+| `FreeTransactionManager` / `CardTransactionLegacySamExtension` `.prepareComputeSignature(data)`, `.prepareVerifySignature(data)` | → `prepareComputeSignature(commandId: Int, data)`, `prepareVerifySignature(commandId: Int, data)` |
+| `SecureWriteTransactionManager.prepareTransferWorkKeyDiversified(…, diversifier)` | → `prepareTransferWorkKeyDiversifiedWithSpecificDiversifier(…, diversifier)` |
+| `KeyPairContainer` | Removed |
+| `LegacyCardCertificateComputationData.setCardPublicKey`, `setStartDate`, `setEndDate`, `setCardAid`, `setCardSerialNumber`, `setCardStartupInfo` | → properties of the data class: `cardPublicKey`, `startDate`, `endDate`, `cardAid`, `cardSerialNumber`, `cardStartupInfo` |
+| `LegacyCardCertificateComputationData.getCertificate()` | → `LegacySam.getComputedCardCertificate(commandId: Int) → ByteArray?` |
+| `SignatureComputationData<T>` | → sealed interface `SignatureComputationData` |
+| `SignatureComputationData.setData(byte[] data, byte kif, byte kvc)`, `setSignatureSize(int)`, `setKeyDiversifier(byte[])` | → properties `data`, `kif`, `kvc`, `signatureSize = 8`, `keyDiversifier: ByteArray? = null` of the data classes |
+| `SignatureComputationData.getSignature()` | → `LegacySam.getSignature(commandId: Int) → ByteArray?` |
+| `BasicSignatureComputationData`, `TraceableSignatureComputationData` | → data classes implementing `SignatureComputationData` |
+| `TraceableSignatureComputationData.withSamTraceabilityMode(int offset, SamTraceabilityMode mode)`, `withoutBusyMode()` | → properties `traceabilityOffset = 0`, `samTraceabilityMode: SamTraceabilityMode? = null`, `busyMode = true` |
+| `TraceableSignatureComputationData.getSignedData()` | → `LegacySam.getSignedData(commandId: Int) → ByteArray?` |
+| `SignatureVerificationData<T>` | → sealed interface `SignatureVerificationData` |
+| `SignatureVerificationData.setData(byte[] data, byte[] signature, byte kif, byte kvc)`, `setKeyDiversifier(byte[])` | → properties `data`, `signature`, `kif`, `kvc`, `keyDiversifier: ByteArray? = null` of the data classes |
+| `SignatureVerificationData.isSignatureValid()` | → `LegacySam.isSignatureValid(commandId: Int) → Boolean?` |
+| `BasicSignatureVerificationData`, `TraceableSignatureVerificationData` | → data classes implementing `SignatureVerificationData` |
+| `TraceableSignatureVerificationData.withSamTraceabilityMode(int offset, SamTraceabilityMode mode, LegacySamRevocationServiceSpi service)`, `withoutBusyMode()` | → properties `traceabilityOffset = 0`, `samTraceabilityMode: SamTraceabilityMode? = null`, `samRevocationService: LegacySamRevocationServiceSpi? = null`, `busyMode = true` |
+| `SecuritySetting.setControlSamResource(samReader, controlSam)` | → `SecuritySetting` data class (`samReader`, `controlSam`) |
+| `ReaderIOException`, `SamIOException`, `UnexpectedCommandStatusException` | Removed |
+| `InconsistentDataException`, `InvalidSignatureException`, `SamRevokedException` | → `InconsistentData`, `InvalidSignature`, `SamRevoked` |
+
+### A.5 Terminal Calypso Crypto Symmetric API (Java 0.1.1 → 0.2.0)
+
+| Element in production | What it becomes |
+|---|---|
+| `SvCommandSecurityDataApi.getSvGetRequest()`, `getSvGetResponse()`, `getSvCommandPartialRequest()` (inputs) | → `svGetRequest`, `svGetResponse`, `svCommandPartialRequest` parameters of `computeSvCommandSecurityData` |
+| `SvCommandSecurityDataApi.setSerialNumber`, `setTransactionNumber`, `setTerminalChallenge`, `setTerminalSvMac` (outputs) | → `serialNumber`, `transactionNumber`, `terminalChallenge`, `terminalSvMac` properties of the `SvCommandSecurityData` data class (namespace `calypso.crypto.symmetric.spi`) |
+| `SymmetricCryptoCardTransactionManagerSpi.computeSvCommandSecurityData(SvCommandSecurityDataApi) → void` | → `computeSvCommandSecurityData(svGetRequest, svGetResponse, svCommandPartialRequest) → SvCommandSecurityData` |
+| `SymmetricCryptoCardTransactionManagerSpi.cipherPinForPresentation(…, Byte kif, Byte kvc)`, `cipherPinForModification(…, Byte kif, Byte kvc)` | → non-nullable `kif: Byte`, `kvc: Byte` |
+| `SymmetricCryptoCardTransactionManagerFactorySpi.createCardTransactionManager(…, List<byte[]> transactionAuditData)` | → `transactionAuditData: MutableList<ByteArray>` |
+| `SymmetricCryptoException`, `SymmetricCryptoIOException` | → `SymmetricCrypto`, `SymmetricCryptoIO` |
+
+### A.6 Terminal Calypso Crypto Asymmetric API (Java 0.2.0 → 0.3.0)
+
+| Element in production | What it becomes |
+|---|---|
+| `CaCertificateContentSpi.getPublicKey`, `getPublicKeyReference`, `getStartDate`, `getEndDate`, `isAidTruncated`, `getAid`, `isCaCertificatesAuthenticationAllowed`, `isCardCertificatesAuthenticationAllowed` | → properties of the `CaCertificateContent` data class: `publicKey`, `publicKeyReference`, `startDate`, `endDate`, `isAidTruncated`, `aid: ByteArray?`, `isCaCertificatesAuthenticationAllowed`, `isCardCertificatesAuthenticationAllowed` |
+| `CaCertificateContentSpi.isAidCheckRequested()` | Removed (deducible from `aid`, `null` if the check is not requested) |
+| `CaCertificateSpi.checkCertificateAndGetContent(CaCertificateContentSpi) → CaCertificateContentSpi` | → `checkCertificateAndGetContent(issuerCertificateContent: CaCertificateContent) → CaCertificateContent` |
+| `PcaCertificateSpi.checkCertificateAndGetContent() → CaCertificateContentSpi` | → `… → CaCertificateContent` |
+| `CardCertificateSpi.checkCertificateAndGetPublicKey(CaCertificateContentSpi) → CardPublicKeySpi` | → `checkCertificateAndGetPublicKey(issuerCertificateContent: CaCertificateContent) → ByteArray` |
+| `CardPublicKeySpi` (`getRawValue`) | Removed |
+| `AsymmetricCryptoCardTransactionManagerSpi.initTerminalPkiSession(CardPublicKeySpi)` | → `initTerminalPkiSession(cardPublicKey: ByteArray)` |
+| `AsymmetricCryptoException`, `CertificateValidationException` | → `AsymmetricCrypto`, `CertificateValidation` |
+
+### A.7 Terminal Generic Card API (Java 1.0.0 → 2.0.0)
+
+| Element in production | What it becomes |
+|---|---|
+| `CardTransactionManager` (extends the Reader API `CardTransactionManager<…>`) | → `GenericCardTransactionManager` (extends `IsoCardTransactionManager`) |
+| `prepareApdu(String)` | Removed |
+| `prepareApdu(byte[])` | → `prepareCommand(apdu: ByteArray)` |
+| `prepareApdu(byte cla, byte ins, byte p1, byte p2, byte[] dataIn, Byte le)` | Removed |
+| — | Added: `prepareCommandWithId(commandId, apdu)`, `prepareCommandWithMaxDuration(commandId, apdu, maxDuration)`, `getLastExecutionResponse(commandId) → ByteArray?` |
+| `getResponsesAsByteArrays()` | → `getLastExecutionResponses() → List<ByteArray>` |
+| `getResponsesAsHexStrings()` | Removed |
+| `GenericCardApiFactory.createCardTransaction(reader, card)` | → `createGenericCardTransactionManager(reader, card)` |
+
+### A.8 Terminal Storage Card API (Java 1.2.0 → 2.0.0)
+
+| Element in production | What it becomes |
+|---|---|
+| `ProductType` (methods `getBlockCount`, `getBlockSize`, `hasSystemBlock`, `hasWriteAcknowledgment`, `hasAuthentication`) | → `StorageCardProductType` with properties `blockCount`, `blockSize`, `hasSystemBlock`, `hasWriteAcknowledgment`, `hasAuthentication` |
+| `StorageCardApiFactory.createStorageCardSelectionExtension(ProductType)` | → `productType: StorageCardProductType` parameter |
+| `StorageCard.getUID()` | → `getUid()` |
+| `StorageCard.getSystemBlock()`, `getBlock(int)`, `getBlocks(int, int)` | → `ByteArray?` returns |
+| `StorageCardSelectionExtension` / `StorageCardTransactionManager` `.prepareMifareClassicAuthenticate(…, byte[] key)` / `(…, int keyNumber)` | → `prepareMifareClassicAuthenticateWithKey` / `prepareMifareClassicAuthenticateWithKeyNumber` |
+| `StorageCardTransactionManager` (extends `CardTransactionManager<…>`) | → non-generic, `Self` returns |
+| `StorageCardTransactionManager.prepareReadSystemBlock()`, `prepareWriteSystemBlock(byte[])` *(deprecated)* | Removed |
+| `StorageCardTransactionManager.prepareSt25WriteSystemBlock(byte[])` | → `prepareSt25WriteSystemBlock(commandId: Int, data: ByteArray)` |
+| `StorageCardTransactionManager.prepareWriteBlocks(int, byte[])` | → `prepareWriteBlocks(commandId: Int, fromBlockAddress: Int, data: ByteArray)` |
+| `StorageCardException` (`getBlockAddress`) | Removed; the errors carry `blockAddress: Int?` and `commandId: Int?` |
+| `SCAuthenticationFailedException` (extends `CardCommunicationException`) | → `SCAuthenticationFailed` (no parent error) |
+| `SCCardCommunicationException`, `SCInvalidCardResponseException`, `SCReaderCommunicationException` | → `SCCardCommunication`, `SCInvalidCardResponse`, `SCReaderCommunication` (parents unchanged) |
+
+### A.9 Terminal Definitions API (new, 1.0.0)
+
+| Element | Content |
+|---|---|
+| `DefinitionsApiProperties` | `VERSION` constant |
+| `RfTechnology` | `ISO_14443_AB`, `INNOVATRON_B_PRIME`, `FELICA`, `ISO_15693` |
+| `CardType` | `ISO_7816_3`, `ISO_14443_4`, `ISO_14443_3A_MIFARE_CLASSIC_1K`, `ISO_14443_3A_MIFARE_CLASSIC_4K`, `ISO_14443_3A_MIFARE_ULTRALIGHT`, `ISO_14443_3B_ST25_SRT512`, `INNOVATRON_B_PRIME`, `FELICA`, `ISO_15693`, `UNKNOWN` |
 
 ---
 
