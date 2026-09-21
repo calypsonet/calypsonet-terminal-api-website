@@ -2,24 +2,24 @@
   {
     "name": "develop",
     "commit": {
-      "sha": "265ab1fb40abc44caa61ac1d77e544b3b6c2dd45",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/commits/265ab1fb40abc44caa61ac1d77e544b3b6c2dd45"
+      "sha": "9eb443de03c929b11308f21db746ae70fc46a64b",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/commits/9eb443de03c929b11308f21db746ae70fc46a64b"
     },
     "protected": false
   },
   {
     "name": "doc",
     "commit": {
-      "sha": "1ded50f9cc78c03336a5fa98323ce7fd613425b2",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/commits/1ded50f9cc78c03336a5fa98323ce7fd613425b2"
+      "sha": "49135ffdc58b9883369b2bf7a4c201f90e96ce66",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/commits/49135ffdc58b9883369b2bf7a4c201f90e96ce66"
     },
     "protected": false
   },
   {
     "name": "main",
     "commit": {
-      "sha": "04cfd68dec3475682a2ddb409cbba7f9ce826eb6",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/commits/04cfd68dec3475682a2ddb409cbba7f9ce826eb6"
+      "sha": "9eb443de03c929b11308f21db746ae70fc46a64b",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/commits/9eb443de03c929b11308f21db746ae70fc46a64b"
     },
     "protected": false
   }

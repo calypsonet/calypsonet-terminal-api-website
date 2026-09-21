@@ -79,11 +79,11 @@
   "language": "C++",
   "has_issues": true,
   "has_projects": true,
-  "has_downloads": true,
+  "has_downloads": false,
   "has_wiki": true,
   "has_pages": false,
   "has_discussions": false,
-  "forks_count": 2,
+  "forks_count": 1,
   "mirror_url": null,
   "archived": true,
   "disabled": false,
@@ -104,7 +104,7 @@
 
   ],
   "visibility": "public",
-  "forks": 2,
+  "forks": 1,
   "open_issues": 0,
   "watchers": 3,
   "default_branch": "main",
@@ -140,6 +140,6 @@
     "user_view_type": "public",
     "site_admin": false
   },
-  "network_count": 2,
+  "network_count": 1,
   "subscribers_count": 2
 }

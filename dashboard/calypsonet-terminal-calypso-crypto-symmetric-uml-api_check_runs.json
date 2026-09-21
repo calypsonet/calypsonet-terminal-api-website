@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 45031165501,
-      "name": "publish-diagrams",
-      "node_id": "CR_kwDOIXzzjM8AAAAKfBEOPQ",
-      "head_sha": "03d00107a4fe0a6ebe2e84bd8d85a1a5f2f4cdc7",
-      "external_id": "ceb43456-7f08-5ce8-8931-070ebcac6c95",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/check-runs/45031165501",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/actions/runs/15967561127/job/45031165501",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/actions/runs/15967561127/job/45031165501",
+      "id": 106359213698,
+      "name": "publish-snapshot / reusable-publish-snapshot",
+      "node_id": "CR_kwDOIXzzjM8AAAAYw4DOgg",
+      "head_sha": "a26dd4ee0fbf36fc251011fc5a4681bdd87686eb",
+      "external_id": "13354d84-56f5-5ef8-9426-792dfe9ecc6e",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/check-runs/106359213698",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/actions/runs/35607840928/job/106359213698",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/actions/runs/35607840928/job/106359213698",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2025-06-30T08:14:39Z",
-      "completed_at": "2025-06-30T08:14:44Z",
+      "started_at": "2026-09-21T13:47:12Z",
+      "completed_at": "2026-09-21T13:48:03Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
-        "annotations_count": 0,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/check-runs/45031165501/annotations"
+        "annotations_count": 2,
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/check-runs/106359213698/annotations"
       },
       "check_suite": {
-        "id": 40912844388
+        "id": 96403333067
       },
       "app": {
         "id": 15368,

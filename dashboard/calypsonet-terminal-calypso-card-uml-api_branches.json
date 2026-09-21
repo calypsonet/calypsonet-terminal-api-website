@@ -2,24 +2,24 @@
   {
     "name": "develop",
     "commit": {
-      "sha": "4b3ab2eb81c97c1081c3fa326d675b2dff8a3f76",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/commits/4b3ab2eb81c97c1081c3fa326d675b2dff8a3f76"
+      "sha": "72b4273d9eb571894c2658c46791f997c76f81ae",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/commits/72b4273d9eb571894c2658c46791f997c76f81ae"
     },
     "protected": false
   },
   {
     "name": "doc",
     "commit": {
-      "sha": "5f46af3deee20ce97ab9b9e9c80a392382c34e5b",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/commits/5f46af3deee20ce97ab9b9e9c80a392382c34e5b"
+      "sha": "b4baaf71b13dd22009b95e9461c36764037f2891",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/commits/b4baaf71b13dd22009b95e9461c36764037f2891"
     },
     "protected": false
   },
   {
     "name": "main",
     "commit": {
-      "sha": "d53dd047fb239175a1a4dfa431e6be8da3058c1d",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/commits/d53dd047fb239175a1a4dfa431e6be8da3058c1d"
+      "sha": "72b4273d9eb571894c2658c46791f997c76f81ae",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-uml-api/commits/72b4273d9eb571894c2658c46791f997c76f81ae"
     },
     "protected": false
   }
