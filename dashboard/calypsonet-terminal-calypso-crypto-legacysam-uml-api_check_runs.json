@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 106359658038,
+      "id": 106744405146,
       "name": "publish-snapshot / reusable-publish-snapshot",
-      "node_id": "CR_kwDOIUjyd88AAAAYw4eWNg",
-      "head_sha": "9eb443de03c929b11308f21db746ae70fc46a64b",
-      "external_id": "95d6a760-1061-5bda-a805-a64cb6ed82af",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/check-runs/106359658038",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/actions/runs/35607971653/job/106359658038",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/actions/runs/35607971653/job/106359658038",
+      "node_id": "CR_kwDOIUjyd88AAAAY2nZcmg",
+      "head_sha": "fe408ac5945b8c58efa9c7bf70469298c374c02e",
+      "external_id": "003751af-25fb-57bd-ae05-400181f300cf",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/check-runs/106744405146",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/actions/runs/35727429916/job/106744405146",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/actions/runs/35727429916/job/106744405146",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-09-21T13:48:26Z",
-      "completed_at": "2026-09-21T13:49:19Z",
+      "started_at": "2026-09-22T12:29:00Z",
+      "completed_at": "2026-09-22T12:29:49Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/check-runs/106359658038/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/check-runs/106744405146/annotations"
       },
       "check_suite": {
-        "id": 96403707853
+        "id": 96731424227
       },
       "app": {
         "id": 15368,
