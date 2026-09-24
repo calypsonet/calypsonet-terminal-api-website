@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 106358888414,
+      "id": 107664569607,
       "name": "publish-snapshot / reusable-publish-snapshot",
-      "node_id": "CR_kwDOHZ2SgM8AAAAYw3vX3g",
-      "head_sha": "8b52c1efe6b9190570c8b9ef4bd2df9eb185a3e0",
-      "external_id": "40522b0a-f55f-5c9c-aff2-982bdb0ef0be",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-uml-api/check-runs/106358888414",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-uml-api/actions/runs/35607743777/job/106358888414",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-uml-api/actions/runs/35607743777/job/106358888414",
+      "node_id": "CR_kwDOHZ2SgM8AAAAZEU71Bw",
+      "head_sha": "9c0a536c4c3835d82fa4fa7edcb4dffe4791f3eb",
+      "external_id": "1c44aac6-b333-52da-9244-d2eff1df27b8",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-uml-api/check-runs/107664569607",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-uml-api/actions/runs/36009019284/job/107664569607",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-uml-api/actions/runs/36009019284/job/107664569607",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-09-21T13:46:17Z",
-      "completed_at": "2026-09-21T13:47:05Z",
+      "started_at": "2026-09-24T13:55:16Z",
+      "completed_at": "2026-09-24T13:55:54Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-uml-api/check-runs/106358888414/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-uml-api/check-runs/107664569607/annotations"
       },
       "check_suite": {
-        "id": 96403057816
+        "id": 97508039980
       },
       "app": {
         "id": 15368,
