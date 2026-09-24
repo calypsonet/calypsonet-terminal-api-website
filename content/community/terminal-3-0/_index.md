@@ -101,7 +101,7 @@ Each `calypsonet-terminal-*-uml-api` repository hosted on [github.com/calypsonet
 
 1. [Overview](#1-overview)
 2. [Theme 1 — Support for multiple logical channels](#2-theme-1--support-for-multiple-logical-channels)
-3. [Theme 2 — Countermeasure against relay attacks](#3-theme-2--countermeasure-against-relay-attacks)
+3. [Theme 2 — Timing countermeasures: relay attack and card emulation](#3-theme-2--timing-countermeasures-relay-attack-and-card-emulation)
 4. [Theme 3 — Simplified observation management](#4-theme-3--simplified-observation-management)
 5. [Theme 4 — Knowledge of the current secure session state](#5-theme-4--knowledge-of-the-current-secure-session-state)
 6. [Theme 5 — Semantic improvements (renamings and removals)](#6-theme-5--semantic-improvements-renamings-and-removals)
@@ -112,7 +112,7 @@ Each `calypsonet-terminal-*-uml-api` repository hosted on [github.com/calypsonet
 11. [Theme 10 — Implementation-language-independent specification](#11-theme-10--implementation-language-independent-specification)
 12. [Theme 11 — Data exposed without computation and access to raw data](#12-theme-11--data-exposed-without-computation-and-access-to-raw-data)
 13. [Theme 12 — Stored Value (SV) operations](#13-theme-12--stored-value-sv-operations)
-14. [Theme 13 — Tolerance of a missing file (`6A82h`) in a secure session](#14-theme-13--tolerance-of-a-missing-file-6a82h-in-a-secure-session)
+14. [Theme 13 — Tolerance of a missing file or record in a secure session](#14-theme-13--tolerance-of-a-missing-file-or-record-in-a-secure-session)
 15. [Theme 14 — Crypto extensions and command interleaving](#15-theme-14--crypto-extensions-and-command-interleaving)
 16. [Normative clarifications](#16-normative-clarifications)
 17. [Elements under study](#17-elements-under-study)
@@ -129,7 +129,7 @@ The new generation of the Terminal APIs introduces compatibility breaks on all e
 | # | Theme | Reader | Card | Calypso Card | Definitions | Legacy SAM | Crypto Sym. | Crypto Asym. | Generic Card | Storage Card |
 |---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | 1 | Multiple logical channels | ● | ● | ● | — | — | — | — | ● | — |
-| 2 | Relay attack countermeasure | — | ● | ● | — | — | — | — | ● | — |
+| 2 | Relay and emulation countermeasures | — | ● | ● | — | — | — | — | ● | ● |
 | 3 | Simplified observation | ● | — | — | — | — | — | — | — | — |
 | 4 | Current secure session state | — | — | ● | — | — | — | — | — | — |
 | 5 | Semantic improvements | ● | ● | ● | — | ● | ● | ● | ● | ● |
@@ -140,7 +140,7 @@ The new generation of the Terminal APIs introduces compatibility breaks on all e
 | 10 | Language-independent specification | ● | ● | ● | ● | ● | ● | ● | ● | ● |
 | 11 | Data without computation, raw data | — | ● | ● | — | ● | ● | ● | — | ● |
 | 12 | Stored Value operations | — | — | ● | — | — | — | — | — | — |
-| 13 | Missing file tolerated in session | — | — | ● | — | — | — | — | — | — |
+| 13 | Missing file or record tolerated | — | — | ● | — | — | — | — | — | — |
 | 14 | Crypto extensions and interleaving | — | — | ● | — | ● | — | — | — | — |
 
 Cross-cutting consequences:
@@ -248,22 +248,25 @@ The three-level hierarchy allows **each consumer API to anchor itself at the cap
 
 ---
 
-## 3. Theme 2 — Countermeasure against relay attacks
+## 3. Theme 2 — Timing countermeasures: relay attack and card emulation
 
 ### 3.1 Motivation
 
-A **relay attack** consists in relaying the dialogue with a card to a remote location, which makes a fraudulent operation possible without the cardholder's knowledge. The relay adds a transmission delay: an abnormally long exchange can therefore reveal that the card is not actually present in front of the reader. The new versions introduce a mechanism for **measuring and bounding APDU exchange durations** and for **bounding the secure session duration**.
+Two threats are detected through the **duration of the exchanges**, and the new versions introduce a single mechanism for both.
+
+- A **relay attack** consists in relaying the dialogue with a card to a remote location, which makes a fraudulent operation possible without the cardholder's knowledge. The relay adds a transmission delay: an abnormally long exchange can therefore reveal that the card is not actually present in front of the reader.
+- **Card emulation** consists in having a generic RFID device answer in place of the expected card. Such a device processes the command in software, where the chip answers in hardware: an abnormally long exchange then reveals that the answer does not come from the expected product. This threat mainly concerns **storage cards**, which have no cryptographic mechanism. The new versions introduce a mechanism for **measuring and bounding APDU exchange durations** and for **bounding the secure session duration**.
 
 #### Threat model
 
-- **Targeted attack surface**: **application-level attack** (software relay of APDUs), as opposed to attacks at the physical RF transport level, which are covered by hardware countermeasures.
-- **Order of magnitude** of the bounds: the **millisecond** (`ms`).
+- **Targeted attack surface**: **application-level attack** (software relay of APDUs, card emulation by a generic device), as opposed to attacks at the physical RF transport level, which are covered by hardware countermeasures.
+- **Unit** of the bounds and of the measured durations: the **microsecond** (`µs`). The millisecond is too coarse for the shortest exchanges, in particular a storage card read, which takes about 2 ms. The **effective resolution of the measurement depends on the implementation**, which must document it.
 - **Measurement location**: the **Terminal Reader API implementation** measures the effective duration of each APDU exchange and compares it with the bound declared on the request. The Calypso duration bounds are declared in the Calypso Card API and each covers **a single command exchange** (_Open Secure Session_, _Close Secure Session_, _SV Reload_ / _SV Debit_ / _SV Undebit_).
 - **Behaviour after an overrun**: the Card API raises the **`ApduExchangeDurationExceeded`** error, which the higher-level extensions intercept and propagate to the application as an **`InvalidCardResponse`**. The Calypso Card API now specifies this behaviour: if a **secure session is open, it is automatically cancelled** before the error is propagated, so that no modification performed during the session is validated by the card; **outside a session** (SV command), there is nothing to cancel and only the error is propagated to the ticketing layer, which decides what to do according to its own context. In the Generic Card API, an overrun raises `InvalidCardResponse`, whose message identifies the offending command.
 
 ### 3.2 Card API
 
-- **Request side**: `ApduRequest.apduExchangeMaxDuration: Long? = null` — maximum tolerated duration for the exchange (in milliseconds); `null` means "no bound".
+- **Request side**: `ApduRequest.apduExchangeMaxDuration: Long? = null` — maximum tolerated duration for the exchange (in microseconds); `null` means "no bound".
 - **Response side**: `ApduResponse.apduExchangeDuration: Long?` — effective duration of the exchange; `null` means "duration not measured".
 - **New error** `ApduExchangeDurationExceeded` — raised by `ProxyReaderApi.transmitCardRequest(...)` when the effective duration exceeds the declared bound. Like the other APDU errors, it carries `cardResponse` and `isCardResponseComplete`.
 - The Card API specification now documents this mechanism as a **practical solution for implementing anti-relay countermeasures** (*APDU exchange execution-time control* chapter).
@@ -275,13 +278,11 @@ Each bound is declared according to two families of settings, each with a dedica
 - **by CSN** (`…ByCsn(maxDuration: Long, csnMin: Long)`): `csnMin` is a **threshold** on the CSN (Calypso Serial Number, i.e. the Application Serial Number, compared as an unsigned 64-bit integer);
 - **by FCI** (`…ByFci(maxDuration: Long, fciRegex: String)`): `fciRegex` is a regular expression applied to the **whole FCI** returned by *Select Application* (excluding the status word), represented as an uppercase hexadecimal string without separators.
 
-- **`SymmetricCryptoSecuritySettings`** — six new operations:
-  - `assignOpenSecureSessionMaxDurationByCsn(maxDuration: Long, csnMin: Long) → Self` and `assignOpenSecureSessionMaxDurationByFci(maxDuration: Long, fciRegex: String) → Self` — maximum duration of the _Open Secure Session_ command exchange;
-  - `assignCloseSecureSessionMaxDurationByCsn(maxDuration: Long, csnMin: Long) → Self` and `assignCloseSecureSessionMaxDurationByFci(maxDuration: Long, fciRegex: String) → Self` — maximum duration of the _Close Secure Session_ command exchange;
-  - `assignSvCommandMaxDurationByCsn(maxDuration: Long, csnMin: Long) → Self` and `assignSvCommandMaxDurationByFci(maxDuration: Long, fciRegex: String) → Self` — maximum duration of the exchange of one of the _SV Reload_, _SV Debit_ or _SV Undebit_ commands.
-- **`AsymmetricCryptoSecuritySettings`** — four new operations:
+- **New parent interface `SecuritySettings`** (`calypso.card.transaction`), extended by `SymmetricCryptoSecuritySettings` and `AsymmetricCryptoSecuritySettings`. It carries the settings shared by every secure transaction, whatever the cryptographic nature of the session — four new operations:
   - `assignOpenSecureSessionMaxDurationByCsn(maxDuration: Long, csnMin: Long) → Self` and `assignOpenSecureSessionMaxDurationByFci(maxDuration: Long, fciRegex: String) → Self` — maximum duration of the _Open Secure Session_ command exchange;
   - `assignCloseSecureSessionMaxDurationByCsn(maxDuration: Long, csnMin: Long) → Self` and `assignCloseSecureSessionMaxDurationByFci(maxDuration: Long, fciRegex: String) → Self` — maximum duration of the _Close Secure Session_ command exchange.
+- **`SymmetricCryptoSecuritySettings`** — two new specific operations:
+  - `assignSvCommandMaxDurationByCsn(maxDuration: Long, csnMin: Long) → Self` and `assignSvCommandMaxDurationByFci(maxDuration: Long, fciRegex: String) → Self` — maximum duration of the exchange of one of the _SV Reload_, _SV Debit_ or _SV Undebit_ commands.
 
 > **Resolution rule** (for a given card, per kind of bounded operation):
 > 1. **CSN-based settings**: each call defines a **range** bounded by its `csnMin` and the immediately higher declared `csnMin` (or +∞). If the card's CSN belongs to a range whose `maxDuration` differs from `Long.MAX_VALUE`, this value applies.
@@ -310,9 +311,19 @@ Consequences and details:
 
 > The Generic Card API thus exposes the relay countermeasure **at the level of each individual command**, consistent with its usage model (APDU sequences without an explicit secure transaction).
 
-### 3.5 Rationale
+### 3.5 Storage Card API
 
-A relay attack introduces a significant and systematic delay on APDU exchanges; monitoring this delay at the reader level (Card API), at the Calypso session level (Calypso Card API) and at the level of each generic command (Generic Card API) covers all the usage scenarios of the Terminal APIs.
+- **New data class `StorageCardSecuritySettings`** (`storagecard.transaction`), with the property `readCommandMaxDurations: Map<StorageCardProductType, Long> = emptyMap()`: maximum duration, in microseconds, of the exchange of **a single read command**, for each product type. A product type that is absent is not bounded. One instance may be shared by every transaction of a terminal.
+- **Factory operation changed**: `createStorageCardTransactionManager(reader, card, securitySettings) → StorageCardTransactionManager`. A default `StorageCardSecuritySettings` disables every duration bound.
+- **Scope**: the bound applies to the read commands prepared on the transaction manager (`prepareReadBlock`, `prepareReadBlocks`, `prepareSt25ReadSystemBlock`); it applies neither to the selection, nor to the write and authentication commands. An overrun raises `StorageCardInvalidCardResponse`, which already carries `blockAddress` and `commandId`.
+
+> **Targeted threat**: for storage cards, the threat is not the relay but **card emulation** by a generic RFID device, which does not answer a read command in the same time as the chip of the expected product.
+
+> Storage cards have neither an FCI nor a secure session: the **product type** is enough to segment the fleet, where the Calypso Card API uses the CSN and the FCI.
+
+### 3.6 Rationale
+
+Both the relay and the emulation introduce a significant and systematic timing deviation on APDU exchanges; monitoring this deviation at the reader level (Card API), on the bounded commands of a Calypso transaction (Calypso Card API), on each generic command (Generic Card API) and on each storage card read (Storage Card API) covers all the usage scenarios of the Terminal APIs.
 
 ---
 
@@ -460,7 +471,7 @@ New operations related to Themes 2 and 7: `prepareCommandWithId`, `prepareComman
 | `prepareMifareClassicAuthenticate(…, int keyNumber)` | `prepareMifareClassicAuthenticateWithKeyNumber(…, keyNumber)` | (same) |
 | `StorageCardTransactionManager.prepareReadSystemBlock()`, `prepareWriteSystemBlock(byte[])` *(deprecated)* | *(removed)*; `prepareSt25ReadSystemBlock()` and `prepareSt25WriteSystemBlock(commandId, data)` remain | The `St25` prefix reflects the product-specific nature of the system block. |
 | `StorageCardException` interface (`getBlockAddress()`) | *(removed)*; the errors carry `blockAddress: Int?` and `commandId: Int?` | The information is carried directly by each error. |
-| `SCAuthenticationFailedException extends CardCommunicationException` | `SCAuthenticationFailed` *(no parent error)* | An authentication failure is not a communication error. |
+| `SCAuthenticationFailedException extends CardCommunicationException` | `StorageCardAuthenticationFailed` *(no parent error)* | An authentication failure is not a communication error. |
 
 In addition, `StorageCard.getBlock`, `getBlocks` and `getSystemBlock` now explicitly return `ByteArray?` (`null` if the data has not been read).
 
@@ -735,7 +746,7 @@ Several data types of the production versions mixed **data** and **computations*
 - **`SamParameters`** is removed: `LegacySam.getSamParameters()` directly returns `ByteArray?`.
 - **Counters**: `getCounter(counterNumber)` and `getCounterCeiling(counterNumber)` are removed (the `getCounters()` and `getCounterCeilings()` tables are sufficient); `getCounterIncrementAccess(counterNumber)` is replaced by `getCounterIncrementAccesses() → SortedMap<Int, CounterIncrementAccess>`.
 - **Command data**: `LegacyCardCertificateComputationData`, `BasicSignatureComputationData`, `TraceableSignatureComputationData`, `BasicSignatureVerificationData` and `TraceableSignatureVerificationData` become input data classes (properties and default values instead of setters; `withSamTraceabilityMode(offset, mode)` becomes `samTraceabilityMode` / `traceabilityOffset`, `withoutBusyMode()` becomes `busyMode = false`); their results are read from the `LegacySam` by `commandId` (see §8.5). `KeyPairContainer` is removed. The `create…Data()` and `createKeyPairContainer()` operations disappear from `LegacySamApiFactory`.
-- **`SecuritySetting`** becomes the **`SecuritySettings`** data class (`samReader`, `controlSam`), renamed to the plural like the security settings of the Calypso Card API, instead of `setControlSamResource(samReader, controlSam)`; `LegacySamApiFactory.createSecuritySetting()` disappears.
+- **`SecuritySetting`** becomes the **`LegacySamSecuritySettings`** data class (`samReader`, `controlSam`), renamed to the plural like the security settings of the Calypso Card API, and prefixed to avoid the homonymy with the `SecuritySettings` of the Calypso Card API, instead of `setControlSamResource(samReader, controlSam)`; `LegacySamApiFactory.createSecuritySetting()` disappears.
 
 ### 12.4 Card API
 
@@ -787,16 +798,18 @@ The model now follows the card specification exactly: three commands, two *SV Ge
 
 ---
 
-## 14. Theme 13 — Tolerance of a missing file (`6A82h`) in a secure session
+## 14. Theme 13 — Tolerance of a missing file or record in a secure session
 
 ### 14.1 Motivation
 
-All Calypso cards now tolerate the `6A82h` status word (*File Not Found*) in a secure session for read commands (*Select File*, *Get Data*, *Read Binary*, *Read Records*, *Read Record Multiple*, *Search Record Multiple*).
+All Calypso cards now tolerate the `6A82h` (*File Not Found*) and `6A83h` (*Record Not Found*) status words in a secure session for read commands (*Select File*, *Get Data*, *Read Binary*, *Read Records*, *Read Record Multiple*, *Search Record Multiple*). On a heterogeneous card fleet, the presence of a file or of a record is not always known in advance, and an unsuccessful read should not cancel the session.
+
+The tolerance is **explicitly enabled by the integrator**: the default behaviour, stricter, remains the failure of the transaction inside a session.
 
 ### 14.2 Calypso Card API
 
-- **Reads** (`prepareReadBinary`, `prepareReadCounter`, `prepareReadRecords`): processing no longer fails if the targeted file is missing, **inside a secure session as well as outside**; the `CalypsoCard` is simply not filled. The other anomalies (invalid offset, missing record or counter) keep the two modes *best-effort* (outside a session) and *strict* (inside a session).
-- **File selection** (`prepareSelectFileByLid`, `prepareSelectFileByControl`): a missing file no longer causes processing to fail, inside a session or not.
+- **Two new security settings**: `authorizeFileNotFoundError() → Self` and `authorizeRecordNotFoundError() → Self`, carried by the parent interface `SecuritySettings` and therefore available in `SymmetricCryptoSecuritySettings` as well as in `AsymmetricCryptoSecuritySettings`. They allow the card to answer `6A82h` or `6A83h` **inside a session** without failing the transaction: the affected command is simply not applied to the `CalypsoCard` and the session continues. They are disabled by default.
+- **Reads** (`prepareReadBinary`, `prepareReadCounter`, `prepareReadRecords`) and **file selection** (`prepareSelectFileByLid`, `prepareSelectFileByControl`): **outside a session**, a missing file has never caused processing to fail, and this *best-effort* mode is unchanged; **inside a session**, processing fails unless the corresponding setting has been enabled. An invalid offset keeps the two modes *best-effort* (outside a session) and *strict* (inside a session).
 - **The `SelectFileException` error is removed**.
 - The in-session usage restrictions of `prepareGetData`, `prepareReadRecord`, `prepareReadRecordsPartially` and `prepareSearchRecords` are **unchanged**.
 
@@ -831,7 +844,7 @@ The specifications also bring clarifications that do not change signatures but s
 
 - **Card API — APDU construction rules**: commands must strictly comply with ISO/IEC 7816-3; a case 4 command must include the `Le` field, for which the value `00h` is **recommended** (it was previously presented as mandatory).
 - **Card API — limitations**: the transmission of the *Select Application* by DF name command (reserved to the `CardSelectionRequest`) and of the *Get Response* command (status words `61XYh` and `6CXYh` are handled automatically by the reader implementation) cannot be requested.
-- **Card API — anti-relay**: the APDU exchange execution-time control mechanism is explicitly presented as an anti-relay countermeasure solution (see Theme 2).
+- **Card API — timing countermeasures**: the APDU exchange execution-time control mechanism is explicitly presented as a countermeasure against both relay and emulation (see Theme 2).
 - **Reader API — `SmartCard` lifecycle**: now normative (see §2.3.2).
 - **All APIs — pre-condition natures**: an explicit criterion distinguishes *Range* (position in a collection or memory image exposed by the API) from *Argument* (any other invalid value, including values bounded by the card or SAM protocol).
 - **Storage Card API — scope**: the *Scope* section explicitly lists the supported products (MIFARE Ultralight, MIFARE Classic 1K, MIFARE Classic 4K, ST25 SRT512), identified by the values of `StorageCardProductType`.
@@ -866,7 +879,7 @@ This document submits to the validation of the **CNA TC Terminal**:
 1. **The principle** of the fourteen evolution themes (§2 to §15) and the overall consistency of the work (versions 3.0.0 for Reader / Card / Calypso Card, 1.0.0 for Definitions, 2.0.0 for Legacy SAM / Generic Card / Storage Card, 0.2.0 for Crypto Symmetric, 0.3.0 for Crypto Asymmetric).
 2. **The design choices** documented in the "Rationale" sections, in particular:
   - the explicit multi-channel model relying on the `SmartCard(Spi)` as the named target and the three-level hierarchy of transaction managers (§2);
-  - duration bounding at the APDU, Calypso session and generic command levels, with CSN-based and FCI-based settings (§3);
+  - duration bounding at the APDU, Calypso session, generic command and storage card read levels, with CSN-based and FCI-based settings (§3);
   - the merge of the Observer pattern into a single `CardReaderEventHandler` SPI (§4);
   - the `SecureSessionState` enumeration (§5);
   - the extraction of `RfTechnology` and `CardType` into the Terminal Reader Definitions API and the `CardDetectionSettings` detection settings (§7);
@@ -1001,7 +1014,8 @@ This annex lists, for each API, what becomes of each element of the Java version
 | — | Added: `prepareSvUndebit(amount, date, time)` |
 | `SvAction` | Removed |
 | `SvOperation.DEBIT` | → `SvOperation.DEBIT_UNDEBIT` |
-| — | Added: `SymmetricCryptoSecuritySettings.assignOpenSecureSessionMaxDurationByCsn/ByFci(...)`, `assignCloseSecureSessionMaxDurationByCsn/ByFci(...)`, `assignSvCommandMaxDurationByCsn/ByFci(...)`; `AsymmetricCryptoSecuritySettings.assignOpenSecureSessionMaxDurationByCsn/ByFci(...)`, `assignCloseSecureSessionMaxDurationByCsn/ByFci(...)` |
+| — | Added: `SecuritySettings` interface, parent of `SymmetricCryptoSecuritySettings` and `AsymmetricCryptoSecuritySettings`, carrying `assignOpenSecureSessionMaxDurationByCsn/ByFci(...)`, `assignCloseSecureSessionMaxDurationByCsn/ByFci(...)`, `authorizeFileNotFoundError()` and `authorizeRecordNotFoundError()` |
+| — | Added: `SymmetricCryptoSecuritySettings.assignSvCommandMaxDurationByCsn/ByFci(...)`; the session bounds are inherited from `SecuritySettings` |
 | `ChannelControl` | Removed |
 | `CardIOException`, `ReaderIOException`, `UnexpectedCommandStatusException`, `SelectFileException` | Removed |
 | `CardSignatureNotVerifiableException`, `CryptoException`, `CryptoIOException`, `InconsistentDataException`, `InvalidCardSignatureException`, `InvalidCertificateException`, `InvalidPinException`, `SessionBufferOverflowException`, `UnauthorizedKeyException` | → same names without the `Exception` suffix |
@@ -1045,7 +1059,7 @@ This annex lists, for each API, what becomes of each element of the Java version
 | `SignatureVerificationData.isSignatureValid()` | → `LegacySam.isSignatureValid(commandId: Int) → Boolean?` |
 | `BasicSignatureVerificationData`, `TraceableSignatureVerificationData` | → data classes implementing `SignatureVerificationData` |
 | `TraceableSignatureVerificationData.withSamTraceabilityMode(int offset, SamTraceabilityMode mode, LegacySamRevocationServiceSpi service)`, `withoutBusyMode()` | → properties `traceabilityOffset = 0`, `samTraceabilityMode: SamTraceabilityMode? = null`, `samRevocationService: LegacySamRevocationServiceSpi? = null`, `busyMode = true` |
-| `SecuritySetting.setControlSamResource(samReader, controlSam)` | → `SecuritySettings` data class (`samReader`, `controlSam`); `securitySetting` parameter → `securitySettings` in `createSecureWriteTransactionManager` and `createAsyncTransactionCreatorManager` |
+| `SecuritySetting.setControlSamResource(samReader, controlSam)` | → `LegacySamSecuritySettings` data class (`samReader`, `controlSam`); `securitySetting` parameter → `securitySettings` in `createSecureWriteTransactionManager` and `createAsyncTransactionCreatorManager` |
 | `ReaderIOException`, `SamIOException`, `UnexpectedCommandStatusException` | Removed |
 | `InconsistentDataException`, `InvalidSignatureException`, `SamRevokedException` | → `InconsistentData`, `InvalidSignature`, `SamRevoked` |
 
@@ -1098,10 +1112,11 @@ This annex lists, for each API, what becomes of each element of the Java version
 | `StorageCardTransactionManager` (extends `CardTransactionManager<…>`) | → non-generic, `Self` returns |
 | `StorageCardTransactionManager.prepareReadSystemBlock()`, `prepareWriteSystemBlock(byte[])` *(deprecated)* | Removed |
 | `StorageCardTransactionManager.prepareSt25WriteSystemBlock(byte[])` | → `prepareSt25WriteSystemBlock(commandId: Int, data: ByteArray)` |
+| — | Added: `StorageCardSecuritySettings` data class (`readCommandMaxDurations`); `securitySettings` parameter added to `StorageCardApiFactory.createStorageCardTransactionManager(...)` |
 | `StorageCardTransactionManager.prepareWriteBlocks(int, byte[])` | → `prepareWriteBlocks(commandId: Int, fromBlockAddress: Int, data: ByteArray)` |
 | `StorageCardException` (`getBlockAddress`) | Removed; the errors carry `blockAddress: Int?` and `commandId: Int?` |
-| `SCAuthenticationFailedException` (extends `CardCommunicationException`) | → `SCAuthenticationFailed` (no parent error) |
-| `SCCardCommunicationException`, `SCInvalidCardResponseException`, `SCReaderCommunicationException` | → `SCCardCommunication`, `SCInvalidCardResponse`, `SCReaderCommunication` (parents unchanged) |
+| `SCAuthenticationFailedException` (extends `CardCommunicationException`) | → `StorageCardAuthenticationFailed` (no parent error) |
+| `SCCardCommunicationException`, `SCInvalidCardResponseException`, `SCReaderCommunicationException` | → `StorageCardCardCommunication`, `StorageCardInvalidCardResponse`, `StorageCardReaderCommunication` (parents unchanged) |
 
 ### A.9 Terminal Reader Definitions API (new, 1.0.0)
 
