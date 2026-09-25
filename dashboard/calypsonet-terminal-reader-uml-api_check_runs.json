@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 107121435900,
+      "id": 108072134113,
       "name": "publish-snapshot / reusable-publish-snapshot",
-      "node_id": "CR_kwDOHZ2TmM8AAAAY8O9k_A",
-      "head_sha": "c8c17286c71273416d0d8d8cf1c1da461bab1b96",
-      "external_id": "c23fc42c-68c3-51e7-88d0-0550101b68c1",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/check-runs/107121435900",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/actions/runs/35842732300/job/107121435900",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/actions/runs/35842732300/job/107121435900",
+      "node_id": "CR_kwDOHZ2TmM8AAAAZKZnl4Q",
+      "head_sha": "b0990a37c988bb420daecd3f7cedb9a0e16a4155",
+      "external_id": "15a3f041-147c-585b-a3bc-d5b4b76e3c6c",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/check-runs/108072134113",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/actions/runs/36135397190/job/108072134113",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/actions/runs/36135397190/job/108072134113",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-09-23T09:24:22Z",
-      "completed_at": "2026-09-23T09:25:09Z",
+      "started_at": "2026-09-25T12:31:23Z",
+      "completed_at": "2026-09-25T12:32:08Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/check-runs/107121435900/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/check-runs/108072134113/annotations"
       },
       "check_suite": {
-        "id": 97050328505
+        "id": 97853812124
       },
       "app": {
         "id": 15368,
