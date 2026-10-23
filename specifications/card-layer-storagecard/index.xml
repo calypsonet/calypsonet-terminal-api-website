@@ -2,9 +2,9 @@
 &lt;div>
 Latest version &lt;strong>&lt;code>1.2.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>As part of the &lt;strong>Card Layer&lt;/strong>, the &lt;strong>Storage Card API&lt;/strong> provides high-level functionality for selecting and performing

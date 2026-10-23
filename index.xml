@@ -158,16 +158,16 @@ up-to-date documentation.
 &lt;div>
 &lt;strong>&lt;code>1.3.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-java-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-java-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-java-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-java-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-java-api/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog&lt;/a>&lt;/span>
+&lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-java-api/blob/main/CHANGELOG.md">Changelog&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
-&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.com/search?q=calypsonet-terminal-reader-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
+&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.com/search?q=calypsonet-terminal-reader-java-api">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-5" role="tablist">&lt;li class="nav-item">
 &lt;a class="nav-link active tab-Gradle-Groovy"
 id="tabs-5-0-tab" data-toggle="tab" href="#tabs-5-0" role="tab" onclick="handleClick(&amp;#34;Gradle-Groovy&amp;#34;);"
@@ -222,19 +222,19 @@ id="tabs-5-2" role="tabpanel" aria-labelled-by="tabs-5-2-tab">
 &lt;div>
 &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-cpp-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-cpp-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-cpp-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div></description></item><item><title>Calypso Card API (external)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-card-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
 Latest version &lt;strong>&lt;code>2.2.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>As part of the &lt;strong>Card Layer&lt;/strong>, the &lt;strong>Calypso Card API&lt;/strong> provides high-level functionality for selecting and performing
@@ -383,9 +383,9 @@ Calypso Card API - Multiple secure session - Sequence Diagram
 &lt;div>
 Latest version &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-genericcard-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-genericcard-uml-api/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-genericcard-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-genericcard-uml-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>As part of the &lt;strong>Card Layer&lt;/strong>, the &lt;strong>Generic Card API&lt;/strong> provides low-level functionality for selecting and performing
@@ -405,9 +405,9 @@ A transaction with a generic card is fully managed through the &lt;code>CardTran
 &lt;div>
 Latest version &lt;strong>&lt;code>2.1.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>As part of the &lt;strong>Reader Layer&lt;/strong>, the &lt;strong>Reader API&lt;/strong> provides high-level functionality for identifying, monitoring,
@@ -544,9 +544,9 @@ However, some observable readers may additionally have the ability to notify rem
 &lt;div>
 Latest version &lt;strong>&lt;code>1.2.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>As part of the &lt;strong>Card Layer&lt;/strong>, the &lt;strong>Storage Card API&lt;/strong> provides high-level functionality for selecting and performing
@@ -571,9 +571,9 @@ A transaction with a storage card is fully managed through the &lt;code>StorageC
 &lt;div>
 Latest version &lt;strong>&lt;code>2.0.1&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-uml-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>As part of the &lt;strong>Reader Layer&lt;/strong>, the &lt;strong>Calypsonet Terminal Card API&lt;/strong> defines the internal elements shared by the
@@ -642,16 +642,16 @@ up-to-date documentation.
 &lt;div>
 &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-java-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-java-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-java-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-java-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-java-api/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog&lt;/a>&lt;/span>
+&lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-java-api/blob/main/CHANGELOG.md">Changelog&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
-&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.com/search?q=calypsonet-terminal-card-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
+&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.com/search?q=calypsonet-terminal-card-java-api">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-3" role="tablist">&lt;li class="nav-item">
 &lt;a class="nav-link active tab-Gradle-Groovy"
 id="tabs-3-0-tab" data-toggle="tab" href="#tabs-3-0" role="tab" onclick="handleClick(&amp;#34;Gradle-Groovy&amp;#34;);"
@@ -706,19 +706,19 @@ id="tabs-3-2" role="tabpanel" aria-labelled-by="tabs-3-2-tab">
 &lt;div>
 &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-cpp-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-cpp-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-cpp-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-cpp-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div></description></item><item><title>Calypso Legacy SAM API (external)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-legacysam-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-legacysam-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
 Latest version &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>As part of the &lt;strong>Card Layer&lt;/strong>, the &lt;strong>Calypso Crypto Legacy SAM API&lt;/strong> provides high-level functionality for selecting
@@ -745,9 +745,9 @@ A transaction with a Calypso SAM is fully managed through one of the &lt;code>LS
 &lt;div>
 Latest version &lt;strong>&lt;code>0.1.1&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-symmetric-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-symmetric-uml-api/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>The &lt;strong>Calypso Crypto Symmetric API&lt;/strong> is the communication interface between the &lt;strong>Calypso Card&lt;/strong> and the
@@ -763,9 +763,9 @@ Latest version &lt;strong>&lt;code>0.1.1&lt;/code>&lt;/strong>
 &lt;div>
 Latest version &lt;strong>&lt;code>0.2.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>The &lt;strong>Calypso Crypto Asymmetric API&lt;/strong> is the communication interface between the &lt;strong>Calypso Card&lt;/strong> and the
@@ -924,16 +924,16 @@ up-to-date documentation.
 &lt;div>
 &lt;strong>&lt;code>1.8.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-java-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-java-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog&lt;/a>&lt;/span>
+&lt;i class="fas fa-exchange-alt pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-java-api/blob/main/CHANGELOG.md">Changelog&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
-&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.com/search?q=calypsonet-terminal-calypso-java-api" target="_blank" rel="noopener">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
+&lt;p>All deliverables are available directly from the &lt;a href="https://central.sonatype.com/search?q=calypsonet-terminal-calypso-java-api">Maven Central Repository&lt;/a> or by using one of the project resource managers below:&lt;/p>
 &lt;ul class="nav nav-tabs" id="tabs-13" role="tablist">&lt;li class="nav-item">
 &lt;a class="nav-link active tab-Gradle-Groovy"
 id="tabs-13-0-tab" data-toggle="tab" href="#tabs-13-0" role="tab" onclick="handleClick(&amp;#34;Gradle-Groovy&amp;#34;);"
@@ -988,10 +988,10 @@ id="tabs-13-2" role="tabpanel" aria-labelled-by="tabs-13-2-tab">
 &lt;div>
 &lt;strong>&lt;code>1.1.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-cpp-api/" target="_blank" rel="noopener">API documentation&lt;/a>&lt;/span>
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-cpp-api/">API documentation&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/">UML&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-cpp-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div></description></item></channel></rss>

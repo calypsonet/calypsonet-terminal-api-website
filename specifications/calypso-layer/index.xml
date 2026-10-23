@@ -2,9 +2,9 @@
 &lt;div>
 Latest version &lt;strong>&lt;code>2.2.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>As part of the &lt;strong>Card Layer&lt;/strong>, the &lt;strong>Calypso Card API&lt;/strong> provides high-level functionality for selecting and performing
@@ -153,9 +153,9 @@ Calypso Card API - Multiple secure session - Sequence Diagram
 &lt;div>
 Latest version &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>As part of the &lt;strong>Card Layer&lt;/strong>, the &lt;strong>Calypso Crypto Legacy SAM API&lt;/strong> provides high-level functionality for selecting
@@ -182,9 +182,9 @@ A transaction with a Calypso SAM is fully managed through one of the &lt;code>LS
 &lt;div>
 Latest version &lt;strong>&lt;code>0.1.1&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-symmetric-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-symmetric-uml-api/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-uml-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>The &lt;strong>Calypso Crypto Symmetric API&lt;/strong> is the communication interface between the &lt;strong>Calypso Card&lt;/strong> and the
@@ -200,9 +200,9 @@ Latest version &lt;strong>&lt;code>0.1.1&lt;/code>&lt;/strong>
 &lt;div>
 Latest version &lt;strong>&lt;code>0.2.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/" target="_blank" rel="noopener">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/" target="_blank" rel="noopener">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-uml-api/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>The &lt;strong>Calypso Crypto Asymmetric API&lt;/strong> is the communication interface between the &lt;strong>Calypso Card&lt;/strong> and the
