@@ -24,13 +24,13 @@ Calypso APIs for ticketing terminals:
 - provide a solution for developing ticketing applications for terminals independently of Calypso middleware solutions,
 - will soon enable Calypso terminal solutions to certify compliance with Calypso layer requirements.
 
-[Join CNA](https://calypsonet.org/cna-community-overview/) to contribute to defining [Calypso APIs for ticketing terminals](https://terminal-api.calypsonet.org/specifications/calypso-layer/).
+[Join CNA](https://calypsonet.org/cna-community-overview/) to contribute to defining [Calypso APIs for ticketing terminals](/specifications/calypso-layer/).
 
 ## Definition of Reader layer APIs
 
 An interoperable Calypso software layer can only be built on a generic reader software layer interface, independent of card reader solutions and ticketing terminal architecture (embedded/distributed). CNA is not necessarily legitimate in defining such “universal” terminal interfaces for the smart card industry but has initiated these definitions in response to the need for a basis on which to build Calypso APIs.
 
-For the [definition of the reader APIs for ticketing terminals](https://terminal-api.calypsonet.org/specifications/reader-layer/), CNA is **interested in the participation of any external contributor** and is also open to sharing the governance of this project with other entities or the open-source community. (CNA offered the [**S**mart **T**icketing **A**lliance](https://www.smart-ticketing.org/) to host this project.
+For the [definition of the reader APIs for ticketing terminals](/specifications/reader-layer/), CNA is **interested in the participation of any external contributor** and is also open to sharing the governance of this project with other entities or the open-source community. (CNA offered the [**S**mart **T**icketing **A**lliance](https://www.smart-ticketing.org/) to host this project.
 Another option currently under consideration is to transfer this responsibility to the [Eclipse Keypop open-source project](https://keypop.org/).)
 
 ### Types of contributions

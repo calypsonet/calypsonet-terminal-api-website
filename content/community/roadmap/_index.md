@@ -32,7 +32,7 @@ Next, starting in late 2026, we will work to provide high-level APIs for managin
       <li>multiple logical channel support</li>
       <li>and relay attack countermeasure</li>
     </ul>
-    (More details on the <a href="https://terminal-api.calypsonet.org/community/terminal-3-0/#1-overview">evolution overview page</a>)</td>
+    (More details on the <a href="{{< relref "/community/terminal-3-0#1-overview" >}}">evolution overview page</a>)</td>
   </tr>
   <tr>
     <td>Card API 3.0</td>
