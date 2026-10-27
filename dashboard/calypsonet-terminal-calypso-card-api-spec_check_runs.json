@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 107664161122,
+      "id": 122277117679,
       "name": "publish-snapshot / reusable-publish-snapshot",
-      "node_id": "CR_kwDORdbItM8AAAAZEUi5Yg",
-      "head_sha": "9147e644f35927bcbca564e2199a1a77c8d3fdbd",
-      "external_id": "8cd98e2b-9571-5e93-bf25-7f84c0bfd480",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-genericcard-uml-api/check-runs/107664161122",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-genericcard-uml-api/actions/runs/36008902069/job/107664161122",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-genericcard-uml-api/actions/runs/36008902069/job/107664161122",
+      "node_id": "CR_kwDOHZ2RGc8AAAAceEi-7w",
+      "head_sha": "43ea926acafcb946b372ad868c8ac426cfc3e0fe",
+      "external_id": "772bab98-8987-5176-b888-5b0e1fb2c2ce",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/122277117679",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/40529228014/job/122277117679",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/40529228014/job/122277117679",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-09-24T13:54:16Z",
-      "completed_at": "2026-09-24T13:54:54Z",
+      "started_at": "2026-10-27T15:15:53Z",
+      "completed_at": "2026-10-27T15:16:45Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-genericcard-uml-api/check-runs/107664161122/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/122277117679/annotations"
       },
       "check_suite": {
-        "id": 97507701732
+        "id": 109851078838
       },
       "app": {
         "id": 15368,

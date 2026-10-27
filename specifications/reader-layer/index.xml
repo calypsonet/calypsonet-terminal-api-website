@@ -141,9 +141,9 @@ However, some observable readers may additionally have the ability to notify rem
 &lt;div>
 Latest version &lt;strong>&lt;code>2.0.1&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/card/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-uml-api/">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-card-api-spec/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>As part of the &lt;strong>Reader Layer&lt;/strong>, the &lt;strong>Calypsonet Terminal Card API&lt;/strong> defines the internal elements shared by the
@@ -153,7 +153,7 @@ reader layer to implement specific card layers (like the Calypso Card layer).&lt
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/2.0.1/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/card/2.0.1/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;br>

@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 107663068326,
+      "id": 122277007371,
       "name": "publish-snapshot / reusable-publish-snapshot",
-      "node_id": "CR_kwDOIUjyd88AAAAZETgMpg",
-      "head_sha": "227d14d17dedf90f02a08014226fe32f0e06a11b",
-      "external_id": "d873ce13-cd37-5a2a-9921-9da2ab3e846b",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/check-runs/107663068326",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/actions/runs/36008582300/job/107663068326",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/actions/runs/36008582300/job/107663068326",
+      "node_id": "CR_kwDOIXzzjM8AAAAceEcQCw",
+      "head_sha": "004cad1df921346a0fd0e3b1deea96e0fafe76eb",
+      "external_id": "8d92c6ac-ff53-5171-85be-5274e90503c7",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-api-spec/check-runs/122277007371",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-api-spec/actions/runs/40529196833/job/122277007371",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-api-spec/actions/runs/40529196833/job/122277007371",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-09-24T13:51:34Z",
-      "completed_at": "2026-09-24T13:52:20Z",
+      "started_at": "2026-10-27T15:15:41Z",
+      "completed_at": "2026-10-27T15:16:19Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/check-runs/107663068326/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-api-spec/check-runs/122277007371/annotations"
       },
       "check_suite": {
-        "id": 97506779475
+        "id": 109850989917
       },
       "app": {
         "id": 15368,

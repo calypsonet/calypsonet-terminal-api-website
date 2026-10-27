@@ -1,0 +1,26 @@
+[
+  {
+    "name": "develop",
+    "commit": {
+      "sha": "5d5cc18b682fe00ff591d80949abc2c6f3ddfc2d",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/commits/5d5cc18b682fe00ff591d80949abc2c6f3ddfc2d"
+    },
+    "protected": false
+  },
+  {
+    "name": "doc",
+    "commit": {
+      "sha": "5f4acb2929590376c88795b265948a3d86eb8749",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/commits/5f4acb2929590376c88795b265948a3d86eb8749"
+    },
+    "protected": false
+  },
+  {
+    "name": "main",
+    "commit": {
+      "sha": "46fa517b20e673db1a26401f4ca5199711a0118d",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/commits/46fa517b20e673db1a26401f4ca5199711a0118d"
+    },
+    "protected": false
+  }
+]

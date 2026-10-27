@@ -2,27 +2,27 @@
   "total_count": 1,
   "check_runs": [
     {
-      "id": 108072134113,
+      "id": 122276971255,
       "name": "publish-snapshot / reusable-publish-snapshot",
-      "node_id": "CR_kwDOHZ2TmM8AAAAZKZnl4Q",
-      "head_sha": "b0990a37c988bb420daecd3f7cedb9a0e16a4155",
-      "external_id": "15a3f041-147c-585b-a3bc-d5b4b76e3c6c",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/check-runs/108072134113",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/actions/runs/36135397190/job/108072134113",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/actions/runs/36135397190/job/108072134113",
+      "node_id": "CR_kwDOIndD5c8AAAAceEaC9w",
+      "head_sha": "cd22742ab9fbdd02b9c3346d095fc16958cd0b59",
+      "external_id": "4320f985-957f-5a27-a4aa-dda2cf2d6207",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-api-spec/check-runs/122276971255",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-api-spec/actions/runs/40529186910/job/122276971255",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-api-spec/actions/runs/40529186910/job/122276971255",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-09-25T12:31:23Z",
-      "completed_at": "2026-09-25T12:32:08Z",
+      "started_at": "2026-10-27T15:15:37Z",
+      "completed_at": "2026-10-27T15:16:14Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-uml-api/check-runs/108072134113/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-api-spec/check-runs/122276971255/annotations"
       },
       "check_suite": {
-        "id": 97853812124
+        "id": 109850962244
       },
       "app": {
         "id": 15368,
