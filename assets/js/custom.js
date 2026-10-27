@@ -58,7 +58,10 @@ loadProjectDashboard = async function() {
             if (project[0].endsWith("java-api") || project[0].endsWith("cpp-api")) {
                 a.href = "https://docs.terminal-api.calypsonet.org/archived/" + json.name;
             } else {
-                a.href = "https://docs.terminal-api.calypsonet.org/" + json.name;
+                // Specifications are published under a short slug: the repository
+                // name without its "calypsonet-terminal-" prefix and "-api-spec" suffix.
+                a.href = "https://docs.terminal-api.calypsonet.org/" +
+                    json.name.replace(/^calypsonet-terminal-/, "").replace(/-api-spec$/, "") + "/";
             }
             a.target = "_blank";
             cell.appendChild(a);
@@ -180,7 +183,7 @@ loadProjectDashboard = async function() {
 
         if (repos.endsWith("java-api") || repos.endsWith("cpp-api")) {
             htmlContent = "<i class='fas fa-archive' style='color: red;'></i> Archived";
-        } else if (repos.endsWith("uml-api")) {
+        } else if (repos.endsWith("api-spec")) {
             htmlContent = "<span style='color: green;'>\u2b24</span>";
             tooltip = "Active";
         } else {

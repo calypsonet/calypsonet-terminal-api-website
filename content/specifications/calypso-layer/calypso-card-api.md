@@ -9,8 +9,8 @@ toc: true
 
 {{% callout note %}}
 Latest version **`{{% calypso-card-api-version %}}`**
-<span class="component-metadata">{{< icon name="sitemap" pack="fas" >}} [UML class diagram](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/)</span>
-<span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-card-uml-api/)</span>
+<span class="component-metadata">{{< icon name="sitemap" pack="fas" >}} [UML class diagram](https://docs.terminal-api.calypsonet.org/calypso-card/)</span>
+<span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/)</span>
 {{% /callout %}}
 
 As part of the **Card Layer**, the **Calypso Card API** provides high-level functionality for selecting and performing 
@@ -31,7 +31,7 @@ A set of commands could be first **prepared**, and then be **processed** by a se
 during the transaction.
 A transaction with a Calypso card is fully managed through the `CardTransactionManager` interface:
 
-![Calypso Card API - class diagram](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-card-uml-api/{{% calypso-card-api-version %}}/api_class_diagram.svg)
+![Calypso Card API - class diagram](https://docs.terminal-api.calypsonet.org/calypso-card/{{% calypso-card-api-version %}}/api_class_diagram.svg)
 
 <br>
 

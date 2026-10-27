@@ -83,5 +83,5 @@ feat(observation): allow asynchronous notification of reader events
 Add a public method in the observable reader to enable asynchronous notifications.
 
 Closes #34, closes #38
-Refs: #12, calypsonet/calypsonet-terminal-reader-uml-api#54
+Refs: #12, calypsonet/calypsonet-terminal-reader-api-spec#54
 ```

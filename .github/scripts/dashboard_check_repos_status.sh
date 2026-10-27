@@ -5,35 +5,39 @@
 
 token=$1
 
-./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-card-uml-api
+./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-card-api-spec
 if [ $? -eq 0 ]; then
   exit 0
 fi
-./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-reader-uml-api
+./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-reader-api-spec
 if [ $? -eq 0 ]; then
   exit 0
 fi
-./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-calypso-card-uml-api
+./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-reader-definitions-api-spec
 if [ $? -eq 0 ]; then
   exit 0
 fi
-./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-calypso-crypto-symmetric-uml-api
+./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-calypso-card-api-spec
 if [ $? -eq 0 ]; then
   exit 0
 fi
-./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-calypso-crypto-legacysam-uml-api
+./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-calypso-crypto-symmetric-api-spec
 if [ $? -eq 0 ]; then
   exit 0
 fi
-./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-calypso-crypto-asymmetric-uml-api
+./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-calypso-crypto-legacysam-api-spec
 if [ $? -eq 0 ]; then
   exit 0
 fi
-./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-storagecard-uml-api
+./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-calypso-crypto-asymmetric-api-spec
 if [ $? -eq 0 ]; then
   exit 0
 fi
-./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-genericcard-uml-api
+./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-storagecard-api-spec
+if [ $? -eq 0 ]; then
+  exit 0
+fi
+./.github/scripts/dashboard_check_repos_status_curl.sh $token calypsonet-terminal-genericcard-api-spec
 if [ $? -eq 0 ]; then
   exit 0
 fi

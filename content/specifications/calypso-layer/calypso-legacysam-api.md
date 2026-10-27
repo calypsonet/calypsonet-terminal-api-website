@@ -9,8 +9,8 @@ toc: true
 
 {{% callout note %}}
 Latest version **`{{% calypso-legacysam-api-version %}}`**
-<span class="component-metadata">{{< icon name="sitemap" pack="fas" >}} [UML class diagram](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/)</span>
-<span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-uml-api/)</span>
+<span class="component-metadata">{{< icon name="sitemap" pack="fas" >}} [UML class diagram](https://docs.terminal-api.calypsonet.org/calypso-crypto-legacysam/)</span>
+<span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-api-spec/)</span>
 {{% /callout %}}
 
 As part of the **Card Layer**, the **Calypso Crypto Legacy SAM API** provides high-level functionality for selecting 
@@ -32,4 +32,4 @@ A set of command could be first **prepared**, and then be **processed** by a sel
 during the transaction.
 A transaction with a Calypso SAM is fully managed through one of the `LSTransactionManager` interfaces:
 
-![Calypso Crypto Legacy SAM API - class diagram](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-calypso-crypto-legacysam-uml-api/{{% calypso-legacysam-api-version %}}/api_class_diagram.svg)
+![Calypso Crypto Legacy SAM API - class diagram](https://docs.terminal-api.calypsonet.org/calypso-crypto-legacysam/{{% calypso-legacysam-api-version %}}/api_class_diagram.svg)

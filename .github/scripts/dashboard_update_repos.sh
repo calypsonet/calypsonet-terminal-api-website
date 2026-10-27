@@ -8,21 +8,23 @@ mkdir dashboard/
 echo "{ \"datetime\":\"`date --utc --iso-8601=seconds`\"}" > dashboard/datetime.json
 
 echo "[" >> dashboard/repository_list.json
-../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-card-uml-api main true false
+../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-card-api-spec main true false
 echo "," >> dashboard/repository_list.json
-../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-reader-uml-api main true false
+../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-reader-api-spec main true false
 echo "," >> dashboard/repository_list.json
-../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-calypso-card-uml-api main true false
+../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-reader-definitions-api-spec main true false
 echo "," >> dashboard/repository_list.json
-../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-calypso-crypto-symmetric-uml-api main true false
+../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-calypso-card-api-spec main true false
 echo "," >> dashboard/repository_list.json
-../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-calypso-crypto-legacysam-uml-api main true false
+../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-calypso-crypto-symmetric-api-spec main true false
 echo "," >> dashboard/repository_list.json
-../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-calypso-crypto-asymmetric-uml-api main true false
+../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-calypso-crypto-legacysam-api-spec main true false
 echo "," >> dashboard/repository_list.json
-../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-storagecard-uml-api main true false
+../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-calypso-crypto-asymmetric-api-spec main true false
 echo "," >> dashboard/repository_list.json
-../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-genericcard-uml-api main true false
+../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-storagecard-api-spec main true false
+echo "," >> dashboard/repository_list.json
+../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-genericcard-api-spec main true false
 echo "," >> dashboard/repository_list.json
 ../.github/scripts/dashboard_update_repo.sh $token calypsonet-terminal-card-java-api main true true
 echo "," >> dashboard/repository_list.json

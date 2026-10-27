@@ -9,8 +9,8 @@ toc: true
 
 {{% callout note %}}
 Latest version **`{{% card-api-version %}}`**
-<span class="component-metadata">{{< icon name="sitemap" pack="fas" >}} [UML class diagram](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/)</span>
-<span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-card-uml-api/)</span>
+<span class="component-metadata">{{< icon name="sitemap" pack="fas" >}} [UML class diagram](https://docs.terminal-api.calypsonet.org/card/)</span>
+<span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-card-api-spec/)</span>
 {{% /callout %}}
 
 As part of the **Reader Layer**, the **Calypsonet Terminal Card API** defines the internal elements shared by the 
@@ -20,7 +20,7 @@ reader layer to implement specific card layers (like the Calypso Card layer).
 
 ## Interfaces
 
-![Card API - class diagram](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-card-uml-api/{{% card-api-version %}}/api_class_diagram.svg)
+![Card API - class diagram](https://docs.terminal-api.calypsonet.org/card/{{% card-api-version %}}/api_class_diagram.svg)
 
 <br>
 

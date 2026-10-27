@@ -9,8 +9,8 @@ toc: true
 
 {{% callout note %}}
 Latest version **`{{% storagecard-api-version %}}`**
-<span class="component-metadata">{{< icon name="sitemap" pack="fas" >}} [UML class diagram](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/)</span>
-<span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-storagecard-uml-api/)</span>
+<span class="component-metadata">{{< icon name="sitemap" pack="fas" >}} [UML class diagram](https://docs.terminal-api.calypsonet.org/storagecard/)</span>
+<span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/)</span>
 {{% /callout %}}
 
 As part of the **Card Layer**, the **Storage Card API** provides high-level functionality for selecting and performing 
@@ -30,4 +30,4 @@ A set of commands could be first **prepared**, and then be **processed** by a se
 during the transaction.
 A transaction with a storage card is fully managed through the `StorageCardTransactionManager` interface:
 
-![Storage Card API - class diagram](https://docs.terminal-api.calypsonet.org/calypsonet-terminal-storagecard-uml-api/{{% storagecard-api-version %}}/api_class_diagram.svg)
+![Storage Card API - class diagram](https://docs.terminal-api.calypsonet.org/storagecard/{{% storagecard-api-version %}}/api_class_diagram.svg)
