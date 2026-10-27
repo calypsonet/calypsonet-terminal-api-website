@@ -2,9 +2,9 @@
 &lt;div>
 Latest version &lt;strong>&lt;code>2.1.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/reader/">UML class diagram&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
-&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-uml-api/">GitHub repository&lt;/a>&lt;/span>
+&lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-reader-api-spec/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
 &lt;p>As part of the &lt;strong>Reader Layer&lt;/strong>, the &lt;strong>Reader API&lt;/strong> provides high-level functionality for identifying, monitoring,
@@ -26,7 +26,7 @@ configuring readers and process card selection scenarios.&lt;/p>
 &lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypsonet-terminal-reader-uml-api/2.1.0/api_class_diagram.svg" alt="Reader API - class diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/reader/2.1.0/api_class_diagram.svg" alt="Reader API - class diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;h3 id="reader-identification">Reader identification&lt;/h3>
