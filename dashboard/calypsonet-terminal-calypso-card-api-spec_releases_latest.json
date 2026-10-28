@@ -1,5 +1,44 @@
 {
-  "message": "Not Found",
-  "documentation_url": "https://docs.github.com/rest/releases/releases#get-the-latest-release",
-  "status": "404"
+  "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/releases/426542974",
+  "assets_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/releases/426542974/assets",
+  "upload_url": "https://uploads.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/releases/426542974/assets{?name,label}",
+  "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/releases/tag/3.0.0",
+  "id": 426542974,
+  "author": {
+    "login": "andrei-cristea",
+    "id": 26622621,
+    "node_id": "MDQ6VXNlcjI2NjIyNjIx",
+    "avatar_url": "https://avatars.githubusercontent.com/u/26622621?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/andrei-cristea",
+    "html_url": "https://github.com/andrei-cristea",
+    "followers_url": "https://api.github.com/users/andrei-cristea/followers",
+    "following_url": "https://api.github.com/users/andrei-cristea/following{/other_user}",
+    "gists_url": "https://api.github.com/users/andrei-cristea/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/andrei-cristea/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/andrei-cristea/subscriptions",
+    "organizations_url": "https://api.github.com/users/andrei-cristea/orgs",
+    "repos_url": "https://api.github.com/users/andrei-cristea/repos",
+    "events_url": "https://api.github.com/users/andrei-cristea/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/andrei-cristea/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "node_id": "RE_kwDOHZ2RGc4ZbId-",
+  "tag_name": "3.0.0",
+  "target_commitish": "main",
+  "name": "3.0.0",
+  "draft": false,
+  "immutable": false,
+  "prerelease": false,
+  "created_at": "2026-10-28T09:18:19Z",
+  "updated_at": "2026-10-28T10:45:39Z",
+  "published_at": "2026-10-28T10:45:39Z",
+  "assets": [
+
+  ],
+  "tarball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/tarball/3.0.0",
+  "zipball_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/zipball/3.0.0",
+  "body": "### Added\r\n- Initial baseline (v3.0.0) of the Terminal Calypso Card API specification."
 }

@@ -87,7 +87,7 @@ the card selection is next managed by the observable reader, but the card proces
 -->
 &lt;figure id="figure-reader-api---card-selection-modes---activity-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="../../media/archives/specifications/reader_management_card_selection_modes_activity_diagram.svg" alt="Reader API - Card Selection Modes - Activity Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="../../media/archives/apis/reader_management_card_selection_modes_activity_diagram.svg" alt="Reader API - Card Selection Modes - Activity Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Reader API - Card Selection Modes - Activity Diagram
 &lt;/figcaption>&lt;/figure>
@@ -110,7 +110,7 @@ the card processing.&lt;/p>
 -->
 &lt;figure id="figure-reader-api---observable-reader-states---activity-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="../../media/archives/specifications/reader_management_reader_observation_state_diagram.svg" alt="Reader API - Observable Reader States - Activity Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="../../media/archives/apis/reader_management_reader_observation_state_diagram.svg" alt="Reader API - Observable Reader States - Activity Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Reader API - Observable Reader States - Activity Diagram
 &lt;/figcaption>&lt;/figure>
@@ -391,28 +391,28 @@ Calypso library.&lt;/p>
 &lt;h3 id="pin-plain-verification--change-outside-a-session">PIN plain verification / change outside a session&lt;/h3>
 &lt;figure id="figure-calypso-api---verify--change-plain-pin---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="../../media/archives/specifications/calypso_transaction_Verify_Change_Plain_PIN_sequence_diagram.svg" alt="Calypso API - Verify / Change Plain PIN - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="../../media/archives/apis/calypso_transaction_Verify_Change_Plain_PIN_sequence_diagram.svg" alt="Calypso API - Verify / Change Plain PIN - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Verify / Change Plain PIN - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="data-secure-processing-outside-a-session">Data secure processing outside a session&lt;/h3>
 &lt;figure id="figure-calypso-api---data-secure-processing-outside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="../../media/archives/specifications/calypso_transaction_DSP_outside_session_sequence_diagram.svg" alt="Calypso API - Data secure processing outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="../../media/archives/apis/calypso_transaction_DSP_outside_session_sequence_diagram.svg" alt="Calypso API - Data secure processing outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Data secure processing outside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="key--pin-ciphered-update-outside-a-session">Key / PIN ciphered update outside a session&lt;/h3>
 &lt;figure id="figure-calypso-api---change-key--ciphered-pin-outside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="../../media/archives/specifications/calypso_transaction_Change_Key_Ciphered_PIN_sequence_diagram.svg" alt="Calypso API - Change Key / Ciphered PIN outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="../../media/archives/apis/calypso_transaction_Change_Key_Ciphered_PIN_sequence_diagram.svg" alt="Calypso API - Change Key / Ciphered PIN outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Change Key / Ciphered PIN outside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="stored-value-operation-outside-a-session">Stored Value operation outside a session&lt;/h3>
 &lt;figure id="figure-calypso-api---standalone-stored-value-transaction---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="../../media/archives/specifications/calypso_transaction_standalone_SV_operation_sequence_diagram.svg" alt="Calypso API - standalone Stored Value transaction - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="../../media/archives/apis/calypso_transaction_standalone_SV_operation_sequence_diagram.svg" alt="Calypso API - standalone Stored Value transaction - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - standalone Stored Value transaction - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
@@ -423,7 +423,7 @@ status and the last event are checked at the session opening, and the session is
 followed by a ratification command.&lt;/p>
 &lt;figure id="figure-calypso-api---simple-secure-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="../../media/archives/specifications/calypso_transaction_simple_secure_session_embedded_sequence_diagram.svg" alt="Calypso API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="../../media/archives/apis/calypso_transaction_simple_secure_session_embedded_sequence_diagram.svg" alt="Calypso API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Simple Secure Session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
@@ -440,35 +440,35 @@ then read again during the session.&lt;/p>
 then the checking of the ratification status is not necessary at the session opening, and the session could be closed as ratified.&lt;/p>
 &lt;figure id="figure-calypso-api---simple-secure-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="../../media/archives/specifications/calypso_transaction_simple_secure_session_distributed_sequence_diagram.svg" alt="Calypso API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="../../media/archives/apis/calypso_transaction_simple_secure_session_distributed_sequence_diagram.svg" alt="Calypso API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Simple Secure Session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="pin-ciphered-verification-inside-a-session">PIN ciphered verification inside a session&lt;/h3>
 &lt;figure id="figure-calypso-api---verify-ciphered-pin-inside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="../../media/archives/specifications/calypso_transaction_Verify_Ciphered_PIN_inside_session_sequence_diagram.svg" alt="Calypso API - Verify Ciphered PIN inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="../../media/archives/apis/calypso_transaction_Verify_Ciphered_PIN_inside_session_sequence_diagram.svg" alt="Calypso API - Verify Ciphered PIN inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Verify Ciphered PIN inside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="data-secure-processing-inside-a-session">Data secure processing inside a session&lt;/h3>
 &lt;figure id="figure-calypso-api---data-secure-processing-inside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="../../media/archives/specifications/calypso_transaction_DSP_inside_session_sequence_diagram.svg" alt="Calypso API - Data secure processing inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="../../media/archives/apis/calypso_transaction_DSP_inside_session_sequence_diagram.svg" alt="Calypso API - Data secure processing inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Data secure processing inside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="stored-value-operation-inside-a-session">Stored Value operation inside a session&lt;/h3>
 &lt;figure id="figure-calypso-api---stored-value-transaction-inside-a-secure-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="../../media/archives/specifications/calypso_transaction_SV_inside_session_sequence_diagram.svg" alt="Calypso API - Stored Value transaction inside a secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="../../media/archives/apis/calypso_transaction_SV_inside_session_sequence_diagram.svg" alt="Calypso API - Stored Value transaction inside a secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Stored Value transaction inside a secure session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="multiple-secure-sessions">Multiple secure sessions&lt;/h3>
 &lt;figure id="figure-calypso-api---multiple-secure-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="../../media/archives/specifications/calypso_transaction_multiple_secure_session_sequence_diagram.svg" alt="Calypso API - Multiple secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="../../media/archives/apis/calypso_transaction_multiple_secure_session_sequence_diagram.svg" alt="Calypso API - Multiple secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso API - Multiple secure session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>

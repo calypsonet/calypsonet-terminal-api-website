@@ -1,42 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Card Layer - Calypso Specification | Smartcard-based Ticketing Terminal APIs by the Calypso Networks Association</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/</link><atom:link href="https://terminal-api.calypsonet.org/specifications/calypso-layer/index.xml" rel="self" type="application/rss+xml"/><description>Card Layer - Calypso Specification</description><generator>Hugo Blox Builder (https://hugoblox.com)</generator><language>en-us</language><image><url>https://terminal-api.calypsonet.org/media/logo.svg</url><title>Card Layer - Calypso Specification</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/</link></image><item><title>Calypso Card API (external)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-card-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-card-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
-Latest version &lt;strong>&lt;code>2.2.0&lt;/code>&lt;/strong>
+Latest version &lt;strong>&lt;code>3.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypso-card/">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypso-card/">Specification&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
-&lt;p>As part of the &lt;strong>Card Layer&lt;/strong>, the &lt;strong>Calypso Card API&lt;/strong> provides high-level functionality for selecting and performing
-transactions with Calypso cards.&lt;/p>
+&lt;p>As part of the &lt;strong>Card Layer&lt;/strong>, the &lt;strong>Calypso Card API&lt;/strong> provides the high-level functionality that terminal
+applications use to select a Calypso product and run transactions with it.&lt;/p>
 &lt;br>
-&lt;h2 id="interfaces">Interfaces&lt;/h2>
-&lt;p>The &lt;strong>Calypso Card API&lt;/strong> provides the means to select a target card and then perform a transaction with the selected card.&lt;/p>
+&lt;h2 id="what-it-provides">What it provides&lt;/h2>
 &lt;ul>
-&lt;li>The result of a card selection is a smart card image whose file structure and data records can be browsed.&lt;/li>
-&lt;li>A transaction with a target card may involve a control SAM to secure the operations.&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Card image&lt;/strong> — a successful selection gives access to the identification data, the file structure and the
+records of the selected application.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Prepare then process&lt;/strong> — commands are first prepared, then processed in a single exchange with the card, which
+minimises the number of round trips, especially in a distributed architecture.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>One transaction manager per context&lt;/strong> — free transactions, secure sessions in symmetric cryptography, regular or
+extended, and secure sessions in asymmetric cryptography, each offering the operations its context allows.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Security settings&lt;/strong> — the keys, the certificates and the timing bounds of the countermeasures against relay
+attacks and card emulation are configured per card profile.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Stored Value&lt;/strong> — reload, debit and debit cancellation, with the balance and the transaction history of the
+electronic purse.&lt;/p>
+&lt;/li>
 &lt;/ul>
-&lt;p>The &lt;code>CalypsoCard&lt;/code> interface provide &lt;strong>accessors&lt;/strong> to recover the information of the selected smart card.&lt;/p>
-&lt;p>To optimize the number of exchanges with a card reader, the &lt;strong>Calypso Card API&lt;/strong> allows grouping the commands.
-A set of commands could be first &lt;strong>prepared&lt;/strong>, and then be &lt;strong>processed&lt;/strong> by a selected target at the selection or
-during the transaction.
-A transaction with a Calypso card is fully managed through the &lt;code>CardTransactionManager&lt;/code> interface:&lt;/p>
-&lt;p>
-&lt;figure >
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypso-card/2.2.0/api_class_diagram.svg" alt="Calypso Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/p>
-&lt;br>
-&lt;h2 id="selection-of-a-calypso-card">Selection of a Calypso card&lt;/h2>
-&lt;p>A Calypso card selection could be defined to accept or not invalidated card.&lt;/p>
-&lt;p>Through the selection only basic Select File (without changing DF) or Read Records commands could joined: the goal is to
-recover in the selection result some file status or record data of elements present in all cards of a ticketing networks.
-The type of card product has not yet been identified, the commands are prepared to be supported by all types of card
-products: Prime, Light, or Regular.&lt;/p>
-&lt;p>Then, if a Calypso card has matched the selection request, a Calypso card image is returned, some file headers or file
-records could be filled depending on the information recovered in the responses of the Select File or Read Records
-processed.&lt;/p>
 &lt;br>
 &lt;h2 id="calypso-card-transaction-without-secure-session">Calypso card transaction without secure session&lt;/h2>
 &lt;p>Except the operations involving secure processing on &amp;ldquo;data&amp;rdquo; (data signature computation / verification, data ciphering /
@@ -149,69 +145,106 @@ Calypso Card API - Stored Value transaction inside a secure session - Sequence D
 &lt;div class="w-100" >&lt;img src="../../media/specifications/calypso_transaction_multiple_secure_session_sequence_diagram.svg" alt="Calypso Card API - Multiple secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Calypso Card API - Multiple secure session - Sequence Diagram
-&lt;/figcaption>&lt;/figure></description></item><item><title>Calypso Legacy SAM API (external)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-legacysam-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-legacysam-api/</guid><description>&lt;div class="alert alert-note">
+&lt;/figcaption>&lt;/figure>
+&lt;br>
+&lt;h2 id="learn-more">Learn more&lt;/h2>
+&lt;p>The specification is the normative reference: it covers the complete type and operation set, the behaviour of a
+secure session, the duration bounds, the UML class diagram and the glossary of terms.&lt;/p>
+&lt;p>→ &lt;a href="https://docs.terminal-api.calypsonet.org/calypso-card/">Read the full Calypso Card API specification&lt;/a>&lt;/p></description></item><item><title>Calypso Legacy SAM API (external)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-legacysam-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-legacysam-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
-Latest version &lt;strong>&lt;code>1.0.0&lt;/code>&lt;/strong>
+Latest version &lt;strong>&lt;code>2.0.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypso-crypto-legacysam/">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypso-crypto-legacysam/">Specification&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-api-spec/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
-&lt;p>As part of the &lt;strong>Card Layer&lt;/strong>, the &lt;strong>Calypso Crypto Legacy SAM API&lt;/strong> provides high-level functionality for selecting
-and performing transactions with Calypso Legacy SAMs and can also be coupled with the &lt;strong>Calypso Card API&lt;/strong> to handle the
-cryptographic calculations required for Calypso card transactions secured by symmetric keys.&lt;/p>
+&lt;p>As part of the &lt;strong>Card Layer&lt;/strong>, the &lt;strong>Calypso Crypto Legacy SAM API&lt;/strong> provides the high-level functionality used
+to select a Calypso legacy SAM and run transactions with it. Coupled with the &lt;strong>Calypso Card API&lt;/strong>, it also performs
+the cryptographic computations that a Calypso card transaction secured by symmetric keys requires.&lt;/p>
+&lt;p>The complete, versioned reference — types, operations, behaviour, diagrams and constraints — is maintained in the
+&lt;a href="https://docs.terminal-api.calypsonet.org/calypso-crypto-legacysam/">&lt;strong>Calypso Crypto Legacy SAM API specification&lt;/strong>&lt;/a>. This page is only a short overview.&lt;/p>
 &lt;br>
-&lt;h2 id="interfaces">Interfaces&lt;/h2>
-&lt;p>The &lt;strong>Calypso Crypto Legacy SAM API&lt;/strong> provides the means to select a target or control SAM and then perform a transaction with the selected target.&lt;/p>
+&lt;h2 id="what-it-provides">What it provides&lt;/h2>
 &lt;ul>
-&lt;li>The result of a SAM selection is a smartcard image whose keys&amp;rsquo; parameters can be read.&lt;/li>
-&lt;li>A transaction with a target SAM may involve a control SAM in order to secure the operations.&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>SAM image&lt;/strong> — a successful selection yields a &lt;code>LegacySam&lt;/code>, whose key parameters, counters and ceilings can be
+read, with access to the raw data where relevant.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Prepare then process&lt;/strong> — as for cards, commands are grouped and then processed, which limits the exchanges with
+the SAM reader.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Transaction managers by capability&lt;/strong> — reading, writing, secured writing, and the asynchronous creation and
+execution of a transaction for a remote SAM.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Crypto extension&lt;/strong> — the same module provides the Calypso card transaction with its symmetric cryptographic
+primitives, card and SAM commands being interleaved within a single transaction.&lt;/p>
+&lt;/li>
 &lt;/ul>
-&lt;p>The &lt;code>LegacySam&lt;/code> interface provide &lt;strong>accessors&lt;/strong> in order to recover the information of the selected smartcard.&lt;/p>
-&lt;p>To optimize the number of exchanges with a SAM reader, the Legacy SAM API allows to group the commands.
-A set of command could be first &lt;strong>prepared&lt;/strong>, and then be &lt;strong>processed&lt;/strong> by a selected target at the selection or
-during the transaction.
-A transaction with a Calypso SAM is fully managed through one of the &lt;code>LSTransactionManager&lt;/code> interfaces:&lt;/p>
-&lt;p>
-&lt;figure >
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypso-crypto-legacysam/1.0.0/api_class_diagram.svg" alt="Calypso Crypto Legacy SAM API - class diagram" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/p></description></item><item><title>Calypso Crypto Symmetric API (internal)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-symmetric-crypto-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-symmetric-crypto-api/</guid><description>&lt;div class="alert alert-note">
+&lt;br>
+&lt;h2 id="learn-more">Learn more&lt;/h2>
+&lt;p>→ &lt;a href="https://docs.terminal-api.calypsonet.org/calypso-crypto-legacysam/">Read the full Calypso Crypto Legacy SAM API specification&lt;/a>&lt;/p></description></item><item><title>Calypso Crypto Symmetric API (internal)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-symmetric-crypto-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-symmetric-crypto-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
-Latest version &lt;strong>&lt;code>0.1.1&lt;/code>&lt;/strong>
+Latest version &lt;strong>&lt;code>0.2.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypso-crypto-symmetric/">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypso-crypto-symmetric/">Specification&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-symmetric-api-spec/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
-&lt;p>The &lt;strong>Calypso Crypto Symmetric API&lt;/strong> is the communication interface between the &lt;strong>Calypso Card&lt;/strong> and the
-&lt;strong>Calypso Crypto Symmetric&lt;/strong> libraries (e.g. Legacy SAM, Open SAM).&lt;/p>
+&lt;p>The &lt;strong>Calypso Crypto Symmetric API&lt;/strong> is the internal interface between the &lt;strong>Calypso Card&lt;/strong> library and the
+crypto modules that hold symmetric keys, such as a legacy SAM or an Open SAM.&lt;/p>
+&lt;p>The complete, versioned reference — types, operations, behaviour, diagrams and constraints — is maintained in the
+&lt;a href="https://docs.terminal-api.calypsonet.org/calypso-crypto-symmetric/">&lt;strong>Calypso Crypto Symmetric API specification&lt;/strong>&lt;/a>. This page is only a short overview.&lt;/p>
 &lt;br>
-&lt;h2 id="interfaces">Interfaces&lt;/h2>
-&lt;p>
-&lt;figure >
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypso-crypto-symmetric/0.1.1/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/p></description></item><item><title>Calypso Crypto Asymmetric API (internal)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-asymmetric-crypto-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-asymmetric-crypto-api/</guid><description>&lt;div class="alert alert-note">
+&lt;h2 id="what-it-provides">What it provides&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>An SPI, not a service&lt;/strong> — the API consists of the interfaces a crypto module implements, and that the Calypso
+card transaction calls during a symmetric secure session.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Session cryptography&lt;/strong> — initialisation of the session context, computation and verification of the session MAC,
+encryption and decryption of the session APDUs.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>PIN and Stored Value&lt;/strong> — ciphering of the PIN for presentation or modification, and the security data an SV
+operation requires.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;br>
+&lt;h2 id="learn-more">Learn more&lt;/h2>
+&lt;p>→ &lt;a href="https://docs.terminal-api.calypsonet.org/calypso-crypto-symmetric/">Read the full Calypso Crypto Symmetric API specification&lt;/a>&lt;/p></description></item><item><title>Calypso Crypto Asymmetric API (internal)</title><link>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-asymmetric-crypto-api/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://terminal-api.calypsonet.org/specifications/calypso-layer/calypso-asymmetric-crypto-api/</guid><description>&lt;div class="alert alert-note">
 &lt;div>
-Latest version &lt;strong>&lt;code>0.2.0&lt;/code>&lt;/strong>
+Latest version &lt;strong>&lt;code>0.3.0&lt;/code>&lt;/strong>
 &lt;span class="component-metadata">
-&lt;i class="fas fa-sitemap pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypso-crypto-asymmetric/">UML class diagram&lt;/a>&lt;/span>
+&lt;i class="fas fa-book pr-1 fa-fw">&lt;/i> &lt;a href="https://docs.terminal-api.calypsonet.org/calypso-crypto-asymmetric/">Specification&lt;/a>&lt;/span>
 &lt;span class="component-metadata">
 &lt;i class="fab fa-github pr-1 fa-fw">&lt;/i> &lt;a href="https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-api-spec/">GitHub repository&lt;/a>&lt;/span>
 &lt;/div>
 &lt;/div>
-&lt;p>The &lt;strong>Calypso Crypto Asymmetric API&lt;/strong> is the communication interface between the &lt;strong>Calypso Card&lt;/strong> and the
-&lt;strong>Calypso Crypto Asymmetric&lt;/strong> libraries.&lt;/p>
+&lt;p>The &lt;strong>Calypso Crypto Asymmetric API&lt;/strong> is the internal interface between the &lt;strong>Calypso Card&lt;/strong> library and the
+crypto modules that perform the asymmetric computations of a PKI secure session.&lt;/p>
+&lt;p>The complete, versioned reference — types, operations, behaviour, diagrams and constraints — is maintained in the
+&lt;a href="https://docs.terminal-api.calypsonet.org/calypso-crypto-asymmetric/">&lt;strong>Calypso Crypto Asymmetric API specification&lt;/strong>&lt;/a>. This page is only a short overview.&lt;/p>
 &lt;br>
-&lt;h2 id="interfaces">Interfaces&lt;/h2>
-&lt;p>
-&lt;figure >
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://docs.terminal-api.calypsonet.org/calypso-crypto-asymmetric/0.2.0/api_class_diagram.svg" alt="Card API - class diagram" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/p></description></item></channel></rss>
+&lt;h2 id="what-it-provides">What it provides&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>An SPI, not a service&lt;/strong> — the API consists of the interfaces a crypto module implements, and that the Calypso
+card transaction calls during a PKI secure session.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Certificates&lt;/strong> — card and certification authority certificates, with their parsers, are supplied by the
+implementation and consumed when the card is authenticated.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Session cryptography&lt;/strong> — initialisation of the session context and verification of the card signature.&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;br>
+&lt;h2 id="learn-more">Learn more&lt;/h2>
+&lt;p>→ &lt;a href="https://docs.terminal-api.calypsonet.org/calypso-crypto-asymmetric/">Read the full Calypso Crypto Asymmetric API specification&lt;/a>&lt;/p></description></item></channel></rss>

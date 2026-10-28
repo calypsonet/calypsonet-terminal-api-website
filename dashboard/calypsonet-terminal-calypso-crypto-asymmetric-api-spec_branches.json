@@ -1,25 +1,17 @@
 [
   {
-    "name": "develop",
-    "commit": {
-      "sha": "b720b96570e213e8280b62c2d5d7ea9e90656f07",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-api-spec/commits/b720b96570e213e8280b62c2d5d7ea9e90656f07"
-    },
-    "protected": false
-  },
-  {
     "name": "doc",
     "commit": {
-      "sha": "a43a19a61151d833aaeb64e9fc55454f544adc18",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-api-spec/commits/a43a19a61151d833aaeb64e9fc55454f544adc18"
+      "sha": "5e2e73d5a39e6586fdad8a43723b804bb5174067",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-api-spec/commits/5e2e73d5a39e6586fdad8a43723b804bb5174067"
     },
     "protected": false
   },
   {
     "name": "main",
     "commit": {
-      "sha": "cd22742ab9fbdd02b9c3346d095fc16958cd0b59",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-api-spec/commits/cd22742ab9fbdd02b9c3346d095fc16958cd0b59"
+      "sha": "33714dc594f59f55a66fa77244165020e147d878",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-asymmetric-api-spec/commits/33714dc594f59f55a66fa77244165020e147d878"
     },
     "protected": false
   }
