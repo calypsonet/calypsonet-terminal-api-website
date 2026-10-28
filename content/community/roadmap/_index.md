@@ -9,9 +9,12 @@ weight: 20
 
 ## Current work and future developments
 
-In preparation for the future integration of the Calypso OpenSAM solution, a major update to the Reader and Card APIs is required, specifically to add support for multiple logical channels; a proposal will be made in mid-2026.
+The major update of the whole family of terminal APIs, prepared throughout 2026 to support the future integration of
+the Calypso OpenSAM solution, was approved by the TC Terminal and published in October 2026. It mainly brings support
+for multiple logical channels and the timing countermeasures against relay attacks and card emulation.
 
-Next, starting in late 2026, we will work to provide high-level APIs for managing the secure channels required to personalize OpenSAM applications or GlobalPlatform-compatible Java Card applets.
+Next, we will work to provide high-level APIs for managing the secure channels required to personalize OpenSAM
+applications or GlobalPlatform-compatible Java Card applets.
 
 ## History of developments
 
@@ -25,14 +28,18 @@ Next, starting in late 2026, we will work to provide high-level APIs for managin
 </thead>
 <tbody>
   <tr>
-    <td rowspan="4"><mark>scheduled 2026/07</mark></td>
+    <td rowspan="9">2026/10/28</td>
     <td>Reader API 3.0</td>
-    <td rowspan="4">Wide refactoring to mainly provide
+    <td rowspan="9">Wide refactoring of the whole family of terminal APIs, mainly providing
     <ul>
       <li>multiple logical channel support</li>
-      <li>and relay attack countermeasure</li>
+      <li>timing countermeasures against relay attacks and card emulation</li>
+      <li>and specifications independent of the implementation language</li>
     </ul>
-    (More details on the <a href="{{< relref "/community/terminal-3-0#1-overview" >}}">evolution overview page</a>)</td>
+    (More details on the <a href="{{< relref "/community/terminal-3-0" >}}">APIs 3.0 page</a>)</td>
+  </tr>
+  <tr>
+    <td>Reader Definitions API 1.0</td>
   </tr>
   <tr>
     <td>Card API 3.0</td>
@@ -41,7 +48,19 @@ Next, starting in late 2026, we will work to provide high-level APIs for managin
     <td>Calypso Card API 3.0</td>
   </tr>
   <tr>
-    <td>Calypso Definitions API 1.0</td>
+    <td>Calypso Crypto Legacy SAM API 2.0</td>
+  </tr>
+  <tr>
+    <td>Calypso Crypto Symmetric API 0.2</td>
+  </tr>
+  <tr>
+    <td>Calypso Crypto Asymmetric API 0.3</td>
+  </tr>
+  <tr>
+    <td>Generic Card API 2.0</td>
+  </tr>
+  <tr>
+    <td>Storage Card API 2.0</td>
   </tr>
   <tr>
     <td>2026/03/17</td>

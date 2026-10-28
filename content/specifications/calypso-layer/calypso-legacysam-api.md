@@ -9,27 +9,35 @@ toc: true
 
 {{% callout note %}}
 Latest version **`{{% calypso-legacysam-api-version %}}`**
-<span class="component-metadata">{{< icon name="sitemap" pack="fas" >}} [UML class diagram](https://docs.terminal-api.calypsonet.org/calypso-crypto-legacysam/)</span>
+<span class="component-metadata">{{< icon name="book" pack="fas" >}} [Specification](https://docs.terminal-api.calypsonet.org/calypso-crypto-legacysam/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-api-spec/)</span>
 {{% /callout %}}
 
-As part of the **Card Layer**, the **Calypso Crypto Legacy SAM API** provides high-level functionality for selecting 
-and performing transactions with Calypso Legacy SAMs and can also be coupled with the **Calypso Card API** to handle the 
-cryptographic calculations required for Calypso card transactions secured by symmetric keys.
+As part of the **Card Layer**, the **Calypso Crypto Legacy SAM API** provides the high-level functionality used
+to select a Calypso legacy SAM and run transactions with it. Coupled with the **Calypso Card API**, it also performs
+the cryptographic computations that a Calypso card transaction secured by symmetric keys requires.
+
+The complete, versioned reference — types, operations, behaviour, diagrams and constraints — is maintained in the
+[**Calypso Crypto Legacy SAM API specification**](https://docs.terminal-api.calypsonet.org/calypso-crypto-legacysam/). This page is only a short overview.
 
 <br>
 
-## Interfaces
+## What it provides
 
-The **Calypso Crypto Legacy SAM API** provides the means to select a target or control SAM and then perform a transaction with the selected target.
-- The result of a SAM selection is a smartcard image whose keys' parameters can be read.
-- A transaction with a target SAM may involve a control SAM in order to secure the operations.
+- **SAM image** — a successful selection yields a `LegacySam`, whose key parameters, counters and ceilings can be
+  read, with access to the raw data where relevant.
 
-The `LegacySam` interface provide **accessors** in order to recover the information of the selected smartcard.
+- **Prepare then process** — as for cards, commands are grouped and then processed, which limits the exchanges with
+  the SAM reader.
 
-To optimize the number of exchanges with a SAM reader, the Legacy SAM API allows to group the commands.
-A set of command could be first **prepared**, and then be **processed** by a selected target at the selection or
-during the transaction.
-A transaction with a Calypso SAM is fully managed through one of the `LSTransactionManager` interfaces:
+- **Transaction managers by capability** — reading, writing, secured writing, and the asynchronous creation and
+  execution of a transaction for a remote SAM.
 
-![Calypso Crypto Legacy SAM API - class diagram](https://docs.terminal-api.calypsonet.org/calypso-crypto-legacysam/{{% calypso-legacysam-api-version %}}/api_class_diagram.svg)
+- **Crypto extension** — the same module provides the Calypso card transaction with its symmetric cryptographic
+  primitives, card and SAM commands being interleaved within a single transaction.
+
+<br>
+
+## Learn more
+
+→ [Read the full Calypso Crypto Legacy SAM API specification](https://docs.terminal-api.calypsonet.org/calypso-crypto-legacysam/)

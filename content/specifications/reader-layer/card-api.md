@@ -3,40 +3,40 @@ title: Card API (internal)
 linktitle: 🔶 Card
 summary: Internal API which defines the elements shared between the reader layer and the card layer.
 type: book
-weight: 2
+weight: 3
 toc: true
 ---
 
 {{% callout note %}}
 Latest version **`{{% card-api-version %}}`**
-<span class="component-metadata">{{< icon name="sitemap" pack="fas" >}} [UML class diagram](https://docs.terminal-api.calypsonet.org/card/)</span>
+<span class="component-metadata">{{< icon name="book" pack="fas" >}} [Specification](https://docs.terminal-api.calypsonet.org/card/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-card-api-spec/)</span>
 {{% /callout %}}
 
-As part of the **Reader Layer**, the **Calypsonet Terminal Card API** defines the internal elements shared by the 
-reader layer to implement specific card layers (like the Calypso Card layer).
+As part of the **Reader Layer**, the **Card API** defines the internal elements shared by the reader layer with
+the card layers built on top of it, such as the Calypso card layer.
+
+The complete, versioned reference — types, operations, behaviour, diagrams and constraints — is maintained in the
+[**Card API specification**](https://docs.terminal-api.calypsonet.org/card/). This page is only a short overview.
 
 <br>
 
-## Interfaces
+## What it provides
 
-![Card API - class diagram](https://docs.terminal-api.calypsonet.org/card/{{% card-api-version %}}/api_class_diagram.svg)
+- **APDU exchanges** — requests and responses are carried by data types (`ApduRequest`, `ApduResponse`,
+  `CardRequest`, `CardResponse`) and transmitted through the `ProxyReaderApi`.
+
+- **APDU construction rules** — the constraints a card extension must respect when building its APDUs are
+  normative.
+
+- **Limitations and constraints** — the commands the API never transmits, and the status words the reader layer
+  handles itself, are listed in the specification.
+
+- **Execution-time control** — each exchange may carry a maximum duration and report its effective duration, which
+  is the basis of the timing countermeasures against relay and card emulation.
 
 <br>
 
-## APDU construction rules
+## Learn more
 
-APDU requests expected by the **Card API** must strictly comply with **ISO/IEC 7816-3**, 
-requiring **Case 4** commands, i.e containing ingoing and outgoing data, to include the **Le** field.
-
-We strongly recommend setting this field to **00h**.
-
-<br>
-
-## Limitations & constraints
-
-The **Card API** doesn't allow to request the transmission to a card of the APDU commands "Select Application by DF Name"
-or "Get Response":
-- the selection of a specific card application could be managed only through a Card Selection Request.
-- the APDU response status words 61XYh & 6CXYh are automatically handled by the reader layer library by issuing a
-  Get Response or by re-issuing the previous command with the expected 'Le' field.
+→ [Read the full Card API specification](https://docs.terminal-api.calypsonet.org/card/)

@@ -13,6 +13,7 @@ highest:
 
 - At the bottom, the [Reader Layer]({{< ref "specifications/reader-layer" >}}) generic interfaces:
     - [Reader API]({{< ref "specifications/reader-layer/reader-api" >}}): Controls any reader solution and manages application selection on a smart card.
+    - [Reader Definitions API]({{< ref "specifications/reader-layer/reader-definitions-api" >}}): Hosts the cross-cutting definitions shared by the terminal APIs, such as the radio-frequency technologies and the card types.
     - [Card API]({{< ref "specifications/reader-layer/card-api" >}}): Interfaces a card processing library specific to a given smart card solution.
 - Above, the **Smart Card Solution Layer** specific interfaces:
     - several interfaces to integrate [Calypso processing]({{< ref "specifications/calypso-layer" >}}) support:
@@ -35,13 +36,14 @@ The ticketing terminal APIs are differentiated according to development goals:
 - in **green** 🟢, high-level public reader and Calypso APIs dedicated to the design of applications on ticketing terminals.
 - in **orange** 🔶, internal APIs dedicated to the design of middleware for smart card solutions (Calypso or others).
 
-## API element visual status explanation
+## API element visual status
 
-- **Grayed-out elements** indicate features that are **not yet officially part of the API**. These are currently under
-  review and may either be formally added or removed in a future version.
-- On **minor or major API updates**, elements displayed in **blue** represent **newly introduced features** officially
-  added in the current version.
-- On **minor API versions**, elements displayed in **red** that are marked with **strikethrough** are those that have
-  been **deprecated** but are still present in the API.
-- **Actual removal of an element** can only occur in a **major version update**. In such cases, the element must have
-  been explicitly **deprecated in one or more previous minor versions**.
+The elements of an API are displayed with a colour code — grey, blue, red struck through — whose meaning is given by
+the **legend of the UML class diagram**, next to the diagram itself in each specification.
+
+Two rules are worth remembering:
+
+- **Grayed-out elements**, shown as *work in progress* in the legend, are **not yet officially part of the API**:
+  they are under review and may either be formally added or removed in a future version.
+- **Actual removal of an element** can only occur in a **major version update**, the element having been explicitly
+  **deprecated in one or more previous minor versions**.

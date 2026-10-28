@@ -9,21 +9,31 @@ toc: true
 
 {{% callout note %}}
 Latest version **`{{% genericcard-api-version %}}`**
-<span class="component-metadata">{{< icon name="sitemap" pack="fas" >}} [UML class diagram](https://docs.terminal-api.calypsonet.org/genericcard/)</span>
+<span class="component-metadata">{{< icon name="book" pack="fas" >}} [Specification](https://docs.terminal-api.calypsonet.org/genericcard/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-genericcard-api-spec/)</span>
 {{% /callout %}}
 
-As part of the **Card Layer**, the **Generic Card API** provides low-level functionality for selecting and performing
-transactions with any type of card.
+As part of the **Card Layer**, the **Generic Card API** provides the low-level functionality used to exchange raw
+APDUs with any card, without the API interpreting their content.
+
+The complete, versioned reference — types, operations, behaviour, diagrams and constraints — is maintained in the
+[**Generic Card API specification**](https://docs.terminal-api.calypsonet.org/genericcard/). This page is only a short overview.
 
 <br>
 
-## Interfaces
+## What it provides
 
-The **Generic Card API** provides the means to select a target card and then perform a transaction with the selected card.
+- **Raw commands** — an APDU is prepared as supplied by the application, then processed with the other prepared
+  commands.
 
-To optimize the number of exchanges with a card reader, the **Generic Card API** allows grouping the commands.
-A set of commands could be first **prepared**, and then be **processed** by a selected target during the transaction.
-A transaction with a generic card is fully managed through the `CardTransactionManager` interface:
+- **Command identification** — a command may carry an identifier, used to retrieve its response or to name the
+  offending command when processing fails.
 
-![Generic Card API - class diagram](https://docs.terminal-api.calypsonet.org/genericcard/{{% genericcard-api-version %}}/api_class_diagram.svg)
+- **Execution-time control** — a command may carry a maximum duration, which brings the timing countermeasure down
+  to the level of the individual command.
+
+<br>
+
+## Learn more
+
+→ [Read the full Generic Card API specification](https://docs.terminal-api.calypsonet.org/genericcard/)

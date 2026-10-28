@@ -1,7 +1,7 @@
 ---
 title: Terminal APIs 3.0 — Changes and Design Rationale
 linktitle: APIs 3.0 Changes
-summary: Overview of the changes introduced by the Terminal APIs 3.0 major release, with motivation and design rationale, submitted to the CNA TC Terminal for validation.
+summary: Overview of the changes introduced by the Terminal APIs 3.0 major release, with motivation and design rationale, as approved by the CNA TC Terminal.
 type: book
 toc: true
 weight: 5
@@ -9,7 +9,8 @@ weight: 5
 
 ---
 
-> **Document status**: working draft submitted to the **CNA TC Terminal for validation**.
+> **Document status**: **approved by the CNA TC Terminal**. The nine specifications it describes were published on
+> **2026-10-28**.
 
 ## Preamble
 
@@ -912,12 +913,11 @@ This document submits to the validation of the **CNA TC Terminal**:
 
 ### 19.3 Next steps
 
-Once the versions have been validated by the TC Terminal:
+The versions were validated by the TC Terminal, and the nine specifications were finalised and published on
+2026-10-28. The following steps remain:
 
-1. **Finalisation of the specifications**: moving the repositories from their `…-SNAPSHOT` versions to their final versions; removal or specification of the elements under study (§17).
-2. **Creation of the new Java module** `keypop-reader-definitions-jvm-api`, and **alignment of the existing Keypop Java modules** (`keypop-reader-java-api`, `keypop-card-java-api`, `keypop-calypso-card-java-api`, `keypop-calypso-crypto-legacysam-java-api`, `keypop-calypso-crypto-symmetric-java-api`, `keypop-calypso-crypto-asymmetric-java-api`, `keypop-genericcard-jvm-api`, `keypop-storagecard-java-api`) with their new versions.
-3. **Writing and publication of the technical migration guide** (see §18).
-4. **Communication** of the availability of the new versions to integrators and to the CNA working groups concerned.
+1. **Writing and publication of the technical migration guide** (see §18).
+2. **Communication** of the availability of the new versions to integrators and to the CNA working groups concerned.
 
 ---
 

@@ -9,44 +9,31 @@ toc: true
 
 {{% callout note %}}
 Latest version **`{{% calypso-card-api-version %}}`**
-<span class="component-metadata">{{< icon name="sitemap" pack="fas" >}} [UML class diagram](https://docs.terminal-api.calypsonet.org/calypso-card/)</span>
+<span class="component-metadata">{{< icon name="book" pack="fas" >}} [Specification](https://docs.terminal-api.calypsonet.org/calypso-card/)</span>
 <span class="component-metadata">{{< icon name="github" pack="fab" >}} [GitHub repository](https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/)</span>
 {{% /callout %}}
 
-As part of the **Card Layer**, the **Calypso Card API** provides high-level functionality for selecting and performing 
-transactions with Calypso cards.
+As part of the **Card Layer**, the **Calypso Card API** provides the high-level functionality that terminal
+applications use to select a Calypso product and run transactions with it.
 
 <br>
 
-## Interfaces
+## What it provides
 
-The **Calypso Card API** provides the means to select a target card and then perform a transaction with the selected card.
-- The result of a card selection is a smart card image whose file structure and data records can be browsed.
-- A transaction with a target card may involve a control SAM to secure the operations.
+- **Card image** — a successful selection gives access to the identification data, the file structure and the
+  records of the selected application.
 
-The `CalypsoCard` interface provide **accessors** to recover the information of the selected smart card.
+- **Prepare then process** — commands are first prepared, then processed in a single exchange with the card, which
+  minimises the number of round trips, especially in a distributed architecture.
 
-To optimize the number of exchanges with a card reader, the **Calypso Card API** allows grouping the commands.
-A set of commands could be first **prepared**, and then be **processed** by a selected target at the selection or
-during the transaction.
-A transaction with a Calypso card is fully managed through the `CardTransactionManager` interface:
+- **One transaction manager per context** — free transactions, secure sessions in symmetric cryptography, regular or
+  extended, and secure sessions in asymmetric cryptography, each offering the operations its context allows.
 
-![Calypso Card API - class diagram](https://docs.terminal-api.calypsonet.org/calypso-card/{{% calypso-card-api-version %}}/api_class_diagram.svg)
+- **Security settings** — the keys, the certificates and the timing bounds of the countermeasures against relay
+  attacks and card emulation are configured per card profile.
 
-<br>
-
-## Selection of a Calypso card
-
-A Calypso card selection could be defined to accept or not invalidated card.
-
-Through the selection only basic Select File (without changing DF) or Read Records commands could joined: the goal is to
-recover in the selection result some file status or record data of elements present in all cards of a ticketing networks.
-The type of card product has not yet been identified, the commands are prepared to be supported by all types of card
-products: Prime, Light, or Regular.
-
-Then, if a Calypso card has matched the selection request, a Calypso card image is returned, some file headers or file
-records could be filled depending on the information recovered in the responses of the Select File or Read Records
-processed.
+- **Stored Value** — reload, debit and debit cancellation, with the balance and the transaction history of the
+  electronic purse.
 
 <br>
 
@@ -139,3 +126,12 @@ then the checking of the ratification status is not necessary at the session ope
 ## Multiple secure sessions
 
 {{< figure src="/media/specifications/calypso_transaction_multiple_secure_session_sequence_diagram.svg" caption="Calypso Card API - Multiple secure session - Sequence Diagram" >}}
+
+<br>
+
+## Learn more
+
+The specification is the normative reference: it covers the complete type and operation set, the behaviour of a
+secure session, the duration bounds, the UML class diagram and the glossary of terms.
+
+→ [Read the full Calypso Card API specification](https://docs.terminal-api.calypsonet.org/calypso-card/)
