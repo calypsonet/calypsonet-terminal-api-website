@@ -1,0 +1,144 @@
+@startuml
+
+'skinparam ClassBorderColor #F1C40F
+skinparam ClassBorderColor #D4AC0D
+skinparam stereotypeABorderColor #A9DCDF
+skinparam stereotypeIBorderColor #B4A7E5
+skinparam stereotypeCBorderColor #ADD1B2
+skinparam stereotypeEBorderColor #EB93DF
+skinparam shadowing false
+
+skinparam StateBorderColor #D4AC0D
+skinparam ActivityBorderColor #D4AC0D
+
+' Red
+skinparam ClassBackgroundColor<<red>> #FDEDEC
+skinparam ClassBorderColor<<red>> #E74C3C
+hide <<red>> stereotype
+' Purple
+skinparam ClassBackgroundColor<<purple>> #F4ECF7
+skinparam ClassBorderColor<<purple>> #8E44AD
+hide <<purple>> stereotype
+' blue
+skinparam ClassBackgroundColor<<blue>> #EBF5FB
+skinparam ClassBorderColor<<blue>> #3498DB
+hide <<blue>> stereotype
+' Green
+skinparam ClassBackgroundColor<<green>> #EAFAF1
+skinparam ClassBorderColor<<green>> #2ECC71
+hide <<green>> stereotype
+
+' Orange
+skinparam ClassBackgroundColor<<orange>> #FDF2E9
+skinparam ClassBorderColor<<orange>> #E67E22
+hide <<orange>> stereotype
+
+' Grey
+skinparam ClassBackgroundColor<<grey>> #EAECEE
+skinparam ClassBorderColor<<grey>> #2C3E50
+hide <<grey>> stereotype
+
+actor "Ticketing Application" as app #gold
+participant "Calypso\nCard API" as capi #pink
+participant "Reader API" as rapi #pink
+participant "Calypso Card\nReader" as cardReader #lightBlue
+boundary "**Card**" as card #lightBlue
+
+activate app #gold
+
+== Parallel selection of several applications ==
+
+note over capi
+    Two applications of the same card are targeted.
+    The card must support several logical channels in parallel.
+end note
+
+app->capi: <font color=red>**prepare**</font> card selection:\n\t- filter by AID #1
+activate capi  #pink
+capi-->app
+deactivate capi
+
+app->capi: <font color=red>**prepare**</font> card selection:\n\t- filter by AID #2
+activate capi  #pink
+capi-->app
+deactivate capi
+
+app->rapi: <font color=red>**prepare**</font> card selection scenario:\n\t- selection case #1\n\t- selection case #2
+activate rapi  #pink
+rapi-->app
+deactivate rapi
+
+app->rapi: <font color=red>**process**</font> the selection scenario for\n**several applications in parallel**\n(one logical channel each)
+activate rapi  #pink
+
+rapi-[#0000FF]>cardReader: <font color=blue>**Card #1**</font>\ntransmit selection request\n\t- card selectors\n\t- APDU list
+activate cardReader #lightBlue
+
+cardReader->card: open card channel
+activate card #lightBlue
+card-->cardReader
+cardReader->card: select application (aid #1) on the basic channel
+card-->cardReader: [card FCI #1]
+cardReader->card: open an additional logical channel
+card-->cardReader: [channel reference]
+cardReader->card: select application (aid #2) on that channel
+card-->cardReader: [card FCI #2]
+
+cardReader--[#0000FF]>rapi: receive selection response
+deactivate cardReader
+
+rapi-->app: [selection result:\n\t- card image of application #1, on the basic channel\n\t- card image of application #2, on its own channel\n\tboth active in parallel]
+deactivate rapi
+
+== Transaction on each application ==
+
+app->app: **start** a card transaction on **application #1**:\n\t- secured with a **symmetric** crypto module\n\t- in **regular** mode, with its security settings
+
+app->capi: <font color=red>**prepare**</font> card transaction:\n\t- read contract list
+activate capi  #pink
+capi-->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> commands
+activate capi  #pink
+capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+cardReader->card: read record (contract list) on the basic channel
+card-->cardReader: [contract list data]
+cardReader--[#0000FF]>capi: [contract list data]
+deactivate cardReader
+capi-->app: [card image of application #1 (updated)]
+deactivate capi
+
+note over app
+    The other application stays active meanwhile:
+    no new selection is needed to come back to it.
+end note
+
+app->app: **start** a card transaction on **application #2**:\n\t- **free**, no crypto module
+
+app->capi: <font color=red>**prepare**</font> card transaction:\n\t- read event log
+activate capi  #pink
+capi-->app
+deactivate capi
+
+app->capi: <font color=red>**process**</font> commands **and close** the logical channel
+activate capi  #pink
+capi-[#0000FF]>cardReader: <font color=blue>**Card #3**</font>\ntransmit card request\n\t- APDU list
+activate cardReader #lightBlue
+cardReader->card: read record (event log) on the additional channel
+card-->cardReader: [event log data]
+cardReader->card: close that logical channel
+card-->cardReader: ack
+deactivate card
+cardReader--[#0000FF]>capi: [event log data]
+deactivate cardReader
+capi-->app: [card image of application #2 (updated)]
+deactivate capi
+
+note over app
+    Closing a logical channel deactivates the matching card image only.
+    The application selected on the basic channel remains usable.
+end note
+
+@enduml
