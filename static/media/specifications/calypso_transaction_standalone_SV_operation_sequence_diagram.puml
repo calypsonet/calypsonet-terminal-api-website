@@ -102,7 +102,7 @@ end note
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands (keep channel open)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
@@ -128,7 +128,7 @@ end note
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands (close channel after)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #1**</font>\ntransmit card request\n\t- APDU list

@@ -64,7 +64,7 @@ end note
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands (keep channel open)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
@@ -106,7 +106,7 @@ note over capi
     At the session closure, any data secure processing should be unnecessary.
 end note
 
-app->capi: <font color=red>**process**</font> commands (close channel after)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #2**</font>\ntransmit card request\n\t- APDU list
