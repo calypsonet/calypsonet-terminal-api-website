@@ -47,15 +47,14 @@ activate app #gold
 
 activate card #lightBlue
 
-app->capi: **cast** Calypso card
-activate capi  #pink
-capi-->app: [Calypso card image:\n\t- identification data with PIN support]
-
-deactivate capi
+note over app
+    The card image obtained from the selection scenario carries
+    the identification data with PIN support.
+end note
 
 == Card secure transaction ==
 
-app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource
+app->app: **start** a **free** card transaction:\n\t- no crypto module, no cryptographic computation
 
 app->capi: <font color=red>**prepare**</font> Verify PIN (current PIN)
 activate capi  #pink
