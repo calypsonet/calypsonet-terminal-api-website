@@ -54,6 +54,14 @@ activate app #gold
 
 app->app: **set** Calypso SAM lib
 
+app->app: **set** the command exchange duration bounds:\n\t- per card profile, by card serial number or by FCI\n\t- for the session opening, the session closing and the SV commands
+
+note over app
+    An exchange longer than its bound reveals a relay attack or a card emulation.
+    When the bound is selected from the FCI, the FCI must be read again inside the
+    secure session to guarantee the integrity of the one obtained at selection.
+end note
+
 hnote over samReader #Orange
 reader in state:
 **Card Inserted**

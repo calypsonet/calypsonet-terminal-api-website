@@ -127,6 +127,20 @@ then the checking of the ratification status is not necessary at the session ope
 
 {{< figure src="/media/specifications/calypso_transaction_multiple_secure_session_sequence_diagram.svg" caption="Calypso Card API - Multiple secure session - Sequence Diagram" >}}
 
+## Several applications in parallel
+
+Several applications of the same card may be selected at once, each on its own logical channel, and operated one
+after the other without a new selection.
+
+{{< figure src="/media/specifications/calypso_transaction_multichannel_applications_sequence_diagram.svg" caption="Calypso Card API - Several applications in parallel - Sequence Diagram" >}}
+
+## Command exchange duration bounds
+
+The most sensitive command exchanges may be bounded in time, per card profile. An exchange longer than its bound
+reveals a relay attack or a card emulation; what follows depends on whether a secure session is open.
+
+{{< figure src="/media/specifications/calypso_transaction_duration_bound_overrun_sequence_diagram.svg" caption="Calypso Card API - Command exchange duration bound exceeded - Sequence Diagram" >}}
+
 <br>
 
 ## Learn more
