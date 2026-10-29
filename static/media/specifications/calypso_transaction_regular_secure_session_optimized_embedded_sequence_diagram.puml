@@ -39,8 +39,8 @@ skinparam ClassBorderColor<<grey>> #2C3E50
 hide <<grey>> stereotype
 
 actor "Ticketing Application" as app #gold
+participant "Calypso\nCard API" as capi #pink
 participant "Reader API" as rapi #pink
-participant "Calypso\nCard API" as capi #lightBlue
 participant "Calypso Card Reader\n\n**dynamic** presence" as cardReader #lightBlue
 boundary "**Card**" as card #lightBlue
 participant "Calypso SAM\nAPI" as sapi #lightGreen
@@ -96,7 +96,7 @@ note over sapi
 end note
 
 app->capi: **init** crypto context for next transaction
-activate capi  #lightBlue
+activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #x'**</font>\ntransmit card request\n\t- APDU list
 activate samReader #lightGreen
@@ -110,7 +110,7 @@ deactivate capi
 
 
 app->capi: <font color=red>**prepare**</font> card selection:\n\t- filter by specific AID\n\t- filter invalidated card status
-activate capi  #lightBlue
+activate capi  #pink
 capi-->app
 deactivate capi
 
@@ -192,12 +192,12 @@ end note
 
 
 app->capi: <font color=red>**prepare**</font> card transaction:\n\t- open secure session (DEBIT access level)\n\t- read environment file
-activate capi  #lightBlue
+activate capi  #pink
 capi-->app
 deactivate capi
 
 app->capi: <font color=red>**process**</font> commands (**keep** channel open)
-activate capi  #lightBlue
+activate capi  #pink
 
 capi-[#00FF00]>capi: <:sunglasses:> SAM challenge already known\nno need to request it during\nthe card transaction
 
@@ -223,12 +223,12 @@ deactivate capi
 app->app: **get** ticketing environment data\nfrom card image
 
 app->capi: <font color=red>**prepare**</font> card transaction:\n\t- read last event
-activate capi  #lightBlue
+activate capi  #pink
 capi-->app
 deactivate capi
 
 app->capi: <font color=red>**process**</font> commands (**keep** channel open)
-activate capi  #lightBlue
+activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #3**</font>\ntransmit card request\n\t- APDU list
 activate cardReader #lightBlue
@@ -257,12 +257,12 @@ close channel & wait for card removal from reader
 endrnote
 
 app->capi: <font color=red>**prepare**</font> card transaction:\n\t- read contract list
-activate capi  #lightBlue
+activate capi  #pink
 capi-->app
 deactivate capi
 
 app->capi: <font color=red>**process**</font> commands (**keep** channel open)
-activate capi  #lightBlue
+activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #4**</font>\ntransmit card request\n\t- APDU list
 activate cardReader #lightBlue
@@ -281,12 +281,12 @@ deactivate capi
 app->app: identifies contract
 
 app->capi: <font color=red>**prepare**</font> card transaction:\n\t- read contract #x
-activate capi  #lightBlue
+activate capi  #pink
 capi-->app
 deactivate capi
 
 app->capi: <font color=red>**process**</font> commands (**keep** channel open)
-activate capi  #lightBlue
+activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #5**</font>\ntransmit card request\n\t- APDU list
 activate cardReader #lightBlue
@@ -305,12 +305,12 @@ deactivate capi
 app->app: identifies associated counter
 
 app->capi: <font color=red>**prepare**</font> card transaction:\n\t- reader counter #x
-activate capi  #lightBlue
+activate capi  #pink
 capi-->app
 deactivate capi
 
 app->capi: <font color=red>**process**</font> commands (**keep** channel open)
-activate capi  #lightBlue
+activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #6**</font>\ntransmit card request\n\t- APDU list
 activate cardReader #lightBlue
@@ -329,13 +329,13 @@ deactivate capi
 app->app: defines data to update
 
 app->capi: <font color=red>**prepare**</font>:\n\t- decrease counter #x (new value)\n\t- append event record (new event)\n\t- close secure session (not ratified)
-activate capi  #lightBlue
+activate capi  #pink
 
 capi-->app
 deactivate capi
 
 app->capi: <font color=red>**process**</font> commands (**close** channel after)
-activate capi  #lightBlue
+activate capi  #pink
 capi->capi: anticipates the future card responses
 note over capi
     If the current value of the counter #x were **unknown**, then the transmission of an additional card APDU
@@ -346,7 +346,7 @@ capi-[#00FF00]>samReader: <font color=green>**SAM #1**</font>\ntransmit card req
 activate samReader #lightGreen
 
 note over samReader
-    <:sunglasses:> All card session data managed within a single SAM command group.
+    <:sunglasses:> Optimization: all card session data managed within a single SAM command group.
 end note
 
 samReader->sam: select diversifier (card serial)
@@ -416,7 +416,7 @@ endrnote
 card-->cardReader: [card certificate]
 
 note over cardReader
-    <:sunglasses:> ratification command immediately performed after session closing
+    <:sunglasses:> Optimization: the ratification command is performed immediately after the session closing.
 end note
 
 cardReader->card: ratification command
@@ -453,7 +453,7 @@ app->? : notification & <size:18>**access granting**</size>
 == End of the Access Control opertion ==
 
 app->capi: **init** crypto context for next transaction
-activate capi  #lightBlue
+activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #x'**</font>\ntransmit card request\n\t- APDU list
 activate samReader #lightGreen

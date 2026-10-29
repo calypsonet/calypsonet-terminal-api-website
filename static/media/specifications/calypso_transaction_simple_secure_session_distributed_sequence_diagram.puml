@@ -113,7 +113,7 @@ activate cardReader #lightBlue
 
 group Card APDU commands inside session
 note over cardReader
-    Optimization: environment file read through the session opening.
+    <:sunglasses:> Optimization: environment file read through the session opening.
 end note
 
     cardReader->card: open secure session (card debit key,\n\tSAM challenge,\n\tSFI environment to read)

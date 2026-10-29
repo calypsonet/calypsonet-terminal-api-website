@@ -94,7 +94,7 @@ When a session is closed, the ratification command is immediately transmitted to
 
 
 
-{{< figure src="/media/specifications/calypso_transaction_regular_secure_session_optimized_embedded_sequence_diagram.svg" caption="Calypso Card API - Simple Secure Session - Sequence Diagram" >}}
+{{< figure src="/media/specifications/calypso_transaction_regular_secure_session_optimized_embedded_sequence_diagram.svg" caption="Calypso Card API - Regular secure session optimized for embedded performance - Sequence Diagram" >}}
 
 ### _Regular_ secure session <span style="color: red;">optimized for an efficient **distributed** system</span>
 
@@ -109,7 +109,7 @@ then read again during the session.
 In case of communication failure with the card, if the recovery transaction is supported only on the same terminal,
 then the checking of the ratification status is not necessary at the session opening, and the session could be closed as ratified.
 
-{{< figure src="/media/specifications/calypso_transaction_simple_secure_session_distributed_sequence_diagram.svg" caption="Calypso Card API - Simple Secure Session - Sequence Diagram" >}}
+{{< figure src="/media/specifications/calypso_transaction_simple_secure_session_distributed_sequence_diagram.svg" caption="Calypso Card API - Regular secure session optimized for a distributed system - Sequence Diagram" >}}
 
 ### PIN ciphered verification inside a session
 
