@@ -49,7 +49,7 @@ activate app #gold
 activate card #lightBlue
 activate sam #lightGreen
 
-app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
+app->app: **start** a card transaction:\n\t- secured with a **symmetric** crypto module\n\t- in **regular** mode, with its security settings
 
 
 app->capi: <font color=red>**prepare**</font> card transaction:\n\t- open secure session (DEBIT access level)\n\t- read environment file\n\t- read contract #1\n\t- reader counter #1
