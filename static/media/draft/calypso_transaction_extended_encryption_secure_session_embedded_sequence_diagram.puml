@@ -39,7 +39,7 @@ skinparam ClassBorderColor<<grey>> #2C3E50
 hide <<grey>> stereotype
 
 actor "Ticketing Application" as app #gold
-participant "Calypso API" as capi #pink
+participant "Calypso\nCard API" as capi #pink
 participant "Reader API" as rapi #pink
 participant "Calypso Card\nReader" as cardReader #lightBlue
 boundary "**Card**" as card #lightBlue
@@ -60,7 +60,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->rapi: <font color=red>**process**</font> explicit card selection scenario
+app->rapi: <font color=red>**process**</font> the selection scenario for a **single application**\n(card already present)
 activate rapi  #pink
 rapi-[#0000FF]>cardReader: <font color=blue>**Card #1**</font>\ntransmit selection request\n\t- card selector
 activate cardReader #lightBlue
@@ -75,25 +75,19 @@ cardReader->cardReader: checks invalidation status
 cardReader--[#0000FF]>rapi: receive selection response
 deactivate cardReader
 
-rapi-->app: selected active SmartCard image
+rapi-->app: [selected card image:\n\t- identification data\n\t- invalidation status]
 deactivate rapi
-
-app->capi: **cast** Calypso card
-activate capi  #pink
-capi-->app: [Calypso card image:\n\t- identification data\n\t- invalidation status]
-
-deactivate capi
 
 == Card secure transaction ==
 
-app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
+app->app: **start** a card transaction:\n\t- secured with a **symmetric** crypto module\n\t- in **extended** mode, with its security settings
 
 app->capi: <font color=red>**prepare**</font> card transaction:\n\t- open secure session (DEBIT access level)\n\t- read environment file
 activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands (keep channel open)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
@@ -128,7 +122,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands (keep channel open)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #3**</font>\ntransmit card request\n\t- APDU list
@@ -187,7 +181,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands (keep channel open)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #4**</font>\ntransmit card request\n\t- APDU list
@@ -223,7 +217,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands (keep channel open)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #5**</font>\ntransmit card request\n\t- APDU list
@@ -260,7 +254,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands (keep channel open)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #6**</font>\ntransmit card request\n\t- APDU list
@@ -299,7 +293,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands (close channel after)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 capi->capi: anticipates the future card responses
 note over capi
