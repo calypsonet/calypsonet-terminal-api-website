@@ -70,7 +70,7 @@ rapi-->app
 deactivate rapi
 
 
-app->rapi: <font color=red>**process**</font> synchronous card selection scenario
+app->rapi: <font color=red>**process**</font> the selection scenario for the **security module**\n(module already present)
 activate rapi  #pink
 rapi-[#00FF00]>samReader: <font color=green>**SAM #x**</font>\ntransmit selection request\n\t- card selector
 activate samReader #lightGreen
@@ -87,17 +87,12 @@ note over sapi
 end note
 
 
-rapi-->app: selected active SmartCard image
+rapi-->app: [selected legacy SAM image:\n\t- identification data]
 deactivate rapi
 
-app->sapi: **cast** SAM card
-activate sapi  #lightGreen
-sapi-->app: [legacy SAM image:\n\t- identification data]
-deactivate sapi
-
 note over sapi
-    Apart from SAM module selection, a secure transaction with
-    a Calypso card is managed independently of the SAM API.
+    Apart from its selection, the security module is not handled
+    by the application during a Calypso card transaction.
 end note
 
 app->capi: **init** crypto context for next transaction
@@ -124,13 +119,11 @@ activate rapi  #pink
 rapi-->app
 deactivate rapi
 
-app->rapi: <font color=red>**schedule**</font> asynchronous card selection scenario
+app->rapi: <font color=red>**schedule**</font> the selection scenario on the **observed reader**
 activate rapi  #pink
 rapi-->app
 
-app->rapi: add **observer**
-rapi-->app
-app->rapi: **start detection** - repeating mode
+app->rapi: **start** the card detection in a single step:\n\t- event handler\n\t- technologies to poll\n\t- repeating mode
 
 hnote over cardReader #Orange
 reader in state:
@@ -184,19 +177,14 @@ deactivate rapi
 
 app->rapi: <font color=red>**parse**</font> scheduled card selections response
 activate rapi  #pink
-rapi-->app: selected active SmartCard image
+rapi-->app: [selected card image:\n\t- identification data\n\t- invalidation status]
 deactivate rapi
-
-app->capi: **cast** Calypso card
-activate capi  #lightBlue
-capi-->app: [Calypso card image:\n\t- identification data\n\t- invalidation status]
-deactivate capi
 
 app->app: **get** card file structure reference\nfrom card image
 
 == Card secure transaction ==
 
-app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
+app->app: **start** a card transaction:\n\t- secured with a **symmetric** crypto module\n\t- in **regular** mode, with its security settings
 
 note over capi
     Only reads ticketing data inside the session.
