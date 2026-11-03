@@ -204,7 +204,7 @@ CardTransactionManager  (root interface, non-generic)
 ### 2.3 Card API
 
 - **New operation** `SmartCardSpi.deactivate() → Unit` — allows the reader to **deactivate** the card, so that the application immediately sees `SmartCard.isActive()` switch to `false`.
-- **New SPI interface** `MultichannelSmartCardSpi` (extends `SmartCardSpi`) with `getChannel() → Int`.
+- **New SPI interfaces** `IsoSmartCardSpi` (extends `SmartCardSpi`, marker) and `MultichannelSmartCardSpi` (extends `IsoSmartCardSpi`) with `getChannel() → Int` — multi-channel being a specialisation of ISO/IEC 7816-4, only an ISO selection extension can produce such a smart card (see Theme 9).
 - **Redesign of `ProxyReaderApi`**:
   - **removed**: `transmitCardRequest(CardRequestSpi, ChannelControl)` and `releaseChannel()`;
   - **added**:
@@ -641,15 +641,15 @@ The selection mode is no longer a parameter: it is carried by the **type of the 
 
 > **TC remark (Stéphane)**: the scenarios discriminate the **applications** of a **single physical card**; the API keeps the term *card* because a selection case also targets cards without any application, such as storage cards. This is now made explicit in the specification, in the `CardSelectionManager` section.
 
-> Compared with the previous working version of this document, `MultipleCardSelectionManager` is renamed `SequentialCardSelectionManager` (as are its result and its factory operation): the qualifier describes the **scenario execution mode**, not a number of cards. Likewise, `prepareSelection` becomes `prepareSelectionCase` and `selectionId` becomes `selectionCaseId`.
+> Compared with the previous working version of this document, `MultipleCardSelectionManager` is renamed `SequentialCardSelectionManager` (as are its result and its factory operation): the qualifier describes the **scenario execution mode**, not a number of cards. Likewise, `prepareSelection` becomes `prepareIsoSelectionCase` or `prepareBasicSelectionCase`, depending on the family of the selector, and `selectionId` becomes `selectionCaseId`.
 
 - **Factory**: `createCardSelectionManager()` is replaced by `createSingleCardSelectionManager()`, `createSequentialCardSelectionManager()` and `createMultichannelCardSelectionManager()`.
 - **`CardSelectionManager`** becomes the common interface and only keeps the mode-independent operations:
-  - `prepareSelectionCase(selectionCaseId: Int, cardSelector: CardSelector, cardSelectionExtension: CardSelectionExtension) → Self` — the selection identifier is **chosen by the application** (instead of an index returned by the API); it must be unique within the scenario; selections are executed in preparation order;
+  - `prepareIsoSelectionCase(selectionCaseId: Int, cardSelector: IsoCardSelector, cardSelectionExtension: IsoCardSelectionExtension) → Self` — the selection identifier is **chosen by the application** (instead of an index returned by the API); it must be unique within the scenario; selections are executed in preparation order;
   - `exportCardSelectionScenario() → String`;
   - `importCardSelectionScenario(cardSelectionScenario: String) → Self` — **replaces** the current scenario (instead of returning the index of the last imported selection);
   - `exportProcessedCardSelectionScenario() → String`.
-- **Operations specific to each manager** (typed by their result): `processCardSelectionScenario`, `scheduleCardSelectionScenario` and `parseScheduledCardSelectionsResponse` (single-channel only), `importProcessedCardSelectionScenario` (the imported processed scenario must come from a manager of the same type).
+- **Operations specific to each manager** (typed by their result): `processCardSelectionScenario`, `scheduleCardSelectionScenario`, `parseScheduledCardSelectionsResponse` and `prepareBasicSelectionCase` (single-channel only), `importProcessedCardSelectionScenario` (the imported processed scenario must come from a manager of the same type).
 - `scheduleCardSelectionScenario(observableCardReader: ObservableCardReader, cardPresenceNotificationPolicy: CardPresenceNotificationPolicy) → Unit` no longer has an execution policy parameter.
 
 #### Selection results
@@ -671,7 +671,38 @@ The selection mode is no longer a parameter: it is carried by the **type of the 
 - The intermediate interface `CommonIsoCardSelector<T>` is removed; its nested enumerations become `FileOccurrence` and `FileControlInformation` (namespace `reader.selection`).
 - `filterByDfName(String)` (AID in hexadecimal) is removed: `dfName` is a `ByteArray`.
 
-### 10.3 Rationale
+#### Selector and extension pairing
+
+A selection case is the pairing of a card selector with the selection extension of the **same family**. The
+preparation operations carry that pairing in their signature, so a mismatch can no longer be expressed:
+
+| Family | Selector | Selection extension | Preparation operation |
+|---|---|---|---|
+| ISO/IEC 7816-4 | `IsoCardSelector` | `IsoCardSelectionExtension` | `prepareIsoSelectionCase`, on every manager |
+| Non-ISO | `BasicCardSelector` | `BasicCardSelectionExtension` | `prepareBasicSelectionCase`, on the single-channel managers only |
+
+- `CardSelectionExtension`, the former common marker, is **removed**: no operation accepted it any more, and each
+  card extension now declares its family. `CalypsoCardSelectionExtension` and `GenericCardSelectionExtension` are
+  ISO extensions; `StorageCardSelectionExtension` and `LegacySamSelectionExtension` are basic ones.
+- Being restricted to ISO/IEC 7816-4 cards, `MultichannelCardSelectionManager` exposes only the ISO preparation
+  operation: its restriction is no longer a sentence in the documentation but a property of its surface.
+- A single scenario MAY still mix the two families — an ISO case and a basic one, for a terminal accepting both a
+  Calypso card and a storage card — since both operations feed the same scenario.
+
+### 10.3 Card API — selection SPIs per family
+
+The same pairing applies to the card-extension side:
+
+- `CardSelectionExtensionSpi` keeps only `getCardSelectionRequest()`; the parsing of the selection response moves to
+  `BasicCardSelectionExtensionSpi` (`parse(…) → SmartCardSpi`) and `IsoCardSelectionExtensionSpi`
+  (`parse(…) → IsoSmartCardSpi`), counterparts of the two public markers.
+- `IsoSmartCardSpi` is inserted between `SmartCardSpi` and `MultichannelSmartCardSpi`, so that the multi-channel
+  facet derives from the ISO one. A card extension that is not ISO can therefore no longer produce a smart card
+  active on a logical channel.
+- The correspondence table of the Card API lists one row per family, and gains the `IsoSmartCard` /
+  `IsoSmartCardSpi` row that was missing.
+
+### 10.4 Rationale
 
 - **No side effect**: the selection mode is set when the manager is created.
 - **Unambiguous results**: each result only exposes what makes sense in its mode; deducible properties and the "channel 0 card" / "first active index" contradiction disappear.
@@ -697,7 +728,7 @@ The Terminal APIs were until now defined by Java interfaces. This model de facto
 | **Enumerations** | enumerations nested in an interface | **top-level** enumerations, named autonomously | `CardReaderEvent.Type` → `CardReaderEventType` |
 | **Data specific to an enumeration value** | methods of the enumeration | **properties** of the enumeration | `StorageCardProductType.blockSize` |
 | **Closed types** | open generic interface | **sealed interface** | `CardSelector`, `SignatureComputationData`, `SignatureVerificationData` |
-| **Interfaces without operations** | empty interface | **marker interface** | `ScheduledCardSelectionsResponse`, `CardSelectionExtension` |
+| **Interfaces without operations** | empty interface | **marker interface** | `ScheduledCardSelectionsResponse`, `BasicCardSelectionExtension`, `IsoCardSelectionExtension` |
 | **Errors** | `…Exception` classes (checked or unchecked) | errors named **without suffix**, carrying `message: String` and `cause: Any?` | `CardCommunicationException` → `CardCommunication` |
 | **Technical suffixes** | `…Spi`, `…Api` on the data types of the Card API and the crypto APIs | removed for **data**; kept for contract interfaces | `ApduRequestSpi` → `ApduRequest`, `SvCommandSecurityDataApi` → `SvCommandSecurityData` |
 | **Unique operation names** | overloads (same name, different parameters) | **one unique name per operation** within an interface and its hierarchy; `By…`, `With…`, `For…` suffixes | `prepareSelectFile` → `prepareSelectFileByLid` / `prepareSelectFileByControl` |
@@ -948,7 +979,8 @@ This annex lists, for each API, what becomes of each element of the Java version
 | `ReaderProtocolNotSupportedException` | Removed |
 | `reader.selection.InvalidCardResponseException` | Removed (duplicate) |
 | `CardSelectionManager.setMultipleSelectionMode()`, `prepareReleaseChannel()` | Removed |
-| `CardSelectionManager.prepareSelection(CardSelector<?>, CardSelectionExtension) → int` | → `prepareSelectionCase(selectionCaseId: Int, cardSelector: CardSelector, cardSelectionExtension: CardSelectionExtension) → Self` |
+| `CardSelectionManager.prepareSelection(CardSelector<?>, CardSelectionExtension) → int` | → `prepareIsoSelectionCase(selectionCaseId: Int, cardSelector: IsoCardSelector, cardSelectionExtension: IsoCardSelectionExtension) → Self` on every manager, and `prepareBasicSelectionCase(selectionCaseId: Int, cardSelector: BasicCardSelector, cardSelectionExtension: BasicCardSelectionExtension) → Self` on the single-channel managers |
+| `CardSelectionExtension` (marker) | Removed → split into `BasicCardSelectionExtension` and `IsoCardSelectionExtension`, each paired with the selector of its family |
 | `CardSelectionManager.importCardSelectionScenario(String) → int` | → `importCardSelectionScenario(cardSelectionScenario: String) → Self` (replaces the scenario) |
 | `CardSelectionManager.processCardSelectionScenario(CardReader)` | → `processCardSelectionScenario(reader)` on `SingleCardSelectionManager` / `SequentialCardSelectionManager`; `processCardSelectionScenario(reader, channelSelectionPolicy)` on `MultichannelCardSelectionManager` |
 | `CardSelectionManager.scheduleCardSelectionScenario(ObservableCardReader, NotificationMode)` | → `scheduleCardSelectionScenario(observableCardReader, cardPresenceNotificationPolicy)` on the single-channel managers |
@@ -979,9 +1011,10 @@ This annex lists, for each API, what becomes of each element of the Java version
 | `CardResponseApi` (`getApduResponses`, `isLogicalChannelOpen`) | → `CardResponse` data class (`apduResponses`); `isLogicalChannelOpen` removed |
 | `CardSelectionRequestSpi` (`getSuccessfulSelectionStatusWords`, `getCardRequest`) | → `CardSelectionRequest` data class (`successfulSelectionStatusWords = setOf(0x9000)`, `cardRequest: CardRequest? = null`) |
 | `CardSelectionResponseApi` (`getPowerOnData`, `getSelectApplicationResponse`, `hasMatched`, `getCardResponse`) | → `CardSelectionResponse` data class (same information, explicit nullability) + `channel: Int` |
-| `CardSelectionExtensionSpi.getCardSelectionRequest()`, `parse(CardSelectionResponseApi)` | → `CardSelectionRequest` / `CardSelectionResponse` types |
+| `CardSelectionExtensionSpi.getCardSelectionRequest()`, `parse(CardSelectionResponseApi)` | → `CardSelectionRequest` / `CardSelectionResponse` types; `CardSelectionExtensionSpi` now keeps only `getCardSelectionRequest()`, `parse` moving to the two family SPIs |
 | `SmartCardSpi` | `deactivate() → Unit` added |
-| — | Added: `MultichannelSmartCardSpi` (`getChannel() → Int`) |
+| — | Added: `BasicCardSelectionExtensionSpi` (`parse(…) → SmartCardSpi`) and `IsoCardSelectionExtensionSpi` (`parse(…) → IsoSmartCardSpi`), counterparts of the two public markers |
+| — | Added: `IsoSmartCardSpi` (marker) and `MultichannelSmartCardSpi` (`getChannel() → Int`), the latter now extending the former |
 | `ProxyReaderApi.transmitCardRequest(CardRequestSpi, ChannelControl)`, `releaseChannel()` | Removed → `transmitCardRequest(cardRequest, smartCard)`, `transmitCardRequestAndCloseChannel(cardRequest, multichannelSmartCard)`, `closeChannel(multichannelSmartCard)` |
 | `ChannelControl` | Removed |
 | `AbstractApduException` (`getCardResponse`, `isCardResponseComplete`) | Removed; `cardResponse: CardResponse?` and `isCardResponseComplete: Boolean` properties carried by the APDU errors |
