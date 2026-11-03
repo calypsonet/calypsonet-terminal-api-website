@@ -10,8 +10,9 @@ weight: 20
 ## Current work and future developments
 
 The major update of the whole family of terminal APIs, prepared throughout 2026 to support the future integration of
-the Calypso OpenSAM solution, was approved by the TC Terminal and published in October 2026. It mainly brings support
-for multiple logical channels and the timing countermeasures against relay attacks and card emulation.
+the Calypso OpenSAM solution, was approved by the TC Terminal in October 2026. It mainly brings support for multiple
+logical channels and the timing countermeasures against relay attacks and card emulation. The specifications are
+available as a preview on the documentation site; their formal release is pending.
 
 Next, we will work to provide high-level APIs for managing the secure channels required to personalize OpenSAM
 applications or GlobalPlatform-compatible Java Card applets.
@@ -28,7 +29,7 @@ applications or GlobalPlatform-compatible Java Card applets.
 </thead>
 <tbody>
   <tr>
-    <td rowspan="9">2026/10/28</td>
+    <td rowspan="9"><mark>scheduled</mark></td>
     <td>Reader API 3.0</td>
     <td rowspan="9">Wide refactoring of the whole family of terminal APIs, mainly providing
     <ul>
