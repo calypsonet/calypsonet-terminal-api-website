@@ -9,8 +9,8 @@ weight: 5
 
 ---
 
-> **Document status**: **approved by the CNA TC Terminal**. The nine specifications it describes were published on
-> **2026-10-28**.
+> **Document status**: **approved by the CNA TC Terminal**. The nine specifications it describes are available as a
+> preview on the documentation site; their formal release is pending.
 
 ## Preamble
 
@@ -913,11 +913,13 @@ This document submits to the validation of the **CNA TC Terminal**:
 
 ### 19.3 Next steps
 
-The versions were validated by the TC Terminal, and the nine specifications were finalised and published on
-2026-10-28. The following steps remain:
+The versions were validated by the TC Terminal and the nine specifications are available as a preview on the
+documentation site. Their formal release is pending, and the following steps remain:
 
-1. **Writing and publication of the technical migration guide** (see §18).
-2. **Communication** of the availability of the new versions to integrators and to the CNA working groups concerned.
+1. **Finalisation of the specifications**: moving the repositories from their `…-SNAPSHOT` versions to their final
+   versions; removal or specification of the elements under study (§17); then tagging and publishing the release.
+2. **Writing and publication of the technical migration guide** (see §18).
+3. **Communication** of the availability of the new versions to integrators and to the CNA working groups concerned.
 
 ---
 
