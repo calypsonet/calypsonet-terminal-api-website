@@ -55,6 +55,7 @@ Since version 1.0+, the Reader API offers an **“ObservableReader” interface 
 The STA verifies the **maximum sizes supported by contactless readers for transmitting an APDU** command or response.
 > [**PCD5.1a**]  PCD internal output buffer size (used for Maximum size
 > of UT_APDU):
+> 
 > [**PCD5.1b**]  PCD internal input buffer size (used for
 > Maximum size of response UT_APDU):
 
