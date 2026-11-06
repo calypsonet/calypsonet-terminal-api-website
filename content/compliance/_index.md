@@ -76,9 +76,9 @@ The optional support for **managing multiple logical channels** (requirement `RL
 Regarding the optional “Detection” applicability,
 - For rule `RL-DET-REMNOTIF.1`: The Reader API 2.0+ and later define an `ObservableReader` interface that allows the ticketing software layer to be notified of card insertion or **removal events only during the transaction ending phase** (which corresponds to the practical use case).
 - Rule `RL-DET-REMCTRL.1` is not supported; this requirement is irrelevant since, for a specific reader, the card detection mechanism cannot be selected; the reader layer only needs to be able to adapt to the detection methods implemented by compatible readers.
-- The rule `RL-DET-REMCFG.1` cannot be directly supported by the “high-level” reader API: this requirement can potentially be supported for the readers concerned—on an optional basis—by a "low-level" reader API.
+- The rule `RL-DET-REMCFG.1` cannot be directly supported by the “high-level” reader API: this requirement can potentially be supported for the readers concerned, on an optional basis, by a "low-level" reader API.
 
-Regarding support for the `RL-SEL-USAGE.2` rule related to the `Selection£ applicability, the **Reader API, since version 2.0+, does indeed require initiating a transaction with a card application using a “Select Application” APDU command** with a “DF Name” parameter provided by the ticketing software layer, **but only for smart card solutions complying with ISO 7816-4** (which meets the practical need).
+Regarding support for the `RL-SEL-USAGE.2` rule related to the `Selection` applicability, the **Reader API, since version 2.0+, does indeed require initiating a transaction with a card application using a “Select Application” APDU command** with a “DF Name” parameter provided by the ticketing software layer, **but only for smart card solutions complying with ISO 7816-4** (which meets the practical need).
 
 Support for all other reader layer requirements should be handled transparently by a software library that implements the terminal Reader & Card APIs.
 
@@ -90,7 +90,8 @@ The Calypso APIs have been designed to provide wide functional compatibility wit
 
 The Calypso APIs allow software libraries that implement them to comply with all requirements of the Calypso layer, except for these two.
 - The `CL-SEL-SNHEADER.2` requirement defined for support of the Calypso `HCE` feature is not “directly” supported: in this case, the validity of the HCE token is not automatically verified internally, but the Calypso Card API provides the ticketing software layer with the elements needed to perform this verification at the upper layer.
-- The `CL-SV-RECOVERY.1` requirement related to `Stored Value` functionality is not supported: this requirement appears to be unnecessary. It is preferable to handle Stored Value transaction recovery by performing this transaction within a secure Calypso session that supports ratification.
-
+- The `CL-SV-RECOVERY.1` requirement related to `Stored Value` functionality is not supported:
+  - The definition of this requirement does not specify that this method of recovering a Stored Value transaction is possible only on the same ticketing terminal that detected the previous interruption, and only if that terminal has maintained the previous SAM context of the failed transaction (no other card must have been presented to the terminal before the recovery).
+  - The Calypso Card API supports another, more reliable method for recovering Stored Value transactions: by recommending that a Stored Value transaction be nested within a secure Calypso session, in order to benefit from proof of ratification.
 
 
