@@ -2,16 +2,16 @@
   {
     "name": "doc",
     "commit": {
-      "sha": "4d80ef17d1bf703269787a88f9e0b5437aaba7a0",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-api-spec/commits/4d80ef17d1bf703269787a88f9e0b5437aaba7a0"
+      "sha": "b4d329564b40b308a0b0fae1bdb616d5cf506018",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-api-spec/commits/b4d329564b40b308a0b0fae1bdb616d5cf506018"
     },
     "protected": false
   },
   {
     "name": "main",
     "commit": {
-      "sha": "ed2a614573ba8a7b35c7ceda9d709528db242957",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-api-spec/commits/ed2a614573ba8a7b35c7ceda9d709528db242957"
+      "sha": "39ecd52c42a231c8caff1333c4aa4cc1c3c0184d",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-crypto-legacysam-api-spec/commits/39ecd52c42a231c8caff1333c4aa4cc1c3c0184d"
     },
     "protected": false
   }

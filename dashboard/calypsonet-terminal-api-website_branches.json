@@ -2,16 +2,24 @@
   {
     "name": "gh-pages",
     "commit": {
-      "sha": "83e265b12f5790cc673e7d55fddce219b408492d",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/commits/83e265b12f5790cc673e7d55fddce219b408492d"
+      "sha": "4e9b058d2fdc0edcfd829cf739dd707b7919c9c3",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/commits/4e9b058d2fdc0edcfd829cf739dd707b7919c9c3"
     },
     "protected": false
   },
   {
     "name": "main",
     "commit": {
-      "sha": "3ac3b7af7f236850a515064617a4b8dbd969675a",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/commits/3ac3b7af7f236850a515064617a4b8dbd969675a"
+      "sha": "ba427666481e9b848f9f9b1dfc03d0f288544347",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/commits/ba427666481e9b848f9f9b1dfc03d0f288544347"
+    },
+    "protected": false
+  },
+  {
+    "name": "uml-diagrams",
+    "commit": {
+      "sha": "aa597c46f48f466ef0af3386c13c1a565f0294c7",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-api-website/commits/aa597c46f48f466ef0af3386c13c1a565f0294c7"
     },
     "protected": false
   }
