@@ -261,14 +261,14 @@ Two threats are detected through the **duration of the exchanges**, and the new 
 #### Threat model
 
 - **Targeted attack surface**: **application-level attack** (software relay of APDUs, card emulation by a generic device), as opposed to attacks at the physical RF transport level, which are covered by hardware countermeasures.
-- **Unit** of the bounds and of the measured durations: the **microsecond** (`µs`). The millisecond is too coarse for the shortest exchanges, in particular a storage card read, which takes about 2 ms. The **effective resolution of the measurement depends on the implementation**, which must document it.
+- **Units**: every duration carries the suffix of its unit. The **microsecond** (`...Us`) is the unit of the family — Card API, Generic Card API and Storage Card API — and it is the unit of the measurement. The **Calypso Card API** is the only one to declare its bounds in **milliseconds** (`...Ms`), the order of magnitude of the incompressible delay introduced by a relay; the card extension converts them before building the request. The **effective resolution of the measurement depends on the implementation**, which must document it.
 - **Measurement location**: the **Terminal Reader API implementation** measures the effective duration of each APDU exchange and compares it with the bound declared on the request. The Calypso duration bounds are declared in the Calypso Card API and each covers **a single command exchange** (_Open Secure Session_, _Close Secure Session_, _SV Reload_ / _SV Debit_ / _SV Undebit_).
 - **Behaviour after an overrun**: the Card API raises the **`ApduExchangeDurationExceeded`** error, which the higher-level extensions intercept and propagate to the application as an **`InvalidCardResponse`**. The Calypso Card API now specifies this behaviour: if a **secure session is open, it is automatically cancelled** before the error is propagated, so that no modification performed during the session is validated by the card; **outside a session** (SV command), there is nothing to cancel and only the error is propagated to the ticketing layer, which decides what to do according to its own context. In the Generic Card API, an overrun raises `InvalidCardResponse`, whose message identifies the offending command.
 
 ### 3.2 Card API
 
-- **Request side**: `ApduRequest.apduExchangeMaxDuration: Long? = null` — maximum tolerated duration for the exchange (in microseconds); `null` means "no bound".
-- **Response side**: `ApduResponse.apduExchangeDuration: Long?` — effective duration of the exchange; `null` means "duration not measured".
+- **Request side**: `ApduRequest.apduExchangeMaxDurationUs: Long? = null` — maximum tolerated duration for the exchange (in microseconds); `null` means "no bound".
+- **Response side**: `ApduResponse.apduExchangeDurationUs: Long?` — effective duration of the exchange; `null` means "duration not measured".
 - **New error** `ApduExchangeDurationExceeded` — raised by `ProxyReaderApi.transmitCardRequest(...)` when the effective duration exceeds the declared bound. Like the other APDU errors, it carries `cardResponse` and `isCardResponseComplete`.
 - The Card API specification now documents this mechanism as a **practical solution for implementing anti-relay countermeasures** (*APDU exchange execution-time control* chapter).
 
@@ -276,18 +276,18 @@ Two threats are detected through the **duration of the exchanges**, and the new 
 
 Each bound is declared according to two families of settings, each with a dedicated operation:
 
-- **by CSN** (`…ByCsn(maxDuration: Long, csnMin: Long)`): `csnMin` is a **threshold** on the CSN (Calypso Serial Number, i.e. the Application Serial Number, compared as an unsigned 64-bit integer);
-- **by FCI** (`…ByFci(maxDuration: Long, fciRegex: String)`): `fciRegex` is a regular expression applied to the **whole FCI** returned by *Select Application* (excluding the status word), represented as an uppercase hexadecimal string without separators.
+- **by CSN** (`…ByCsn(maxDurationMs: Long, csnMin: Long)`): `csnMin` is a **threshold** on the CSN (Calypso Serial Number, i.e. the Application Serial Number, compared as an unsigned 64-bit integer);
+- **by FCI** (`…ByFci(maxDurationMs: Long, fciRegex: String)`): `fciRegex` is a regular expression applied to the **whole FCI** returned by *Select Application* (excluding the status word), represented as an uppercase hexadecimal string without separators.
 
 - **New parent interface `SecuritySettings`** (`calypso.card.transaction`), extended by `SymmetricCryptoSecuritySettings` and `AsymmetricCryptoSecuritySettings`. It carries the settings shared by every secure transaction, whatever the cryptographic nature of the session — four new operations:
-  - `assignOpenSecureSessionMaxDurationByCsn(maxDuration: Long, csnMin: Long) → Self` and `assignOpenSecureSessionMaxDurationByFci(maxDuration: Long, fciRegex: String) → Self` — maximum duration of the _Open Secure Session_ command exchange;
-  - `assignCloseSecureSessionMaxDurationByCsn(maxDuration: Long, csnMin: Long) → Self` and `assignCloseSecureSessionMaxDurationByFci(maxDuration: Long, fciRegex: String) → Self` — maximum duration of the _Close Secure Session_ command exchange.
+  - `assignOpenSecureSessionMaxDurationByCsn(maxDurationMs: Long, csnMin: Long) → Self` and `assignOpenSecureSessionMaxDurationByFci(maxDurationMs: Long, fciRegex: String) → Self` — maximum duration of the _Open Secure Session_ command exchange;
+  - `assignCloseSecureSessionMaxDurationByCsn(maxDurationMs: Long, csnMin: Long) → Self` and `assignCloseSecureSessionMaxDurationByFci(maxDurationMs: Long, fciRegex: String) → Self` — maximum duration of the _Close Secure Session_ command exchange.
 - **`SymmetricCryptoSecuritySettings`** — two new specific operations:
-  - `assignSvCommandMaxDurationByCsn(maxDuration: Long, csnMin: Long) → Self` and `assignSvCommandMaxDurationByFci(maxDuration: Long, fciRegex: String) → Self` — maximum duration of the exchange of one of the _SV Reload_, _SV Debit_ or _SV Undebit_ commands.
+  - `assignSvCommandMaxDurationByCsn(maxDurationMs: Long, csnMin: Long) → Self` and `assignSvCommandMaxDurationByFci(maxDurationMs: Long, fciRegex: String) → Self` — maximum duration of the exchange of one of the _SV Reload_, _SV Debit_ or _SV Undebit_ commands.
 
 > **Resolution rule** (for a given card, per kind of bounded operation):
-> 1. **CSN-based settings**: each call defines a **range** bounded by its `csnMin` and the immediately higher declared `csnMin` (or +∞). If the card's CSN belongs to a range whose `maxDuration` differs from `Long.MAX_VALUE`, this value applies.
-> 2. **FCI-based settings**: otherwise, the FCI-based settings are evaluated **in declaration order** and the first one whose expression matches the FCI applies; a `maxDuration` equal to `Long.MAX_VALUE` then means "no bound".
+> 1. **CSN-based settings**: each call defines a **range** bounded by its `csnMin` and the immediately higher declared `csnMin` (or +∞). If the card's CSN belongs to a range whose `maxDurationMs` differs from `Long.MAX_VALUE`, this value applies.
+> 2. **FCI-based settings**: otherwise, the FCI-based settings are evaluated **in declaration order** and the first one whose expression matches the FCI applies; a `maxDurationMs` equal to `Long.MAX_VALUE` then means "no bound".
 > 3. Otherwise, no bound applies.
 
 Consequences and details:
@@ -295,12 +295,12 @@ Consequences and details:
 - CSN-based settings act as **overrides**: a default bound is expressed by a last FCI-based setting with the expression `.*`, not by a CSN-based setting with the lowest threshold, which would shadow every FCI-based setting; `Long.MAX_VALUE` on a CSN range hands the decision back to the FCI-based settings for the cards of that range;
 - the match applies to the **whole string** (implicitly anchored at both ends); a byte is matched by `..`;
 - to remain portable (Java, .NET, Swift/ICU, Rust), the expression is restricted to a **common subset**: literal characters, `.`, classes `[...]`, quantifiers `*`, `+`, `?`, `{n}`, `{n,}`, `{n,m}`, alternation `|` and groups `(...)`; backreferences, lookaround assertions, anchors and inline flags are excluded;
-- an invalid expression or one outside the subset, or a `maxDuration` that is not strictly positive, is rejected **at call time** (*Argument* pre-condition);
+- an invalid expression or one outside the subset, or a `maxDurationMs` that is not strictly positive, is rejected **at call time** (*Argument* pre-condition);
 - a new call with an already declared `csnMin` replaces the previous value; a new call with an identical `fciRegex` replaces the value while **keeping its position** in the evaluation order;
 - when no FCI is available, no FCI-based setting matches;
 - **FCI integrity**: the FCI is obtained during the selection, outside any session, and is therefore not authenticated. If the expression filters on the *startup info* data, the integrator **must** execute a `prepareGetData(FCI_FOR_CURRENT_DF)` inside the session to ensure the integrity of the FCI obtained during the selection. `prepareGetData` is now allowed inside a session **for this tag only**; if the returned value differs from the *Select Application* response, the `InconsistentData` error is raised by `processCommands` (not by `prepareGetData`).
 
-`maxDuration` comes first, as it is the value the operation assigns.
+`maxDurationMs` comes first, as it is the value the operation assigns.
 
 > **Measured duration**: each bound covers the **relevant command exchange alone**, from the transmission of the command to the reception of its response; the other commands of the secure session or of the SV operation are not counted. **Consequence of an overrun**: an open secure session is automatically cancelled and the error is propagated as an `InvalidCardResponse`; outside a session, only the error is propagated (see §3.1).
 
@@ -308,13 +308,13 @@ Consequences and details:
 
 ### 3.4 Generic Card API
 
-- **`GenericCardTransactionManager.prepareCommandWithMaxDuration(commandId: Int, apdu: ByteArray, maxDuration: Long) → Self`** — prepares a command with an identifier (see Theme 7) and a duration bound. If the effective duration exceeds the bound, the `InvalidCardResponse` error identifies the offending command.
+- **`GenericCardTransactionManager.prepareCommandWithMaxDuration(commandId: Int, apdu: ByteArray, maxDurationUs: Long) → Self`** — prepares a command with an identifier (see Theme 7) and a duration bound. If the effective duration exceeds the bound, the `InvalidCardResponse` error identifies the offending command.
 
 > The Generic Card API thus exposes the relay countermeasure **at the level of each individual command**, consistent with its usage model (APDU sequences without an explicit secure transaction).
 
 ### 3.5 Storage Card API
 
-- **New data class `StorageCardSecuritySettings`** (`storagecard.transaction`), with the property `readCommandMaxDurations: Map<StorageCardProductType, Long> = emptyMap()`: maximum duration, in microseconds, of the exchange of **a single read command**, for each product type. A product type that is absent is not bounded. One instance may be shared by every transaction of a terminal.
+- **New data class `StorageCardSecuritySettings`** (`storagecard.transaction`), with the property `readCommandMaxDurationsUs: Map<StorageCardProductType, Long> = emptyMap()`: maximum duration, in microseconds, of the exchange of **a single read command**, for each product type. A product type that is absent is not bounded. One instance may be shared by every transaction of a terminal.
 - **Factory operation changed**: `createStorageCardTransactionManager(reader, card, securitySettings) → StorageCardTransactionManager`. A default `StorageCardSecuritySettings` disables every duration bound.
 - **Scope**: the bound applies to the read commands prepared on the transaction manager (`prepareReadBlock`, `prepareReadBlocks`, `prepareSt25ReadSystemBlock`); it applies neither to the selection, nor to the write and authentication commands. An overrun raises `StorageCardInvalidCardResponse`, which already carries `blockAddress` and `commandId`.
 
@@ -561,7 +561,7 @@ The new versions generalise a single mechanism: an **integer identifier `command
 ### 8.2 Generic Card API
 
 - `prepareCommandWithId(commandId: Int, apdu: ByteArray) → Self`;
-- `prepareCommandWithMaxDuration(commandId: Int, apdu: ByteArray, maxDuration: Long) → Self` (see Theme 2);
+- `prepareCommandWithMaxDuration(commandId: Int, apdu: ByteArray, maxDurationUs: Long) → Self` (see Theme 2);
 - `getLastExecutionResponse(commandId: Int) → ByteArray?` — response of the identified command; if several commands share the same identifier, the most recently processed one is returned.
 - `prepareCommand(apdu: ByteArray) → Self` remains available for unidentified commands.
 
@@ -786,7 +786,7 @@ Several data types of the production versions mixed **data** and **computations*
 
 ### 12.4 Card API
 
-- **`ApduResponse`** only keeps `apdu` (and `apduExchangeDuration`): `getDataOut()` and `getStatusWord()` are removed, as they can be deduced from `apdu`.
+- **`ApduResponse`** only keeps `apdu` (and `apduExchangeDurationUs`): `getDataOut()` and `getStatusWord()` are removed, as they can be deduced from `apdu`.
 - `ApduRequestSpi`, `CardRequestSpi`, `CardSelectionRequestSpi`, `ApduResponseApi`, `CardResponseApi` and `CardSelectionResponseApi` become the data classes `ApduRequest`, `CardRequest`, `CardSelectionRequest`, `ApduResponse`, `CardResponse` and `CardSelectionResponse`. Default values are explicit: `successfulStatusWords = setOf(0x9000)`, `successfulSelectionStatusWords = setOf(0x9000)`, `info = null`, `cardRequest = null`.
 
 ### 12.5 Crypto Symmetric API
@@ -1005,8 +1005,8 @@ This annex lists, for each API, what becomes of each element of the Java version
 
 | Element in production | What it becomes |
 |---|---|
-| `ApduRequestSpi` (`getApdu`, `getSuccessfulStatusWords`, `getInfo`) | → `ApduRequest` data class (`apdu`, `successfulStatusWords = setOf(0x9000)`, `info: String? = null`) + `apduExchangeMaxDuration: Long? = null` |
-| `ApduResponseApi` (`getApdu`, `getDataOut`, `getStatusWord`, `Serializable`) | → `ApduResponse` data class (`apdu`) + `apduExchangeDuration: Long?`; `getDataOut`, `getStatusWord` removed |
+| `ApduRequestSpi` (`getApdu`, `getSuccessfulStatusWords`, `getInfo`) | → `ApduRequest` data class (`apdu`, `successfulStatusWords = setOf(0x9000)`, `info: String? = null`) + `apduExchangeMaxDurationUsration: Long? = null` |
+| `ApduResponseApi` (`getApdu`, `getDataOut`, `getStatusWord`, `Serializable`) | → `ApduResponse` data class (`apdu`) + `apduExchangeDurationUs: Long?`; `getDataOut`, `getStatusWord` removed |
 | `CardRequestSpi` (`getApduRequests`, `stopOnUnsuccessfulStatusWord`) | → `CardRequest` data class |
 | `CardResponseApi` (`getApduResponses`, `isLogicalChannelOpen`) | → `CardResponse` data class (`apduResponses`); `isLogicalChannelOpen` removed |
 | `CardSelectionRequestSpi` (`getSuccessfulSelectionStatusWords`, `getCardRequest`) | → `CardSelectionRequest` data class (`successfulSelectionStatusWords = setOf(0x9000)`, `cardRequest: CardRequest? = null`) |
@@ -1135,7 +1135,7 @@ This annex lists, for each API, what becomes of each element of the Java version
 | `prepareApdu(String)` | Removed |
 | `prepareApdu(byte[])` | → `prepareCommand(apdu: ByteArray)` |
 | `prepareApdu(byte cla, byte ins, byte p1, byte p2, byte[] dataIn, Byte le)` | Removed |
-| — | Added: `prepareCommandWithId(commandId, apdu)`, `prepareCommandWithMaxDuration(commandId, apdu, maxDuration)`, `getLastExecutionResponse(commandId) → ByteArray?` |
+| — | Added: `prepareCommandWithId(commandId, apdu)`, `prepareCommandWithMaxDuration(commandId, apdu, maxDurationUs)`, `getLastExecutionResponse(commandId) → ByteArray?` |
 | `getResponsesAsByteArrays()` | → `getLastExecutionResponses() → List<ByteArray>` |
 | `getResponsesAsHexStrings()` | Removed |
 | `GenericCardApiFactory.createCardTransaction(reader, card)` | → `createGenericCardTransactionManager(reader, card)` |
