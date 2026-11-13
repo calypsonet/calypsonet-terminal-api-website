@@ -2,16 +2,16 @@
   {
     "name": "doc",
     "commit": {
-      "sha": "103243b6dbe9cdf6bbc60c3ff9957c09d2ba1c1f",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-genericcard-api-spec/commits/103243b6dbe9cdf6bbc60c3ff9957c09d2ba1c1f"
+      "sha": "7ff02abed939ef8b96231e2963f3af8353f22a3b",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-genericcard-api-spec/commits/7ff02abed939ef8b96231e2963f3af8353f22a3b"
     },
     "protected": false
   },
   {
     "name": "main",
     "commit": {
-      "sha": "6fc877b734d8cf3a9e4a6aee65736bbba45a74bc",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-genericcard-api-spec/commits/6fc877b734d8cf3a9e4a6aee65736bbba45a74bc"
+      "sha": "b5c8c9e703378ec5e226723c8472d4244fb3b2d9",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-genericcard-api-spec/commits/b5c8c9e703378ec5e226723c8472d4244fb3b2d9"
     },
     "protected": false
   }

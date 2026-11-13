@@ -2,27 +2,27 @@
   "total_count": 2,
   "check_runs": [
     {
-      "id": 126006766248,
+      "id": 131983864143,
       "name": "publish-snapshot / reusable-publish-snapshot",
-      "node_id": "CR_kwDOOlf9AM8AAAAdVpaqqA",
-      "head_sha": "d739197968e49d9edb02a3ccac8d361e9a42c51e",
-      "external_id": "6af1f972-59d6-5a46-89e7-a42de091ca49",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/126006766248",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/41661845154/job/126006766248",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/41661845154/job/126006766248",
+      "node_id": "CR_kwDOOlf9AM8AAAAeutnxTw",
+      "head_sha": "31637415e6a0a87a3c53afa44ef23601cd143b95",
+      "external_id": "7017d415-7161-561c-9100-85c0b7699e09",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/131983864143",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/43454185182/job/131983864143",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/43454185182/job/131983864143",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-03T15:14:41Z",
-      "completed_at": "2026-11-03T15:15:20Z",
+      "started_at": "2026-11-13T15:35:54Z",
+      "completed_at": "2026-11-13T15:36:32Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/126006766248/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/131983864143/annotations"
       },
       "check_suite": {
-        "id": 112895720525
+        "id": 117665989267
       },
       "app": {
         "id": 15368,
@@ -119,27 +119,27 @@
       ]
     },
     {
-      "id": 126006762032,
+      "id": 131983855672,
       "name": "check-diagram-identity",
-      "node_id": "CR_kwDOOlf9AM8AAAAdVpaaMA",
-      "head_sha": "d739197968e49d9edb02a3ccac8d361e9a42c51e",
-      "external_id": "c85f9f33-2018-500e-9ca7-6ec38727f361",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/126006762032",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/41661843672/job/126006762032",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/41661843672/job/126006762032",
+      "node_id": "CR_kwDOOlf9AM8AAAAeutnQOA",
+      "head_sha": "31637415e6a0a87a3c53afa44ef23601cd143b95",
+      "external_id": "df4f8b5f-e106-5b5f-88b8-0db02c8102f9",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/131983855672",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/43454183804/job/131983855672",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/43454183804/job/131983855672",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-03T15:14:41Z",
-      "completed_at": "2026-11-03T15:14:49Z",
+      "started_at": "2026-11-13T15:35:48Z",
+      "completed_at": "2026-11-13T15:35:55Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/126006762032/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/131983855672/annotations"
       },
       "check_suite": {
-        "id": 112895716440
+        "id": 117665985917
       },
       "app": {
         "id": 15368,

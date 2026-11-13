@@ -2,16 +2,16 @@
   {
     "name": "doc",
     "commit": {
-      "sha": "0de46d332f90080f63e6e164ddf86cfb8dfd09b9",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/commits/0de46d332f90080f63e6e164ddf86cfb8dfd09b9"
+      "sha": "ebfe756c491dc7197ae308a297315037432558fd",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/commits/ebfe756c491dc7197ae308a297315037432558fd"
     },
     "protected": false
   },
   {
     "name": "main",
     "commit": {
-      "sha": "d739197968e49d9edb02a3ccac8d361e9a42c51e",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/commits/d739197968e49d9edb02a3ccac8d361e9a42c51e"
+      "sha": "31637415e6a0a87a3c53afa44ef23601cd143b95",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/commits/31637415e6a0a87a3c53afa44ef23601cd143b95"
     },
     "protected": false
   }

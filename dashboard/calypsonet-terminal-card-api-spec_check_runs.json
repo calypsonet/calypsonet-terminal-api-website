@@ -2,27 +2,27 @@
   "total_count": 2,
   "check_runs": [
     {
-      "id": 126006879454,
+      "id": 131983917949,
       "name": "publish-snapshot / reusable-publish-snapshot",
-      "node_id": "CR_kwDOHZ2SgM8AAAAdVphk3g",
-      "head_sha": "4d5b65a86617854ae437cc47e1bf7934e20bb1ca",
-      "external_id": "ad7c785e-cf43-56a8-900f-8ab2451c8509",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/126006879454",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/41661877093/job/126006879454",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/41661877093/job/126006879454",
+      "node_id": "CR_kwDOHZ2SgM8AAAAeutrDfQ",
+      "head_sha": "5f9cc0558fa32ca44af1cfc6738ff937b50b60d6",
+      "external_id": "f82b9b9f-7474-52c7-aa74-222b1d48580f",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/131983917949",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/43454202184/job/131983917949",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/43454202184/job/131983917949",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-03T15:14:53Z",
-      "completed_at": "2026-11-03T15:15:33Z",
+      "started_at": "2026-11-13T15:35:54Z",
+      "completed_at": "2026-11-13T15:36:33Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/126006879454/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/131983917949/annotations"
       },
       "check_suite": {
-        "id": 112895809503
+        "id": 117666033941
       },
       "app": {
         "id": 15368,
@@ -119,27 +119,27 @@
       ]
     },
     {
-      "id": 126006873674,
+      "id": 131983913738,
       "name": "check-diagram-identity",
-      "node_id": "CR_kwDOHZ2SgM8AAAAdVphOSg",
-      "head_sha": "4d5b65a86617854ae437cc47e1bf7934e20bb1ca",
-      "external_id": "c0602ece-53b6-50e6-ad05-50686cf03759",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/126006873674",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/41661875473/job/126006873674",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/41661875473/job/126006873674",
+      "node_id": "CR_kwDOHZ2SgM8AAAAeutqzCg",
+      "head_sha": "5f9cc0558fa32ca44af1cfc6738ff937b50b60d6",
+      "external_id": "a69d76e9-bef7-5b82-be77-2b19908d625f",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/131983913738",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/43454200972/job/131983913738",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/43454200972/job/131983913738",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-03T15:14:53Z",
-      "completed_at": "2026-11-03T15:15:00Z",
+      "started_at": "2026-11-13T15:35:54Z",
+      "completed_at": "2026-11-13T15:35:59Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/126006873674/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/131983913738/annotations"
       },
       "check_suite": {
-        "id": 112895805313
+        "id": 117666030438
       },
       "app": {
         "id": 15368,

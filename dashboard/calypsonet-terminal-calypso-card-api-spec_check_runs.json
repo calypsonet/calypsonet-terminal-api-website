@@ -2,27 +2,27 @@
   "total_count": 2,
   "check_runs": [
     {
-      "id": 126026498404,
+      "id": 131983592463,
       "name": "publish-snapshot / reusable-publish-snapshot",
-      "node_id": "CR_kwDOHZ2RGc8AAAAdV8PBZA",
-      "head_sha": "00b894e9745bd1ad22835b633bc1998a1b146b6c",
-      "external_id": "c9e65306-599d-5319-8641-feae7d8d5847",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/126026498404",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/41667458400/job/126026498404",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/41667458400/job/126026498404",
+      "node_id": "CR_kwDOHZ2RGc8AAAAeutXMDw",
+      "head_sha": "330dfce0716709427af9bc645e5e0a0cf962cd9f",
+      "external_id": "c80c87ad-358c-593f-80e0-3ea9fc73b993",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/131983592463",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/43454106264/job/131983592463",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/43454106264/job/131983592463",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-03T15:47:11Z",
-      "completed_at": "2026-11-03T15:48:12Z",
+      "started_at": "2026-11-13T15:35:48Z",
+      "completed_at": "2026-11-13T15:36:36Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/126026498404/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/131983592463/annotations"
       },
       "check_suite": {
-        "id": 112911355593
+        "id": 117665775025
       },
       "app": {
         "id": 15368,
@@ -119,27 +119,27 @@
       ]
     },
     {
-      "id": 126026492438,
+      "id": 131983586596,
       "name": "check-diagram-identity",
-      "node_id": "CR_kwDOHZ2RGc8AAAAdV8OqFg",
-      "head_sha": "00b894e9745bd1ad22835b633bc1998a1b146b6c",
-      "external_id": "8d870fc3-38e8-58d2-b268-c7d243d6a828",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/126026492438",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/41667457273/job/126026492438",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/41667457273/job/126026492438",
+      "node_id": "CR_kwDOHZ2RGc8AAAAeutW1JA",
+      "head_sha": "330dfce0716709427af9bc645e5e0a0cf962cd9f",
+      "external_id": "4f7ff468-ec6c-5183-8d57-a3480ef6a17d",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/131983586596",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/43454104558/job/131983586596",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/43454104558/job/131983586596",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-03T15:47:10Z",
-      "completed_at": "2026-11-03T15:47:17Z",
+      "started_at": "2026-11-13T15:35:48Z",
+      "completed_at": "2026-11-13T15:35:54Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
         "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/126026492438/annotations"
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/131983586596/annotations"
       },
       "check_suite": {
-        "id": 112911352150
+        "id": 117665770563
       },
       "app": {
         "id": 15368,
