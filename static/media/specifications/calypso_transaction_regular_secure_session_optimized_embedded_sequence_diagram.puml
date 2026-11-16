@@ -177,7 +177,7 @@ deactivate cardReader
 rapi->rapi: checks invalidation status
 rnote right rapi #Thistle
 ️⚠️if (card invalidated) → app not notified of card selection
-close channel & wait for card removal from reader
+the reader waits for the card removal before detecting a new card
 endrnote
 
 rapi-->app: **notify** scheduled card selections responsee
@@ -258,7 +258,7 @@ app->app: anti-passback management\n& communication failure recovery
 rnote right app #Thistle
 ️⚠️if (last event occurred shorter than the anti-pass delay)
 && (card status is ratified) → decline card transaction,
-close channel & wait for card removal from reader
+end the card processing & wait for card removal
 
 ️⚠️if (last event occurred shorter than the anti-pass delay)
 && (card status is none-ratified) → manage recovery transaction
@@ -437,11 +437,6 @@ card-->cardReader: ack
 cardReader-[#0000FF]->capi: [card certificate]
 deactivate cardReader
 
-hnote over cardReader #Orange
-reader in state:
-**Wait For Card Removal**
-endhnote
-
 == End of the contactless card transaction ==
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #2**</font>\ntransmit card request\n\t- APDU list
@@ -458,7 +453,26 @@ deactivate capi
 app->app: card successfully authenticated <:champagne:>
 app->? : notification & <size:18>**access granting**</size>
 
-== End of the Access Control opertion ==
+== End of the Access Control operation ==
+
+app->rapi: **end** the card processing
+activate rapi  #pink
+rapi-[#0000FF]>cardReader: deselect the card
+activate cardReader #lightBlue
+cardReader-->rapi
+deactivate cardReader
+rapi-->app
+deactivate rapi
+
+hnote over cardReader #Orange
+reader in state:
+**Wait For Card Removal**
+endhnote
+
+note over app
+    The crypto context of the next transaction is prepared while the reader waits
+    for the card to leave the field.
+end note
 
 app->capi: **init** crypto context for next transaction
 activate capi  #pink
@@ -472,8 +486,6 @@ deactivate samReader
 
 capi-->app
 deactivate capi
-
-app->app: **wait** for card removal
 
 deactivate card
 destroy card
