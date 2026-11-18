@@ -92,7 +92,7 @@ Each `calypsonet-terminal-*-api-spec` repository hosted on [github.com/calypsone
 **Diagram reading conventions**:
 
 - elements in **blue** are **additions or modifications** of the new version;
-- elements in **grey** are **under study** ("work in progress"): they have never been implemented and are not part of the normative scope (see §17);
+- elements in **grey** are **under study** ("work in progress"): they have never been implemented and are not part of the normative scope (see §18);
 - green classes group **data, constants, enumerations and errors**;
 - signatures follow the language-independent notation described in Theme 10 (`→ Self`, `T?`, `val property: Type = default`, etc.).
 
@@ -115,10 +115,11 @@ Each `calypsonet-terminal-*-api-spec` repository hosted on [github.com/calypsone
 13. [Theme 12 — Stored Value (SV) operations](#13-theme-12--stored-value-sv-operations)
 14. [Theme 13 — Tolerance of a missing file or record in a secure session](#14-theme-13--tolerance-of-a-missing-file-or-record-in-a-secure-session)
 15. [Theme 14 — Crypto extensions and command interleaving](#15-theme-14--crypto-extensions-and-command-interleaving)
-16. [Normative clarifications](#16-normative-clarifications)
-17. [Elements under study](#17-elements-under-study)
-18. [Migration procedure](#18-migration-procedure)
-19. [Next steps and validation by the TC Terminal](#19-next-steps-and-validation-by-the-tc-terminal)
+16. [Theme 15 — Validity of the Calypso HCE debit key](#16-theme-15--validity-of-the-calypso-hce-debit-key)
+17. [Normative clarifications](#17-normative-clarifications)
+18. [Elements under study](#18-elements-under-study)
+19. [Migration procedure](#19-migration-procedure)
+20. [Next steps and validation by the TC Terminal](#20-next-steps-and-validation-by-the-tc-terminal)
 - [Annex A — Detailed mapping per API](#annex-a--detailed-mapping-per-api)
 
 ---
@@ -874,7 +875,62 @@ The `Class<E>` parameter only existed to work around the JVM's type erasure; it 
 
 ---
 
-## 16. Normative clarifications
+## 16. Theme 15 — Validity of the Calypso HCE debit key
+
+### 16.1 Motivation
+
+The application serial number of a **Calypso HCE** application is made of two fields: the two most significant
+bytes, the **SN Header**, carry the end of validity of the debit key, coded as the number of half-days elapsed
+since 1 January 2010 at 0:00 **local time**; the six remaining bytes identify the application. Nothing in the card dialogue
+reveals an outdated header, because the header takes part in the diversification of the debit key: a mobile whose
+validity window has passed still authenticates normally. The verification therefore belongs to the terminal, and
+the production versions offered nothing for it — `getApplicationSerialNumber()` returns the serial number with its
+two most significant bytes forced to `0`, so the header was not even readable.
+
+### 16.2 Calypso Card API
+
+- **New SPI** `HceTimeProvider` (namespace `calypso.card.spi`, a new namespace for the services the
+  application provides to the card extension):
+  - `getCurrentLocalEpochSeconds() → Long` — the current time expressed in the same reference as the SN Header, that is
+    local time, as a number of seconds since 1 January 1970 at 0:00 in that reference. The application provides
+    the clock it trusts; the Calypso encoding and the comparison stay in the specification.
+- **New factory operation** `CalypsoCardApiFactory.setHceTimeProvider(provider) → Self` — the service is
+  consulted when the selection response is parsed, by the side that holds the card extension, and is **never
+  carried by an exported selection scenario**.
+- **New accessors** on `CalypsoCard`:
+  - `getHceDebitKeyExpiryLocalEpochSeconds() → Long?` — the decoded header, converted into seconds since 1 January 1970 at
+    0:00 local time; part of the card image and therefore carried by an exported processed scenario; `null` when
+    the application is not HCE or the header is not significant;
+  - `isHceDebitKeyValid() → Boolean?` — the verdict computed by the card extension, `null` when no evaluation took
+    place.
+- **New setting** `SecuritySettings.authorizeExpiredHceDebitKey() → Self`, on the contract shared by the symmetric
+  and asymmetric settings.
+- **New *State* pre-condition** on both `prepareOpenSecureSession` operations: the card is not a Calypso HCE
+  application whose debit key has expired or could not be evaluated, unless the authorisation above has been given.
+- `getApplicationSerialNumber()` now **documents** the masking of the two most significant bytes for an HCE
+  application.
+
+### 16.3 Rationale
+
+The card is **never hidden**: an application whose debit key has expired is selected like any other and the verdict
+is exposed, so the ticketing layer can refuse the service, invite the holder to renew the token, or simply log the
+event. Making the selection fail would have been indistinguishable from an unknown card, leaving the holder without
+an explanation and masking a provisioning outage from the operator.
+
+The application is asked for a clock, not for a verdict: the half-day encoding and the 2010 epoch are Calypso
+conventions, which the specification keeps for itself, while the time reference — local, and necessarily the one in
+which the tokens were provisioned — is the only thing the application can state. The resolution being half a day, a
+difference of time zone between the terminal and the issuer of the token shifts the boundary of the validity window
+by the corresponding offset.
+
+The protection is therefore placed where it matters, at the opening of a secure session, and it covers **every**
+secure session whatever its mode and its write access level. It is expressed as a **pre-condition** rather than as
+an error raised during the exchange, because the verdict is known as soon as the card is selected: an application
+that prepares such an opening has ignored an answer it already had.
+
+---
+
+## 17. Normative clarifications
 
 The specifications also bring clarifications that do not change signatures but specify the contract:
 
@@ -887,7 +943,7 @@ The specifications also bring clarifications that do not change signatures but s
 
 ---
 
-## 17. Elements under study
+## 18. Elements under study
 
 The following elements appear in grey in the Legacy SAM API diagram; they are **not** part of the normative scope submitted for validation:
 
@@ -898,7 +954,7 @@ The following elements appear in grey in the Legacy SAM API diagram; they are **
 
 ---
 
-## 18. Migration procedure
+## 19. Migration procedure
 
 Migrating application code from the production versions to the new versions will be covered by a **dedicated technical migration guide**, published separately after validation by the TC Terminal and after alignment of the associated Keypop Java implementations.
 
@@ -906,9 +962,9 @@ This guide will aim to **simplify the transition as much as possible**: 1:1 mapp
 
 ---
 
-## 19. Next steps and validation by the TC Terminal
+## 20. Next steps and validation by the TC Terminal
 
-### 19.1 Scope submitted for validation
+### 20.1 Scope submitted for validation
 
 This document submits to the validation of the **CNA TC Terminal**:
 
@@ -929,9 +985,9 @@ This document submits to the validation of the **CNA TC Terminal**:
   - access to the crypto extension with an identity clause (§15).
 3. **The detailed content of the nine specifications** and their diagrams (see [Reference documents](#reference-documents)).
 4. **The introduction** of the new Reader Definitions foundation API.
-5. **The principle** of a dedicated migration procedure (see §18).
+5. **The principle** of a dedicated migration procedure (see §19).
 
-### 19.2 Points of attention for the review
+### 20.2 Points of attention for the review
 
 - the **stability of the initial content** of the `RfTechnology` and `CardType` enumerations (§7.2), in particular the representation of ISO 14443-4 by a single `ISO_14443_4` value;
 - the **complete removal** of `ConfigurableCardReader` without a deprecation phase (§7.3);
@@ -942,14 +998,14 @@ This document submits to the validation of the **CNA TC Terminal**:
 - the **replacement of "builder" interfaces** by data classes (§11.2, §12), whose Java implementation remains to be defined;
 - the **change from `SvOperation.DEBIT` to `DEBIT_UNDEBIT`** and the removal of the SV overloads without data (§13).
 
-### 19.3 Next steps
+### 20.3 Next steps
 
 The versions were validated by the TC Terminal and the nine specifications are available as a preview on the
 documentation site. Their formal release is pending, and the following steps remain:
 
 1. **Finalisation of the specifications**: moving the repositories from their `…-SNAPSHOT` versions to their final
-   versions; removal or specification of the elements under study (§17); then tagging and publishing the release.
-2. **Writing and publication of the technical migration guide** (see §18).
+   versions; removal or specification of the elements under study (§18); then tagging and publishing the release.
+2. **Writing and publication of the technical migration guide** (see §19).
 3. **Communication** of the availability of the new versions to integrators and to the CNA working groups concerned.
 
 ---
@@ -1056,6 +1112,8 @@ This annex lists, for each API, what becomes of each element of the Java version
 | `SvOperation.DEBIT` | → `SvOperation.DEBIT_UNDEBIT` |
 | — | Added: `SecuritySettings` interface, parent of `SymmetricCryptoSecuritySettings` and `AsymmetricCryptoSecuritySettings`, carrying `assignOpenSecureSessionMaxDurationByCsn/ByFci(...)`, `assignCloseSecureSessionMaxDurationByCsn/ByFci(...)`, `authorizeFileNotFoundError()` and `authorizeRecordNotFoundError()` |
 | — | Added: `SymmetricCryptoSecuritySettings.assignSvCommandMaxDurationByCsn/ByFci(...)`; the session bounds are inherited from `SecuritySettings` |
+| — | Added: `HceTimeProvider` SPI (namespace `calypso.card.spi`) and `CalypsoCardApiFactory.setHceTimeProvider(provider)` |
+| — | Added: `CalypsoCard.getHceDebitKeyExpiryLocalEpochSeconds() → Long?` and `isHceDebitKeyValid() → Boolean?`; `SecuritySettings.authorizeExpiredHceDebitKey()`; *State* pre-condition on `prepareOpenSecureSession` (see Theme 15) |
 | `ChannelControl` | Removed |
 | `CardIOException`, `ReaderIOException`, `UnexpectedCommandStatusException`, `SelectFileException` | Removed |
 | `CardSignatureNotVerifiableException`, `CryptoException`, `CryptoIOException`, `InconsistentDataException`, `InvalidCardSignatureException`, `InvalidCertificateException`, `InvalidPinException`, `SessionBufferOverflowException`, `UnauthorizedKeyException` | → same names without the `Exception` suffix |
