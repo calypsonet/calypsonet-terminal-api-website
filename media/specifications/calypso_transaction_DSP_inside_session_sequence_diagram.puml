@@ -49,7 +49,7 @@ activate app #gold
 activate card #lightBlue
 activate sam #lightGreen
 
-app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
+app->app: **start** a card transaction:\n\t- secured with a **symmetric** crypto module\n\t- in **regular** mode, with its security settings
 
 note over capi
     Checks a signature of previously read data when selecting the card.
@@ -60,7 +60,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands (keep channel open)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
@@ -100,7 +100,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands (keep channel open)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #2**<font color=red>\ntransmit card request\n\t- APDU list
@@ -154,7 +154,7 @@ note over capi
     At the session closure, any data secure processing should be unnecessary.
 end note
 
-app->capi: <font color=red>**process**</font> commands (close channel after)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 capi->capi: anticipates the future card responses
 
@@ -187,9 +187,6 @@ cardReader->card: close secure session (SAM certificate)
 card-->cardReader: [card certificate]
 cardReader->card: ratification command
 card-->cardReader
-cardReader->card: close card channel
-card-->cardReader
-deactivate card
 
 cardReader-[#0000FF]->capi: [card certificate]
 deactivate cardReader
@@ -204,4 +201,13 @@ deactivate samReader
 
 capi-->app: [Calypso card image:\n\t- identification data\n\t- environment data\n\t- contract list data\n\t- contract #1 data\n\t- counter #1 data (updated)\n\t- event #1 (updated)]\nauthentification status
 deactivate capi
+
+app->cardReader: **end** the card processing
+activate cardReader #lightBlue
+cardReader->card: close card channel
+card-->cardReader
+deactivate card
+cardReader-->app
+deactivate cardReader
+
 @enduml

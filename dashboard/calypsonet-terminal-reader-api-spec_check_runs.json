@@ -2,27 +2,27 @@
   "total_count": 2,
   "check_runs": [
     {
-      "id": 126026536821,
+      "id": 135593250205,
       "name": "publish-snapshot / reusable-publish-snapshot",
-      "node_id": "CR_kwDOHZ2TmM8AAAAdV8RXdQ",
-      "head_sha": "7c367aeab84afe2e1e9e42b68584e587b350e575",
-      "external_id": "bffee5da-daa1-5c6b-8d31-d7776457c6af",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-api-spec/check-runs/126026536821",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-reader-api-spec/actions/runs/41667469545/job/126026536821",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-reader-api-spec/actions/runs/41667469545/job/126026536821",
+      "node_id": "CR_kwDOHZ2TmM8AAAAfkfzNnQ",
+      "head_sha": "23c717e4a91b5353eb4a7277c09cb38c64e584db",
+      "external_id": "e4d8259b-3560-5699-a6d3-8217c904afbf",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-api-spec/check-runs/135593250205",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-reader-api-spec/actions/runs/44533645485/job/135593250205",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-reader-api-spec/actions/runs/44533645485/job/135593250205",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-03T15:47:14Z",
-      "completed_at": "2026-11-03T15:48:00Z",
+      "started_at": "2026-11-19T13:27:38Z",
+      "completed_at": "2026-11-19T13:28:24Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
-        "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-api-spec/check-runs/126026536821/annotations"
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-api-spec/check-runs/135593250205/annotations"
       },
       "check_suite": {
-        "id": 112911386147
+        "id": 120546725679
       },
       "app": {
         "id": 15368,
@@ -119,27 +119,27 @@
       ]
     },
     {
-      "id": 126026531054,
+      "id": 135593244739,
       "name": "check-diagram-identity",
-      "node_id": "CR_kwDOHZ2TmM8AAAAdV8RA7g",
-      "head_sha": "7c367aeab84afe2e1e9e42b68584e587b350e575",
-      "external_id": "aa1b1a66-b92f-511a-ac83-71fcd8178543",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-api-spec/check-runs/126026531054",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-reader-api-spec/actions/runs/41667468293/job/126026531054",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-reader-api-spec/actions/runs/41667468293/job/126026531054",
+      "node_id": "CR_kwDOHZ2TmM8AAAAfkfy4Qw",
+      "head_sha": "23c717e4a91b5353eb4a7277c09cb38c64e584db",
+      "external_id": "4ab7013c-d843-5ce9-9a7d-5dd7339842d3",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-api-spec/check-runs/135593244739",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-reader-api-spec/actions/runs/44533644165/job/135593244739",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-reader-api-spec/actions/runs/44533644165/job/135593244739",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-03T15:47:19Z",
-      "completed_at": "2026-11-03T15:47:25Z",
+      "started_at": "2026-11-19T13:27:37Z",
+      "completed_at": "2026-11-19T13:27:44Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
-        "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-api-spec/check-runs/126026531054/annotations"
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-api-spec/check-runs/135593244739/annotations"
       },
       "check_suite": {
-        "id": 112911382693
+        "id": 120546722221
       },
       "app": {
         "id": 15368,

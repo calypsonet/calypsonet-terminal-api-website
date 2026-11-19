@@ -2,16 +2,16 @@
   {
     "name": "doc",
     "commit": {
-      "sha": "0b200b4e2466b2031d1de5de910e90adb8e4ed3d",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-api-spec/commits/0b200b4e2466b2031d1de5de910e90adb8e4ed3d"
+      "sha": "e06789232198ec09f70d46f0eb296d775640e495",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-api-spec/commits/e06789232198ec09f70d46f0eb296d775640e495"
     },
     "protected": false
   },
   {
     "name": "main",
     "commit": {
-      "sha": "7c367aeab84afe2e1e9e42b68584e587b350e575",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-api-spec/commits/7c367aeab84afe2e1e9e42b68584e587b350e575"
+      "sha": "23c717e4a91b5353eb4a7277c09cb38c64e584db",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-reader-api-spec/commits/23c717e4a91b5353eb4a7277c09cb38c64e584db"
     },
     "protected": false
   }

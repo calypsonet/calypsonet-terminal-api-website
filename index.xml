@@ -265,25 +265,30 @@ electronic purse.&lt;/p>
 &lt;/ul>
 &lt;br>
 &lt;h2 id="calypso-card-transaction-without-secure-session">Calypso card transaction without secure session&lt;/h2>
-&lt;p>Except the operations involving secure processing on &amp;ldquo;data&amp;rdquo; (data signature computation / verification, data ciphering /
-un-ciphering), only commands for the card need to be prepared though the Card Transaction Manager interface.
-Depending on the operation, if necessary the security involving the master SAM must be controlled internally by the
-Calypso library.&lt;/p>
+&lt;p>Outside a secure session, the application prepares card commands, then processes them in a single exchange with the
+reader. The commands addressed to the crypto module — data signature and verification, ciphering and un-ciphering —
+are queued together with the card commands, in the order in which they were prepared, and processed by the same
+call: the two kinds may be interleaved within one transaction.&lt;/p>
 &lt;h3 id="_plain_-pin-verification-or-update">&lt;em>Plain&lt;/em> PIN Verification or Update&lt;/h3>
-&lt;figure id="figure-calypso-card-api---verify--change-plain-pin---sequence-diagram">
+&lt;p>A free transaction is enough here: no cryptographic computation takes place, so no crypto module is involved.&lt;/p>
+&lt;figure id="figure-calypso-card-api---plain-pin-verification-or-update---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_Verify_Change_Plain_PIN_sequence_diagram.svg" alt="Calypso Card API - Verify / Change Plain PIN - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_Verify_Change_Plain_PIN_sequence_diagram.svg" alt="Calypso Card API - Plain PIN Verification or Update - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
-Calypso Card API - Verify / Change Plain PIN - Sequence Diagram
+Calypso Card API - Plain PIN Verification or Update - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="_ciphered_-key--pin-update-outside-a-session">&lt;em>Ciphered&lt;/em> Key / PIN update outside a session&lt;/h3>
-&lt;figure id="figure-calypso-card-api---change-key--ciphered-pin-outside-a-session---sequence-diagram">
+&lt;p>The new value is ciphered by the SAM before being sent to the card, so the transaction must be secured with
+symmetric cryptography even though no secure session is opened.&lt;/p>
+&lt;figure id="figure-calypso-card-api---ciphered-key--pin-update-outside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_Change_Key_Ciphered_PIN_sequence_diagram.svg" alt="Calypso Card API - Change Key / Ciphered PIN outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_Change_Key_Ciphered_PIN_sequence_diagram.svg" alt="Calypso Card API - Ciphered Key / PIN update outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
-Calypso Card API - Change Key / Ciphered PIN outside a session - Sequence Diagram
+Calypso Card API - Ciphered Key / PIN update outside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="data-secure-processing-data-pso-_signature_--_ciphering_-outside-a-session">Data secure processing (data PSO &lt;em>signature&lt;/em> / &lt;em>ciphering&lt;/em>) outside a session&lt;/h3>
+&lt;p>The data read from the card is signed, verified, ciphered or un-ciphered by the SAM; the card itself takes no part
+in the computation.&lt;/p>
 &lt;figure id="figure-calypso-card-api---data-secure-processing-outside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_DSP_outside_session_sequence_diagram.svg" alt="Calypso Card API - Data secure processing outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
@@ -291,71 +296,89 @@ Calypso Card API - Change Key / Ciphered PIN outside a session - Sequence Diagra
 Calypso Card API - Data secure processing outside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="stored-value-operation-outside-a-session">Stored Value operation outside a session&lt;/h3>
-&lt;figure id="figure-calypso-card-api---standalone-stored-value-transaction---sequence-diagram">
+&lt;p>A reload or a debit of the electronic purse may be run without opening a secure session. The Stored Value command
+must immediately follow its SV Get, which carries the balance and the card challenge.&lt;/p>
+&lt;figure id="figure-calypso-card-api---stored-value-operation-outside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_standalone_SV_operation_sequence_diagram.svg" alt="Calypso Card API - standalone Stored Value transaction - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_standalone_SV_operation_sequence_diagram.svg" alt="Calypso Card API - Stored Value operation outside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
-Calypso Card API - standalone Stored Value transaction - Sequence Diagram
+Calypso Card API - Stored Value operation outside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h2 id="secure-session-with-a-calypso-card">Secure session with a Calypso card&lt;/h2>
+&lt;p>A secure session authenticates the card and the terminal to each other and makes the card modifications atomic:
+either the session is closed successfully and every modification is kept, or it is interrupted and the card keeps
+none of them. The scenarios below show that same mechanism tuned for different contexts.&lt;/p>
 &lt;h3 id="_regular_-secure-session-span-stylecolor-redoptimized-for-fast-embedded-performancespan">&lt;em>Regular&lt;/em> secure session &lt;span style="color: red;">optimized for fast &lt;strong>embedded&lt;/strong> performance&lt;/span>&lt;/h3>
 &lt;p>This example illustrates the ticketing processing of a validation: only the necessary data is read from the card.&lt;/p>
-&lt;p>For access control to a transit network or a building, using a contactless card to authenticate the holder&amp;rsquo;s rights, ticketing terminals are generally automatic machines for which the rights verification transaction is automatically launched when the contactless card is detected in the RF field emitted by the terminal&amp;rsquo;s reader. For transactions to run smoothly, without the need for error recovery, it is important that the contactless transaction with the card is very fast, and that the card presentation and withdrawal detection phases are reliably managed.&lt;/p>
-&lt;p>The aim is to &lt;u>save milliseconds&lt;/u> by minimizing the volume of data transmitted during contactless communication with the card to complete the ticketing transaction.&lt;br>
-In order to limit the amount of data to be read from the card to the strict minimum, card reading operations cannot be grouped together. Each card response needs to be analyzed, to determine whether the next reading operation is necessary. Reducing the volume of data transmitted by the contactless card reader also reduces the amount of data to be transmitted to the SAM reader during the session, in order to update the session hash calculation.&lt;br>
-On the SAM side, it is necessary to:&lt;/p>
+&lt;p>For access control to a transit network or a building, ticketing terminals are generally automatic machines on which
+the rights verification transaction starts as soon as a contactless card is detected in the field emitted by the
+reader. For transactions to run smoothly, without error recovery, the dialogue with the card must be very fast, and
+the card presentation and withdrawal phases must be reliably managed.&lt;/p>
+&lt;p>The aim is to save milliseconds by minimizing the volume of data exchanged with the card. To keep the amount read to
+the strict minimum, read operations are not grouped: each response is analyzed to determine whether the next read is
+necessary. Reducing the data read from the card also reduces the data sent to the SAM reader during the session to
+update the session hash computation.&lt;/p>
+&lt;p>On the SAM side, two rules apply:&lt;/p>
 &lt;ul>
-&lt;li>limit the number of operations to be performed during the contactless card transaction: SAM challenge recovery can be anticipated before a card transaction.&lt;/li>
-&lt;li>group as many SAM exchanges as possible to be processed during the session (to counteract contact reader latency, and to share an APDU command header with a maximum amount of data to be transmitted)&lt;/li>
+&lt;li>limit the number of operations performed during the contactless card transaction — the SAM challenge can be
+obtained before the card is even presented;&lt;/li>
+&lt;li>group as many SAM exchanges as possible, to counteract the latency of a contact reader and to share one APDU
+command header with as much data as possible.&lt;/li>
 &lt;/ul>
-&lt;p>It is therefore necessary to anticipate card responses to write commands (counter increment/decrement). Under these conditions, only one group of SAM commands is needed during the card transaction to generate the SAM session MAC. Card authenticity verification can be performed while waiting for card removal.&lt;/p>
-&lt;p>The contactless reader of a configured and active ticketing terminal can switch between 3 states:&lt;/p>
-&lt;ul>
-&lt;li>in &amp;lsquo;&lt;em>standby mode&lt;/em>&amp;rsquo;, the reader is waiting for a new card to be detected.&lt;/li>
-&lt;li>when a card is detected, the reader is in card &amp;lsquo;&lt;em>processing mode&lt;/em>&amp;rsquo;.&lt;/li>
-&lt;li>when the card transaction is completed, the reader is &amp;lsquo;&lt;em>waiting for the removal&lt;/em>&amp;rsquo; of the card.
-Following a card transaction, a terminal must be sure that the card has indeed been removed from the RF field, before considering detecting a new one.&lt;/li>
-&lt;/ul>
-&lt;p>For this reason, a terminal cannot be confident of a timeout at the transaction completion, as this timeout will either be too short (the previous card still present will be grabbed again) or too long (the terminal will remain unavailable for a long time). The contactless reader shall notify the withdrawal of the card.&lt;/p>
-&lt;p>For a ticketing transaction during which card data is updated (right decrementation, memorization of an event), the “ratification” mechanism supported by the Calypso secure session guarantees that the cardholder will not lose any rights if the RF transmission with the card is interrupted.&lt;br>
-When a session is opened, the verification of a last ticketing event makes it possible to identify whether a card has been presented twice in quick succession on an access control line.&lt;br>
-In the case of very recent event, the card&amp;rsquo;s “unratified” status can be used to determine whether&lt;/p>
-&lt;ul>
-&lt;li>whether it is a recovery transaction, for which it may be necessary to re-authenticate the cardholder without debiting new rights;&lt;/li>
-&lt;li>or if it is an attempt to obtain a second access for another person (anti-passback).&lt;/li>
-&lt;/ul>
-&lt;p>When a session is closed, the ratification command is immediately transmitted to the card, to minimize the need for transaction recovery.&lt;/p>
-&lt;figure id="figure-calypso-card-api---simple-secure-session---sequence-diagram">
+&lt;p>Card responses to write commands, such as counter increments and decrements, are therefore anticipated. Under these
+conditions, a single group of SAM commands is needed during the card transaction to generate the session MAC, and
+the card authenticity can be verified while waiting for the card to be removed.&lt;/p>
+&lt;p>The reader of a configured and active ticketing terminal moves between the three states the diagram names: &lt;em>Wait For
+Card Insertion&lt;/em>, while no card is present; &lt;em>Wait For Card Processing&lt;/em>, once a card has been detected; and &lt;em>Wait For
+Card Removal&lt;/em>, once the transaction is over. A terminal must be certain that the card has left the field before
+detecting a new one, and no timeout can guarantee that — too short, the card still present is caught again; too
+long, the terminal stays unavailable. The reader is therefore the one that notifies the withdrawal.&lt;/p>
+&lt;p>For a transaction that updates card data, such as a rights decrementation or the recording of an event, the
+ratification mechanism of the Calypso secure session guarantees that the cardholder loses no rights if the
+radio-frequency transmission is interrupted. Reading the last ticketing event at session opening reveals a card
+presented twice in quick succession on an access control line. When that event is very recent, the unratified status
+of the card tells whether it is a recovery transaction, for which the cardholder may have to be re-authenticated
+without being debited again, or an attempt to obtain a second access for another person — the anti-passback case.&lt;/p>
+&lt;p>At session closing, the ratification command is sent to the card immediately, to minimize the need for a recovery
+transaction.&lt;/p>
+&lt;figure id="figure-calypso-card-api---regular-secure-session-optimized-for-fast-embedded-performance---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_regular_secure_session_optimized_embedded_sequence_diagram.svg" alt="Calypso Card API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_regular_secure_session_optimized_embedded_sequence_diagram.svg" alt="Calypso Card API - Regular secure session optimized for fast embedded performance - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
-Calypso Card API - Simple Secure Session - Sequence Diagram
+Calypso Card API - Regular secure session optimized for fast embedded performance - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="_regular_-secure-session-span-stylecolor-redoptimized-for-an-efficient-distributed-systemspan">&lt;em>Regular&lt;/em> secure session &lt;span style="color: red;">optimized for an efficient &lt;strong>distributed&lt;/strong> system&lt;/span>&lt;/h3>
 &lt;p>In most of the cases, it should be possible to handle a secure session with a Calypso card, using only:&lt;/p>
 &lt;ul>
-&lt;li>3 exchanges with the card reader (selection processing, session opening processing, and session closing processing),&lt;/li>
-&lt;li>and 3 exchanges with the SAM reader (terminal session challenge recovery, session MAC computation, and card authentication).&lt;/li>
+&lt;li>3 exchanges with the card reader (selection processing, session opening processing, and session closing
+processing),&lt;/li>
+&lt;li>and 3 exchanges with the SAM reader (terminal session challenge recovery, session MAC computation, and card
+authentication).&lt;/li>
 &lt;/ul>
-&lt;p>This example shows the loading of a contract during a sale, to speed up the identification of the card content while
-limiting the exchange of messages with the card reader, some data can be read out of session during the selection,
-then read again during the session.&lt;/p>
+&lt;p>This example shows the loading of a contract during a sale. To speed up the identification of the card content while
+limiting the exchange of messages with the card reader, some data is read out of session during the selection, then
+read again during the session.&lt;/p>
 &lt;p>In case of communication failure with the card, if the recovery transaction is supported only on the same terminal,
-then the checking of the ratification status is not necessary at the session opening, and the session could be closed as ratified.&lt;/p>
-&lt;figure id="figure-calypso-card-api---simple-secure-session---sequence-diagram">
+then checking the ratification status is not necessary at session opening, and the session can be closed as
+ratified.&lt;/p>
+&lt;figure id="figure-calypso-card-api---regular-secure-session-optimized-for-an-efficient-distributed-system---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_simple_secure_session_distributed_sequence_diagram.svg" alt="Calypso Card API - Simple Secure Session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_simple_secure_session_distributed_sequence_diagram.svg" alt="Calypso Card API - Regular secure session optimized for an efficient distributed system - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
-Calypso Card API - Simple Secure Session - Sequence Diagram
+Calypso Card API - Regular secure session optimized for an efficient distributed system - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="pin-ciphered-verification-inside-a-session">PIN ciphered verification inside a session&lt;/h3>
-&lt;figure id="figure-calypso-card-api---verify-ciphered-pin-inside-a-session---sequence-diagram">
+&lt;p>Inside a session, the PIN is ciphered by the SAM with the session keys before being presented to the card, so that
+it never travels in clear.&lt;/p>
+&lt;figure id="figure-calypso-card-api---pin-ciphered-verification-inside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_Verify_Ciphered_PIN_inside_session_sequence_diagram.svg" alt="Calypso Card API - Verify Ciphered PIN inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_Verify_Ciphered_PIN_inside_session_sequence_diagram.svg" alt="Calypso Card API - PIN ciphered verification inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
-Calypso Card API - Verify Ciphered PIN inside a session - Sequence Diagram
+Calypso Card API - PIN ciphered verification inside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="data-secure-processing-data-pso-_signature_--_ciphering_-inside-a-session">Data secure processing (data PSO &lt;em>signature&lt;/em> / &lt;em>ciphering&lt;/em>) inside a session&lt;/h3>
+&lt;p>The same secure processing of data takes place inside the session, the SAM commands being interleaved with the card
+commands and processed together.&lt;/p>
 &lt;figure id="figure-calypso-card-api---data-secure-processing-inside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_DSP_inside_session_sequence_diagram.svg" alt="Calypso Card API - Data secure processing inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
@@ -363,18 +386,60 @@ Calypso Card API - Verify Ciphered PIN inside a session - Sequence Diagram
 Calypso Card API - Data secure processing inside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;h3 id="stored-value-operation-inside-a-session">Stored Value operation inside a session&lt;/h3>
-&lt;figure id="figure-calypso-card-api---stored-value-transaction-inside-a-secure-session---sequence-diagram">
+&lt;p>A Stored Value operation may also take place inside a secure session. It must immediately follow its SV Get, and
+only one Stored Value command is allowed per session.&lt;/p>
+&lt;figure id="figure-calypso-card-api---stored-value-operation-inside-a-session---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_SV_inside_session_sequence_diagram.svg" alt="Calypso Card API - Stored Value transaction inside a secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_SV_inside_session_sequence_diagram.svg" alt="Calypso Card API - Stored Value operation inside a session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
-Calypso Card API - Stored Value transaction inside a secure session - Sequence Diagram
+Calypso Card API - Stored Value operation inside a session - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
-&lt;h2 id="multiple-secure-sessions">Multiple secure sessions&lt;/h2>
-&lt;figure id="figure-calypso-card-api---multiple-secure-session---sequence-diagram">
+&lt;h3 id="_extended_-secure-session-with-early-mutual-authentication">&lt;em>Extended&lt;/em> secure session with early mutual authentication&lt;/h3>
+&lt;p>On a Calypso Prime Extended product, the terminal can be authenticated by the card early in the session instead of
+at its closing, so that the sensitive operations are only performed once the mutual authentication is acquired.&lt;/p>
+&lt;figure id="figure-calypso-card-api---extended-secure-session-with-early-mutual-authentication---sequence-diagram">
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_multiple_secure_session_sequence_diagram.svg" alt="Calypso Card API - Multiple secure session - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_extended_authentication_secure_session_embedded_sequence_diagram.svg" alt="Calypso Card API - Extended secure session with early mutual authentication - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
-Calypso Card API - Multiple secure session - Sequence Diagram
+Calypso Card API - Extended secure session with early mutual authentication - Sequence Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="_extended_-secure-session-with-encrypted-commands">&lt;em>Extended&lt;/em> secure session with encrypted commands&lt;/h3>
+&lt;p>Still on a Calypso Prime Extended product, the APDUs exchanged inside the session can be ciphered, which protects
+the confidentiality of the data read and written. Encryption lengthens the transaction, so it is usually limited to
+the commands that need it.&lt;/p>
+&lt;figure id="figure-calypso-card-api---extended-secure-session-with-encrypted-commands---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_extended_encryption_secure_session_embedded_sequence_diagram.svg" alt="Calypso Card API - Extended secure session with encrypted commands - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - Extended secure session with encrypted commands - Sequence Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;h3 id="multiple-secure-sessions">Multiple secure sessions&lt;/h3>
+&lt;p>When the prepared modifications exceed the session buffer of the card, the transaction is split into several
+consecutive sessions. The modifications are then no longer atomic: the diagram shows what the card has already
+committed when the second session opens.&lt;/p>
+&lt;figure id="figure-calypso-card-api---multiple-secure-sessions---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_multiple_secure_session_sequence_diagram.svg" alt="Calypso Card API - Multiple secure sessions - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - Multiple secure sessions - Sequence Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;h2 id="several-applications-in-parallel">Several applications in parallel&lt;/h2>
+&lt;p>Several applications of the same card may be selected at once, each on its own logical channel, and operated one
+after the other without a new selection.&lt;/p>
+&lt;figure id="figure-calypso-card-api---several-applications-in-parallel---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_multichannel_applications_sequence_diagram.svg" alt="Calypso Card API - Several applications in parallel - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - Several applications in parallel - Sequence Diagram
+&lt;/figcaption>&lt;/figure>
+&lt;h2 id="command-exchange-duration-bounds">Command exchange duration bounds&lt;/h2>
+&lt;p>The most sensitive command exchanges may be bounded in time, per card profile. An exchange longer than its bound
+reveals a relay attack or a card emulation; what follows depends on whether a secure session is open.&lt;/p>
+&lt;figure id="figure-calypso-card-api---command-exchange-duration-bound-exceeded---sequence-diagram">
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="./media/specifications/calypso_transaction_duration_bound_overrun_sequence_diagram.svg" alt="Calypso Card API - Command exchange duration bound exceeded - Sequence Diagram" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;figcaption>
+Calypso Card API - Command exchange duration bound exceeded - Sequence Diagram
 &lt;/figcaption>&lt;/figure>
 &lt;br>
 &lt;h2 id="learn-more">Learn more&lt;/h2>
