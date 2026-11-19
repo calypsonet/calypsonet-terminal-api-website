@@ -92,7 +92,7 @@ Each `calypsonet-terminal-*-api-spec` repository hosted on [github.com/calypsone
 **Diagram reading conventions**:
 
 - elements in **blue** are **additions or modifications** of the new version;
-- elements in **grey** are **under study** ("work in progress"): they have never been implemented and are not part of the normative scope (see §18);
+- elements in **grey** are **under study** ("work in progress"): they have never been implemented and are not part of the normative scope (see §19);
 - green classes group **data, constants, enumerations and errors**;
 - signatures follow the language-independent notation described in Theme 10 (`→ Self`, `T?`, `val property: Type = default`, etc.).
 
@@ -116,10 +116,11 @@ Each `calypsonet-terminal-*-api-spec` repository hosted on [github.com/calypsone
 14. [Theme 13 — Tolerance of a missing file or record in a secure session](#14-theme-13--tolerance-of-a-missing-file-or-record-in-a-secure-session)
 15. [Theme 14 — Crypto extensions and command interleaving](#15-theme-14--crypto-extensions-and-command-interleaving)
 16. [Theme 15 — Validity of the Calypso HCE debit key](#16-theme-15--validity-of-the-calypso-hce-debit-key)
-17. [Normative clarifications](#17-normative-clarifications)
-18. [Elements under study](#18-elements-under-study)
-19. [Migration procedure](#19-migration-procedure)
-20. [Next steps and validation by the TC Terminal](#20-next-steps-and-validation-by-the-tc-terminal)
+17. [Theme 16 — Card power and RF field](#17-theme-16--card-power-and-rf-field)
+18. [Normative clarifications](#18-normative-clarifications)
+19. [Elements under study](#19-elements-under-study)
+20. [Migration procedure](#20-migration-procedure)
+21. [Next steps and validation by the TC Terminal](#21-next-steps-and-validation-by-the-tc-terminal)
 - [Annex A — Detailed mapping per API](#annex-a--detailed-mapping-per-api)
 
 ---
@@ -229,7 +230,7 @@ The reader **keeps the references to the `SmartCard` instances resulting from th
 
 1. on a **new selection in single-channel mode**;
 2. on an **explicit channel closure request** (`closeChannel`, `processCommandsAndCloseChannel`);
-3. on the call to **`ObservableCardReader.endCardProcessing()`**;
+3. on the call to **`CardReader.endCardProcessing()`**;
 4. on an **error indicating that the card can no longer be reached** (`CardCommunication`, `ReaderCommunication`).
 
 This contract, which only appeared as prose in the previous version of this document, is now **normative**: it is defined in the Reader API specification (description of `SmartCard.isActive`, *SmartCard lifecycle* section).
@@ -347,7 +348,7 @@ The production model exposed a complete **Observer pattern** (`addObserver`, `re
 **Added / redesigned operations**:
 
 - `startCardDetection(settings: CardDetectionSettings, eventHandler: CardReaderEventHandler) → Unit` — the handler is registered **when detection starts**, in a single operation, together with the detection settings (see Theme 6).
-- `endCardProcessing() → Unit` — replaces `finalizeCardProcessing()`; idempotent; additionally releases the references to the `SmartCard` instances of the last selection (see §2.3.2).
+- `endCardProcessing() → Unit` — replaces `finalizeCardProcessing()`; idempotent; additionally releases the references to the `SmartCard` instances of the last selection, and is now **carried by `CardReader`** so that a non-observable reader can also close the dialogue with the card (see Theme 16 and §2.3.2).
 - `clearScheduledCardSelectionScenario() → Unit` — **new operation** that removes the card selection scenario scheduled on the reader. From the next insertion onwards, no scenario is executed and `CardReaderEvent.scheduledCardSelectionsResponse` is `null`. Idempotent.
 
 **Removed SPIs**: `CardReaderObserverSpi`, `CardReaderObservationExceptionHandlerSpi`.
@@ -402,7 +403,7 @@ This theme groups the renamings and removals motivated by clarity or consistency
 | `ObservableCardReader.DetectionMode.SINGLESHOT` | `DetectionMode.SINGLE_SHOT` | `UPPER_SNAKE_CASE` convention (compound word). |
 | `CardReaderEvent.Type.UNAVAILABLE` | `CardReaderEventType.READER_UNREGISTERED` | The name describes the actual **cause** of the event. |
 | `ObservableCardReader.NotificationMode` | `CardPresenceNotificationPolicy` (namespace `reader.selection`) | The name describes what is notified; the notion belongs to **selection**. |
-| `ObservableCardReader.finalizeCardProcessing()` | `ObservableCardReader.endCardProcessing()` | `finalize` is loaded in Java (method of `Object`, deprecated by the JDK). |
+| `ObservableCardReader.finalizeCardProcessing()` | `CardReader.endCardProcessing()` | `finalize` is loaded in Java (method of `Object`, deprecated by the JDK); the operation also moves up to `CardReader` (see Theme 16). |
 
 **Removals**:
 
@@ -930,7 +931,78 @@ that prepares such an opening has ignored an answer it already had.
 
 ---
 
-## 17. Normative clarifications
+## 17. Theme 16 — Card power and RF field
+
+### 17.1 Motivation
+
+Between two transactions, a terminal often needs the card to be *de-energised*: to bring a security module back to
+a known state, to comply with a power budget, or to make sure that the next card starts from a clean state. The
+production versions offered nothing for it at this level, and the only way to end the dialogue with a card was the
+observation-specific `finalizeCardProcessing()`, which a non-observable reader did not expose at all.
+
+### 17.2 Reader API
+
+- **`endCardProcessing()` moves from `ObservableCardReader` to `CardReader`**: every reader, observed or not, now
+  has a way to close the dialogue with the card. No existing caller is broken.
+- The operation gains its **electrical effects**: the power is removed from the card, and the field is switched off
+  on a contactless reader, except while the reader goes on using it. What exactly happens depends on the situation:
+
+| Situation | Effect |
+|---|---|
+| The reader is not observable, or its card detection is not active | Card powered off, field switched off |
+| Card detection is active in `REPEATING` mode | Waiting-for-card-removal phase, then detection of the next card; the field stays on throughout, first to observe the departure, then for the search for the next card |
+| Card detection is active in `SINGLE_SHOT` mode | Detection stops: card powered off, field switched off |
+
+- The operation **reports nothing**: it raises no error, and failures of the underlying exchanges — including a
+  communication failure with the card or with the reader — are not reported. It is meant to be called in a
+  `finally` block, where raising would mask the business failure being handled; the condition surfaces at the next
+  operation.
+- **`startCardDetection()`** applies the energy the polling requires: the field is switched on on a contactless
+  reader, and a card already present in the slot of a contact reader is powered, then processed as a newly
+  detected one.
+- **`stopCardDetection()`** removes the power and switches the field off, no polling remaining to be performed.
+  While a processing cycle is in progress the effect is **held back**, until `endCardProcessing()` ends the cycle.
+- **`isCardPresent()`** may, on the contrary, require the card to be powered; an implementation may also defer the
+  power-on until the first exchange. It **never de-energises** a card that is already powered. On a contactless
+  reader it switches the field on, and the field stays on, when a card answers, until the end of the cycle. On a
+  contact reader without a presence switch, the reader either answers `true` by default or attempts to energise
+  the card and answers according to the outcome — an observable reader uses the second approach, so that its
+  detection does not report a card that is not there.
+- **`SINGLE_SHOT`** is clarified: detection stops at the end of the cycle **without waiting for the card to
+  leave**, which the previous wording suggested.
+- **New section** *Card power and RF field* in the architectural overview, which states the principle of these
+  effects and summarises the state targeted after each call:
+
+| Call | Contact, card | Contact, no card | Contactless, card | Contactless, no card |
+|---|---|---|---|---|
+| `isCardPresent()`, detection inactive | Reader-dependent | Off | On | Off |
+| Synchronous selection, detection inactive | On | Off | On | Off |
+| `startCardDetection()` | On | Off | On | On |
+| `stopCardDetection()`, no processing cycle in progress | Off | Off | Off | Off |
+| `stopCardDetection()`, processing cycle in progress | Held | Off | Held | Off |
+| `endCardProcessing()`, detection inactive | Off | Off | Off | Off |
+| `endCardProcessing()`, `SINGLE_SHOT` mode | Off | Off | Off | Off |
+| `endCardProcessing()`, `REPEATING` mode | On | Off | On | On |
+
+*On* means that the energy is applied — the card is powered on a contact reader, the field is on on a contactless
+reader; *Off* means that it is not; *Held* means that the preceding state is left unchanged for the time being.
+`stopCardDetection()` and `endCardProcessing()` end on *Off* whichever is called first, and on a contactless
+reader `endCardProcessing()` switches the field off even when the cycle amounted to nothing more than a call to
+`isCardPresent()`.
+
+### 17.3 Rationale
+
+The specification describes **effects, never capabilities**: hardware differs too widely for a terminal API to
+declare what a reader can do. These effects are therefore provided on a **best-effort** basis — a reader that
+cannot carry them out performs what it can, raises no error, and reports nothing. An application must not rely on
+them for a security purpose; it relies on them to leave the reader in a sane state.
+
+Finer control — switching the field on and off on demand, resetting a card, choosing a power policy — stays outside
+the scope of the Terminal APIs and belongs to the interfaces each reader implementation exposes on its own.
+
+---
+
+## 18. Normative clarifications
 
 The specifications also bring clarifications that do not change signatures but specify the contract:
 
@@ -943,7 +1015,7 @@ The specifications also bring clarifications that do not change signatures but s
 
 ---
 
-## 18. Elements under study
+## 19. Elements under study
 
 The following elements appear in grey in the Legacy SAM API diagram; they are **not** part of the normative scope submitted for validation:
 
@@ -954,7 +1026,7 @@ The following elements appear in grey in the Legacy SAM API diagram; they are **
 
 ---
 
-## 19. Migration procedure
+## 20. Migration procedure
 
 Migrating application code from the production versions to the new versions will be covered by a **dedicated technical migration guide**, published separately after validation by the TC Terminal and after alignment of the associated Keypop Java implementations.
 
@@ -962,9 +1034,9 @@ This guide will aim to **simplify the transition as much as possible**: 1:1 mapp
 
 ---
 
-## 20. Next steps and validation by the TC Terminal
+## 21. Next steps and validation by the TC Terminal
 
-### 20.1 Scope submitted for validation
+### 21.1 Scope submitted for validation
 
 This document submits to the validation of the **CNA TC Terminal**:
 
@@ -985,9 +1057,9 @@ This document submits to the validation of the **CNA TC Terminal**:
   - access to the crypto extension with an identity clause (§15).
 3. **The detailed content of the nine specifications** and their diagrams (see [Reference documents](#reference-documents)).
 4. **The introduction** of the new Reader Definitions foundation API.
-5. **The principle** of a dedicated migration procedure (see §19).
+5. **The principle** of a dedicated migration procedure (see §20).
 
-### 20.2 Points of attention for the review
+### 21.2 Points of attention for the review
 
 - the **stability of the initial content** of the `RfTechnology` and `CardType` enumerations (§7.2), in particular the representation of ISO 14443-4 by a single `ISO_14443_4` value;
 - the **complete removal** of `ConfigurableCardReader` without a deprecation phase (§7.3);
@@ -998,14 +1070,14 @@ This document submits to the validation of the **CNA TC Terminal**:
 - the **replacement of "builder" interfaces** by data classes (§11.2, §12), whose Java implementation remains to be defined;
 - the **change from `SvOperation.DEBIT` to `DEBIT_UNDEBIT`** and the removal of the SV overloads without data (§13).
 
-### 20.3 Next steps
+### 21.3 Next steps
 
 The versions were validated by the TC Terminal and the nine specifications are available as a preview on the
 documentation site. Their formal release is pending, and the following steps remain:
 
 1. **Finalisation of the specifications**: moving the repositories from their `…-SNAPSHOT` versions to their final
-   versions; removal or specification of the elements under study (§18); then tagging and publishing the release.
-2. **Writing and publication of the technical migration guide** (see §19).
+   versions; removal or specification of the elements under study (§19); then tagging and publishing the release.
+2. **Writing and publication of the technical migration guide** (see §20).
 3. **Communication** of the availability of the new versions to integrators and to the CNA working groups concerned.
 
 ---
@@ -1024,7 +1096,8 @@ This annex lists, for each API, what becomes of each element of the Java version
 | `ConfigurableCardReader` (`activateProtocol`, `deactivateProtocol`, `getCurrentProtocol`) | Removed |
 | `ObservableCardReader.setReaderObservationExceptionHandler`, `addObserver`, `removeObserver`, `clearObservers`, `countObservers` | Removed |
 | `ObservableCardReader.startCardDetection(DetectionMode)` | → `startCardDetection(settings: CardDetectionSettings, eventHandler: CardReaderEventHandler)` |
-| `ObservableCardReader.finalizeCardProcessing()` | → `endCardProcessing()` |
+| `ObservableCardReader.finalizeCardProcessing()` | → `CardReader.endCardProcessing()`, moved up to `CardReader` and carrying the power-off of the card |
+| — | Added: best-effort power and field effects on `endCardProcessing()` and `stopCardDetection()`; `isCardPresent()` may power the card |
 | — | Added: `ObservableCardReader.clearScheduledCardSelectionScenario()` |
 | `ObservableCardReader.DetectionMode` (`REPEATING`, `SINGLESHOT`) | → `DetectionMode` (`REPEATING`, `SINGLE_SHOT`) |
 | `ObservableCardReader.NotificationMode` | → `CardPresenceNotificationPolicy` (namespace `reader.selection`) |

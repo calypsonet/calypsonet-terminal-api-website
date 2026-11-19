@@ -175,9 +175,6 @@ activate cardReader #lightBlue
     card-->cardReader: ack
 'end
 
-cardReader->card: close card channel
-card-->cardReader
-deactivate card
 
 cardReader-[#0000FF]->capi: ack
 deactivate cardReader
@@ -186,4 +183,17 @@ capi-->app: [Calypso card image:\n\t- identification data with PIN support\n\t- 
 deactivate capi
 
 deactivate capi
+
+app->rapi: **end** the card processing
+activate rapi  #pink
+rapi-[#0000FF]>cardReader: deselect the card and power it off
+activate cardReader #lightBlue
+cardReader->card: close card channel
+card-->cardReader
+deactivate card
+cardReader--[#0000FF]>rapi
+deactivate cardReader
+rapi-->app
+deactivate rapi
+
 @enduml

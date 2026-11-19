@@ -355,9 +355,6 @@ cardReader->card: close secure session (SAM certificate, as non ratified)
 card-->cardReader: [card certificate]
 cardReader->card: ratification command
 card-->cardReader
-cardReader->card: close card channel
-card-->cardReader
-deactivate card
 
 cardReader-[#0000FF]->capi: [card certificate]
 deactivate cardReader
@@ -372,4 +369,17 @@ deactivate samReader
 
 capi-->app: [Calypso card image:\n\t- identification data\n\t- invalidation status\n\t- environment data\n\t- --ratification status--\n\t- last event data (updated)\n\t- contract list data\n\t- contract #x data\n\t- counter #x data (updated)]\nauthentification status
 deactivate capi
+
+app->rapi: **end** the card processing
+activate rapi  #pink
+rapi-[#0000FF]>cardReader: deselect the card and power it off
+activate cardReader #lightBlue
+cardReader->card: close card channel
+card-->cardReader
+deactivate card
+cardReader--[#0000FF]>rapi
+deactivate cardReader
+rapi-->app
+deactivate rapi
+
 @enduml

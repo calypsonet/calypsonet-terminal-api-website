@@ -154,9 +154,6 @@ end note
     card-->cardReader: [new balance, SV Card certificate]
 'end
 
-cardReader->card: close card channel
-card-->cardReader
-deactivate card
 
 cardReader-[#0000FF]->capi: [card certificate]
 deactivate cardReader
@@ -171,4 +168,17 @@ deactivate samReader
 
 capi-->app: [Calypso card image:\n\t- identification data with SV support\n\t- SV Load data (updated)\n\t- SV Debit data\n\t- SV balance (updated)]\nauthentication status
 deactivate capi
+
+app->rapi: **end** the card processing
+activate rapi  #pink
+rapi-[#0000FF]>cardReader: deselect the card and power it off
+activate cardReader #lightBlue
+cardReader->card: close card channel
+card-->cardReader
+deactivate card
+cardReader--[#0000FF]>rapi
+deactivate cardReader
+rapi-->app
+deactivate rapi
+
 @enduml

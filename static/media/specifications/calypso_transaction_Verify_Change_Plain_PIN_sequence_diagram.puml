@@ -96,10 +96,7 @@ activate cardReader #lightBlue
 'group Card APDU commands inside session
     cardReader->card: Change PIN (plain PIN)
     card-->cardReader: ack
-    cardReader->card: close card channel
-    card-->cardReader
 'end
-deactivate card
 
 cardReader-[#0000FF]->capi: ack
 deactivate cardReader
@@ -108,4 +105,13 @@ capi-->app: [Calypso card image:\n\t- identification data with PIN support\n\t- 
 deactivate capi
 
 deactivate capi
+
+app->cardReader: **end** the card processing
+activate cardReader #lightBlue
+cardReader->card: close card channel
+card-->cardReader
+deactivate card
+cardReader-->app
+deactivate cardReader
+
 @enduml
