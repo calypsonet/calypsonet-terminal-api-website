@@ -60,7 +60,7 @@ end note
 capi-->app
 deactivate capi
 
-app->rapi: <font color=red>**process**</font> explicit card selection scenario
+app->rapi: <font color=red>**process**</font> the selection scenario for a **single application**\n(card already present)
 activate rapi  #pink
 rapi-[#0000FF]>cardReader: <font color=blue>**Card #1**</font>\ntransmit selection request\n\t- card selector\n\t- APDU list
 activate cardReader #lightBlue
@@ -80,18 +80,12 @@ cardReader->cardReader: checks invalidation status
 cardReader--[#0000FF]>rapi: receive selection response
 deactivate cardReader
 
-rapi-->app: selected active SmartCard image
+rapi-->app: [selected card image:\n\t- identification data with PIN support\n\t- key #1 reference\n\t- key #2 reference\n\t- key #3 reference]
 deactivate rapi
-
-app->capi: **cast** Calypso card
-activate capi  #pink
-capi-->app: [Calypso card image:\n\t- identification data with PIN support\n\t- key #1 reference\n\t- key #2 reference\n\t- key #3 reference]
-
-deactivate capi
 
 == Card secure transaction ==
 
-app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
+app->app: **start** a card transaction:\n\t- secured with a **symmetric** crypto module\n\t- in **regular** mode, with its security settings
 
 
 app->capi: <font color=red>**prepare**</font> Change Key (current key #x reference,\n\t\t\t\tnew key #x reference)
@@ -99,7 +93,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands (keep channel open)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #2**</font>\ntransmit card request\n\t- APDU list
@@ -146,7 +140,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands (close channel after)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 
 capi-[#0000FF]>cardReader: <font color=blue>**Card #4**</font>\ntransmit card request\n\t- APDU list
@@ -181,9 +175,6 @@ activate cardReader #lightBlue
     card-->cardReader: ack
 'end
 
-cardReader->card: close card channel
-card-->cardReader
-deactivate card
 
 cardReader-[#0000FF]->capi: ack
 deactivate cardReader
@@ -192,4 +183,17 @@ capi-->app: [Calypso card image:\n\t- identification data with PIN support\n\t- 
 deactivate capi
 
 deactivate capi
+
+app->rapi: **end** the card processing
+activate rapi  #pink
+rapi-[#0000FF]>cardReader: deselect the card and power it off
+activate cardReader #lightBlue
+cardReader->card: close card channel
+card-->cardReader
+deactivate card
+cardReader--[#0000FF]>rapi
+deactivate cardReader
+rapi-->app
+deactivate rapi
+
 @enduml

@@ -40,9 +40,8 @@ hide <<grey>> stereotype
 
 actor "Ticketing Application" as app #gold
 participant "Calypso\nCard API" as capi #pink
-participant "Reader API" as rapi #pink
 participant "Calypso Card\nReader" as cardReader #lightBlue
-boundary "**Card**" as card #lightBlue
+boundary "selected\n**Card**" as card #lightBlue
 participant "Calypso SAM\nReader" as samReader #lightGreen
 boundary "selected\n**SAM**" as sam #lightGreen
 
@@ -51,15 +50,14 @@ activate sam #lightGreen
 
 activate card #lightBlue
 
-app->capi: **cast** Calypso card
-activate capi  #pink
-capi-->app: [Calypso card image:\n\t- identification data\n\t- session buffer size]
-
-deactivate capi
+note over app
+    The card image obtained from the selection scenario carries
+    the identification data and the session buffer size.
+end note
 
 == Card secure transaction ==
 
-app->app: **instantiate** Calypso card transaction:\n\t- Calypso card resource\n\t- Calypso SAM resource
+app->app: **start** a card transaction:\n\t- secured with a **symmetric** crypto module\n\t- in **regular** mode, with its security settings
 
 note over capi
     Reads again the environment data inside the session to authenticate them.
@@ -70,7 +68,7 @@ activate capi  #pink
 capi-->app
 deactivate capi
 
-app->capi: <font color=red>**process**</font> commands (close channel after)
+app->capi: <font color=red>**process**</font> commands
 activate capi  #pink
 
 capi-[#00FF00]>samReader: <font color=green>**SAM #1**<font color=red>\ntransmit card request\n\t- APDU list
@@ -211,9 +209,6 @@ activate cardReader #lightBlue
 
 cardReader->card: close secure session (SAM certificate 2)
 card-->cardReader: [card certificate 2]
-cardReader->card: close card channel
-card-->cardReader
-deactivate card
 
 cardReader-[#0000FF]->capi: [card certificate]
 deactivate cardReader
@@ -228,4 +223,13 @@ deactivate samReader
 
 capi-->app: [Calypso card image:\n\t- environment file\n\t- contract list\n\t- contract #1\n\t- contract #2\n\t- contract #3\n\t- contract #4\n\t- all counters\n\t- event log #1\n\t- event log #2\n\t- event log #3]\nauthentification status
 deactivate capi
+
+app->cardReader: **end** the card processing
+activate cardReader #lightBlue
+cardReader->card: close card channel
+card-->cardReader
+deactivate card
+cardReader-->app
+deactivate cardReader
+
 @enduml
