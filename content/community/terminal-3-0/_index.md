@@ -42,7 +42,7 @@ For each evolution theme, it describes:
 
 **Annex A** additionally provides an **exhaustive, API-by-API mapping** between each element of the Java versions in production and what becomes of it in the specifications.
 
-Alignment of the Keypop Java implementations with these versions and the writing of a **technical migration guide** for integrators will take place subsequently, after validation by the TC Terminal (see §21).
+Alignment of the Keypop Java implementations with these versions and the writing of a **technical migration guide** for integrators will take place subsequently, after validation by the TC Terminal (see §22).
 
 > **API visibility with respect to audiences**
 >
@@ -92,7 +92,7 @@ Each `calypsonet-terminal-*-api-spec` repository hosted on [github.com/calypsone
 **Diagram reading conventions**:
 
 - elements in **blue** are **additions or modifications** of the new version;
-- elements in **grey** are **under study** ("work in progress"): they have never been implemented and are not part of the normative scope (see §20);
+- elements in **grey** are **under study** ("work in progress"): they have never been implemented and are not part of the normative scope (see §21);
 - green classes group **data, constants, enumerations and errors**;
 - signatures follow the language-independent notation described in Theme 10 (`→ Self`, `T?`, `val property: Type = default`, etc.).
 
@@ -118,17 +118,18 @@ Each `calypsonet-terminal-*-api-spec` repository hosted on [github.com/calypsone
 16. [Theme 15 — Validity of the Calypso HCE token](#16-theme-15--validity-of-the-calypso-hce-token)
 17. [Theme 16 — Card power and RF field](#17-theme-16--card-power-and-rf-field)
 18. [Theme 17 — Card revocation](#18-theme-17--card-revocation)
-19. [Normative clarifications](#19-normative-clarifications)
-20. [Elements under study](#20-elements-under-study)
-21. [Migration procedure](#21-migration-procedure)
-22. [Next steps and validation by the TC Terminal](#22-next-steps-and-validation-by-the-tc-terminal)
+19. [Theme 18 — Transaction counter](#19-theme-18--transaction-counter)
+20. [Normative clarifications](#20-normative-clarifications)
+21. [Elements under study](#21-elements-under-study)
+22. [Migration procedure](#22-migration-procedure)
+23. [Next steps and validation by the TC Terminal](#23-next-steps-and-validation-by-the-tc-terminal)
 - [Annex A — Detailed mapping per API](#annex-a--detailed-mapping-per-api)
 
 ---
 
 ## 1. Overview
 
-The new generation of the Terminal APIs introduces compatibility breaks on all existing APIs, **creates a new foundation API** (`Terminal Reader Definitions API`), and comes with a **change of form** of the deliverables (language-independent normative specifications). The changes are grouped into seventeen themes:
+The new generation of the Terminal APIs introduces compatibility breaks on all existing APIs, **creates a new foundation API** (`Terminal Reader Definitions API`), and comes with a **change of form** of the deliverables (language-independent normative specifications). The changes are grouped into eighteen themes:
 
 | # | Theme | Reader | Card | Calypso Card | Definitions | Legacy SAM | Crypto Sym. | Crypto Asym. | Generic Card | Storage Card |
 |---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -149,11 +150,12 @@ The new generation of the Terminal APIs introduces compatibility breaks on all e
 | 15 | Calypso HCE token validity | — | — | ● | — | — | — | — | — | — |
 | 16 | Card power and RF field | ● | — | — | — | — | — | — | — | — |
 | 17 | Card revocation | — | — | ● | — | — | — | — | — | — |
+| 18 | Transaction counter | — | — | ● | — | — | — | — | — | — |
 
 Cross-cutting consequences:
 
 - **Removal of the entire deprecated legacy**: all elements marked `@Deprecated` in the production versions are removed with no compatibility alternative (for example `ChannelControl` in the Calypso Card API, `TransactionManager.processCommands()` in the Legacy SAM API, `prepareReadSystemBlock()` in the Storage Card API).
-- **Removal of the "work in progress" elements** that appeared in the former diagrams for prospective purposes without ever being implemented: `ReaderApiFactory.createMultichannelCardSelector()`, `MultichannelCardSelector`, `CardSelectionResult.getCardReader()` (Reader API); `AsymmetricCryptoSecuritySetting.authorizeAllTrustedCa()`, `authorizeOnlyConfiguredCa()` and `revokeCa(byte[])` (Calypso Card API). The elements still under study in the Legacy SAM API are listed in §20.
+- **Removal of the "work in progress" elements** that appeared in the former diagrams for prospective purposes without ever being implemented: `ReaderApiFactory.createMultichannelCardSelector()`, `MultichannelCardSelector`, `CardSelectionResult.getCardReader()` (Reader API); `AsymmetricCryptoSecuritySetting.authorizeAllTrustedCa()`, `authorizeOnlyConfiguredCa()` and `revokeCa(byte[])` (Calypso Card API). The elements still under study in the Legacy SAM API are listed in §21.
 - **Complete disappearance of `ChannelControl`** (Reader API, Card API, Calypso Card API): closing the channel becomes an **explicit operation** (`closeChannel`, `transmitCardRequestAndCloseChannel`, `processCommandsAndCloseChannel`).
 - **Disappearance of duplicate errors**: the `InvalidCardResponseException` of the `reader.selection` package, as well as the communication and status errors specific to the Calypso Card API and the Legacy SAM API, disappear in favour of the Reader API errors.
 - **Recursive genericity dropped**: all interfaces of the form `T extends X<T>` (transaction managers, selectors, signature data) lose their type parameter; fluent chaining is expressed by the `Self` return type (see Theme 10).
@@ -741,7 +743,7 @@ The specifications also define common rules (non-`null` results unless stated ot
 - **Portability**: the contract no longer imposes any Java-specific mechanism (reflection, recursive genericity, overloads); it can be transposed into any language, including those without overloading or class inheritance (Rust in particular), which paves the way for implementations in Kotlin Multiplatform, Rust, Swift or C#.
 - **Robustness**: explicit nullability and immutable data eliminate invalid states (incomplete "builder" object, unexpected `null` value).
 - **Precision**: typed pre-conditions and errors listed per operation make the contract verifiable.
-- **Java binding**: the way the Java binding will implement these principles (data classes, `Self`, default values) is part of the alignment of the Keypop modules and of the migration guide (see §21).
+- **Java binding**: the way the Java binding will implement these principles (data classes, `Self`, default values) is part of the alignment of the Keypop modules and of the migration guide (see §22).
 
 ---
 
@@ -1058,7 +1060,56 @@ fail would have been indistinguishable from an unknown card.
 
 ---
 
-## 19. Normative clarifications
+## 19. Theme 18 — Transaction counter
+
+### 19.1 Motivation
+
+A Calypso card decrements a **transaction counter** each time it performs an operation involving one of its secret
+keys. The counter only ever decreases, and once it reaches zero the card refuses the operations that consume it —
+the medium then has to be replaced. A network therefore has an interest in watching that counter, so as to
+**anticipate the renewal** of its media rather than discover their exhaustion in front of a gate.
+
+`CalypsoCard.getTransactionCounter()` existed since version 1.2, but two limits made it unusable for that purpose:
+it carried a *State* pre-condition requiring **an open secure session**, and its value was defined as coming from
+*the last successful Open Secure Session* during that session. The value could therefore not be read before or
+after the transaction — precisely when an application decides whether to renew a medium.
+
+### 19.2 Calypso Card API
+
+- **`getTransactionCounter() → Int?`** (was `→ Int`): the *State* pre-condition **disappears**, and the value is now
+  the one the card reported at the last *Open Secure Session*, **whichever** performed it — a session opening
+  operation, or the **pre-opening** prepared during the card selection.
+- **The value is the up-to-date one**, returned by the card **after** the opening has consumed it: it is what the
+  card holds once the session is open, not what it held before. A pre-opened session is not charged twice — the
+  pre-opening consumes one unit and reports the result, and the session opening that consumes it afterwards
+  consumes nothing more and reports that same value.
+- **No dedicated command**: the value comes from an opening the application performs anyway. Reading the counter
+  without opening a session would require a *Get Challenge*, which is deliberately not exposed.
+- **`null` until an opening has taken place**: at least one secure session opening, or one pre-opening through
+  `CalypsoCardSelectionExtension.preparePreOpenSecureSession()`, must have been performed for a value to be
+  available.
+- **As early as the selection**: a pre-opening makes the value available as soon as the selection response is
+  parsed, before any transaction manager exists. The value belongs to the card image, and is therefore carried by an
+  exported processed selection scenario, so that a thin client reads a counter obtained by the side holding the card
+  extension.
+- **New section** *Transaction counter* in the architectural overview.
+
+### 19.3 Rationale
+
+**The exposed value is an upper bound, and the specification says so.** Operations that consume the counter without
+returning it — a key or PIN decryption, a Stored Value operation performed outside a secure session — decrement it
+without this value following. The bias is therefore **optimistic**: an application watching the counter for renewal
+purposes may believe more transactions remain than the card will grant. Stating the *direction* of the error
+matters more than stating that an error exists, since the whole point of the value is to trigger a decision.
+
+**The properties of the counter are not described here.** Its width, its initial value, the operations that consume
+it and whether it is shared by every application of the card depend on the card product and on its revision; older
+products may even hold one counter per application. These belong to the Calypso card specifications, and this API
+exposes the value, not those properties.
+
+---
+
+## 20. Normative clarifications
 
 The specifications also bring clarifications that do not change signatures but specify the contract:
 
@@ -1071,7 +1122,7 @@ The specifications also bring clarifications that do not change signatures but s
 
 ---
 
-## 20. Elements under study
+## 21. Elements under study
 
 The following elements appear in grey in the Legacy SAM API diagram; they are **not** part of the normative scope submitted for validation:
 
@@ -1082,7 +1133,7 @@ The following elements appear in grey in the Legacy SAM API diagram; they are **
 
 ---
 
-## 21. Migration procedure
+## 22. Migration procedure
 
 Migrating application code from the production versions to the new versions will be covered by a **dedicated technical migration guide**, published separately after validation by the TC Terminal and after alignment of the associated Keypop Java implementations.
 
@@ -1090,13 +1141,13 @@ This guide will aim to **simplify the transition as much as possible**: 1:1 mapp
 
 ---
 
-## 22. Next steps and validation by the TC Terminal
+## 23. Next steps and validation by the TC Terminal
 
-### 22.1 Scope submitted for validation
+### 23.1 Scope submitted for validation
 
 This document submits to the validation of the **CNA TC Terminal**:
 
-1. **The principle** of the seventeen evolution themes (§2 to §18) and the overall consistency of the work (versions 3.0.0 for Reader / Card / Calypso Card, 1.0.0 for Definitions, 2.0.0 for Legacy SAM / Generic Card / Storage Card, 0.2.0 for Crypto Symmetric, 0.3.0 for Crypto Asymmetric).
+1. **The principle** of the eighteen evolution themes (§2 to §19) and the overall consistency of the work (versions 3.0.0 for Reader / Card / Calypso Card, 1.0.0 for Definitions, 2.0.0 for Legacy SAM / Generic Card / Storage Card, 0.2.0 for Crypto Symmetric, 0.3.0 for Crypto Asymmetric).
 2. **The design choices** documented in the "Rationale" sections, in particular:
   - the explicit multi-channel model relying on the `SmartCard(Spi)` as the named target and the three-level hierarchy of transaction managers (§2);
   - duration bounding at the APDU, generic command and storage card read levels, the Calypso countermeasure being delegated in full to the implementation (§3);
@@ -1113,12 +1164,13 @@ This document submits to the validation of the **CNA TC Terminal**:
   - access to the crypto extension with an identity clause (§15);
   - the **validity of the Calypso HCE token**, verified by the terminal from a clock the application provides (§16);
   - **card power and RF field** described as effects provided on a best-effort basis rather than as capabilities (§17);
-  - the **revocation status of a card**, obtained from a service the application provides, and checked before any secure session (§18).
+  - the **revocation status of a card**, obtained from a service the application provides, and checked before any secure session (§18);
+  - the **transaction counter** exposed outside any secure session, fed by the openings the application already performs, for anticipating the renewal of a medium (§19).
 3. **The detailed content of the nine specifications** and their diagrams (see [Reference documents](#reference-documents)).
 4. **The introduction** of the new Reader Definitions foundation API.
-5. **The principle** of a dedicated migration procedure (see §21).
+5. **The principle** of a dedicated migration procedure (see §22).
 
-### 22.2 Points of attention for the review
+### 23.2 Points of attention for the review
 
 - the **stability of the initial content** of the `RfTechnology` and `CardType` enumerations (§7.2), in particular the representation of ISO 14443-4 by a single `ISO_14443_4` value;
 - the **complete removal** of `ConfigurableCardReader` without a deprecation phase (§7.3);
@@ -1131,14 +1183,14 @@ This document submits to the validation of the **CNA TC Terminal**:
 - the **replacement of "builder" interfaces** by data classes (§11.2, §12), whose Java implementation remains to be defined;
 - the **change from `SvOperation.DEBIT` to `DEBIT_UNDEBIT`** and the removal of the SV overloads without data (§13).
 
-### 22.3 Next steps
+### 23.3 Next steps
 
 The versions were validated by the TC Terminal and the nine specifications are available as a preview on the
 documentation site. Their formal release is pending, and the following steps remain:
 
 1. **Finalisation of the specifications**: moving the repositories from their `…-SNAPSHOT` versions to their final
-   versions; removal or specification of the elements under study (§20); then tagging and publishing the release.
-2. **Writing and publication of the technical migration guide** (see §21).
+   versions; removal or specification of the elements under study (§21); then tagging and publishing the release.
+2. **Writing and publication of the technical migration guide** (see §22).
 3. **Communication** of the availability of the new versions to integrators and to the CNA working groups concerned.
 
 ---
@@ -1249,6 +1301,7 @@ This annex lists, for each API, what becomes of each element of the Java version
 | — | Added: `CalypsoCard.getHceTokenExpiryLocalEpochSeconds() → Long?` and `isHceTokenValid() → Boolean?`; `SecuritySettings.authorizeExpiredHceToken()`; *State* pre-condition on `prepareOpenSecureSession` (see Theme 15) |
 | — | Added: `CardRevocationStatusProvider` SPI (namespace `calypso.card.spi`) and `CalypsoCardApiFactory.setCardRevocationStatusProvider(provider)` |
 | — | Added: `CalypsoCard.isRevoked() → Boolean?`; `SecuritySettings.authorizeRevokedCard()`; second *State* pre-condition on `prepareOpenSecureSession` (see Theme 17) |
+| `CalypsoCard.getTransactionCounter() → Int` | → `getTransactionCounter() → Int?`; the *State* pre-condition requiring an open secure session is removed, and the value is fed by any *Open Secure Session*, the pre-opening performed during the selection included (see Theme 18) |
 | `ChannelControl` | Removed |
 | `CardIOException`, `ReaderIOException`, `UnexpectedCommandStatusException`, `SelectFileException` | Removed |
 | `CardSignatureNotVerifiableException`, `CryptoException`, `CryptoIOException`, `InconsistentDataException`, `InvalidCardSignatureException`, `InvalidCertificateException`, `InvalidPinException`, `SessionBufferOverflowException`, `UnauthorizedKeyException` | → same names without the `Exception` suffix |
