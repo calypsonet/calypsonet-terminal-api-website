@@ -2,27 +2,27 @@
   "total_count": 2,
   "check_runs": [
     {
-      "id": 134937693678,
+      "id": 137807300429,
       "name": "publish-snapshot / reusable-publish-snapshot",
-      "node_id": "CR_kwDOHZ2RGc8AAAAfaunN7g",
-      "head_sha": "1600add5fc257462af6dddbf0e5e244b1fa66f98",
-      "external_id": "c3ce81e0-78b6-5ebe-ae25-50053ae6f686",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/134937693678",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/44342981339/job/134937693678",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/44342981339/job/134937693678",
+      "node_id": "CR_kwDOHZ2RGc8AAAAgFfSHTQ",
+      "head_sha": "911fbea28e17ce9d9ca5ac4b904b14e600e3dc0e",
+      "external_id": "9c60a149-9bd5-5374-b678-46fa97afa229",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/137807300429",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/45207568782/job/137807300429",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/45207568782/job/137807300429",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-18T16:04:46Z",
-      "completed_at": "2026-11-18T16:05:32Z",
+      "started_at": "2026-11-23T15:38:56Z",
+      "completed_at": "2026-11-23T15:39:46Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
-        "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/134937693678/annotations"
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/137807300429/annotations"
       },
       "check_suite": {
-        "id": 120035136789
+        "id": 122333850124
       },
       "app": {
         "id": 15368,
@@ -119,27 +119,27 @@
       ]
     },
     {
-      "id": 134937687489,
+      "id": 137807294095,
       "name": "check-diagram-identity",
-      "node_id": "CR_kwDOHZ2RGc8AAAAfaum1wQ",
-      "head_sha": "1600add5fc257462af6dddbf0e5e244b1fa66f98",
-      "external_id": "0e5fc95a-04cc-5e66-be7e-effd78056a32",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/134937687489",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/44342979807/job/134937687489",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/44342979807/job/134937687489",
+      "node_id": "CR_kwDOHZ2RGc8AAAAgFfRujw",
+      "head_sha": "911fbea28e17ce9d9ca5ac4b904b14e600e3dc0e",
+      "external_id": "8ddadae3-d7a3-5392-9bf2-24f7f07272d3",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/137807294095",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/45207566523/job/137807294095",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-calypso-card-api-spec/actions/runs/45207566523/job/137807294095",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-18T16:04:46Z",
-      "completed_at": "2026-11-18T16:04:52Z",
+      "started_at": "2026-11-23T15:38:56Z",
+      "completed_at": "2026-11-23T15:39:03Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
-        "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/134937687489/annotations"
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-calypso-card-api-spec/check-runs/137807294095/annotations"
       },
       "check_suite": {
-        "id": 120035132168
+        "id": 122333844839
       },
       "app": {
         "id": 15368,

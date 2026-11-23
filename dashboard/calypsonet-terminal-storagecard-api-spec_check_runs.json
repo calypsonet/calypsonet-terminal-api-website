@@ -2,27 +2,27 @@
   "total_count": 2,
   "check_runs": [
     {
-      "id": 131983864143,
+      "id": 137591570301,
       "name": "publish-snapshot / reusable-publish-snapshot",
-      "node_id": "CR_kwDOOlf9AM8AAAAeutnxTw",
-      "head_sha": "31637415e6a0a87a3c53afa44ef23601cd143b95",
-      "external_id": "7017d415-7161-561c-9100-85c0b7699e09",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/131983864143",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/43454185182/job/131983864143",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/43454185182/job/131983864143",
+      "node_id": "CR_kwDOOlf9AM8AAAAgCRi_fQ",
+      "head_sha": "a9addce71bedf7786dba160b40cfc561956cf86b",
+      "external_id": "5b939bc3-465a-526d-91aa-4bc26b49cde7",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/137591570301",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/45144877923/job/137591570301",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/45144877923/job/137591570301",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-13T15:35:54Z",
-      "completed_at": "2026-11-13T15:36:32Z",
+      "started_at": "2026-11-23T09:12:01Z",
+      "completed_at": "2026-11-23T09:12:40Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
-        "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/131983864143/annotations"
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/137591570301/annotations"
       },
       "check_suite": {
-        "id": 117665989267
+        "id": 122164249438
       },
       "app": {
         "id": 15368,
@@ -119,27 +119,27 @@
       ]
     },
     {
-      "id": 131983855672,
+      "id": 137591565746,
       "name": "check-diagram-identity",
-      "node_id": "CR_kwDOOlf9AM8AAAAeutnQOA",
-      "head_sha": "31637415e6a0a87a3c53afa44ef23601cd143b95",
-      "external_id": "df4f8b5f-e106-5b5f-88b8-0db02c8102f9",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/131983855672",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/43454183804/job/131983855672",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/43454183804/job/131983855672",
+      "node_id": "CR_kwDOOlf9AM8AAAAgCRitsg",
+      "head_sha": "a9addce71bedf7786dba160b40cfc561956cf86b",
+      "external_id": "32bac141-e2e5-533c-adbb-41dca968b5ae",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/137591565746",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/45144876654/job/137591565746",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-storagecard-api-spec/actions/runs/45144876654/job/137591565746",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-13T15:35:48Z",
-      "completed_at": "2026-11-13T15:35:55Z",
+      "started_at": "2026-11-23T09:12:01Z",
+      "completed_at": "2026-11-23T09:12:07Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
-        "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/131983855672/annotations"
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-storagecard-api-spec/check-runs/137591565746/annotations"
       },
       "check_suite": {
-        "id": 117665985917
+        "id": 122164245909
       },
       "app": {
         "id": 15368,

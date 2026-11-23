@@ -2,27 +2,27 @@
   "total_count": 2,
   "check_runs": [
     {
-      "id": 131983917949,
+      "id": 137650644131,
       "name": "publish-snapshot / reusable-publish-snapshot",
-      "node_id": "CR_kwDOHZ2SgM8AAAAeutrDfQ",
-      "head_sha": "5f9cc0558fa32ca44af1cfc6738ff937b50b60d6",
-      "external_id": "f82b9b9f-7474-52c7-aa74-222b1d48580f",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/131983917949",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/43454202184/job/131983917949",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/43454202184/job/131983917949",
+      "node_id": "CR_kwDOHZ2SgM8AAAAgDJ4kow",
+      "head_sha": "79421b08c392f2e670f3c4ea3f9ca45a27dd47d7",
+      "external_id": "6ea02402-178f-50a5-87ce-0104a2b21372",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/137650644131",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/45162346902/job/137650644131",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/45162346902/job/137650644131",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-13T15:35:54Z",
-      "completed_at": "2026-11-13T15:36:33Z",
+      "started_at": "2026-11-23T11:08:02Z",
+      "completed_at": "2026-11-23T11:08:38Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
-        "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/131983917949/annotations"
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/137650644131/annotations"
       },
       "check_suite": {
-        "id": 117666033941
+        "id": 122211166943
       },
       "app": {
         "id": 15368,
@@ -119,27 +119,27 @@
       ]
     },
     {
-      "id": 131983913738,
+      "id": 137650640620,
       "name": "check-diagram-identity",
-      "node_id": "CR_kwDOHZ2SgM8AAAAeutqzCg",
-      "head_sha": "5f9cc0558fa32ca44af1cfc6738ff937b50b60d6",
-      "external_id": "a69d76e9-bef7-5b82-be77-2b19908d625f",
-      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/131983913738",
-      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/43454200972/job/131983913738",
-      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/43454200972/job/131983913738",
+      "node_id": "CR_kwDOHZ2SgM8AAAAgDJ4W7A",
+      "head_sha": "79421b08c392f2e670f3c4ea3f9ca45a27dd47d7",
+      "external_id": "655a5ff2-f307-5f39-8582-a25a4b620b32",
+      "url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/137650640620",
+      "html_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/45162345825/job/137650640620",
+      "details_url": "https://github.com/calypsonet/calypsonet-terminal-card-api-spec/actions/runs/45162345825/job/137650640620",
       "status": "completed",
       "conclusion": "success",
-      "started_at": "2026-11-13T15:35:54Z",
-      "completed_at": "2026-11-13T15:35:59Z",
+      "started_at": "2026-11-23T11:08:02Z",
+      "completed_at": "2026-11-23T11:08:08Z",
       "output": {
         "title": null,
         "summary": null,
         "text": null,
-        "annotations_count": 2,
-        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/131983913738/annotations"
+        "annotations_count": 1,
+        "annotations_url": "https://api.github.com/repos/calypsonet/calypsonet-terminal-card-api-spec/check-runs/137650640620/annotations"
       },
       "check_suite": {
-        "id": 117666030438
+        "id": 122211164170
       },
       "app": {
         "id": 15368,
