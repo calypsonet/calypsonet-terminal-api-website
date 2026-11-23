@@ -42,7 +42,7 @@ For each evolution theme, it describes:
 
 **Annex A** additionally provides an **exhaustive, API-by-API mapping** between each element of the Java versions in production and what becomes of it in the specifications.
 
-Alignment of the Keypop Java implementations with these versions and the writing of a **technical migration guide** for integrators will take place subsequently, after validation by the TC Terminal (see §18).
+Alignment of the Keypop Java implementations with these versions and the writing of a **technical migration guide** for integrators will take place subsequently, after validation by the TC Terminal (see §21).
 
 > **API visibility with respect to audiences**
 >
@@ -92,7 +92,7 @@ Each `calypsonet-terminal-*-api-spec` repository hosted on [github.com/calypsone
 **Diagram reading conventions**:
 
 - elements in **blue** are **additions or modifications** of the new version;
-- elements in **grey** are **under study** ("work in progress"): they have never been implemented and are not part of the normative scope (see §19);
+- elements in **grey** are **under study** ("work in progress"): they have never been implemented and are not part of the normative scope (see §20);
 - green classes group **data, constants, enumerations and errors**;
 - signatures follow the language-independent notation described in Theme 10 (`→ Self`, `T?`, `val property: Type = default`, etc.).
 
@@ -115,19 +115,20 @@ Each `calypsonet-terminal-*-api-spec` repository hosted on [github.com/calypsone
 13. [Theme 12 — Stored Value (SV) operations](#13-theme-12--stored-value-sv-operations)
 14. [Theme 13 — Tolerance of a missing file or record in a secure session](#14-theme-13--tolerance-of-a-missing-file-or-record-in-a-secure-session)
 15. [Theme 14 — Crypto extensions and command interleaving](#15-theme-14--crypto-extensions-and-command-interleaving)
-16. [Theme 15 — Validity of the Calypso HCE debit key](#16-theme-15--validity-of-the-calypso-hce-debit-key)
+16. [Theme 15 — Validity of the Calypso HCE token](#16-theme-15--validity-of-the-calypso-hce-token)
 17. [Theme 16 — Card power and RF field](#17-theme-16--card-power-and-rf-field)
-18. [Normative clarifications](#18-normative-clarifications)
-19. [Elements under study](#19-elements-under-study)
-20. [Migration procedure](#20-migration-procedure)
-21. [Next steps and validation by the TC Terminal](#21-next-steps-and-validation-by-the-tc-terminal)
+18. [Theme 17 — Card revocation](#18-theme-17--card-revocation)
+19. [Normative clarifications](#19-normative-clarifications)
+20. [Elements under study](#20-elements-under-study)
+21. [Migration procedure](#21-migration-procedure)
+22. [Next steps and validation by the TC Terminal](#22-next-steps-and-validation-by-the-tc-terminal)
 - [Annex A — Detailed mapping per API](#annex-a--detailed-mapping-per-api)
 
 ---
 
 ## 1. Overview
 
-The new generation of the Terminal APIs introduces compatibility breaks on all existing APIs, **creates a new foundation API** (`Terminal Reader Definitions API`), and comes with a **change of form** of the deliverables (language-independent normative specifications). The changes are grouped into fourteen themes:
+The new generation of the Terminal APIs introduces compatibility breaks on all existing APIs, **creates a new foundation API** (`Terminal Reader Definitions API`), and comes with a **change of form** of the deliverables (language-independent normative specifications). The changes are grouped into seventeen themes:
 
 | # | Theme | Reader | Card | Calypso Card | Definitions | Legacy SAM | Crypto Sym. | Crypto Asym. | Generic Card | Storage Card |
 |---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -145,11 +146,14 @@ The new generation of the Terminal APIs introduces compatibility breaks on all e
 | 12 | Stored Value operations | — | — | ● | — | — | — | — | — | — |
 | 13 | Missing file or record tolerated | — | — | ● | — | — | — | — | — | — |
 | 14 | Crypto extensions and interleaving | — | — | ● | — | ● | — | — | — | — |
+| 15 | Calypso HCE token validity | — | — | ● | — | — | — | — | — | — |
+| 16 | Card power and RF field | ● | — | — | — | — | — | — | — | — |
+| 17 | Card revocation | — | — | ● | — | — | — | — | — | — |
 
 Cross-cutting consequences:
 
 - **Removal of the entire deprecated legacy**: all elements marked `@Deprecated` in the production versions are removed with no compatibility alternative (for example `ChannelControl` in the Calypso Card API, `TransactionManager.processCommands()` in the Legacy SAM API, `prepareReadSystemBlock()` in the Storage Card API).
-- **Removal of the "work in progress" elements** that appeared in the former diagrams for prospective purposes without ever being implemented: `ReaderApiFactory.createMultichannelCardSelector()`, `MultichannelCardSelector`, `CardSelectionResult.getCardReader()` (Reader API); `AsymmetricCryptoSecuritySetting.authorizeAllTrustedCa()`, `authorizeOnlyConfiguredCa()` and `revokeCa(byte[])` (Calypso Card API). The elements still under study in the Legacy SAM API are listed in §17.
+- **Removal of the "work in progress" elements** that appeared in the former diagrams for prospective purposes without ever being implemented: `ReaderApiFactory.createMultichannelCardSelector()`, `MultichannelCardSelector`, `CardSelectionResult.getCardReader()` (Reader API); `AsymmetricCryptoSecuritySetting.authorizeAllTrustedCa()`, `authorizeOnlyConfiguredCa()` and `revokeCa(byte[])` (Calypso Card API). The elements still under study in the Legacy SAM API are listed in §20.
 - **Complete disappearance of `ChannelControl`** (Reader API, Card API, Calypso Card API): closing the channel becomes an **explicit operation** (`closeChannel`, `transmitCardRequestAndCloseChannel`, `processCommandsAndCloseChannel`).
 - **Disappearance of duplicate errors**: the `InvalidCardResponseException` of the `reader.selection` package, as well as the communication and status errors specific to the Calypso Card API and the Legacy SAM API, disappear in favour of the Reader API errors.
 - **Recursive genericity dropped**: all interfaces of the form `T extends X<T>` (transaction managers, selectors, signature data) lose their type parameter; fluent chaining is expressed by the `Self` return type (see Theme 10).
@@ -263,8 +267,8 @@ Two threats are detected through the **duration of the exchanges**, and the new 
 #### Threat model
 
 - **Targeted attack surface**: **application-level attack** (software relay of APDUs, card emulation by a generic device), as opposed to attacks at the physical RF transport level, which are covered by hardware countermeasures.
-- **Units**: every duration carries the suffix of its unit. The **microsecond** (`...Us`) is the unit of the family — Card API, Generic Card API and Storage Card API — and it is the unit of the measurement. The **Calypso Card API** is the only one to declare its bounds in **milliseconds** (`...Ms`), the order of magnitude of the incompressible delay introduced by a relay; the card extension converts them before building the request. The **effective resolution of the measurement depends on the implementation**, which must document it.
-- **Measurement location**: the **Terminal Reader API implementation** measures the effective duration of each APDU exchange and compares it with the bound declared on the request. The Calypso duration bounds are declared in the Calypso Card API and each covers **a single command exchange** (_Open Secure Session_, _Close Secure Session_, _SV Reload_ / _SV Debit_ / _SV Undebit_).
+- **Units**: every duration carries the suffix of its unit, and the **microsecond** (`...Us`) is the unit of the whole family — Card API, Generic Card API and Storage Card API — as well as the unit of the measurement. The **effective resolution of the measurement depends on the implementation**, which must document it.
+- **Measurement location**: the **Terminal Reader API implementation** measures the effective duration of each APDU exchange and compares it with the bound declared on the request. In a Calypso transaction the bounded exchanges are **_Open Secure Session_**, **_Close Secure Session_** and **_SV Reload_ / _SV Debit_ / _SV Undebit_**, each bound covering **a single command exchange**; the bounds themselves are resolved by the Calypso card extension, not by the application (see §3.3).
 - **Behaviour after an overrun**: the Card API raises the **`ApduExchangeDurationExceeded`** error, which the higher-level extensions intercept and propagate to the application as an **`InvalidCardResponse`**. The Calypso Card API now specifies this behaviour: if a **secure session is open, it is automatically cancelled** before the error is propagated, so that no modification performed during the session is validated by the card; **outside a session** (SV command), there is nothing to cancel and only the error is propagated to the ticketing layer, which decides what to do according to its own context. In the Generic Card API, an overrun raises `InvalidCardResponse`, whose message identifies the offending command.
 
 ### 3.2 Card API
@@ -272,41 +276,24 @@ Two threats are detected through the **duration of the exchanges**, and the new 
 - **Request side**: `ApduRequest.apduExchangeMaxDurationUs: Long? = null` — maximum tolerated duration for the exchange (in microseconds); `null` means "no bound".
 - **Response side**: `ApduResponse.apduExchangeDurationUs: Long?` — effective duration of the exchange; `null` means "duration not measured".
 - **New error** `ApduExchangeDurationExceeded` — raised by `ProxyReaderApi.transmitCardRequest(...)` when the effective duration exceeds the declared bound. Like the other APDU errors, it carries `cardResponse` and `isCardResponseComplete`.
-- The Card API specification now documents this mechanism as a **practical solution for implementing anti-relay countermeasures** (*APDU exchange execution-time control* chapter).
+- The Card API specification now documents this mechanism as a **practical solution for implementing anti-relay countermeasures** (*APDU exchange execution-time control* chapter). It also states who sets the bound: it is **not a value an application can know**, and is chosen by the card extension from a configuration it obtains by its own means (see §3.3).
 
 ### 3.3 Calypso Card API
 
-Each bound is declared according to two families of settings, each with a dedicated operation:
+**No operation.** The specification exposes nothing for configuring the countermeasure: it is **entirely handled by the implementation**, which obtains its configuration by its own means, outside the surface of the API — as a reader driver obtains its technical parameters when it is instantiated.
 
-- **by CSN** (`…ByCsn(maxDurationMs: Long, csnMin: Long)`): `csnMin` is a **threshold** on the CSN (Calypso Serial Number, i.e. the Application Serial Number, compared as an unsigned 64-bit integer);
-- **by FCI** (`…ByFci(maxDurationMs: Long, fciRegex: String)`): `fciRegex` is a regular expression applied to the **whole FCI** returned by *Select Application* (excluding the status word), represented as an uppercase hexadecimal string without separators.
+The reason is that a usable bound is the sum of two budgets held by two different parties: the **computation time of the card**, which depends on its product type and on the key used, and the **latency of the terminal** — coupler, antenna, driver, execution platform. Neither is known to the ticketing application, and the calibration that establishes them is performed against the very implementation that will be deployed, which makes the content of that configuration an internal matter.
 
-- **New parent interface `SecuritySettings`** (`calypso.card.transaction`), extended by `SymmetricCryptoSecuritySettings` and `AsymmetricCryptoSecuritySettings`. It carries the settings shared by every secure transaction, whatever the cryptographic nature of the session — four new operations:
-  - `assignOpenSecureSessionMaxDurationByCsn(maxDurationMs: Long, csnMin: Long) → Self` and `assignOpenSecureSessionMaxDurationByFci(maxDurationMs: Long, fciRegex: String) → Self` — maximum duration of the _Open Secure Session_ command exchange;
-  - `assignCloseSecureSessionMaxDurationByCsn(maxDurationMs: Long, csnMin: Long) → Self` and `assignCloseSecureSessionMaxDurationByFci(maxDurationMs: Long, fciRegex: String) → Self` — maximum duration of the _Close Secure Session_ command exchange.
-- **`SymmetricCryptoSecuritySettings`** — two new specific operations:
-  - `assignSvCommandMaxDurationByCsn(maxDurationMs: Long, csnMin: Long) → Self` and `assignSvCommandMaxDurationByFci(maxDurationMs: Long, fciRegex: String) → Self` — maximum duration of the exchange of one of the _SV Reload_, _SV Debit_ or _SV Undebit_ commands.
+The *Command exchange duration bounds* section is therefore addressed to the **implementer**. It states:
 
-> **Resolution rule** (for a given card, per kind of bounded operation):
-> 1. **CSN-based settings**: each call defines a **range** bounded by its `csnMin` and the immediately higher declared `csnMin` (or +∞). If the card's CSN belongs to a range whose `maxDurationMs` differs from `Long.MAX_VALUE`, this value applies.
-> 2. **FCI-based settings**: otherwise, the FCI-based settings are evaluated **in declaration order** and the first one whose expression matches the FCI applies; a `maxDurationMs` equal to `Long.MAX_VALUE` then means "no bound".
-> 3. Otherwise, no bound applies.
+- **the bounded command exchanges** — _Open Secure Session_, _Close Secure Session_, and _SV Reload_ / _SV Debit_ / _SV Undebit_ (symmetric-key transactions only). Each bound covers a single command exchange, from the transmission of the command to the reception of its response; the other commands of the session or of the SV operation are not counted. Those other commands are not bounded, and an implementation **should not** bound them: their duration varies with the volume of data exchanged, so a bound would yield false positives without adding protection.
+- **the mechanism** — the Card API provides a maximum duration declared on each request (`ApduRequest.apduExchangeMaxDurationUs`, enforced by the reader through `ApduExchangeDurationExceeded`) and the effective duration measured on each response (`ApduResponse.apduExchangeDurationUs`). Two ways of applying a bound follow, which are not equivalent: **declared on the request**, resolved before the exchange and enforced by the reader; or **checked on the response**, resolved after the exchange — the only way for a bound to depend on what the exchange itself reveals, typically the KIF and KVC returned by _Open Secure Session_, which identify the key, and therefore the computation time, of the card that has just answered.
+- **non-silence** — an implementation must not let a transaction pass for a protected one when the countermeasure could not be applied: when no measurement is available, it reports that condition by its own means instead of remaining silent.
+- **the behaviour on overrun**, unchanged: an open secure session is automatically cancelled before the error is propagated as an `InvalidCardResponse`; outside a session (SV command), there is nothing to cancel and only the error is propagated.
 
-Consequences and details:
+> **What the ticketing application sees**: it configures nothing and is not told whether a bound applies. `InvalidCardResponse` may arise from a duration overrun as well as from a malformed response — an application that already handles that error needs no change. Absent a configuration, no bound applies and no protection exists.
 
-- CSN-based settings act as **overrides**: a default bound is expressed by a last FCI-based setting with the expression `.*`, not by a CSN-based setting with the lowest threshold, which would shadow every FCI-based setting; `Long.MAX_VALUE` on a CSN range hands the decision back to the FCI-based settings for the cards of that range;
-- the match applies to the **whole string** (implicitly anchored at both ends); a byte is matched by `..`;
-- to remain portable (Java, .NET, Swift/ICU, Rust), the expression is restricted to a **common subset**: literal characters, `.`, classes `[...]`, quantifiers `*`, `+`, `?`, `{n}`, `{n,}`, `{n,m}`, alternation `|` and groups `(...)`; backreferences, lookaround assertions, anchors and inline flags are excluded;
-- an invalid expression or one outside the subset, or a `maxDurationMs` that is not strictly positive, is rejected **at call time** (*Argument* pre-condition);
-- a new call with an already declared `csnMin` replaces the previous value; a new call with an identical `fciRegex` replaces the value while **keeping its position** in the evaluation order;
-- when no FCI is available, no FCI-based setting matches;
-- **FCI integrity**: the FCI is obtained during the selection, outside any session, and is therefore not authenticated. If the expression filters on the *startup info* data, the integrator **must** execute a `prepareGetData(FCI_FOR_CURRENT_DF)` inside the session to ensure the integrity of the FCI obtained during the selection. `prepareGetData` is now allowed inside a session **for this tag only**; if the returned value differs from the *Select Application* response, the `InconsistentData` error is raised by `processCommands` (not by `prepareGetData`).
-
-`maxDurationMs` comes first, as it is the value the operation assigns.
-
-> **Measured duration**: each bound covers the **relevant command exchange alone**, from the transmission of the command to the reception of its response; the other commands of the secure session or of the SV operation are not counted. **Consequence of an overrun**: an open secure session is automatically cancelled and the error is propagated as an `InvalidCardResponse`; outside a session, only the error is propagated (see §3.1).
-
-> The regular expression on the FCI alone covers the DF name, the startup information (product families, byte masking) and even a prefix of the serial number (tag `C7`), with a priority order chosen by the integrator. This form replaces the `dfName` / `startupInfo` criteria of the previous working versions of this document.
+**Dropped from the working versions of this document**: the six `assign…MaxDuration…ByCsn/ByFci(...)` operations, together with everything they required — the CSN threshold and FCI regular-expression criteria, the portable regex subset, the two-stage resolution rule, the `Long.MAX_VALUE` sentinel, the duplicate-declaration rules and the FCI integrity caveat. The Calypso Card API no longer declares any duration, which is why it no longer departs from the microsecond.
 
 ### 3.4 Generic Card API
 
@@ -754,7 +741,7 @@ The specifications also define common rules (non-`null` results unless stated ot
 - **Portability**: the contract no longer imposes any Java-specific mechanism (reflection, recursive genericity, overloads); it can be transposed into any language, including those without overloading or class inheritance (Rust in particular), which paves the way for implementations in Kotlin Multiplatform, Rust, Swift or C#.
 - **Robustness**: explicit nullability and immutable data eliminate invalid states (incomplete "builder" object, unexpected `null` value).
 - **Precision**: typed pre-conditions and errors listed per operation make the contract verifiable.
-- **Java binding**: the way the Java binding will implement these principles (data classes, `Self`, default values) is part of the alignment of the Keypop modules (see §19.3) and of the migration guide.
+- **Java binding**: the way the Java binding will implement these principles (data classes, `Self`, default values) is part of the alignment of the Keypop modules and of the migration guide (see §21).
 
 ---
 
@@ -849,7 +836,7 @@ The tolerance is **explicitly enabled by the integrator**: the default behaviour
 - **Two new security settings**: `authorizeFileNotFoundError() → Self` and `authorizeRecordNotFoundError() → Self`, carried by the parent interface `SecuritySettings` and therefore available in `SymmetricCryptoSecuritySettings` as well as in `AsymmetricCryptoSecuritySettings`. They allow the card to answer `6A82h` or `6A83h` **inside a session** without failing the transaction: the affected command is simply not applied to the `CalypsoCard` and the session continues. They are disabled by default.
 - **Reads** (`prepareReadBinary`, `prepareReadCounter`, `prepareReadRecords`) and **file selection** (`prepareSelectFileByLid`, `prepareSelectFileByControl`): **outside a session**, a missing file has never caused processing to fail, and this *best-effort* mode is unchanged; **inside a session**, processing fails unless the corresponding setting has been enabled. An invalid offset keeps the two modes *best-effort* (outside a session) and *strict* (inside a session).
 - **The `SelectFileException` error is removed**.
-- The in-session usage restrictions of `prepareGetData`, `prepareReadRecord`, `prepareReadRecordsPartially` and `prepareSearchRecords` are **unchanged**.
+- The in-session usage restrictions of `prepareReadRecord`, `prepareReadRecordsPartially` and `prepareSearchRecords` are **unchanged**: these commands must still not be used within a secure session, in both contact and contactless modes. **`prepareGetData` is relaxed for the single tag `FCI_FOR_CURRENT_DF`**, now allowed inside a session so that the integrity of the FCI obtained in response to *Select Application* can be checked: the following `processCommands()` raises `InconsistentData` if the returned FCI differs from that response. The length of the data read being bounded, the session is not exposed; every other tag remains forbidden.
 
 ---
 
@@ -876,15 +863,19 @@ The `Class<E>` parameter only existed to work around the JVM's type erasure; it 
 
 ---
 
-## 16. Theme 15 — Validity of the Calypso HCE debit key
+## 16. Theme 15 — Validity of the Calypso HCE token
 
 ### 16.1 Motivation
 
 The application serial number of a **Calypso HCE** application is made of two fields: the two most significant
-bytes, the **SN Header**, carry the end of validity of the debit key, coded as the number of half-days elapsed
-since 1 January 2010 at 0:00 **local time**; the six remaining bytes identify the application. Nothing in the card dialogue
-reveals an outdated header, because the header takes part in the diversification of the debit key: a mobile whose
-validity window has passed still authenticates normally. The verification therefore belongs to the terminal, and
+bytes, the **SN Header**, carry the end of validity of the token, coded as the number of half-days elapsed
+since 1 January 2010 at 0:00 **local time**; the six remaining bytes identify the application. What that validity
+materialises depends on the cryptographic nature of the transaction: in **symmetric-key** mode it is the end of
+validity of the **debit key**; in **PKI** mode it is the expiry date of the key carried by the card certificate.
+The API names the token, which has a single validity window whatever the mode. Nothing in the card dialogue reveals
+an outdated header: in symmetric-key mode the header takes part in the diversification of the keys, so a mobile
+whose validity window has passed still authenticates normally, and in PKI mode the expiry is attested by the card
+certificate and is not signalled by the card either. The verification therefore belongs to the terminal, and
 the production versions offered nothing for it — `getApplicationSerialNumber()` returns the serial number with its
 two most significant bytes forced to `0`, so the header was not even readable.
 
@@ -899,21 +890,21 @@ two most significant bytes forced to `0`, so the header was not even readable.
   consulted when the selection response is parsed, by the side that holds the card extension, and is **never
   carried by an exported selection scenario**.
 - **New accessors** on `CalypsoCard`:
-  - `getHceDebitKeyExpiryLocalEpochSeconds() → Long?` — the decoded header, converted into seconds since 1 January 1970 at
+  - `getHceTokenExpiryLocalEpochSeconds() → Long?` — the decoded header, converted into seconds since 1 January 1970 at
     0:00 local time; part of the card image and therefore carried by an exported processed scenario; `null` when
     the application is not HCE or the header is not significant;
-  - `isHceDebitKeyValid() → Boolean?` — the verdict computed by the card extension, `null` when no evaluation took
+  - `isHceTokenValid() → Boolean?` — the verdict computed by the card extension, `null` when no evaluation took
     place.
-- **New setting** `SecuritySettings.authorizeExpiredHceDebitKey() → Self`, on the contract shared by the symmetric
+- **New setting** `SecuritySettings.authorizeExpiredHceToken() → Self`, on the contract shared by the symmetric
   and asymmetric settings.
 - **New *State* pre-condition** on both `prepareOpenSecureSession` operations: the card is not a Calypso HCE
-  application whose debit key has expired or could not be evaluated, unless the authorisation above has been given.
+  application whose token has expired or could not be evaluated, unless the authorisation above has been given.
 - `getApplicationSerialNumber()` now **documents** the masking of the two most significant bytes for an HCE
   application.
 
 ### 16.3 Rationale
 
-The card is **never hidden**: an application whose debit key has expired is selected like any other and the verdict
+The card is **never hidden**: an application whose token has expired is selected like any other and the verdict
 is exposed, so the ticketing layer can refuse the service, invite the holder to renew the token, or simply log the
 event. Making the selection fail would have been indistinguishable from an unknown card, leaving the holder without
 an explanation and masking a provisioning outage from the operator.
@@ -1002,7 +993,72 @@ the scope of the Terminal APIs and belongs to the interfaces each reader impleme
 
 ---
 
-## 18. Normative clarifications
+## 18. Theme 17 — Card revocation
+
+### 18.1 Motivation
+
+An issuer may withdraw a card from service — one reported lost or stolen, one that is the subject of a dispute, one
+whose holder's entitlement has ended. Nothing in the card records that decision: it lives in a list the issuer
+maintains, outside the card. The production versions offered nothing at this level, so the check was entirely the
+application's business, with no contract stating when it had to happen nor what had to follow. The Legacy SAM API
+already had the equivalent for a SAM — `LegacySamRevocationServiceSpi` and the `SamRevoked` error; the card side
+had nothing.
+
+### 18.2 Calypso Card API
+
+The design is the one of Theme 15, applied to a second verdict:
+
+- **New SPI** `CardRevocationStatusProvider` (`calypso.card.spi`):
+  - `isCardRevoked(applicationSerialNumber: ByteArray) → Boolean` — the operation **always answers**: no third
+    value reports an unavailable list or an incomplete cache, such a fallback belonging to the provider, the only
+    component holding the operational context. The lookup key is the 8-byte application serial number; no partial
+    match is defined, a prefix designating no single card. For an HCE application the two most significant bytes
+    are forced to `0`, so the key **survives the renewal of the token**.
+- **New factory operation** `CalypsoCardApiFactory.setCardRevocationStatusProvider(provider) → Self`.
+- **New accessor** `CalypsoCard.isRevoked() → Boolean?` — the verdict, part of the card image and therefore carried
+  by an exported processed scenario; `null` in a single case, when no provider was registered. Not to be confused
+  with `isDfInvalidated()`, which reports an invalidation carried by the card itself.
+- **New setting** `SecuritySettings.authorizeRevokedCard() → Self`, on the contract shared by the symmetric and
+  asymmetric settings.
+- **Second *State* pre-condition** on both `prepareOpenSecureSession` operations: the card is not revoked and its
+  revocation status could be verified, unless the authorisation above has been given.
+- **New section** *Application-supplied services* in the architectural overview, stating once the rules shared by
+  this provider and the HCE time provider: consultation when the selection response is parsed, by the side holding
+  the card extension; locality, the verdict alone being exported; and the ban on blocking remote calls, these
+  services running inside the contactless window.
+
+### 18.3 Rationale
+
+**The check is fail-closed, including when no provider is registered.** Nothing in a card signals that a revocation
+check is due — unlike the SN Header, which announces an HCE validity window by its mere presence. The trigger is
+therefore the opposite one: absent a provider, the status is *unverified*, and no secure session may be opened until
+`authorizeRevokedCard()` is called. **Every integration must consequently state something**: register a provider,
+or authorise cards whose revocation status is unknown. This is the doctrine of Theme 2 applied here — a security
+control must not be silently absent — and the name of the flag states the accepted risk instead of hiding it behind
+a permissive default.
+
+**Two separate SPIs rather than one.** The HCE time provider and the revocation status provider share a category,
+not a contract. A fleet without HCE applications has no clock to provide; a clock is a platform concern and a
+revocation list a back-office one, implemented by different components on different release cycles; and adding an
+operation to a published SPI breaks every one of its implementers. The Legacy SAM API makes the same choice, with
+distinct SPIs for revocation and for unlock data. What the two do share is factored into one architectural section
+rather than into one interface.
+
+**The provider's answer is not nullable.** A third value reporting an unknown status would make a *transient*
+condition — a back-office outage — violate a *State* pre-condition, whereas every pre-condition of the family
+describes a stable state the application controls. It would also leave an integrator without a way to degrade
+gracefully, `authorizeRevokedCard()` being a configuration-time decision rather than a per-transaction one. The
+fallback therefore stays with the provider, which alone knows the age of its cache and the policy of the operator,
+and `null` keeps a single meaning on `isRevoked()`: no provider was registered. Should distinguishing *unknown*
+prove necessary for the ticketing decision, it would call for a typed status, not for a nullable Boolean.
+
+**The card is never hidden**, as for an expired HCE token: a revoked card is selected like any other and the verdict
+is exposed, so the ticketing layer can refuse the service, raise an alert or log the event. Making the selection
+fail would have been indistinguishable from an unknown card.
+
+---
+
+## 19. Normative clarifications
 
 The specifications also bring clarifications that do not change signatures but specify the contract:
 
@@ -1015,7 +1071,7 @@ The specifications also bring clarifications that do not change signatures but s
 
 ---
 
-## 19. Elements under study
+## 20. Elements under study
 
 The following elements appear in grey in the Legacy SAM API diagram; they are **not** part of the normative scope submitted for validation:
 
@@ -1026,7 +1082,7 @@ The following elements appear in grey in the Legacy SAM API diagram; they are **
 
 ---
 
-## 20. Migration procedure
+## 21. Migration procedure
 
 Migrating application code from the production versions to the new versions will be covered by a **dedicated technical migration guide**, published separately after validation by the TC Terminal and after alignment of the associated Keypop Java implementations.
 
@@ -1034,16 +1090,16 @@ This guide will aim to **simplify the transition as much as possible**: 1:1 mapp
 
 ---
 
-## 21. Next steps and validation by the TC Terminal
+## 22. Next steps and validation by the TC Terminal
 
-### 21.1 Scope submitted for validation
+### 22.1 Scope submitted for validation
 
 This document submits to the validation of the **CNA TC Terminal**:
 
-1. **The principle** of the fourteen evolution themes (§2 to §15) and the overall consistency of the work (versions 3.0.0 for Reader / Card / Calypso Card, 1.0.0 for Definitions, 2.0.0 for Legacy SAM / Generic Card / Storage Card, 0.2.0 for Crypto Symmetric, 0.3.0 for Crypto Asymmetric).
+1. **The principle** of the seventeen evolution themes (§2 to §18) and the overall consistency of the work (versions 3.0.0 for Reader / Card / Calypso Card, 1.0.0 for Definitions, 2.0.0 for Legacy SAM / Generic Card / Storage Card, 0.2.0 for Crypto Symmetric, 0.3.0 for Crypto Asymmetric).
 2. **The design choices** documented in the "Rationale" sections, in particular:
   - the explicit multi-channel model relying on the `SmartCard(Spi)` as the named target and the three-level hierarchy of transaction managers (§2);
-  - duration bounding at the APDU, Calypso session, generic command and storage card read levels, with CSN-based and FCI-based settings (§3);
+  - duration bounding at the APDU, generic command and storage card read levels, the Calypso countermeasure being delegated in full to the implementation (§3);
   - the merge of the Observer pattern into a single `CardReaderEventHandler` SPI (§4);
   - the `SecureSessionState` enumeration (§5);
   - the extraction of `RfTechnology` and `CardType` into the Terminal Reader Definitions API and the `CardDetectionSettings` detection settings (§7);
@@ -1054,30 +1110,35 @@ This document submits to the validation of the **CNA TC Terminal**:
   - **data without computation** and access to raw data (§12);
   - the SV model aligned with the card specification (§13);
   - the tolerance of a missing file in a session (§14);
-  - access to the crypto extension with an identity clause (§15).
+  - access to the crypto extension with an identity clause (§15);
+  - the **validity of the Calypso HCE token**, verified by the terminal from a clock the application provides (§16);
+  - **card power and RF field** described as effects provided on a best-effort basis rather than as capabilities (§17);
+  - the **revocation status of a card**, obtained from a service the application provides, and checked before any secure session (§18).
 3. **The detailed content of the nine specifications** and their diagrams (see [Reference documents](#reference-documents)).
 4. **The introduction** of the new Reader Definitions foundation API.
-5. **The principle** of a dedicated migration procedure (see §20).
+5. **The principle** of a dedicated migration procedure (see §21).
 
-### 21.2 Points of attention for the review
+### 22.2 Points of attention for the review
 
 - the **stability of the initial content** of the `RfTechnology` and `CardType` enumerations (§7.2), in particular the representation of ISO 14443-4 by a single `ISO_14443_4` value;
 - the **complete removal** of `ConfigurableCardReader` without a deprecation phase (§7.3);
-- the Calypso **duration bound resolution rule**: priority of CSN-based over FCI-based settings, `Long.MAX_VALUE` as the deferral value, portable subset of regular expressions (§3.3);
+- the **delegation of the Calypso relay countermeasure to the implementation** (§3.3): no configuration operation is exposed, the bound being resolved from a calibration performed against the deployed implementation; the specification only designates the bounded exchanges and the behaviour on overrun;
 - the **enforcement of the Calypso duration bounds** (§3.1, §3.3): both what is measured (the relevant command exchange alone) and the consequence of an overrun (automatic cancellation of an open session, error propagation outside a session) are now specified;
+- the naming of the **HCE token** concept (§16), chosen to cover both cryptographic natures — the debit key in symmetric-key mode, the key carried by the card certificate in PKI mode — while an update of the official Calypso specifications is in progress on this subject;
+- the **fail-closed default of the card revocation check** (§18.3): absent a registered `CardRevocationStatusProvider`, the status counts as unverified and no secure session may be opened until `authorizeRevokedCard()` is called — every integration must therefore state one or the other, which the migration guide will have to cover;
 - the **three-level gradation** of transaction managers (§2.2);
 - the **replacement of overloads** by unique operation names (§11.2), which changes many operation names for Java integrators;
 - the **replacement of "builder" interfaces** by data classes (§11.2, §12), whose Java implementation remains to be defined;
 - the **change from `SvOperation.DEBIT` to `DEBIT_UNDEBIT`** and the removal of the SV overloads without data (§13).
 
-### 21.3 Next steps
+### 22.3 Next steps
 
 The versions were validated by the TC Terminal and the nine specifications are available as a preview on the
 documentation site. Their formal release is pending, and the following steps remain:
 
 1. **Finalisation of the specifications**: moving the repositories from their `…-SNAPSHOT` versions to their final
-   versions; removal or specification of the elements under study (§19); then tagging and publishing the release.
-2. **Writing and publication of the technical migration guide** (see §20).
+   versions; removal or specification of the elements under study (§20); then tagging and publishing the release.
+2. **Writing and publication of the technical migration guide** (see §21).
 3. **Communication** of the availability of the new versions to integrators and to the CNA working groups concerned.
 
 ---
@@ -1183,10 +1244,11 @@ This annex lists, for each API, what becomes of each element of the Java version
 | — | Added: `prepareSvUndebit(amount, date, time)` |
 | `SvAction` | Removed |
 | `SvOperation.DEBIT` | → `SvOperation.DEBIT_UNDEBIT` |
-| — | Added: `SecuritySettings` interface, parent of `SymmetricCryptoSecuritySettings` and `AsymmetricCryptoSecuritySettings`, carrying `assignOpenSecureSessionMaxDurationByCsn/ByFci(...)`, `assignCloseSecureSessionMaxDurationByCsn/ByFci(...)`, `authorizeFileNotFoundError()` and `authorizeRecordNotFoundError()` |
-| — | Added: `SymmetricCryptoSecuritySettings.assignSvCommandMaxDurationByCsn/ByFci(...)`; the session bounds are inherited from `SecuritySettings` |
+| — | Added: `SecuritySettings` interface, parent of `SymmetricCryptoSecuritySettings` and `AsymmetricCryptoSecuritySettings`, carrying `authorizeFileNotFoundError()` and `authorizeRecordNotFoundError()` |
 | — | Added: `HceTimeProvider` SPI (namespace `calypso.card.spi`) and `CalypsoCardApiFactory.setHceTimeProvider(provider)` |
-| — | Added: `CalypsoCard.getHceDebitKeyExpiryLocalEpochSeconds() → Long?` and `isHceDebitKeyValid() → Boolean?`; `SecuritySettings.authorizeExpiredHceDebitKey()`; *State* pre-condition on `prepareOpenSecureSession` (see Theme 15) |
+| — | Added: `CalypsoCard.getHceTokenExpiryLocalEpochSeconds() → Long?` and `isHceTokenValid() → Boolean?`; `SecuritySettings.authorizeExpiredHceToken()`; *State* pre-condition on `prepareOpenSecureSession` (see Theme 15) |
+| — | Added: `CardRevocationStatusProvider` SPI (namespace `calypso.card.spi`) and `CalypsoCardApiFactory.setCardRevocationStatusProvider(provider)` |
+| — | Added: `CalypsoCard.isRevoked() → Boolean?`; `SecuritySettings.authorizeRevokedCard()`; second *State* pre-condition on `prepareOpenSecureSession` (see Theme 17) |
 | `ChannelControl` | Removed |
 | `CardIOException`, `ReaderIOException`, `UnexpectedCommandStatusException`, `SelectFileException` | Removed |
 | `CardSignatureNotVerifiableException`, `CryptoException`, `CryptoIOException`, `InconsistentDataException`, `InvalidCardSignatureException`, `InvalidCertificateException`, `InvalidPinException`, `SessionBufferOverflowException`, `UnauthorizedKeyException` | → same names without the `Exception` suffix |
